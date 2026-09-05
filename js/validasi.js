@@ -177,6 +177,10 @@
       salah(dimana, 'Rentang grid lebih dari ' + RENTANG_MAKS + ' satuan, tidak terbaca di layar HP.');
     }
 
+    /* Gambar acuan disalin apa adanya saat digembok, sehingga bentuknya
+       diperiksa pada berkas mentah maupun berkas yang sudah tayang. */
+    if (s.bantu !== undefined) periksaBantu(s.bantu, g, dimana, salah, awas);
+
     if (bentuk === 'mentah') {
       if (!Array.isArray(s.kunci) || !s.kunci.length) {
         salah(dimana, 'Kunci koordinat kosong.');
@@ -211,6 +215,74 @@
       }
     }
     return Promise.resolve();
+  }
+
+  /* Titik acuan yang meleset keluar grid tidak menimbulkan galat apa pun di
+     peramban: bangunnya hanya terpotong diam-diam, dan soalnya jadi mustahil
+     dibaca siswa. Karena itu diperiksa di sini. */
+  function periksaBantu(b, g, dimana, salah, awas) {
+    if (!b || typeof b !== 'object' || Array.isArray(b)) {
+      return salah(dimana, 'Field "bantu" harus berupa objek.');
+    }
+
+    function titikSah(t, sebut) {
+      if (!Array.isArray(t) || t.length !== 2 ||
+          t.some(function (n) { return typeof n !== 'number'; })) {
+        salah(dimana, sebut + ' bukan pasangan angka.');
+        return false;
+      }
+      if (t[0] !== Math.round(t[0]) || t[1] !== Math.round(t[1])) {
+        salah(dimana, sebut + ' bukan titik grid bilangan bulat.');
+        return false;
+      }
+      if (t[0] < g.xMin || t[0] > g.xMax || t[1] < g.yMin || t[1] > g.yMax) {
+        salah(dimana, sebut + ' berada di luar grid.');
+        return false;
+      }
+      return true;
+    }
+
+    if (b.acuan !== undefined) {
+      if (!Array.isArray(b.acuan)) {
+        salah(dimana, 'bantu.acuan harus berupa senarai bangun.');
+      } else {
+        b.acuan.forEach(function (bentuk, i) {
+          var sebut = 'bantu.acuan ke-' + (i + 1);
+          if (!bentuk || !Array.isArray(bentuk.titik) || !bentuk.titik.length) {
+            return salah(dimana, sebut + ' tidak punya senarai "titik" yang berisi.');
+          }
+          bentuk.titik.forEach(function (t, j) {
+            titikSah(t, sebut + ' titik ke-' + (j + 1));
+          });
+          if (bentuk.label && bentuk.label.length !== bentuk.titik.length) {
+            awas(dimana, sebut + ' punya label yang jumlahnya tidak sama dengan titiknya.');
+          }
+        });
+      }
+    }
+
+    if (b.cermin !== undefined) {
+      if (!Array.isArray(b.cermin) || b.cermin.length !== 2) {
+        salah(dimana, 'bantu.cermin perlu tepat dua titik yang dilalui garis cermin.');
+      } else {
+        var sah = b.cermin.map(function (t, i) {
+          return titikSah(t, 'bantu.cermin titik ke-' + (i + 1));
+        });
+        if (sah[0] && sah[1] &&
+            b.cermin[0][0] === b.cermin[1][0] && b.cermin[0][1] === b.cermin[1][1]) {
+          salah(dimana, 'Dua titik bantu.cermin berimpit, garis cerminnya tidak tertentu.');
+        }
+      }
+    }
+
+    if (b.pusat !== undefined) titikSah(b.pusat, 'bantu.pusat');
+
+    if (b.labelPusat !== undefined && typeof b.labelPusat !== 'string') {
+      salah(dimana, 'bantu.labelPusat harus berupa teks.');
+    }
+    if (b.labelPusat && b.pusat === undefined) {
+      awas(dimana, 'bantu.labelPusat ditulis tanpa bantu.pusat, jadi tidak tergambar.');
+    }
   }
 
   return { periksa: periksa, TIPE: TIPE, VARIAN: VARIAN, RENTANG_MAKS: RENTANG_MAKS };

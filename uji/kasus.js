@@ -262,6 +262,70 @@
     });
   });
 
+  /* ---------- koordinat: gambar acuan pada soal transformasi ---------- */
+
+  var soalAcuan = {
+    id: 'uji-acuan', level: 2, tipe: 'koordinat', varian: 'beberapa-titik',
+    pertanyaan: 'Cerminkan segitiga $ABC$ terhadap sumbu-$X$.',
+    grid: { xMin: -6, xMax: 6, yMin: -6, yMax: 6 },
+    bantu: {
+      acuan: [{ titik: [[1, 1], [4, 1], [4, 3]], label: ['A', 'B', 'C'] }],
+      cermin: [[0, 0], [1, 0]],
+      pusat: [0, 0], labelPusat: 'O'
+    },
+    kunci: [[1, -1], [4, -1], [4, -3]], pembahasan: '-'
+  };
+
+  /* Bangun asal harus sampai ke peramban apa adanya. Kalau ia ikut
+     tergembok atau hilang saat disalin, soalnya tetap tampil tetapi tidak
+     mungkin dikerjakan: siswa tidak melihat bangun yang harus dicerminkan. */
+  uji('Gambar acuan lolos penggembokan tanpa berubah', function () {
+    return Gembok.butir(soalAcuan, soalAcuan.id).then(function (terkunci) {
+      var sama = JSON.stringify(terkunci.bantu) === JSON.stringify(soalAcuan.bantu);
+      return {
+        lulus: sama && terkunci.kunci !== soalAcuan.kunci,
+        catatan: sama
+          ? 'bantu tersalin utuh, kunci tetap tergembok'
+          : 'bantu berubah menjadi ' + JSON.stringify(terkunci.bantu)
+      };
+    });
+  });
+
+  /* Titik acuan yang ditulis di luar grid tidak menimbulkan galat apa pun
+     di peramban, bangunnya hanya terpotong diam-diam. */
+  uji('Titik acuan di luar grid ditolak pemeriksa bentuk', function () {
+    var Validasi = modulValidasi();
+    var rusak = JSON.parse(JSON.stringify(soalAcuan));
+    rusak.bantu.acuan[0].titik[2] = [4, 9];
+    var bank = {
+      meta: { kelas: 9, bab: 'uji', judul: 'Uji', versi: '1' },
+      soal: [rusak]
+    };
+    return Validasi.periksa(bank, { bentuk: 'mentah' }).then(function (lapor) {
+      var kena = lapor.galat.some(function (g) { return /bantu\.acuan/.test(g.pesan); });
+      return {
+        lulus: kena,
+        catatan: kena ? lapor.galat[0].pesan : 'tidak ada galat yang menyebut bantu.acuan'
+      };
+    });
+  });
+
+  uji('Soal koordinat tanpa gambar acuan tetap sah', function () {
+    var Validasi = modulValidasi();
+    var polos = JSON.parse(JSON.stringify(soalAcuan));
+    delete polos.bantu;
+    var bank = {
+      meta: { kelas: 8, bab: 'uji', judul: 'Uji', versi: '1' },
+      soal: [polos]
+    };
+    return Validasi.periksa(bank, { bentuk: 'mentah' }).then(function (lapor) {
+      return {
+        lulus: lapor.galat.length === 0,
+        catatan: lapor.galat.length ? lapor.galat[0].pesan : 'field bantu memang boleh tidak ada'
+      };
+    });
+  });
+
   /* ---------- penilaian keseluruhan ---------- */
 
   uji('Nilai akhir memakai bobot level, dan bobot dapat diratakan', function () {
@@ -374,6 +438,12 @@
     return (typeof require === 'function' && typeof module === 'object')
       ? require('../js/soal.js')
       : (typeof self !== 'undefined' ? self.Soal : null);
+  }
+
+  function modulValidasi() {
+    return (typeof require === 'function' && typeof module === 'object')
+      ? require('../js/validasi.js')
+      : (typeof self !== 'undefined' ? self.Validasi : null);
   }
 
   function bankPalsu() {

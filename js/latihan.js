@@ -433,10 +433,18 @@
   }
 
   function isiKoordinat(wadah, s) {
+    /* Soal transformasi menyertakan gambar acuan: bangun asal, garis
+       cermin, dan pusat rotasi atau dilatasi. Semuanya hanya tergambar,
+       tidak ikut dinilai. */
+    var bantu = s.bantu || {};
     bidang[s.id] = BidangKoordinat.buat(wadah, {
       grid: s.grid,
       mode: s.varian,
       nilaiAwal: jawaban[s.id] || [],
+      acuan: bantu.acuan,
+      cermin: bantu.cermin,
+      pusat: bantu.pusat,
+      labelPusat: bantu.labelPusat,
       /* Untuk beberapa-titik dan bangun sengaja tidak ada batas: banyaknya
          titik adalah bagian dari yang diuji. */
       maks: s.varian === 'titik' ? 1 : (s.varian === 'garis' ? 2 : 0),

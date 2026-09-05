@@ -43,7 +43,17 @@
     {
       "tingkat": 9,
       "judul": "Kelas 9",
-      "bab": []
+      "bab": [
+        {
+          "kode": "transformasi",
+          "judul": "Transformasi Geometri",
+          "semester": 1,
+          "ringkas": "Refleksi, translasi, rotasi, dan dilatasi pada bidang koordinat.",
+          "soal": "data/soal/kelas9/transformasi.json",
+          "materi": "materi/kelas9-transformasi.html",
+          "aktif": true
+        }
+      ]
     }
   ]
 }

@@ -14,8 +14,11 @@
 })(typeof self !== 'undefined' ? self : this, function (Kunci, Nilai) {
   'use strict';
 
+  /* "bantu" ikut disalin apa adanya: isinya bangun asal, garis cermin, dan
+     pusat transformasi, yang memang harus terlihat sebelum siswa menjawab.
+     Tidak ada kunci di dalamnya, jadi tidak ada yang perlu disembunyikan. */
   var DISALIN = ['id', 'level', 'tipe', 'varian', 'aktif', 'pertanyaan',
-                 'opsi', 'grid', 'acakOpsi', 'induk'];
+                 'opsi', 'grid', 'bantu', 'acakOpsi', 'induk'];
 
   function butir(s, id) {
     var keluar = {};

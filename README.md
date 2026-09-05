@@ -53,7 +53,8 @@ js/
   guru.js               alur halaman guru
 
 komponen/
-  bidang-koordinat.js   bidang kartesius yang bisa diketuk
+  bidang-koordinat.js   bidang kartesius yang bisa diketuk, lengkap dengan
+                        gambar acuan untuk soal transformasi
   garis-bilangan.js     garis bilangan dengan busur loncatan
   batang-pecahan.js     batang pecahan yang penyebutnya bisa diubah
   tabel-pola.js         tabel pola bilangan dengan kolom selisih
@@ -204,9 +205,51 @@ Empat varian:
 | `garis` | dua titik yang dilalui garis | persamaan garisnya yang dibandingkan, bukan titiknya |
 
 Rentang grid maksimal 13 satuan supaya tetap terbaca di layar HP.
-Varian `bangun` boleh diberi `lanjutan` berupa soal `pg` atau `isian`
-(misalnya menanyakan nama bangun atau luasnya) yang dinilai sebagai butir
-tersendiri dengan id `<id induk>-l`.
+Soal koordinat boleh diberi `lanjutan` berupa soal `pg`, `isian`, atau
+`benar-salah` (misalnya menanyakan nama bangun, luasnya, atau aturan
+pemetaan yang dipakai) yang dinilai sebagai butir tersendiri dengan id
+`<id induk>-l`.
+
+Siswa menaruh titik dengan dua cara yang sama sahnya: mengetuk bidangnya,
+atau menekan tombol **Ketik koordinat** lalu mengisi `x` dan `y`. Cara
+kedua ada supaya soal koordinat tetap bisa dikerjakan pada layar sempit.
+
+### Gambar acuan pada soal transformasi
+
+Soal transformasi geometri selalu menyebut sebuah bangun asal, dan sering
+juga garis cermin atau pusat rotasi. Semua itu ditulis dalam field `bantu`,
+yang hanya tergambar dan tidak pernah ikut dinilai:
+
+```json
+{
+  "id": "tr-01", "level": 1, "tipe": "koordinat",
+  "varian": "beberapa-titik", "aktif": true,
+  "pertanyaan": "Segitiga $ABC$ dicerminkan terhadap sumbu-$X$ ...",
+  "grid": { "xMin": -4, "xMax": 8, "yMin": -6, "yMax": 6 },
+  "bantu": {
+    "acuan": [{ "titik": [[2,0],[6,1],[4,4]], "label": ["A","B","C"] }],
+    "cermin": [[0,0],[1,0]],
+    "pusat": [0,0], "labelPusat": "O"
+  },
+  "kunci": [[2,0],[6,-1],[4,-4]],
+  "pembahasan": "..."
+}
+```
+
+| Field | Isi | Tampilan |
+|---|---|---|
+| `acuan` | senarai bangun, masing-masing `{ titik, label, tutup }` | garis putus-putus abu-abu; `"tutup": false` bila titiknya tidak perlu dihubungkan |
+| `cermin` | dua titik mana pun yang dilalui garis cermin | garis putus-putus jingga, diperpanjang sendiri sampai tepi grid |
+| `pusat` | satu titik, pusat rotasi atau dilatasi | kotak hitam, diberi nama bila `labelPusat` diisi |
+
+Boleh lebih dari satu bangun pada `acuan`, misalnya untuk menampilkan hasil
+transformasi antara pada soal komposisi. Semua titiknya harus bilangan bulat
+dan berada di dalam grid; `node tools/gembok.js` menolak yang di luar, sebab
+di peramban bangunnya hanya akan terpotong diam-diam dan soalnya menjadi
+mustahil dikerjakan.
+
+Field `bantu` tidak digembok, hanya disalin. Di dalamnya memang tidak ada
+kunci apa pun: yang digambar adalah bangun asal yang sudah disebut soal.
 
 ### Mengapa kunci digembok
 

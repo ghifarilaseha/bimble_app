@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transformasi Geometri</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Transformasi Geometri</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Memindahkan bangun tanpa mengubah aturannya</h1>
+  <p>
+    Transformasi geometri adalah cara memindahkan sebuah bangun pada bidang
+    koordinat menurut aturan tertentu. Bangun semula disebut bangun asal,
+    hasilnya disebut bayangan. Titik $A$ yang berpindah ditulis $A'$, dibaca
+    "A aksen".
+  </p>
+  <p>
+    Ada empat transformasi yang dipelajari di kelas 9: refleksi (pencerminan),
+    translasi (pergeseran), rotasi (perputaran), dan dilatasi (perkalian).
+    Tiga yang pertama tidak mengubah ukuran, jadi bayangannya kongruen dengan
+    bangun asal. Hanya dilatasi yang mengubah ukuran, sehingga bayangannya
+    sebangun tetapi belum tentu kongruen.
+  </p>
+
+  <h2>Coba satu titik dulu</h2>
+  <p>
+    Ketuk sebuah titik pada bidang di bawah, lalu perhatikan ke mana titik itu
+    pindah oleh masing-masing transformasi. Cara membacanya: yang berubah
+    hanya tanda atau urutan bilangannya.
+  </p>
+
+  <div class="kartu">
+    <div id="bidangTitik"></div>
+    <div id="daftarBayangan" style="margin-top:.75rem"></div>
+  </div>
+
+  <h2>Refleksi: mencerminkan</h2>
+  <p>
+    Bayangan berada di seberang garis cermin, sama jauhnya dari cermin itu.
+    Titik yang tepat berada pada garis cermin tidak berpindah sama sekali.
+  </p>
+
+  <div class="tabel-gulir">
+    <table>
+      <thead>
+        <tr><th>Cermin</th><th>Aturan</th><th>Contoh</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>sumbu-$X$</td><td>$(x, y) \to (x, -y)$</td><td>$(3, 2) \to (3, -2)$</td></tr>
+        <tr><td>sumbu-$Y$</td><td>$(x, y) \to (-x, y)$</td><td>$(3, 2) \to (-3, 2)$</td></tr>
+        <tr><td>garis $y = x$</td><td>$(x, y) \to (y, x)$</td><td>$(3, 2) \to (2, 3)$</td></tr>
+        <tr><td>garis $y = -x$</td><td>$(x, y) \to (-y, -x)$</td><td>$(3, 2) \to (-2, -3)$</td></tr>
+        <tr><td>garis $x = h$</td><td>$(x, y) \to (2h - x, y)$</td><td>bila $h = 1$: $(3, 2) \to (-1, 2)$</td></tr>
+        <tr><td>garis $y = k$</td><td>$(x, y) \to (x, 2k - y)$</td><td>bila $k = 1$: $(3, 2) \to (3, 0)$</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Dua baris terakhir mudah diperiksa tanpa rumus: hitung saja jarak titiknya
+    ke garis cermin, lalu ukurkan jarak yang sama ke sisi seberang.
+  </p>
+
+  <h2>Translasi: menggeser</h2>
+  <p>
+    Translasi $T = (a, b)$ menggeser setiap titik sejauh $a$ mendatar dan $b$
+    tegak, dengan aturan $(x, y) \to (x + a, y + b)$. Nilai $a$ negatif berarti
+    ke kiri, dan $b$ negatif berarti ke bawah.
+  </p>
+  <p>
+    Dua hal yang sering ditanyakan. Pertama, bila yang diketahui justru
+    bayangannya, arah geserannya tinggal dibalik: $(x, y) = (x' - a, y' - b)$.
+    Kedua, dua translasi berurutan cukup dijumlahkan komponennya, sehingga
+    $(3, 4)$ dilanjutkan $(2, -1)$ sama saja dengan satu translasi $(5, 3)$.
+  </p>
+
+  <h2>Rotasi: memutar</h2>
+  <p>
+    Rotasi memutar bangun mengelilingi sebuah titik pusat. Arah positif adalah
+    berlawanan arah jarum jam. Jarak setiap titik ke pusat tidak berubah, dan
+    besar setiap sudut juga tetap.
+  </p>
+
+  <div class="tabel-gulir">
+    <table>
+      <thead>
+        <tr><th>Rotasi dengan pusat $O(0, 0)$</th><th>Aturan</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>$90^\circ$ berlawanan arah jarum jam</td><td>$(x, y) \to (-y, x)$</td></tr>
+        <tr><td>$90^\circ$ searah jarum jam</td><td>$(x, y) \to (y, -x)$</td></tr>
+        <tr><td>$180^\circ$</td><td>$(x, y) \to (-x, -y)$</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Bila pusatnya bukan $O$ melainkan $P(a, b)$, kerjakan dalam tiga langkah:
+    hitung posisi titik relatif terhadap $P$ dengan mengurangkan $P$, putar
+    posisi itu memakai aturan di atas, lalu kembalikan dengan menambahkan $P$.
+    Khusus rotasi $180^\circ$ ada jalan pintas, yaitu $(x, y) \to (2a - x, 2b - y)$;
+    di situ pusat rotasi selalu menjadi titik tengah antara titik asal dan
+    bayangannya.
+  </p>
+
+  <h2>Dilatasi: memperbesar atau memperkecil</h2>
+  <p>
+    Dilatasi dengan pusat $O$ dan faktor skala $k$ memakai aturan
+    $(x, y) \to (kx, ky)$. Bila pusatnya $P(a, b)$, aturannya menjadi
+    $(x, y) \to (k(x - a) + a,\ k(y - b) + b)$.
+  </p>
+  <p>
+    Untuk $k > 1$ bangun membesar, untuk $0 < k < 1$ bangun mengecil, dan untuk
+    $k$ negatif bayangannya pindah ke seberang pusat. Setiap ruas garis menjadi
+    $k$ kali panjang semula, sedangkan luasnya menjadi $k^2$ kali. Karena itu
+    dilatasi dengan $k = 1/2$ membuat luas bayangan tinggal seperempatnya.
+  </p>
+  <p>
+    Satu ciri yang berguna untuk memeriksa gambar sendiri: pusat dilatasi,
+    titik asal, dan bayangannya selalu terletak pada satu garis lurus.
+  </p>
+
+  <h2>Bandingkan keempatnya</h2>
+  <p>
+    Segitiga $ABC$ dengan $A(1, 1)$, $B(3, 1)$, dan $C(1, 2)$ tergambar
+    putus-putus. Pilih sebuah transformasi, lalu perhatikan bayangannya yang
+    tergambar tegas.
+  </p>
+
+  <div class="kartu">
+    <div class="deret" id="pilihanUbahan" style="margin-bottom:.75rem"></div>
+    <div id="bidangBangun"></div>
+    <p class="kecil" id="keteranganUbahan" style="margin-top:.6rem"></p>
+  </div>
+
+  <h2>Urutan transformasi berpengaruh</h2>
+  <p>
+    Bila dua transformasi dikerjakan berurutan, hasilnya biasanya berubah
+    ketika urutannya dibalik. Ambil $A(-6, 1)$, translasi $T = (2, 3)$, dan
+    pencerminan terhadap sumbu-$Y$. Ditranslasi dahulu: $A(-6, 1) \to (-4, 4)$,
+    lalu dicerminkan menjadi $(4, 4)$. Dicerminkan dahulu: $A(-6, 1) \to (6, 1)$,
+    lalu ditranslasi menjadi $(8, 4)$. Jelas berbeda, jadi kerjakan selalu
+    menurut urutan yang disebut soal.
+  </p>
+
+  <h2>Cara menjawab pada latihan</h2>
+  <p>
+    Setiap soal menampilkan bangun asal sebagai garis putus-putus abu-abu.
+    Garis cermin ditandai garis putus-putus jingga, dan pusat rotasi atau
+    dilatasi ditandai kotak hitam. Semua itu hanya gambar bantu; yang dinilai
+    adalah titik yang kamu taruh.
+  </p>
+  <p>
+    Ada dua cara menaruh titik, dan keduanya sama sahnya:
+  </p>
+  <ul>
+    <li>Ketuk langsung titik yang kamu maksud pada bidang. Mengetuk titik yang
+      sama sekali lagi akan membatalkannya.</li>
+    <li>Tekan tombol "Ketik koordinat", isi kotak $x$ dan $y$, lalu tekan
+      Tambahkan. Cara ini lebih tepat pada layar kecil.</li>
+  </ul>
+  <p>
+    Pada soal yang meminta gambar bangun, ketuklah titik-titik sudutnya
+    berurutan mengelilingi bangun, boleh mulai dari sudut mana pun dan boleh
+    ke arah mana pun. Angka kecil di sebelah titik menunjukkan urutan
+    ketukanmu. Pada soal yang hanya meminta titik-titik bayangan, urutannya
+    tidak diperiksa.
+  </p>
+
+  <h2>Sudah paham?</h2>
+  <p>
+    <a class="tombol utama" href="../latihan.html?kelas=9&amp;bab=transformasi&amp;mode=mandiri">
+      Latihan mandiri
+    </a>
+  </p>
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../komponen/bidang-koordinat.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  ['p', 'li', 'td', 'th', 'h1', 'h2', 'h3'].forEach(function (tag) {
+    Array.prototype.forEach.call(document.querySelectorAll('main ' + tag), function (n) {
+      if (n.children.length === 0 && n.textContent.indexOf('$') >= 0) {
+        n.innerHTML = Rumus.keHTML(n.textContent);
+      }
+    });
+  });
+
+  var GRID = { xMin: -6, xMax: 6, yMin: -6, yMax: 6 };
+
+  function tulisTitik(t) { return '(' + t[0] + ', ' + t[1] + ')'; }
+
+  /* ---------- satu titik, delapan bayangan ---------- */
+
+  var ubahanTitik = [
+    ['Refleksi sumbu-$X$', function (p) { return [p[0], -p[1]]; }],
+    ['Refleksi sumbu-$Y$', function (p) { return [-p[0], p[1]]; }],
+    ['Refleksi garis $y = x$', function (p) { return [p[1], p[0]]; }],
+    ['Refleksi garis $y = -x$', function (p) { return [-p[1], -p[0]]; }],
+    ['Translasi $T = (3, -2)$', function (p) { return [p[0] + 3, p[1] - 2]; }],
+    ['Rotasi $90^\\circ$ berlawanan jarum jam, pusat $O$', function (p) { return [-p[1], p[0]]; }],
+    ['Rotasi $180^\\circ$, pusat $O$', function (p) { return [-p[0], -p[1]]; }],
+    ['Dilatasi $k = 2$, pusat $O$', function (p) { return [2 * p[0], 2 * p[1]]; }]
+  ];
+
+  var elDaftar = document.getElementById('daftarBayangan');
+
+  function gambarBayangan(titik) {
+    if (!titik.length) {
+      elDaftar.innerHTML = '<p class="kecil samar">Ketuk satu titik pada bidang di atas, ' +
+        'atau tekan "Ketik koordinat" lalu masukkan nilai x dan y.</p>';
+      return;
+    }
+    var p = titik[0];
+    elDaftar.innerHTML = '<div class="tabel-gulir"><table><tbody>' +
+      ubahanTitik.map(function (u) {
+        return '<tr><td>' + Rumus.keHTML(u[0]) + '</td><td>' +
+          Rumus.keHTML('$' + tulisTitik(p) + ' \\to ' + tulisTitik(u[1](p)) + '$') +
+          '</td></tr>';
+      }).join('') + '</tbody></table></div>';
+  }
+
+  BidangKoordinat.buat(document.getElementById('bidangTitik'), {
+    grid: GRID,
+    mode: 'titik',
+    maks: 1,
+    onUbah: gambarBayangan
+  });
+  gambarBayangan([]);
+
+  /* ---------- satu segitiga, satu transformasi terpilih ---------- */
+
+  var ASAL = [[1, 1], [3, 1], [1, 2]];
+
+  var ubahanBangun = [
+    {
+      nama: 'Refleksi sumbu-$X$',
+      f: function (p) { return [p[0], -p[1]]; },
+      cermin: [[0, 0], [1, 0]],
+      catatan: 'Aturannya $(x, y) \\to (x, -y)$. Bayangannya kongruen, hanya terbalik ke bawah.'
+    },
+    {
+      nama: 'Refleksi garis $y = x$',
+      f: function (p) { return [p[1], p[0]]; },
+      cermin: [[0, 0], [1, 1]],
+      catatan: 'Aturannya $(x, y) \\to (y, x)$: absis dan ordinat bertukar tempat.'
+    },
+    {
+      nama: 'Translasi $T = (2, -3)$',
+      f: function (p) { return [p[0] + 2, p[1] - 3]; },
+      catatan: 'Aturannya $(x, y) \\to (x + 2, y - 3)$. Seluruh bangun bergeser utuh, ' +
+        'tanpa berputar dan tanpa berubah ukuran.'
+    },
+    {
+      nama: 'Rotasi $90^\\circ$ berlawanan jarum jam',
+      f: function (p) { return [-p[1], p[0]]; },
+      pusat: [0, 0],
+      catatan: 'Aturannya $(x, y) \\to (-y, x)$ dengan pusat $O$. Bangun pindah dari ' +
+        'kuadran I ke kuadran II dengan ukuran yang tetap.'
+    },
+    {
+      nama: 'Rotasi $180^\\circ$',
+      f: function (p) { return [-p[0], -p[1]]; },
+      pusat: [0, 0],
+      catatan: 'Aturannya $(x, y) \\to (-x, -y)$. Pusat rotasi menjadi titik tengah ' +
+        'antara setiap titik dan bayangannya.'
+    },
+    {
+      nama: 'Dilatasi $k = 2$',
+      f: function (p) { return [2 * p[0], 2 * p[1]]; },
+      pusat: [0, 0],
+      catatan: 'Aturannya $(x, y) \\to (2x, 2y)$. Setiap sisi menjadi dua kali panjang ' +
+        'semula dan luasnya menjadi empat kali. Bayangannya sebangun, bukan kongruen.'
+    }
+  ];
+
+  var elPilihan = document.getElementById('pilihanUbahan');
+  var elBidang = document.getElementById('bidangBangun');
+  var elKeterangan = document.getElementById('keteranganUbahan');
+
+  function tampilkan(u) {
+    Array.prototype.forEach.call(elPilihan.children, function (b) {
+      var terpilih = b.dataset.nama === u.nama;
+      b.classList.toggle('utama', terpilih);
+      b.setAttribute('aria-pressed', terpilih ? 'true' : 'false');
+    });
+    /* Komponen digambar ulang setiap kali pilihannya berganti. Bidangnya
+       kecil, jadi menggambar ulang lebih sederhana daripada menyimpan
+       keadaan lama. */
+    BidangKoordinat.buat(elBidang, {
+      grid: GRID,
+      mode: 'bangun',
+      terkunci: true,
+      nilaiAwal: ASAL.map(u.f),
+      acuan: [{ titik: ASAL, label: ['A', 'B', 'C'] }],
+      cermin: u.cermin,
+      pusat: u.pusat,
+      labelPusat: u.pusat ? 'O' : ''
+    });
+    elKeterangan.innerHTML = Rumus.keHTML(u.catatan + ' Bayangannya: ' +
+      ASAL.map(u.f).map(tulisTitik).join(', ') + '.');
+  }
+
+  ubahanBangun.forEach(function (u) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tombol mungil';
+    b.dataset.nama = u.nama;
+    b.innerHTML = Rumus.keHTML(u.nama);
+    b.addEventListener('click', function () { tampilkan(u); });
+    elPilihan.appendChild(b);
+  });
+  tampilkan(ubahanBangun[0]);
+})();
+</script>
+</body>
+</html>

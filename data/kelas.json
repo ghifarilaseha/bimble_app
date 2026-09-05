@@ -2,19 +2,9 @@
   "_catatan": "Diperbarui sekali tiap tahun ajaran. Nama di sini dipakai untuk saran pengetikan dan untuk mengetahui siapa yang belum mengerjakan.",
   "tahunAjaran": "2026/2027",
   "kelas": [
+    
     {
-      "kode": "7A",
-      "tingkat": 7,
-      "siswa": [
-        "Ahmad Fauzi", "Aisyah Rahmawati", "Bagas Prasetyo", "Budi Santoso",
-        "Citra Maharani", "Dimas Anggara", "Eka Nurhaliza", "Fajar Ramadhan",
-        "Gita Puspita", "Hendra Wijaya", "Indah Permatasari", "Joko Susilo",
-        "Kartika Sari", "Lukman Hakim", "Maya Anggraini", "Nabila Zahra",
-        "Oktavian Putra", "Putri Ayu Lestari", "Rizky Ananda", "Salsabila Adzra"
-      ]
-    },
-    {
-      "kode": "7B",
+      "kode": "7",
       "tingkat": 7,
       "siswa": [
         "Adit Nugroho", "Anisa Fitriani", "Bima Saputra", "Cahya Ningrum",
@@ -25,7 +15,7 @@
       ]
     },
     {
-      "kode": "8A",
+      "kode": "8",
       "tingkat": 8,
       "siswa": [
         "Alif Rahman", "Bunga Citra", "Candra Wibowo", "Delima Sari",
@@ -36,7 +26,7 @@
       ]
     },
     {
-      "kode": "9A",
+      "kode": "9",
       "tingkat": 9,
       "siswa": [
         "Andra Firmansyah", "Bella Safira", "Cakra Buana", "Dinda Ayuningtyas",

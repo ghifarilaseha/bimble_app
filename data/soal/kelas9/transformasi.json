@@ -1,0 +1,1305 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 1,
+    "bab": "transformasi",
+    "judul": "Transformasi Geometri",
+    "versi": "2026-09-05"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-05",
+  "soal": [
+    {
+      "id": "tr-01",
+      "level": 1,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(2, 0)$, $B(6, 1)$, dan $C(4, 4)$ dicerminkan terhadap sumbu-$X$. Taruh ketiga titik bayangannya, yaitu $A'$, $B'$, dan $C'$.",
+      "grid": {
+        "xMin": -4,
+        "xMax": 8,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                2,
+                0
+              ],
+              [
+                6,
+                1
+              ],
+              [
+                4,
+                4
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ],
+        "cermin": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      "pembahasan": "UGVuY2VybWluYW4gdGVyaGFkYXAgc3VtYnUtJFgkIG1lbWFrYWkgYXR1cmFuICQoeCwgeSkgXHRvICh4LCAteSkkOiBoYW55YSB0YW5kYSBvcmRpbmF0IHlhbmcgYmVydWJhaC4gSmFkaSAkQSgyLCAwKSBcdG8gQScoMiwgMCkkLCAkQig2LCAxKSBcdG8gQicoNiwgLTEpJCwgZGFuICRDKDQsIDQpIFx0byBDJyg0LCAtNCkkLg==",
+      "kunciTampil": "W1syLDBdLFs2LC0xXSxbNCwtNF1d",
+      "jumlahKunci": 3,
+      "kunci": [
+        "8eaed3d374b14626b1d31c13ed946aec8753efc968d8b6cd98f3260f9622c48d",
+        "967994c0e1f8c3dcbef482736e2290d02401cf4195f0aae5a2e717ec51448699",
+        "eb946458c777702d75ceba76b7c7f5bdcba4e16385c25bacb4afed901cd8c11f"
+      ],
+      "lanjutan": {
+        "level": 1,
+        "tipe": "pg",
+        "pertanyaan": "Titik sudut manakah yang bayangannya berimpit dengan titik asalnya?",
+        "opsi": {
+          "a": "$A$, karena $A$ terletak pada sumbu cermin",
+          "b": "$B$, karena ordinatnya hanya $1$",
+          "c": "$C$, karena $C$ titik yang paling tinggi",
+          "d": "Tidak ada, semua titik pasti berpindah"
+        },
+        "acakOpsi": false,
+        "id": "tr-01-l",
+        "pembahasan": "SmFyYWsgJEEkIGtlIHN1bWJ1LSRYJCBhZGFsYWggbm9sLCBzZWhpbmdnYSBiYXlhbmdhbm55YSBqdWdhIGJlcmphcmFrIG5vbCBkYXJpIHN1bWJ1IGl0dS4gVGl0aWsgeWFuZyB0ZXJsZXRhayBwYWRhIGdhcmlzIGNlcm1pbiBzZWxhbHUgdGV0YXAgZGkgdGVtcGF0bnlhLg==",
+        "kunci": "6b4cc258a79c8df77df27da388c31b86499e057c5496525581b9dd27c56836ed"
+      }
+    },
+    {
+      "id": "tr-02",
+      "level": 1,
+      "tipe": "koordinat",
+      "varian": "bangun",
+      "aktif": true,
+      "pertanyaan": "Persegi panjang $KLMN$ dengan $K(1, 2)$, $L(5, 2)$, $M(5, 5)$, dan $N(1, 5)$ dicerminkan terhadap sumbu-$Y$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                1,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            "label": [
+              "K",
+              "L",
+              "M",
+              "N"
+            ]
+          }
+        ],
+        "cermin": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "pembahasan": "UGVuY2VybWluYW4gdGVyaGFkYXAgc3VtYnUtJFkkIG1lbWFrYWkgYXR1cmFuICQoeCwgeSkgXHRvICgteCwgeSkkLCBqYWRpICRLJygtMSwgMikkLCAkTCcoLTUsIDIpJCwgJE0nKC01LCA1KSQsIGRhbiAkTicoLTEsIDUpJC4gQmVudHVrIGRhbiB1a3VyYW5ueWEgdGlkYWsgYmVydWJhaCwgaGFueWEgYmVycGluZGFoIGtlIGtpcmkgc3VtYnUtJFkkLg==",
+      "kunciTampil": "W1stMSwyXSxbLTUsMl0sWy01LDVdLFstMSw1XV0=",
+      "jumlahKunci": 4,
+      "kunci": [
+        "f9358f32b93f95138aedaefd883e4001af80b5d55eb647036dea243ddccb1339",
+        "2b2d0d5b28666b0b2b38240f5c5f34678fd2a3555af73b30fde0d96b3f556bce",
+        "04d15bb535d841fad7d519517a3d53c3c287aa8390e61712d167a800bf374210",
+        "109b85e36c39726536f003f8543d7cc07c0584f6ee2415e041326ed890c8ed3b"
+      ],
+      "lanjutan": {
+        "level": 1,
+        "tipe": "isian",
+        "pertanyaan": "Berapa satuan jarak antara sisi $KN$ dan bayangannya, yaitu sisi $K'N'$?",
+        "id": "tr-02-l",
+        "pembahasan": "U2lzaSAkS04kIHRlcmxldGFrIHBhZGEgZ2FyaXMgJHggPSAxJCBkYW4gYmF5YW5nYW5ueWEgcGFkYSBnYXJpcyAkeCA9IC0xJC4gSmFyYWtueWEgJDEgKyAxID0gMiQgc2F0dWFuLCB5YWl0dSBkdWEga2FsaSBqYXJhayAkS04kIGtlIGNlcm1pbi4=",
+        "kunci": [
+          "d0fc8c5a7fdcaabe34a65cb27959618882273a1f7f5793f99b84952cb64dda2d"
+        ]
+      }
+    },
+    {
+      "id": "tr-03",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $PQR$ dengan $P(-2, 1)$, $Q(3, 1)$, dan $R(3, 4)$ dicerminkan terhadap garis $y = x$ yang sudah ditandai jingga. Taruh ketiga titik bayangannya.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -2,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "label": [
+              "P",
+              "Q",
+              "R"
+            ]
+          }
+        ],
+        "cermin": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "pembahasan": "UGVuY2VybWluYW4gdGVyaGFkYXAgZ2FyaXMgJHkgPSB4JCBtZW51a2FyIGFic2lzIGRlbmdhbiBvcmRpbmF0OiAkKHgsIHkpIFx0byAoeSwgeCkkLiBKYWRpICRQKC0yLCAxKSBcdG8gUCcoMSwgLTIpJCwgJFEoMywgMSkgXHRvIFEnKDEsIDMpJCwgZGFuICRSKDMsIDQpIFx0byBSJyg0LCAzKSQu",
+      "kunciTampil": "W1sxLC0yXSxbMSwzXSxbNCwzXV0=",
+      "jumlahKunci": 3,
+      "kunci": [
+        "44c1be53c46a0b76631d17708d9037eb78b88be02f02118d1964f4fb18b564aa",
+        "d175d22b5283b168d5ac44f421dda25603436a56d14161b84062f8c2c426e4ce",
+        "bba286f3011eff48790b649cae56ba3ecb7a6a9712b99ce1d0b1f64d60ef7387"
+      ],
+      "lanjutan": {
+        "level": 2,
+        "tipe": "pg",
+        "pertanyaan": "Aturan pemetaan yang dipakai pada pencerminan terhadap garis $y = x$ adalah ...",
+        "opsi": {
+          "a": "$(x, y) \\to (y, x)$",
+          "b": "$(x, y) \\to (-y, -x)$",
+          "c": "$(x, y) \\to (-x, y)$",
+          "d": "$(x, y) \\to (x, -y)$"
+        },
+        "acakOpsi": true,
+        "id": "tr-03-l",
+        "pembahasan": "R2FyaXMgJHkgPSB4JCBtZW51a2FyIHBlcmFuIHN1bWJ1LSRYJCBkYW4gc3VtYnUtJFkkLCBzZWhpbmdnYSBhYnNpcyBkYW4gb3JkaW5hdCBzZXRpYXAgdGl0aWsgaWt1dCBiZXJ0dWthci4gQXR1cmFuICQoeCwgeSkgXHRvICgteSwgLXgpJCBiZXJsYWt1IHVudHVrIGdhcmlzICR5ID0gLXgkLg==",
+        "kunci": "7d9ebea09eea1aba175e62965a3ed65557a4cbb5faaf4dc2b69668219374e5c4"
+      }
+    },
+    {
+      "id": "tr-04",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "bangun",
+      "aktif": true,
+      "pertanyaan": "Trapesium $ABCD$ dengan $A(-3, 1)$, $B(-1, 1)$, $C(-1, 5)$, dan $D(-3, 4)$ dicerminkan terhadap garis $x = 1$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -3,
+                1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                -1,
+                5
+              ],
+              [
+                -3,
+                4
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          }
+        ],
+        "cermin": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "pembahasan": "UGVuY2VybWluYW4gdGVyaGFkYXAgZ2FyaXMgdGVnYWsgJHggPSBoJCBtZW1ha2FpIGF0dXJhbiAkKHgsIHkpIFx0byAoMmggLSB4LCB5KSQsIGRpIHNpbmkgJCh4LCB5KSBcdG8gKDIgLSB4LCB5KSQuIFBlcmlrc2EgZGVuZ2FuIGphcmFrOiAkQSQgYmVyYWRhICQ0JCBzYXR1YW4gZGkga2lyaSBnYXJpcyAkeCA9IDEkLCBtYWthICRBJyQgYmVyYWRhICQ0JCBzYXR1YW4gZGkga2FuYW5ueWEsIHlhaXR1IHBhZGEgJHggPSA1JC4gT3JkaW5hdCBzZXRpYXAgdGl0aWsgdGlkYWsgYmVydWJhaC4=",
+      "kunciTampil": "W1s1LDFdLFszLDFdLFszLDVdLFs1LDRdXQ==",
+      "jumlahKunci": 4,
+      "kunci": [
+        "f9d2359280b87da6e3a603556c8969ac8ab46fd8a36f30d1289dc40e8ff47e12",
+        "b68a24a04d1ff8113f12819f259b3a3593cce2b4173d9806c76cbe2f432e9200",
+        "f535ea6cc395bbb3acff92838e23a98cdffc32bddfdcfef964f289c31f8fad29",
+        "89b3874acaef54abde293f504d30174a19ddc79d0d07e77f93be17c4c79c17d2"
+      ]
+    },
+    {
+      "id": "tr-05",
+      "level": 3,
+      "tipe": "koordinat",
+      "varian": "bangun",
+      "aktif": true,
+      "pertanyaan": "Jajargenjang $ABCD$ dengan $A(1, 1)$, $B(4, 2)$, $C(5, 5)$, dan $D(2, 4)$ dicerminkan terhadap garis $y = -x$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                1,
+                1
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                5,
+                5
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          }
+        ],
+        "cermin": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      },
+      "pembahasan": "QXR1cmFuIHBlbmNlcm1pbmFuIHRlcmhhZGFwIGdhcmlzICR5ID0gLXgkIGFkYWxhaCAkKHgsIHkpIFx0byAoLXksIC14KSQuIEphZGkgJEEoMSwgMSkgXHRvIEEnKC0xLCAtMSkkLCAkQig0LCAyKSBcdG8gQicoLTIsIC00KSQsICRDKDUsIDUpIFx0byBDJygtNSwgLTUpJCwgZGFuICREKDIsIDQpIFx0byBEJygtNCwgLTIpJC4=",
+      "kunciTampil": "W1stMSwtMV0sWy0yLC00XSxbLTUsLTVdLFstNCwtMl1d",
+      "jumlahKunci": 4,
+      "kunci": [
+        "c604f38675a4c1117701320ae49fb64796468d890b85744c19c8d80c5becf60a",
+        "9fe1df4ac7b93c15a79279c8b04e82882fc4bbf7c1b71c3622658423a0322cad",
+        "a20a2ad0aeecdf87298c1b6526b6a1767dfb59bbaa63eac57d2f89499e0fc161",
+        "09cc31a422054f909cf90482aea24a083336a7fa3908204bbf93210d50b2a660"
+      ],
+      "lanjutan": {
+        "level": 2,
+        "tipe": "isian",
+        "pertanyaan": "Luas jajargenjang $ABCD$ adalah $8$ satuan luas. Berapa satuan luas bayangannya?",
+        "id": "tr-05-l",
+        "pembahasan": "VGlkYWsgcGVybHUgZGloaXR1bmcgdWxhbmcuIFBlbmNlcm1pbmFuIGFkYWxhaCB0cmFuc2Zvcm1hc2kgaXNvbWV0cmk6IGJlbnR1ayBkYW4gdWt1cmFubnlhIHRpZGFrIGJlcnViYWgsIGhhbnlhIGxldGFrbnlhLiBLYXJlbmEgaXR1IGx1YXMgYmF5YW5nYW5ueWEgdGV0YXAgJDgkIHNhdHVhbiBsdWFzLg==",
+        "kunci": [
+          "7caa6ba39df6b236172d7357a5e396ef8cc392506cea42a7e590ba5dfb40531e"
+        ]
+      }
+    },
+    {
+      "id": "tr-06",
+      "level": 1,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(-4, 2)$, $B(-1, 2)$, dan $C(-1, 4)$ ditranslasi oleh $T = (5, -2)$, yaitu $5$ satuan ke kanan dan $2$ satuan ke bawah. Taruh ketiga titik bayangannya.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -4,
+                2
+              ],
+              [
+                -1,
+                2
+              ],
+              [
+                -1,
+                4
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ]
+      },
+      "pembahasan": "VHJhbnNsYXNpICQoYSwgYikkIG1lbWFrYWkgYXR1cmFuICQoeCwgeSkgXHRvICh4ICsgYSwgeSArIGIpJC4gSmFkaSAkQSgtNCwgMikgXHRvIEEnKDEsIDApJCwgJEIoLTEsIDIpIFx0byBCJyg0LCAwKSQsIGRhbiAkQygtMSwgNCkgXHRvIEMnKDQsIDIpJC4=",
+      "kunciTampil": "W1sxLDBdLFs0LDBdLFs0LDJdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "f49af27b0de9bf57177e2e2a16a612f2c1f141cc26835df0bc035a315aa81ee7",
+        "79d095de464feaf3b16411632dc69fcec374fce641769cd451248a2c177cbb5e",
+        "724069d61252aa2f6149caec139b4783c5a14c90a49b9d8f58353a80c1108a54"
+      ],
+      "lanjutan": {
+        "level": 1,
+        "tipe": "pg",
+        "pertanyaan": "Titik sudut bayangan manakah yang terletak pada sumbu-$X$?",
+        "opsi": {
+          "a": "$A'$ dan $B'$",
+          "b": "$B'$ dan $C'$",
+          "c": "hanya $A'$",
+          "d": "hanya $C'$"
+        },
+        "acakOpsi": true,
+        "id": "tr-06-l",
+        "pembahasan": "VGl0aWsgJEEkIGRhbiAkQiQgc2FtYS1zYW1hIGJlcm9yZGluYXQgJDIkLiBTZXRlbGFoIGRpZ2VzZXIgJDIkIHNhdHVhbiBrZSBiYXdhaCwgb3JkaW5hdG55YSBtZW5qYWRpICQwJCwgc2VoaW5nZ2Ega2VkdWEgYmF5YW5nYW5ueWEgdGVwYXQgYmVyYWRhIGRpIHN1bWJ1LSRYJC4=",
+        "kunci": "f17fcfa38e3bfb1b4538af2deb0071663c2028b403f565bbd85be3fb9d8bbaa0"
+      }
+    },
+    {
+      "id": "tr-07",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Titik $P(-3, 4)$ ditranslasi oleh $T$ sehingga bayangannya $P'(1, 1)$. Dengan translasi $T$ yang sama, taruh bayangan ketiga titik sudut segitiga $PQR$ dengan $P(-3, 4)$, $Q(0, 4)$, dan $R(-3, 7)$.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -4,
+        "yMax": 8
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -3,
+                4
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                -3,
+                7
+              ]
+            ],
+            "label": [
+              "P",
+              "Q",
+              "R"
+            ]
+          }
+        ]
+      },
+      "pembahasan": "S29tcG9uZW4gdHJhbnNsYXNpIGRpY2FyaSBkYXJpIHNlbGlzaWgga29vcmRpbmF0OiAkYSA9IDEgLSAoLTMpID0gNCQgZGFuICRiID0gMSAtIDQgPSAtMyQsIGphZGkgJFQgPSAoNCwgLTMpJC4gU2VtdWEgdGl0aWsgZGlnZXNlciBkZW5nYW4gcGFzYW5nYW4gYmlsYW5nYW4geWFuZyBzYW1hLCBzZWhpbmdnYSAkUCcoMSwgMSkkLCAkUScoNCwgMSkkLCBkYW4gJFInKDEsIDQpJC4=",
+      "kunciTampil": "W1sxLDFdLFs0LDFdLFsxLDRdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "656b2f3bd52f9543141aebd7accb6d56c83840aaf159d92799429b1f7a767bb7",
+        "a5ae0527a3cc21e76b9a806d39700393937f74c485c3bb8a2f6756425f01031a",
+        "aacf3e26f6a45b6ef1aebbf7395e4e6c98ea5a7343d4b4a39d11a7b0b168726f"
+      ],
+      "lanjutan": {
+        "level": 2,
+        "tipe": "pg",
+        "pertanyaan": "Translasi $T$ yang dipakai pada soal tadi adalah ...",
+        "opsi": {
+          "a": "$T = (4, -3)$",
+          "b": "$T = (-4, 3)$",
+          "c": "$T = (4, 3)$",
+          "d": "$T = (-4, -3)$"
+        },
+        "acakOpsi": true,
+        "id": "tr-07-l",
+        "pembahasan": "RGFyaSAkUCgtMywgNCkkIGtlICRQJygxLCAxKSQgdGl0aWtueWEgYmVyZ2VyYWsgJDQkIHNhdHVhbiBrZSBrYW5hbiBkYW4gJDMkIHNhdHVhbiBrZSBiYXdhaCwgamFkaSAkVCA9ICg0LCAtMykkLg==",
+        "kunci": "d81e387fb6590d520c3f6586d1a7e2149362a49f069198e7c389ccb415a88543"
+      }
+    },
+    {
+      "id": "tr-08",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "bangun",
+      "aktif": true,
+      "pertanyaan": "Persegi $ABCD$ dengan $A(-5, -1)$, $B(-2, -1)$, $C(-2, 2)$, dan $D(-5, 2)$ ditranslasi oleh $T_1 = (3, 4)$, lalu dilanjutkan translasi $T_2 = (2, -1)$. Gambarlah bayangan akhirnya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -5,
+                -1
+              ],
+              [
+                -2,
+                -1
+              ],
+              [
+                -2,
+                2
+              ],
+              [
+                -5,
+                2
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          }
+        ]
+      },
+      "pembahasan": "RHVhIHRyYW5zbGFzaSBiZXJ1cnV0YW4gY3VrdXAgZGlqdW1sYWhrYW4ga29tcG9uZW5ueWE6ICQoMywgNCkgKyAoMiwgLTEpID0gKDUsIDMpJC4gSmFkaSAkQSgtNSwgLTEpIFx0byBBJycoMCwgMikkLCAkQicnKDMsIDIpJCwgJEMnJygzLCA1KSQsIGRhbiAkRCcnKDAsIDUpJC4=",
+      "kunciTampil": "W1swLDJdLFszLDJdLFszLDVdLFswLDVdXQ==",
+      "jumlahKunci": 4,
+      "kunci": [
+        "e684184a5fc0f000ebf9ee6e426a78674adc078d13e2f8fed0cfcbd15c86f108",
+        "2b3615367314b603f7d1529c5615c061718732ed36090ddf62b381c622a9c2d8",
+        "f8f3e0a638da135b89612d07b5a713d39964b4e96531e2aff42f80730e65a8cf",
+        "9a361117c8da225d75da0d4875929ceb84067b278bcddc14cbaa72106ed938aa"
+      ],
+      "lanjutan": {
+        "level": 2,
+        "tipe": "pg",
+        "pertanyaan": "Satu translasi tunggal yang hasilnya sama dengan $T_1$ dilanjutkan $T_2$ adalah ...",
+        "opsi": {
+          "a": "$T = (5, 3)$",
+          "b": "$T = (1, 5)$",
+          "c": "$T = (6, -4)$",
+          "d": "$T = (5, -3)$"
+        },
+        "acakOpsi": true,
+        "id": "tr-08-l",
+        "pembahasan": "S29tcG9uZW4gbWVuZGF0YXJueWEgZGlqdW1sYWhrYW4sICQzICsgMiA9IDUkLCBiZWdpdHUgcHVsYSBrb21wb25lbiB0ZWdha255YSwgJDQgKyAoLTEpID0gMyQuIEthcmVuYSBpdHUgJFQgPSAoNSwgMykkLg==",
+        "kunci": "49bfb4726ca878af02093368914a908e7c97d481de2af7ebf747d447f7bdc024"
+      }
+    },
+    {
+      "id": "tr-09",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Yang tergambar putus-putus adalah bayangan segitiga $ABC$ oleh translasi $T = (-4, 3)$, yaitu segitiga $A'B'C'$ dengan $A'(2, 1)$, $B'(5, 1)$, dan $C'(3, 6)$. Taruh ketiga titik sudut segitiga $ABC$ yang asli.",
+      "grid": {
+        "xMin": -2,
+        "xMax": 10,
+        "yMin": -4,
+        "yMax": 8
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                2,
+                1
+              ],
+              [
+                5,
+                1
+              ],
+              [
+                3,
+                6
+              ]
+            ],
+            "label": [
+              "A'",
+              "B'",
+              "C'"
+            ]
+          }
+        ]
+      },
+      "pembahasan": "S2FyZW5hIHlhbmcgZGlrZXRhaHVpIGp1c3RydSBiYXlhbmdhbm55YSwgYXJhaCB0cmFuc2xhc2lueWEgZGliYWxpazogJCh4LCB5KSA9ICh4JyArIDQsIHknIC0gMykkLiBKYWRpICRBJygyLCAxKSBcdG8gQSg2LCAtMikkLCAkQicoNSwgMSkgXHRvIEIoOSwgLTIpJCwgZGFuICRDJygzLCA2KSBcdG8gQyg3LCAzKSQuIFBlcmlrc2Ega2VtYmFsaSBkZW5nYW4gbWVuZXJhcGthbiAkVCA9ICgtNCwgMykkIHBhZGEgJEEkOyBoYXNpbG55YSBoYXJ1cyBrZW1iYWxpIGtlICRBJyQu",
+      "kunciTampil": "W1s2LC0yXSxbOSwtMl0sWzcsM11d",
+      "jumlahKunci": 3,
+      "kunci": [
+        "3d3f9633a87169d023bb911f473e17df6f7316a95a7dbc2ce95551e5710cf577",
+        "7d3c4be8a5df7ba99f38d24dda0089abb8e28db1786dc8ff0e897c44bbef9734",
+        "b49543fe582610e2da81a9c0ffba0ec7fe6708cfd20b5a1a73333217a7841d93"
+      ]
+    },
+    {
+      "id": "tr-10",
+      "level": 3,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(-6, 1)$, $B(-3, 1)$, dan $C(-3, 3)$ ditranslasi oleh $T = (2, 3)$, kemudian hasilnya dicerminkan terhadap sumbu-$Y$. Taruh ketiga titik bayangan akhirnya, yaitu $A''$, $B''$, dan $C''$.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -4,
+        "yMax": 8
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -6,
+                1
+              ],
+              [
+                -3,
+                1
+              ],
+              [
+                -3,
+                3
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ],
+        "cermin": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "pembahasan": "S2VyamFrYW4gYmVydXJ1dGFuLiBUcmFuc2xhc2kgZGFodWx1LCAkKHggKyAyLCB5ICsgMykkLCBtZW5naGFzaWxrYW4gJEEnKC00LCA0KSQsICRCJygtMSwgNCkkLCBkYW4gJEMnKC0xLCA2KSQuIEtlbXVkaWFuIHBlbmNlcm1pbmFuIHRlcmhhZGFwIHN1bWJ1LSRZJCBtZW1iYWxpayB0YW5kYSBhYnNpcywgc2VoaW5nZ2EgJEEnJyg0LCA0KSQsICRCJycoMSwgNCkkLCBkYW4gJEMnJygxLCA2KSQu",
+      "kunciTampil": "W1s0LDRdLFsxLDRdLFsxLDZdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "ba492176ea7e65de8a146c79506c551e381b9cb869b594c84987a2cb93400641",
+        "9ae1661b466c35dca471df40d26f19a5c9dac023b73be61077a2f97ecffd7792",
+        "d3cf84fa98a000ef516ddf58f2d7b0b5582c7845c6e7fd78a9db23adfb7eb93a"
+      ],
+      "lanjutan": {
+        "level": 3,
+        "tipe": "pg",
+        "pertanyaan": "Bila urutannya dibalik, yaitu dicerminkan terhadap sumbu-$Y$ dahulu baru ditranslasi oleh $T = (2, 3)$, bayangan titik $A$ menjadi ...",
+        "opsi": {
+          "a": "$(8, 4)$",
+          "b": "$(4, 4)$",
+          "c": "$(-4, 4)$",
+          "d": "$(8, -4)$"
+        },
+        "acakOpsi": true,
+        "id": "tr-10-l",
+        "pembahasan": "RGljZXJtaW5rYW4gZGFodWx1OiAkQSgtNiwgMSkgXHRvICg2LCAxKSQuIEJhcnUgZGl0cmFuc2xhc2k6ICQoNiArIDIsIDEgKyAzKSA9ICg4LCA0KSQuIEhhc2lsbnlhIGJlcmJlZGEgZGVuZ2FuIHNlYmVsdW1ueWEsIGphZGkga29tcG9zaXNpIHRyYW5zZm9ybWFzaSB1bXVtbnlhIHRpZGFrIGJlcnNpZmF0IGtvbXV0YXRpZjsgdXJ1dGFuIGJlcnBlbmdhcnVoLg==",
+        "kunci": "8ee72e9fa4d3d7ff21f5e9221c6a1490326750b8eca1fc47859465fadec85f55"
+      }
+    },
+    {
+      "id": "tr-11",
+      "level": 1,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(1, 1)$, $B(4, 1)$, dan $C(4, 3)$ dirotasi $180^\\circ$ dengan pusat $O(0, 0)$. Taruh ketiga titik bayangannya.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                1,
+                1
+              ],
+              [
+                4,
+                1
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ],
+        "pusat": [
+          0,
+          0
+        ],
+        "labelPusat": "O"
+      },
+      "pembahasan": "Um90YXNpICQxODBeXGNpcmMkIGRlbmdhbiBwdXNhdCAkTyQgbWVtYWthaSBhdHVyYW4gJCh4LCB5KSBcdG8gKC14LCAteSkkLiBKYWRpICRBJygtMSwgLTEpJCwgJEInKC00LCAtMSkkLCBkYW4gJEMnKC00LCAtMykkLiBTZWx1cnVoIGJhbmd1biBwaW5kYWggZGFyaSBrdWFkcmFuIEkga2Uga3VhZHJhbiBJSUku",
+      "kunciTampil": "W1stMSwtMV0sWy00LC0xXSxbLTQsLTNdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "1dfc1423a3d55e9b6047ab234687ed314fceafe93e4669a84de1f8b2f3a2c620",
+        "7001bd25f108213f681cc68cc894a4f496c59de01ac100044935a37464b72cdb",
+        "81ba5845b3f00e2129b526d3ecf56c2ef34d3e5c19a5d4250e90c198a6dd6231"
+      ],
+      "lanjutan": {
+        "level": 1,
+        "tipe": "isian",
+        "pertanyaan": "Berapa satuan jarak titik $C$ ke pusat rotasi?",
+        "id": "tr-11-l",
+        "pembahasan": "RGVuZ2FuIHRlb3JlbWEgUHl0aGFnb3JhcywgJE9DID0gXHNxcnR7NF4yICsgM14yfSA9IFxzcXJ0ezI1fSA9IDUkIHNhdHVhbi4gUGFkYSByb3Rhc2ksIGphcmFrIHNldGlhcCB0aXRpayBrZSBwdXNhdCBzZWxhbHUgdGV0YXAsIHNlaGluZ2dhICRPQyckIGp1Z2EgJDUkIHNhdHVhbi4=",
+        "kunci": [
+          "aeb4acb09757766ab7c209a8ba0c2735e92ab791f79fce9d60fb899067406311"
+        ]
+      }
+    },
+    {
+      "id": "tr-12",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "bangun",
+      "aktif": true,
+      "pertanyaan": "Segi empat $KLMN$ dengan $K(2, 1)$, $L(5, 1)$, $M(5, 3)$, dan $N(2, 4)$ dirotasi $90^\\circ$ berlawanan arah jarum jam dengan pusat $O(0, 0)$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                2,
+                1
+              ],
+              [
+                5,
+                1
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "label": [
+              "K",
+              "L",
+              "M",
+              "N"
+            ]
+          }
+        ],
+        "pusat": [
+          0,
+          0
+        ],
+        "labelPusat": "O"
+      },
+      "pembahasan": "Um90YXNpICQ5MF5cY2lyYyQgYmVybGF3YW5hbiBhcmFoIGphcnVtIGphbSBkZW5nYW4gcHVzYXQgJE8kIG1lbWFrYWkgYXR1cmFuICQoeCwgeSkgXHRvICgteSwgeCkkLiBKYWRpICRLJygtMSwgMikkLCAkTCcoLTEsIDUpJCwgJE0nKC0zLCA1KSQsIGRhbiAkTicoLTQsIDIpJC4gU2VsdXJ1aCBiYW5ndW4gYmVycGluZGFoIGRhcmkga3VhZHJhbiBJIGtlIGt1YWRyYW4gSUkgZGVuZ2FuIGJlbnR1ayBkYW4gdWt1cmFuIHlhbmcgdGV0YXAu",
+      "kunciTampil": "W1stMSwyXSxbLTEsNV0sWy0zLDVdLFstNCwyXV0=",
+      "jumlahKunci": 4,
+      "kunci": [
+        "e0bf14a1940b1200078866bfb0d64379e7c1675a2ac3d1cf8d805479519ef9c2",
+        "b7b0c43afe60b04c65667f6ddec933ce97a9d30328e78cd5ec01439a1f3ce022",
+        "9e7c30a0e5de0da23a35adfec3aab01c379ce727e0ce25769778c2b547000d62",
+        "6d5df16e81502205aab3784ef34688812f14aeeccfc3cfe71157b76904daa973"
+      ]
+    },
+    {
+      "id": "tr-13",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $PQR$ dengan $P(-4, 2)$, $Q(-1, 2)$, dan $R(-1, 6)$ dirotasi $90^\\circ$ searah jarum jam dengan pusat $O(0, 0)$. Taruh ketiga titik bayangannya.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -4,
+                2
+              ],
+              [
+                -1,
+                2
+              ],
+              [
+                -1,
+                6
+              ]
+            ],
+            "label": [
+              "P",
+              "Q",
+              "R"
+            ]
+          }
+        ],
+        "pusat": [
+          0,
+          0
+        ],
+        "labelPusat": "O"
+      },
+      "pembahasan": "Um90YXNpICQ5MF5cY2lyYyQgc2VhcmFoIGphcnVtIGphbSAoYXRhdSAkLTkwXlxjaXJjJCkgZGVuZ2FuIHB1c2F0ICRPJCBtZW1ha2FpIGF0dXJhbiAkKHgsIHkpIFx0byAoeSwgLXgpJC4gSmFkaSAkUCcoMiwgNCkkLCAkUScoMiwgMSkkLCBkYW4gJFInKDYsIDEpJC4=",
+      "kunciTampil": "W1syLDRdLFsyLDFdLFs2LDFdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "b11a815b60ac66b773ea9162de34899dc52dfdb99069ef57f384e24909a0ea5a",
+        "23d8bea78b8b19877e0f7693c669d316de0aeeed5201417c17ebb57128864b0e",
+        "373a7658852a2e5fd5aae122b371682a066bc2b28f8aa9b185eec96cdff123ac"
+      ],
+      "lanjutan": {
+        "level": 2,
+        "tipe": "pg",
+        "pertanyaan": "Pada bayangannya, sudut siku-siku segitiga itu terletak di titik ...",
+        "opsi": {
+          "a": "$Q'$",
+          "b": "$P'$",
+          "c": "$R'$",
+          "d": "sudut siku-sikunya hilang setelah dirotasi"
+        },
+        "acakOpsi": true,
+        "id": "tr-13-l",
+        "pembahasan": "Um90YXNpIHRpZGFrIG1lbmd1YmFoIGJlc2FyIHN1ZHV0LiBTdWR1dCBzaWt1LXNpa3Ugc2VtdWxhIGJlcmFkYSBkaSAkUSQsIHNlaGluZ2dhIHBhZGEgYmF5YW5nYW5ueWEgdGV0YXAgYmVyYWRhIGRpICRRJyQu",
+        "kunci": "a0c5460c50d7ad6d675217b3a3c4dad5495f6ce26284e23cf585da934da8bd91"
+      }
+    },
+    {
+      "id": "tr-14",
+      "level": 3,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(3, 2)$, $B(6, 2)$, dan $C(6, 4)$ dirotasi $90^\\circ$ berlawanan arah jarum jam dengan pusat $P(1, 2)$ yang ditandai kotak hitam. Taruh ketiga titik bayangannya.",
+      "grid": {
+        "xMin": -4,
+        "xMax": 8,
+        "yMin": -4,
+        "yMax": 8
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                3,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                6,
+                4
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ],
+        "pusat": [
+          1,
+          2
+        ],
+        "labelPusat": "P"
+      },
+      "pembahasan": "UHVzYXRueWEgYnVrYW4gdGl0aWsgYXNhbCwgamFkaSBoaXR1bmcgZHVsdSBwb3Npc2kgdGlhcCB0aXRpayByZWxhdGlmIHRlcmhhZGFwICRQKDEsIDIpJCwgcHV0YXIgZGVuZ2FuIGF0dXJhbiAkKGEsIGIpIFx0byAoLWIsIGEpJCwgbGFsdSBrZW1iYWxpa2FuIGtlICRQJC4gVW50dWsgJEEkOiAkQSAtIFAgPSAoMiwgMCkgXHRvICgwLCAyKSQsIHNlaGluZ2dhICRBJyA9ICgxICsgMCxcIDIgKyAyKSA9ICgxLCA0KSQuIFVudHVrICRCJDogJCg1LCAwKSBcdG8gKDAsIDUpJCwgamFkaSAkQicoMSwgNykkLiBVbnR1ayAkQyQ6ICQoNSwgMikgXHRvICgtMiwgNSkkLCBqYWRpICRDJygtMSwgNykkLg==",
+      "kunciTampil": "W1sxLDRdLFsxLDddLFstMSw3XV0=",
+      "jumlahKunci": 3,
+      "kunci": [
+        "874b292fbd241596eb81bc7afc4fc3d71cbb06da68da47acefe2431d1e5d59cb",
+        "03d3343c45c863b2b487aed03b172436301e1eaad23e249d1a5195fef8bbc584",
+        "d20768d181498b54a85cfd1c6ebf7f631e711a8128c0eb7d4fef6aa95a2459a4"
+      ]
+    },
+    {
+      "id": "tr-15",
+      "level": 3,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(2, 3)$, $B(5, 3)$, dan $C(2, 7)$ dirotasi $180^\\circ$ dengan pusat $P(-1, 1)$ yang ditandai kotak hitam. Taruh ketiga titik bayangannya.",
+      "grid": {
+        "xMin": -7,
+        "xMax": 5,
+        "yMin": -5,
+        "yMax": 7
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                2,
+                3
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                2,
+                7
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ],
+        "pusat": [
+          -1,
+          1
+        ],
+        "labelPusat": "P"
+      },
+      "pembahasan": "Um90YXNpICQxODBeXGNpcmMkIGRlbmdhbiBwdXNhdCAkUChhLCBiKSQgbWVtYWthaSBhdHVyYW4gJCh4LCB5KSBcdG8gKDJhIC0geCxcIDJiIC0geSkkLCBkaSBzaW5pICQoLTIgLSB4LFwgMiAtIHkpJC4gSmFkaSAkQScoLTQsIC0xKSQsICRCJygtNywgLTEpJCwgZGFuICRDJygtNCwgLTUpJC4=",
+      "kunciTampil": "W1stNCwtMV0sWy03LC0xXSxbLTQsLTVdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "6378f6a5670e18ffecee0dd967745a92a08aa3c5ae114e5d26037cb00f9a00c3",
+        "98693fc9346c07ec93400a9b6260b2e1936059bd1901dde2f8cb8e51f3b08e05",
+        "7ff1ad11984912bbe3aa4b2b3c8c1a180b6407111f81b34ce1bd02d15108d91c"
+      ],
+      "lanjutan": {
+        "level": 2,
+        "tipe": "pg",
+        "pertanyaan": "Titik tengah ruas garis $AA'$ terletak di ...",
+        "opsi": {
+          "a": "$(-1, 1)$, yaitu tepat di pusat rotasi",
+          "b": "$(0, 0)$, yaitu di titik asal",
+          "c": "$(-1, -1)$",
+          "d": "$(1, 2)$"
+        },
+        "acakOpsi": true,
+        "id": "tr-15-l",
+        "pembahasan": "VGl0aWsgdGVuZ2FoICRBQSckIGFkYWxhaCAkXGxlZnQoXGZyYWN7MiArICgtNCl9ezJ9LFwgXGZyYWN7MyArICgtMSl9ezJ9XHJpZ2h0KSA9ICgtMSwgMSkkLiBQYWRhIHJvdGFzaSAkMTgwXlxjaXJjJCwgcHVzYXQgcm90YXNpIHNlbGFsdSBtZW5qYWRpIHRpdGlrIHRlbmdhaCBhbnRhcmEgdGl0aWsgYXNhbCBkYW4gYmF5YW5nYW5ueWEu",
+        "kunci": "cb55a55e687557ccf79ad7a2cd6d13bc5cc37e22683cca911391a7ead5df3f00"
+      }
+    },
+    {
+      "id": "tr-16",
+      "level": 1,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(1, 1)$, $B(3, 1)$, dan $C(1, 2)$ didilatasi dengan pusat $O(0, 0)$ dan faktor skala $k = 3$. Taruh ketiga titik bayangannya.",
+      "grid": {
+        "xMin": -2,
+        "xMax": 10,
+        "yMin": -2,
+        "yMax": 10
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ],
+        "pusat": [
+          0,
+          0
+        ],
+        "labelPusat": "O"
+      },
+      "pembahasan": "RGlsYXRhc2kgZGVuZ2FuIHB1c2F0ICRPJCBkYW4gZmFrdG9yIHNrYWxhICRrJCBtZW1ha2FpIGF0dXJhbiAkKHgsIHkpIFx0byAoa3gsIGt5KSQuIEthcmVuYSAkayA9IDMgPiAxJCwgYmF5YW5nYW5ueWEgZGlwZXJiZXNhcjogJEEnKDMsIDMpJCwgJEInKDksIDMpJCwgZGFuICRDJygzLCA2KSQu",
+      "kunciTampil": "W1szLDNdLFs5LDNdLFszLDZdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "1c049f5975b584dae7f52b631876b84c4069511d7121170080e532ed0fa12a99",
+        "9329f10fbd56bb49cacfafc3bd80b8a53ecaf015fa19364ad6584b7bbb2f638c",
+        "13e0459012d8da3bbff962ceec6bac391604f13bb4798e32bf502537efe42340"
+      ],
+      "lanjutan": {
+        "level": 1,
+        "tipe": "isian",
+        "pertanyaan": "Panjang $AB$ adalah $2$ satuan. Berapa satuan panjang $A'B'$?",
+        "id": "tr-16-l",
+        "pembahasan": "U2V0aWFwIHJ1YXMgZ2FyaXMgbWVuamFkaSAkayQga2FsaSBwYW5qYW5nIHNlbXVsYSwgamFkaSAkQSdCJyA9IDMgXHRpbWVzIDIgPSA2JCBzYXR1YW4uIEJlbnR1a255YSB0ZXRhcCBzZWJhbmd1biBkZW5nYW4gYmFuZ3VuIGFzYWwu",
+        "kunci": [
+          "06fcc3d909dad6f4e31c9451bcb67eff0dd627d9e1921d68ea4ed17d72f3eb41"
+        ]
+      }
+    },
+    {
+      "id": "tr-17",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "bangun",
+      "aktif": true,
+      "pertanyaan": "Persegi panjang $KLMN$ dengan $K(-4, 2)$, $L(4, 2)$, $M(4, 6)$, dan $N(-4, 6)$ didilatasi dengan pusat $O(0, 0)$ dan faktor skala $k = \\tfrac{1}{2}$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -4,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                6
+              ],
+              [
+                -4,
+                6
+              ]
+            ],
+            "label": [
+              "K",
+              "L",
+              "M",
+              "N"
+            ]
+          }
+        ],
+        "pusat": [
+          0,
+          0
+        ],
+        "labelPusat": "O"
+      },
+      "pembahasan": "S2FyZW5hICQwIDwgayA8IDEkLCBiYW5ndW5ueWEgbWVuZ2VjaWwuIFNldGlhcCBrb29yZGluYXQgZGlrYWxpa2FuICRcdGZyYWN7MX17Mn0kLCBzZWhpbmdnYSAkSycoLTIsIDEpJCwgJEwnKDIsIDEpJCwgJE0nKDIsIDMpJCwgZGFuICROJygtMiwgMykkLiBVa3VyYW4gJDggXHRpbWVzIDQkIG1lbmphZGkgJDQgXHRpbWVzIDIkLg==",
+      "kunciTampil": "W1stMiwxXSxbMiwxXSxbMiwzXSxbLTIsM11d",
+      "jumlahKunci": 4,
+      "kunci": [
+        "41febce79729113c7ee0b6b889fdf1acae78629f8d0982f3cc90d0b1f9a1d0ee",
+        "47c709b39f2ab2e30fedca218a9cefd067333c840bbe00f84f1641d6a8d57aca",
+        "1c7419874e6eadead890a2dc1ebca62fafe516359b85966fa269fb165f5af87e",
+        "708618a8ecf2c0a3f14672277ea4e2f989c30f6c586be8cfbb2e02aa182ac897"
+      ],
+      "lanjutan": {
+        "level": 2,
+        "tipe": "isian",
+        "pertanyaan": "Luas $KLMN$ adalah $32$ satuan luas. Berapa satuan luas bayangannya?",
+        "id": "tr-17-l",
+        "pembahasan": "UGVyYmFuZGluZ2FuIGx1YXMgcGFkYSBkaWxhdGFzaSBhZGFsYWggJGteMiA9IFx0ZnJhY3sxfXs0fSQsIGphZGkgbHVhcyBiYXlhbmdhbm55YSAkXHRmcmFjezF9ezR9IFx0aW1lcyAzMiA9IDgkIHNhdHVhbiBsdWFzLiBQZXJpa3NhIGRlbmdhbiB1a3VyYW5ueWE6ICQ0IFx0aW1lcyAyID0gOCQu",
+        "kunci": [
+          "da782ecffe4284463e015305d9a41bdd35df98e169f503196ffebe17f36ecb79"
+        ]
+      }
+    },
+    {
+      "id": "tr-18",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(2, 2)$, $B(4, 2)$, dan $C(2, 3)$ didilatasi dengan pusat $P(1, 1)$ yang ditandai kotak hitam dan faktor skala $k = 2$. Taruh ketiga titik bayangannya.",
+      "grid": {
+        "xMin": -4,
+        "xMax": 8,
+        "yMin": -4,
+        "yMax": 8
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ],
+        "pusat": [
+          1,
+          1
+        ],
+        "labelPusat": "P"
+      },
+      "pembahasan": "RGlsYXRhc2kgZGVuZ2FuIHB1c2F0ICRQKGEsIGIpJCBkYW4gZmFrdG9yICRrJCBtZW1ha2FpIGF0dXJhbiAkKHgsIHkpIFx0byAoayh4IC0gYSkgKyBhLFwgayh5IC0gYikgKyBiKSQuIFVudHVrICRBKDIsIDIpJDogJCgyKDIgLSAxKSArIDEsXCAyKDIgLSAxKSArIDEpID0gKDMsIDMpJC4gRGVuZ2FuIGNhcmEgeWFuZyBzYW1hICRCJyg3LCAzKSQgZGFuICRDJygzLCA1KSQuIFBlcmhhdGlrYW4gYmFod2EgJFAkLCAkQSQsIGRhbiAkQSckIHNlbGFsdSB0ZXJsZXRhayBwYWRhIHNhdHUgZ2FyaXMgbHVydXMu",
+      "kunciTampil": "W1szLDNdLFs3LDNdLFszLDVdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "017d1f3db8bfc060f4f466eda626c2899e1177bb0ace85452b5b99717110a783",
+        "6c8d92cc12cbc006af4b2783f7ce2b4efb465fa7b76105922b816848c53a0a55",
+        "e378ba088c8f0e6aeb790643e8d3231c333381715b5bd5b6057471ef3e832e84"
+      ]
+    },
+    {
+      "id": "tr-19",
+      "level": 3,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(-1, 0)$, $B(0, 1)$, dan $C(1, 0)$ didilatasi dengan pusat $P(-2, -1)$ yang ditandai kotak hitam dan faktor skala $k = 3$. Taruh ketiga titik bayangannya.",
+      "grid": {
+        "xMin": -4,
+        "xMax": 8,
+        "yMin": -4,
+        "yMax": 8
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ],
+        "pusat": [
+          -2,
+          -1
+        ],
+        "labelPusat": "P"
+      },
+      "pembahasan": "QXR1cmFubnlhICQoeCwgeSkgXHRvICgzKHggKyAyKSAtIDIsXCAzKHkgKyAxKSAtIDEpJCwgeWFuZyBiaXNhIGRpc2VkZXJoYW5ha2FuIG1lbmphZGkgJCgzeCArIDQsXCAzeSArIDIpJC4gSmFkaSAkQScoMSwgMikkLCAkQicoNCwgNSkkLCBkYW4gJEMnKDcsIDIpJC4=",
+      "kunciTampil": "W1sxLDJdLFs0LDVdLFs3LDJdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "03342e97e5d747f42af97e8b7b237eeeea84b717b13e56fe0b7fc96c22821b63",
+        "7c347dcca25c7decc25981efa346c269a03199e4a95782e9b3e9b51bf2862b51",
+        "78836aa6308d0a8b3c1f67f117d5b77388883e20375314b82bb5395647c8ca7f"
+      ],
+      "lanjutan": {
+        "level": 3,
+        "tipe": "benar-salah",
+        "pertanyaan": "Tentukan benar atau salah pernyataan berikut tentang hasil dilatasi tadi.",
+        "id": "tr-19-l",
+        "pembahasan": "RGFyaSAkUCQga2UgJEIkIHZla3Rvcm55YSAkKDIsIDIpJCwgc2VkYW5na2FuIGRhcmkgJFAkIGtlICRCJyQgdmVrdG9ybnlhICQoNiwgNikgPSAzIFx0aW1lcyAoMiwgMikkLiBBcmFobnlhIHNhbWEsIGphZGkga2V0aWdhbnlhIHNlZ2FyaXMgZGFuICRQQicgPSAzIFx0aW1lcyBQQiQuIEtlZHVhbnlhIHRpZGFrIGtvbmdydWVuIGthcmVuYSB1a3VyYW5ueWEgYmVyYmVkYSB0aWdhIGthbGkgbGlwYXQ7IHlhbmcgYmVuYXIgYWRhbGFoIHNlYmFuZ3VuLg==",
+        "pernyataan": [
+          {
+            "teks": "Titik $P$, $B$, dan $B'$ terletak pada satu garis lurus.",
+            "kunci": "ec6aa0f0d721f02bd8074abf7f0638f6567c9972531448246ae4fae726151d7d"
+          },
+          {
+            "teks": "$PB' = 3 \\times PB$",
+            "kunci": "5ac06a33fcd9fa795f1bdefb84f565751325c32bd236beb8976a8647ff3f4d03"
+          },
+          {
+            "teks": "Segitiga $A'B'C'$ kongruen dengan segitiga $ABC$.",
+            "kunci": "adc0f1948345d94ece9c1b148970efa6b5f05700add6adc8f189a1c35bc545fb"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tr-20",
+      "level": 3,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(-4, 2)$, $B(-2, 2)$, dan $C(-2, 6)$ didilatasi dengan pusat $O(0, 0)$ dan faktor skala $k = \\tfrac{1}{2}$, kemudian hasilnya dirotasi $90^\\circ$ berlawanan arah jarum jam dengan pusat $O(0, 0)$. Taruh ketiga titik bayangan akhirnya, yaitu $A''$, $B''$, dan $C''$.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "bantu": {
+        "acuan": [
+          {
+            "titik": [
+              [
+                -4,
+                2
+              ],
+              [
+                -2,
+                2
+              ],
+              [
+                -2,
+                6
+              ]
+            ],
+            "label": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ],
+        "pusat": [
+          0,
+          0
+        ],
+        "labelPusat": "O"
+      },
+      "pembahasan": "TGFuZ2thaCBwZXJ0YW1hLCBkaWxhdGFzaTogc2V0aWFwIGtvb3JkaW5hdCBkaWthbGlrYW4gJFx0ZnJhY3sxfXsyfSQsIG1lbmdoYXNpbGthbiAkQScoLTIsIDEpJCwgJEInKC0xLCAxKSQsIGRhbiAkQycoLTEsIDMpJC4gTGFuZ2thaCBrZWR1YSwgcm90YXNpICQ5MF5cY2lyYyQgYmVybGF3YW5hbiBhcmFoIGphcnVtIGphbTogJCh4LCB5KSBcdG8gKC15LCB4KSQsIG1lbmdoYXNpbGthbiAkQScnKC0xLCAtMikkLCAkQicnKC0xLCAtMSkkLCBkYW4gJEMnJygtMywgLTEpJC4=",
+      "kunciTampil": "W1stMSwtMl0sWy0xLC0xXSxbLTMsLTFdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "8d0b0a4191e74eed426dd5c20bacdbff5e36a0aa4a6aefa36a1b8f3f8d51a8a1",
+        "082730726cc70a43c697768e30d31c9ddc933e3004bdfd1771ceb8f55d310a0f",
+        "cfb56d19356f0b5cc48abc78f899db34b9f40d5a1eacd0a7d9c565ca1c58d13a"
+      ],
+      "lanjutan": {
+        "level": 3,
+        "tipe": "pg",
+        "pertanyaan": "Hubungan segitiga $A''B''C''$ dengan segitiga $ABC$ adalah ...",
+        "opsi": {
+          "a": "sebangun dengan perbandingan sisi $1 : 2$",
+          "b": "kongruen, karena ukurannya tidak berubah",
+          "c": "sebangun dengan perbandingan sisi $2 : 1$",
+          "d": "tidak sebangun dan tidak kongruen"
+        },
+        "acakOpsi": true,
+        "id": "tr-20-l",
+        "pembahasan": "Um90YXNpIHRpZGFrIG1lbmd1YmFoIHVrdXJhbiwgdGV0YXBpIGRpbGF0YXNpIGRlbmdhbiAkayA9IFx0ZnJhY3sxfXsyfSQgbWVuZ2VjaWxrYW4gYmFuZ3VuIG1lbmphZGkgc2V0ZW5nYWhueWEuIEthcmVuYSBpdHUgYmF5YW5nYW4gYWtoaXJueWEgaGFueWEgc2ViYW5ndW4sIGRlbmdhbiBwZXJiYW5kaW5nYW4gc2lzaSBiYXlhbmdhbiB0ZXJoYWRhcCBzaXNpIGFzYWwgJDEgOiAyJC4=",
+        "kunci": "290847e8833f6b10259769cf81257584c61c20a8138e8b2d279451e352f8de0f"
+      }
+    }
+  ]
+}

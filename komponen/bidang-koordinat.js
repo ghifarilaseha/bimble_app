@@ -1,9 +1,14 @@
 /* bidang-koordinat.js - bidang kartesius yang bisa diketuk.
  *
  * Satu komponen dipakai tiga tempat: soal tipe koordinat, materi
- * interaktif, dan nanti transformasi geometri kelas 9. Karena itu ia
- * hanya menerima elemen wadah dan objek pengaturan, tidak tahu apa-apa
+ * interaktif, dan transformasi geometri kelas 9. Karena itu ia hanya
+ * menerima elemen wadah dan objek pengaturan, tidak tahu apa-apa
  * tentang halaman yang memuatnya.
+ *
+ * Selain jawaban siswa, bidang bisa memuat gambar acuan yang tidak
+ * bisa diketuk: bangun asal, garis cermin, dan pusat rotasi atau
+ * dilatasi. Acuan itulah yang membuat soal transformasi bisa dikerjakan
+ * di layar sebagaimana dikerjakan di lembar kerja cetak.
  *
  * Semua jawaban dikunci ke titik grid bilangan bulat. Tidak ada
  * "hampir kena": penilaian tetap diskret dan pasti.
@@ -32,6 +37,12 @@
     var terkunci = !!atur.terkunci;
     var titik = (atur.nilaiAwal || []).map(function (t) { return [Math.round(t[0]), Math.round(t[1])]; });
     var kunciTampil = null;
+
+    /* Gambar acuan: bangun asal (boleh lebih dari satu, misalnya hasil
+       transformasi antara), garis cermin, dan pusat transformasi. */
+    var acuan = atur.acuan || [];
+    var cermin = atur.cermin || null;
+    var pusat = atur.pusat || null;
 
     /* Rentang dibatasi 13 satuan supaya tetap terbaca di layar HP.
        Batas ini juga menjaga ukuran SVG tetap wajar. */
@@ -67,9 +78,11 @@
     bungkus.appendChild(svg);
 
     var lapisGrid = el('g', {});
+    var lapisAcuan = el('g', {});
     var lapisKunci = el('g', {});
     var lapisJawab = el('g', {});
     svg.appendChild(lapisGrid);
+    svg.appendChild(lapisAcuan);
     svg.appendChild(lapisKunci);
     svg.appendChild(lapisJawab);
 
@@ -116,6 +129,63 @@
       return t;
     }
     gambarGrid();
+
+    /* ---------- lapisan acuan, juga digambar sekali ---------- */
+
+    /* Acuan sengaja tidak bisa diketuk dan tidak ikut dinilai. Yang
+       dinilai tetap hanya titik yang ditaruh siswa, persis seperti di
+       lembar kerja: bangun asal sudah tercetak, bayangannya yang digambar.
+       Warnanya mengikuti kesepakatan pada kunci jawaban cetak: abu-abu
+       putus-putus untuk bangun asal, jingga untuk garis cermin, dan kotak
+       hitam untuk pusat transformasi. */
+    function gambarAcuan() {
+      if (cermin && cermin.length === 2) {
+        var u = ujungGaris(cermin[0], cermin[1]);
+        lapisAcuan.appendChild(el('line', {
+          x1: sx(u[0][0]), y1: sy(u[0][1]), x2: sx(u[1][0]), y2: sy(u[1][1]),
+          stroke: 'var(--sorot)', 'stroke-width': 1.8, 'stroke-dasharray': '7 4'
+        }));
+      }
+
+      acuan.forEach(function (bentuk) {
+        var daftar = (bentuk.titik || []).map(function (t) {
+          return [Math.round(t[0]), Math.round(t[1])];
+        });
+        if (!daftar.length) return;
+
+        if (bentuk.tutup !== false && daftar.length >= 2) {
+          lapisAcuan.appendChild(el('path', {
+            d: daftar.map(function (t, i) {
+              return (i ? 'L' : 'M') + sx(t[0]) + ' ' + sy(t[1]);
+            }).join(' ') + (daftar.length >= 3 ? ' Z' : ''),
+            fill: 'none', stroke: 'var(--tinta-lembut)', 'stroke-width': 1.8,
+            'stroke-dasharray': '6 4', 'stroke-linejoin': 'round'
+          }));
+        }
+
+        daftar.forEach(function (t, i) {
+          lapisAcuan.appendChild(el('circle', {
+            cx: sx(t[0]), cy: sy(t[1]), r: 3.5, fill: 'var(--tinta-lembut)'
+          }));
+          var nama = (bentuk.label || [])[i];
+          if (nama) {
+            lapisAcuan.appendChild(teks(sx(t[0]) - 11, sy(t[1]) - 8, nama, 'var(--tinta-lembut)'));
+          }
+        });
+      });
+
+      if (pusat) {
+        lapisAcuan.appendChild(el('rect', {
+          x: sx(pusat[0]) - 4, y: sy(pusat[1]) - 4, width: 8, height: 8,
+          fill: 'var(--tinta)'
+        }));
+        if (atur.labelPusat) {
+          lapisAcuan.appendChild(teks(sx(pusat[0]) + 13, sy(pusat[1]) - 7,
+            atur.labelPusat, 'var(--tinta)'));
+        }
+      }
+    }
+    gambarAcuan();
 
     /* ---------- menggambar jawaban ---------- */
 
@@ -300,6 +370,20 @@
         gambar();
         if (atur.onUbah) atur.onUbah(nilai());
       }, 'bahaya');
+    }
+
+    /* Tanpa keterangan ini, garis putus-putus mudah dikira bagian dari
+       jawaban yang sudah terlanjur terisi. */
+    if (acuan.length || cermin || pusat) {
+      var bagian = [];
+      if (acuan.length) bagian.push('garis putus-putus abu-abu = bangun asal');
+      if (cermin) bagian.push('garis putus-putus jingga = garis cermin');
+      if (pusat) bagian.push('kotak hitam = pusat transformasi');
+      var legenda = document.createElement('p');
+      legenda.className = 'kecil samar';
+      legenda.style.margin = '.4rem 0 0';
+      legenda.textContent = bagian.join(', ') + '. Yang dinilai hanya titik yang kamu taruh.';
+      bungkus.insertBefore(legenda, info);
     }
 
     function perbaruiInfo() {

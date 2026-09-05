@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 1,
+    "bab": "transformasi",
+    "judul": "Transformasi Geometri",
+    "versi": "2026-09-05"
+  },
+  "soal": [
+    {
+      "id": "tr-01", "level": 1, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(2, 0)$, $B(6, 1)$, dan $C(4, 4)$ dicerminkan terhadap sumbu-$X$. Taruh ketiga titik bayangannya, yaitu $A'$, $B'$, dan $C'$.",
+      "grid": { "xMin": -4, "xMax": 8, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[2, 0], [6, 1], [4, 4]], "label": ["A", "B", "C"] }],
+        "cermin": [[0, 0], [1, 0]]
+      },
+      "kunci": [[2, 0], [6, -1], [4, -4]],
+      "pembahasan": "Pencerminan terhadap sumbu-$X$ memakai aturan $(x, y) \\to (x, -y)$: hanya tanda ordinat yang berubah. Jadi $A(2, 0) \\to A'(2, 0)$, $B(6, 1) \\to B'(6, -1)$, dan $C(4, 4) \\to C'(4, -4)$.",
+      "lanjutan": {
+        "level": 1, "tipe": "pg", "acakOpsi": false,
+        "pertanyaan": "Titik sudut manakah yang bayangannya berimpit dengan titik asalnya?",
+        "opsi": {
+          "a": "$A$, karena $A$ terletak pada sumbu cermin",
+          "b": "$B$, karena ordinatnya hanya $1$",
+          "c": "$C$, karena $C$ titik yang paling tinggi",
+          "d": "Tidak ada, semua titik pasti berpindah"
+        },
+        "kunci": "a",
+        "pembahasan": "Jarak $A$ ke sumbu-$X$ adalah nol, sehingga bayangannya juga berjarak nol dari sumbu itu. Titik yang terletak pada garis cermin selalu tetap di tempatnya."
+      }
+    },
+    {
+      "id": "tr-02", "level": 1, "tipe": "koordinat", "varian": "bangun", "aktif": true,
+      "pertanyaan": "Persegi panjang $KLMN$ dengan $K(1, 2)$, $L(5, 2)$, $M(5, 5)$, dan $N(1, 5)$ dicerminkan terhadap sumbu-$Y$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[1, 2], [5, 2], [5, 5], [1, 5]], "label": ["K", "L", "M", "N"] }],
+        "cermin": [[0, 0], [0, 1]]
+      },
+      "kunci": [[-1, 2], [-5, 2], [-5, 5], [-1, 5]],
+      "pembahasan": "Pencerminan terhadap sumbu-$Y$ memakai aturan $(x, y) \\to (-x, y)$, jadi $K'(-1, 2)$, $L'(-5, 2)$, $M'(-5, 5)$, dan $N'(-1, 5)$. Bentuk dan ukurannya tidak berubah, hanya berpindah ke kiri sumbu-$Y$.",
+      "lanjutan": {
+        "level": 1, "tipe": "isian",
+        "pertanyaan": "Berapa satuan jarak antara sisi $KN$ dan bayangannya, yaitu sisi $K'N'$?",
+        "jawaban": ["2"],
+        "pembahasan": "Sisi $KN$ terletak pada garis $x = 1$ dan bayangannya pada garis $x = -1$. Jaraknya $1 + 1 = 2$ satuan, yaitu dua kali jarak $KN$ ke cermin."
+      }
+    },
+    {
+      "id": "tr-03", "level": 2, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $PQR$ dengan $P(-2, 1)$, $Q(3, 1)$, dan $R(3, 4)$ dicerminkan terhadap garis $y = x$ yang sudah ditandai jingga. Taruh ketiga titik bayangannya.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[-2, 1], [3, 1], [3, 4]], "label": ["P", "Q", "R"] }],
+        "cermin": [[0, 0], [1, 1]]
+      },
+      "kunci": [[1, -2], [1, 3], [4, 3]],
+      "pembahasan": "Pencerminan terhadap garis $y = x$ menukar absis dengan ordinat: $(x, y) \\to (y, x)$. Jadi $P(-2, 1) \\to P'(1, -2)$, $Q(3, 1) \\to Q'(1, 3)$, dan $R(3, 4) \\to R'(4, 3)$.",
+      "lanjutan": {
+        "level": 2, "tipe": "pg", "acakOpsi": true,
+        "pertanyaan": "Aturan pemetaan yang dipakai pada pencerminan terhadap garis $y = x$ adalah ...",
+        "opsi": {
+          "a": "$(x, y) \\to (y, x)$",
+          "b": "$(x, y) \\to (-y, -x)$",
+          "c": "$(x, y) \\to (-x, y)$",
+          "d": "$(x, y) \\to (x, -y)$"
+        },
+        "kunci": "a",
+        "pembahasan": "Garis $y = x$ menukar peran sumbu-$X$ dan sumbu-$Y$, sehingga absis dan ordinat setiap titik ikut bertukar. Aturan $(x, y) \\to (-y, -x)$ berlaku untuk garis $y = -x$."
+      }
+    },
+    {
+      "id": "tr-04", "level": 2, "tipe": "koordinat", "varian": "bangun", "aktif": true,
+      "pertanyaan": "Trapesium $ABCD$ dengan $A(-3, 1)$, $B(-1, 1)$, $C(-1, 5)$, dan $D(-3, 4)$ dicerminkan terhadap garis $x = 1$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[-3, 1], [-1, 1], [-1, 5], [-3, 4]], "label": ["A", "B", "C", "D"] }],
+        "cermin": [[1, 0], [1, 1]]
+      },
+      "kunci": [[5, 1], [3, 1], [3, 5], [5, 4]],
+      "pembahasan": "Pencerminan terhadap garis tegak $x = h$ memakai aturan $(x, y) \\to (2h - x, y)$, di sini $(x, y) \\to (2 - x, y)$. Periksa dengan jarak: $A$ berada $4$ satuan di kiri garis $x = 1$, maka $A'$ berada $4$ satuan di kanannya, yaitu pada $x = 5$. Ordinat setiap titik tidak berubah."
+    },
+    {
+      "id": "tr-05", "level": 3, "tipe": "koordinat", "varian": "bangun", "aktif": true,
+      "pertanyaan": "Jajargenjang $ABCD$ dengan $A(1, 1)$, $B(4, 2)$, $C(5, 5)$, dan $D(2, 4)$ dicerminkan terhadap garis $y = -x$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[1, 1], [4, 2], [5, 5], [2, 4]], "label": ["A", "B", "C", "D"] }],
+        "cermin": [[0, 0], [1, -1]]
+      },
+      "kunci": [[-1, -1], [-2, -4], [-5, -5], [-4, -2]],
+      "pembahasan": "Aturan pencerminan terhadap garis $y = -x$ adalah $(x, y) \\to (-y, -x)$. Jadi $A(1, 1) \\to A'(-1, -1)$, $B(4, 2) \\to B'(-2, -4)$, $C(5, 5) \\to C'(-5, -5)$, dan $D(2, 4) \\to D'(-4, -2)$.",
+      "lanjutan": {
+        "level": 2, "tipe": "isian",
+        "pertanyaan": "Luas jajargenjang $ABCD$ adalah $8$ satuan luas. Berapa satuan luas bayangannya?",
+        "jawaban": ["8"],
+        "pembahasan": "Tidak perlu dihitung ulang. Pencerminan adalah transformasi isometri: bentuk dan ukurannya tidak berubah, hanya letaknya. Karena itu luas bayangannya tetap $8$ satuan luas."
+      }
+    },
+    {
+      "id": "tr-06", "level": 1, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(-4, 2)$, $B(-1, 2)$, dan $C(-1, 4)$ ditranslasi oleh $T = (5, -2)$, yaitu $5$ satuan ke kanan dan $2$ satuan ke bawah. Taruh ketiga titik bayangannya.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[-4, 2], [-1, 2], [-1, 4]], "label": ["A", "B", "C"] }]
+      },
+      "kunci": [[1, 0], [4, 0], [4, 2]],
+      "pembahasan": "Translasi $(a, b)$ memakai aturan $(x, y) \\to (x + a, y + b)$. Jadi $A(-4, 2) \\to A'(1, 0)$, $B(-1, 2) \\to B'(4, 0)$, dan $C(-1, 4) \\to C'(4, 2)$.",
+      "lanjutan": {
+        "level": 1, "tipe": "pg", "acakOpsi": true,
+        "pertanyaan": "Titik sudut bayangan manakah yang terletak pada sumbu-$X$?",
+        "opsi": {
+          "a": "$A'$ dan $B'$",
+          "b": "$B'$ dan $C'$",
+          "c": "hanya $A'$",
+          "d": "hanya $C'$"
+        },
+        "kunci": "a",
+        "pembahasan": "Titik $A$ dan $B$ sama-sama berordinat $2$. Setelah digeser $2$ satuan ke bawah, ordinatnya menjadi $0$, sehingga kedua bayangannya tepat berada di sumbu-$X$."
+      }
+    },
+    {
+      "id": "tr-07", "level": 2, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Titik $P(-3, 4)$ ditranslasi oleh $T$ sehingga bayangannya $P'(1, 1)$. Dengan translasi $T$ yang sama, taruh bayangan ketiga titik sudut segitiga $PQR$ dengan $P(-3, 4)$, $Q(0, 4)$, dan $R(-3, 7)$.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -4, "yMax": 8 },
+      "bantu": {
+        "acuan": [{ "titik": [[-3, 4], [0, 4], [-3, 7]], "label": ["P", "Q", "R"] }]
+      },
+      "kunci": [[1, 1], [4, 1], [1, 4]],
+      "pembahasan": "Komponen translasi dicari dari selisih koordinat: $a = 1 - (-3) = 4$ dan $b = 1 - 4 = -3$, jadi $T = (4, -3)$. Semua titik digeser dengan pasangan bilangan yang sama, sehingga $P'(1, 1)$, $Q'(4, 1)$, dan $R'(1, 4)$.",
+      "lanjutan": {
+        "level": 2, "tipe": "pg", "acakOpsi": true,
+        "pertanyaan": "Translasi $T$ yang dipakai pada soal tadi adalah ...",
+        "opsi": {
+          "a": "$T = (4, -3)$",
+          "b": "$T = (-4, 3)$",
+          "c": "$T = (4, 3)$",
+          "d": "$T = (-4, -3)$"
+        },
+        "kunci": "a",
+        "pembahasan": "Dari $P(-3, 4)$ ke $P'(1, 1)$ titiknya bergerak $4$ satuan ke kanan dan $3$ satuan ke bawah, jadi $T = (4, -3)$."
+      }
+    },
+    {
+      "id": "tr-08", "level": 2, "tipe": "koordinat", "varian": "bangun", "aktif": true,
+      "pertanyaan": "Persegi $ABCD$ dengan $A(-5, -1)$, $B(-2, -1)$, $C(-2, 2)$, dan $D(-5, 2)$ ditranslasi oleh $T_1 = (3, 4)$, lalu dilanjutkan translasi $T_2 = (2, -1)$. Gambarlah bayangan akhirnya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[-5, -1], [-2, -1], [-2, 2], [-5, 2]], "label": ["A", "B", "C", "D"] }]
+      },
+      "kunci": [[0, 2], [3, 2], [3, 5], [0, 5]],
+      "pembahasan": "Dua translasi berurutan cukup dijumlahkan komponennya: $(3, 4) + (2, -1) = (5, 3)$. Jadi $A(-5, -1) \\to A''(0, 2)$, $B''(3, 2)$, $C''(3, 5)$, dan $D''(0, 5)$.",
+      "lanjutan": {
+        "level": 2, "tipe": "pg", "acakOpsi": true,
+        "pertanyaan": "Satu translasi tunggal yang hasilnya sama dengan $T_1$ dilanjutkan $T_2$ adalah ...",
+        "opsi": {
+          "a": "$T = (5, 3)$",
+          "b": "$T = (1, 5)$",
+          "c": "$T = (6, -4)$",
+          "d": "$T = (5, -3)$"
+        },
+        "kunci": "a",
+        "pembahasan": "Komponen mendatarnya dijumlahkan, $3 + 2 = 5$, begitu pula komponen tegaknya, $4 + (-1) = 3$. Karena itu $T = (5, 3)$."
+      }
+    },
+    {
+      "id": "tr-09", "level": 2, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Yang tergambar putus-putus adalah bayangan segitiga $ABC$ oleh translasi $T = (-4, 3)$, yaitu segitiga $A'B'C'$ dengan $A'(2, 1)$, $B'(5, 1)$, dan $C'(3, 6)$. Taruh ketiga titik sudut segitiga $ABC$ yang asli.",
+      "grid": { "xMin": -2, "xMax": 10, "yMin": -4, "yMax": 8 },
+      "bantu": {
+        "acuan": [{ "titik": [[2, 1], [5, 1], [3, 6]], "label": ["A'", "B'", "C'"] }]
+      },
+      "kunci": [[6, -2], [9, -2], [7, 3]],
+      "pembahasan": "Karena yang diketahui justru bayangannya, arah translasinya dibalik: $(x, y) = (x' + 4, y' - 3)$. Jadi $A'(2, 1) \\to A(6, -2)$, $B'(5, 1) \\to B(9, -2)$, dan $C'(3, 6) \\to C(7, 3)$. Periksa kembali dengan menerapkan $T = (-4, 3)$ pada $A$; hasilnya harus kembali ke $A'$."
+    },
+    {
+      "id": "tr-10", "level": 3, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(-6, 1)$, $B(-3, 1)$, dan $C(-3, 3)$ ditranslasi oleh $T = (2, 3)$, kemudian hasilnya dicerminkan terhadap sumbu-$Y$. Taruh ketiga titik bayangan akhirnya, yaitu $A''$, $B''$, dan $C''$.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -4, "yMax": 8 },
+      "bantu": {
+        "acuan": [{ "titik": [[-6, 1], [-3, 1], [-3, 3]], "label": ["A", "B", "C"] }],
+        "cermin": [[0, 0], [0, 1]]
+      },
+      "kunci": [[4, 4], [1, 4], [1, 6]],
+      "pembahasan": "Kerjakan berurutan. Translasi dahulu, $(x + 2, y + 3)$, menghasilkan $A'(-4, 4)$, $B'(-1, 4)$, dan $C'(-1, 6)$. Kemudian pencerminan terhadap sumbu-$Y$ membalik tanda absis, sehingga $A''(4, 4)$, $B''(1, 4)$, dan $C''(1, 6)$.",
+      "lanjutan": {
+        "level": 3, "tipe": "pg", "acakOpsi": true,
+        "pertanyaan": "Bila urutannya dibalik, yaitu dicerminkan terhadap sumbu-$Y$ dahulu baru ditranslasi oleh $T = (2, 3)$, bayangan titik $A$ menjadi ...",
+        "opsi": {
+          "a": "$(8, 4)$",
+          "b": "$(4, 4)$",
+          "c": "$(-4, 4)$",
+          "d": "$(8, -4)$"
+        },
+        "kunci": "a",
+        "pembahasan": "Dicerminkan dahulu: $A(-6, 1) \\to (6, 1)$. Baru ditranslasi: $(6 + 2, 1 + 3) = (8, 4)$. Hasilnya berbeda dengan sebelumnya, jadi komposisi transformasi umumnya tidak bersifat komutatif; urutan berpengaruh."
+      }
+    },
+    {
+      "id": "tr-11", "level": 1, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(1, 1)$, $B(4, 1)$, dan $C(4, 3)$ dirotasi $180^\\circ$ dengan pusat $O(0, 0)$. Taruh ketiga titik bayangannya.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[1, 1], [4, 1], [4, 3]], "label": ["A", "B", "C"] }],
+        "pusat": [0, 0], "labelPusat": "O"
+      },
+      "kunci": [[-1, -1], [-4, -1], [-4, -3]],
+      "pembahasan": "Rotasi $180^\\circ$ dengan pusat $O$ memakai aturan $(x, y) \\to (-x, -y)$. Jadi $A'(-1, -1)$, $B'(-4, -1)$, dan $C'(-4, -3)$. Seluruh bangun pindah dari kuadran I ke kuadran III.",
+      "lanjutan": {
+        "level": 1, "tipe": "isian",
+        "pertanyaan": "Berapa satuan jarak titik $C$ ke pusat rotasi?",
+        "jawaban": ["5"],
+        "pembahasan": "Dengan teorema Pythagoras, $OC = \\sqrt{4^2 + 3^2} = \\sqrt{25} = 5$ satuan. Pada rotasi, jarak setiap titik ke pusat selalu tetap, sehingga $OC'$ juga $5$ satuan."
+      }
+    },
+    {
+      "id": "tr-12", "level": 2, "tipe": "koordinat", "varian": "bangun", "aktif": true,
+      "pertanyaan": "Segi empat $KLMN$ dengan $K(2, 1)$, $L(5, 1)$, $M(5, 3)$, dan $N(2, 4)$ dirotasi $90^\\circ$ berlawanan arah jarum jam dengan pusat $O(0, 0)$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[2, 1], [5, 1], [5, 3], [2, 4]], "label": ["K", "L", "M", "N"] }],
+        "pusat": [0, 0], "labelPusat": "O"
+      },
+      "kunci": [[-1, 2], [-1, 5], [-3, 5], [-4, 2]],
+      "pembahasan": "Rotasi $90^\\circ$ berlawanan arah jarum jam dengan pusat $O$ memakai aturan $(x, y) \\to (-y, x)$. Jadi $K'(-1, 2)$, $L'(-1, 5)$, $M'(-3, 5)$, dan $N'(-4, 2)$. Seluruh bangun berpindah dari kuadran I ke kuadran II dengan bentuk dan ukuran yang tetap."
+    },
+    {
+      "id": "tr-13", "level": 2, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $PQR$ dengan $P(-4, 2)$, $Q(-1, 2)$, dan $R(-1, 6)$ dirotasi $90^\\circ$ searah jarum jam dengan pusat $O(0, 0)$. Taruh ketiga titik bayangannya.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[-4, 2], [-1, 2], [-1, 6]], "label": ["P", "Q", "R"] }],
+        "pusat": [0, 0], "labelPusat": "O"
+      },
+      "kunci": [[2, 4], [2, 1], [6, 1]],
+      "pembahasan": "Rotasi $90^\\circ$ searah jarum jam (atau $-90^\\circ$) dengan pusat $O$ memakai aturan $(x, y) \\to (y, -x)$. Jadi $P'(2, 4)$, $Q'(2, 1)$, dan $R'(6, 1)$.",
+      "lanjutan": {
+        "level": 2, "tipe": "pg", "acakOpsi": true,
+        "pertanyaan": "Pada bayangannya, sudut siku-siku segitiga itu terletak di titik ...",
+        "opsi": {
+          "a": "$Q'$",
+          "b": "$P'$",
+          "c": "$R'$",
+          "d": "sudut siku-sikunya hilang setelah dirotasi"
+        },
+        "kunci": "a",
+        "pembahasan": "Rotasi tidak mengubah besar sudut. Sudut siku-siku semula berada di $Q$, sehingga pada bayangannya tetap berada di $Q'$."
+      }
+    },
+    {
+      "id": "tr-14", "level": 3, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(3, 2)$, $B(6, 2)$, dan $C(6, 4)$ dirotasi $90^\\circ$ berlawanan arah jarum jam dengan pusat $P(1, 2)$ yang ditandai kotak hitam. Taruh ketiga titik bayangannya.",
+      "grid": { "xMin": -4, "xMax": 8, "yMin": -4, "yMax": 8 },
+      "bantu": {
+        "acuan": [{ "titik": [[3, 2], [6, 2], [6, 4]], "label": ["A", "B", "C"] }],
+        "pusat": [1, 2], "labelPusat": "P"
+      },
+      "kunci": [[1, 4], [1, 7], [-1, 7]],
+      "pembahasan": "Pusatnya bukan titik asal, jadi hitung dulu posisi tiap titik relatif terhadap $P(1, 2)$, putar dengan aturan $(a, b) \\to (-b, a)$, lalu kembalikan ke $P$. Untuk $A$: $A - P = (2, 0) \\to (0, 2)$, sehingga $A' = (1 + 0,\\ 2 + 2) = (1, 4)$. Untuk $B$: $(5, 0) \\to (0, 5)$, jadi $B'(1, 7)$. Untuk $C$: $(5, 2) \\to (-2, 5)$, jadi $C'(-1, 7)$."
+    },
+    {
+      "id": "tr-15", "level": 3, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(2, 3)$, $B(5, 3)$, dan $C(2, 7)$ dirotasi $180^\\circ$ dengan pusat $P(-1, 1)$ yang ditandai kotak hitam. Taruh ketiga titik bayangannya.",
+      "grid": { "xMin": -7, "xMax": 5, "yMin": -5, "yMax": 7 },
+      "bantu": {
+        "acuan": [{ "titik": [[2, 3], [5, 3], [2, 7]], "label": ["A", "B", "C"] }],
+        "pusat": [-1, 1], "labelPusat": "P"
+      },
+      "kunci": [[-4, -1], [-7, -1], [-4, -5]],
+      "pembahasan": "Rotasi $180^\\circ$ dengan pusat $P(a, b)$ memakai aturan $(x, y) \\to (2a - x,\\ 2b - y)$, di sini $(-2 - x,\\ 2 - y)$. Jadi $A'(-4, -1)$, $B'(-7, -1)$, dan $C'(-4, -5)$.",
+      "lanjutan": {
+        "level": 2, "tipe": "pg", "acakOpsi": true,
+        "pertanyaan": "Titik tengah ruas garis $AA'$ terletak di ...",
+        "opsi": {
+          "a": "$(-1, 1)$, yaitu tepat di pusat rotasi",
+          "b": "$(0, 0)$, yaitu di titik asal",
+          "c": "$(-1, -1)$",
+          "d": "$(1, 2)$"
+        },
+        "kunci": "a",
+        "pembahasan": "Titik tengah $AA'$ adalah $\\left(\\frac{2 + (-4)}{2},\\ \\frac{3 + (-1)}{2}\\right) = (-1, 1)$. Pada rotasi $180^\\circ$, pusat rotasi selalu menjadi titik tengah antara titik asal dan bayangannya."
+      }
+    },
+    {
+      "id": "tr-16", "level": 1, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(1, 1)$, $B(3, 1)$, dan $C(1, 2)$ didilatasi dengan pusat $O(0, 0)$ dan faktor skala $k = 3$. Taruh ketiga titik bayangannya.",
+      "grid": { "xMin": -2, "xMax": 10, "yMin": -2, "yMax": 10 },
+      "bantu": {
+        "acuan": [{ "titik": [[1, 1], [3, 1], [1, 2]], "label": ["A", "B", "C"] }],
+        "pusat": [0, 0], "labelPusat": "O"
+      },
+      "kunci": [[3, 3], [9, 3], [3, 6]],
+      "pembahasan": "Dilatasi dengan pusat $O$ dan faktor skala $k$ memakai aturan $(x, y) \\to (kx, ky)$. Karena $k = 3 > 1$, bayangannya diperbesar: $A'(3, 3)$, $B'(9, 3)$, dan $C'(3, 6)$.",
+      "lanjutan": {
+        "level": 1, "tipe": "isian",
+        "pertanyaan": "Panjang $AB$ adalah $2$ satuan. Berapa satuan panjang $A'B'$?",
+        "jawaban": ["6"],
+        "pembahasan": "Setiap ruas garis menjadi $k$ kali panjang semula, jadi $A'B' = 3 \\times 2 = 6$ satuan. Bentuknya tetap sebangun dengan bangun asal."
+      }
+    },
+    {
+      "id": "tr-17", "level": 2, "tipe": "koordinat", "varian": "bangun", "aktif": true,
+      "pertanyaan": "Persegi panjang $KLMN$ dengan $K(-4, 2)$, $L(4, 2)$, $M(4, 6)$, dan $N(-4, 6)$ didilatasi dengan pusat $O(0, 0)$ dan faktor skala $k = \\tfrac{1}{2}$. Gambarlah bayangannya dengan mengetuk keempat titik sudut berurutan mengelilingi bangun.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[-4, 2], [4, 2], [4, 6], [-4, 6]], "label": ["K", "L", "M", "N"] }],
+        "pusat": [0, 0], "labelPusat": "O"
+      },
+      "kunci": [[-2, 1], [2, 1], [2, 3], [-2, 3]],
+      "pembahasan": "Karena $0 < k < 1$, bangunnya mengecil. Setiap koordinat dikalikan $\\tfrac{1}{2}$, sehingga $K'(-2, 1)$, $L'(2, 1)$, $M'(2, 3)$, dan $N'(-2, 3)$. Ukuran $8 \\times 4$ menjadi $4 \\times 2$.",
+      "lanjutan": {
+        "level": 2, "tipe": "isian",
+        "pertanyaan": "Luas $KLMN$ adalah $32$ satuan luas. Berapa satuan luas bayangannya?",
+        "jawaban": ["8"],
+        "pembahasan": "Perbandingan luas pada dilatasi adalah $k^2 = \\tfrac{1}{4}$, jadi luas bayangannya $\\tfrac{1}{4} \\times 32 = 8$ satuan luas. Periksa dengan ukurannya: $4 \\times 2 = 8$."
+      }
+    },
+    {
+      "id": "tr-18", "level": 2, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(2, 2)$, $B(4, 2)$, dan $C(2, 3)$ didilatasi dengan pusat $P(1, 1)$ yang ditandai kotak hitam dan faktor skala $k = 2$. Taruh ketiga titik bayangannya.",
+      "grid": { "xMin": -4, "xMax": 8, "yMin": -4, "yMax": 8 },
+      "bantu": {
+        "acuan": [{ "titik": [[2, 2], [4, 2], [2, 3]], "label": ["A", "B", "C"] }],
+        "pusat": [1, 1], "labelPusat": "P"
+      },
+      "kunci": [[3, 3], [7, 3], [3, 5]],
+      "pembahasan": "Dilatasi dengan pusat $P(a, b)$ dan faktor $k$ memakai aturan $(x, y) \\to (k(x - a) + a,\\ k(y - b) + b)$. Untuk $A(2, 2)$: $(2(2 - 1) + 1,\\ 2(2 - 1) + 1) = (3, 3)$. Dengan cara yang sama $B'(7, 3)$ dan $C'(3, 5)$. Perhatikan bahwa $P$, $A$, dan $A'$ selalu terletak pada satu garis lurus."
+    },
+    {
+      "id": "tr-19", "level": 3, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(-1, 0)$, $B(0, 1)$, dan $C(1, 0)$ didilatasi dengan pusat $P(-2, -1)$ yang ditandai kotak hitam dan faktor skala $k = 3$. Taruh ketiga titik bayangannya.",
+      "grid": { "xMin": -4, "xMax": 8, "yMin": -4, "yMax": 8 },
+      "bantu": {
+        "acuan": [{ "titik": [[-1, 0], [0, 1], [1, 0]], "label": ["A", "B", "C"] }],
+        "pusat": [-2, -1], "labelPusat": "P"
+      },
+      "kunci": [[1, 2], [4, 5], [7, 2]],
+      "pembahasan": "Aturannya $(x, y) \\to (3(x + 2) - 2,\\ 3(y + 1) - 1)$, yang bisa disederhanakan menjadi $(3x + 4,\\ 3y + 2)$. Jadi $A'(1, 2)$, $B'(4, 5)$, dan $C'(7, 2)$.",
+      "lanjutan": {
+        "level": 3, "tipe": "benar-salah",
+        "pertanyaan": "Tentukan benar atau salah pernyataan berikut tentang hasil dilatasi tadi.",
+        "pernyataan": [
+          { "teks": "Titik $P$, $B$, dan $B'$ terletak pada satu garis lurus.", "kunci": true },
+          { "teks": "$PB' = 3 \\times PB$", "kunci": true },
+          { "teks": "Segitiga $A'B'C'$ kongruen dengan segitiga $ABC$.", "kunci": false }
+        ],
+        "pembahasan": "Dari $P$ ke $B$ vektornya $(2, 2)$, sedangkan dari $P$ ke $B'$ vektornya $(6, 6) = 3 \\times (2, 2)$. Arahnya sama, jadi ketiganya segaris dan $PB' = 3 \\times PB$. Keduanya tidak kongruen karena ukurannya berbeda tiga kali lipat; yang benar adalah sebangun."
+      }
+    },
+    {
+      "id": "tr-20", "level": 3, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $A(-4, 2)$, $B(-2, 2)$, dan $C(-2, 6)$ didilatasi dengan pusat $O(0, 0)$ dan faktor skala $k = \\tfrac{1}{2}$, kemudian hasilnya dirotasi $90^\\circ$ berlawanan arah jarum jam dengan pusat $O(0, 0)$. Taruh ketiga titik bayangan akhirnya, yaitu $A''$, $B''$, dan $C''$.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "bantu": {
+        "acuan": [{ "titik": [[-4, 2], [-2, 2], [-2, 6]], "label": ["A", "B", "C"] }],
+        "pusat": [0, 0], "labelPusat": "O"
+      },
+      "kunci": [[-1, -2], [-1, -1], [-3, -1]],
+      "pembahasan": "Langkah pertama, dilatasi: setiap koordinat dikalikan $\\tfrac{1}{2}$, menghasilkan $A'(-2, 1)$, $B'(-1, 1)$, dan $C'(-1, 3)$. Langkah kedua, rotasi $90^\\circ$ berlawanan arah jarum jam: $(x, y) \\to (-y, x)$, menghasilkan $A''(-1, -2)$, $B''(-1, -1)$, dan $C''(-3, -1)$.",
+      "lanjutan": {
+        "level": 3, "tipe": "pg", "acakOpsi": true,
+        "pertanyaan": "Hubungan segitiga $A''B''C''$ dengan segitiga $ABC$ adalah ...",
+        "opsi": {
+          "a": "sebangun dengan perbandingan sisi $1 : 2$",
+          "b": "kongruen, karena ukurannya tidak berubah",
+          "c": "sebangun dengan perbandingan sisi $2 : 1$",
+          "d": "tidak sebangun dan tidak kongruen"
+        },
+        "kunci": "a",
+        "pembahasan": "Rotasi tidak mengubah ukuran, tetapi dilatasi dengan $k = \\tfrac{1}{2}$ mengecilkan bangun menjadi setengahnya. Karena itu bayangan akhirnya hanya sebangun, dengan perbandingan sisi bayangan terhadap sisi asal $1 : 2$."
+      }
+    }
+  ]
+}

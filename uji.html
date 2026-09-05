@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uji Penilaian</title>
+<link rel="stylesheet" href="css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Uji penilaian</span>
+    <span class="kanan kecil" id="ringkas"></span>
+  </div>
+</header>
+
+<main class="bungkus">
+  <p class="samar">
+    Kasus uji yang sama juga bisa dijalankan di baris perintah dengan
+    <code>node tools/uji.js</code>. Halaman ini berguna untuk memastikan
+    penilaian berperilaku sama di peramban yang benar-benar dipakai siswa,
+    terutama pada ponsel lama.
+  </p>
+  <div id="daftar"></div>
+</main>
+
+<script src="js/kunci.js"></script>
+<script src="js/nilai.js"></script>
+<script src="js/soal.js"></script>
+<script src="js/gembok-inti.js"></script>
+<script src="komponen/qr.js"></script>
+<script src="uji/kasus.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var elDaftar = document.getElementById('daftar');
+  var elRingkas = document.getElementById('ringkas');
+
+  function lolos(t) {
+    return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  KasusUji.jalankan(function (baris) {
+    var kartu = document.createElement('div');
+    kartu.className = 'kartu padat';
+    kartu.innerHTML =
+      '<span class="cap ' + (baris.lulus ? 'benar' : 'salah') + '">' +
+      (baris.lulus ? 'LULUS' : 'GAGAL') + '</span> ' +
+      lolos(baris.nama) +
+      (baris.catatan ? '<div class="kecil samar" style="margin-top:.35rem">' +
+        lolos(baris.catatan) + '</div>' : '');
+    elDaftar.appendChild(kartu);
+  }).then(function (semua) {
+    var gagal = semua.filter(function (b) { return !b.lulus; }).length;
+    elRingkas.textContent = (semua.length - gagal) + ' lulus, ' + gagal + ' gagal';
+    elRingkas.className = 'kanan kecil ' + (gagal ? 'cap salah' : 'cap benar');
+  });
+})();
+</script>
+</body>
+</html>

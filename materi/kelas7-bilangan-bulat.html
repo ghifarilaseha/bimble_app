@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilangan Bulat</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Bilangan Bulat</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Bilangan bulat dan garis bilangan</h1>
+  <p>
+    Bilangan bulat adalah bilangan tanpa bagian pecahan: ..., $-3$, $-2$, $-1$, $0$,
+    $1$, $2$, $3$, ... Cara paling jujur untuk memahaminya adalah menaruhnya pada
+    garis bilangan. Semakin ke kanan, semakin besar nilainya.
+  </p>
+
+  <div class="kartu">
+    <h3 class="rapat">Coba sendiri</h3>
+    <p class="kecil samar">Ketuk garis bilangan untuk memindahkan titik awal.</p>
+    <div id="garis1"></div>
+  </div>
+
+  <h2>Membandingkan bilangan negatif</h2>
+  <p>
+    Inilah bagian yang paling sering terbalik. Pada bilangan negatif, angka yang
+    <em>terlihat</em> lebih besar justru bernilai lebih kecil. Perhatikan $-9$ dan $-19$:
+    $-19$ berada lebih jauh ke kiri, jadi $-19 < -9$.
+  </p>
+  <p>
+    Patokannya satu saja: <strong>yang lebih kiri selalu lebih kecil</strong>. Tidak perlu
+    aturan tambahan.
+  </p>
+
+  <h2>Menjumlah dan mengurangi sebagai loncatan</h2>
+  <p>
+    Menambah berarti meloncat ke kanan, mengurangi berarti meloncat ke kiri.
+    Ini juga berlaku ketika bilangannya negatif, sehingga tidak ada aturan baru
+    yang harus dihafal.
+  </p>
+
+  <div class="kartu">
+    <h3 class="rapat">Loncatan pada garis bilangan</h3>
+    <div class="deret" style="margin:.5rem 0">
+      <button type="button" class="tombol mungil" data-langkah="5">$+5$</button>
+      <button type="button" class="tombol mungil" data-langkah="-8">$-8$</button>
+      <button type="button" class="tombol mungil" data-langkah="3">$+3$</button>
+      <button type="button" class="tombol mungil" data-langkah="-2">$-2$</button>
+      <button type="button" class="tombol mungil bahaya" id="hapusLangkah">Kosongkan</button>
+    </div>
+    <div id="garis2"></div>
+    <p class="kecil" id="bacaLangkah" style="margin-top:.5rem"></p>
+  </div>
+
+  <h2>Mengurangi bilangan negatif</h2>
+  <p>
+    $7 - (-3)$ sering terasa aneh. Bacalah sebagai pertanyaan jarak: berapa jauh
+    $7$ dari $-3$? Jawabannya $10$. Karena itu mengurangi bilangan negatif
+    hasilnya justru bertambah besar.
+  </p>
+  <p>
+    Cara lain yang sama benarnya: mengurangi $-3$ sama dengan menambah lawannya,
+    yaitu $+3$. Keduanya menghasilkan $10$.
+  </p>
+
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <p>
+    <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=bilangan-bulat&amp;mode=mandiri">
+      Latihan mandiri
+    </a>
+  </p>
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../komponen/garis-bilangan.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* Rumus di dalam teks halaman dirender di tempat, tanpa perlu menulis
+     markup KaTeX satu per satu. */
+  ['p', 'li', 'h1', 'h2', 'h3', 'button'].forEach(function (tag) {
+    Array.prototype.forEach.call(document.querySelectorAll('main ' + tag), function (n) {
+      if (n.textContent.indexOf('$') >= 0) n.innerHTML = Rumus.keHTML(n.textContent);
+    });
+  });
+
+  GarisBilangan.buat(document.getElementById('garis1'), {
+    min: -10, max: 10, awal: 0, langkah: []
+  });
+
+  var langkah = [];
+  var baca = document.getElementById('bacaLangkah');
+  var garis2 = GarisBilangan.buat(document.getElementById('garis2'), {
+    min: -12, max: 12, awal: 4, langkah: langkah,
+    onUbah: function (keadaan) {
+      var tulis = keadaan.awal + keadaan.langkah.map(function (n) {
+        return n < 0 ? ' - ' + Math.abs(n) : ' + ' + n;
+      }).join('');
+      baca.innerHTML = Rumus.keHTML('$' + tulis + ' = ' + keadaan.hasil + '$');
+    }
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-langkah]'), function (b) {
+    b.addEventListener('click', function () {
+      langkah.push(Number(b.dataset.langkah));
+      garis2.setLangkah(langkah);
+    });
+  });
+  document.getElementById('hapusLangkah').addEventListener('click', function () {
+    langkah.length = 0;
+    garis2.setLangkah(langkah);
+  });
+})();
+</script>
+</body>
+</html>

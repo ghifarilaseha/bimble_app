@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "kelas": 7,
+    "semester": 1,
+    "bab": "bilangan-bulat",
+    "judul": "Bilangan Bulat",
+    "versi": "2026-09-05"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-05",
+  "soal": [
+    {
+      "id": "bb-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bilangan yang tiga lebih kecil dari dua adalah ...",
+      "opsi": {
+        "a": "$-2$",
+        "b": "$-1$",
+        "c": "$3$",
+        "d": "$6$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "VGlnYSBsZWJpaCBrZWNpbCBiZXJhcnRpIGRpa3VyYW5naSB0aWdhOiAkMiAtIDMgPSAtMSQu",
+      "kunci": "4c6e5f1dc402b3c8f2e921babd3289371265645a3cc38d17fff8418eb2ef7953"
+    },
+    {
+      "id": "bb-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suhu sebuah kota sore hari $-4$ °C. Malam harinya suhu turun $6$ derajat. Suhu kota itu pada malam hari adalah ...",
+      "opsi": {
+        "a": "$-10$ °C",
+        "b": "$-2$ °C",
+        "c": "$2$ °C",
+        "d": "$10$ °C"
+      },
+      "acakOpsi": false,
+      "pembahasan": "VHVydW4gYmVyYXJ0aSBiZXJrdXJhbmc6ICQtNCAtIDYgPSAtMTAkLg==",
+      "kunci": "af95a5a91d54622901e81bb0ece12dbf8841654f207b7f42430a6e31e34eb46f"
+    },
+    {
+      "id": "bb-03",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Lawan dari $-15$ adalah ...",
+      "pembahasan": "TGF3YW4gc2VidWFoIGJpbGFuZ2FuIGJlcmphcmFrIHNhbWEgZGFyaSBub2wgdGV0YXBpIGJlcmxhd2FuYW4gYXJhaCwgeWFpdHUgJDE1JC4=",
+      "kunci": [
+        "a9da0b09451772308b18ea19d47115fde1f299c7bca27eb773da7ce536cf750c"
+      ]
+    },
+    {
+      "id": "bb-04",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Urutan dari yang terkecil ke terbesar untuk bilangan $-2$, $-11$, $3$, $-7$ adalah ...",
+      "opsi": {
+        "a": "$-2$, $-7$, $-11$, $3$",
+        "b": "$-11$, $-7$, $-2$, $3$",
+        "c": "$3$, $-2$, $-7$, $-11$",
+        "d": "$-11$, $-2$, $-7$, $3$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "TWFraW4gamF1aCBrZSBraXJpIHBhZGEgZ2FyaXMgYmlsYW5nYW4sIG1ha2luIGtlY2lsIG5pbGFpbnlhOiAkLTExIDwgLTcgPCAtMiA8IDMkLg==",
+      "kunci": "033591164266dfc7be0ae9834e9cf192ae0da745d8d084ce8453b5806e450e58"
+    },
+    {
+      "id": "bb-05",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $-8 + 12 - 5$ adalah ...",
+      "pembahasan": "S2VyamFrYW4gYmVydXJ1dGFuIGRhcmkga2lyaTogJC04ICsgMTIgPSA0JCwgbGFsdSAkNCAtIDUgPSAtMSQu",
+      "kunci": [
+        "54eeb36a279a9a714ede3890dec9afe48956f29ff607447eea7a5468c1b1b8cb"
+      ]
+    },
+    {
+      "id": "bb-06",
+      "level": 2,
+      "tipe": "benar-salah",
+      "aktif": true,
+      "pertanyaan": "Tentukan benar atau salah pernyataan berikut.",
+      "pembahasan": "U2VtdWEgYmlsYW5nYW4gbmVnYXRpZiBsZWJpaCBrZWNpbCBkYXJpcGFkYSBiaWxhbmdhbiBwb3NpdGlmLiBTZXNhbWEgbmVnYXRpZiwgeWFuZyBhbmdrYW55YSBsZWJpaCBiZXNhciBqdXN0cnUgbGViaWgga2VjaWwgbmlsYWlueWEsIGphZGkgJC05ID4gLTE5JC4=",
+      "pernyataan": [
+        {
+          "teks": "$7 > -90$",
+          "kunci": "ed5bfb86f46c4bf62bed598a954900f6501dda3cc76f277936ee4578c1bbfd7e"
+        },
+        {
+          "teks": "$-0{,}5 < 0{,}3$",
+          "kunci": "52923df09990bee329173a1c54372d036e17755e9def3157beca7321738db134"
+        },
+        {
+          "teks": "$-9 < -19$",
+          "kunci": "8c4133447f826b1bb7a7ab70b57cfd060d8fcbffe7cc73ad35b570295cd9df9b"
+        },
+        {
+          "teks": "$-1 > 0$",
+          "kunci": "db6a63f3a5ee5d3b05609945a75248f208088fdbc712f41d5488a4456771d298"
+        }
+      ]
+    },
+    {
+      "id": "bb-07",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Manakah yang hasilnya paling besar?",
+      "opsi": {
+        "a": "$-3 + 8$",
+        "b": "$5 - 9$",
+        "c": "$-2 - (-6)$",
+        "d": "$4 - 4$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "SGFzaWxueWEgYmVydHVydXQtdHVydXQgJDUkLCAkLTQkLCAkNCQsIGRhbiAkMCQuIFlhbmcgdGVyYmVzYXIgYWRhbGFoICQtMyArIDggPSA1JC4=",
+      "kunci": "d4eb51faa8e5919cf0f158be0d88c09d24375daa71620c807cf024417f4d5d65"
+    },
+    {
+      "id": "bb-08",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Selisih suhu antara $12$ °C dan $-9$ °C adalah ... derajat.",
+      "pembahasan": "U2VsaXNpaCBhZGFsYWggamFyYWsga2VkdWFueWEgcGFkYSBnYXJpcyBiaWxhbmdhbjogJDEyIC0gKC05KSA9IDEyICsgOSA9IDIxJC4=",
+      "kunci": [
+        "95ca6baed96c7933138ddf4ad3b89d3421d6a6a4cfe1807416faa236542687a8"
+      ]
+    },
+    {
+      "id": "bb-09",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Diketahui $a = -6$ dan $b = 4$. Nilai dari $a - b$ adalah ...",
+      "opsi": {
+        "a": "$-10$",
+        "b": "$-2$",
+        "c": "$2$",
+        "d": "$10$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "R2FudGkgaHVydWZueWEgZGVuZ2FuIG5pbGFpbnlhOiAkLTYgLSA0ID0gLTEwJC4=",
+      "kunci": "dd1f430186937b432f00d0972913e2cfb07352f300eac849accd563da164b2a4"
+    },
+    {
+      "id": "bb-10",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah lift berada di lantai $-3$. Lift naik $7$ lantai, lalu turun $2$ lantai, kemudian naik lagi $5$ lantai. Lift itu sekarang berada di lantai ...",
+      "pembahasan": "SWt1dGkgc2F0dSBwZXIgc2F0dTogJC0zICsgNyA9IDQkLCBsYWx1ICQ0IC0gMiA9IDIkLCBsYWx1ICQyICsgNSA9IDckLg==",
+      "kunci": [
+        "0865816f02f8bde92d322597600b07f443505604e01338fa4ddc96f090a02697"
+      ]
+    },
+    {
+      "id": "bb-11",
+      "level": 3,
+      "tipe": "benar-salah",
+      "aktif": true,
+      "pertanyaan": "Misalkan $a$ dan $b$ bilangan bulat. Tentukan benar atau salah pernyataan berikut.",
+      "pembahasan": "QmlsYW5nYW4gbmVnYXRpZiBkaWt1cmFuZ2kgYmlsYW5nYW4gcG9zaXRpZiBiZXJnZXJhayBtYWtpbiBrZSBraXJpLCBqYWRpIHRldGFwIG5lZ2F0aWYuIER1YSBuZWdhdGlmIGRpa2FsaWthbiBtZW5naGFzaWxrYW4gcG9zaXRpZi4gTWVuZ2FsaWthbiBkZW5nYW4gJC0xJCBtZW1iYWxpayBhcmFoIHBlcnRpZGFrc2FtYWFuLiBDb250b2ggcGVueWFuZ2thbCB1bnR1ayB5YW5nIHRlcmFraGlyOiAkLTIgLSAoLTkpID0gNyQsIHBvc2l0aWYu",
+      "pernyataan": [
+        {
+          "teks": "Jika $a$ negatif dan $b$ positif, maka $a - b$ pasti negatif.",
+          "kunci": "949151ceba02beb0bd9ecdf78cc5205665ebb8b7dce8414b6abfdb6816f78535"
+        },
+        {
+          "teks": "Hasil kali dua bilangan bulat negatif selalu negatif.",
+          "kunci": "a226044cafbbe78e71a95a80c9b6af1df09897bdee6743439e541636ddfb863c"
+        },
+        {
+          "teks": "Jika $a < b$, maka $-a > -b$.",
+          "kunci": "991945f9b0b62751bb8324a3e6d5a38c4a93d60dbf67e53413c2ae0e3f513a78"
+        },
+        {
+          "teks": "Selisih dua bilangan bulat negatif selalu negatif.",
+          "kunci": "05136e5e9aa28450e82aa88ed83fb8ab93cc11baa7915463ac3434271671d8a3"
+        }
+      ]
+    },
+    {
+      "id": "bb-12",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Banyaknya bilangan bulat $x$ yang memenuhi $-7 < x < -3$ adalah ...",
+      "opsi": {
+        "a": "$2$",
+        "b": "$3$",
+        "c": "$4$",
+        "d": "$5$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "VGFuZGFueWEgdGVnYXMsIGphZGkgJC03JCBkYW4gJC0zJCB0aWRhayBpa3V0LiBZYW5nIG1lbWVudWhpIGhhbnlhICQtNiQsICQtNSQsIGRhbiAkLTQkLCB5YWl0dSAkMyQgYmlsYW5nYW4u",
+      "kunci": "0231529c33f2b9527a53a95f3bec159abf543d3ba78cc561912254d5f394ba51"
+    },
+    {
+      "id": "bb-13",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(-4) \\times 3 + 20 : (-5)$ adalah ...",
+      "pembahasan": "S2FsaSBkYW4gYmFnaSBkaWtlcmpha2FuIGxlYmloIGR1bHU6ICQoLTQpIFx0aW1lcyAzID0gLTEyJCBkYW4gJDIwIDogKC01KSA9IC00JC4gTGFsdSAkLTEyICsgKC00KSA9IC0xNiQu",
+      "kunci": [
+        "b7477fed1f44ccec44b67d9fcd88c19ccf844e24200c1cc8a7cc173442d4f82a"
+      ]
+    },
+    {
+      "id": "bb-14",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bilangan bulat terbesar yang lebih kecil dari $-8$ adalah ...",
+      "pembahasan": "VGV0YW5nZ2EgJC04JCBkaSBzZWJlbGFoIGtpcmkgZ2FyaXMgYmlsYW5nYW4gYWRhbGFoICQtOSQu",
+      "kunci": [
+        "a060aa1bed176c5e2ccf8d81aad8cf62cf60918eda3121f2db74a02f75e319c2"
+      ]
+    },
+    {
+      "id": "bb-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": false,
+      "pertanyaan": "Soal ini dinonaktifkan sebagai contoh: kalimatnya rancu, tetapi idnya tidak dihapus supaya rekap lama tetap bisa dibaca.",
+      "opsi": {
+        "a": "$1$",
+        "b": "$2$"
+      },
+      "pembahasan": "VGlkYWsgZGlwYWthaS4=",
+      "kunci": "27cf6999963e8ad293ab0e1941ff06dd884cb54a94c1330907c8f9dc584f4e07"
+    }
+  ]
+}

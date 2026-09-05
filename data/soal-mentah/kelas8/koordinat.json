@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "koordinat",
+    "judul": "Bidang Koordinat",
+    "versi": "2026-09-05"
+  },
+  "soal": [
+    {
+      "id": "kd-01", "level": 1, "tipe": "koordinat", "varian": "titik", "aktif": true,
+      "pertanyaan": "Gambarlah titik $P(-3, 2)$ pada bidang koordinat.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "kunci": [[-3, 2]],
+      "pembahasan": "Bilangan pertama menyatakan langkah mendatar, jadi tiga satuan ke kiri. Bilangan kedua menyatakan langkah tegak, jadi dua satuan ke atas."
+    },
+    {
+      "id": "kd-02", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Titik $Q(0, -4)$ terletak pada ...",
+      "opsi": {
+        "a": "sumbu-$X$",
+        "b": "sumbu-$Y$",
+        "c": "kuadran III",
+        "d": "kuadran IV"
+      },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "Absisnya nol, artinya titik itu tidak bergeser ke kiri maupun ke kanan, sehingga tetap berada pada sumbu-$Y$."
+    },
+    {
+      "id": "kd-03", "level": 2, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Gambarlah titik $A(1, 1)$, $B(4, 1)$, dan $C(4, 5)$.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "kunci": [[1, 1], [4, 1], [4, 5]],
+      "pembahasan": "Ketiga titik berada di kuadran I. $A$ dan $B$ sama tingginya, sedangkan $B$ dan $C$ sama jauhnya ke kanan."
+    },
+    {
+      "id": "kd-04", "level": 2, "tipe": "koordinat", "varian": "bangun", "aktif": true,
+      "pertanyaan": "Gambarlah bangun dengan titik sudut $K(-4, -1)$, $L(2, -1)$, $M(2, 3)$, dan $N(-4, 3)$, lalu hubungkan sehingga membentuk bangun tertutup.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "kunci": [[-4, -1], [2, -1], [2, 3], [-4, 3]],
+      "pembahasan": "Sisi $KL$ mendatar sepanjang $6$ satuan dan sisi $LM$ tegak sepanjang $4$ satuan, sehingga terbentuk persegi panjang.",
+      "lanjutan": {
+        "level": 2, "tipe": "pg",
+        "pertanyaan": "Luas bangun yang kamu gambar tadi adalah ... satuan luas.",
+        "opsi": { "a": "$10$", "b": "$20$", "c": "$24$", "d": "$48$" },
+        "kunci": "c",
+        "acakOpsi": false,
+        "pembahasan": "Panjangnya $6$ satuan dan lebarnya $4$ satuan, jadi luasnya $6 \\times 4 = 24$ satuan luas."
+      }
+    },
+    {
+      "id": "kd-05", "level": 3, "tipe": "koordinat", "varian": "garis", "aktif": true,
+      "pertanyaan": "Gambarlah garis dengan persamaan $y = 2x - 1$. Cukup tandai dua titik yang dilalui garis itu.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "kunci": [[0, -1], [2, 3]],
+      "pembahasan": "Ambil dua nilai $x$ yang mudah. Untuk $x = 0$ diperoleh $y = -1$, dan untuk $x = 2$ diperoleh $y = 3$. Dua titik mana pun pada garis itu sama benarnya."
+    },
+    {
+      "id": "kd-06", "level": 3, "tipe": "koordinat", "varian": "beberapa-titik", "aktif": true,
+      "pertanyaan": "Titik $A$ berada di $(-2, 3)$. Gambarlah bayangan titik $A$ jika dicerminkan terhadap sumbu-$Y$, dan bayangannya jika dicerminkan terhadap sumbu-$X$.",
+      "grid": { "xMin": -6, "xMax": 6, "yMin": -6, "yMax": 6 },
+      "kunci": [[2, 3], [-2, -3]],
+      "pembahasan": "Pencerminan terhadap sumbu-$Y$ membalik tanda absis sehingga $(-2, 3)$ menjadi $(2, 3)$. Pencerminan terhadap sumbu-$X$ membalik tanda ordinat sehingga menjadi $(-2, -3)$."
+    }
+  ]
+}

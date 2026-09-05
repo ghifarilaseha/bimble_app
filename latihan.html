@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latihan</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="index.html" class="tombol mungil" title="Kembali ke beranda">Beranda</a>
+    <span class="judul" id="judulBab">Latihan</span>
+    <span class="kanan">
+      <span class="kecil samar" id="labelSiswa"></span>
+      <span class="jam" id="jam" hidden></span>
+    </span>
+  </div>
+</header>
+
+<main class="bungkus" id="isi">
+
+  <!-- 1. Pesan galat atau pemberitahuan -->
+  <section id="layarPesan" hidden></section>
+
+  <!-- 2. Siswa mengaku siapa dirinya -->
+  <section id="layarIdentitas" hidden>
+    <h1 id="salamJudul">Siapa yang mengerjakan?</h1>
+
+    <div class="kartu" id="kartuKonfirmasi" hidden>
+      <p class="rapat">Kamu <strong id="namaTersimpan"></strong>, <span id="kelasTersimpan"></span>?</p>
+      <div class="deret" style="margin-top:.75rem">
+        <button type="button" class="tombol utama" id="tombolYaSaya">Ya, mulai</button>
+        <button type="button" class="tombol" id="tombolBukanSaya">Bukan saya</button>
+      </div>
+    </div>
+
+    <div class="kartu" id="kartuIsiNama">
+      <div class="kolom">
+        <label for="pilihKelas">Kelas</label>
+        <select id="pilihKelas"></select>
+      </div>
+      <div class="kolom">
+        <label for="isiNama">Nama lengkap</label>
+        <input type="text" id="isiNama" autocomplete="off" autocapitalize="words"
+               spellcheck="false" placeholder="Ketik beberapa huruf, lalu pilih namamu">
+        <div class="saran-nama" id="saranNama" hidden></div>
+        <p class="kecil samar" id="catatanNama" style="margin:.4rem 0 0"></p>
+      </div>
+      <button type="button" class="tombol utama lebar" id="tombolMulai">Mulai mengerjakan</button>
+    </div>
+  </section>
+
+  <!-- 3. Soal -->
+  <section id="layarSoal" hidden>
+    <div id="pemberitahuanSesi"></div>
+    <div id="daftarSoal"></div>
+  </section>
+
+  <!-- 4. Hasil -->
+  <section id="layarHasil" hidden>
+    <div class="kartu tengah">
+      <p class="kecil samar rapat" id="hasilJudul">Selesai</p>
+      <p class="nilai-besar" id="hasilNilai">0</p>
+      <p class="samar" id="hasilRincian"></p>
+      <p id="hasilStatusKirim" class="kecil"></p>
+    </div>
+    <div id="hasilDarurat" hidden>
+      <div class="pesan awas">
+        <strong>Hasilmu belum sampai ke guru.</strong>
+        Jawabanmu sudah disimpan di HP ini dan akan dikirim otomatis saat
+        internet tersambung. Bila diminta guru, potret kode di bawah ini.
+      </div>
+      <p class="kode-hasil" id="kodeHasil"></p>
+    </div>
+    <div class="deret" style="margin:1rem 0">
+      <button type="button" class="tombol" id="tombolTinjau">Lihat jawabanku</button>
+      <button type="button" class="tombol" id="tombolUlangi" hidden>Kerjakan lagi</button>
+      <a class="tombol" href="index.html">Selesai</a>
+    </div>
+  </section>
+
+</main>
+
+<div class="bilah-bawah" id="bilah" hidden>
+  <div class="isi">
+    <div style="flex:1">
+      <div class="kemajuan"><i id="palangKemajuan" style="width:0%"></i></div>
+      <div class="kecil samar" id="labelKemajuan" style="margin-top:.3rem"></div>
+    </div>
+    <button type="button" class="tombol utama" id="tombolKumpulkan">Kumpulkan</button>
+  </div>
+</div>
+
+<script src="vendor/katex/katex.min.js"></script>
+<script src="js/konfig.js"></script>
+<script src="js/kunci.js"></script>
+<script src="js/nilai.js"></script>
+<script src="js/soal.js"></script>
+<script src="js/identitas.js"></script>
+<script src="js/kirim.js"></script>
+<script src="js/rumus.js"></script>
+<script src="komponen/bidang-koordinat.js"></script>
+<script src="js/latihan.js"></script>
+</body>
+</html>

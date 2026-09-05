@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "kelas": 7,
+    "semester": 1,
+    "bab": "pecahan",
+    "judul": "Pecahan",
+    "versi": "2026-09-05"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-05",
+  "soal": [
+    {
+      "id": "pc-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pecahan yang senilai dengan $\\frac{2}{3}$ adalah ...",
+      "opsi": {
+        "a": "$\\frac{3}{4}$",
+        "b": "$\\frac{4}{6}$",
+        "c": "$\\frac{2}{6}$",
+        "d": "$\\frac{6}{8}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "UGVtYmlsYW5nIGRhbiBwZW55ZWJ1dCBkaWthbGlrYW4gYmlsYW5nYW4geWFuZyBzYW1hOiAkXGZyYWN7Mn17M30gPSBcZnJhY3syIFx0aW1lcyAyfXszIFx0aW1lcyAyfSA9IFxmcmFjezR9ezZ9JC4=",
+      "kunci": "4f723a870110a03aeef939bed1cd10de366ad796bec84d0918c8a0e3bf94c4c1"
+    },
+    {
+      "id": "pc-02",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bentuk paling sederhana dari $\\frac{12}{18}$ adalah ...",
+      "pembahasan": "UGVtYmlsYW5nIGRhbiBwZW55ZWJ1dCBzYW1hLXNhbWEgZGliYWdpICQ2JDogJFxmcmFjezEyfXsxOH0gPSBcZnJhY3syfXszfSQu",
+      "kunci": [
+        "46ab875bff4220eda1b5d94271eb79223c984a2c998ee7c2a68f4ac311835fad"
+      ]
+    },
+    {
+      "id": "pc-03",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bentuk persen dari $\\frac{3}{5}$ adalah ...",
+      "pembahasan": "VWJhaCBwZW55ZWJ1dG55YSBtZW5qYWRpICQxMDAkOiAkXGZyYWN7M317NX0gPSBcZnJhY3s2MH17MTAwfSA9IDYwXCUkLg==",
+      "kunci": [
+        "f9d2b45c389909812c2a10c16124b77bcf89aadfadd99966df96c79e942d1a9f"
+      ]
+    },
+    {
+      "id": "pc-04",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bentuk pecahan dari $75\\%$ adalah ...",
+      "pembahasan": "JDc1XCUgPSBcZnJhY3s3NX17MTAwfSQsIGxhbHUgZGlzZWRlcmhhbmFrYW4gZGVuZ2FuIG1lbWJhZ2kgJDI1JCBtZW5qYWRpICRcZnJhY3szfXs0fSQu",
+      "kunci": [
+        "2b1a765243dd2afd3408de5e8872340e4daa0d75fc313b46c9e4b3ee8a130a28",
+        "fe0da633080f4cfcf149fa8df1d907fd2b4dada8e41fcef3ce0f3358dd83eb45"
+      ]
+    },
+    {
+      "id": "pc-05",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Urutan dari yang terkecil ke terbesar untuk $0{,}45$; $\\frac{1}{2}$; dan $\\frac{2}{5}$ adalah ...",
+      "opsi": {
+        "a": "$\\frac{2}{5}$; $0{,}45$; $\\frac{1}{2}$",
+        "b": "$0{,}45$; $\\frac{2}{5}$; $\\frac{1}{2}$",
+        "c": "$\\frac{1}{2}$; $0{,}45$; $\\frac{2}{5}$",
+        "d": "$\\frac{2}{5}$; $\\frac{1}{2}$; $0{,}45$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U2FtYWthbiBiZW50dWtueWEgbWVuamFkaSBkZXNpbWFsOiAkXGZyYWN7Mn17NX0gPSAweyx9NCQgZGFuICRcZnJhY3sxfXsyfSA9IDB7LH01JC4gSmFkaSAkMHssfTQgPCAweyx9NDUgPCAweyx9NSQu",
+      "kunci": "24d87c4e600d9eaac57c7ff68b8fa6601d2613d768dd0ed76b4d0f5c38213619"
+    },
+    {
+      "id": "pc-06",
+      "level": 2,
+      "tipe": "benar-salah",
+      "aktif": true,
+      "pertanyaan": "Tentukan benar atau salah pernyataan berikut.",
+      "pembahasan": "QmlsYSBwZW55ZWJ1dG55YSBzYW1hLCBwZW1iaWxhbmcgeWFuZyBsZWJpaCBiZXNhciBiZXJuaWxhaSBsZWJpaCBiZXNhci4gQmlsYSBwZW1iaWxhbmdueWEgc2FtYSwgcGVueWVidXQgeWFuZyBsZWJpaCBiZXNhciBqdXN0cnUgYmVybmlsYWkgbGViaWgga2VjaWwsIGthcmVuYSBwb3Rvbmdhbm55YSBsZWJpaCBrZWNpbC4gUGVjYWhhbiB5YW5nIHBlbWJpbGFuZyBkYW4gcGVueWVidXRueWEgc2FtYSBiZXJuaWxhaSB0ZXBhdCAkMSQu",
+      "pernyataan": [
+        {
+          "teks": "$\\frac{3}{7} < \\frac{4}{7}$",
+          "kunci": "a64cb8f336425a490adec76fb459b8255056a50ba5a955b98826dba652e657f6"
+        },
+        {
+          "teks": "$\\frac{1}{4} > \\frac{1}{3}$",
+          "kunci": "230043546ce282d6dd3195e6100e25da3ee266d2d0c425ad6e1e1a386c9b67d3"
+        },
+        {
+          "teks": "$0{,}8 = \\frac{4}{5}$",
+          "kunci": "f3311a185c73ac6ee32a5715b1676f71ea68967e90a51c284b5eb2cc49574d29"
+        },
+        {
+          "teks": "$\\frac{5}{5} < 1$",
+          "kunci": "bc50251adcb318168d02cb0e1a3eaed1d80d63e4593a83df85a2ef15b8ca9889"
+        }
+      ]
+    },
+    {
+      "id": "pc-07",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Ibu memiliki $\\frac{3}{4}$ kg gula. Sebanyak $\\frac{1}{2}$ kg dipakai untuk membuat kue. Sisa gula Ibu adalah ... kg.",
+      "pembahasan": "U2FtYWthbiBwZW55ZWJ1dG55YTogJFxmcmFjezN9ezR9IC0gXGZyYWN7Mn17NH0gPSBcZnJhY3sxfXs0fSQu",
+      "kunci": [
+        "2723cbe186b3c1a6ac2c94e96be1bdd59cf618549f0958aef8849dc9c5c0208a",
+        "7d89e3820a9f8ddc322c2ee4c047fcfad36b6942f47892c01230ab40c0d7f6cc"
+      ]
+    },
+    {
+      "id": "pc-08",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Manakah pecahan yang paling dekat dengan $1$?",
+      "opsi": {
+        "a": "$\\frac{5}{6}$",
+        "b": "$\\frac{7}{8}$",
+        "c": "$\\frac{9}{10}$",
+        "d": "$\\frac{11}{12}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U2VsaXNpaCB0aWFwIHBlY2FoYW4gdGVyaGFkYXAgJDEkIGJlcnR1cnV0LXR1cnV0ICRcZnJhY3sxfXs2fSQsICRcZnJhY3sxfXs4fSQsICRcZnJhY3sxfXsxMH0kLCBkYW4gJFxmcmFjezF9ezEyfSQuIFNlbGlzaWggdGVya2VjaWwgZGltaWxpa2kgJFxmcmFjezExfXsxMn0kLg==",
+      "kunci": "da3e7445275358410b77a9cf442e610996172f8b61577e9e1e362ad9eef46341"
+    }
+  ]
+}

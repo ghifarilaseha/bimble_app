@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pecahan</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Pecahan</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Pecahan sebagai potongan</h1>
+  <p>
+    Penyebut menyatakan sebuah benda dipotong menjadi berapa bagian sama besar.
+    Pembilang menyatakan berapa potong yang diambil. Karena itu $3/4$ berarti
+    benda dipotong empat, lalu diambil tiga.
+  </p>
+
+  <div class="kartu">
+    <h3 class="rapat">Coba sendiri</h3>
+    <p class="kecil samar">
+      Ketuk potongannya untuk mengisi, atau ubah penyebutnya dan perhatikan
+      apa yang berubah.
+    </p>
+    <div id="batang1"></div>
+  </div>
+
+  <h2>Pecahan senilai</h2>
+  <p>
+    Dua pecahan disebut senilai bila panjang yang terarsir sama, walaupun
+    banyak potongannya berbeda. Batang bawah pada gambar berikut selalu $1/2$;
+    aturlah batang atas sampai panjang arsirnya sama.
+  </p>
+
+  <div class="kartu">
+    <div id="batang2"></div>
+    <p class="kecil" id="pesanSenilai" style="margin-top:.5rem"></p>
+  </div>
+
+  <p>
+    Yang sebenarnya terjadi: pembilang dan penyebut dikalikan bilangan yang sama.
+    Potongannya jadi lebih banyak tetapi lebih kecil, sehingga panjang totalnya tetap.
+  </p>
+
+  <h2>Penyebut lebih besar, potongan lebih kecil</h2>
+  <p>
+    Bila pembilangnya sama, pecahan berpenyebut besar justru bernilai lebih kecil.
+    Satu potong dari sepuluh tentu lebih kecil daripada satu potong dari tiga,
+    jadi $1/10 < 1/3$.
+  </p>
+
+  <h2>Pecahan, desimal, dan persen</h2>
+  <p>
+    Ketiganya hanya cara menulis yang berbeda untuk bilangan yang sama.
+    Persen berarti "per seratus", jadi $75\%$ sama dengan $75/100$, yang bila
+    disederhanakan menjadi $3/4$, dan bila ditulis desimal menjadi $0{,}75$.
+  </p>
+
+  <h2>Sudah paham?</h2>
+  <p>
+    <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=pecahan&amp;mode=mandiri">
+      Latihan mandiri
+    </a>
+  </p>
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../komponen/batang-pecahan.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  ['p', 'li', 'h1', 'h2', 'h3'].forEach(function (tag) {
+    Array.prototype.forEach.call(document.querySelectorAll('main ' + tag), function (n) {
+      if (n.textContent.indexOf('$') >= 0) n.innerHTML = Rumus.keHTML(n.textContent);
+    });
+  });
+
+  BatangPecahan.buat(document.getElementById('batang1'), {
+    pembilang: 3, penyebut: 4
+  });
+
+  var pesan = document.getElementById('pesanSenilai');
+  BatangPecahan.buat(document.getElementById('batang2'), {
+    pembilang: 1, penyebut: 3,
+    banding: { pembilang: 1, penyebut: 2 },
+    onUbah: function (n) {
+      var sama = Math.abs(n.pembilang / n.penyebut - 0.5) < 1e-9;
+      pesan.innerHTML = sama
+        ? '<span class="cap benar">Senilai</span> ' +
+          Rumus.keHTML('$' + n.pembilang + '/' + n.penyebut + ' = 1/2$')
+        : '<span class="cap sebagian">Belum sama</span> ' +
+          Rumus.keHTML('$' + n.pembilang + '/' + n.penyebut + '$ belum senilai dengan $1/2$');
+    }
+  });
+})();
+</script>
+</body>
+</html>

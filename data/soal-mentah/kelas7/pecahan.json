@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "kelas": 7,
+    "semester": 1,
+    "bab": "pecahan",
+    "judul": "Pecahan",
+    "versi": "2026-09-05"
+  },
+  "soal": [
+    {
+      "id": "pc-01", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Pecahan yang senilai dengan $\\frac{2}{3}$ adalah ...",
+      "opsi": {
+        "a": "$\\frac{3}{4}$",
+        "b": "$\\frac{4}{6}$",
+        "c": "$\\frac{2}{6}$",
+        "d": "$\\frac{6}{8}$"
+      },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "Pembilang dan penyebut dikalikan bilangan yang sama: $\\frac{2}{3} = \\frac{2 \\times 2}{3 \\times 2} = \\frac{4}{6}$."
+    },
+    {
+      "id": "pc-02", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Bentuk paling sederhana dari $\\frac{12}{18}$ adalah ...",
+      "jawaban": ["2/3"],
+      "pembahasan": "Pembilang dan penyebut sama-sama dibagi $6$: $\\frac{12}{18} = \\frac{2}{3}$."
+    },
+    {
+      "id": "pc-03", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Bentuk persen dari $\\frac{3}{5}$ adalah ...",
+      "jawaban": ["60"],
+      "pembahasan": "Ubah penyebutnya menjadi $100$: $\\frac{3}{5} = \\frac{60}{100} = 60\\%$."
+    },
+    {
+      "id": "pc-04", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Bentuk pecahan dari $75\\%$ adalah ...",
+      "jawaban": ["3/4", "0,75"],
+      "pembahasan": "$75\\% = \\frac{75}{100}$, lalu disederhanakan dengan membagi $25$ menjadi $\\frac{3}{4}$."
+    },
+    {
+      "id": "pc-05", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Urutan dari yang terkecil ke terbesar untuk $0{,}45$; $\\frac{1}{2}$; dan $\\frac{2}{5}$ adalah ...",
+      "opsi": {
+        "a": "$\\frac{2}{5}$; $0{,}45$; $\\frac{1}{2}$",
+        "b": "$0{,}45$; $\\frac{2}{5}$; $\\frac{1}{2}$",
+        "c": "$\\frac{1}{2}$; $0{,}45$; $\\frac{2}{5}$",
+        "d": "$\\frac{2}{5}$; $\\frac{1}{2}$; $0{,}45$"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Samakan bentuknya menjadi desimal: $\\frac{2}{5} = 0{,}4$ dan $\\frac{1}{2} = 0{,}5$. Jadi $0{,}4 < 0{,}45 < 0{,}5$."
+    },
+    {
+      "id": "pc-06", "level": 2, "tipe": "benar-salah", "aktif": true,
+      "pertanyaan": "Tentukan benar atau salah pernyataan berikut.",
+      "pernyataan": [
+        { "teks": "$\\frac{3}{7} < \\frac{4}{7}$", "kunci": true },
+        { "teks": "$\\frac{1}{4} > \\frac{1}{3}$", "kunci": false },
+        { "teks": "$0{,}8 = \\frac{4}{5}$", "kunci": true },
+        { "teks": "$\\frac{5}{5} < 1$", "kunci": false }
+      ],
+      "pembahasan": "Bila penyebutnya sama, pembilang yang lebih besar bernilai lebih besar. Bila pembilangnya sama, penyebut yang lebih besar justru bernilai lebih kecil, karena potongannya lebih kecil. Pecahan yang pembilang dan penyebutnya sama bernilai tepat $1$."
+    },
+    {
+      "id": "pc-07", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Ibu memiliki $\\frac{3}{4}$ kg gula. Sebanyak $\\frac{1}{2}$ kg dipakai untuk membuat kue. Sisa gula Ibu adalah ... kg.",
+      "jawaban": ["1/4", "0,25"],
+      "pembahasan": "Samakan penyebutnya: $\\frac{3}{4} - \\frac{2}{4} = \\frac{1}{4}$."
+    },
+    {
+      "id": "pc-08", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Manakah pecahan yang paling dekat dengan $1$?",
+      "opsi": {
+        "a": "$\\frac{5}{6}$",
+        "b": "$\\frac{7}{8}$",
+        "c": "$\\frac{9}{10}$",
+        "d": "$\\frac{11}{12}$"
+      },
+      "kunci": "d",
+      "acakOpsi": true,
+      "pembahasan": "Selisih tiap pecahan terhadap $1$ berturut-turut $\\frac{1}{6}$, $\\frac{1}{8}$, $\\frac{1}{10}$, dan $\\frac{1}{12}$. Selisih terkecil dimiliki $\\frac{11}{12}$."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "_catatan": "Peta kelas -> bab -> berkas soal dan materi. Bab yang belum punya berkas soal cukup dihapus barisnya, atau diberi \"aktif\": false supaya tidak muncul di beranda.",
+  "kelas": [
+    {
+      "tingkat": 7,
+      "judul": "Kelas 7",
+      "bab": [
+        {
+          "kode": "bilangan-bulat",
+          "judul": "Bilangan Bulat",
+          "semester": 1,
+          "ringkas": "Membandingkan, menjumlah, dan mengurangi bilangan bulat.",
+          "soal": "data/soal/kelas7/bilangan-bulat.json",
+          "materi": "materi/kelas7-bilangan-bulat.html",
+          "aktif": true
+        },
+        {
+          "kode": "pecahan",
+          "judul": "Pecahan",
+          "semester": 1,
+          "ringkas": "Pecahan senilai, desimal, dan persen.",
+          "soal": "data/soal/kelas7/pecahan.json",
+          "materi": "materi/kelas7-pecahan.html",
+          "aktif": true
+        }
+      ]
+    },
+    {
+      "tingkat": 8,
+      "judul": "Kelas 8",
+      "bab": [
+        {
+          "kode": "koordinat",
+          "judul": "Bidang Koordinat",
+          "semester": 1,
+          "ringkas": "Menempatkan titik, membentuk bangun, dan membaca garis.",
+          "soal": "data/soal/kelas8/koordinat.json",
+          "materi": "",
+          "aktif": true
+        }
+      ]
+    },
+    {
+      "tingkat": 9,
+      "judul": "Kelas 9",
+      "bab": []
+    }
+  ]
+}

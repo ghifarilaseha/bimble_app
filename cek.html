@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cek Berkas Soal</title>
+<link rel="stylesheet" href="css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Cek berkas soal</span>
+  </div>
+</header>
+
+<main class="bungkus">
+  <p class="samar">
+    Halaman ini memeriksa bentuk berkas soal: field wajib lengkap, id tidak kembar,
+    kunci mengacu ke opsi yang benar-benar ada, level 1 sampai 3, dan grid koordinat
+    yang masih terbaca di layar HP. Jalankan sebelum commit.
+  </p>
+
+  <div class="kartu">
+    <h2 class="rapat">Berkas yang sudah tayang</h2>
+    <p class="kecil samar">Semua berkas soal yang terdaftar di <code>data/daftar-bab.json</code>.</p>
+    <button type="button" class="tombol utama" id="tombolCekSemua">Periksa semua</button>
+  </div>
+
+  <div class="kartu">
+    <h2 class="rapat">Berkas mentah dari komputer</h2>
+    <p class="kecil samar">
+      Berkas di <code>data/soal-mentah/</code> tidak ikut ter-deploy, jadi pilih berkasnya
+      dari komputer. Bentuk mentah maupun tergembok sama-sama bisa diperiksa.
+    </p>
+    <input type="file" id="berkasLokal" accept=".json,application/json">
+  </div>
+
+  <div id="hasil"></div>
+</main>
+
+<script src="js/kunci.js"></script>
+<script src="js/nilai.js"></script>
+<script src="js/validasi.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var elHasil = document.getElementById('hasil');
+
+  function lolos(t) {
+    return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function tulisLaporan(judul, lapor) {
+    var kartu = document.createElement('div');
+    kartu.className = 'kartu';
+    var j = lapor.jumlah || {};
+    var ringkas = j.soal
+      ? j.aktif + ' soal aktif dari ' + j.soal + ' (level 1/2/3: ' +
+        j.level[1] + '/' + j.level[2] + '/' + j.level[3] + ')'
+      : '';
+
+    var isi = '<h3 class="rapat">' + lolos(judul) + '</h3>' +
+      '<p class="kecil samar">' + lolos(ringkas) +
+      (lapor.bentuk ? ' &middot; bentuk ' + lapor.bentuk : '') + '</p>';
+
+    if (!lapor.galat.length && !lapor.peringatan.length) {
+      isi += '<div class="pesan sip">Tidak ada masalah.</div>';
+    }
+    lapor.galat.forEach(function (g) {
+      isi += '<div class="pesan gagal"><strong>' + lolos(g.dimana) + '</strong> ' + lolos(g.pesan) + '</div>';
+    });
+    lapor.peringatan.forEach(function (p) {
+      isi += '<div class="pesan awas"><strong>' + lolos(p.dimana) + '</strong> ' + lolos(p.pesan) + '</div>';
+    });
+
+    kartu.innerHTML = isi;
+    elHasil.appendChild(kartu);
+  }
+
+  function periksaBerkas(url, judul) {
+    return fetch(url, { cache: 'no-cache' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('tidak ditemukan (' + r.status + ')');
+        return r.text();
+      })
+      .then(function (teks) {
+        var bank;
+        try { bank = JSON.parse(teks); }
+        catch (e) { throw new Error('bukan JSON yang sah: ' + e.message); }
+        return Validasi.periksa(bank).then(function (lapor) { tulisLaporan(judul, lapor); return lapor; });
+      })
+      .catch(function (e) {
+        tulisLaporan(judul, { galat: [{ dimana: 'berkas', pesan: e.message }], peringatan: [], jumlah: {} });
+        return { galat: [1] };
+      });
+  }
+
+  document.getElementById('tombolCekSemua').addEventListener('click', function () {
+    elHasil.innerHTML = '<p class="samar">Memeriksa...</p>';
+    fetch('data/daftar-bab.json', { cache: 'no-cache' })
+      .then(function (r) { return r.json(); })
+      .then(function (peta) {
+        elHasil.innerHTML = '';
+        var tugas = [];
+        (peta.kelas || []).forEach(function (k) {
+          (k.bab || []).forEach(function (b) {
+            if (b.soal) tugas.push({ url: b.soal, judul: k.judul + ' - ' + b.judul });
+          });
+        });
+        if (!tugas.length) {
+          elHasil.innerHTML = '<div class="pesan awas">Tidak ada berkas soal yang terdaftar.</div>';
+          return;
+        }
+        return tugas.reduce(function (rantai, t) {
+          return rantai.then(function (kumpul) {
+            return periksaBerkas(t.url, t.judul).then(function (l) {
+              return kumpul.concat([l]);
+            });
+          });
+        }, Promise.resolve([])).then(function (semua) {
+          var berGalat = semua.filter(function (l) { return l.galat.length; }).length;
+          var ringkas = document.createElement('div');
+          ringkas.className = 'pesan ' + (berGalat ? 'gagal' : 'sip');
+          ringkas.textContent = berGalat
+            ? berGalat + ' dari ' + semua.length + ' berkas bermasalah.'
+            : 'Semua ' + semua.length + ' berkas lolos pemeriksaan.';
+          elHasil.insertBefore(ringkas, elHasil.firstChild);
+        });
+      })
+      .catch(function (e) {
+        elHasil.innerHTML = '<div class="pesan gagal">' + lolos(e.message) + '</div>';
+      });
+  });
+
+  document.getElementById('berkasLokal').addEventListener('change', function (ev) {
+    var berkas = ev.target.files && ev.target.files[0];
+    if (!berkas) return;
+    elHasil.innerHTML = '';
+    berkas.text().then(function (teks) {
+      var bank;
+      try { bank = JSON.parse(teks); }
+      catch (e) {
+        return tulisLaporan(berkas.name, {
+          galat: [{ dimana: 'berkas', pesan: 'bukan JSON yang sah: ' + e.message }],
+          peringatan: [], jumlah: {}
+        });
+      }
+      Validasi.periksa(bank).then(function (lapor) { tulisLaporan(berkas.name, lapor); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

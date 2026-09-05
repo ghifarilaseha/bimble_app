@@ -1,0 +1,50 @@
+{
+  "_catatan": "Diperbarui sekali tiap tahun ajaran. Nama di sini dipakai untuk saran pengetikan dan untuk mengetahui siapa yang belum mengerjakan.",
+  "tahunAjaran": "2026/2027",
+  "kelas": [
+    {
+      "kode": "7A",
+      "tingkat": 7,
+      "siswa": [
+        "Ahmad Fauzi", "Aisyah Rahmawati", "Bagas Prasetyo", "Budi Santoso",
+        "Citra Maharani", "Dimas Anggara", "Eka Nurhaliza", "Fajar Ramadhan",
+        "Gita Puspita", "Hendra Wijaya", "Indah Permatasari", "Joko Susilo",
+        "Kartika Sari", "Lukman Hakim", "Maya Anggraini", "Nabila Zahra",
+        "Oktavian Putra", "Putri Ayu Lestari", "Rizky Ananda", "Salsabila Adzra"
+      ]
+    },
+    {
+      "kode": "7B",
+      "tingkat": 7,
+      "siswa": [
+        "Adit Nugroho", "Anisa Fitriani", "Bima Saputra", "Cahya Ningrum",
+        "Dewi Lestari", "Eko Prabowo", "Farhan Maulana", "Gilang Ramadhan",
+        "Hana Safitri", "Irfan Hidayat", "Jasmine Aulia", "Kevin Pratama",
+        "Laila Nurjanah", "Mochamad Rizal", "Nadia Kusuma", "Panji Wicaksono",
+        "Ratna Dewi", "Sandi Kurniawan", "Tiara Andini", "Yoga Pratama"
+      ]
+    },
+    {
+      "kode": "8A",
+      "tingkat": 8,
+      "siswa": [
+        "Alif Rahman", "Bunga Citra", "Candra Wibowo", "Delima Sari",
+        "Erlangga Putra", "Fitri Handayani", "Galih Saputra", "Hesti Wulandari",
+        "Ilham Akbar", "Jihan Nabila", "Krisna Aditya", "Lintang Cahaya",
+        "Marsha Aulia", "Naufal Zaki", "Olivia Rahma", "Pandu Setiawan",
+        "Qori Amelia", "Reza Fahlevi", "Sinta Bella", "Taufik Hidayat"
+      ]
+    },
+    {
+      "kode": "9A",
+      "tingkat": 9,
+      "siswa": [
+        "Andra Firmansyah", "Bella Safira", "Cakra Buana", "Dinda Ayuningtyas",
+        "Evan Kurniawan", "Fauziah Rahmi", "Gading Prakoso", "Hilda Maharani",
+        "Ibrahim Yusuf", "Jelita Anggun", "Kurnia Ramadhan", "Lia Amelia",
+        "Marcel Antonio", "Nurul Hidayah", "Oscar Pratama", "Pramudya Ananta",
+        "Rania Salsabila", "Satrio Wibowo", "Tania Puspa", "Wahyu Nugraha"
+      ]
+    }
+  ]
+}

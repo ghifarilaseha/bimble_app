@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "kelas": 7,
+    "semester": 1,
+    "bab": "bilangan-bulat",
+    "judul": "Bilangan Bulat",
+    "versi": "2026-09-05"
+  },
+  "soal": [
+    {
+      "id": "bb-01", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Bilangan yang tiga lebih kecil dari dua adalah ...",
+      "opsi": { "a": "$-2$", "b": "$-1$", "c": "$3$", "d": "$6$" },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "Tiga lebih kecil berarti dikurangi tiga: $2 - 3 = -1$."
+    },
+    {
+      "id": "bb-02", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Suhu sebuah kota sore hari $-4$ °C. Malam harinya suhu turun $6$ derajat. Suhu kota itu pada malam hari adalah ...",
+      "opsi": { "a": "$-10$ °C", "b": "$-2$ °C", "c": "$2$ °C", "d": "$10$ °C" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Turun berarti berkurang: $-4 - 6 = -10$."
+    },
+    {
+      "id": "bb-03", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Lawan dari $-15$ adalah ...",
+      "jawaban": ["15"],
+      "pembahasan": "Lawan sebuah bilangan berjarak sama dari nol tetapi berlawanan arah, yaitu $15$."
+    },
+    {
+      "id": "bb-04", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Urutan dari yang terkecil ke terbesar untuk bilangan $-2$, $-11$, $3$, $-7$ adalah ...",
+      "opsi": {
+        "a": "$-2$, $-7$, $-11$, $3$",
+        "b": "$-11$, $-7$, $-2$, $3$",
+        "c": "$3$, $-2$, $-7$, $-11$",
+        "d": "$-11$, $-2$, $-7$, $3$"
+      },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "Makin jauh ke kiri pada garis bilangan, makin kecil nilainya: $-11 < -7 < -2 < 3$."
+    },
+    {
+      "id": "bb-05", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Hasil dari $-8 + 12 - 5$ adalah ...",
+      "jawaban": ["-1"],
+      "pembahasan": "Kerjakan berurutan dari kiri: $-8 + 12 = 4$, lalu $4 - 5 = -1$."
+    },
+    {
+      "id": "bb-06", "level": 2, "tipe": "benar-salah", "aktif": true,
+      "pertanyaan": "Tentukan benar atau salah pernyataan berikut.",
+      "pernyataan": [
+        { "teks": "$7 > -90$", "kunci": true },
+        { "teks": "$-0{,}5 < 0{,}3$", "kunci": true },
+        { "teks": "$-9 < -19$", "kunci": false },
+        { "teks": "$-1 > 0$", "kunci": false }
+      ],
+      "pembahasan": "Semua bilangan negatif lebih kecil daripada bilangan positif. Sesama negatif, yang angkanya lebih besar justru lebih kecil nilainya, jadi $-9 > -19$."
+    },
+    {
+      "id": "bb-07", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Manakah yang hasilnya paling besar?",
+      "opsi": {
+        "a": "$-3 + 8$",
+        "b": "$5 - 9$",
+        "c": "$-2 - (-6)$",
+        "d": "$4 - 4$"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Hasilnya berturut-turut $5$, $-4$, $4$, dan $0$. Yang terbesar adalah $-3 + 8 = 5$."
+    }
+    ,
+    {
+      "id": "bb-08", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Selisih suhu antara $12$ °C dan $-9$ °C adalah ... derajat.",
+      "jawaban": ["21"],
+      "pembahasan": "Selisih adalah jarak keduanya pada garis bilangan: $12 - (-9) = 12 + 9 = 21$."
+    },
+    {
+      "id": "bb-09", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Diketahui $a = -6$ dan $b = 4$. Nilai dari $a - b$ adalah ...",
+      "opsi": { "a": "$-10$", "b": "$-2$", "c": "$2$", "d": "$10$" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Ganti hurufnya dengan nilainya: $-6 - 4 = -10$."
+    },
+    {
+      "id": "bb-10", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah lift berada di lantai $-3$. Lift naik $7$ lantai, lalu turun $2$ lantai, kemudian naik lagi $5$ lantai. Lift itu sekarang berada di lantai ...",
+      "jawaban": ["7"],
+      "pembahasan": "Ikuti satu per satu: $-3 + 7 = 4$, lalu $4 - 2 = 2$, lalu $2 + 5 = 7$."
+    },
+    {
+      "id": "bb-11", "level": 3, "tipe": "benar-salah", "aktif": true,
+      "pertanyaan": "Misalkan $a$ dan $b$ bilangan bulat. Tentukan benar atau salah pernyataan berikut.",
+      "pernyataan": [
+        { "teks": "Jika $a$ negatif dan $b$ positif, maka $a - b$ pasti negatif.", "kunci": true },
+        { "teks": "Hasil kali dua bilangan bulat negatif selalu negatif.", "kunci": false },
+        { "teks": "Jika $a < b$, maka $-a > -b$.", "kunci": true },
+        { "teks": "Selisih dua bilangan bulat negatif selalu negatif.", "kunci": false }
+      ],
+      "pembahasan": "Bilangan negatif dikurangi bilangan positif bergerak makin ke kiri, jadi tetap negatif. Dua negatif dikalikan menghasilkan positif. Mengalikan dengan $-1$ membalik arah pertidaksamaan. Contoh penyangkal untuk yang terakhir: $-2 - (-9) = 7$, positif."
+    },
+    {
+      "id": "bb-12", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Banyaknya bilangan bulat $x$ yang memenuhi $-7 < x < -3$ adalah ...",
+      "opsi": { "a": "$2$", "b": "$3$", "c": "$4$", "d": "$5$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Tandanya tegas, jadi $-7$ dan $-3$ tidak ikut. Yang memenuhi hanya $-6$, $-5$, dan $-4$, yaitu $3$ bilangan."
+    },
+    {
+      "id": "bb-13", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Hasil dari $(-4) \\times 3 + 20 : (-5)$ adalah ...",
+      "jawaban": ["-16"],
+      "pembahasan": "Kali dan bagi dikerjakan lebih dulu: $(-4) \\times 3 = -12$ dan $20 : (-5) = -4$. Lalu $-12 + (-4) = -16$."
+    },
+    {
+      "id": "bb-14", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Bilangan bulat terbesar yang lebih kecil dari $-8$ adalah ...",
+      "jawaban": ["-9"],
+      "pembahasan": "Tetangga $-8$ di sebelah kiri garis bilangan adalah $-9$."
+    },
+    {
+      "id": "bb-15", "level": 2, "tipe": "pg", "aktif": false,
+      "pertanyaan": "Soal ini dinonaktifkan sebagai contoh: kalimatnya rancu, tetapi idnya tidak dihapus supaya rekap lama tetap bisa dibaca.",
+      "opsi": { "a": "$1$", "b": "$2$" },
+      "kunci": "a",
+      "pembahasan": "Tidak dipakai."
+    }
+  ]
+}

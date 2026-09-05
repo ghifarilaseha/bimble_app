@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "koordinat",
+    "judul": "Bidang Koordinat",
+    "versi": "2026-09-05"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-05",
+  "soal": [
+    {
+      "id": "kd-01",
+      "level": 1,
+      "tipe": "koordinat",
+      "varian": "titik",
+      "aktif": true,
+      "pertanyaan": "Gambarlah titik $P(-3, 2)$ pada bidang koordinat.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "pembahasan": "QmlsYW5nYW4gcGVydGFtYSBtZW55YXRha2FuIGxhbmdrYWggbWVuZGF0YXIsIGphZGkgdGlnYSBzYXR1YW4ga2Uga2lyaS4gQmlsYW5nYW4ga2VkdWEgbWVueWF0YWthbiBsYW5na2FoIHRlZ2FrLCBqYWRpIGR1YSBzYXR1YW4ga2UgYXRhcy4=",
+      "kunciTampil": "W1stMywyXV0=",
+      "jumlahKunci": 1,
+      "kunci": [
+        "7f105edab4a3c16ad1edc0ab61b4ec60428a0151790c345756ec04dfd0426614"
+      ]
+    },
+    {
+      "id": "kd-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Titik $Q(0, -4)$ terletak pada ...",
+      "opsi": {
+        "a": "sumbu-$X$",
+        "b": "sumbu-$Y$",
+        "c": "kuadran III",
+        "d": "kuadran IV"
+      },
+      "acakOpsi": true,
+      "pembahasan": "QWJzaXNueWEgbm9sLCBhcnRpbnlhIHRpdGlrIGl0dSB0aWRhayBiZXJnZXNlciBrZSBraXJpIG1hdXB1biBrZSBrYW5hbiwgc2VoaW5nZ2EgdGV0YXAgYmVyYWRhIHBhZGEgc3VtYnUtJFkkLg==",
+      "kunci": "d70d40b9a91417590d7e79c42c3a5654268359c10a240cfbdffd7b7e72e21e85"
+    },
+    {
+      "id": "kd-03",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Gambarlah titik $A(1, 1)$, $B(4, 1)$, dan $C(4, 5)$.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "pembahasan": "S2V0aWdhIHRpdGlrIGJlcmFkYSBkaSBrdWFkcmFuIEkuICRBJCBkYW4gJEIkIHNhbWEgdGluZ2dpbnlhLCBzZWRhbmdrYW4gJEIkIGRhbiAkQyQgc2FtYSBqYXVobnlhIGtlIGthbmFuLg==",
+      "kunciTampil": "W1sxLDFdLFs0LDFdLFs0LDVdXQ==",
+      "jumlahKunci": 3,
+      "kunci": [
+        "63453abd3c8defd05164ea5b1d7d17bb3d980a444567eac640e44f7ad012942a",
+        "d9aea28919f5e2994a85131fe6d31e7de9e9c854aa0c52a9b002fdaa60293cc0",
+        "e99ca8081c2807a5f27b36adc1392815bd1cefebccf43d3a2a5814e0af02913b"
+      ]
+    },
+    {
+      "id": "kd-04",
+      "level": 2,
+      "tipe": "koordinat",
+      "varian": "bangun",
+      "aktif": true,
+      "pertanyaan": "Gambarlah bangun dengan titik sudut $K(-4, -1)$, $L(2, -1)$, $M(2, 3)$, dan $N(-4, 3)$, lalu hubungkan sehingga membentuk bangun tertutup.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "pembahasan": "U2lzaSAkS0wkIG1lbmRhdGFyIHNlcGFuamFuZyAkNiQgc2F0dWFuIGRhbiBzaXNpICRMTSQgdGVnYWsgc2VwYW5qYW5nICQ0JCBzYXR1YW4sIHNlaGluZ2dhIHRlcmJlbnR1ayBwZXJzZWdpIHBhbmphbmcu",
+      "kunciTampil": "W1stNCwtMV0sWzIsLTFdLFsyLDNdLFstNCwzXV0=",
+      "jumlahKunci": 4,
+      "kunci": [
+        "e906c98c6c3a2054a26c211c0b8743a5b567ff460a93808d488a8f89b9ca9803",
+        "f2b4253da6041d511d8c3a36b9d4323d2ea5658fc8016f3907906048e9980731",
+        "f7e178852ef06f0e2c4f6f022cda769591b8a01bbaa60b59c303ed88083d5ef5",
+        "ed7c2284ae6de07bac25d088e12cc740423a59fe772a316cd5ce8d81f262c421"
+      ],
+      "lanjutan": {
+        "level": 2,
+        "tipe": "pg",
+        "pertanyaan": "Luas bangun yang kamu gambar tadi adalah ... satuan luas.",
+        "opsi": {
+          "a": "$10$",
+          "b": "$20$",
+          "c": "$24$",
+          "d": "$48$"
+        },
+        "acakOpsi": false,
+        "id": "kd-04-l",
+        "pembahasan": "UGFuamFuZ255YSAkNiQgc2F0dWFuIGRhbiBsZWJhcm55YSAkNCQgc2F0dWFuLCBqYWRpIGx1YXNueWEgJDYgXHRpbWVzIDQgPSAyNCQgc2F0dWFuIGx1YXMu",
+        "kunci": "0398522a712ed58f6c04384ddf1692f6de8c7b2ccb53183341f68fe9ef64b178"
+      }
+    },
+    {
+      "id": "kd-05",
+      "level": 3,
+      "tipe": "koordinat",
+      "varian": "garis",
+      "aktif": true,
+      "pertanyaan": "Gambarlah garis dengan persamaan $y = 2x - 1$. Cukup tandai dua titik yang dilalui garis itu.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "pembahasan": "QW1iaWwgZHVhIG5pbGFpICR4JCB5YW5nIG11ZGFoLiBVbnR1ayAkeCA9IDAkIGRpcGVyb2xlaCAkeSA9IC0xJCwgZGFuIHVudHVrICR4ID0gMiQgZGlwZXJvbGVoICR5ID0gMyQuIER1YSB0aXRpayBtYW5hIHB1biBwYWRhIGdhcmlzIGl0dSBzYW1hIGJlbmFybnlhLg==",
+      "kunciTampil": "W1swLC0xXSxbMiwzXV0=",
+      "kunci": "4781747874b2492fa2e82b7d97fd36e1bb38c30f6b6ed653cf31b7cd4faabf47"
+    },
+    {
+      "id": "kd-06",
+      "level": 3,
+      "tipe": "koordinat",
+      "varian": "beberapa-titik",
+      "aktif": true,
+      "pertanyaan": "Titik $A$ berada di $(-2, 3)$. Gambarlah bayangan titik $A$ jika dicerminkan terhadap sumbu-$Y$, dan bayangannya jika dicerminkan terhadap sumbu-$X$.",
+      "grid": {
+        "xMin": -6,
+        "xMax": 6,
+        "yMin": -6,
+        "yMax": 6
+      },
+      "pembahasan": "UGVuY2VybWluYW4gdGVyaGFkYXAgc3VtYnUtJFkkIG1lbWJhbGlrIHRhbmRhIGFic2lzIHNlaGluZ2dhICQoLTIsIDMpJCBtZW5qYWRpICQoMiwgMykkLiBQZW5jZXJtaW5hbiB0ZXJoYWRhcCBzdW1idS0kWCQgbWVtYmFsaWsgdGFuZGEgb3JkaW5hdCBzZWhpbmdnYSBtZW5qYWRpICQoLTIsIC0zKSQu",
+      "kunciTampil": "W1syLDNdLFstMiwtM11d",
+      "jumlahKunci": 2,
+      "kunci": [
+        "27117554f6385c84423935d82523778b06e57c772a6564dd865298bb51ef08fb",
+        "b1b74e9ad13cc6f81cc3920c0412e16453f7d1c76339945342b97268a3066b4f"
+      ]
+    }
+  ]
+}

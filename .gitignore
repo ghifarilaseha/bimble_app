@@ -1,0 +1,15 @@
+# Situs ini tidak punya proses build dan tidak punya dependensi.
+# Kalau folder ini muncul, hampir pasti ada yang salah jalan.
+node_modules/
+package-lock.json
+
+# Sampah sistem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Berkas sementara editor
+*~
+*.swp
+.vscode/
+.idea/

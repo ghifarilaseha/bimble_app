@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matematika SMP</title>
+<link rel="stylesheet" href="css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <span class="judul" id="judulSitus">Matematika SMP</span>
+    <span class="kanan kecil samar" id="tahunAjaran"></span>
+  </div>
+</header>
+
+<main class="bungkus">
+  <h1>Pilih kelas dan bab</h1>
+  <p class="samar">Buka materi untuk belajar, atau latihan mandiri untuk berlatih sebanyak yang kamu mau.</p>
+
+  <div class="tab" id="tabKelas" role="tablist"></div>
+  <div id="daftarBab"></div>
+
+  <div id="catatanAntrean"></div>
+
+  <p class="kecil samar" style="margin-top:2rem">
+    <a href="guru.html">Halaman guru</a>
+  </p>
+</main>
+
+<script src="js/konfig.js"></script>
+<script src="js/kunci.js"></script>
+<script src="js/kirim.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var elTab = document.getElementById('tabKelas');
+  var elBab = document.getElementById('daftarBab');
+  var elTahun = document.getElementById('tahunAjaran');
+  var elCatatan = document.getElementById('catatanAntrean');
+  document.getElementById('judulSitus').textContent = KONFIG.JUDUL;
+  document.title = KONFIG.JUDUL;
+
+  function lolos(t) {
+    return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  /* Hasil yang belum sampai ke guru dikirim ulang begitu ada yang membuka
+     beranda dalam keadaan tersambung. Siswa tidak perlu melakukan apa pun. */
+  Kirim.pasangPemantau();
+  Kirim.prosesAntrean().then(function (h) {
+    if (h.sisa) {
+      elCatatan.innerHTML = '<div class="pesan awas">Ada ' + h.sisa +
+        ' hasil pengerjaan yang belum terkirim. Akan dikirim otomatis begitu internet tersambung.</div>';
+    } else if (h.terkirim) {
+      elCatatan.innerHTML = '<div class="pesan sip">' + h.terkirim +
+        ' hasil yang tertunda berhasil dikirim.</div>';
+    }
+  });
+
+  fetch('data/kelas.json', { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) { if (d) elTahun.textContent = 'Tahun ajaran ' + d.tahunAjaran; })
+    .catch(function () { /* tahun ajaran hanya hiasan */ });
+
+  fetch('data/daftar-bab.json', { cache: 'no-cache' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('Daftar bab tidak bisa dimuat (' + r.status + ').');
+      return r.json();
+    })
+    .then(function (peta) {
+      var kelas = (peta.kelas || []).filter(function (k) { return (k.bab || []).length; });
+      if (!kelas.length) {
+        elBab.innerHTML = '<div class="pesan awas">Belum ada bab yang terdaftar di data/daftar-bab.json.</div>';
+        return;
+      }
+      kelas.forEach(function (k, i) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        b.textContent = k.judul;
+        b.addEventListener('click', function () {
+          Array.prototype.forEach.call(elTab.children, function (x) {
+            x.setAttribute('aria-selected', 'false');
+          });
+          b.setAttribute('aria-selected', 'true');
+          gambarBab(k);
+        });
+        elTab.appendChild(b);
+      });
+      gambarBab(kelas[0]);
+    })
+    .catch(function (e) {
+      elBab.innerHTML = '<div class="pesan gagal">' + lolos(e.message) + '</div>';
+    });
+
+  function gambarBab(k) {
+    var bab = (k.bab || []).filter(function (b) { return b.aktif !== false; });
+    if (!bab.length) {
+      elBab.innerHTML = '<div class="pesan info">Belum ada bab untuk ' + lolos(k.judul) + '.</div>';
+      return;
+    }
+    elBab.innerHTML = bab.map(function (b) {
+      var tautanLatihan = 'latihan.html?kelas=' + encodeURIComponent(k.tingkat) +
+        '&bab=' + encodeURIComponent(b.kode) + '&mode=mandiri';
+      var tombolMateri = b.materi
+        ? '<a class="tombol mungil" href="' + lolos(b.materi) + '">Materi</a>'
+        : '';
+      return '<div class="kartu padat">' +
+        '<div class="nama">' + lolos(b.judul) + '</div>' +
+        '<div class="ket samar kecil">' + lolos(b.ringkas || '') + '</div>' +
+        '<div class="deret" style="margin-top:.6rem">' +
+          tombolMateri +
+          '<a class="tombol mungil utama" href="' + tautanLatihan + '">Latihan mandiri</a>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+# Konfigurasi Netlify. Tidak ada perintah build: seluruh situs berupa
+# berkas polos, jadi Netlify hanya perlu menyalinnya apa adanya.
+
+[build]
+  publish = "."
+  command = ""
+
+# Berkas soal mentah beserta kuncinya yang terbaca ikut terunggah, tetapi
+# tidak boleh bisa dibuka dari luar. Aturan di bawah menutup jalurnya.
+# Repo GitHub-nya sendiri harus private; lihat README bagian "Menaruh di
+# Netlify" untuk alasannya.
+[[redirects]]
+  from = "/data/soal-mentah/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/tools/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/apps-script/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Bank soal berubah tiap kali soal ditambah, jadi jangan disimpan lama.
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# KaTeX tidak pernah berubah setelah disalin, jadi boleh disimpan lama.
+[[headers]]
+  for = "/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

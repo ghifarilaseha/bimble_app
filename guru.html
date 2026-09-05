@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halaman Guru</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi lebar">
+    <a href="index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Halaman guru</span>
+    <span class="kanan">
+      <a class="tombol mungil" href="cek.html">Cek soal</a>
+      <button type="button" class="tombol mungil" id="tombolKeluar" hidden>Kunci</button>
+    </span>
+  </div>
+</header>
+
+<main class="bungkus-lebar">
+
+  <section id="gerbang">
+    <div class="kartu" style="max-width:26rem;margin:2rem auto">
+      <h1 class="rapat">Kode guru</h1>
+      <p class="kecil samar">
+        Kode ini sama dengan nilai TOKEN pada Script Properties di Apps Script.
+        Disimpan di peramban ini saja. Penghalang praktis, bukan keamanan sungguhan.
+      </p>
+      <div class="kolom">
+        <label for="isiKode">Kode</label>
+        <input type="text" id="isiKode" autocomplete="off" spellcheck="false">
+      </div>
+      <button type="button" class="tombol utama lebar" id="tombolMasuk">Buka</button>
+      <p class="kecil" id="pesanGerbang"></p>
+    </div>
+  </section>
+
+  <section id="ruang" hidden>
+    <div class="tab" id="tabUtama" role="tablist">
+      <button type="button" role="tab" data-panel="panelSesi" aria-selected="true">Buat sesi</button>
+      <button type="button" role="tab" data-panel="panelButir" aria-selected="false">Analisis butir</button>
+      <button type="button" role="tab" data-panel="panelPerhatian" aria-selected="false">Perlu perhatian</button>
+      <button type="button" role="tab" data-panel="panelPerkembangan" aria-selected="false">Perkembangan siswa</button>
+      <button type="button" role="tab" data-panel="panelBelum" aria-selected="false">Belum mengerjakan</button>
+    </div>
+
+    <div id="panelSesi">
+      <div class="kartu">
+        <h2 class="rapat">Buat tautan latihan</h2>
+        <div class="baris">
+          <div class="kolom">
+            <label for="sesiKelas">Kelas</label>
+            <select id="sesiKelas"></select>
+          </div>
+          <div class="kolom">
+            <label for="sesiBab">Bab</label>
+            <select id="sesiBab"></select>
+          </div>
+          <div class="kolom">
+            <label for="sesiMode">Mode</label>
+            <select id="sesiMode">
+              <option value="kelas">Kelas (ada waktu, sekali kerjakan)</option>
+              <option value="pr">PR (ada tenggat, sekali kerjakan)</option>
+              <option value="mandiri">Mandiri (boleh diulang)</option>
+            </select>
+          </div>
+        </div>
+        <div class="baris">
+          <div class="kolom" id="kolomKode">
+            <label for="sesiKode">Kode sesi</label>
+            <input type="text" id="sesiKode" placeholder="7A-01">
+          </div>
+          <div class="kolom" id="kolomDurasi">
+            <label for="sesiDurasi">Durasi (menit)</label>
+            <input type="number" id="sesiDurasi" value="25" min="1" max="180">
+          </div>
+          <div class="kolom" id="kolomTenggat" hidden>
+            <label for="sesiTenggat">Tenggat</label>
+            <input type="datetime-local" id="sesiTenggat">
+          </div>
+          <div class="kolom">
+            <label for="sesiJumlah">Jumlah soal (0 = semua)</label>
+            <input type="number" id="sesiJumlah" value="10" min="0" max="100">
+          </div>
+        </div>
+        <div class="baris">
+          <div class="kolom">
+            <label for="sesiLevel">Batasi level</label>
+            <select id="sesiLevel">
+              <option value="">Semua level</option>
+              <option value="1">Level 1 saja</option>
+              <option value="1,2">Level 1 dan 2</option>
+              <option value="2,3">Level 2 dan 3</option>
+              <option value="3">Level 3 saja</option>
+            </select>
+          </div>
+          <div class="kolom">
+            <label for="sesiBobot">Bobot nilai</label>
+            <select id="sesiBobot">
+              <option value="">Mengikuti level (1, 2, 3 poin)</option>
+              <option value="rata">Diratakan (semua 1 poin)</option>
+            </select>
+          </div>
+          <div class="kolom">
+            <label for="sesiAcak">Urutan soal</label>
+            <select id="sesiAcak">
+              <option value="1">Diacak</option>
+              <option value="0">Sesuai berkas</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <h3 class="rapat">Tautan untuk siswa</h3>
+        <p class="kode-hasil" id="tautanSesi"></p>
+        <div class="deret">
+          <button type="button" class="tombol utama" id="tombolSalin">Salin tautan</button>
+          <a class="tombol" id="tombolBuka" target="_blank" rel="noopener">Coba sendiri</a>
+          <button type="button" class="tombol" id="tombolBahas">Salin tautan pembahasan</button>
+          <button type="button" class="tombol" id="tombolCetak">Cetak QR</button>
+        </div>
+        <p class="kecil samar" id="catatanTautan" style="margin-top:.6rem"></p>
+        <div id="wadahQr" style="margin-top:1rem"></div>
+      </div>
+    </div>
+
+    <div id="panelButir" hidden>
+      <div class="kartu">
+        <div class="baris">
+          <div class="kolom">
+            <label for="butirSesi">Sesi</label>
+            <select id="butirSesi"></select>
+          </div>
+          <div class="kolom" style="flex:0 0 8rem;align-self:end">
+            <button type="button" class="tombol utama lebar" id="tombolMuatButir">Muat</button>
+          </div>
+        </div>
+        <p class="kecil samar" style="margin:0">
+          Diurutkan dari yang paling banyak salah. Huruf opsi mengikuti berkas soal,
+          bukan urutan yang dilihat siswa, karena urutan opsi diacak per siswa.
+        </p>
+      </div>
+      <div id="hasilButir"></div>
+    </div>
+
+    <div id="panelPerhatian" hidden>
+      <div class="kartu">
+        <div class="baris">
+          <div class="kolom">
+            <label for="perhatianKelas">Kelas</label>
+            <select id="perhatianKelas"></select>
+          </div>
+          <div class="kolom">
+            <label for="perhatianAmbang">Ambang nilai</label>
+            <input type="number" id="perhatianAmbang" min="0" max="100">
+          </div>
+          <div class="kolom" style="flex:0 0 8rem;align-self:end">
+            <button type="button" class="tombol utama lebar" id="tombolMuatPerhatian">Muat</button>
+          </div>
+        </div>
+        <p class="kecil samar" style="margin:0">
+          Muncul bila rata-rata tiga pengerjaan terakhir di bawah ambang, atau bila
+          nilai terakhir turun lebih dari 25 poin dibanding rata-rata sebelumnya.
+        </p>
+      </div>
+      <div id="hasilPerhatian"></div>
+    </div>
+
+    <div id="panelPerkembangan" hidden>
+      <div class="kartu">
+        <div class="baris">
+          <div class="kolom">
+            <label for="kembangKelas">Kelas</label>
+            <select id="kembangKelas"></select>
+          </div>
+          <div class="kolom">
+            <label for="kembangSiswa">Siswa</label>
+            <select id="kembangSiswa"></select>
+          </div>
+        </div>
+      </div>
+      <div id="hasilPerkembangan"></div>
+    </div>
+
+    <div id="panelBelum" hidden>
+      <div class="kartu">
+        <div class="baris">
+          <div class="kolom">
+            <label for="belumSesi">Sesi</label>
+            <select id="belumSesi"></select>
+          </div>
+          <div class="kolom">
+            <label for="belumKelas">Bandingkan dengan kelas</label>
+            <select id="belumKelas"></select>
+          </div>
+          <div class="kolom" style="flex:0 0 8rem;align-self:end">
+            <button type="button" class="tombol utama lebar" id="tombolMuatBelum">Muat</button>
+          </div>
+        </div>
+      </div>
+      <div id="hasilBelum"></div>
+    </div>
+  </section>
+</main>
+
+<script src="vendor/katex/katex.min.js"></script>
+<script src="js/konfig.js"></script>
+<script src="js/kunci.js"></script>
+<script src="js/nilai.js"></script>
+<script src="js/rumus.js"></script>
+<script src="komponen/qr.js"></script>
+<script src="js/guru.js"></script>
+</body>
+</html>

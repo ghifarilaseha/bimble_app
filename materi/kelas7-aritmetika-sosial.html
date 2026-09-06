@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aritmetika Sosial</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Aritmetika Sosial</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Aritmetika Sosial</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Menghitung untung, rugi, diskon, dan bunga tabungan.</li>
+      <li>Tahu satu hal yang paling sering keliru: persentase itu dihitung dari apa.</li>
+    </ul>
+    <p class="kecil samar" style="margin:.6rem 0 0">
+      Bab ini memakai pecahan dan persen dari bab sebelumnya. Kalau bagian itu masih
+      goyah, buka dulu <a href="kelas7-pecahan.html">materi Pecahan</a>.
+    </p>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Dua toko, sepatu yang sama</h2>
+  <p>
+    Dua toko di Bandung menjual sepatu yang persis sama.
+  </p>
+  <ul>
+    <li>Toko A: harga <strong>Rp400.000</strong>, diskon <strong>25%</strong></li>
+    <li>Toko B: harga <strong>Rp360.000</strong>, diskon <strong>15%</strong></li>
+  </ul>
+  <p>Mana yang lebih murah?</p>
+  <p class="kecil samar">
+    Kebanyakan orang langsung melihat persennya. Tapi $25\%$ dari $400.000$ dan
+    $15\%$ dari $360.000$ dihitung dari angka yang berbeda. Berhenti dulu di sini.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: dua batang harga</h2>
+  <p>
+    Batang atas adalah harga beli (modal), batang bawah harga jual. Ketuk petaknya
+    untuk mengubah nilainya; tiap petak bernilai Rp20.000. Selisihnya tersorot
+    sendiri, dan namanya berganti antara untung, rugi, dan impas.
+  </p>
+  <p>
+    Tugasnya dua tahap. <strong>Pertama:</strong> tetapkan harga beli Rp100.000, lalu
+    geser harga jual sampai untungnya Rp20.000. Berapa persen untungnya?
+    <strong>Kedua:</strong> tetapkan harga beli Rp200.000 dan buat untung Rp20.000 lagi.
+    Persennya masih sama?
+  </p>
+
+  <div class="kartu">
+    <div id="batangJelajah"></div>
+    <div id="pesanJelajah"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Untung dan rugi">
+    <h3>Tiga kemungkinan</h3>
+    <p>
+      Harga beli disebut juga <strong>modal</strong>.
+    </p>
+    <ul>
+      <li>Harga jual <strong>lebih besar</strong> dari harga beli — <strong>untung</strong></li>
+      <li>Harga jual <strong>lebih kecil</strong> dari harga beli — <strong>rugi</strong></li>
+      <li>Harga jual <strong>sama dengan</strong> harga beli — <strong>impas</strong></li>
+    </ul>
+    <p class="tengah">$$\text{Untung} = HJ - HB \qquad \text{Rugi} = HB - HJ$$</p>
+    <p>
+      Perhatikan urutan pengurangannya berbeda. Keduanya dibuat begitu supaya hasilnya
+      selalu positif: untung dan rugi menyatakan besarnya selisih, sedangkan yang
+      membedakan keduanya adalah arahnya.
+    </p>
+  </section>
+
+  <section data-tab="Persentase" hidden>
+    <h3>Selalu terhadap harga beli</h3>
+    <p class="tengah">$$\%U = \frac{HJ - HB}{HB} \times 100\% \qquad \%R = \frac{HB - HJ}{HB} \times 100\%$$</p>
+    <p>
+      Penyebutnya harga beli, bukan harga jual. Inilah yang tadi kamu lihat di batang:
+      untung Rp20.000 dari modal Rp100.000 berarti $20\%$, tetapi untung Rp20.000 dari
+      modal Rp200.000 hanya $10\%$. Angka rupiahnya sama, persennya tidak.
+    </p>
+
+    <h3>Mencari harga jual atau harga beli</h3>
+    <p class="tengah">$$\text{Untung:}\quad HJ = \frac{100\% + \%U}{100\%} \times HB$$</p>
+    <p class="tengah">$$\text{Rugi:}\quad HJ = \frac{100\% - \%R}{100\%} \times HB$$</p>
+    <p>
+      Rumus ini juga dipakai terbalik. Kalau yang diketahui harga jual beserta
+      persentasenya, harga belinya dicari dengan <em>membagi</em>, bukan dengan
+      menambahkan persen itu ke harga jual.
+    </p>
+  </section>
+
+  <section data-tab="Diskon" hidden>
+    <h3>Potongan harga</h3>
+    <p class="tengah">$$\text{Diskon} = \%\text{diskon} \times \text{harga asli}$$</p>
+    <p class="tengah">$$\text{Harga bayar} = \text{harga asli} - \text{diskon}$$</p>
+    <p class="tengah">$$\%\text{diskon} = \frac{\text{diskon}}{\text{harga asli}} \times 100\%$$</p>
+    <p>
+      Bacalah pertanyaannya baik-baik: yang ditanya besar diskonnya, atau harga yang
+      harus dibayar? Keduanya angka yang berbeda.
+    </p>
+
+    <h3>Diskon bertingkat</h3>
+    <p>
+      Tanda "diskon $50\%$ + $20\%$" bukan berarti diskon $70\%$. Diskon kedua dihitung
+      dari harga yang <em>sudah</em> dipotong diskon pertama. Coba sendiri di bawah.
+    </p>
+
+    <div class="kartu">
+      <div class="deret" style="align-items:center">
+        <label class="kecil" style="flex:none;margin:0;min-width:5.5rem">Harga asli</label>
+        <input type="number" id="dbHarga" value="100000" step="10000" min="0" style="flex:1;min-width:7rem">
+      </div>
+      <div class="deret" style="align-items:center;margin-top:.4rem">
+        <label class="kecil" style="flex:none;margin:0;min-width:5.5rem">Diskon 1</label>
+        <input type="number" id="dbSatu" value="50" min="0" max="100" style="flex:0 0 5rem">
+        <span class="kecil samar">%</span>
+        <label class="kecil" style="flex:none;margin:0 0 0 .5rem">Diskon 2</label>
+        <input type="number" id="dbDua" value="20" min="0" max="100" style="flex:0 0 5rem">
+        <span class="kecil samar">%</span>
+      </div>
+      <div class="deret" style="margin-top:.6rem">
+        <button type="button" class="tombol mungil utama" id="dbHitung">Hitung</button>
+      </div>
+      <div id="dbHasil" style="margin-top:.7rem"></div>
+    </div>
+  </section>
+
+  <section data-tab="Bunga dan pajak" hidden>
+    <h3>Bunga tunggal</h3>
+    <p>
+      Disebut <strong>tunggal</strong> karena bunganya selalu dihitung dari tabungan awal
+      saja, tidak ikut menghitung bunga yang sudah diterima sebelumnya.
+    </p>
+    <p class="tengah">$$\text{Bunga 1 tahun} = \%\text{bunga} \times \text{modal}$$</p>
+    <p class="tengah">$$\text{Bunga } b \text{ bulan} = \frac{b}{12} \times \%\text{bunga} \times \text{modal}$$</p>
+    <p>
+      Persentase bunga hampir selalu disebut <em>per tahun</em>. Kalau lama menabungnya
+      kurang dari setahun, jangan lupa mengalikan dengan bagian tahunnya. Untuk lama
+      menabung dalam hari, biasanya dipakai $\frac{\text{hari}}{360}$ atau
+      $\frac{\text{hari}}{365}$ — soalnya harus menyebut yang mana.
+    </p>
+    <p class="tengah">$$\text{Tabungan akhir} = \text{modal} + \text{bunga}$$</p>
+
+    <h3>Pajak</h3>
+    <p>
+      Pajak adalah sejumlah uang yang harus dibayar kepada negara, dinyatakan sebagai
+      persentase terhadap penghasilan atau harga jual barang. Cara menghitungnya sama
+      persis dengan diskon, hanya arahnya berlawanan: pajak <strong>menambah</strong>
+      yang harus dibayar, diskon <strong>mengurangi</strong>.
+    </p>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">Tebak dulu jawabannya sebelum membuka langkahnya.</p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.</p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=aritmetika-sosial&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../komponen/batang-harga.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  var P = Pecahan.dari;
+  var Rp = Pecahan.rupiah;
+
+  /* ---------- 3. Eksplorasi: dua batang harga ---------- */
+
+  var elPesan = document.getElementById('pesanJelajah');
+  var terlihat = {};
+
+  BatangHarga.buat(document.getElementById('batangJelajah'), {
+    satuan: 20000, maks: 400000, beli: 100000, jual: 120000,
+    onUbah: function (k) {
+      /* Yang dicatat bukan sekadar "pernah untung", melainkan pernah untung
+         Rp20.000 dari dua modal yang berbeda. Simpulannya baru muncul
+         setelah keduanya benar-benar dicoba. */
+      if (k.keadaan === 'untung' && k.selisih === 20000 && !k.dariJual) {
+        terlihat[k.beli] = k.persen ? k.persen.teksDesimal(2) : '';
+      }
+      var modal = Object.keys(terlihat);
+      if (modal.length >= 2) {
+        elPesan.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+          'Untung yang sama, persen yang berbeda: dari modal ' + Rp(modal[0]) +
+          ' untungnya ' + terlihat[modal[0]] + '%, tetapi dari modal ' + Rp(modal[1]) +
+          ' hanya ' + terlihat[modal[1]] + '%. Angka rupiahnya sama persis. ' +
+          'Yang membedakan adalah pembandingnya, dan pembandingnya selalu harga beli.') +
+          '</div>';
+      }
+    }
+  });
+
+  /* ---------- 4. Tab materi ---------- */
+
+  var bagian = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
+  var elTab = document.getElementById('tabMateri');
+
+  bagian.forEach(function (sec, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    b.textContent = sec.dataset.tab;
+    b.addEventListener('click', function () {
+      bagian.forEach(function (s, j) { s.hidden = (j !== i); });
+      Array.prototype.forEach.call(elTab.children, function (x, j) {
+        x.setAttribute('aria-selected', j === i ? 'true' : 'false');
+      });
+    });
+    elTab.appendChild(b);
+  });
+
+  /* ---------- 4b. Kalkulator diskon bertingkat ---------- */
+
+  var elHasilDb = document.getElementById('dbHasil');
+
+  function hitungDiskonBertingkat() {
+    var harga = parseInt(document.getElementById('dbHarga').value, 10);
+    var d1 = parseInt(document.getElementById('dbSatu').value, 10);
+    var d2 = parseInt(document.getElementById('dbDua').value, 10);
+
+    if (isNaN(harga) || isNaN(d1) || isNaN(d2) || harga < 0) {
+      elHasilDb.innerHTML = '<div class="pesan awas">Isi harga dan kedua diskonnya dulu.</div>';
+      return;
+    }
+    if (d1 < 0 || d1 > 100 || d2 < 0 || d2 > 100) {
+      elHasilDb.innerHTML = '<div class="pesan awas">Diskon hanya masuk akal antara 0% dan 100%.</div>';
+      return;
+    }
+
+    /* Semua lewat Pecahan. Dengan bilangan desimal peramban,
+       0,85 x 420000 bisa keluar sebagai 356999,99999999994. */
+    var asli = P(harga);
+    var potong1 = asli.kali(P(d1 + '%'));
+    var setelah1 = asli.kurang(potong1);
+    var potong2 = setelah1.kali(P(d2 + '%'));
+    var bayar = setelah1.kurang(potong2);
+    var totalPotong = asli.kurang(bayar);
+    var persenSetara = harga ? totalPotong.bagi(asli).persen() : P(0);
+    var jumlahNaif = d1 + d2;
+
+    var baris = [
+      ['Harga asli', Rp(asli)],
+      ['Diskon ' + d1 + '%', '− ' + Rp(potong1)],
+      ['Setelah diskon pertama', Rp(setelah1)],
+      ['Diskon ' + d2 + '% dari ' + Rp(setelah1), '− ' + Rp(potong2)],
+      ['Harga yang dibayar', Rp(bayar)]
+    ];
+
+    var tabel = '<div class="tabel-gulir"><table><tbody>' + baris.map(function (b, i) {
+      var tebal = (i === baris.length - 1);
+      return '<tr><td' + (tebal ? ' style="font-weight:650"' : ' class="samar"') + '>' +
+        b[0] + '</td><td' + (tebal ? ' style="font-weight:650"' : '') + '>' + b[1] + '</td></tr>';
+    }).join('') + '</tbody></table></div>';
+
+    var simpul = persenSetara.samaDengan(P(jumlahNaif))
+      ? 'Kebetulan sama dengan ' + jumlahNaif + '%, sebab salah satu diskonnya nol.'
+      : 'Jadi diskon ' + d1 + '% + ' + d2 + '% setara dengan diskon tunggal ' +
+        persenSetara.teksDesimal(2) + '%, bukan ' + jumlahNaif + '%. ' +
+        'Diskon kedua dihitung dari harga yang sudah dipotong, jadi nilainya lebih kecil.';
+
+    elHasilDb.innerHTML = tabel + '<div class="pesan info" style="margin-top:.6rem">' +
+      Rumus.lolos(simpul) + '</div>';
+  }
+
+  document.getElementById('dbHitung').addEventListener('click', hitungDiskonBertingkat);
+  ['dbHarga', 'dbSatu', 'dbDua'].forEach(function (id) {
+    document.getElementById(id).addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') { ev.preventDefault(); hitungDiskonBertingkat(); }
+    });
+  });
+  hitungDiskonBertingkat();
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  var ayamJual = P(30).kali(25000).tambah(P(60).kali(20000));
+  var ayamRugi = P(2000000).kurang(ayamJual);
+  var sepedaSatuan = P(8000000).bagi(40);
+  var sepedaJual = P('125%').kali(sepedaSatuan);
+  var bungaSetahun = P('12%').kali(1000000);
+  var bunga9Bulan = P('9/12').kali(bungaSetahun);
+
+  var contoh = [
+    {
+      judul: 'Untung rugi bertingkat',
+      soal: 'Seorang pedagang membeli $100$ ekor ayam seharga Rp2.000.000. ' +
+        'Di jalan $10$ ekor mati. Sebanyak $30$ ekor laku Rp25.000 per ekor, ' +
+        'sisanya laku Rp20.000 per ekor. Untung atau rugi, dan berapa?',
+      langkah: [
+        'Ayam yang bisa dijual: $100 - 10 = 90$ ekor. Yang mati tetap masuk modal, ' +
+          'tetapi tidak masuk penjualan.',
+        'Hasil dari $30$ ekor: $30 \\times 25.000 = ' + Rp(P(30).kali(25000)) + '$',
+        'Sisanya $90 - 30 = 60$ ekor: $60 \\times 20.000 = ' + Rp(P(60).kali(20000)) + '$',
+        'Total penjualan: ' + Rp(ayamJual),
+        'Karena ' + Rp(ayamJual) + ' lebih kecil daripada Rp2.000.000, pedagang itu ' +
+          'rugi ' + Rp(ayamRugi) + '.'
+      ]
+    },
+    {
+      judul: 'Mencari harga jual',
+      soal: 'Sebuah toko membeli $40$ sepeda seharga Rp8.000.000. Toko itu ' +
+        'mengharapkan untung $25\\%$ dari harga beli. Berapa harga jual per sepeda?',
+      langkah: [
+        'Harga beli per sepeda: $8.000.000 \\div 40 = ' + Rp(sepedaSatuan) + '$',
+        'Untung $25\\%$ berarti harga jualnya $\\frac{100\\% + 25\\%}{100\\%} = 1{,}25$ ' +
+          'kali harga beli',
+        '$1{,}25 \\times ' + Rp(sepedaSatuan) + ' = ' + Rp(sepedaJual) + '$ per sepeda'
+      ]
+    },
+    {
+      judul: 'Bunga kurang dari setahun',
+      soal: 'Upik menabung Rp1.000.000 dengan bunga $12\\%$ per tahun. ' +
+        'Berapa uangnya setelah $9$ bulan?',
+      langkah: [
+        'Bunga satu tahun penuh: $\\frac{12}{100} \\times 1.000.000 = ' +
+          Rp(bungaSetahun) + '$',
+        'Menabungnya baru $9$ bulan, jadi bunganya $\\frac{9}{12} \\times ' +
+          Rp(bungaSetahun) + ' = ' + Rp(bunga9Bulan) + '$',
+        'Tabungan akhir: Rp1.000.000 $+$ ' + Rp(bunga9Bulan) + ' $=$ ' +
+          Rp(P(1000000).tambah(bunga9Bulan))
+      ]
+    }
+  ];
+
+  var elContoh = document.getElementById('daftarContoh');
+
+  contoh.forEach(function (c, i) {
+    var kotak = document.createElement('article');
+    kotak.className = 'kartu';
+
+    var nomor = document.createElement('div');
+    nomor.className = 'nomor';
+    nomor.textContent = 'Contoh ' + (i + 1) + ' — ' + c.judul;
+    kotak.appendChild(nomor);
+
+    var tanya = document.createElement('div');
+    tanya.className = 'pertanyaan';
+    Rumus.isi(tanya, c.soal);
+    kotak.appendChild(tanya);
+
+    var daftar = document.createElement('ol');
+    daftar.style.margin = '0';
+    kotak.appendChild(daftar);
+
+    var tombol = document.createElement('button');
+    tombol.type = 'button';
+    tombol.className = 'tombol mungil';
+    tombol.style.marginTop = '.6rem';
+    tombol.textContent = 'Buka langkah pertama';
+    kotak.appendChild(tombol);
+
+    var ke = 0;
+    tombol.addEventListener('click', function () {
+      if (ke >= c.langkah.length) return;
+      var li = document.createElement('li');
+      Rumus.isi(li, c.langkah[ke]);
+      daftar.appendChild(li);
+      ke++;
+      if (ke >= c.langkah.length) tombol.hidden = true;
+      else tombol.textContent = 'Langkah berikutnya';
+    });
+
+    elContoh.appendChild(kotak);
+  });
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'as-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Seorang pedagang membeli apel Rp20.000 per kg dan menjualnya ' +
+          'Rp25.000 per kg. Berapa untungnya per kg?',
+        petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
+        jawaban: ['5000'],
+        salahUmum: [
+          {
+            jawaban: ['45000'],
+            umpan: 'Kedua harga itu dijumlahkan. Untung adalah selisihnya: ' +
+              'harga jual dikurangi harga beli.'
+          },
+          {
+            jawaban: ['25'],
+            umpan: 'Angka $25$ adalah persentase untungnya, dan itu pertanyaan lain. ' +
+              'Yang ditanya berapa rupiah untungnya.'
+          }
+        ],
+        bahas: 'Untung $=$ harga jual $-$ harga beli $= 25.000 - 20.000 = 5.000$. ' +
+          'Jadi untungnya Rp5.000 per kg.'
+      },
+      {
+        id: 'as-cek-2', level: 1, tipe: 'isian',
+        pertanyaan: 'Sebuah toko memberi diskon $15\\%$ untuk rice cooker seharga ' +
+          'Rp420.000. Berapa yang harus dibayar Budi?',
+        petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
+        jawaban: ['357000'],
+        salahUmum: [
+          {
+            jawaban: ['63000'],
+            umpan: 'Rp63.000 itu besar potongannya, bukan harga yang dibayar. ' +
+              'Yang ditanya berapa yang harus dikeluarkan Budi di kasir.'
+          },
+          {
+            jawaban: ['483000'],
+            umpan: 'Diskon mengurangi harga, bukan menambah. Potongannya dikurangkan ' +
+              'dari harga asli.'
+          }
+        ],
+        bahas: 'Diskonnya $\\frac{15}{100} \\times 420.000 = 63.000$. ' +
+          'Harga yang dibayar $420.000 - 63.000 = 357.000$, jadi Rp357.000.'
+      },
+      {
+        id: 'as-cek-3', level: 2, tipe: 'isian',
+        pertanyaan: 'Pak Rudi membeli tanah seharga Rp40.000.000 lalu menjualnya ' +
+          'Rp38.000.000. Berapa persen kerugiannya?',
+        petunjuk: 'Tulis angkanya saja, tanpa tanda persen',
+        jawaban: ['5'],
+        salahUmum: [
+          {
+            jawaban: ['5,26', '5.26'],
+            umpan: 'Selisihnya sudah benar, tetapi pembaginya harga jual. ' +
+              'Persentase untung dan rugi selalu dihitung terhadap harga beli.'
+          },
+          {
+            jawaban: ['2000000', '2'],
+            umpan: 'Rp2.000.000 itu besar kerugiannya dalam rupiah. ' +
+              'Yang ditanya berapa persennya terhadap harga beli.'
+          }
+        ],
+        bahas: 'Ruginya $40.000.000 - 38.000.000 = 2.000.000$. ' +
+          'Persentasenya $\\frac{2.000.000}{40.000.000} \\times 100\\% = 5\\%$.'
+      },
+      {
+        id: 'as-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Tono menabung Rp2.000.000 dengan bunga $15\\%$ per tahun. ' +
+          'Berapa bunga yang ia terima selama $9$ bulan?',
+        petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
+        jawaban: ['225000'],
+        salahUmum: [
+          {
+            jawaban: ['300000'],
+            umpan: 'Itu bunga untuk setahun penuh. Tono baru menabung $9$ bulan, ' +
+              'jadi masih harus dikalikan $\\frac{9}{12}$.'
+          },
+          {
+            jawaban: ['2225000'],
+            umpan: 'Itu tabungan akhirnya, yaitu modal ditambah bunga. ' +
+              'Yang ditanya bunganya saja.'
+          }
+        ],
+        bahas: 'Bunga setahun $= \\frac{15}{100} \\times 2.000.000 = 300.000$. ' +
+          'Untuk $9$ bulan: $\\frac{9}{12} \\times 300.000 = 225.000$, jadi Rp225.000.'
+      },
+      {
+        id: 'as-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Dengan harga jual Rp9.000.000 seorang pedagang mengalami rugi ' +
+          '$10\\%$. Berapa harga belinya?',
+        petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
+        jawaban: ['10000000'],
+        salahUmum: [
+          {
+            jawaban: ['9900000'],
+            umpan: 'Sepertinya $10\\%$ dihitung dari harga jual lalu ditambahkan. ' +
+              'Persentase rugi dihitung dari harga beli, dan harga belinya justru ' +
+              'yang belum diketahui. Mulailah dari $9.000.000 = 90\\% \\times HB$.'
+          },
+          {
+            jawaban: ['8100000'],
+            umpan: 'Arahnya terbalik. Karena pedagang itu rugi, harga belinya pasti ' +
+              'lebih besar daripada harga jualnya.'
+          }
+        ],
+        bahas: 'Rugi $10\\%$ berarti harga jual tinggal $90\\%$ dari harga beli, ' +
+          'sehingga $9.000.000 = \\frac{90}{100} \\times HB$. ' +
+          'Maka $HB = 9.000.000 \\div 0{,}9 = 10.000.000$, yaitu Rp10.000.000.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  fetch('../data/daftar-bab.json', { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (peta) {
+      if (!peta) return;
+      var ada = (peta.kelas || []).some(function (k) {
+        return String(k.tingkat) === '7' &&
+          (k.bab || []).some(function (b) { return b.kode === 'aritmetika-sosial'; });
+      });
+      if (ada) return;
+      document.getElementById('tautanLatihan').innerHTML =
+        '<div class="pesan info">Bank soal latihan untuk bab ini belum tersedia. ' +
+        'Materinya sudah bisa dipelajari, dan tombol latihannya akan muncul sendiri ' +
+        'begitu soalnya ditambahkan.</div>';
+    })
+    .catch(function () { /* biarkan tombolnya apa adanya */ });
+})();
+</script>
+</body>
+</html>

@@ -18,61 +18,212 @@
 
 <main class="bungkus">
 
-  <h1>Bilangan bulat dan garis bilangan</h1>
-  <p>
-    Bilangan bulat adalah bilangan tanpa bagian pecahan: ..., $-3$, $-2$, $-1$, $0$,
-    $1$, $2$, $3$, ... Cara paling jujur untuk memahaminya adalah menaruhnya pada
-    garis bilangan. Semakin ke kanan, semakin besar nilainya.
-  </p>
+  <h1>Bilangan Bulat</h1>
 
+  <!-- ---------- 1. Tujuan ---------- -->
   <div class="kartu">
-    <h3 class="rapat">Coba sendiri</h3>
-    <p class="kecil samar">Ketuk garis bilangan untuk memindahkan titik awal.</p>
-    <div id="garis1"></div>
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Membaca dan mengurutkan bilangan bulat di garis bilangan.</li>
+      <li>Menjumlahkan dan mengurangkannya tanpa bingung tanda.</li>
+      <li>Tahu kenapa negatif dikali negatif hasilnya positif.</li>
+    </ul>
   </div>
 
-  <h2>Membandingkan bilangan negatif</h2>
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Lift di parkiran mal</h2>
   <p>
-    Inilah bagian yang paling sering terbalik. Pada bilangan negatif, angka yang
-    <em>terlihat</em> lebih besar justru bernilai lebih kecil. Perhatikan $-9$ dan $-19$:
-    $-19$ berada lebih jauh ke kiri, jadi $-19 < -9$.
+    Tombol liftnya begini: B2, B1, LG, 1, 2, 3. Kamu sedang berada di <strong>B2</strong>
+    lalu naik $5$ lantai. Sampai di mana?
   </p>
   <p>
-    Patokannya satu saja: <strong>yang lebih kiri selalu lebih kecil</strong>. Tidak perlu
-    aturan tambahan.
+    Dan kalau dari lantai $3$ kamu turun $5$ lantai, berhenti di mana?
+  </p>
+  <p class="kecil samar">
+    Jangan buru-buru mencari jawabannya di bawah. Pikirkan dulu sebentar, baru lanjut.
   </p>
 
-  <h2>Menjumlah dan mengurangi sebagai loncatan</h2>
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: dua kartu operasi</h2>
   <p>
-    Menambah berarti meloncat ke kanan, mengurangi berarti meloncat ke kiri.
-    Ini juga berlaku ketika bilangannya negatif, sehingga tidak ada aturan baru
-    yang harus dihafal.
+    Di bawah ada dua kartu yang bisa kamu ganti: <strong>tanda</strong> operasinya, dan
+    <strong>bilangan</strong> yang dipakai. Panah di atas garis menunjukkan loncatannya.
+  </p>
+  <p>
+    Tugasnya satu: <strong>ubah $5 - 3$ menjadi $5 + (-3)$.</strong>
+    Perhatikan panahnya baik-baik. Berubah tidak?
   </p>
 
   <div class="kartu">
-    <h3 class="rapat">Loncatan pada garis bilangan</h3>
-    <div class="deret" style="margin:.5rem 0">
-      <button type="button" class="tombol mungil" data-langkah="5">$+5$</button>
-      <button type="button" class="tombol mungil" data-langkah="-8">$-8$</button>
-      <button type="button" class="tombol mungil" data-langkah="3">$+3$</button>
-      <button type="button" class="tombol mungil" data-langkah="-2">$-2$</button>
-      <button type="button" class="tombol mungil bahaya" id="hapusLangkah">Kosongkan</button>
+    <div class="deret" style="align-items:center; margin-bottom:.5rem">
+      <span class="kecil samar" style="min-width:4.5rem">Tanda</span>
+      <div class="tab" id="pilihTanda" role="tablist" style="margin:0"></div>
     </div>
-    <div id="garis2"></div>
-    <p class="kecil" id="bacaLangkah" style="margin-top:.5rem"></p>
+    <div class="deret" style="align-items:center; margin-bottom:.75rem">
+      <span class="kecil samar" style="min-width:4.5rem">Bilangan</span>
+      <div class="tab" id="pilihBilangan" role="tablist" style="margin:0"></div>
+    </div>
+
+    <p id="bacaEkspresi" style="margin:.2rem 0 .1rem; font-size:1.15rem"></p>
+    <p class="kecil samar" id="bacaSetara" style="margin:0 0 .6rem"></p>
+
+    <div id="garisEksplorasi"></div>
+    <p class="kecil samar" style="margin:.5rem 0 0">
+      Ketuk garis bilangannya untuk memindahkan titik awal. Panahnya tetap berperilaku sama.
+    </p>
+    <div id="pesanEksplorasi"></div>
   </div>
 
-  <h2>Mengurangi bilangan negatif</h2>
-  <p>
-    $7 - (-3)$ sering terasa aneh. Bacalah sebagai pertanyaan jarak: berapa jauh
-    $7$ dari $-3$? Jawabannya $10$. Karena itu mengurangi bilangan negatif
-    hasilnya justru bertambah besar.
-  </p>
-  <p>
-    Cara lain yang sama benarnya: mengurangi $-3$ sama dengan menambah lawannya,
-    yaitu $+3$. Keduanya menghasilkan $10$.
-  </p>
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
 
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Garis bilangan dan urutan">
+    <h3>Apa itu bilangan bulat</h3>
+    <p>
+      Bilangan bulat terdiri atas bilangan negatif, nol, dan bilangan positif:
+      $\dots, -3, -2, -1, 0, 1, 2, 3, \dots$ Di garis bilangan, makin ke kanan makin besar
+      dan makin ke kiri makin kecil.
+    </p>
+    <p>
+      Aturan itu berlaku juga untuk yang negatif. Jadi $-3 < -1$, walaupun angka $3$
+      <em>kelihatan</em> lebih besar daripada $1$. Patokannya cuma satu:
+      <strong>yang lebih kiri selalu lebih kecil.</strong>
+    </p>
+
+    <h3>Membandingkan bilangan yang besar</h3>
+    <p>
+      Untuk membandingkan $-1.223$ dan $-2.327$, bandingkan dulu angka penyusunnya seolah
+      keduanya positif: $2.327$ lebih besar daripada $1.223$. Baru pasang tandanya kembali.
+      Karena keduanya negatif, yang angkanya lebih besar justru terletak lebih ke kiri,
+      sehingga $-2.327 < -1.223$.
+    </p>
+
+    <h3>Sekilas tentang nilai mutlak</h3>
+    <p>
+      Nilai mutlak sebuah bilangan adalah <strong>jaraknya dari nol</strong>, jadi selalu
+      positif. $|-7| = 7$ dan $|7| = 7$, sebab keduanya sama-sama berjarak tujuh langkah
+      dari nol. Ini sekaligus menjelaskan kenapa selisih dua suhu tidak pernah negatif:
+      selisih itu jarak, bukan arah.
+    </p>
+  </section>
+
+  <section data-tab="Tambah dan kurang" hidden>
+    <h3>Satu aturan yang menggantikan dua</h3>
+    <p>
+      Mengurangi sama saja dengan menambah lawan bilangannya:
+    </p>
+    <p class="tengah">$$a - b = a + (-b)$$</p>
+    <p>
+      Inilah yang tadi kamu lihat sendiri di garis bilangan. Pengurangan bukan operasi baru
+      yang aturannya harus dihafal terpisah.
+    </p>
+
+    <h3>Menjumlahkan</h3>
+    <p>
+      Kalau <strong>tandanya sama</strong>, jumlahkan angkanya lalu pakai tanda yang sama:
+      $9 + 3 = 12$ dan $(-18) + (-5) = -23$.
+    </p>
+    <p>
+      Kalau <strong>tandanya berbeda</strong>, cari selisihnya lalu pakai tanda bilangan yang
+      lebih jauh dari nol: $27 + (-12) = 15$ dan $(-10) + 6 = -4$.
+    </p>
+
+    <h3>Mengurangi</h3>
+    <p>
+      Ubah dulu jadi penjumlahan, baru kerjakan:
+      $6 - 9 = 6 + (-9) = -3$ ; $6 - (-9) = 6 + 9 = 15$ ; $(-4) - (-10) = -4 + 10 = 6$.
+    </p>
+
+    <h3>Sifat penjumlahan</h3>
+    <p>
+      Penjumlahan bersifat <strong>komutatif</strong> ($a + b = b + a$) dan
+      <strong>asosiatif</strong> ($(a + b) + c = a + (b + c)$).
+      Keduanya <strong>tidak berlaku untuk pengurangan</strong> — tapi jangan percaya begitu
+      saja. Isi tabel di bawah, lalu periksa sendiri.
+    </p>
+
+    <div class="kartu">
+      <div class="tabel-gulir">
+        <table id="tabelSifat">
+          <thead>
+            <tr><th>Hitungan</th><th>Hasil</th><th>Hitungan</th><th>Hasil</th><th>Sama?</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="deret" style="margin-top:.7rem">
+        <button type="button" class="tombol mungil utama" id="periksaSifat">Periksa</button>
+        <button type="button" class="tombol mungil bahaya" id="ulangSifat">Kosongkan</button>
+      </div>
+      <div id="simpulanSifat"></div>
+    </div>
+  </section>
+
+  <section data-tab="Kali dan bagi" hidden>
+    <h3>Perkalian sebagai penjumlahan berulang</h3>
+    <p>
+      $a \times b$ berarti menjumlahkan $b$ sebanyak $a$ kali. Karena itu
+      $3 \times (-4) = (-4) + (-4) + (-4) = -12$: meloncat ke kiri sebanyak tiga kali.
+    </p>
+
+    <h3>Aturan tanda</h3>
+    <div class="tabel-gulir">
+      <table>
+        <thead>
+          <tr><th>Bilangan I</th><th></th><th>Bilangan II</th><th></th><th>Hasil</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>$+$</td><td>$\times$</td><td>$+$</td><td>$=$</td><td>$+$</td></tr>
+          <tr><td>$+$</td><td>$\times$</td><td>$-$</td><td>$=$</td><td>$-$</td></tr>
+          <tr><td>$-$</td><td>$\times$</td><td>$+$</td><td>$=$</td><td>$-$</td></tr>
+          <tr><td>$-$</td><td>$\times$</td><td>$-$</td><td>$=$</td><td>$+$</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Aturan yang sama berlaku untuk pembagian. Cara mengingatnya tanpa menghafal tabel:
+      tanda minus berarti "kebalikan arah". Dua kali membalik arah membuatmu kembali
+      menghadap ke arah semula, jadi negatif dikali negatif hasilnya positif.
+    </p>
+
+    <h3>Sifat perkalian</h3>
+    <p>
+      Perkalian bersifat komutatif, asosiatif, dan distributif terhadap penjumlahan:
+      $a \times (b + c) = ab + ac$. Bilangan apa pun dikali $0$ hasilnya $0$, dan dikali $1$
+      hasilnya tetap.
+    </p>
+
+    <h3>Pembagian dengan nol</h3>
+    <p>
+      $0 \div a = 0$ untuk $a$ yang bukan nol. Sebaliknya $a \div 0$
+      <strong>tidak terdefinisi</strong> — tidak ada bilangan yang bila dikali $0$
+      menghasilkan $a$.
+    </p>
+
+    <h3>Urutan operasi campuran</h3>
+    <p>
+      Kurung dikerjakan lebih dulu, lalu kali dan bagi dari kiri ke kanan, baru tambah dan
+      kurang dari kiri ke kanan.
+    </p>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya. Bagian menebak itu yang mengajari.
+  </p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai. Ini buat kamu sendiri.
+  </p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
   <h2>Sudah paham?</h2>
   <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
   <p>
@@ -84,44 +235,370 @@
 
 <script src="../vendor/katex/katex.min.js"></script>
 <script src="../js/rumus.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
 <script src="../komponen/garis-bilangan.js"></script>
 <script>
 (function () {
   'use strict';
 
-  /* Rumus di dalam teks halaman dirender di tempat, tanpa perlu menulis
-     markup KaTeX satu per satu. */
-  ['p', 'li', 'h1', 'h2', 'h3', 'button'].forEach(function (tag) {
-    Array.prototype.forEach.call(document.querySelectorAll('main ' + tag), function (n) {
-      if (n.textContent.indexOf('$') >= 0) n.innerHTML = Rumus.keHTML(n.textContent);
+  /* Rumus pada teks statis dirender di tempat. Rumus.sapu hanya menyentuh
+     simpul teks, jadi <strong> dan <em> di dalam paragraf tetap utuh. */
+  Rumus.sapu(document.querySelector('main'));
+
+  /* ---------- 3. Eksplorasi: dua kartu operasi ---------- */
+
+  var AWAL = 5;
+  var tanda = '-';       /* mulai dari 5 - 3, bentuk yang paling akrab */
+  var bilangan = 3;
+  var pernahLihat = {};
+
+  var elEkspresi = document.getElementById('bacaEkspresi');
+  var elSetara = document.getElementById('bacaSetara');
+  var elPesan = document.getElementById('pesanEksplorasi');
+
+  var garis = GarisBilangan.buat(document.getElementById('garisEksplorasi'), {
+    min: -10, max: 10, awal: AWAL, langkah: [-3],
+    /* Dipanggil juga ketika siswa mengetuk garis untuk memindahkan titik
+       awal, sehingga bacaan di atasnya tidak pernah tertinggal. */
+    onUbah: function (keadaan) { tulisBacaan(keadaan.awal); }
+  });
+
+  function pilihan(wadah, daftar, ambil, pasang) {
+    wadah.innerHTML = '';
+    daftar.forEach(function (d) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      Rumus.isi(b, d.label);
+      b.addEventListener('click', function () { pasang(d.nilai); });
+      b.dataset.nilai = String(d.nilai);
+      wadah.appendChild(b);
     });
+    wadah.perbarui = function () {
+      Array.prototype.forEach.call(wadah.children, function (b) {
+        b.setAttribute('aria-selected', b.dataset.nilai === String(ambil()) ? 'true' : 'false');
+      });
+    };
+    wadah.perbarui();
+  }
+
+  var wadahTanda = document.getElementById('pilihTanda');
+  var wadahBilangan = document.getElementById('pilihBilangan');
+
+  pilihan(wadahTanda,
+    [{ label: '$+$', nilai: '+' }, { label: '$-$', nilai: '-' }],
+    function () { return tanda; },
+    function (v) { tanda = v; perbarui(); });
+
+  pilihan(wadahBilangan,
+    [{ label: '$3$', nilai: 3 }, { label: '$-3$', nilai: -3 }],
+    function () { return bilangan; },
+    function (v) { bilangan = v; perbarui(); });
+
+  /* Panah yang digambar ditentukan oleh langkah efektifnya. Tanda minus di
+     depan membalik arah panah bilangan keduanya -- dan itulah sebabnya
+     5 - 3 dan 5 + (-3) menghasilkan panah yang sama persis. */
+  function langkahEfektif() {
+    return tanda === '+' ? bilangan : -bilangan;
+  }
+
+  function tulisBilangan(n) {
+    return n < 0 ? '(' + n + ')' : String(n);
+  }
+
+  /* Mengubah kartu hanya menggambar ulang panahnya. Bacaan teksnya ditulis
+     dari onUbah, supaya satu jalur saja yang mengurusnya. */
+  function perbarui() {
+    wadahTanda.perbarui();
+    wadahBilangan.perbarui();
+    garis.setLangkah([langkahEfektif()]);
+  }
+
+  function tulisBacaan(awal) {
+    var efektif = langkahEfektif();
+
+    Rumus.isi(elEkspresi, '$' + awal + ' ' + tanda + ' ' + tulisBilangan(bilangan) +
+      ' = ' + (awal + efektif) + '$');
+
+    Rumus.isi(elSetara, tanda === '-'
+      ? 'Bentuk penjumlahannya: $' + awal + ' + ' + tulisBilangan(-bilangan) + '$'
+      : 'Sudah berbentuk penjumlahan.');
+
+    /* Catatan penutup baru muncul setelah siswa benar-benar mencoba kedua
+       bentuk yang panahnya sama. Kalau ditampilkan sejak awal, ia cuma
+       jadi kalimat yang dilewati. */
+    pernahLihat[tanda + '|' + bilangan] = true;
+    if (pernahLihat['-|3'] && pernahLihat['+|-3']) {
+      elPesan.innerHTML = '<div class="pesan sip">' +
+        Rumus.keHTML('Panahnya sama persis, bukan? $5 - 3$ dan $5 + (-3)$ memang ' +
+          'perintah yang sama. Mengurangi $3$ berarti menambah lawannya, yaitu $-3$.') +
+        '</div>';
+    }
+  }
+
+  perbarui();
+
+  /* ---------- 4. Tab materi ---------- */
+
+  var bagian = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
+  var elTab = document.getElementById('tabMateri');
+
+  bagian.forEach(function (sec, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    b.textContent = sec.dataset.tab;
+    b.addEventListener('click', function () {
+      bagian.forEach(function (s, j) { s.hidden = (j !== i); });
+      Array.prototype.forEach.call(elTab.children, function (x, j) {
+        x.setAttribute('aria-selected', j === i ? 'true' : 'false');
+      });
+    });
+    elTab.appendChild(b);
   });
 
-  GarisBilangan.buat(document.getElementById('garis1'), {
-    min: -10, max: 10, awal: 0, langkah: []
+  /* ---------- 4b. Tabel sifat yang diisi siswa ---------- */
+
+  /* Sengaja tidak diberitahu lebih dulu bahwa pengurangan tidak komutatif.
+     Siswa mengisi keempat barisnya, baru polanya kelihatan sendiri. */
+  var barisSifat = [
+    { kiri: '7 + 3', a: 10, kanan: '3 + 7', b: 10 },
+    { kiri: '7 - 3', a: 4, kanan: '3 - 7', b: -4 },
+    { kiri: '(8 + 2) + 5', a: 15, kanan: '8 + (2 + 5)', b: 15 },
+    { kiri: '(8 - 2) - 5', a: 1, kanan: '8 - (2 - 5)', b: 11 }
+  ];
+
+  var tubuhSifat = document.querySelector('#tabelSifat tbody');
+  var elSimpulan = document.getElementById('simpulanSifat');
+
+  function kotakAngka() {
+    var i = document.createElement('input');
+    i.type = 'text';
+    i.inputMode = 'numeric';
+    i.autocomplete = 'off';
+    i.style.width = '5rem';
+    return i;
+  }
+
+  barisSifat.forEach(function (r) {
+    var tr = document.createElement('tr');
+    var tdKiri = document.createElement('td');
+    Rumus.isi(tdKiri, '$' + r.kiri + '$');
+    var tdA = document.createElement('td');
+    r.isiA = kotakAngka();
+    tdA.appendChild(r.isiA);
+    var tdKanan = document.createElement('td');
+    Rumus.isi(tdKanan, '$' + r.kanan + '$');
+    var tdB = document.createElement('td');
+    r.isiB = kotakAngka();
+    tdB.appendChild(r.isiB);
+    r.tdSama = document.createElement('td');
+    r.tdSama.textContent = '?';
+    [tdKiri, tdA, tdKanan, tdB, r.tdSama].forEach(function (td) { tr.appendChild(td); });
+    tubuhSifat.appendChild(tr);
   });
 
-  var langkah = [];
-  var baca = document.getElementById('bacaLangkah');
-  var garis2 = GarisBilangan.buat(document.getElementById('garis2'), {
-    min: -12, max: 12, awal: 4, langkah: langkah,
-    onUbah: function (keadaan) {
-      var tulis = keadaan.awal + keadaan.langkah.map(function (n) {
-        return n < 0 ? ' - ' + Math.abs(n) : ' + ' + n;
-      }).join('');
-      baca.innerHTML = Rumus.keHTML('$' + tulis + ' = ' + keadaan.hasil + '$');
+  document.getElementById('periksaSifat').addEventListener('click', function () {
+    var salah = 0, belum = 0;
+    barisSifat.forEach(function (r) {
+      var a = parseInt(r.isiA.value, 10), b = parseInt(r.isiB.value, 10);
+      if (isNaN(a) || isNaN(b)) { belum++; r.tdSama.textContent = '?'; return; }
+      if (a !== r.a || b !== r.b) { salah++; r.tdSama.textContent = 'periksa lagi'; return; }
+      r.tdSama.textContent = (r.a === r.b) ? 'sama' : 'beda';
+    });
+
+    if (belum) {
+      elSimpulan.innerHTML = '<div class="pesan info">Masih ada ' + belum +
+        ' baris yang belum terisi.</div>';
+    } else if (salah) {
+      elSimpulan.innerHTML = '<div class="pesan awas">' + Rumus.keHTML('Ada ' + salah +
+        ' baris yang hasilnya belum tepat. Perhatikan yang di dalam kurung, ' +
+        'dan ingat bahwa $8 - (2 - 5)$ berarti $8$ dikurangi bilangan negatif.') +
+        '</div>';
+    } else {
+      elSimpulan.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+        'Sudah kelihatan polanya? Baris penjumlahan hasilnya sama di kedua sisi, ' +
+        'baris pengurangan tidak. Jadi $7 - 3 \\neq 3 - 7$: pengurangan tidak komutatif, ' +
+        'dan $8 - (2 - 5) \\neq (8 - 2) - 5$: pengurangan juga tidak asosiatif.') +
+        '</div>';
     }
   });
 
-  Array.prototype.forEach.call(document.querySelectorAll('[data-langkah]'), function (b) {
-    b.addEventListener('click', function () {
-      langkah.push(Number(b.dataset.langkah));
-      garis2.setLangkah(langkah);
+  document.getElementById('ulangSifat').addEventListener('click', function () {
+    barisSifat.forEach(function (r) {
+      r.isiA.value = ''; r.isiB.value = ''; r.tdSama.textContent = '?';
     });
+    elSimpulan.innerHTML = '';
   });
-  document.getElementById('hapusLangkah').addEventListener('click', function () {
-    langkah.length = 0;
-    garis2.setLangkah(langkah);
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  var contoh = [
+    {
+      judul: 'Beda suhu',
+      soal: 'Suhu di kutub $-3^\\circ$C dan di Jakarta $30^\\circ$C. ' +
+        'Berapa selisih suhu keduanya?',
+      langkah: [
+        'Selisih berarti yang besar dikurangi yang kecil: $30 - (-3)$',
+        'Ubah jadi penjumlahan lawan: $30 + 3$',
+        '$= 33$. Jadi selisihnya $33^\\circ$C.'
+      ]
+    },
+    {
+      judul: 'Skor cerdas cermat',
+      soal: 'Jawaban benar bernilai $+2$, salah $-1$, dan tidak dijawab $0$. ' +
+        'Seorang siswa menjawab benar $37$ soal dan salah $13$ soal. Berapa skornya?',
+      langkah: [
+        'Dari yang benar: $37 \\times 2 = 74$',
+        'Dari yang salah: $13 \\times (-1) = -13$',
+        'Total: $74 + (-13) = 61$'
+      ]
+    },
+    {
+      judul: 'Operasi campuran',
+      soal: 'Berapa hasil dari $45 \\div (-3 \\times -3)$?',
+      langkah: [
+        'Kurung dikerjakan dulu: $-3 \\times -3 = 9$, sebab tandanya sama sehingga hasilnya positif',
+        '$45 \\div 9 = 5$'
+      ]
+    }
+  ];
+
+  var elContoh = document.getElementById('daftarContoh');
+
+  contoh.forEach(function (c, i) {
+    var kartu = document.createElement('article');
+    kartu.className = 'kartu';
+
+    var nomor = document.createElement('div');
+    nomor.className = 'nomor';
+    nomor.textContent = 'Contoh ' + (i + 1) + ' — ' + c.judul;
+    kartu.appendChild(nomor);
+
+    var tanya = document.createElement('div');
+    tanya.className = 'pertanyaan';
+    Rumus.isi(tanya, c.soal);
+    kartu.appendChild(tanya);
+
+    var daftar = document.createElement('ol');
+    daftar.style.margin = '0';
+    kartu.appendChild(daftar);
+
+    var tombol = document.createElement('button');
+    tombol.type = 'button';
+    tombol.className = 'tombol mungil';
+    tombol.style.marginTop = '.6rem';
+    tombol.textContent = 'Buka langkah pertama';
+    kartu.appendChild(tombol);
+
+    var ke = 0;
+    tombol.addEventListener('click', function () {
+      if (ke >= c.langkah.length) return;
+      var li = document.createElement('li');
+      Rumus.isi(li, c.langkah[ke]);
+      daftar.appendChild(li);
+      ke++;
+      if (ke >= c.langkah.length) {
+        tombol.hidden = true;
+      } else {
+        tombol.textContent = 'Langkah berikutnya';
+      }
+    });
+
+    elContoh.appendChild(kartu);
+  });
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'bb-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Bilangan yang $6$ lebih besar dari $-4$ adalah ...',
+        jawaban: ['2'],
+        salahUmum: [
+          {
+            jawaban: ['-10'],
+            umpan: 'Sepertinya kamu bergerak ke kiri. "Lebih besar" artinya bergeser ' +
+              'ke kanan di garis bilangan, bukan menambah jaraknya dari nol.'
+          },
+          {
+            jawaban: ['10'],
+            umpan: 'Angka $10$ muncul kalau $4$ dan $6$ dijumlahkan begitu saja. ' +
+              'Perhatikan bahwa yang diketahui adalah $-4$, bukan $4$.'
+          }
+        ],
+        bahas: 'Mulai dari $-4$, lalu melangkah $6$ satuan ke kanan: $-4 + 6 = 2$.'
+      },
+      {
+        id: 'bb-cek-2', level: 1, tipe: 'pg',
+        pertanyaan: 'Urutkan bilangan berikut dari yang paling besar lebih dulu: ' +
+          '$6$, $-9$, $13$, $-5$, $-17$.',
+        opsi: {
+          a: '$-17,\\ -9,\\ -5,\\ 6,\\ 13$',
+          b: '$13,\\ 6,\\ -5,\\ -9,\\ -17$',
+          c: '$13,\\ 6,\\ -17,\\ -9,\\ -5$',
+          d: '$13,\\ -5,\\ 6,\\ -9,\\ -17$'
+        },
+        kunci: 'b',
+        umpan: {
+          a: 'Urutanmu sudah benar, hanya arahnya terbalik. Yang diminta dari yang ' +
+             'terbesar lebih dulu.',
+          c: 'Bagian positifnya sudah tepat. Tapi pada bilangan negatif, yang angkanya ' +
+             'besar justru nilainya kecil: $-17$ terletak paling kiri di garis bilangan, ' +
+             'jadi ia yang paling kecil.',
+          d: 'Coba letakkan $-5$ dan $6$ di garis bilangan. Semua bilangan negatif ada ' +
+             'di sebelah kiri nol, jadi pasti lebih kecil daripada bilangan positif mana pun.'
+        },
+        bahas: 'Di garis bilangan, makin ke kanan makin besar. Dibaca dari kanan ke kiri, ' +
+          'urutannya $13$, $6$, $-5$, $-9$, $-17$.'
+      },
+      {
+        id: 'bb-cek-3', level: 2, tipe: 'isian',
+        pertanyaan: 'Suhu di London $-9^\\circ$C dan di Doha $-6^\\circ$C. ' +
+          'Berapa derajat selisih suhu keduanya?',
+        petunjuk: 'Cukup angkanya',
+        jawaban: ['3', '3°C'],
+        salahUmum: [
+          {
+            jawaban: ['-3'],
+            umpan: 'Selisih itu jaraknya, jadi tidak pernah negatif. Coba hitung berapa ' +
+              'langkah dari $-9$ ke $-6$ di garis bilangan.'
+          },
+          {
+            jawaban: ['-15', '15'],
+            umpan: 'Sepertinya kedua suhu dijumlahkan, bukan dicari selisihnya. ' +
+              'Selisih = suhu yang lebih tinggi dikurangi suhu yang lebih rendah.'
+          }
+        ],
+        bahas: 'Suhu Doha lebih tinggi, jadi $-6 - (-9) = -6 + 9 = 3$. ' +
+          'Di garis bilangan, dari $-9$ ke $-6$ memang tiga langkah ke kanan.'
+      },
+      {
+        id: 'bb-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Tino berdiri tepat di tengah sebuah tangga. Ia naik $3$ anak tangga, ' +
+          'turun $5$, lalu naik $10$, dan tepat sampai di puncak. ' +
+          'Berapa banyak anak tangga itu seluruhnya?',
+        jawaban: ['16'],
+        salahUmum: [
+          {
+            jawaban: ['8'],
+            umpan: 'Angka $8$ itu perpindahan bersihnya dari tengah sampai puncak, ' +
+              'jadi baru setengah tangga. Yang ditanya seluruhnya.'
+          },
+          {
+            jawaban: ['18'],
+            umpan: 'Sepertinya ketiga langkah dijumlahkan semua. Padahal turun $5$ ' +
+              'berarti $-5$, bukan $+5$.'
+          }
+        ],
+        bahas: 'Perpindahan bersihnya $3 - 5 + 10 = 8$ anak tangga. Itu jarak dari tengah ' +
+          'ke puncak, yaitu setengah tangga. Jadi seluruhnya $2 \\times 8 = 16$ anak tangga.'
+      }
+    ]
   });
 })();
 </script>

@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PLSV dan PtLSV</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">PLSV dan PtLSV</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Persamaan dan Pertidaksamaan Linear Satu Variabel</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Mencari nilai $x$ dari sebuah persamaan tanpa menghafal "pindah ruas".</li>
+      <li>Mengubah soal cerita menjadi persamaan.</li>
+      <li>Tahu kapan tanda pertidaksamaan harus dibalik.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Kotak yang tidak boleh dibuka</h2>
+  <p>
+    Sebuah kotak tertutup dan beberapa kelereng ditaruh di timbangan dua lengan,
+    dan timbangannya <strong>seimbang</strong>. Kamu tidak boleh membuka kotak itu.
+    Bagaimana caranya tahu isinya berapa?
+  </p>
+  <p>
+    Aturan mainnya cuma satu: <strong>apa pun yang kamu lakukan pada satu sisi, harus
+    dilakukan juga pada sisi lain.</strong> Kalau tidak, timbangannya miring.
+  </p>
+  <p class="kecil samar">
+    Pikirkan dulu langkah pertamamu sebelum menyentuh tombol di bawah.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: timbangan dua lengan</h2>
+  <p>
+    Di ruas kiri ada $2$ kotak dan $1$ kelereng, di ruas kanan ada $7$ kelereng.
+    Persamaannya tertulis di bawah timbangan dan ikut berubah setiap kali kamu beraksi.
+  </p>
+  <p>
+    Tugasnya: <strong>buang $1$ kelereng dari ruas kiri saja.</strong> Lihat apa yang
+    terjadi. Sesudah itu, buang juga dari ruas kanan.
+  </p>
+
+  <div class="kartu">
+    <div id="timbanganJelajah"></div>
+    <div class="deret" style="margin-top:.8rem">
+      <button type="button" class="tombol mungil" data-aksi="buang-kiri">Buang 1 kelereng dari kiri saja</button>
+      <button type="button" class="tombol mungil" data-aksi="buang-kanan">Buang 1 kelereng dari kanan saja</button>
+      <button type="button" class="tombol mungil utama" data-aksi="buang-dua">Buang 1 kelereng dari kedua ruas</button>
+      <button type="button" class="tombol mungil utama" data-aksi="bagi-dua">Bagi kedua ruas dengan 2</button>
+      <button type="button" class="tombol mungil bahaya" data-aksi="ulang">Ulangi</button>
+    </div>
+    <div id="pesanTimbangan"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Kalimat terbuka">
+    <h3>Terbuka dan tertutup</h3>
+    <p>
+      <strong>Kalimat terbuka</strong> belum bisa ditentukan benar-salahnya, karena masih
+      ada variabel di dalamnya. Contohnya $x + 4 = 9$.
+    </p>
+    <p>
+      <strong>Kalimat tertutup</strong> sudah bisa ditentukan benar atau salahnya.
+      Contohnya $6 + 4 = 10$ yang bernilai benar, dan $5 - 4 = 2$ yang bernilai salah.
+    </p>
+    <p>
+      Perhatikan baik-baik: kalimat tertutup <em>boleh salah</em>. Yang penting nilai
+      kebenarannya sudah pasti. Ini sering disalahpahami — $5 - 4 = 2$ tetap kalimat
+      tertutup walaupun keliru.
+    </p>
+  </section>
+
+  <section data-tab="PLSV" hidden>
+    <h3>Bentuknya</h3>
+    <p>
+      Persamaan Linear Satu Variabel adalah kalimat terbuka yang dihubungkan tanda $=$,
+      hanya punya <strong>satu variabel</strong> yang berpangkat <strong>satu</strong>.
+      Bentuk umumnya $ax + b = c$.
+    </p>
+    <p>
+      Bagian di kiri tanda sama dengan disebut <strong>ruas kiri</strong>, bagian di
+      kanannya <strong>ruas kanan</strong>.
+    </p>
+
+    <h3>Dua cara, satu hal yang sama</h3>
+    <p>
+      Keduanya ditampilkan berdampingan dengan sengaja. Yang kiri menjelaskan
+      <em>kenapa</em>, yang kanan yang biasa dipakai karena cepat.
+    </p>
+
+    <div class="dua-kolom">
+      <div class="kartu">
+        <div class="nomor">Cara 1 — kesetaraan kedua ruas</div>
+        <p class="tengah">$$2x + 1 = 7$$</p>
+        <p class="tengah">$$2x + 1 - 1 = 7 - 1$$</p>
+        <p class="tengah">$$2x = 6$$</p>
+        <p class="tengah">$$\frac{2x}{2} = \frac{6}{2}$$</p>
+        <p class="tengah">$$x = 3$$</p>
+        <p class="kecil samar">Inilah yang dikerjakan timbangan tadi.</p>
+      </div>
+      <div class="kartu">
+        <div class="nomor">Cara 2 — pindah ruas</div>
+        <p class="tengah">$$2x + 1 = 7$$</p>
+        <p class="tengah">$$2x = 7 - 1$$</p>
+        <p class="tengah">$$2x = 6$$</p>
+        <p class="tengah">$$x = \frac{6}{2}$$</p>
+        <p class="tengah">$$x = 3$$</p>
+        <p class="kecil samar">Cara cepat menuliskan hal yang persis sama.</p>
+      </div>
+    </div>
+
+    <p>
+      Aturan pindah ruas: $+$ menjadi $-$, $-$ menjadi $+$, $\times$ menjadi $\div$,
+      dan $\div$ menjadi $\times$. Bukan mantra — itu ringkasan dari menambah atau
+      membagi kedua ruas dengan bilangan yang sama.
+    </p>
+
+    <h3>Variabel di kedua ruas</h3>
+    <p>
+      Kumpulkan variabel di satu ruas dan konstanta di ruas lain.
+    </p>
+    <p class="tengah">$$6x + 5 = 3x - 16 \;\to\; 6x - 3x = -16 - 5 \;\to\; 3x = -21 \;\to\; x = -7$$</p>
+
+    <h3>Kalau ada pecahan</h3>
+    <p>
+      Kalikan kedua ruas dengan KPK penyebutnya, dan pastikan <em>seluruh</em> suku di
+      kedua ruas ikut dikalikan.
+    </p>
+    <p class="tengah">$$\tfrac{1}{2}a + 4 = \tfrac{1}{3}a + 3 \quad (\times 6) \;\to\; 3a + 24 = 2a + 18 \;\to\; a = -6$$</p>
+  </section>
+
+  <section data-tab="Soal cerita" hidden>
+    <h3>Tiga langkah</h3>
+    <ol>
+      <li>Ubah kalimat ceritanya menjadi model matematika.</li>
+      <li>Selesaikan persamaannya.</li>
+      <li>Kembalikan jawabannya ke pertanyaan aslinya.</li>
+    </ol>
+    <p>
+      Langkah ketiga yang paling sering terlewat. Kalau soalnya menanyakan "berapa uang
+      yang disisihkan tiap hari", jawabannya bukan $x = 14000$, melainkan
+      "Rp14.000 setiap hari".
+    </p>
+    <p>
+      Menamai variabelnya di awal juga membantu: tulis dulu "misalkan banyak kotak
+      $= x$", supaya di akhir kamu ingat $x$ itu apa.
+    </p>
+  </section>
+
+  <section data-tab="PtLSV" hidden>
+    <h3>Bentuknya</h3>
+    <p>
+      Pertidaksamaan Linear Satu Variabel sama seperti PLSV, hanya dihubungkan dengan
+      $<$, $>$, $\le$, atau $\ge$. Cara menyelesaikannya juga sama persis,
+      <strong>kecuali satu hal</strong>.
+    </p>
+    <div class="pesan awas">
+      Kalau kedua ruas dikali atau dibagi dengan <strong>bilangan negatif</strong>,
+      tanda pertidaksamaannya harus <strong>dibalik</strong>.
+    </div>
+
+    <h3>Kenapa dibalik</h3>
+    <p>
+      Timbangan berikut memang berat sebelah: ruas kiri lebih berat. Bagilah kedua
+      ruasnya dengan $-2$, lalu perhatikan sisi mana yang jadi lebih berat.
+    </p>
+
+    <div class="kartu">
+      <div id="timbanganPt"></div>
+      <div class="deret" style="margin-top:.8rem">
+        <button type="button" class="tombol mungil utama" id="ptBagi">Bagi kedua ruas dengan −2</button>
+        <button type="button" class="tombol mungil bahaya" id="ptUlang">Ulangi</button>
+      </div>
+      <div id="pesanPt"></div>
+    </div>
+
+    <h3>Penyelesaiannya sekumpulan bilangan</h3>
+    <p>
+      Penyelesaian pertidaksamaan bukan satu angka, melainkan sekumpulan angka, jadi
+      digambarkan di garis bilangan. Bulatannya <strong>penuh</strong> untuk $\le$ dan
+      $\ge$ karena batasnya ikut, dan <strong>kosong</strong> untuk $<$ dan $>$ karena
+      batasnya tidak ikut.
+    </p>
+
+    <div class="kartu">
+      <p class="kecil samar" style="margin:0 0 .5rem">
+        Ketuk garis bilangannya untuk menggeser batas, dan ganti tandanya lewat tombol.
+      </p>
+      <div class="deret" style="margin-bottom:.6rem" id="pilihArah"></div>
+      <div id="garisDaerah"></div>
+      <p id="bacaDaerah" style="margin:.6rem 0 0"></p>
+    </div>
+
+    <h3>Kata kunci dalam soal cerita</h3>
+    <div class="tabel-gulir">
+      <table>
+        <thead>
+          <tr><th>Kalimat</th><th>Tanda</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>tidak lebih dari, paling banyak, maksimal</td><td>$\le$</td></tr>
+          <tr><td>tidak kurang dari, paling sedikit, minimal</td><td>$\ge$</td></tr>
+          <tr><td>kurang dari, di bawah</td><td>$<$</td></tr>
+          <tr><td>lebih dari, di atas</td><td>$>$</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">Tebak dulu jawabannya sebelum membuka langkahnya.</p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.</p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=plsv-ptlsv&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../komponen/kartu-suku.js"></script>
+<script src="../komponen/timbangan.js"></script>
+<script src="../komponen/garis-bilangan.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  var P = Pecahan.dari;
+
+  /* ---------- 3. Eksplorasi: timbangan PLSV ---------- */
+
+  var elPesanTb = document.getElementById('pesanTimbangan');
+  var pernahMiring = false, pernahSelesai = false;
+
+  var tb = Timbangan.buat(document.getElementById('timbanganJelajah'), {
+    kiri: { x: 2, n: 1 }, kanan: { x: 0, n: 7 }, relasi: '=',
+    onUbah: function (k) { tanggapi(k); }
+  });
+
+  function tanggapi(k) {
+    if (!k.benar) pernahMiring = true;
+    if (k.benar && k.teks.replace(/\s/g, '') === 'x=3') pernahSelesai = true;
+
+    if (pernahMiring && pernahSelesai) {
+      elPesanTb.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+        'Sudah terlihat, ya. Membuang dari satu ruas saja membuat timbangannya miring — ' +
+        'artinya persamaannya berubah menjadi tidak benar. Membuang dari kedua ruas ' +
+        'membuatnya tetap seimbang. Jadi "pindah ruas jadi lawannya" bukan aturan ' +
+        'hafalan; itu cuma cara cepat menuliskan hal yang sama.') + '</div>';
+    } else if (pernahMiring) {
+      elPesanTb.innerHTML = '<div class="pesan info">' + Rumus.keHTML(
+        'Timbangannya miring. Perbaiki dengan melakukan hal yang sama pada ruas ' +
+        'satunya, lalu lanjutkan sampai tinggal $x$ sendirian di ruas kiri.') + '</div>';
+    } else {
+      elPesanTb.innerHTML = '';
+    }
+  }
+
+  var aksiTimbangan = {
+    'buang-kiri': function () { tb.buang('kiri', 'n', 1); },
+    'buang-kanan': function () { tb.buang('kanan', 'n', 1); },
+    'buang-dua': function () { tb.buang('dua', 'n', 1); },
+    'bagi-dua': function () { tb.bagi('dua', 2); },
+    'ulang': function () { pernahMiring = false; pernahSelesai = false; tb.ulang(); }
+  };
+  Array.prototype.forEach.call(document.querySelectorAll('[data-aksi]'), function (b) {
+    b.addEventListener('click', function () { aksiTimbangan[b.dataset.aksi](); });
+  });
+
+  /* ---------- 4. Tab materi ---------- */
+
+  var bagian = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
+  var elTab = document.getElementById('tabMateri');
+
+  bagian.forEach(function (sec, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    b.textContent = sec.dataset.tab;
+    b.addEventListener('click', function () {
+      bagian.forEach(function (s, j) { s.hidden = (j !== i); });
+      Array.prototype.forEach.call(elTab.children, function (x, j) {
+        x.setAttribute('aria-selected', j === i ? 'true' : 'false');
+      });
+    });
+    elTab.appendChild(b);
+  });
+
+  /* ---------- 4b. Timbangan PtLSV ---------- */
+
+  /* Diuji pada x = -5, salah satu bilangan yang memenuhi -2x > 8. Di titik
+     itu ruas kiri bernilai 10 dan ruas kanan 8, jadi timbangannya memang
+     berat ke kiri. Setelah dibagi -2, nilainya menjadi -5 dan -4, dan
+     sisi yang berat berpindah ke kanan -- di situlah tandanya berbalik. */
+  var elPesanPt = document.getElementById('pesanPt');
+
+  var tbPt = Timbangan.buat(document.getElementById('timbanganPt'), {
+    kiri: { x: -2, n: 0 }, kanan: { x: 0, n: 8 }, relasi: '>', ujiPada: -5,
+    onUbah: function (k) {
+      elPesanPt.innerHTML = k.dibalik
+        ? '<div class="pesan sip">' + Rumus.keHTML(
+            'Perhatikan: ruas kiri tadi lebih berat, sekarang justru lebih ringan. ' +
+            'Karena kedua ruas bertukar posisi, tandanya ikut berbalik dari $>$ ' +
+            'menjadi $<$. Itulah sebabnya tanda pertidaksamaan dibalik saat dikali ' +
+            'atau dibagi bilangan negatif.') + '</div>'
+        : '';
+    }
+  });
+
+  document.getElementById('ptBagi').addEventListener('click', function () {
+    tbPt.bagi('dua', -2);
+  });
+  document.getElementById('ptUlang').addEventListener('click', function () {
+    elPesanPt.innerHTML = '';
+    tbPt.ulang();
+  });
+
+  /* ---------- 4c. Daerah penyelesaian ---------- */
+
+  var ARAH = [
+    { kunci: '<', label: '$x < a$' },
+    { kunci: '<=', label: '$x \\le a$' },
+    { kunci: '>', label: '$x > a$' },
+    { kunci: '>=', label: '$x \\ge a$' }
+  ];
+  var arahKini = '<';
+  var elArah = document.getElementById('pilihArah');
+  var elBacaDaerah = document.getElementById('bacaDaerah');
+
+  var garis = GarisBilangan.buat(document.getElementById('garisDaerah'), {
+    min: -10, max: 10,
+    daerah: { batas: -4, arah: '<' },
+    onUbah: function (k) { bacaDaerah(k.daerah); }
+  });
+
+  function bacaDaerah(d) {
+    if (!d) return;
+    arahKini = d.arah;
+    Array.prototype.forEach.call(elArah.children, function (b) {
+      b.setAttribute('aria-selected', b.dataset.arah === d.arah ? 'true' : 'false');
+    });
+    var tampil = { '<': '<', '>': '>', '<=': '\\le', '>=': '\\ge' }[d.arah];
+    var ikut = (d.arah === '<=' || d.arah === '>=');
+    Rumus.isi(elBacaDaerah, 'Penyelesaiannya $x ' + tampil + ' ' + d.batas + '$. ' +
+      'Bulatannya ' + (ikut ? 'penuh, jadi $' + d.batas + '$ ikut menjadi penyelesaian.'
+                            : 'kosong, jadi $' + d.batas + '$ tidak ikut.'));
+  }
+
+  elArah.className = 'tab';
+  elArah.setAttribute('role', 'tablist');
+  ARAH.forEach(function (a) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.dataset.arah = a.kunci;
+    b.innerHTML = Rumus.keHTML(a.label);
+    b.addEventListener('click', function () { garis.setDaerah({ arah: a.kunci }); });
+    elArah.appendChild(b);
+  });
+  bacaDaerah(garis.nilai().daerah);
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  var uangHarian = P(154000).bagi(11);
+  var kotakMaks = P(440).bagi(20);
+
+  var contoh = [
+    {
+      judul: 'Tabungan Parman',
+      soal: 'Setiap hari Parman menyisihkan uang jajannya dengan jumlah yang sama. ' +
+        'Setelah $11$ hari terkumpul Rp154.000. Berapa yang ia sisihkan tiap hari?',
+      langkah: [
+        'Misalkan uang yang disisihkan tiap hari $= x$',
+        'Modelnya $11x = 154000$',
+        '$x = \\frac{154000}{11} = ' + uangHarian.teks() + '$',
+        'Kembalikan ke pertanyaannya: Parman menyisihkan Rp14.000 setiap hari.'
+      ]
+    },
+    {
+      judul: 'Variabel di dua ruas',
+      soal: 'Tentukan nilai $b$ dari $5b - 2 = b + 10$.',
+      langkah: [
+        'Pindahkan konstantanya ke kanan: $5b = b + 12$',
+        'Pindahkan variabelnya ke kiri: $5b - b = 12$',
+        '$4b = 12$, jadi $b = ' + P(12).bagi(4).teks() + '$'
+      ]
+    },
+    {
+      judul: 'Mobil box Pak Fredy',
+      soal: 'Daya angkut mobil box tidak lebih dari $500$ kg. Berat Pak Fredy $60$ kg ' +
+        'dan tiap kotak beratnya $20$ kg. Paling banyak berapa kotak yang bisa diangkut?',
+      langkah: [
+        'Misalkan banyak kotak $= x$, sehingga berat kotaknya $20x$ kg',
+        '"Tidak lebih dari" berarti tandanya $\\le$. Modelnya $20x + 60 \\le 500$',
+        '$20x \\le 440$, jadi $x \\le ' + kotakMaks.teks() + '$',
+        'Paling banyak $22$ kotak. Perhatikan bahwa $22$ ikut, sebab tandanya $\\le$.'
+      ]
+    }
+  ];
+
+  var elContoh = document.getElementById('daftarContoh');
+
+  contoh.forEach(function (c, i) {
+    var kotak = document.createElement('article');
+    kotak.className = 'kartu';
+
+    var nomor = document.createElement('div');
+    nomor.className = 'nomor';
+    nomor.textContent = 'Contoh ' + (i + 1) + ' — ' + c.judul;
+    kotak.appendChild(nomor);
+
+    var tanya = document.createElement('div');
+    tanya.className = 'pertanyaan';
+    Rumus.isi(tanya, c.soal);
+    kotak.appendChild(tanya);
+
+    var daftar = document.createElement('ol');
+    daftar.style.margin = '0';
+    kotak.appendChild(daftar);
+
+    var tombol = document.createElement('button');
+    tombol.type = 'button';
+    tombol.className = 'tombol mungil';
+    tombol.style.marginTop = '.6rem';
+    tombol.textContent = 'Buka langkah pertama';
+    kotak.appendChild(tombol);
+
+    var ke = 0;
+    tombol.addEventListener('click', function () {
+      if (ke >= c.langkah.length) return;
+      var li = document.createElement('li');
+      Rumus.isi(li, c.langkah[ke]);
+      daftar.appendChild(li);
+      ke++;
+      if (ke >= c.langkah.length) tombol.hidden = true;
+      else tombol.textContent = 'Langkah berikutnya';
+    });
+
+    elContoh.appendChild(kotak);
+  });
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'pv-cek-1', level: 1, tipe: 'pg',
+        pertanyaan: 'Manakah yang merupakan kalimat terbuka?',
+        opsi: {
+          a: '$3 + 5 = 9$',
+          b: '$2x - 1 = 7$',
+          c: '$10 - 4 = 6$',
+          d: '$7 \\times 2 = 14$'
+        },
+        kunci: 'b',
+        umpan: {
+          a: 'Kalimat itu memang salah, tapi kita sudah bisa memastikan salahnya. ' +
+             'Kalimat terbuka adalah yang belum bisa dipastikan benar atau salahnya.',
+          c: 'Kalimat ini bernilai benar dan sudah pasti, jadi ia kalimat tertutup. ' +
+             'Yang dicari adalah yang masih memuat variabel.',
+          d: 'Sudah bisa dipastikan benar, jadi kalimat tertutup. ' +
+             'Cari yang masih ada hurufnya.'
+        },
+        bahas: 'Hanya $2x - 1 = 7$ yang memuat variabel, sehingga benar-salahnya belum ' +
+          'bisa ditentukan sebelum $x$ diketahui. Itulah kalimat terbuka.'
+      },
+      {
+        id: 'pv-cek-2', level: 1, tipe: 'isian',
+        pertanyaan: 'Nilai $x$ dari $x + 5 = 9$ adalah ...',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['4'],
+        salahUmum: [
+          {
+            jawaban: ['14'],
+            umpan: 'Sepertinya $5$ ditambahkan, bukan dikurangkan. Untuk memisahkan $x$, ' +
+              'kurangi kedua ruas dengan $5$.'
+          }
+        ],
+        bahas: 'Kurangi kedua ruas dengan $5$: $x + 5 - 5 = 9 - 5$, sehingga $x = 4$.'
+      },
+      {
+        id: 'pv-cek-3', level: 2, tipe: 'isian',
+        pertanyaan: 'Nilai $p$ dari $-4p - 5 = -29$ adalah ...',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['6'],
+        salahUmum: [
+          {
+            jawaban: ['-6'],
+            umpan: 'Langkahnya sudah benar sampai $-4p = -24$. Tapi negatif dibagi ' +
+              'negatif hasilnya positif, jadi $p = 6$, bukan $-6$.'
+          },
+          {
+            jawaban: ['8', '-8'],
+            umpan: 'Perhatikan tanda saat memindahkan $-5$. Karena di ruas kiri ia ' +
+              'bertanda negatif, di ruas kanan ia menjadi $+5$: $-29 + 5 = -24$.'
+          }
+        ],
+        bahas: 'Tambahkan $5$ ke kedua ruas: $-4p = -29 + 5 = -24$. ' +
+          'Lalu bagi kedua ruas dengan $-4$: $p = \\frac{-24}{-4} = 6$.'
+      },
+      {
+        id: 'pv-cek-4', level: 2, tipe: 'pg',
+        pertanyaan: 'Penyelesaian dari $-2x > 8$ adalah ...',
+        opsi: {
+          a: '$x > -4$',
+          b: '$x < -4$',
+          c: '$x > 4$',
+          d: '$x < 4$'
+        },
+        kunci: 'b',
+        umpan: {
+          a: 'Angkanya sudah benar. Tetapi kamu membagi kedua ruas dengan bilangan ' +
+             'negatif, dan kalau begitu tanda pertidaksamaannya harus dibalik.',
+          c: 'Periksa tandanya: $8$ dibagi $-2$ menghasilkan $-4$, bukan $4$.',
+          d: 'Tandanya sudah dibalik dengan benar, tetapi $8 \\div (-2) = -4$, ' +
+             'bukan $4$.'
+        },
+        bahas: 'Bagi kedua ruas dengan $-2$. Karena pembaginya negatif, tandanya ' +
+          'dibalik: $x < \\frac{8}{-2}$, yaitu $x < -4$.'
+      },
+      {
+        id: 'pv-cek-5', level: 2, tipe: 'isian',
+        pertanyaan: 'Sebuah lift memuat paling banyak $600$ kg. Berat petugasnya ' +
+          '$70$ kg dan tiap kardus beratnya $25$ kg. Paling banyak berapa kardus ' +
+          'yang bisa diangkut sekali jalan?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['21'],
+        salahUmum: [
+          {
+            jawaban: ['22'],
+            umpan: 'Hasil bagi tepatnya $21{,}2$. Karena kardus tidak bisa setengah, ' +
+              'dan totalnya tidak boleh melebihi $600$ kg, angkanya dibulatkan ' +
+              'ke bawah menjadi $21$.'
+          },
+          {
+            jawaban: ['24'],
+            umpan: 'Sepertinya berat petugasnya belum ikut dihitung. ' +
+              'Petugasnya juga ikut naik lift.'
+          }
+        ],
+        bahas: 'Misalkan banyak kardus $= x$. Modelnya $25x + 70 \\le 600$, ' +
+          'sehingga $25x \\le 530$ dan $x \\le 21{,}2$. ' +
+          'Karena kardus harus utuh, paling banyak $21$ kardus.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  fetch('../data/daftar-bab.json', { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (peta) {
+      if (!peta) return;
+      var ada = (peta.kelas || []).some(function (k) {
+        return String(k.tingkat) === '7' &&
+          (k.bab || []).some(function (b) { return b.kode === 'plsv-ptlsv'; });
+      });
+      if (ada) return;
+      document.getElementById('tautanLatihan').innerHTML =
+        '<div class="pesan info">Bank soal latihan untuk bab ini belum tersedia. ' +
+        'Materinya sudah bisa dipelajari, dan tombol latihannya akan muncul sendiri ' +
+        'begitu soalnya ditambahkan.</div>';
+    })
+    .catch(function () { /* biarkan tombolnya apa adanya */ });
+})();
+</script>
+</body>
+</html>

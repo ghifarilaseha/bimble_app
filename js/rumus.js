@@ -50,5 +50,31 @@
     return el;
   }
 
-  akar.Rumus = { keHTML: keHTML, isi: isi, lolos: lolos };
+  var LEWATI = { SCRIPT: 1, STYLE: 1, TEXTAREA: 1, CODE: 1, PRE: 1 };
+
+  /* Menyapu satu pohon elemen dan mengubah setiap $...$ yang ditemukannya.
+     Yang diganti hanya simpul teks, bukan seluruh isi elemen, sehingga
+     markup yang sudah ada di dalamnya tetap utuh. Cara lama -- membaca
+     textContent lalu menimpa innerHTML -- diam-diam menghapus <strong>,
+     <em>, dan tautan pada paragraf yang kebetulan memuat rumus. */
+  function sapu(akarEl) {
+    if (!akarEl || typeof document.createTreeWalker !== 'function') return akarEl;
+    var jalan = document.createTreeWalker(akarEl, NodeFilter.SHOW_TEXT, null, false);
+    var kena = [], n;
+    while ((n = jalan.nextNode())) {
+      if (n.nodeValue.indexOf('$') < 0) continue;
+      if (n.parentNode && LEWATI[n.parentNode.nodeName]) continue;
+      kena.push(n);
+    }
+    /* Simpulnya dikumpulkan dulu, baru diganti. Mengganti sambil berjalan
+       membuat TreeWalker kehilangan tempatnya. */
+    kena.forEach(function (t) {
+      var bungkus = document.createElement('span');
+      bungkus.innerHTML = keHTML(t.nodeValue);
+      t.parentNode.replaceChild(bungkus, t);
+    });
+    return akarEl;
+  }
+
+  akar.Rumus = { keHTML: keHTML, isi: isi, sapu: sapu, lolos: lolos };
 })(window);

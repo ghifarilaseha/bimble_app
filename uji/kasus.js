@@ -326,6 +326,116 @@
     });
   });
 
+  /* ---------- pecahan: aritmetika yang tepat ---------- */
+
+  /* Halaman materi pecahan berdiri di atas modul ini. Kalau ia mulai
+     memakai bilangan desimal peramban, kegagalannya tidak menimbulkan galat
+     apa pun -- yang muncul hanya angka aneh di layar siswa. Karena itu
+     diuji di sini, bukan cuma diandalkan. */
+  uji('Pecahan dihitung tepat, tanpa galat bilangan desimal', function () {
+    var Pecahan = modulPecahan();
+    var P = Pecahan.dari;
+    var periksa = [
+      ['0,1 + 0,2', P('0,1').tambah('0,2').teks(), '3/10'],
+      ['0,1 + 0,2 desimal', P('0,1').tambah('0,2').teksDesimal(), '0,3'],
+      ['1,2 + 0,75', P('1,2').tambah('0,75').teksDesimal(), '1,95'],
+      ['5/8 - 3/10', P('5/8').kurang('3/10').teks(), '13/40'],
+      ['1 - 1/4 - 2/5', P(1).kurang('1/4').kurang('2/5').teks(), '7/20'],
+      ['140 : 7/20', P(140).bagi('7/20').teks(), '400'],
+      ['2 1/2 x 3', P('2 1/2').kali(3).teksCampuran(), '7 1/2']
+    ];
+    var gagal = periksa.filter(function (r) { return r[1] !== r[2]; });
+    return Promise.resolve({
+      lulus: gagal.length === 0,
+      catatan: gagal.length
+        ? gagal.map(function (r) { return r[0] + ' = ' + r[1] + ', diharapkan ' + r[2]; }).join('; ')
+        : periksa.length + ' hitungan tepat'
+    });
+  });
+
+  uji('Empat wajah bilangan yang sama dibaca sebagai satu nilai', function () {
+    var Pecahan = modulPecahan();
+    var bentuk = ['3/4', '0,75', '0.75', '75%', '6/8'];
+    var acuan = Pecahan.dari('3/4');
+    var beda = bentuk.filter(function (b) { return !Pecahan.dari(b).samaDengan(acuan); });
+    return Promise.resolve({
+      lulus: beda.length === 0,
+      catatan: beda.length ? 'tidak senilai: ' + beda.join(', ')
+        : bentuk.join(' = ') + ' dibaca sama'
+    });
+  });
+
+  /* Desimal yang tidak berhenti harus terlihat tidak berhenti. Menampilkan
+     1/3 sebagai "0,3333" tanpa penanda akan mengajarkan hal yang keliru. */
+  uji('Desimal berulang ditandai, desimal berhenti ditulis utuh', function () {
+    var Pecahan = modulPecahan();
+    var periksa = [
+      ['7/8', '0,875'],
+      ['1/4', '0,25'],
+      ['1/3', '0,3333' + Pecahan.ELIPSIS],
+      ['5/6', '0,8333' + Pecahan.ELIPSIS],
+      ['2', '2']
+    ];
+    var gagal = periksa.filter(function (r) {
+      return Pecahan.dari(r[0]).teksDesimal() !== r[1];
+    });
+    return Promise.resolve({
+      lulus: gagal.length === 0,
+      catatan: gagal.length
+        ? gagal.map(function (r) {
+            return r[0] + ' jadi ' + Pecahan.dari(r[0]).teksDesimal() + ', diharapkan ' + r[1];
+          }).join('; ')
+        : 'berhenti dan berulang dibedakan'
+    });
+  });
+
+  uji('Daftar campuran pecahan, desimal, dan persen dapat diurutkan', function () {
+    var Pecahan = modulPecahan();
+    var hasil = Pecahan.urut(['0,45', '0,85', '7/8', '78%']).join(' ');
+    var harap = '0,45 78% 0,85 7/8';
+    return Promise.resolve({
+      lulus: hasil === harap,
+      catatan: hasil === harap ? hasil : 'dapat "' + hasil + '", diharapkan "' + harap + '"'
+    });
+  });
+
+  /* Rupiah dipakai di seluruh bab Aritmetika Sosial. Gaya Indonesia memakai
+     titik untuk ribuan, kebalikan dari gaya Inggris, jadi tidak boleh
+     mengandalkan pemformat bawaan yang mengikuti setelan perangkat siswa. */
+  uji('Rupiah ditulis dengan pemisah ribuan gaya Indonesia', function () {
+    var Pecahan = modulPecahan();
+    var periksa = [
+      [Pecahan.rupiah(5000), 'Rp5.000'],
+      [Pecahan.rupiah(420000), 'Rp420.000'],
+      [Pecahan.rupiah(1090000), 'Rp1.090.000'],
+      [Pecahan.rupiah(Pecahan.dari('15%').kali(420000)), 'Rp63.000'],
+      [Pecahan.rupiah(Pecahan.dari(1).kurang('15%').kali(420000)), 'Rp357.000'],
+      [Pecahan.rupiah(Pecahan.dari(9000000).bagi('90%')), 'Rp10.000.000'],
+      [Pecahan.dari(2).bagi(40).teksPersen(), '5%']
+    ];
+    var gagal = periksa.filter(function (r) { return r[0] !== r[1]; });
+    return Promise.resolve({
+      lulus: gagal.length === 0,
+      catatan: gagal.length
+        ? gagal.map(function (r) { return r[0] + ' bukan ' + r[1]; }).join('; ')
+        : periksa.length + ' bentuk rupiah dan persen tepat'
+    });
+  });
+
+  uji('Pecahan menolak masukan yang tidak masuk akal', function () {
+    var Pecahan = modulPecahan();
+    var ditolak = 0;
+    [function () { Pecahan.buat(1, 0); },
+     function () { Pecahan.dari('kucing'); },
+     function () { Pecahan.dari('1/2').bagi(0); }].forEach(function (f) {
+      try { f(); } catch (e) { ditolak++; }
+    });
+    return Promise.resolve({
+      lulus: ditolak === 3,
+      catatan: ditolak + ' dari 3 masukan keliru ditolak dengan pesan'
+    });
+  });
+
   /* ---------- penilaian keseluruhan ---------- */
 
   uji('Nilai akhir memakai bobot level, dan bobot dapat diratakan', function () {
@@ -444,6 +554,12 @@
     return (typeof require === 'function' && typeof module === 'object')
       ? require('../js/validasi.js')
       : (typeof self !== 'undefined' ? self.Validasi : null);
+  }
+
+  function modulPecahan() {
+    return (typeof require === 'function' && typeof module === 'object')
+      ? require('../js/pecahan.js')
+      : (typeof self !== 'undefined' ? self.Pecahan : null);
   }
 
   function bankPalsu() {

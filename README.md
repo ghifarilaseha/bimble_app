@@ -47,6 +47,8 @@ js/
   identitas.js          nama siswa, saran pengetikan, ingatan di localStorage
   kirim.js              pengiriman hasil beserta antrean luring
   rumus.js              menerjemahkan $...$ menjadi rumus tercetak
+  pecahan.js            aritmetika pecahan yang tepat, dipakai halaman materi
+  cek-paham.js          soal cek pemahaman di dalam halaman materi
   validasi.js           pemeriksaan bentuk bank soal
   gembok-inti.js        perubahan satu butir soal mentah menjadi tergembok
   latihan.js            alur halaman latihan
@@ -55,8 +57,18 @@ js/
 komponen/
   bidang-koordinat.js   bidang kartesius yang bisa diketuk, lengkap dengan
                         gambar acuan untuk soal transformasi
-  garis-bilangan.js     garis bilangan dengan busur loncatan
-  batang-pecahan.js     batang pecahan yang penyebutnya bisa diubah
+  garis-bilangan.js     garis bilangan dengan busur loncatan, dan mode
+                        daerah penyelesaian untuk pertidaksamaan
+  batang-pecahan.js     batang pecahan yang penyebutnya bisa diubah, boleh
+                        disertai garis 0-1 dan penguncian nilai
+  kartu-suku.js         kartu bentuk aljabar: kotak x, tabung y, bola satuan.
+                        Menolak menggabungkan yang tidak sejenis beserta
+                        alasannya. Dipakai ulang timbangan PLSV dan SPLDV
+  timbangan.js          dua lengan untuk PLSV dan PtLSV, menumpang
+                        kartu-suku.js. Aksinya bisa dikenakan ke satu ruas
+                        saja, sehingga miringnya benar-benar terlihat
+  batang-harga.js       dua batang harga dengan selisih tersorot, untuk
+                        untung, rugi, dan persentasenya
   tabel-pola.js         tabel pola bilangan dengan kolom selisih
   qr.js                 penyandi QR untuk tautan sesi
 
@@ -66,7 +78,16 @@ data/
   soal-mentah/          bank soal dengan kunci terbaca (TIDAK ikut tayang)
   soal/                 bank soal tergembok, inilah yang dibaca situs
 
-materi/                 satu berkas HTML per bab
+materi/                 satu berkas HTML per bab, disusun tujuh bagian:
+                        tujuan, pemantik, eksplorasi, perumusan, contoh
+                        bertahap, cek pemahaman, tautan latihan
+
+                        Catatan saat menulisnya: teks yang lewat Rumus.isi
+                        atau Rumus.keHTML selalu dilolos-kan, supaya isi bank
+                        soal tidak bisa menyuntik markup. Karena itu <b> atau
+                        <em> di dalam string justru tampil sebagai tulisan.
+                        Pakai penekanan lewat kata, atau taruh markupnya di
+                        HTML dan biarkan Rumus.sapu yang merender rumusnya.
 tools/                  gembok.js, uji.js, tautan.js, sajikan.js
 uji/kasus.js            kasus uji, dipakai uji.html dan tools/uji.js
 apps-script/Kode.gs     salinan kode Apps Script untuk riwayat versi

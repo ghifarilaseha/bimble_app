@@ -27,6 +27,14 @@
     var langkah = (atur.langkah || []).slice();
     var interaktif = atur.interaktif !== false;
 
+    /* Mode daerah penyelesaian untuk pertidaksamaan. Bila diisi, yang
+       digambar bukan busur loncatan melainkan sebuah sinar beserta bulatan
+       batasnya: penuh untuk <= dan >=, kosong untuk < dan >. */
+    var daerah = atur.daerah ? {
+      batas: atur.daerah.batas || 0,
+      arah: atur.daerah.arah || '<'
+    } : null;
+
     var L = 34, M = 30;
     var tinggiBusur = 46;
     var W = (max - min) * L + 2 * M;
@@ -129,10 +137,44 @@
       lapisBusur.appendChild(teks(sx(posisi), yGaris + 40, String(posisi), 'var(--aksen)', true));
     }
 
+    /* Sinar penyelesaian beserta bulatan batasnya. Bulatan kosong berarti
+       batasnya tidak ikut, dan itu satu-satunya beda antara < dan <= yang
+       terlihat di gambar -- jadi memang harus terbaca jelas. */
+    function gambarDaerah() {
+      lapisBusur.innerHTML = '';
+      var keKiri = daerah.arah === '<' || daerah.arah === '<=';
+      var tertutup = daerah.arah === '<=' || daerah.arah === '>=';
+      var ujung = keKiri ? min : max;
+
+      lapisBusur.appendChild(el('line', {
+        x1: sx(daerah.batas), y1: yGaris, x2: sx(ujung) + (keKiri ? -10 : 10), y2: yGaris,
+        stroke: 'var(--aksen)', 'stroke-width': 6,
+        'stroke-linecap': 'round', opacity: .45
+      }));
+      lapisBusur.appendChild(el('path', {
+        d: 'M ' + (sx(ujung) + (keKiri ? -10 : 10)) + ' ' + yGaris +
+           ' l ' + (keKiri ? 9 : -9) + ' -5 v 10 z',
+        fill: 'var(--aksen)', opacity: .75
+      }));
+      lapisBusur.appendChild(el('circle', {
+        cx: sx(daerah.batas), cy: yGaris, r: 6.5,
+        fill: tertutup ? 'var(--aksen)' : 'var(--kartu)',
+        stroke: 'var(--aksen)', 'stroke-width': 2.5
+      }));
+      lapisBusur.appendChild(teks(sx(daerah.batas), yGaris - 15,
+        String(daerah.batas), 'var(--aksen)', true));
+    }
+
     function gambar() {
       gambarGaris();
-      gambarBusur();
-      if (atur.onUbah) atur.onUbah({ awal: awal, langkah: langkah.slice(), hasil: hasil() });
+      if (daerah) gambarDaerah();
+      else gambarBusur();
+      if (atur.onUbah) {
+        atur.onUbah({
+          awal: awal, langkah: langkah.slice(), hasil: hasil(),
+          daerah: daerah ? { batas: daerah.batas, arah: daerah.arah } : null
+        });
+      }
     }
 
     if (interaktif) {
@@ -143,7 +185,8 @@
         var x = gx(px);
         if (x < min || x > max) return;
         ev.preventDefault();
-        awal = x;
+        if (daerah) daerah.batas = x;
+        else awal = x;
         gambar();
       });
     }
@@ -154,7 +197,19 @@
       hasil: hasil,
       setAwal: function (x) { awal = x; gambar(); },
       setLangkah: function (arr) { langkah = (arr || []).slice(); gambar(); },
-      nilai: function () { return { awal: awal, langkah: langkah.slice(), hasil: hasil() }; }
+      setDaerah: function (d) {
+        if (!d) return;
+        daerah = daerah || { batas: 0, arah: '<' };
+        if (d.batas !== undefined) daerah.batas = d.batas;
+        if (d.arah !== undefined) daerah.arah = d.arah;
+        gambar();
+      },
+      nilai: function () {
+        return {
+          awal: awal, langkah: langkah.slice(), hasil: hasil(),
+          daerah: daerah ? { batas: daerah.batas, arah: daerah.arah } : null
+        };
+      }
     };
   }
 

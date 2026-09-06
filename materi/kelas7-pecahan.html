@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pecahan</title>
+<title>Pecahan, Desimal, dan Persen</title>
 <link rel="stylesheet" href="../vendor/katex/katex.min.css">
 <link rel="stylesheet" href="../css/gaya.css">
 </head>
@@ -18,54 +18,221 @@
 
 <main class="bungkus">
 
-  <h1>Pecahan sebagai potongan</h1>
+  <h1>Pecahan, Desimal, dan Persen</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Membaca satu bilangan yang sama dalam empat wajah: pecahan, campuran,
+        desimal, dan persen.</li>
+      <li>Menentukan mana yang lebih besar tanpa menebak.</li>
+      <li>Menghitung keempat operasinya.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Tiga toko, satu barang</h2>
   <p>
-    Penyebut menyatakan sebuah benda dipotong menjadi berapa bagian sama besar.
-    Pembilang menyatakan berapa potong yang diambil. Karena itu $3/4$ berarti
-    benda dipotong empat, lalu diambil tiga.
+    Tiga toko memasang tanda diskon berbeda untuk barang yang harganya sama persis:
+  </p>
+  <ul>
+    <li>Toko A: <strong>Diskon $\frac{1}{4}$</strong></li>
+    <li>Toko B: <strong>Diskon $0{,}3$</strong></li>
+    <li>Toko C: <strong>Diskon $20\%$</strong></li>
+  </ul>
+  <p>
+    Mana yang paling murah?
+  </p>
+  <p class="kecil samar">
+    Pertanyaan ini belum bisa dijawab sebelum ketiganya diubah ke bentuk yang sama —
+    dan itulah alasan seluruh bab ini ada. Berhenti dulu di sini.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: satu batang, empat label</h2>
+  <p>
+    Ketuk potongannya untuk mengisi batang, dan pakai tombol penyebut untuk
+    mengubah <em>banyaknya</em> potongan. Di bawah batang ada garis bilangan
+    $0$ sampai $1$; perhatikan di mana ujung batangnya jatuh.
+  </p>
+  <p>
+    Tugasnya: <strong>buat $\frac{1}{2}$, lalu ubah penyebutnya jadi $4$, $6$, lalu $8$.</strong>
+    Perhatikan ujung batangnya. Pindah tidak?
   </p>
 
   <div class="kartu">
-    <h3 class="rapat">Coba sendiri</h3>
-    <p class="kecil samar">
-      Ketuk potongannya untuk mengisi, atau ubah penyebutnya dan perhatikan
-      apa yang berubah.
+    <div id="batangJelajah"></div>
+
+    <div class="tabel-gulir" style="margin-top:.6rem">
+      <table>
+        <tbody id="empatLabel"></tbody>
+      </table>
+    </div>
+
+    <div id="pesanJelajah"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Kenal bentuk">
+    <h3>Pembilang dan penyebut</h3>
+    <p>
+      Pecahan ditulis $\frac{a}{b}$ dengan $b \neq 0$. Bilangan $a$ disebut
+      <strong>pembilang</strong>, dan $b$ disebut <strong>penyebut</strong>.
+      Penyebut menyatakan sebuah benda dipotong menjadi berapa bagian sama besar,
+      pembilang menyatakan berapa potong yang diambil.
     </p>
-    <div id="batang1"></div>
-  </div>
+    <p>
+      Kebalikan dari $\frac{a}{b}$ adalah $\frac{b}{a}$, sebab
+      $\frac{a}{b} \times \frac{b}{a} = 1$. Ini yang nanti dipakai saat membagi.
+    </p>
 
-  <h2>Pecahan senilai</h2>
-  <p>
-    Dua pecahan disebut senilai bila panjang yang terarsir sama, walaupun
-    banyak potongannya berbeda. Batang bawah pada gambar berikut selalu $1/2$;
-    aturlah batang atas sampai panjang arsirnya sama.
+    <h3>Jenis pecahan</h3>
+    <ul>
+      <li><strong>Pecahan murni</strong> — pembilang lebih kecil dari penyebut:
+        $\frac{3}{5}$, $\frac{7}{9}$</li>
+      <li><strong>Pecahan tidak murni</strong> — pembilang lebih besar:
+        $\frac{8}{5}$, $\frac{17}{9}$</li>
+      <li><strong>Pecahan campuran</strong> — gabungan bilangan bulat dan pecahan:
+        $1\frac{4}{5}$</li>
+      <li><strong>Persen</strong> — pecahan berpenyebut $100$: $\frac{2}{100} = 2\%$</li>
+      <li><strong>Desimal</strong> — pecahan berpenyebut $10$, $100$, $1.000$, ditulis
+        dengan koma: $0{,}6$ dan $0{,}72$</li>
+    </ul>
+
+    <h3>Pecahan senilai</h3>
+    <p class="tengah">$$\frac{a}{b} = \frac{a \times c}{b \times c} = \frac{a \div c}{b \div c}, \quad b \neq 0,\ c \neq 0$$</p>
+    <p>
+      Inilah yang tadi kamu lihat di batang: pembilang dan penyebut dikalikan bilangan
+      yang sama, potongannya jadi lebih banyak tetapi lebih kecil, sehingga panjang
+      totalnya tidak berubah.
+    </p>
+
+    <h3>Mengubah bentuk</h3>
+    <div class="tabel-gulir">
+      <table>
+        <thead>
+          <tr><th>Dari → ke</th><th>Caranya</th><th>Contoh</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Biasa → campuran</td><td>Bagi pembilang dengan penyebut, sisanya jadi pembilang baru</td><td>$\frac{21}{4} = 5\frac{1}{4}$</td></tr>
+          <tr><td>Campuran → biasa</td><td>$a\frac{b}{c} = \frac{c \times a + b}{c}$</td><td>$2\frac{3}{7} = \frac{17}{7}$</td></tr>
+          <tr><td>Biasa → persen</td><td>Kali $100\%$, atau jadikan penyebut $100$</td><td>$\frac{3}{5} = 60\%$</td></tr>
+          <tr><td>Persen → biasa</td><td>Jadikan per $100$ lalu sederhanakan</td><td>$25\% = \frac{1}{4}$</td></tr>
+          <tr><td>Biasa → desimal</td><td>Jadikan penyebut $10$, $100$, $1.000$, atau bagi bersusun</td><td>$\frac{7}{8} = \frac{875}{1000} = 0{,}875$</td></tr>
+          <tr><td>Desimal → biasa</td><td>Hitung angka di belakang koma</td><td>$0{,}345 = \frac{345}{1000}$</td></tr>
+          <tr><td>Persen → desimal</td><td>Bagi $100$</td><td>$12\% = 0{,}12$</td></tr>
+          <tr><td>Desimal → persen</td><td>Kali $100\%$</td><td>$0{,}34 = 34\%$</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section data-tab="Banding dan urutkan" hidden>
+    <h3>Dua cara membandingkan</h3>
+    <p>
+      Pertama, lihat posisinya di garis bilangan: yang di sebelah kanan lebih besar.
+      Kedua, samakan penyebutnya lalu bandingkan pembilangnya.
+    </p>
+    <p>
+      Hati-hati dengan dugaan yang kelihatan masuk akal: penyebut yang lebih besar
+      <em>tidak</em> berarti pecahannya lebih besar. Justru sebaliknya kalau
+      pembilangnya sama — satu potong dari sepuluh tentu lebih kecil daripada satu
+      potong dari tiga, jadi $\frac{1}{10} < \frac{1}{3}$.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Bandingkan dua pecahan</h3>
+      <p class="kecil samar">
+        Isi kedua pecahan dalam bentuk apa pun: $3/4$, $0{,}75$, $75\%$, atau $1\ 1/2$.
+      </p>
+      <div class="deret" style="align-items:center; margin:.6rem 0">
+        <input type="text" id="bandingA" value="1/2" style="flex:0 0 7rem" autocomplete="off">
+        <span id="bandingTanda" style="font-weight:650; min-width:2rem; text-align:center">?</span>
+        <input type="text" id="bandingB" value="2/4" style="flex:0 0 7rem" autocomplete="off">
+        <button type="button" class="tombol mungil utama" id="bandingPeriksa">Bandingkan</button>
+      </div>
+      <div id="bandingHasil"></div>
+    </div>
+
+    <h3>Mengurutkan daftar campuran</h3>
+    <p>
+      Untuk daftar seperti $4{,}75$ ; $\frac{3}{4}$ ; $\frac{9}{8}$ ; $65\%$, ubah semua
+      ke satu bentuk dulu. Desimal biasanya paling cepat untuk membandingkan.
+    </p>
+  </section>
+
+  <section data-tab="Tambah dan kurang" hidden>
+    <h3>Penyebutnya sama</h3>
+    <p>Tinggal jumlahkan pembilangnya, penyebutnya dibiarkan:</p>
+    <p class="tengah">$$\frac{a}{c} + \frac{b}{c} = \frac{a+b}{c}$$</p>
+    <p>
+      Perhatikan bahwa penyebutnya <strong>tidak</strong> ikut dijumlahkan. Ini kekeliruan
+      yang paling sering terjadi di seluruh bab: $\frac{1}{2} + \frac{1}{3}$ bukan
+      $\frac{2}{5}$. Kalau ragu, kembali ke batang — $\frac{2}{5}$ malah lebih kecil
+      daripada $\frac{1}{2}$, padahal tadi ditambah.
+    </p>
+
+    <h3>Penyebutnya berbeda</h3>
+    <p>Samakan dulu penyebutnya, biasanya memakai KPK:</p>
+    <p class="tengah">$$\frac{a}{b} + \frac{c}{d} = \frac{(a \times d) + (c \times b)}{b \times d}$$</p>
+
+    <h3>Bentuk desimal</h3>
+    <p>
+      Susun ke bawah dan <strong>luruskan komanya</strong>. Kalau banyak angkanya berbeda,
+      tambahkan nol supaya sama panjang: $4{,}3$ ditulis $4{,}30$.
+    </p>
+  </section>
+
+  <section data-tab="Kali dan bagi" hidden>
+    <h3>Perkalian dan pembagian</h3>
+    <p class="tengah">$$\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d} \qquad
+      \frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c}$$</p>
+    <p>
+      Membagi berarti mengalikan dengan kebalikan pembaginya. Pecahan campuran harus
+      diubah ke pecahan biasa <em>sebelum</em> dikali atau dibagi — $2\frac{1}{2} \times 3$
+      bukan $6\frac{1}{2}$, melainkan $\frac{5}{2} \times 3 = \frac{15}{2} = 7\frac{1}{2}$.
+    </p>
+
+    <h3>Desimal</h3>
+    <p>
+      Kalikan seperti bilangan bulat, lalu jumlahkan banyak angka di belakang koma kedua
+      bilangan. Pada $2{,}36 \times 1{,}2$: dua angka ditambah satu angka, jadi hasilnya
+      punya tiga angka di belakang koma.
+    </p>
+
+    <h3>Operasi campuran</h3>
+    <p>
+      Kurung dulu, lalu kali dan bagi dari kiri ke kanan, baru tambah dan kurang dari
+      kiri ke kanan. Sama seperti pada bilangan bulat.
+    </p>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya.
   </p>
+  <div id="daftarContoh"></div>
 
-  <div class="kartu">
-    <div id="batang2"></div>
-    <p class="kecil" id="pesanSenilai" style="margin-top:.5rem"></p>
-  </div>
-
-  <p>
-    Yang sebenarnya terjadi: pembilang dan penyebut dikalikan bilangan yang sama.
-    Potongannya jadi lebih banyak tetapi lebih kecil, sehingga panjang totalnya tetap.
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.
   </p>
+  <div id="cekPaham"></div>
 
-  <h2>Penyebut lebih besar, potongan lebih kecil</h2>
-  <p>
-    Bila pembilangnya sama, pecahan berpenyebut besar justru bernilai lebih kecil.
-    Satu potong dari sepuluh tentu lebih kecil daripada satu potong dari tiga,
-    jadi $1/10 < 1/3$.
-  </p>
-
-  <h2>Pecahan, desimal, dan persen</h2>
-  <p>
-    Ketiganya hanya cara menulis yang berbeda untuk bilangan yang sama.
-    Persen berarti "per seratus", jadi $75\%$ sama dengan $75/100$, yang bila
-    disederhanakan menjadi $3/4$, dan bila ditulis desimal menjadi $0{,}75$.
-  </p>
-
+  <!-- ---------- 7. Tautan latihan ---------- -->
   <h2>Sudah paham?</h2>
+  <p>
+    Contoh terakhir tadi — bagian dari keseluruhan — adalah pintu masuk ke bab
+    <strong>Aritmetika Sosial</strong>, tempat pecahan dan persen dipakai untuk untung,
+    rugi, dan diskon. Sebelum ke sana, mantapkan dulu yang ini.
+  </p>
   <p>
     <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=pecahan&amp;mode=mandiri">
       Latihan mandiri
@@ -75,33 +242,333 @@
 
 <script src="../vendor/katex/katex.min.js"></script>
 <script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
 <script src="../komponen/batang-pecahan.js"></script>
 <script>
 (function () {
   'use strict';
 
-  ['p', 'li', 'h1', 'h2', 'h3'].forEach(function (tag) {
-    Array.prototype.forEach.call(document.querySelectorAll('main ' + tag), function (n) {
-      if (n.textContent.indexOf('$') >= 0) n.innerHTML = Rumus.keHTML(n.textContent);
+  Rumus.sapu(document.querySelector('main'));
+
+  var P = Pecahan.dari;
+
+  /* ---------- 3. Eksplorasi: satu batang, empat label ---------- */
+
+  var elLabel = document.getElementById('empatLabel');
+  var elPesanJelajah = document.getElementById('pesanJelajah');
+  var penyebutTerlihat = {};
+
+  var batang = BatangPecahan.buat(document.getElementById('batangJelajah'), {
+    pembilang: 1, penyebut: 2,
+    penyebutMin: 2, penyebutMaks: 12,
+    /* Nilainya dikunci: mengubah penyebut mengubah pembilang juga, sehingga
+       1/2 menjadi 2/4 lalu 3/6. Tanpa ini, ujung batang ikut bergeser dan
+       justru mengajarkan kebalikan dari yang dimaksud. */
+    kunciNilai: true,
+    skala: true,
+    label: false,
+    onUbah: function (n) { tulisLabel(n.pembilang, n.penyebut); }
+  });
+
+  function baris(nama, isi) {
+    return '<tr><td class="samar">' + nama + '</td><td><strong>' + isi + '</strong></td></tr>';
+  }
+
+  function tulisLabel(pb, py) {
+    var n = Pecahan.buat(pb, py);
+    var sederhana = n.teks();
+
+    /* Bentuk desimal dan persennya ditulis sebagai teks biasa, bukan rumus.
+       Keduanya memang ditulis begitu di buku, dan tanda "..." pada desimal
+       berulang bukan lambang matematika yang dikenal KaTeX. */
+    elLabel.innerHTML =
+      baris('Pecahan', Rumus.keHTML('$\\frac{' + pb + '}{' + py + '}$')) +
+      baris('Bentuk paling sederhana', Rumus.keHTML('$' + n.rumus() + '$')) +
+      baris('Desimal', Rumus.lolos(n.teksDesimal())) +
+      baris('Persen', Rumus.lolos(n.teksPersen()));
+
+    /* Catatan penutup baru muncul setelah siswa benar-benar menggeser
+       penyebutnya melewati beberapa nilai yang tetap senilai dengan 1/2. */
+    if (sederhana === '1/2') penyebutTerlihat[py] = true;
+    var banyak = Object.keys(penyebutTerlihat).length;
+    if (banyak >= 3) {
+      elPesanJelajah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+        'Ujung batangnya tidak bergeser, bukan? $\\frac{1}{2}$, $\\frac{2}{4}$, ' +
+        '$\\frac{3}{6}$, dan $\\frac{4}{8}$ berhenti di titik yang sama persis. ' +
+        'Potongannya makin banyak dan makin kecil, tetapi panjang totalnya tetap. ' +
+        'Perhatikan juga tiga label di bawahnya: ketiganya tidak ikut berubah.') +
+        '</div>';
+    }
+  }
+
+  /* ---------- 4b. Bandingkan dua pecahan ---------- */
+
+  var isiA = document.getElementById('bandingA');
+  var isiB = document.getElementById('bandingB');
+  var elTanda = document.getElementById('bandingTanda');
+  var elBandingHasil = document.getElementById('bandingHasil');
+
+  function bandingkan() {
+    var a, b;
+    try {
+      a = P(isiA.value);
+    } catch (e) {
+      return gagalBanding('Bentuk pecahan pertama belum bisa dibaca. ' +
+        'Coba tulis seperti 3/4, 0,75, atau 75%.');
+    }
+    try {
+      b = P(isiB.value);
+    } catch (e) {
+      return gagalBanding('Bentuk pecahan kedua belum bisa dibaca. ' +
+        'Coba tulis seperti 3/4, 0,75, atau 75%.');
+    }
+
+    var arah = a.banding(b);
+    elTanda.innerHTML = Rumus.keHTML(arah < 0 ? '$<$' : (arah > 0 ? '$>$' : '$=$'));
+
+    /* Penyebut disamakan supaya siswa melihat dasar pembandingnya, bukan
+       cuma menerima jawaban jadi. */
+    var kpk = Pecahan.kpk(a.q, b.q);
+    var aBaru = a.p * (kpk / a.q);
+    var bBaru = b.p * (kpk / b.q);
+
+    var uraian = '';
+    /* Kalau yang diketik bukan pecahan sederhana -- misalnya 0,75 atau 2/4 --
+       langkah penyederhanaannya ditunjukkan dulu, supaya siswa tidak melihat
+       bentuk yang tiba-tiba berbeda dari yang ia tulis. */
+    [[isiA.value, a], [isiB.value, b]].forEach(function (pasang) {
+      if (Pecahan.dari(pasang[0]).teks() !== String(pasang[0]).trim()) {
+        uraian += Rumus.lolos(String(pasang[0]).trim()) + ' bernilai $' +
+          pasang[1].rumus() + '$. ';
+      }
+    });
+
+    uraian += 'Samakan penyebutnya, KPK dari $' + a.q + '$ dan $' + b.q +
+      '$ adalah $' + kpk + '$. Jadi $' + a.rumus() + ' = \\frac{' + aBaru + '}{' + kpk +
+      '}$ dan $' + b.rumus() + ' = \\frac{' + bBaru + '}{' + kpk + '}$. ';
+
+    uraian += (arah === 0)
+      ? 'Pembilangnya sama, jadi kedua pecahan itu senilai.'
+      : 'Karena $' + aBaru + (arah < 0 ? ' < ' : ' > ') + bBaru + '$, yang lebih besar adalah $' +
+        (arah < 0 ? b.rumus() : a.rumus()) + '$.';
+
+    elBandingHasil.innerHTML = '<div class="pesan ' + (arah === 0 ? 'info' : 'sip') + '">' +
+      Rumus.keHTML(uraian) + '</div>';
+  }
+
+  function gagalBanding(pesan) {
+    elTanda.textContent = '?';
+    elBandingHasil.innerHTML = '<div class="pesan awas">' + Rumus.lolos(pesan) + '</div>';
+  }
+
+  document.getElementById('bandingPeriksa').addEventListener('click', bandingkan);
+  [isiA, isiB].forEach(function (i) {
+    i.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') { ev.preventDefault(); bandingkan(); }
     });
   });
 
-  BatangPecahan.buat(document.getElementById('batang1'), {
-    pembilang: 3, penyebut: 4
+  /* ---------- 4. Tab materi ---------- */
+
+  var bagian = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
+  var elTab = document.getElementById('tabMateri');
+
+  bagian.forEach(function (sec, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    b.textContent = sec.dataset.tab;
+    b.addEventListener('click', function () {
+      bagian.forEach(function (s, j) { s.hidden = (j !== i); });
+      Array.prototype.forEach.call(elTab.children, function (x, j) {
+        x.setAttribute('aria-selected', j === i ? 'true' : 'false');
+      });
+    });
+    elTab.appendChild(b);
   });
 
-  var pesan = document.getElementById('pesanSenilai');
-  BatangPecahan.buat(document.getElementById('batang2'), {
-    pembilang: 1, penyebut: 3,
-    banding: { pembilang: 1, penyebut: 2 },
-    onUbah: function (n) {
-      var sama = Math.abs(n.pembilang / n.penyebut - 0.5) < 1e-9;
-      pesan.innerHTML = sama
-        ? '<span class="cap benar">Senilai</span> ' +
-          Rumus.keHTML('$' + n.pembilang + '/' + n.penyebut + ' = 1/2$')
-        : '<span class="cap sebagian">Belum sama</span> ' +
-          Rumus.keHTML('$' + n.pembilang + '/' + n.penyebut + '$ belum senilai dengan $1/2$');
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  /* Setiap angka di bawah dihitung ulang lewat Pecahan saat halaman dibuka,
+     bukan diketik sebagai teks. Kalau modulnya rusak, contohnya ikut salah
+     dan ketahuan, bukan diam-diam tetap tampak benar. */
+  var sisaTanah = P(1).kurang('1/4').kurang('2/5');
+  var seluruhTanah = P(140).bagi(sisaTanah);
+
+  var contoh = [
+    {
+      judul: 'Persen dari sisa',
+      soal: 'Pak Burhan membawa $5$ lusin mangga, lalu $33$ buah diberikan kepada ' +
+        'tetangganya. Berapa persen mangga yang tersisa?',
+      langkah: [
+        'Banyak mangga seluruhnya: $5 \\times 12 = 60$ buah',
+        'Yang tersisa: $60 - 33 = 27$ buah',
+        'Persentasenya: $\\frac{27}{60} \\times 100\\% = ' +
+          P(27).bagi(60).rumus() + ' \\times 100\\% = ' +
+          P(27).bagi(60).teksPersen().replace('%', '\\%') + '$'
+      ]
+    },
+    {
+      judul: 'Pengurangan beda penyebut',
+      soal: 'Bu Ninda punya $\\frac{5}{8}$ kuintal terigu, lalu dipakai ' +
+        '$\\frac{3}{10}$ kuintal. Berapa sisanya?',
+      langkah: [
+        'Samakan penyebutnya. KPK dari $8$ dan $10$ adalah $' + Pecahan.kpk(8, 10) + '$',
+        '$\\frac{5}{8} = \\frac{25}{40}$ dan $\\frac{3}{10} = \\frac{12}{40}$',
+        '$\\frac{25}{40} - \\frac{12}{40} = ' + P('5/8').kurang('3/10').rumus() + '$ kuintal'
+      ]
+    },
+    {
+      judul: 'Bagian dari keseluruhan',
+      soal: 'Pak Ujang punya sebidang tanah. $\\frac{1}{4}$ bagian untuk kolam, ' +
+        '$\\frac{2}{5}$ bagian dipasang keramik, dan sisanya ditanami rumput seluas ' +
+        '$140$ m². Berapa luas kolamnya?',
+      langkah: [
+        'Bagian rumput: $1 - \\frac{1}{4} - \\frac{2}{5} = ' + sisaTanah.rumus() + '$',
+        '$' + sisaTanah.rumus() + '$ bagian bernilai $140$ m², jadi seluruh tanahnya ' +
+          '$140 \\div ' + sisaTanah.rumus() + ' = ' + seluruhTanah.teks() + '$ m²',
+        'Luas kolam: $\\frac{1}{4} \\times ' + seluruhTanah.teks() + ' = ' +
+          P('1/4').kali(seluruhTanah).teks() + '$ m²'
+      ]
     }
+  ];
+
+  var elContoh = document.getElementById('daftarContoh');
+
+  contoh.forEach(function (c, i) {
+    var kartu = document.createElement('article');
+    kartu.className = 'kartu';
+
+    var nomor = document.createElement('div');
+    nomor.className = 'nomor';
+    nomor.textContent = 'Contoh ' + (i + 1) + ' — ' + c.judul;
+    kartu.appendChild(nomor);
+
+    var tanya = document.createElement('div');
+    tanya.className = 'pertanyaan';
+    Rumus.isi(tanya, c.soal);
+    kartu.appendChild(tanya);
+
+    var daftar = document.createElement('ol');
+    daftar.style.margin = '0';
+    kartu.appendChild(daftar);
+
+    var tombol = document.createElement('button');
+    tombol.type = 'button';
+    tombol.className = 'tombol mungil';
+    tombol.style.marginTop = '.6rem';
+    tombol.textContent = 'Buka langkah pertama';
+    kartu.appendChild(tombol);
+
+    var ke = 0;
+    tombol.addEventListener('click', function () {
+      if (ke >= c.langkah.length) return;
+      var li = document.createElement('li');
+      Rumus.isi(li, c.langkah[ke]);
+      daftar.appendChild(li);
+      ke++;
+      if (ke >= c.langkah.length) tombol.hidden = true;
+      else tombol.textContent = 'Langkah berikutnya';
+    });
+
+    elContoh.appendChild(kartu);
+  });
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'pc-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Bentuk pecahan campuran dari $\\frac{37}{5}$ adalah ...',
+        petunjuk: 'Contoh penulisan: 2 3/4',
+        jawaban: ['7 2/5', '7_2/5'],
+        salahUmum: [
+          {
+            jawaban: ['3 7/5', '3_7/5'],
+            umpan: 'Angkanya disalin, belum dibagi. Pembilang $37$ harus dibagi ' +
+              'penyebut $5$, dan hasil baginya itulah bilangan bulatnya.'
+          },
+          {
+            jawaban: ['7 2/7', '7_2/7'],
+            umpan: 'Bilangan bulat dan sisanya sudah benar, tetapi penyebutnya tidak ' +
+              'ikut berubah saat mengubah bentuk. Penyebutnya tetap $5$.'
+          }
+        ],
+        bahas: '$37 \\div 5 = 7$ sisa $2$. Hasil baginya jadi bilangan bulat, sisanya ' +
+          'jadi pembilang baru, dan penyebutnya tetap. Jadi $\\frac{37}{5} = 7\\frac{2}{5}$.'
+      },
+      {
+        id: 'pc-cek-2', level: 1, tipe: 'pg',
+        pertanyaan: 'Pernyataan manakah yang TIDAK benar?',
+        opsi: {
+          a: '$\\frac{3}{4} > \\frac{2}{4}$',
+          b: '$\\frac{1}{2} > \\frac{2}{4}$',
+          c: '$\\frac{1}{3} < \\frac{3}{4}$',
+          d: '$\\frac{1}{10} < \\frac{1}{3}$'
+        },
+        kunci: 'b',
+        umpan: {
+          a: 'Penyebutnya sama, jadi tinggal bandingkan pembilangnya: $3 > 2$. ' +
+             'Pernyataan ini benar, sedangkan yang dicari justru yang tidak benar.',
+          c: 'Coba samakan penyebutnya: $\\frac{1}{3} = \\frac{4}{12}$ dan ' +
+             '$\\frac{3}{4} = \\frac{9}{12}$. Pernyataan ini benar.',
+          d: 'Pembilangnya sama, dan potongan dari sepuluh memang lebih kecil daripada ' +
+             'potongan dari tiga. Pernyataan ini benar.'
+        },
+        bahas: '$\\frac{2}{4}$ bisa disederhanakan menjadi $\\frac{1}{2}$, jadi keduanya ' +
+          'senilai. Karena itu $\\frac{1}{2} > \\frac{2}{4}$ tidak benar; yang benar ' +
+          '$\\frac{1}{2} = \\frac{2}{4}$.'
+      },
+      {
+        id: 'pc-cek-3', level: 2, tipe: 'pg',
+        pertanyaan: 'Urutkan dari yang paling kecil lebih dulu: ' +
+          '$0{,}45$ ; $0{,}85$ ; $\\frac{7}{8}$ ; $78\\%$.',
+        opsi: {
+          a: '$0{,}45$ ; $78\\%$ ; $0{,}85$ ; $\\frac{7}{8}$',
+          b: '$0{,}45$ ; $\\frac{7}{8}$ ; $78\\%$ ; $0{,}85$',
+          c: '$\\frac{7}{8}$ ; $0{,}45$ ; $0{,}85$ ; $78\\%$',
+          d: '$0{,}45$ ; $0{,}85$ ; $78\\%$ ; $\\frac{7}{8}$'
+        },
+        kunci: 'a',
+        umpan: {
+          b: 'Sepertinya $\\frac{7}{8}$ dianggap kecil karena angkanya kecil. ' +
+             'Ubah dulu ke desimal: $\\frac{7}{8} = 0{,}875$, dan itu yang paling besar.',
+          c: 'Pecahan tidak otomatis lebih kecil daripada desimal. ' +
+             'Ubah semuanya ke satu bentuk dulu, baru dibandingkan.',
+          d: 'Urutan $0{,}85$ dan $78\\%$ tertukar. Ingat $78\\% = 0{,}78$, ' +
+             'dan $0{,}78$ lebih kecil daripada $0{,}85$.'
+        },
+        bahas: 'Ubah semua ke desimal: $0{,}45$ ; $0{,}85$ ; $\\frac{7}{8} = 0{,}875$ ; ' +
+          '$78\\% = 0{,}78$. Diurutkan dari yang terkecil: ' +
+          '$0{,}45$ ; $0{,}78$ ; $0{,}85$ ; $0{,}875$.'
+      },
+      {
+        id: 'pc-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Ani punya pita sepanjang $1{,}2$ m, lalu ia membeli lagi ' +
+          '$0{,}75$ m. Berapa meter panjang pita Ani seluruhnya?',
+        petunjuk: 'Contoh penulisan: 1,95',
+        jawaban: ['1,95'],
+        salahUmum: [
+          {
+            jawaban: ['1,27'],
+            umpan: 'Komanya belum lurus saat disusun. Tulis $1{,}2$ sebagai $1{,}20$ ' +
+              'dulu, baru dijumlahkan dengan $0{,}75$.'
+          },
+          {
+            jawaban: ['0,87', '8,7'],
+            umpan: 'Sepertinya angkanya dijumlahkan tanpa memperhatikan nilai tempatnya. ' +
+              'Susun ke bawah dengan koma sejajar koma.'
+          }
+        ],
+        bahas: 'Samakan banyak angka di belakang koma: $1{,}20 + 0{,}75$. ' +
+          'Dijumlahkan menjadi $1{,}95$ meter.'
+      }
+    ]
   });
 })();
 </script>

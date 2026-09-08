@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Judul Bab</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<!--
+  KERANGKA HALAMAN MATERI. Salin berkas ini, ganti namanya menjadi
+  kelasN-<kode-bab>.html, lalu isi ketujuh bagian di bawah.
+
+  Aturan lengkapnya ada di PAKEM-MATERI.md. Tiga yang paling sering dilanggar:
+
+  1. Tiap <section data-tab> WAJIB punya satu interaksi sendiri. Tab yang
+     isinya cuma tulisan berarti tabnya terlalu tipis - gabungkan saja.
+  2. Di dalam string JavaScript, markup mati. <b> akan tampil sebagai tulisan.
+     Untuk menekankan di string JS, pakai matematika: $-2x$.
+  3. Sapa pembaca dengan "kamu". Kata "siswa" hanya boleh di komentar kode.
+
+  Periksa hasilnya dengan: node tools/materi.js materi/berkasmu.html
+-->
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Judul Bab</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Judul Bab</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <!-- 3 butir. Tiap butir satu kalimat 6-13 kata, diawali kata kerja meN-. -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Membaca ... </li>
+      <li>Menghitung ... </li>
+      <li>Tahu kenapa ... </li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <!-- Judul = nama adegan konkret, bukan kata "pemantik".
+       4-5 kalimat, 40-60 kata, ditutup pertanyaan yang belum bisa dijawab.
+       Tidak ada interaksi di sini: bagian ini justru menahan siswa berpikir. -->
+  <h2>Adegan yang sudah dikenal</h2>
+  <p>
+    Situasinya ... Kamu ...
+  </p>
+  <p>
+    Lalu bagaimana kalau ...?
+  </p>
+  <p class="kecil samar">
+    Pikirkan dulu sebentar, baru lanjut.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <!-- Judul selalu "Coba sendiri: <frasa benda>".
+       50-90 kata, tepat satu widget, satu instruksi yang diawali "Tugasnya".
+       Widget tidak boleh langsung menyimpulkan - lihat pola "kesimpulan yang
+       ditahan" di PAKEM-MATERI.md bagian E. -->
+  <h2>Coba sendiri: ...</h2>
+  <p>
+    Penjelasan singkat alatnya.
+  </p>
+  <p>
+    Tugasnya satu: <strong>...</strong> Berubah tidak?
+  </p>
+
+  <div class="kartu">
+    <div id="jelajah"></div>
+    <div id="pesanJelajah"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <!-- 3-4 tab, 600-900 kata seluruhnya.
+       SETIAP tab wajib punya satu interaksi. Section pertama tampil,
+       sisanya diberi atribut hidden. -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Nama tab pertama">
+    <h3>Sub-bab</h3>
+    <p>
+      Isi. Rumus ditulis $seperti\ ini$, yang dipajang $$seperti\ ini$$.
+    </p>
+    <div class="kartu">
+      <div id="alat4a"></div>
+    </div>
+  </section>
+
+  <section data-tab="Nama tab kedua" hidden>
+    <h3>Sub-bab</h3>
+    <p>
+      Inilah yang tadi kamu lihat sendiri di ...
+    </p>
+    <div class="kartu">
+      <div id="alat4b"></div>
+    </div>
+  </section>
+
+  <section data-tab="Nama tab ketiga" hidden>
+    <h3>Sub-bab</h3>
+    <p>
+      Isi.
+    </p>
+    <div class="kartu">
+      <div id="alat4c"></div>
+    </div>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">Tebak dulu jawabannya sebelum membuka langkahnya.</p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.</p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=kode-bab&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
+<!-- Muat hanya komponen yang benar-benar dipakai halaman ini. -->
+<script>
+(function () {
+  'use strict';
+
+  /* Selalu jadi pernyataan pertama, sekali saja: mengubah $...$ di seluruh
+     halaman menjadi rumus tanpa merusak <strong> dan tautan di dalamnya. */
+  Rumus.sapu(document.querySelector('main'));
+
+  /* ---------- 3. Eksplorasi ---------- */
+
+  /* Pasang widget di #jelajah, dan tahan kesimpulannya sampai siswa
+     benar-benar melihat keadaan kuncinya:
+
+     var pernah = {};
+     ... onUbah: function (k) {
+       pernah[k.hasil] = true;
+       if (pernah[a] && pernah[b]) {
+         elPesan.innerHTML = '<div class="pesan sip">' + Rumus.keHTML('...') + '</div>';
+       }
+     } */
+
+  /* ---------- 4. Tab "Aturannya" ---------- */
+
+  Materi.tab(document.getElementById('tabMateri'));
+
+  /* ---------- 4a. Interaksi tab pertama ---------- */
+  /* ---------- 4b. Interaksi tab kedua ---------- */
+  /* ---------- 4c. Interaksi tab ketiga ---------- */
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  Materi.contoh(document.getElementById('daftarContoh'), [
+    {
+      judul: 'Label dua sampai empat kata',
+      soal: 'Pertanyaannya, boleh memuat $rumus$.',
+      langkah: [
+        'Langkah pertama.',
+        'Langkah kedua.',
+        'Jadi hasilnya ...'
+      ]
+    }
+  ]);
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'kode-bab-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Pertanyaannya ...',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['0'],
+        salahUmum: [
+          { jawaban: ['1'], umpan: 'Sepertinya kamu ... Coba periksa ...' }
+        ],
+        bahas: 'Penjelasan singkat.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 7, 'kode-bab');
+})();
+</script>
+</body>
+</html>

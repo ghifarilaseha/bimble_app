@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 2,
+    "bab": "bangun-ruang-sisi-lengkung",
+    "judul": "Bangun Ruang Sisi Lengkung",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Bangun Ruang Sisi Lengkung",
+    "versi": "2026-09-07"
+  },
+  "soal": [
+    {
+      "id": "br-01", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah tabung berjari-jari alas 7 cm dan tinggi 20 cm. Dengan $\\pi = \\frac{22}{7}$, volume tabung tersebut adalah ... cm$^3$.",
+      "jawaban": ["3080"],
+      "pembahasan": "$V = \\pi r^2 t = \\frac{22}{7} \\times 49 \\times 20 = 22 \\times 7 \\times 20 = 3.080$ cm$^3$."
+    },
+    {
+      "id": "br-02", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah tabung tertutup berjari-jari 7 cm dan tinggi 20 cm. Dengan $\\pi = \\frac{22}{7}$, luas permukaannya adalah ...",
+      "opsi": { "a": "$924$ cm$^2$", "b": "$1.078$ cm$^2$", "c": "$1.188$ cm$^2$", "d": "$1.408$ cm$^2$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "$L = 2\\pi r(r + t) = 2 \\times \\frac{22}{7} \\times 7 \\times 27 = 44 \\times 27 = 1.188$ cm$^2$. Karena tertutup, kedua tutupnya ikut dihitung."
+    },
+    {
+      "id": "br-03", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah kerucut berjari-jari 7 cm dan tinggi 12 cm. Dengan $\\pi = \\frac{22}{7}$, volumenya adalah ... cm$^3$.",
+      "jawaban": ["616"],
+      "pembahasan": "$V = \\frac{1}{3}\\pi r^2 t = \\frac{1}{3} \\times \\frac{22}{7} \\times 49 \\times 12 = \\frac{22 \\times 7 \\times 12}{3} = 616$ cm$^3$."
+    },
+    {
+      "id": "br-04", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Luas selimut tabung berjari-jari 7 cm dan tinggi 10 cm, dengan $\\pi = \\frac{22}{7}$, adalah ...",
+      "opsi": { "a": "$220$ cm$^2$", "b": "$308$ cm$^2$", "c": "$440$ cm$^2$", "d": "$880$ cm$^2$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Selimut tabung adalah persegi panjang dengan panjang keliling alas: $L = 2\\pi r t = 2 \\times \\frac{22}{7} \\times 7 \\times 10 = 440$ cm$^2$."
+    },
+    {
+      "id": "br-05", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah kerucut berjari-jari 6 cm dan tinggi 8 cm. Panjang garis pelukisnya adalah ... cm.",
+      "jawaban": ["10"],
+      "pembahasan": "$s = \\sqrt{r^2 + t^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$ cm. Garis pelukis adalah sisi miring segitiga siku-siku dari jari-jari dan tinggi."
+    },
+    {
+      "id": "br-06", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Luas permukaan bola berjari-jari 7 cm, dengan $\\pi = \\frac{22}{7}$, adalah ...",
+      "opsi": { "a": "$154$ cm$^2$", "b": "$308$ cm$^2$", "c": "$616$ cm$^2$", "d": "$1.232$ cm$^2$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "$L = 4\\pi r^2 = 4 \\times \\frac{22}{7} \\times 49 = 4 \\times 154 = 616$ cm$^2$."
+    },
+    {
+      "id": "br-07", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Rumus volume kerucut adalah ...",
+      "opsi": {
+        "a": "$\\frac{1}{3}\\pi r^2 t$",
+        "b": "$\\pi r^2 t$",
+        "c": "$\\frac{4}{3}\\pi r^3$",
+        "d": "$\\pi r (r + s)$"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Volume kerucut sepertiga volume tabung yang alas dan tingginya sama, yaitu $\\frac{1}{3}\\pi r^2 t$."
+    },
+    {
+      "id": "br-08", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Luas selimut kerucut berjari-jari 7 cm dengan garis pelukis 10 cm, dengan $\\pi = \\frac{22}{7}$, adalah ... cm$^2$.",
+      "jawaban": ["220"],
+      "pembahasan": "$L = \\pi r s = \\frac{22}{7} \\times 7 \\times 10 = 220$ cm$^2$. Yang dipakai garis pelukis, bukan tingginya."
+    },
+    {
+      "id": "br-09", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah tabung berdiameter 14 cm dan tinggi 10 cm. Dengan $\\pi = \\frac{22}{7}$, volumenya adalah ...",
+      "opsi": { "a": "$770$ cm$^3$", "b": "$1.540$ cm$^3$", "c": "$3.080$ cm$^3$", "d": "$6.160$ cm$^3$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Jari-jarinya setengah diameter, yaitu $7$ cm. Maka $V = \\frac{22}{7} \\times 49 \\times 10 = 1.540$ cm$^3$. Memakai $14$ sebagai jari-jari akan memberi hasil empat kali lipat."
+    },
+    {
+      "id": "br-10", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Volume sebuah tabung 1.540 cm$^3$ dan jari-jari alasnya 7 cm. Dengan $\\pi = \\frac{22}{7}$, tinggi tabung tersebut adalah ... cm.",
+      "jawaban": ["10"],
+      "pembahasan": "Luas alasnya $\\frac{22}{7} \\times 49 = 154$ cm$^2$, sehingga $154t = 1.540$ dan $t = 10$ cm."
+    },
+    {
+      "id": "br-11", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Luas permukaan bola berdiameter 21 cm, dengan $\\pi = \\frac{22}{7}$, adalah ...",
+      "opsi": { "a": "$346{,}5$ cm$^2$", "b": "$693$ cm$^2$", "c": "$1.386$ cm$^2$", "d": "$2.772$ cm$^2$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Jari-jarinya $10{,}5$ cm, sehingga $L = 4 \\times \\frac{22}{7} \\times 110{,}25 = 4 \\times 346{,}5 = 1.386$ cm$^2$."
+    },
+    {
+      "id": "br-12", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah kerucut berjari-jari 3 cm dan tinggi 7 cm. Dengan $\\pi = \\frac{22}{7}$, volumenya adalah ... cm$^3$.",
+      "jawaban": ["66"],
+      "pembahasan": "$V = \\frac{1}{3} \\times \\frac{22}{7} \\times 9 \\times 7 = \\frac{22 \\times 9}{3} = 66$ cm$^3$."
+    },
+    {
+      "id": "br-13", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah bola dimasukkan ke dalam tabung sehingga menyinggung alas, tutup, dan sisi lengkungnya. Perbandingan volume bola terhadap volume tabung adalah ...",
+      "opsi": { "a": "$1 : 2$", "b": "$2 : 3$", "c": "$1 : 3$", "d": "$3 : 4$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Tinggi tabungnya $2r$, sehingga $V_{\\text{tabung}} = \\pi r^2 \\times 2r = 2\\pi r^3$, sedangkan $V_{\\text{bola}} = \\frac{4}{3}\\pi r^3$. Perbandingannya $\\frac{4}{3} : 2 = 2 : 3$."
+    },
+    {
+      "id": "br-14", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah tabung tanpa tutup berjari-jari 7 cm dan tinggi 13 cm. Dengan $\\pi = \\frac{22}{7}$, luas permukaannya adalah ... cm$^2$.",
+      "jawaban": ["726"],
+      "pembahasan": "Alasnya satu saja: $L = \\pi r^2 + 2\\pi r t = 154 + 572 = 726$ cm$^2$."
+    },
+    {
+      "id": "br-15", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah kerucut berjari-jari 7 cm dan tinggi 24 cm. Dengan $\\pi = \\frac{22}{7}$, luas permukaannya adalah ...",
+      "opsi": { "a": "$550$ cm$^2$", "b": "$704$ cm$^2$", "c": "$792$ cm$^2$", "d": "$154$ cm$^2$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Garis pelukisnya $s = \\sqrt{49 + 576} = \\sqrt{625} = 25$ cm. Maka $L = \\pi r(r + s) = \\frac{22}{7} \\times 7 \\times 32 = 704$ cm$^2$."
+    },
+    {
+      "id": "br-16", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Wadah berbentuk kerucut berjari-jari 7 cm dan tinggi 12 cm terisi penuh air. Seluruh airnya dituang ke tabung kosong berjari-jari 7 cm tanpa tumpah. Tinggi permukaan air dalam tabung adalah ... cm.",
+      "jawaban": ["4"],
+      "pembahasan": "Volume airnya $616$ cm$^3$. Luas alas tabungnya $154$ cm$^2$, sehingga $154h = 616$ dan $h = 4$ cm. Untuk jari-jari yang sama, tinggi air selalu sepertiga tinggi kerucutnya."
+    },
+    {
+      "id": "br-17", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Air sebanyak 616 cm$^3$ dituang ke dalam tabung berjari-jari 14 cm. Dengan $\\pi = \\frac{22}{7}$, tinggi permukaan airnya adalah ... cm.",
+      "jawaban": ["1"],
+      "pembahasan": "Luas alasnya $\\frac{22}{7} \\times 196 = 616$ cm$^2$, sehingga $616h = 616$ dan $h = 1$ cm."
+    },
+    {
+      "id": "br-18", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sejumlah air dituang ke sebuah tabung. Jika air yang sama dituang ke tabung lain yang jari-jarinya dua kali lipat, tinggi permukaan airnya menjadi ...",
+      "opsi": { "a": "seperempat kali semula", "b": "setengah kali semula", "c": "dua kali semula", "d": "tetap" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Jari-jari dua kali membuat luas alasnya $2^2 = 4$ kali. Karena volume airnya tetap, tingginya menjadi $\\frac{1}{4}$ kali semula."
+    },
+    {
+      "id": "br-19", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah tangki berbentuk tabung berjari-jari 7 dm dan tinggi 10 dm terisi air setengahnya. Dengan $\\pi = \\frac{22}{7}$ dan 1 dm$^3$ = 1 liter, volume air di dalamnya adalah ...",
+      "opsi": { "a": "$770$ liter", "b": "$1.540$ liter", "c": "$385$ liter", "d": "$154$ liter" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Volume penuhnya $\\frac{22}{7} \\times 49 \\times 10 = 1.540$ dm$^3$, sehingga setengahnya $770$ liter."
+    },
+    {
+      "id": "br-20", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah bola berjari-jari 3 cm dimasukkan ke dalam gelas berbentuk tabung berjari-jari 3 cm yang berisi air, dan bola itu tenggelam seluruhnya. Permukaan air naik setinggi ... cm.",
+      "jawaban": ["4"],
+      "pembahasan": "Volume bolanya $\\frac{4}{3}\\pi \\times 27 = 36\\pi$ cm$^3$, dan luas alas gelasnya $9\\pi$ cm$^2$. Kenaikan airnya $\\frac{36\\pi}{9\\pi} = 4$ cm, sehingga nilai $\\pi$ tidak perlu dipakai sama sekali."
+    }
+  ]
+}

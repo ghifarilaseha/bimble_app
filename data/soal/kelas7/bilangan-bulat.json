@@ -4,10 +4,11 @@
     "semester": 1,
     "bab": "bilangan-bulat",
     "judul": "Bilangan Bulat",
-    "versi": "2026-09-05"
+    "versi": "2026-09-06",
+    "sumber": "Soal awal situs + Modul MGMP Matematika SMPN 14 Bandung, Kelas VII Sem. 1, Episode 1"
   },
   "terkunci": true,
-  "digembok": "2026-09-05",
+  "digembok": "2026-09-07",
   "soal": [
     {
       "id": "bb-01",
@@ -235,6 +236,291 @@
       },
       "pembahasan": "VGlkYWsgZGlwYWthaS4=",
       "kunci": "27cf6999963e8ad293ab0e1941ff06dd884cb54a94c1330907c8f9dc584f4e07"
+    },
+    {
+      "id": "bb-16",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bilangan yang 8 lebih besar dari $-5$ adalah ...",
+      "opsi": {
+        "a": "$-13$",
+        "b": "$-3$",
+        "c": "$3$",
+        "d": "$13$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "IkxlYmloIGJlc2FyIiBiZXJhcnRpIGJlcmdlc2VyIGtlIGthbmFuIGRpIGdhcmlzIGJpbGFuZ2FuOiAkLTUgKyA4ID0gMyQu",
+      "kunci": "34579976a4f20eb5e41c7c43bf0c3d1de84ca34ba99dcc7ba4523350612f93c5"
+    },
+    {
+      "id": "bb-17",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Urutan bilangan $8, -7, 15, -3, -12$ dari yang terbesar ke terkecil adalah ...",
+      "opsi": {
+        "a": "$15, 8, -3, -7, -12$",
+        "b": "$15, 8, -12, -7, -3$",
+        "c": "$-12, -7, -3, 8, 15$",
+        "d": "$8, 15, -3, -7, -12$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U2VtYWtpbiBrZSBrYW5hbiBkaSBnYXJpcyBiaWxhbmdhbiwgc2VtYWtpbiBiZXNhciBuaWxhaW55YS4gRGkgYW50YXJhIGJpbGFuZ2FuIG5lZ2F0aWYsICQtMyQgcGFsaW5nIGRla2F0IGtlIG5vbCBzZWhpbmdnYSBwYWxpbmcgYmVzYXIu",
+      "kunci": "28f169fcdcf6ced73e5372bf78cba2975dc0cfd655f5970fc2fde2385007e037"
+    },
+    {
+      "id": "bb-18",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(-12) - (-15)$ adalah ...",
+      "pembahasan": "TWVuZ3VyYW5naSBiZXJhcnRpIG1lbmFtYmFoIGxhd2FubnlhOiAkKC0xMikgLSAoLTE1KSA9IC0xMiArIDE1ID0gMyQu",
+      "kunci": [
+        "1ddbb694c468094c8549fb597234522b6432a2f37fa2f35802bed002968cf9ed",
+        "8650ac335ac038e3831a587d5bbc56f294efbff3f2276f8598e43eacae8b6760"
+      ]
+    },
+    {
+      "id": "bb-19",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suhu udara di Moskwa $-12$ °C dan di Helsinki $-7$ °C. Selisih suhu kedua kota tersebut adalah ...",
+      "opsi": {
+        "a": "$-19$ °C",
+        "b": "$-5$ °C",
+        "c": "$5$ °C",
+        "d": "$19$ °C"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U2VsaXNpaCBhZGFsYWggamFyYWsgYW50YXJhIGR1YSBiaWxhbmdhbiwgamFkaSB0aWRhayBwZXJuYWggbmVnYXRpZjogJC03IC0gKC0xMikgPSAtNyArIDEyID0gNSQu",
+      "kunci": "72e79e5361672f55956e2ecebd3a1638a8f40d2e7821c3f12ac9d5160b1b7388"
+    },
+    {
+      "id": "bb-20",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Sifat komutatif berlaku pada operasi pengurangan bilangan bulat.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JDcgLSAzID0gNCQgc2VkYW5na2FuICQzIC0gNyA9IC00JC4gSGFzaWxueWEgYmVyYmVkYSwgamFkaSBzaWZhdCBrb211dGF0aWYgdGlkYWsgYmVybGFrdSBwYWRhIHBlbmd1cmFuZ2FuLg==",
+      "kunci": "68665158e7cd8a565131249decc851540f8108feaaf7bcf0eea2ce275a0a7d46"
+    },
+    {
+      "id": "bb-21",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(-5) \\times (-4) \\times (-2)$ adalah ...",
+      "pembahasan": "JCgtNSkgXHRpbWVzICgtNCkgPSAyMCQgKHRhbmRhIHNhbWEsIGhhc2lsIHBvc2l0aWYpLCBsYWx1ICQyMCBcdGltZXMgKC0yKSA9IC00MCQu",
+      "kunci": [
+        "1b31e36464fb6fd36b98c6ffb44c117156482ef0b06099aace8756ee028b13da"
+      ]
+    },
+    {
+      "id": "bb-22",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $14 - 10 \\times (-3)$ adalah ...",
+      "opsi": {
+        "a": "$-44$",
+        "b": "$-12$",
+        "c": "$4$",
+        "d": "$44$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UGVya2FsaWFuIGRpa2VyamFrYW4gbGViaWggZHVsdTogJDEwIFx0aW1lcyAoLTMpID0gLTMwJCwgbGFsdSAkMTQgLSAoLTMwKSA9IDE0ICsgMzAgPSA0NCQu",
+      "kunci": "3f0059e5480b3648fa2c66524cb71896773c13fed411851061453dabfc0e4aad"
+    },
+    {
+      "id": "bb-23",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Banyak bilangan bulat yang terletak di antara $-3$ dan $2$ adalah ...",
+      "opsi": {
+        "a": "$3$",
+        "b": "$4$",
+        "c": "$5$",
+        "d": "$6$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QmlsYW5nYW4geWFuZyBkaW1ha3N1ZCBhZGFsYWggJC0yLCAtMSwgMCwgMSQsIHNlYmFueWFrIDQgYmlsYW5nYW4uIEFuZ2thICQtMyQgZGFuICQyJCB0aWRhayBpa3V0IGthcmVuYSBrYXRhICJkaSBhbnRhcmEiLg==",
+      "kunci": "c77679001f3972590ac65a6339dc395bbad43c69d2b406ef68bddc9e5cb52881"
+    },
+    {
+      "id": "bb-24",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pada lomba cerdas cermat, jawaban benar bernilai $3$ poin, jawaban salah $-1$ poin, dan soal yang tidak dijawab $0$ poin. Seorang siswa menjawab 28 soal dengan benar dan 12 soal dengan salah. Skor siswa tersebut adalah ...",
+      "opsi": {
+        "a": "$56$",
+        "b": "$72$",
+        "c": "$84$",
+        "d": "$96$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RGFyaSBqYXdhYmFuIGJlbmFyOiAkMjggXHRpbWVzIDMgPSA4NCQuIERhcmkgamF3YWJhbiBzYWxhaDogJDEyIFx0aW1lcyAoLTEpID0gLTEyJC4gU2tvciB0b3RhbCAkPSA4NCArICgtMTIpID0gNzIkLiBQaWxpaGFuICQ4NCQgbXVuY3VsIGJpbGEgamF3YWJhbiBzYWxhaCB0aWRhayBpa3V0IGRpaGl0dW5nLg==",
+      "kunci": "77c1f0b52dfa07defa7ceb583d9d3c4097428c70dc843561da8f93b01fbb7f6e"
+    },
+    {
+      "id": "bb-25",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Puncak Gunung Semeru berada $3.676$ meter di atas permukaan laut, sedangkan dasar Palung Jawa berada $7.140$ meter di bawah permukaan laut. Selisih ketinggian keduanya adalah ...",
+      "opsi": {
+        "a": "$3.464$ m",
+        "b": "$3.646$ m",
+        "c": "$10.816$ m",
+        "d": "$11.816$ m"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RGVuZ2FuIHBlcm11a2FhbiBsYXV0IHNlYmFnYWkgdGl0aWsgbm9sOiAkMy42NzYgLSAoLTcuMTQwKSA9IDMuNjc2ICsgNy4xNDAgPSAxMC44MTYkIG1ldGVyLg==",
+      "kunci": "71a47a4461f75133bd1e49150e7746092d031c7c4fd84cd342000b5945efa371"
+    },
+    {
+      "id": "bb-26",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(-12 - 20) \\div 4$ adalah ...",
+      "pembahasan": "S2VyamFrYW4ga3VydW5nIGR1bHU6ICQtMTIgLSAyMCA9IC0zMiQuIExhbHUgJC0zMiBcZGl2IDQgPSAtOCQgKHRhbmRhIGJlcmJlZGEsIGhhc2lsIG5lZ2F0aWYpLg==",
+      "kunci": [
+        "300e95e26a8da1748c50c496db1f716fbbe1b936e32cdf0a40c42dccbef6fdf5"
+      ]
+    },
+    {
+      "id": "bb-27",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Rani berdiri tepat di tengah sebuah tangga. Ia naik 5 anak tangga, lalu turun 8 anak tangga, kemudian naik lagi 12 anak tangga dan tepat sampai di puncak tangga. Banyak anak tangga seluruhnya adalah ...",
+      "opsi": {
+        "a": "$9$",
+        "b": "$18$",
+        "c": "$25$",
+        "d": "$30$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UGVycGluZGFoYW4gYmVyc2lobnlhICQ1IC0gOCArIDEyID0gOSQgYW5hayB0YW5nZ2EuIEthcmVuYSBSYW5pIGJlcmFuZ2thdCBkYXJpIHRlbmdhaCBkYW4gc2FtcGFpIGRpIHB1bmNhaywgOSBhbmFrIHRhbmdnYSBpdHUgYWRhbGFoIHNldGVuZ2FoIHRhbmdnYS4gSmFkaSBzZWx1cnVobnlhICQyIFx0aW1lcyA5ID0gMTgkLiBQaWxpaGFuICQyNSQgbXVuY3VsIGJpbGEga2V0aWdhIGxhbmdrYWhueWEgZGlqdW1sYWhrYW4gdGFucGEgbWVtcGVyaGF0aWthbiBhcmFoLg==",
+      "kunci": "c56d64eefd663488af11abdbf678d513adc7d5503c2f8e613c6e0621654b936c"
+    },
+    {
+      "id": "bb-28",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Hasil dari $0 \\div (-5)$ adalah tidak terdefinisi.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "Tm9sIGRpYmFnaSBiaWxhbmdhbiB0aWRhayBub2wgaGFzaWxueWEgJDAkLiBZYW5nIHRpZGFrIHRlcmRlZmluaXNpIGFkYWxhaCBiaWxhbmdhbiBkaWJhZ2kgbm9sLCBtaXNhbG55YSAkLTUgXGRpdiAwJC4=",
+      "kunci": "34736fc5a823613dd9ddd5282a1cdb3d1f269eed9c647a9a220fd5328dec9114"
+    },
+    {
+      "id": "bb-29",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suhu di dalam freezer mula-mula $-18$ °C. Setelah pintunya dibiarkan terbuka, suhunya naik $5$ °C setiap jam. Suhu freezer setelah 4 jam adalah ...",
+      "opsi": {
+        "a": "$-38$ °C",
+        "b": "$-2$ °C",
+        "c": "$2$ °C",
+        "d": "$20$ °C"
+      },
+      "acakOpsi": false,
+      "pembahasan": "S2VuYWlrYW4gc2VsdXJ1aG55YSAkNCBcdGltZXMgNSA9IDIwJC4gU3VodSBha2hpciAkPSAtMTggKyAyMCA9IDIkIMKwQy4=",
+      "kunci": "4712b3e6f53d3bf958786f8dc45bdcc528c1443ab25059cd402eea5c140eac31"
+    },
+    {
+      "id": "bb-30",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $72 \\div (-4 \\times -3)$ adalah ...",
+      "pembahasan": "S3VydW5nIGR1bHU6ICQtNCBcdGltZXMgLTMgPSAxMiQgKHRhbmRhIHNhbWEsIGhhc2lsIHBvc2l0aWYpLiBMYWx1ICQ3MiBcZGl2IDEyID0gNiQu",
+      "kunci": [
+        "71eda243f0056a1dab1673f3c06955117b14381708e859af63fb4b4c918dceca"
+      ]
+    },
+    {
+      "id": "bb-31",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suhu sebuah kota turun $3$ °C setiap jam. Pada pukul 06.00 suhunya $5$ °C. Suhu kota tersebut menjadi $-13$ °C pada pukul ...",
+      "opsi": {
+        "a": "10.00",
+        "b": "11.00",
+        "c": "12.00",
+        "d": "13.00"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UGVudXJ1bmFuIHlhbmcgZGlidXR1aGthbiAkPSA1IC0gKC0xMykgPSAxOCQgwrBDLiBLYXJlbmEgdHVydW4gJDMkIMKwQyB0aWFwIGphbSwgZGlwZXJsdWthbiAkMTggXGRpdiAzID0gNiQgamFtLiBKYWRpIHB1a3VsICQwNi4wMCArIDYgPSAxMi4wMCQu",
+      "kunci": "e846e091cf2c9d99b0a273f56a6bc5ab41aff9d20b9e3461db265a90591eab9b"
+    },
+    {
+      "id": "bb-32",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $a = -3$ dan $b = 5$. Nilai dari $(a - b) \\times (a + b)$ adalah ...",
+      "pembahasan": "JGEgLSBiID0gLTMgLSA1ID0gLTgkIGRhbiAkYSArIGIgPSAtMyArIDUgPSAyJC4gSGFzaWwga2FsaW55YSAkLTggXHRpbWVzIDIgPSAtMTYkLg==",
+      "kunci": [
+        "32529644981192a0814e856c87ea0ea17bdb21d151bd1553b716f87f4125a2c1"
+      ]
+    },
+    {
+      "id": "bb-33",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dalam sebuah permainan, pemain mendapat $5$ poin setiap menang dan kehilangan $3$ poin setiap kalah. Setelah 12 pertandingan tanpa seri, poin seorang pemain adalah $20$. Banyak pertandingan yang ia menangkan adalah ...",
+      "opsi": {
+        "a": "$5$",
+        "b": "$6$",
+        "c": "$7$",
+        "d": "$8$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "Q29iYSA3IG1lbmFuZyBkYW4gNSBrYWxhaDogJDcgXHRpbWVzIDUgPSAzNSQgZGFuICQ1IFx0aW1lcyAoLTMpID0gLTE1JCwgc2VoaW5nZ2EgJDM1IC0gMTUgPSAyMCQuIENvY29rLiBDYXJhIGxhaW46IGppa2Egc2VtdWEgMTIga2FsYWggcG9pbm55YSAkLTM2JDsgc2V0aWFwIHNhdHUga2VtZW5hbmdhbiBtZW5hbWJhaCAkOCQgcG9pbiwgc2VoaW5nZ2EgZGlidXR1aGthbiAkNTYgXGRpdiA4ID0gNyQga2VtZW5hbmdhbi4=",
+      "kunci": "025be6e9f1a7029131a5ae30edd0c1a20fdcc6bba9c5e94d4285c9dfcf32c044"
+    },
+    {
+      "id": "bb-34",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Jika $a > b$, maka pasti berlaku $-a > -b$.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "Q29udG9oIHBlbnlhbmdrYWw6ICQ1ID4gMiQsIHRldGFwaSAkLTUgPCAtMiQuIE1lbmdhbGlrYW4ga2VkdWEgcnVhcyBkZW5nYW4gYmlsYW5nYW4gbmVnYXRpZiBtZW1iYWxpayB1cnV0YW5ueWEu",
+      "kunci": "1f08c2aecd636e4811a5b6b1e1add3a29746e6d345fee2b78d57c5b94eb67068"
+    },
+    {
+      "id": "bb-35",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(-2) \\times (-2) \\times (-2) + 3 \\times (-2)$ adalah ...",
+      "pembahasan": "UGVya2FsaWFuIGR1bHU6ICQoLTIpIFx0aW1lcyAoLTIpIFx0aW1lcyAoLTIpID0gLTgkIGRhbiAkMyBcdGltZXMgKC0yKSA9IC02JC4gTGFsdSAkLTggKyAoLTYpID0gLTE0JC4=",
+      "kunci": [
+        "f7b10c38aed98d1765fb217416f2d01d5e10a7f960447b9aec20f015d8bf7e96"
+      ]
     }
   ]
 }

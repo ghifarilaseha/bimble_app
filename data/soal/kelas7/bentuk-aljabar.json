@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "kelas": 7,
+    "semester": 1,
+    "bab": "bentuk-aljabar",
+    "judul": "Bentuk Aljabar",
+    "sumber": "Modul MGMP Matematika SMPN 14 Bandung, Kelas VII Sem. 1, Episode 2",
+    "versi": "2026-09-06"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "al-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Banyak suku pada bentuk aljabar $6m^2n - 3m + 2n$ adalah ...",
+      "opsi": {
+        "a": "$2$",
+        "b": "$3$",
+        "c": "$4$",
+        "d": "$6$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U3VrdSBkaXBpc2Foa2FuIG9sZWggdGFuZGEgJCskIGF0YXUgJC0kLiBTdWt1bnlhIGFkYWxhaCAkNm1eMm4kLCAkLTNtJCwgZGFuICQybiQsIHNlYmFueWFrIDMgc3VrdS4=",
+      "kunci": "13b6cc1052b3fd1c089695b780f9afc4e90030c10fd49eb597d82b38b77c271c"
+    },
+    {
+      "id": "al-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Konstanta pada bentuk aljabar $-9p - 2q - 10$ adalah ...",
+      "opsi": {
+        "a": "$-10$",
+        "b": "$10$",
+        "c": "$-2$",
+        "d": "$-9$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "S29uc3RhbnRhIGFkYWxhaCBzdWt1IHlhbmcgdGlkYWsgbWVtdWF0IHZhcmlhYmVsLCB5YWl0dSAkLTEwJC4gVGFuZGEgbWludXMgZGkgZGVwYW5ueWEgaWt1dCBtZW5qYWRpIGJhZ2lhbiBkYXJpIHN1a3UgdGVyc2VidXQu",
+      "kunci": "73fb3210d729c429e719c020d12ddab391adbaf179dfaa75d0f3cd1c55da0cef"
+    },
+    {
+      "id": "al-03",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bentuk paling sederhana dari $19a + a$ adalah ...",
+      "pembahasan": "JGEkIGJlcmFydGkgJDFhJCwgc2VoaW5nZ2EgJDE5YSArIDFhID0gMjBhJC4=",
+      "kunci": [
+        "b2ae0f8244d5f64af0666a7ce75b9317be2ba43d698b2457edfc05fe705408e7"
+      ]
+    },
+    {
+      "id": "al-04",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $-7y - 8 + 4y - 6$ adalah ...",
+      "opsi": {
+        "a": "$-3y - 2$",
+        "b": "$-3y - 14$",
+        "c": "$3y - 14$",
+        "d": "$-11y - 14$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "S2Vsb21wb2trYW4gc3VrdSBzZWplbmlzOiAkKC03ICsgNCl5ICsgKC04IC0gNikgPSAtM3kgLSAxNCQuIFBlcmhhdGlrYW4gYmFod2EgJC04JCBkYW4gJC02JCBrZWR1YW55YSBuZWdhdGlmIHNlaGluZ2dhIGRpanVtbGFoa2FuLg==",
+      "kunci": "8e3d111569d44888ce6db2ff697cde2c22495dc7005a367c7ca264f8e0163118"
+    },
+    {
+      "id": "al-05",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? $3a$ dan $3a^2$ merupakan suku sejenis.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U3VrdSBzZWplbmlzIGhhcnVzIG1lbWlsaWtpIHZhcmlhYmVsIERBTiBwYW5na2F0IHlhbmcgc2FtYS4gUGFuZ2thdCAkYSQgcGFkYSBrZWR1YSBzdWt1IGJlcmJlZGEsIGphZGkga2VkdWFueWEgdGlkYWsgc2VqZW5pcyBkYW4gdGlkYWsgYmlzYSBkaWp1bWxhaGthbi4=",
+      "kunci": "e4adca031d542e43ab8a0c2e6f461735220b4a4f4cf367a02a4c1abe60bad540"
+    },
+    {
+      "id": "al-06",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $10 - 4a - a + 5$ adalah ...",
+      "pembahasan": "JC1hJCBiZXJhcnRpICQtMWEkLCBzZWhpbmdnYSAkLTRhIC0gMWEgPSAtNWEkLiBLb25zdGFudGFueWEgJDEwICsgNSA9IDE1JC4gSGFzaWxueWEgJC01YSArIDE1JC4=",
+      "kunci": [
+        "dede7d06df4c50971f3c6a6095028dc9c55c0b50353c08b2e3f66fba783bd530",
+        "45d17e2ad2702c82e830574ec931af478b99a82b26ac24111f39a99fd16ee4fd"
+      ]
+    },
+    {
+      "id": "al-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Ibu Kelinci memanen 2 karung wortel dan 5 wortel tambahan. Jika banyak wortel dalam satu karung adalah $x$, bentuk aljabar hasil panennya adalah ...",
+      "opsi": {
+        "a": "$2 + 5x$",
+        "b": "$2x + 5$",
+        "c": "$7x$",
+        "d": "$10x$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "MiBrYXJ1bmcgYmVyaXNpICQyeCQgd29ydGVsLCBkaXRhbWJhaCA1IHdvcnRlbCBsZXBhcywgc2VoaW5nZ2EgJDJ4ICsgNSQuIFN1a3UgJDJ4JCBkYW4gJDUkIHRpZGFrIGJpc2EgZGlnYWJ1bmcga2FyZW5hIHRpZGFrIHNlamVuaXMu",
+      "kunci": "cb75e766b56bfb2421f5608b75f3a20fc79f82d8a9702683394225c8c085a2a5"
+    },
+    {
+      "id": "al-08",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $2x + 3y + 4x - 5y$ adalah ...",
+      "opsi": {
+        "a": "$6x - 2y$",
+        "b": "$6x + 2y$",
+        "c": "$6x - 8y$",
+        "d": "$4xy$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JCgyICsgNCl4ID0gNngkIGRhbiAkKDMgLSA1KXkgPSAtMnkkLCBzZWhpbmdnYSBoYXNpbG55YSAkNnggLSAyeSQu",
+      "kunci": "341ce2e1488b5a046eea93c4b1df20f6fd3c3590b049ea0350c04d728fb5ea3f"
+    },
+    {
+      "id": "al-09",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(6x + 7y) - (8x - 5y)$ adalah ...",
+      "opsi": {
+        "a": "$-2x + 2y$",
+        "b": "$-2x + 12y$",
+        "c": "$14x + 2y$",
+        "d": "$-2x - 12y$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "VGFuZGEgbWludXMgZGkgZGVwYW4ga3VydW5nIG1lbmd1YmFoIHRhbmRhIHNlbXVhIHN1a3UgZGkgZGFsYW1ueWE6ICQ2eCArIDd5IC0gOHggKyA1eSA9IC0yeCArIDEyeSQu",
+      "kunci": "b6ece719af01a3c6ff68745c138b8624d9f59cb4a8197c76eb715fb7ab913147"
+    },
+    {
+      "id": "al-10",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Kurangkan $12p - 7q + 4$ dari $5p + 3q$. Hasilnya adalah ...",
+      "pembahasan": "IkRpa3VyYW5na2FuIGRhcmkiIGJlcmFydGkgJCg1cCArIDNxKSAtICgxMnAgLSA3cSArIDQpID0gNXAgKyAzcSAtIDEycCArIDdxIC0gNCA9IC03cCArIDEwcSAtIDQkLg==",
+      "kunci": [
+        "d981f09044d1599a16a7ea5298d25f19c6ade68b19899b75a366b48e7b377dcb"
+      ]
+    },
+    {
+      "id": "al-11",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(3x + 4)(x - 6)$ adalah ...",
+      "opsi": {
+        "a": "$3x^2 - 24$",
+        "b": "$3x^2 + 14x - 24$",
+        "c": "$3x^2 - 14x - 24$",
+        "d": "$3x^2 - 22x - 24$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U2V0aWFwIHN1a3UgZGlrYWxpa2FuIGtlIHNldGlhcCBzdWt1OiAkM3ggXGNkb3QgeCA9IDN4XjIkLCAkM3ggXGNkb3QgKC02KSA9IC0xOHgkLCAkNCBcY2RvdCB4ID0gNHgkLCAkNCBcY2RvdCAoLTYpID0gLTI0JC4gSnVtbGFoa2FuIHN1a3UgdGVuZ2FobnlhOiAkLTE4eCArIDR4ID0gLTE0eCQu",
+      "kunci": "766131970ff15e3dd23f1978d049de0322e94eea637f477c9efb69f938edd9e1"
+    },
+    {
+      "id": "al-12",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $7(x - 5) + 3(x + 2)$ adalah ...",
+      "pembahasan": "JDcoeCAtIDUpID0gN3ggLSAzNSQgZGFuICQzKHggKyAyKSA9IDN4ICsgNiQuIEp1bWxhaG55YSAkMTB4IC0gMjkkLg==",
+      "kunci": [
+        "cbae8b78089d07d8125e33eaf9aa02e713463f234be5ff6e530d251a690e0e1c"
+      ]
+    },
+    {
+      "id": "al-13",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $10xy \\div 2y$ adalah ...",
+      "opsi": {
+        "a": "$5$",
+        "b": "$5x$",
+        "c": "$5xy$",
+        "d": "$8xy$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JFxmcmFjezEweHl9ezJ5fSA9IFxmcmFjezEwfXsyfSBcdGltZXMgeCBcdGltZXMgXGZyYWN7eX17eX0gPSA1eCQsIGthcmVuYSAkXGZyYWN7eX17eX0gPSAxJC4=",
+      "kunci": "1fe01ca621a5db53b9d36fed68894771bb09a5ea862416087fc8fb347a0905a5"
+    },
+    {
+      "id": "al-14",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? $(x - 8)^2 = x^2 - 64$",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JCh4IC0gOCleMiA9ICh4IC0gOCkoeCAtIDgpID0geF4yIC0gOHggLSA4eCArIDY0ID0geF4yIC0gMTZ4ICsgNjQkLiBTdWt1IHRlbmdhaG55YSB0aWRhayBib2xlaCBoaWxhbmcu",
+      "kunci": "8fc19ea50c46ad79978af0e881587b0cad63358346dd4c536f41f642fc3e82db"
+    },
+    {
+      "id": "al-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Persediaan beras di gudang Bu Tarmi 24 karung, sedangkan pesanan pedagang Pasar Legi 31 karung. Jika berat tiap karung $x$ kg, kekurangan beras Bu Tarmi dinyatakan dengan ...",
+      "opsi": {
+        "a": "$7x$ kg",
+        "b": "$55x$ kg",
+        "c": "$-55x$ kg",
+        "d": "$31x$ kg"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JDI0eCAtIDMxeCA9IC03eCQsIHRhbmRhIG5lZ2F0aWYgbWVudW5qdWtrYW4ga2VrdXJhbmdhbi4gSmFkaSBCdSBUYXJtaSBrZWt1cmFuZ2FuICQ3eCQga2cgYmVyYXMu",
+      "kunci": "e4e22a99077409012fe3eae6848dc6607459ff4842149b31b3077d178a70ee14"
+    },
+    {
+      "id": "al-16",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Nilai dari $3x^2 - 2x$ untuk $x = -2$ adalah ...",
+      "opsi": {
+        "a": "$-16$",
+        "b": "$-8$",
+        "c": "$8$",
+        "d": "$16$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JHheMiA9ICgtMileMiA9IDQkLCBzZWhpbmdnYSAkM3heMiA9IDEyJC4gTGFsdSAkLTJ4ID0gLTIgXHRpbWVzICgtMikgPSA0JC4gSnVtbGFobnlhICQxMiArIDQgPSAxNiQu",
+      "kunci": "8443cac872660764a27cf2e99f6eeac5f963c8a4e4e136fdbeaf41e5466fc4f8"
+    },
+    {
+      "id": "al-17",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $\\frac{28a^2b^3}{-7ab}$ adalah ...",
+      "pembahasan": "JDI4IFxkaXYgKC03KSA9IC00JC4gVW50dWsgdmFyaWFiZWxueWEsICRhXjIgXGRpdiBhID0gYSQgZGFuICRiXjMgXGRpdiBiID0gYl4yJC4gSGFzaWxueWEgJC00YWJeMiQu",
+      "kunci": [
+        "f8452654d37766189e5f73e3d58458078b89383aa0b7c878a4f9c9406121c6c4",
+        "77c0dd9e267cf671c7069ee10d8e4a62adb0e3cfadc89ca76f60ad47fabe21ff",
+        "fea235efb09af2a3b7aac103714fbd9422ad50f6f0295cd2aa7b3d0a767dabf2"
+      ]
+    },
+    {
+      "id": "al-18",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Hasil bagi $x^2 + 7x + 10$ oleh $(x + 5)$ adalah ...",
+      "opsi": {
+        "a": "$x + 2$",
+        "b": "$x + 5$",
+        "c": "$x + 7$",
+        "d": "$x + 10$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "UGVyaWtzYSBkZW5nYW4gbWVuZ2FsaWthbiBrZW1iYWxpOiAkKHggKyA1KSh4ICsgMikgPSB4XjIgKyAyeCArIDV4ICsgMTAgPSB4XjIgKyA3eCArIDEwJC4gQ29jb2ssIGphZGkgaGFzaWwgYmFnaW55YSAkeCArIDIkLg==",
+      "kunci": "e23db0fa154548ef323c8d4bffd4f6b6cc810b66ee44e4c4f4fec243b4b423da"
+    },
+    {
+      "id": "al-19",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $a = 4x + 2y$ dan $b = 4x + 8y$. Nilai dari $a - b$ adalah ...",
+      "pembahasan": "JGEgLSBiID0gKDR4ICsgMnkpIC0gKDR4ICsgOHkpID0gNHggKyAyeSAtIDR4IC0gOHkgPSAtNnkkLiBTdWt1ICQ0eCQgc2FsaW5nIG1lbmdoYXB1cy4=",
+      "kunci": [
+        "a94d373ddd56e25b216c4f54598c61fbe51bf0135ce42e3556a60d589b38e433"
+      ]
+    },
+    {
+      "id": "al-20",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah persegi panjang memiliki panjang $(2x + 3)$ cm dan lebar $(x - 1)$ cm. Keliling persegi panjang tersebut adalah ...",
+      "opsi": {
+        "a": "$3x + 2$ cm",
+        "b": "$6x + 4$ cm",
+        "c": "$6x + 8$ cm",
+        "d": "$2x^2 + x - 3$ cm"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JEsgPSAyIFx0aW1lcyAoXHRleHR7cGFuamFuZ30gKyBcdGV4dHtsZWJhcn0pID0gMlxiaWcoKDJ4ICsgMykgKyAoeCAtIDEpXGJpZykgPSAyKDN4ICsgMikgPSA2eCArIDQkIGNtLiBQaWxpaGFuIHlhbmcgbWVtdWF0ICQyeF4yJCBhZGFsYWggbHVhc255YSwgYnVrYW4ga2VsaWxpbmdueWEu",
+      "kunci": "555bbf56984959a4e4a29070f2b21770144558425cb95fb8ee05a3be2641c272"
+    }
+  ]
+}

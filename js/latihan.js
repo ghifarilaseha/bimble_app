@@ -7,6 +7,8 @@
 (function () {
   'use strict';
 
+  var MODE = ['mandiri', 'kelas', 'pr'];
+
   var P = new URLSearchParams(location.search);
   var sesi = {
     tingkat: P.get('kelas') || '',
@@ -106,6 +108,13 @@
   function mulai() {
     if (!sesi.tingkat || !sesi.bab) {
       return pesan('gagal', 'Tautan ini belum lengkap. Mintalah tautan latihan yang baru kepada gurumu.');
+    }
+    /* Mode yang salah ketik dulu diterima diam-diam, dan hasilnya adalah
+       gabungan paling merugikan: boleh diulang tanpa batas sekaligus tidak
+       pernah memunculkan pembahasan. Lebih baik berhenti dengan terang. */
+    if (MODE.indexOf(sesi.mode) < 0) {
+      return pesan('gagal', 'Mode "' + Rumus.lolos(sesi.mode) + '" tidak dikenal. ' +
+        'Mintalah tautan latihan yang baru kepada gurumu.');
     }
     Kirim.pasangPemantau();
     Kirim.prosesAntrean().then(function (h) {
@@ -261,6 +270,17 @@
         jawaban = {};
         mulaiPada = Date.now();
       }
+
+      /* Pewaktu terikat pada saat siswa menekan Mulai, dan jamnya terus
+         berjalan meski tab ditutup. Siswa yang iseng membuka tautan tugas
+         semalam sebelumnya karena itu bisa kembali ke kelas dengan waktu
+         yang sudah habis, lalu dikumpulkan otomatis dalam keadaan kosong
+         dan ditolak mencoba lagi. Draf kosong yang kedaluwarsa dihentikan
+         di sini supaya nilai nol seperti itu tidak pernah terjadi. */
+      if (waktuSudahHabis() && !adaJawabanTerisi()) {
+        return tampilkanWaktuHabis();
+      }
+
       gambarSoal();
     }).catch(function (e) {
       pesan('gagal', 'Soal tidak bisa dimuat. ' + Rumus.lolos(e.message) +
@@ -271,6 +291,23 @@
   function percobaanKe() {
     var d = bacaSimpan(kunciSimpan('percobaan'));
     return d ? d.n : 0;
+  }
+
+  function waktuSudahHabis() {
+    if (!sesi.durasi || !mulaiPada) return false;
+    return Date.now() >= mulaiPada + sesi.durasi * 60000;
+  }
+
+  function adaJawabanTerisi() { return daftar.some(sudahDijawab); }
+
+  /* Sengaja tidak mengumpulkan apa pun: tidak ada yang bisa dinilai, dan
+     mengirim lembar kosong justru mengunci siswa lewat "sekali kerjakan". */
+  function tampilkanWaktuHabis() {
+    tampil('');
+    pesan('awas', '<strong>Waktu sesi ini sudah habis.</strong>' +
+      '<br>Tautan ini pernah dibuka dan pewaktunya sudah berjalan sampai selesai, ' +
+      'tetapi tidak ada jawaban yang tersimpan. Tidak ada yang dikumpulkan.' +
+      '<br><span class="kecil">Mintalah tautan sesi yang baru kepada gurumu.</span>');
   }
 
   function tampilkanSudahPernah(sudah) {
@@ -473,17 +510,23 @@
     if (!sesi.durasi) return;
     el.jam.hidden = false;
     var batas = mulaiPada + sesi.durasi * 60000;
+    var henti = false;
     function detak() {
+      if (henti) return;
       var sisa = Math.max(0, Math.round((batas - Date.now()) / 1000));
       el.jam.textContent = tulisWaktu(sisa);
       el.jam.classList.toggle('mepet', sisa <= 60);
       if (sisa <= 0) {
+        /* Panggilan pertama berjalan sebelum setInterval sempat mengisi
+           pewaktu, jadi jangan mengandalkan clearInterval saja untuk
+           menghentikan detak berikutnya. */
+        henti = true;
         clearInterval(pewaktu);
         if (!sudahKumpul) kumpulkan(true);
       }
     }
     detak();
-    pewaktu = setInterval(detak, 1000);
+    if (!henti) pewaktu = setInterval(detak, 1000);
   }
 
   /* ---------- mengumpulkan ---------- */

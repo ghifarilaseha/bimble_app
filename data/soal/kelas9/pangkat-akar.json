@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 1,
+    "bab": "pangkat-akar",
+    "judul": "Pangkat dan Akar",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Pangkat dan Akar",
+    "versi": "2026-09-07"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "pa-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bentuk paling sederhana dari $\\dfrac{2^5 \\times 3^2}{2^3 \\times 3^4}$ adalah ...",
+      "opsi": {
+        "a": "$\\frac{4}{9}$",
+        "b": "$\\frac{9}{4}$",
+        "c": "$\\frac{2}{3}$",
+        "d": "$\\frac{1}{6}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "UGFuZ2thdCB5YW5nIHNlYmFzaXMgZGlrdXJhbmdrYW46ICQyXns1LTN9IFx0aW1lcyAzXnsyLTR9ID0gMl4yIFx0aW1lcyAzXnstMn0gPSBcZnJhY3s0fXs5fSQu",
+      "kunci": "c63ad23cde2c55245dd3668a49a9a202c6a5398827aebd77bc8a04bddca7a24b"
+    },
+    {
+      "id": "pa-02",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Nilai $n$ yang memenuhi $2^n \\times 8 = \\dfrac{4^5}{2}$ adalah ...",
+      "pembahasan": "U2FtYWthbiBiYXNpc255YSBtZW5qYWRpICQyJDogcnVhcyBrYW5hbiAkXGZyYWN7Ml57MTB9fXsyfSA9IDJeOSQsIHJ1YXMga2lyaSAkMl5uIFx0aW1lcyAyXjMgPSAyXntuKzN9JC4gTWFrYSAkbiArIDMgPSA5JCBkYW4gJG4gPSA2JC4=",
+      "kunci": [
+        "da5a3930010da6ee14bf265f87fd248a2bbfd7ddd63919761b78e6b370dec673"
+      ]
+    },
+    {
+      "id": "pa-03",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $a^7 : a^3$ adalah ...",
+      "opsi": {
+        "a": "$a^4$",
+        "b": "$a^{10}$",
+        "c": "$a^{21}$",
+        "d": "$a^{\\frac{7}{3}}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "UGVtYmFnaWFuIHBhbmdrYXQgc2ViYXNpcyBiZXJhcnRpIHBhbmdrYXRueWEgZGlrdXJhbmdrYW46ICRhXns3LTN9ID0gYV40JC4=",
+      "kunci": "59b26048b3adb6200275f5f8addd2631b3c57cfb6cc08d3f317ac74859e57940"
+    },
+    {
+      "id": "pa-04",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Nilai dari $\\sqrt{144}$ adalah ...",
+      "pembahasan": "JDEyIFx0aW1lcyAxMiA9IDE0NCQsIHNlaGluZ2dhICRcc3FydHsxNDR9ID0gMTIkLg==",
+      "kunci": [
+        "20d9ebf6d77f72b2c4cee187af35bcff5135087695ab4c04b43f8303127e06b0"
+      ]
+    },
+    {
+      "id": "pa-05",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Nilai dari $3^{-2}$ adalah ...",
+      "opsi": {
+        "a": "$\\frac{1}{9}$",
+        "b": "$-9$",
+        "c": "$-6$",
+        "d": "$9$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "UGFuZ2thdCBuZWdhdGlmIGJlcmFydGkga2ViYWxpa2FubnlhLCBidWthbiBoYXNpbCB5YW5nIG5lZ2F0aWY6ICQzXnstMn0gPSBcZnJhY3sxfXszXjJ9ID0gXGZyYWN7MX17OX0kLg==",
+      "kunci": "8835bd79e152257ebe401214f79072e88aa592c17bbbc9ee022b345f87eee586"
+    },
+    {
+      "id": "pa-06",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Nilai dari $\\left(2^3\\right)^2$ adalah ...",
+      "pembahasan": "UGFuZ2thdCBiZXJwYW5na2F0IGRpa2FsaWthbjogJDJeezMgXHRpbWVzIDJ9ID0gMl42ID0gNjQkLg==",
+      "kunci": [
+        "db3ce62d44754e539d799ee0dee1fa44fc640e5ccd1e35e3d1d602b6ac633d89"
+      ]
+    },
+    {
+      "id": "pa-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bentuk paling sederhana dari $\\sqrt{50}$ adalah ...",
+      "opsi": {
+        "a": "$5\\sqrt{2}$",
+        "b": "$2\\sqrt{5}$",
+        "c": "$10\\sqrt{5}$",
+        "d": "$25\\sqrt{2}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "UGlzYWhrYW4gZmFrdG9yIGt1YWRyYXQgdGVyYmVzYXJueWE6ICRcc3FydHs1MH0gPSBcc3FydHsyNSBcdGltZXMgMn0gPSA1XHNxcnR7Mn0kLg==",
+      "kunci": "57dd72ac2a036ae929ffae6d000996cfa0c3cfda48b2a8bc731bf059e689c14d"
+    },
+    {
+      "id": "pa-08",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Notasi ilmiah dari $0{,}00045$ adalah ...",
+      "opsi": {
+        "a": "$4{,}5 \\times 10^{-4}$",
+        "b": "$4{,}5 \\times 10^{-5}$",
+        "c": "$45 \\times 10^{-5}$",
+        "d": "$4{,}5 \\times 10^{4}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "S29tYSBkaWdlc2VyIGVtcGF0IGxhbmdrYWgga2Uga2FuYW4gc2VoaW5nZ2EgYW5na2EgZGVwYW5ueWEgZGkgYW50YXJhICQxJCBkYW4gJDEwJDogJDB7LH0wMDA0NSA9IDR7LH01IFx0aW1lcyAxMF57LTR9JC4=",
+      "kunci": "c9a8095e77968960b7788b448a2b2cac373e02abdb2475409a622da2b1bb93f6"
+    },
+    {
+      "id": "pa-09",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Hasil merasionalkan penyebut $\\dfrac{6}{\\sqrt{5} - \\sqrt{2}}$ adalah ...",
+      "opsi": {
+        "a": "$2\\sqrt{5} + 2\\sqrt{2}$",
+        "b": "$2\\sqrt{5} - 2\\sqrt{2}$",
+        "c": "$6\\sqrt{5} + 6\\sqrt{2}$",
+        "d": "$\\sqrt{5} + \\sqrt{2}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "S2FsaWthbiBkZW5nYW4gc2VrYXdhbiBwZW55ZWJ1dG55YSwgJFxzcXJ0NSArIFxzcXJ0MiQ6ICRcZnJhY3s2KFxzcXJ0NSArIFxzcXJ0Mil9ezUgLSAyfSA9IFxmcmFjezYoXHNxcnQ1ICsgXHNxcnQyKX17M30gPSAyXHNxcnQ1ICsgMlxzcXJ0MiQu",
+      "kunci": "6ec2cf52895fef1dd6fc336be2184f5603c47c0cce8e6a817084452a5b5af7ab"
+    },
+    {
+      "id": "pa-10",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $\\sqrt{12} + \\sqrt{27}$ dapat ditulis sebagai $k\\sqrt{3}$. Nilai $k$ adalah ...",
+      "pembahasan": "JFxzcXJ0ezEyfSA9IDJcc3FydDMkIGRhbiAkXHNxcnR7Mjd9ID0gM1xzcXJ0MyQuIEthcmVuYSBha2FybnlhIHNhbWEsIGtlZHVhbnlhIGJvbGVoIGRpanVtbGFoa2FuOiAkMlxzcXJ0MyArIDNcc3FydDMgPSA1XHNxcnQzJC4=",
+      "kunci": [
+        "e389aaddb358d2052593223678ec8e9e3ceeed80c6beba1024e97e515da3e54c"
+      ]
+    },
+    {
+      "id": "pa-11",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(\\sqrt{5} + \\sqrt{3})(\\sqrt{5} - \\sqrt{3})$ adalah ...",
+      "opsi": {
+        "a": "$2$",
+        "b": "$8$",
+        "c": "$2\\sqrt{15}$",
+        "d": "$15$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "QmVudHVrbnlhIHNlbGlzaWggZHVhIGt1YWRyYXQ6ICQoXHNxcnQ1KV4yIC0gKFxzcXJ0MyleMiA9IDUgLSAzID0gMiQuIFN1a3UgdGVuZ2FobnlhIHNhbGluZyBtZW5naGFwdXMu",
+      "kunci": "0e6c991fdcc3c7caacf864467f08e062b16a8800e1a9def99149e53cbfc8ca44"
+    },
+    {
+      "id": "pa-12",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Nilai dari $27^{\\frac{2}{3}}$ adalah ...",
+      "pembahasan": "UGVueWVidXQgcGFuZ2thdG55YSBiZXJhcnRpIGFrYXI6ICQyN157XGZyYWN7Mn17M319ID0gXGxlZnQoXHNxcnRbM117Mjd9XHJpZ2h0KV4yID0gM14yID0gOSQu",
+      "kunci": [
+        "d4befdeb382348b4c3942bbb636864441d3e0f4e221fced5ba8a1fcb6886e73e"
+      ]
+    },
+    {
+      "id": "pa-13",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $2\\sqrt{8} \\times \\sqrt{2}$ adalah ...",
+      "opsi": {
+        "a": "$4$",
+        "b": "$8$",
+        "c": "$16$",
+        "d": "$4\\sqrt{2}$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QWthciBkaWthbGlrYW4gYWthciBtZW5qYWRpIHNhdHUgYWthcjogJDJcc3FydHs4IFx0aW1lcyAyfSA9IDJcc3FydHsxNn0gPSAyIFx0aW1lcyA0ID0gOCQu",
+      "kunci": "f8e90a9f2b8ba82e5a0e47afc919f81ea6138698ea90f3f8a09ea2e2d144854e"
+    },
+    {
+      "id": "pa-14",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bentuk $\\dfrac{4}{\\sqrt{2}}$ dapat ditulis sebagai $a\\sqrt{2}$. Nilai $a$ adalah ...",
+      "pembahasan": "S2FsaWthbiBwZW1iaWxhbmcgZGFuIHBlbnllYnV0IGRlbmdhbiAkXHNxcnQyJDogJFxmcmFjezRcc3FydDJ9ezJ9ID0gMlxzcXJ0MiQsIHNlaGluZ2dhICRhID0gMiQu",
+      "kunci": [
+        "0724d4e8935bf94789ccef6c59bb0a0f880bc8ba789ade9c87031886e78982b4"
+      ]
+    },
+    {
+      "id": "pa-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $\\left(3x^2\\right)^3$ adalah ...",
+      "opsi": {
+        "a": "$27x^6$",
+        "b": "$9x^6$",
+        "c": "$27x^5$",
+        "d": "$3x^6$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U2VsdXJ1aCBpc2kga3VydW5nIGRpcGFuZ2thdGthbiwgYW5na2FueWEganVnYTogJDNeMyBcdGltZXMgeF57MiBcdGltZXMgM30gPSAyN3heNiQu",
+      "kunci": "d6a0437b0a2bb2b4245218a42e01434b572cf4c5c08e11a196ae8a2fbed867d9"
+    },
+    {
+      "id": "pa-16",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $x = 2 + \\sqrt{3}$ dan $y = 2 - \\sqrt{3}$. Nilai dari $x \\times y$ adalah ...",
+      "pembahasan": "U2VsaXNpaCBkdWEga3VhZHJhdDogJCgyICsgXHNxcnQzKSgyIC0gXHNxcnQzKSA9IDQgLSAzID0gMSQuIEtlZHVhIGJpbGFuZ2FuIGl0dSB0ZXJueWF0YSBzYWxpbmcgYmVya2ViYWxpa2FuLg==",
+      "kunci": [
+        "8ef36c6b78d7c13d223c5541b27ba9bde50ec786bd47c42539ea197826016f10"
+      ]
+    },
+    {
+      "id": "pa-17",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $x = 2 + \\sqrt{3}$ dan $y = 2 - \\sqrt{3}$. Nilai dari $x^2 + y^2$ adalah ...",
+      "pembahasan": "JHggKyB5ID0gNCQgZGFuICR4eSA9IDEkLCBzZWhpbmdnYSAkeF4yICsgeV4yID0gKHgreSleMiAtIDJ4eSA9IDE2IC0gMiA9IDE0JC4gQmVudHVrIGluaSBkaXBha2FpIHN1cGF5YSB0aWRhayBwZXJsdSBtZW5naGl0dW5nIG5pbGFpIGRlc2ltYWwgJFxzcXJ0MyQu",
+      "kunci": [
+        "1c3c2b09fb8b802357016d2c46dd64282e68d2013099d831f9bcf6521056936f"
+      ]
+    },
+    {
+      "id": "pa-18",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Diketahui $x = 2 + \\sqrt{3}$ dan $y = 2 - \\sqrt{3}$. Nilai dari $\\dfrac{1}{x} + \\dfrac{1}{y}$ adalah ...",
+      "opsi": {
+        "a": "$2$",
+        "b": "$4$",
+        "c": "$14$",
+        "d": "$2\\sqrt{3}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JFxmcmFjezF9e3h9ICsgXGZyYWN7MX17eX0gPSBcZnJhY3t4K3l9e3h5fSA9IFxmcmFjezR9ezF9ID0gNCQuIEthcmVuYSAkeHkgPSAxJCwgcGVueWVidXRueWEgdGlkYWsgbWVuZ3ViYWggYXBhIHB1bi4=",
+      "kunci": "f96fae41b17edac5e2c11ab962b3c13288f7712bae2f0dc15743a1ff459d6282"
+    },
+    {
+      "id": "pa-19",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Nilai dari $\\left(\\sqrt[3]{8} + \\sqrt{16}\\right)^2$ adalah ...",
+      "opsi": {
+        "a": "$20$",
+        "b": "$36$",
+        "c": "$64$",
+        "d": "$100$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "SXNpIGt1cnVuZ255YSBkaWhpdHVuZyBsZWJpaCBkdWx1OiAkMiArIDQgPSA2JCwgbGFsdSAkNl4yID0gMzYkLiBNZW1hbmdrYXRrYW4gdGlhcCBzdWt1IHRlcnBpc2FoIGFrYW4gbWVtYmVyaSAkNCArIDE2ID0gMjAkLCBkYW4gaXR1IGtlbGlydS4=",
+      "kunci": "7be93b5603fcf4a2f0c62014516ba31f3adf5954f0716d1ac3defe6040888e5a"
+    },
+    {
+      "id": "pa-20",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Nilai $x$ yang memenuhi $9^x = 27^{x-1}$ adalah ...",
+      "pembahasan": "U2FtYWthbiBiYXNpc255YSBtZW5qYWRpICQzJDogJDNeezJ4fSA9IDNeezMoeC0xKX0kLCBzZWhpbmdnYSAkMnggPSAzeCAtIDMkIGRhbiAkeCA9IDMkLg==",
+      "kunci": [
+        "0432d44e250e4ee4b599a3c5691c0823f11dc512e53ce2f8a824b1f6e9fcfbf4"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pola Bilangan</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Pola Bilangan</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Pola Bilangan</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Membaca pola sebuah barisan dari selisih atau hasil baginya.</li>
+      <li>Menghitung suku ke-$100$ tanpa menulis $99$ suku sebelumnya.</li>
+      <li>Tahu kenapa rumusnya memakai $n - 1$, bukan $n$.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Kursi di aula sekolah</h2>
+  <p>
+    Aula sedang ditata untuk pentas seni. Baris pertama diisi $6$ kursi, baris kedua
+    $9$ kursi, baris ketiga $12$ kursi. Pak Tohir harus menyiapkan sampai baris ke-$40$.
+  </p>
+  <p>
+    Menghitungnya satu per satu memang bisa, tapi lama dan mudah meleset satu baris.
+    Bisakah isi baris ke-$40$ diketahui tanpa menulis $39$ baris di depannya?
+  </p>
+  <p class="kecil samar">
+    Pikirkan dulu sebentar, baru lanjut.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: tabel selisih</h2>
+  <p>
+    Tabel ini menuliskan barisannya di baris atas, dan selisih dua suku berurutan
+    di baris bawahnya. Tombol di bawah tabel menambah atau mengurangi suku, dan tiga
+    tombol berikutnya mengganti seluruh barisannya sekaligus.
+  </p>
+  <p>
+    Tugasnya: <strong>tekan "Tambah suku" beberapa kali, lalu ganti barisannya menjadi
+    $5, 10, 20, 40$.</strong> Selisihnya masih tetap?
+  </p>
+
+  <div class="kartu">
+    <div id="jelajah"></div>
+
+    <div class="deret" style="margin-top:.6rem">
+      <button type="button" class="tombol mungil" id="deretNaik">$6, 9, 12, 15$</button>
+      <button type="button" class="tombol mungil" id="deretKali">$5, 10, 20, 40$</button>
+      <button type="button" class="tombol mungil" id="deretTingkat">$3, 4, 6, 9, 13$</button>
+    </div>
+
+    <div id="pesanJelajah" style="margin-top:.7rem"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Membaca pola">
+    <h3>Tiga pertanyaan, berurutan</h3>
+    <p>
+      Menebak pola bukan menerka. Ada urutan pemeriksaan yang selalu sama:
+    </p>
+    <ol>
+      <li>Hitung <strong>selisih</strong> antar suku berurutan. Tetap? Polanya penjumlahan.</li>
+      <li>Kalau selisihnya tidak tetap, hitung <strong>hasil bagi</strong>. Tetap? Polanya perkalian.</li>
+      <li>Kalau keduanya tidak tetap, hitung <strong>selisih dari selisih</strong>,
+        atau curigai <strong>dua pola berselang-seling</strong>.</li>
+    </ol>
+    <p>
+      Inilah yang tadi kamu lihat sendiri di tabel selisih: barisan $6, 9, 12$ berhenti
+      di pertanyaan pertama, sedangkan $5, 10, 20$ baru terjawab di pertanyaan kedua.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Bongkar barisanmu sendiri</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Ketik empat bilangan atau lebih, dipisah koma. Halaman ini hanya menghitung
+        selisih dan hasil baginya — kesimpulannya kamu yang menarik.
+      </p>
+      <div class="deret">
+        <input type="text" id="isiBarisan" value="1, 5, 2, 10, 3, 15"
+               style="flex:1;min-width:9rem" aria-label="Barisan bilangan">
+        <button type="button" class="tombol mungil utama" id="bongkarBarisan">Bongkar</button>
+      </div>
+      <div id="hasilBongkar" style="margin-top:.7rem"></div>
+    </div>
+
+    <h3>Barisan Fibonacci</h3>
+    <p>
+      Ada satu barisan yang tidak terjawab oleh ketiga pertanyaan di atas:
+      $0, 1, 1, 2, 3, 5, 8, 13, 21, \dots$ Setiap sukunya adalah <strong>jumlah dua suku
+      sebelumnya</strong>. Coba ketikkan barisan itu di kotak tadi dan perhatikan baris
+      selisihnya — selisihnya ternyata membentuk Fibonacci lagi.
+    </p>
+
+    <h3>Angka satuan bilangan berpangkat</h3>
+    <p>
+      Angka satuan bilangan berpangkat selalu berulang dalam siklus pendek.
+      Untuk pangkat dari $3$: $3, 9, 7, 1$, lalu kembali ke $3$. Siklusnya panjang $4$.
+    </p>
+    <p>
+      Menentukan angka satuan $3^{100}$: bagi $100$ dengan $4$, sisanya $0$, jadi ambil
+      urutan terakhir siklus, yaitu $1$. Aturan sisanya: sisa $1$ berarti suku pertama
+      siklus, sisa $2$ suku kedua, sisa $3$ suku ketiga, dan sisa $0$ suku terakhir.
+    </p>
+  </section>
+
+  <section data-tab="Barisan aritmetika" hidden>
+    <h3>Beda yang tetap</h3>
+    <p>
+      Setiap bilangan dalam barisan disebut <strong>suku</strong>, dan suku ke-$n$ ditulis
+      $U_n$. Barisan yang selisih dua suku berurutannya selalu sama disebut
+      <strong>barisan aritmetika</strong>, dan selisih tetap itu disebut
+      <strong>beda</strong>, dilambangkan $b$.
+    </p>
+    <p class="tengah">$$b = U_2 - U_1 = U_3 - U_2 = \dots$$</p>
+    <p class="tengah">$$U_n = a + (n - 1)\,b$$</p>
+    <p>
+      $a$ adalah suku pertama, dan $n$ nomor suku yang dicari. Kalau $b$ positif barisannya
+      naik, kalau negatif barisannya turun.
+    </p>
+
+    <h3>Kenapa $n - 1$, bukan $n$</h3>
+    <p>
+      Ini bukan aturan yang harus dihafal. Untuk sampai ke suku ke-$4$ dari suku pertama,
+      kamu melangkah sebanyak $3$ kali, bukan $4$ kali — sama seperti jarak antara tiang
+      pertama dan tiang keempat adalah tiga rentang. Geser $n$ di bawah dan perhatikan
+      angka pengali bedanya.
+    </p>
+
+    <div class="kartu">
+      <div id="geserSuku"></div>
+    </div>
+  </section>
+
+  <section data-tab="Barisan geometri" hidden>
+    <h3>Rasio yang tetap</h3>
+    <p>
+      Kalau yang tetap bukan selisihnya melainkan <strong>hasil baginya</strong>, barisan itu
+      disebut <strong>barisan geometri</strong>. Hasil bagi tetap itu disebut
+      <strong>rasio</strong>, dilambangkan $r$.
+    </p>
+    <p class="tengah">$$r = U_2 \div U_1 = U_3 \div U_2 = \dots$$</p>
+    <p class="tengah">$$U_n = a \cdot r^{\,n-1}$$</p>
+    <p>
+      $n - 1$ muncul lagi, dan alasannya sama: dari suku pertama ke suku ke-$n$ ada
+      $n - 1$ kali pengalian. Kalau $r > 1$ barisannya naik, kalau $0 < r < 1$ barisannya
+      turun.
+    </p>
+    <p>
+      Memakai rumus aritmetika pada barisan geometri adalah kekeliruan paling sering di
+      bab ini. Karena itu urutan pemeriksaan tadi tidak boleh dilompati: cek selisihnya
+      dulu, baru hasil baginya.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Dua barisan, satu nomor suku</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Keduanya berawal dari $3$. Yang satu ditambah $2$ tiap langkah, yang satu dikali
+        $2$. Geser nomor sukunya.
+      </p>
+      <div id="geserBanding"></div>
+    </div>
+  </section>
+
+  <section data-tab="Pola dari gambar" hidden>
+    <h3>Pola dari konfigurasi objek</h3>
+    <p>
+      Pola juga muncul dari susunan benda: batu yang disusun segitiga, ubin yang disusun
+      persegi. Lima pola berikut cukup dikenali bentuknya, bukan dihafal rumusnya —
+      rumusnya bisa dibaca ulang dari gambarnya.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Pilih polanya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Pilih satu pola, lalu geser $n$ untuk melihat suku dan asal rumusnya.
+      </p>
+      <div class="deret" id="pilihPola"></div>
+      <div id="geserPola" style="margin-top:.6rem"></div>
+      <p id="asalPola" class="kecil" style="margin:.5rem 0 0"></p>
+    </div>
+
+    <h3>Segitiga Pascal</h3>
+    <p>
+      Setiap bilangan adalah jumlah dua bilangan tepat di atasnya, dan bilangan paling
+      pinggir selalu $1$.
+    </p>
+    <div class="tabel-gulir">
+      <table>
+        <tbody>
+          <tr><th>Baris $1$</th><td class="angka">$1$</td></tr>
+          <tr><th>Baris $2$</th><td class="angka">$1 \quad 1$</td></tr>
+          <tr><th>Baris $3$</th><td class="angka">$1 \quad 2 \quad 1$</td></tr>
+          <tr><th>Baris $4$</th><td class="angka">$1 \quad 3 \quad 3 \quad 1$</td></tr>
+          <tr><th>Baris $5$</th><td class="angka">$1 \quad 4 \quad 6 \quad 4 \quad 1$</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Jumlah bilangan pada baris ke-$n$ adalah $2^{\,n-1}$. Baris ke-$5$ berjumlah
+      $1 + 4 + 6 + 4 + 1 = 16$, dan $2^4$ memang $16$.
+    </p>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya.
+  </p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.
+  </p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=8&amp;bab=pola-bilangan&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
+<script src="../komponen/tabel-pola.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  /* ---------- 3. Eksplorasi: tabel selisih ---------- */
+
+  var elPesan = document.getElementById('pesanJelajah');
+
+  /* Kesimpulan ditahan sampai dua keadaan kuncinya benar-benar terlihat:
+     satu barisan yang selisihnya tetap, dan satu yang tidak. Sebelum itu,
+     tabel hanya menghitung. */
+  var pernah = {};
+
+  function jenisSelisih(suku) {
+    var d = TabelPola.selisih(suku);
+    if (d.length < 2) return 'kurang';
+    var tetap = d.every(function (x) { return x === d[0]; });
+    return tetap ? 'tetap' : 'tidak';
+  }
+
+  var tabel = TabelPola.buat(document.getElementById('jelajah'), {
+    suku: [6, 9, 12, 15, 18],
+    tingkat: 1,
+    onUbah: function (k) {
+      pernah[jenisSelisih(k.suku)] = true;
+      tulisPesan();
+    }
+  });
+
+  function tulisPesan() {
+    if (!(pernah.tetap && pernah.tidak)) {
+      elPesan.innerHTML = '';
+      return;
+    }
+    elPesan.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Dua barisan tadi berbeda jenis. Yang baris selisihnya tetap disebut ' +
+      'barisan aritmetika. Yang selisihnya tidak tetap belum tentu tanpa pola: ' +
+      'pada $5, 10, 20, 40$ yang tetap adalah hasil baginya, yaitu $2$.') + '</div>';
+  }
+
+  function pasangDeret(id, suku) {
+    document.getElementById(id).addEventListener('click', function () {
+      tabel.set(suku);
+    });
+  }
+  pasangDeret('deretNaik', [6, 9, 12, 15]);
+  pasangDeret('deretKali', [5, 10, 20, 40]);
+  pasangDeret('deretTingkat', [3, 4, 6, 9, 13]);
+
+  /* ---------- 4. Tab "Aturannya" ---------- */
+
+  Materi.tab(document.getElementById('tabMateri'));
+
+  /* ---------- 4a. Pembongkar barisan ---------- */
+
+  /* Siswa yang memilih masukannya sendiri bisa menguji dugaannya sendiri.
+     Karena itu bagian ini hanya melapor, tidak menyimpulkan polanya. */
+  var elHasilBongkar = document.getElementById('hasilBongkar');
+
+  function baca(teks) {
+    return String(teks).split(/[,;\s]+/)
+      .filter(function (s) { return s.length; })
+      .map(function (s) { return Number(s.replace(',', '.')); });
+  }
+
+  function barisSel(judul, isian) {
+    var baris = '<tr><th>' + judul + '</th>';
+    isian.forEach(function (x) { baris += '<td class="angka">' + x + '</td>'; });
+    return baris + '</tr>';
+  }
+
+  function bongkar() {
+    var suku = baca(document.getElementById('isiBarisan').value);
+    /* Pecahan hanya menerima bilangan bulat, jadi masukan berkoma ditolak
+       di sini -- lebih baik daripada dibiarkan menjadi galat. */
+    var sah = suku.every(function (x) { return isFinite(x) && x === Math.trunc(x); });
+    if (suku.length < 3 || !sah) {
+      elHasilBongkar.innerHTML =
+        '<div class="pesan awas">Ketik paling sedikit tiga bilangan bulat, dipisah koma.</div>';
+      return;
+    }
+
+    var selisih = TabelPola.selisih(suku);
+    var bagi = [];
+    for (var i = 1; i < suku.length; i++) {
+      if (suku[i - 1] === 0) { bagi.push('—'); continue; }
+      var p = Pecahan.buat(suku[i], suku[i - 1]);
+      bagi.push(Rumus.keHTML('$' + p.rumus() + '$'));
+    }
+
+    var html = '<div class="tabel-gulir"><table><tbody>';
+    html += barisSel('Suku', suku);
+    html += barisSel('Selisih', selisih.map(function (x) { return (x > 0 ? '+' : '') + x; }));
+    html += barisSel('Hasil bagi', bagi);
+    html += '</tbody></table></div>';
+
+    var jenis = jenisSelisih(suku);
+    var catatan = jenis === 'tetap'
+      ? 'Baris selisihnya tetap.'
+      : 'Baris selisihnya tidak tetap. Periksa baris hasil baginya, ' +
+        'lalu selisih dari selisihnya.';
+    html += '<p class="kecil samar" style="margin:.5rem 0 0">' + catatan + '</p>';
+
+    elHasilBongkar.innerHTML = html;
+  }
+
+  document.getElementById('bongkarBarisan').addEventListener('click', bongkar);
+  document.getElementById('isiBarisan').addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') bongkar();
+  });
+  bongkar();
+
+  /* ---------- 4b. Penggeser nomor suku ---------- */
+
+  Materi.geser(document.getElementById('geserSuku'), {
+    label: 'Nomor suku $n$', min: 1, maks: 20, awal: 4,
+    hitung: function (n) {
+      /* Barisan 4, 7, 10, 13, ... dengan a = 4 dan b = 3. Angka pengali
+         bedanya sengaja ditulis utuh supaya n - 1 terlihat, bukan dihafal. */
+      var nilai = 4 + (n - 1) * 3;
+      return '$U_{' + n + '} = 4 + (' + n + ' - 1) \\cdot 3 = 4 + ' +
+        (n - 1) + ' \\cdot 3 = ' + nilai + '$. Dari suku pertama ke suku ke-' +
+        n + ' ada $' + (n - 1) + '$ langkah.';
+    }
+  });
+
+  /* ---------- 4c. Dua barisan berdampingan ---------- */
+
+  Materi.geser(document.getElementById('geserBanding'), {
+    label: 'Nomor suku $n$', min: 1, maks: 12, awal: 5,
+    hitung: function (n) {
+      var aritmetika = 3 + (n - 1) * 2;
+      var geometri = 3 * Math.pow(2, n - 1);
+      return 'Aritmetika: $U_{' + n + '} = 3 + (' + n + ' - 1) \\cdot 2 = ' +
+        aritmetika + '$. Geometri: $U_{' + n + '} = 3 \\cdot 2^{' + (n - 1) + '} = ' +
+        geometri + '$.';
+    }
+  });
+
+  /* ---------- 4d. Pola dari konfigurasi objek ---------- */
+
+  var POLA = [
+    { nama: 'Ganjil', rumus: '2n - 1', hitung: function (n) { return 2 * n - 1; },
+      asal: 'Bilangan ganjil selalu satu kurangnya dari bilangan genap ke-$n$.' },
+    { nama: 'Genap', rumus: '2n', hitung: function (n) { return 2 * n; },
+      asal: 'Bilangan genap ke-$n$ adalah $n$ pasang, jadi $2n$.' },
+    { nama: 'Persegi', rumus: 'n^2', hitung: function (n) { return n * n; },
+      asal: 'Ubin disusun $n$ baris dan $n$ kolom, jadi banyaknya $n \\times n$.' },
+    { nama: 'Persegi panjang', rumus: 'n(n+1)', hitung: function (n) { return n * (n + 1); },
+      asal: 'Susunannya $n$ baris dan $n + 1$ kolom.' },
+    { nama: 'Segitiga', rumus: '\\frac{n(n+1)}{2}', hitung: function (n) { return n * (n + 1) / 2; },
+      asal: 'Dua susunan segitiga yang disatukan membentuk persegi panjang $n \\times (n+1)$, ' +
+        'jadi satu segitiga adalah setengahnya.' }
+  ];
+
+  var elPilih = document.getElementById('pilihPola');
+  var elAsal = document.getElementById('asalPola');
+  var polaKe = 2;
+
+  var geserPola = Materi.geser(document.getElementById('geserPola'), {
+    label: 'Suku ke-$n$', min: 1, maks: 12, awal: 4,
+    hitung: function (n) {
+      var p = POLA[polaKe];
+      var lima = [];
+      for (var i = 1; i <= 5; i++) lima.push(p.hitung(i));
+      return 'Lima suku pertama: $' + lima.join(',\\ ') + ', \\dots$ ' +
+        'Suku ke-$' + n + '$ bernilai $' + p.hitung(n) + '$, sebab $U_n = ' + p.rumus + '$.';
+    }
+  });
+
+  POLA.forEach(function (p, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tombol mungil';
+    b.textContent = p.nama;
+    b.setAttribute('aria-pressed', i === polaKe ? 'true' : 'false');
+    b.addEventListener('click', function () {
+      polaKe = i;
+      Array.prototype.forEach.call(elPilih.children, function (x, j) {
+        x.setAttribute('aria-pressed', j === i ? 'true' : 'false');
+      });
+      Rumus.isi(elAsal, POLA[i].asal);
+      geserPola.set(geserPola.nilai());
+    });
+    elPilih.appendChild(b);
+  });
+  Rumus.isi(elAsal, POLA[polaKe].asal);
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  Materi.contoh(document.getElementById('daftarContoh'), [
+    {
+      judul: 'Suku ke-seratus',
+      soal: 'Tentukan suku ke-$100$ dari barisan $4, 7, 10, 13, 16, \\dots$',
+      langkah: [
+        'Periksa selisihnya dulu: $7 - 4 = 3$, $10 - 7 = 3$, $13 - 10 = 3$. ' +
+          'Selisihnya tetap, jadi ini barisan aritmetika dengan $b = 3$.',
+        'Suku pertamanya $a = 4$, dan yang dicari $n = 100$.',
+        'Masukkan ke $U_n = a + (n-1)b$: $U_{100} = 4 + (100 - 1) \\cdot 3$.',
+        'Yang dikalikan beda adalah $99$, bukan $100$: $4 + 297 = 301$.'
+      ]
+    },
+    {
+      judul: 'Barisan yang dikali',
+      soal: 'Tentukan suku ke-$7$ dari barisan $3, 6, 12, 24, \\dots$',
+      langkah: [
+        'Selisihnya $3, 6, 12$ — tidak tetap. Jadi jangan pakai rumus aritmetika.',
+        'Periksa hasil baginya: $6 \\div 3 = 2$, $12 \\div 6 = 2$, $24 \\div 12 = 2$. ' +
+          'Tetap, jadi ini barisan geometri dengan $r = 2$.',
+        'Masukkan ke $U_n = a \\cdot r^{\\,n-1}$: $U_7 = 3 \\cdot 2^6$.',
+        'Karena $2^6 = 64$, hasilnya $3 \\cdot 64 = 192$.'
+      ]
+    },
+    {
+      judul: 'Dua suku diketahui',
+      soal: 'Barisan aritmetika memiliki $U_4 = 46$ dan $U_7 = 61$. Tentukan $U_{10}$.',
+      langkah: [
+        'Dari suku ke-$4$ ke suku ke-$7$ ada $3$ langkah, jadi selisihnya $3b$: ' +
+          '$61 - 46 = 3b$.',
+        'Maka $3b = 15$, sehingga $b = 5$.',
+        'Cari $a$ lewat $U_4 = a + 3b$: $46 = a + 15$, jadi $a = 31$.',
+        'Terakhir $U_{10} = 31 + 9 \\cdot 5 = 31 + 45 = 76$.'
+      ]
+    }
+  ]);
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'pola-bilangan-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Dua suku berikutnya dari $30, 26, 22, 18, \\dots$ adalah ...',
+        petunjuk: 'Tulis dua bilangan, dipisah koma',
+        jawaban: ['14,10', '14, 10'],
+        salahUmum: [
+          {
+            jawaban: ['22,26', '22, 26'],
+            umpan: 'Sepertinya barisannya dibaca mundur. Selisihnya $-4$, jadi ' +
+              'sukunya makin kecil: setelah $18$ datang $14$.'
+          },
+          {
+            jawaban: ['14,11', '14, 11', '15,11'],
+            umpan: 'Suku pertamamu sudah benar. Bedanya tetap $-4$ untuk setiap ' +
+              'langkah, jadi setelah $14$ datang $10$.'
+          }
+        ],
+        bahas: 'Selisihnya tetap $-4$. Maka $18 - 4 = 14$ dan $14 - 4 = 10$.'
+      },
+      {
+        id: 'pola-bilangan-cek-2', level: 1, tipe: 'isian',
+        pertanyaan: 'Barisan $5, 9, 13, 17, \\dots$ Berapa nilai $U_{20}$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['81'],
+        salahUmum: [
+          {
+            jawaban: ['85'],
+            umpan: 'Sepertinya beda dikalikan $20$. Dari suku pertama ke suku ke-$20$ ' +
+              'ada $19$ langkah, jadi pengalinya $19$.'
+          },
+          {
+            jawaban: ['80', '76'],
+            umpan: 'Langkahnya sudah benar, tinggal suku pertamanya. ' +
+              'Hasil $19 \\cdot 4 = 76$ masih harus ditambah $a = 5$.'
+          }
+        ],
+        bahas: '$a = 5$ dan $b = 4$, jadi $U_{20} = 5 + 19 \\cdot 4 = 5 + 76 = 81$.'
+      },
+      {
+        id: 'pola-bilangan-cek-3', level: 2, tipe: 'pg',
+        pertanyaan: 'Rumus $U_n = a + (n-1)b$ tidak berlaku untuk barisan manakah?',
+        opsi: {
+          a: '$7, 11, 15, 19, \\dots$',
+          b: '$2, 6, 18, 54, \\dots$',
+          c: '$40, 33, 26, 19, \\dots$',
+          d: '$-5, -2, 1, 4, \\dots$'
+        },
+        kunci: 'b',
+        umpan: {
+          a: 'Selisihnya tetap $+4$, jadi barisan ini justru aritmetika.',
+          c: 'Selisihnya tetap $-7$. Beda boleh negatif, dan rumusnya tetap berlaku.',
+          d: 'Selisihnya tetap $+3$. Suku pertama yang negatif tidak mengubah jenis barisannya.'
+        },
+        bahas: 'Pada $2, 6, 18, 54$ selisihnya $4, 12, 36$ — tidak tetap. ' +
+          'Yang tetap hasil baginya, yaitu $3$, jadi ini barisan geometri.'
+      },
+      {
+        id: 'pola-bilangan-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Barisan geometri $2, 6, 18, \\dots$ Berapa nilai $U_6$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['486'],
+        salahUmum: [
+          {
+            jawaban: ['1458'],
+            umpan: 'Sepertinya pangkatnya $6$. Dari suku pertama ke suku ke-$6$ ' +
+              'ada $5$ kali pengalian, jadi $U_6 = 2 \\cdot 3^5$.'
+          },
+          {
+            jawaban: ['32', '17'],
+            umpan: 'Sepertinya rumus aritmetika yang dipakai. Selisih barisan ini ' +
+              'tidak tetap; yang tetap hasil baginya, yaitu $r = 3$.'
+          },
+          {
+            jawaban: ['162'],
+            umpan: 'Itu suku ke-$5$. Tinggal satu langkah lagi: kalikan $3$ sekali lagi.'
+          }
+        ],
+        bahas: '$a = 2$ dan $r = 3$, jadi $U_6 = 2 \\cdot 3^5 = 2 \\cdot 243 = 486$.'
+      },
+      {
+        id: 'pola-bilangan-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Sebuah barisan aritmetika memiliki $U_3 = 14$ dan $U_8 = 39$. ' +
+          'Berapa suku pertamanya?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['4'],
+        salahUmum: [
+          {
+            jawaban: ['5'],
+            umpan: 'Bedanya sudah benar, $b = 5$. Untuk kembali dari $U_3$ ke $U_1$ ' +
+              'ada $2$ langkah mundur, jadi $a = 14 - 2 \\cdot 5$.'
+          },
+          {
+            jawaban: ['9'],
+            umpan: 'Sepertinya baru mundur satu langkah. Dari suku ke-$3$ ke suku ' +
+              'pertama ada dua langkah.'
+          },
+          {
+            jawaban: ['-1', '1'],
+            umpan: 'Selisih $39 - 14 = 25$ terbagi atas $5$ langkah, jadi $b = 5$, ' +
+              'bukan angka lain. Setelah itu mundur dua langkah dari $14$.'
+          }
+        ],
+        bahas: 'Dari $U_3$ ke $U_8$ ada $5$ langkah: $5b = 39 - 14 = 25$, jadi $b = 5$. ' +
+          'Lalu $a = U_3 - 2b = 14 - 10 = 4$.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 8, 'pola-bilangan');
+})();
+</script>
+</body>
+</html>

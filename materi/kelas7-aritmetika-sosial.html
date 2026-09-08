@@ -63,7 +63,7 @@
   </p>
 
   <div class="kartu">
-    <div id="batangJelajah"></div>
+    <div id="jelajah"></div>
     <div id="pesanJelajah"></div>
   </div>
 
@@ -88,6 +88,28 @@
       selalu positif: untung dan rugi menyatakan besarnya selisih, sedangkan yang
       membedakan keduanya adalah arahnya.
     </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Untung, rugi, atau impas?</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Isi harga beli dan harga jualnya, lalu lihat rumus mana yang dipakai.
+        Coba juga menukar kedua angkanya.
+      </p>
+      <div class="deret" style="align-items:center">
+        <label class="kecil" style="flex:none;margin:0;min-width:5.5rem">Harga beli</label>
+        <input type="number" id="urBeli" value="150000" step="10000" min="0"
+               style="flex:1;min-width:7rem">
+      </div>
+      <div class="deret" style="align-items:center;margin-top:.4rem">
+        <label class="kecil" style="flex:none;margin:0;min-width:5.5rem">Harga jual</label>
+        <input type="number" id="urJual" value="180000" step="10000" min="0"
+               style="flex:1;min-width:7rem">
+      </div>
+      <div class="deret" style="margin-top:.6rem">
+        <button type="button" class="tombol mungil utama" id="urHitung">Hitung</button>
+      </div>
+      <div id="urHasil" style="margin-top:.7rem"></div>
+    </div>
   </section>
 
   <section data-tab="Persentase" hidden>
@@ -107,6 +129,15 @@
       persentasenya, harga belinya dicari dengan <em>membagi</em>, bukan dengan
       menambahkan persen itu ke harga jual.
     </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Untung Rp20.000, modal berapa saja</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Untungnya dikunci Rp20.000. Geser modalnya, lalu perhatikan persennya —
+        satu-satunya yang berubah.
+      </p>
+      <div id="geserModal"></div>
+    </div>
   </section>
 
   <section data-tab="Diskon" hidden>
@@ -168,6 +199,31 @@
       persis dengan diskon, hanya arahnya berlawanan: pajak <strong>menambah</strong>
       yang harus dibayar, diskon <strong>mengurangi</strong>.
     </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Hitung bunganya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Persentase bunganya per tahun. Coba isi lama menabung $6$ bulan, lalu
+        $12$ bulan, dan perhatikan bagian tahunnya.
+      </p>
+      <div class="deret" style="align-items:center">
+        <label class="kecil" style="flex:none;margin:0;min-width:5.5rem">Modal</label>
+        <input type="number" id="bgModal" value="1200000" step="100000" min="0"
+               style="flex:1;min-width:7rem">
+      </div>
+      <div class="deret" style="align-items:center;margin-top:.4rem">
+        <label class="kecil" style="flex:none;margin:0;min-width:5.5rem">Bunga/tahun</label>
+        <input type="number" id="bgPersen" value="9" min="0" max="100" style="flex:0 0 5rem">
+        <span class="kecil samar">%</span>
+        <label class="kecil" style="flex:none;margin:0 0 0 .5rem">Lama</label>
+        <input type="number" id="bgBulan" value="8" min="1" max="120" style="flex:0 0 5rem">
+        <span class="kecil samar">bulan</span>
+      </div>
+      <div class="deret" style="margin-top:.6rem">
+        <button type="button" class="tombol mungil utama" id="bgHitung">Hitung</button>
+      </div>
+      <div id="bgHasil" style="margin-top:.7rem"></div>
+    </div>
   </section>
 
   <!-- ---------- 5. Contoh bertahap ---------- -->
@@ -182,6 +238,7 @@
 
   <!-- ---------- 7. Tautan latihan ---------- -->
   <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
   <div id="tautanLatihan">
     <p>
       <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=aritmetika-sosial&amp;mode=mandiri">
@@ -197,6 +254,7 @@
 <script src="../js/kunci.js"></script>
 <script src="../js/nilai.js"></script>
 <script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
 <script src="../komponen/batang-harga.js"></script>
 <script>
 (function () {
@@ -212,7 +270,7 @@
   var elPesan = document.getElementById('pesanJelajah');
   var terlihat = {};
 
-  BatangHarga.buat(document.getElementById('batangJelajah'), {
+  BatangHarga.buat(document.getElementById('jelajah'), {
     satuan: 20000, maks: 400000, beli: 100000, jual: 120000,
     onUbah: function (k) {
       /* Yang dicatat bukan sekadar "pernah untung", melainkan pernah untung
@@ -233,27 +291,70 @@
     }
   });
 
-  /* ---------- 4. Tab materi ---------- */
+  /* ---------- 4. Tab "Aturannya" ---------- */
 
-  var bagian = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
-  var elTab = document.getElementById('tabMateri');
+  Materi.tab(document.getElementById('tabMateri'));
 
-  bagian.forEach(function (sec, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('role', 'tab');
-    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    b.textContent = sec.dataset.tab;
-    b.addEventListener('click', function () {
-      bagian.forEach(function (s, j) { s.hidden = (j !== i); });
-      Array.prototype.forEach.call(elTab.children, function (x, j) {
-        x.setAttribute('aria-selected', j === i ? 'true' : 'false');
-      });
+  /* ---------- 4a. Untung, rugi, atau impas ---------- */
+
+  /* Yang ditunjukkan bukan cuma angkanya, melainkan rumus mana yang dipakai:
+     urutan pengurangannya berbalik, dan itu yang membuat hasilnya selalu
+     positif. */
+  var elHasilUr = document.getElementById('urHasil');
+
+  function hitungUntungRugi() {
+    var beli = parseInt(document.getElementById('urBeli').value, 10);
+    var jual = parseInt(document.getElementById('urJual').value, 10);
+
+    if (isNaN(beli) || isNaN(jual) || beli <= 0 || jual < 0) {
+      elHasilUr.innerHTML =
+        '<div class="pesan awas">Isi harga beli dan harga jualnya dulu, ' +
+        'dan harga belinya harus lebih dari nol.</div>';
+      return;
+    }
+
+    var hb = P(beli), hj = P(jual);
+    if (jual === beli) {
+      elHasilUr.innerHTML = '<div class="pesan info">' + Rumus.lolos(
+        'Harga jual sama dengan harga beli, jadi impas: tidak untung, tidak rugi.') +
+        '</div>';
+      return;
+    }
+
+    var untung = jual > beli;
+    var selisih = untung ? hj.kurang(hb) : hb.kurang(hj);
+    var persen = selisih.bagi(hb).kali(100);
+
+    elHasilUr.innerHTML = '<div class="pesan sip">' + Rumus.lolos(
+      (untung ? 'Untung' : 'Rugi') + ' = ' +
+      (untung ? Rp(jual) + ' - ' + Rp(beli) : Rp(beli) + ' - ' + Rp(jual)) + ' = ' +
+      Rp(selisih) + '. Terhadap harga beli ' + Rp(beli) + ', itu ' +
+      persen.teksDesimal(2) + '%. Penyebutnya selalu harga beli.') + '</div>';
+  }
+
+  document.getElementById('urHitung').addEventListener('click', hitungUntungRugi);
+  ['urBeli', 'urJual'].forEach(function (id) {
+    document.getElementById(id).addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') { ev.preventDefault(); hitungUntungRugi(); }
     });
-    elTab.appendChild(b);
+  });
+  hitungUntungRugi();
+
+  /* ---------- 4b. Untung tetap, modal berubah ---------- */
+
+  Materi.geser(document.getElementById('geserModal'), {
+    label: 'Modal (ratus ribu rupiah)', min: 1, maks: 10, awal: 1,
+    hitung: function (ratusRibu) {
+      var modal = ratusRibu * 100000;
+      var persen = P(20000).bagi(P(modal)).kali(100);
+      /* Teksnya dilolos-kan sendiri oleh Rumus.isi di dalam Materi.geser,
+         jadi di sini ditulis apa adanya. */
+      return 'Modal ' + Rp(modal) + ', untung Rp20.000, jadi persennya ' +
+        persen.teksDesimal(2) + '%. Angka rupiahnya tidak berubah sama sekali.';
+    }
   });
 
-  /* ---------- 4b. Kalkulator diskon bertingkat ---------- */
+  /* ---------- 4c. Kalkulator diskon bertingkat ---------- */
 
   var elHasilDb = document.getElementById('dbHasil');
 
@@ -314,6 +415,43 @@
   });
   hitungDiskonBertingkat();
 
+  /* ---------- 4d. Kalkulator bunga tunggal ---------- */
+
+  /* Bagian tahunnya ditulis sebagai pecahan yang belum disederhanakan lebih
+     dulu, sebab justru $\frac{b}{12}$ itulah yang paling sering hilang saat
+     lama menabungnya bukan setahun penuh. */
+  var elHasilBg = document.getElementById('bgHasil');
+
+  function hitungBunga() {
+    var modal = parseInt(document.getElementById('bgModal').value, 10);
+    var persen = parseFloat(String(document.getElementById('bgPersen').value).replace(',', '.'));
+    var bulan = parseInt(document.getElementById('bgBulan').value, 10);
+
+    if (isNaN(modal) || isNaN(persen) || isNaN(bulan) || modal <= 0 || bulan <= 0) {
+      elHasilBg.innerHTML =
+        '<div class="pesan awas">Isi modal, persentase bunga, dan lama menabungnya dulu.</div>';
+      return;
+    }
+
+    var setahun = P(modal).kali(P(persen + '%'));
+    var bunga = setahun.kali(Pecahan.buat(bulan, 12));
+    var akhir = P(modal).tambah(bunga);
+
+    elHasilBg.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Bunga setahun: $' + persen + '\\%$ dari ' + Rp(modal) + ' = ' + Rp(setahun) + '. ' +
+      'Untuk ' + bulan + ' bulan, bagian tahunnya $\\frac{' + bulan + '}{12}$, ' +
+      'sehingga bunganya ' + Rp(bunga) + '. Tabungan akhirnya ' + Rp(akhir) + '.') +
+      '</div>';
+  }
+
+  document.getElementById('bgHitung').addEventListener('click', hitungBunga);
+  ['bgModal', 'bgPersen', 'bgBulan'].forEach(function (id) {
+    document.getElementById(id).addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') { ev.preventDefault(); hitungBunga(); }
+    });
+  });
+  hitungBunga();
+
   /* ---------- 5. Contoh bertahap ---------- */
 
   var ayamJual = P(30).kali(25000).tambah(P(60).kali(20000));
@@ -323,7 +461,7 @@
   var bungaSetahun = P('12%').kali(1000000);
   var bunga9Bulan = P('9/12').kali(bungaSetahun);
 
-  var contoh = [
+  Materi.contoh(document.getElementById('daftarContoh'), [
     {
       judul: 'Untung rugi bertingkat',
       soal: 'Seorang pedagang membeli $100$ ekor ayam seharga Rp2.000.000. ' +
@@ -363,55 +501,14 @@
           Rp(P(1000000).tambah(bunga9Bulan))
       ]
     }
-  ];
-
-  var elContoh = document.getElementById('daftarContoh');
-
-  contoh.forEach(function (c, i) {
-    var kotak = document.createElement('article');
-    kotak.className = 'kartu';
-
-    var nomor = document.createElement('div');
-    nomor.className = 'nomor';
-    nomor.textContent = 'Contoh ' + (i + 1) + ' — ' + c.judul;
-    kotak.appendChild(nomor);
-
-    var tanya = document.createElement('div');
-    tanya.className = 'pertanyaan';
-    Rumus.isi(tanya, c.soal);
-    kotak.appendChild(tanya);
-
-    var daftar = document.createElement('ol');
-    daftar.style.margin = '0';
-    kotak.appendChild(daftar);
-
-    var tombol = document.createElement('button');
-    tombol.type = 'button';
-    tombol.className = 'tombol mungil';
-    tombol.style.marginTop = '.6rem';
-    tombol.textContent = 'Buka langkah pertama';
-    kotak.appendChild(tombol);
-
-    var ke = 0;
-    tombol.addEventListener('click', function () {
-      if (ke >= c.langkah.length) return;
-      var li = document.createElement('li');
-      Rumus.isi(li, c.langkah[ke]);
-      daftar.appendChild(li);
-      ke++;
-      if (ke >= c.langkah.length) tombol.hidden = true;
-      else tombol.textContent = 'Langkah berikutnya';
-    });
-
-    elContoh.appendChild(kotak);
-  });
+  ]);
 
   /* ---------- 6. Cek pemahaman ---------- */
 
   CekPaham.buat(document.getElementById('cekPaham'), {
     soal: [
       {
-        id: 'as-cek-1', level: 1, tipe: 'isian',
+        id: 'aritmetika-sosial-cek-1', level: 1, tipe: 'isian',
         pertanyaan: 'Seorang pedagang membeli apel Rp20.000 per kg dan menjualnya ' +
           'Rp25.000 per kg. Berapa untungnya per kg?',
         petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
@@ -432,7 +529,7 @@
           'Jadi untungnya Rp5.000 per kg.'
       },
       {
-        id: 'as-cek-2', level: 1, tipe: 'isian',
+        id: 'aritmetika-sosial-cek-2', level: 1, tipe: 'isian',
         pertanyaan: 'Sebuah toko memberi diskon $15\\%$ untuk rice cooker seharga ' +
           'Rp420.000. Berapa yang harus dibayar Budi?',
         petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
@@ -453,7 +550,7 @@
           'Harga yang dibayar $420.000 - 63.000 = 357.000$, jadi Rp357.000.'
       },
       {
-        id: 'as-cek-3', level: 2, tipe: 'isian',
+        id: 'aritmetika-sosial-cek-3', level: 2, tipe: 'isian',
         pertanyaan: 'Pak Rudi membeli tanah seharga Rp40.000.000 lalu menjualnya ' +
           'Rp38.000.000. Berapa persen kerugiannya?',
         petunjuk: 'Tulis angkanya saja, tanpa tanda persen',
@@ -474,7 +571,7 @@
           'Persentasenya $\\frac{2.000.000}{40.000.000} \\times 100\\% = 5\\%$.'
       },
       {
-        id: 'as-cek-4', level: 2, tipe: 'isian',
+        id: 'aritmetika-sosial-cek-4', level: 2, tipe: 'isian',
         pertanyaan: 'Tono menabung Rp2.000.000 dengan bunga $15\\%$ per tahun. ' +
           'Berapa bunga yang ia terima selama $9$ bulan?',
         petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
@@ -495,7 +592,7 @@
           'Untuk $9$ bulan: $\\frac{9}{12} \\times 300.000 = 225.000$, jadi Rp225.000.'
       },
       {
-        id: 'as-cek-5', level: 3, tipe: 'isian',
+        id: 'aritmetika-sosial-cek-5', level: 3, tipe: 'isian',
         pertanyaan: 'Dengan harga jual Rp9.000.000 seorang pedagang mengalami rugi ' +
           '$10\\%$. Berapa harga belinya?',
         petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
@@ -522,21 +619,7 @@
 
   /* ---------- 7. Tautan latihan ---------- */
 
-  fetch('../data/daftar-bab.json', { cache: 'no-cache' })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (peta) {
-      if (!peta) return;
-      var ada = (peta.kelas || []).some(function (k) {
-        return String(k.tingkat) === '7' &&
-          (k.bab || []).some(function (b) { return b.kode === 'aritmetika-sosial'; });
-      });
-      if (ada) return;
-      document.getElementById('tautanLatihan').innerHTML =
-        '<div class="pesan info">Bank soal latihan untuk bab ini belum tersedia. ' +
-        'Materinya sudah bisa dipelajari, dan tombol latihannya akan muncul sendiri ' +
-        'begitu soalnya ditambahkan.</div>';
-    })
-    .catch(function () { /* biarkan tombolnya apa adanya */ });
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 7, 'aritmetika-sosial');
 })();
 </script>
 </body>

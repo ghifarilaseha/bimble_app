@@ -22,6 +22,33 @@
           "soal": "data/soal/kelas7/pecahan.json",
           "materi": "materi/kelas7-pecahan.html",
           "aktif": true
+        },
+        {
+          "kode": "bentuk-aljabar",
+          "judul": "Bentuk Aljabar",
+          "semester": 1,
+          "ringkas": "Suku sejenis, operasi hitung, dan nilai bentuk aljabar.",
+          "soal": "data/soal/kelas7/bentuk-aljabar.json",
+          "materi": "materi/kelas7-bentuk-aljabar.html",
+          "aktif": true
+        },
+        {
+          "kode": "plsv-ptlsv",
+          "judul": "PLSV dan PtLSV",
+          "semester": 1,
+          "ringkas": "Persamaan dan pertidaksamaan linear satu variabel.",
+          "soal": "data/soal/kelas7/plsv-ptlsv.json",
+          "materi": "materi/kelas7-plsv-ptlsv.html",
+          "aktif": true
+        },
+        {
+          "kode": "aritmetika-sosial",
+          "judul": "Aritmetika Sosial",
+          "semester": 1,
+          "ringkas": "Untung, rugi, diskon, pajak, dan bunga tunggal.",
+          "soal": "data/soal/kelas7/aritmetika-sosial.json",
+          "materi": "materi/kelas7-aritmetika-sosial.html",
+          "aktif": true
         }
       ]
     },
@@ -37,6 +64,42 @@
           "soal": "data/soal/kelas8/koordinat.json",
           "materi": "",
           "aktif": true
+        },
+        {
+          "kode": "pola-bilangan",
+          "judul": "Pola Bilangan",
+          "semester": 1,
+          "ringkas": "Barisan aritmetika, barisan geometri, dan pola dari gambar.",
+          "soal": "data/soal/kelas8/pola-bilangan.json",
+          "materi": "materi/kelas8-pola-bilangan.html",
+          "aktif": true
+        },
+        {
+          "kode": "relasi-fungsi",
+          "judul": "Relasi dan Fungsi",
+          "semester": 1,
+          "ringkas": "Cara menyatakan relasi, syarat fungsi, dan nilai fungsi.",
+          "soal": "data/soal/kelas8/relasi-fungsi.json",
+          "materi": "materi/kelas8-relasi-fungsi.html",
+          "aktif": true
+        },
+        {
+          "kode": "persamaan-garis-lurus",
+          "judul": "Persamaan Garis Lurus",
+          "semester": 1,
+          "ringkas": "Gradien, menyusun persamaan, garis sejajar dan tegak lurus.",
+          "soal": "data/soal/kelas8/persamaan-garis-lurus.json",
+          "materi": "materi/kelas8-persamaan-garis-lurus.html",
+          "aktif": true
+        },
+        {
+          "kode": "spldv",
+          "judul": "SPLDV",
+          "semester": 1,
+          "ringkas": "Substitusi, eliminasi, dan soal cerita dua variabel.",
+          "soal": "data/soal/kelas8/spldv.json",
+          "materi": "materi/kelas8-spldv.html",
+          "aktif": true
         }
       ]
     },
@@ -45,12 +108,48 @@
       "judul": "Kelas 9",
       "bab": [
         {
+          "kode": "pangkat-akar",
+          "judul": "Pangkat dan Akar",
+          "semester": 1,
+          "ringkas": "Sifat pangkat, bentuk akar, merasionalkan, dan notasi ilmiah.",
+          "soal": "data/soal/kelas9/pangkat-akar.json",
+          "materi": "materi/kelas9-pangkat-akar.html",
+          "aktif": true
+        },
+        {
           "kode": "transformasi",
           "judul": "Transformasi Geometri",
           "semester": 1,
           "ringkas": "Refleksi, translasi, rotasi, dan dilatasi pada bidang koordinat.",
           "soal": "data/soal/kelas9/transformasi.json",
           "materi": "materi/kelas9-transformasi.html",
+          "aktif": true
+        },
+        {
+          "kode": "peluang",
+          "judul": "Peluang",
+          "semester": 1,
+          "ringkas": "Ruang sampel, peluang teoritik dan empiris, frekuensi harapan.",
+          "soal": "data/soal/kelas9/peluang.json",
+          "materi": "materi/kelas9-peluang.html",
+          "aktif": true
+        },
+        {
+          "kode": "kesebangunan",
+          "judul": "Kesebangunan dan Kekongruenan",
+          "semester": 2,
+          "ringkas": "Syarat sebangun dan kongruen, serta segitiga bertumpuk.",
+          "soal": "data/soal/kelas9/kesebangunan.json",
+          "materi": "materi/kelas9-kesebangunan.html",
+          "aktif": true
+        },
+        {
+          "kode": "bangun-ruang-sisi-lengkung",
+          "judul": "Bangun Ruang Sisi Lengkung",
+          "semester": 2,
+          "ringkas": "Luas permukaan dan volume tabung, kerucut, dan bola.",
+          "soal": "data/soal/kelas9/bangun-ruang-sisi-lengkung.json",
+          "materi": "materi/kelas9-bangun-ruang-sisi-lengkung.html",
           "aktif": true
         }
       ]

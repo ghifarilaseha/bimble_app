@@ -1,0 +1,287 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "pola-bilangan",
+    "judul": "Pola Bilangan",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Pola Bilangan",
+    "versi": "2026-09-07"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "pb-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Rumus suku ke-$n$ dari barisan $5, 9, 13, 17, 21, \\dots$ adalah ...",
+      "opsi": {
+        "a": "$U_n = 4n + 1$",
+        "b": "$U_n = 4n - 1$",
+        "c": "$U_n = 5n - 4$",
+        "d": "$U_n = n + 4$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U3VrdSBwZXJ0YW1hICRhID0gNSQgZGFuIGJlZGFueWEgJGIgPSA0JCwgc2VoaW5nZ2EgJFVfbiA9IGEgKyAobi0xKWIgPSA1ICsgNG4gLSA0ID0gNG4gKyAxJC4=",
+      "kunci": "643e6aeeed292d847d21eb7ecc62e8987d23599885917a4cee058dc3974d16be"
+    },
+    {
+      "id": "pb-02",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Suku ke-20 dari barisan $5, 9, 13, 17, 21, \\dots$ adalah ...",
+      "pembahasan": "JFVfbiA9IDRuICsgMSQsIHNlaGluZ2dhICRVX3syMH0gPSA0IFx0aW1lcyAyMCArIDEgPSA4MSQu",
+      "kunci": [
+        "2772a66bb61ee9cf16f8d3f02d23835414f08ac91e6db8c12a48264673a3a598"
+      ]
+    },
+    {
+      "id": "pb-03",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Bilangan $100$ termasuk salah satu suku barisan $5, 9, 13, 17, 21, \\dots$",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "TWlzYWxrYW4gJDRuICsgMSA9IDEwMCQsIG1ha2EgJDRuID0gOTkkIGRhbiAkbiA9IDI0eyx9NzUkLiBLYXJlbmEgJG4kIGJ1a2FuIGJpbGFuZ2FuIGFzbGksICQxMDAkIGJ1a2FuIHN1a3UgYmFyaXNhbiBpbmkuIFNlbXVhIHN1a3VueWEgYmVyc2lzYSAkMSQgYmlsYSBkaWJhZ2kgJDQkLCBzZWRhbmdrYW4gJDEwMCQgaGFiaXMgZGliYWdpICQ0JC4=",
+      "kunci": "7e41017d88c702ae4193646c16a9ebecb5579cb301a7c0dbaf84bd6e285bea7c"
+    },
+    {
+      "id": "pb-04",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suku berikutnya dari barisan $3, 6, 12, 24, \\dots$ adalah ...",
+      "opsi": {
+        "a": "$30$",
+        "b": "$36$",
+        "c": "$48$",
+        "d": "$42$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U2V0aWFwIHN1a3UgZGlrYWxpa2FuICQyJCwgamFkaSBiYXJpc2FubnlhIGdlb21ldHJpIGRlbmdhbiByYXNpbyAkMiQ6ICQyNCBcdGltZXMgMiA9IDQ4JC4=",
+      "kunci": "c4ad0bc57cc156a2383361dd925893fb6fb2c4f311476c2af53ac1fb22d89dc9"
+    },
+    {
+      "id": "pb-05",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Suku ke-10 dari barisan $2, 5, 8, 11, \\dots$ adalah ...",
+      "pembahasan": "QmVkYW55YSAkMyQgZGFuIHN1a3UgcGVydGFtYW55YSAkMiQsIHNlaGluZ2dhICRVX24gPSAzbiAtIDEkIGRhbiAkVV97MTB9ID0gMzAgLSAxID0gMjkkLg==",
+      "kunci": [
+        "a07e1990eee68a9a362799994db1908add77f74e8d87f8f2a40d8c5d7984a0f4"
+      ]
+    },
+    {
+      "id": "pb-06",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Rumus suku ke-$n$ dari barisan $40, 37, 34, 31, \\dots$ adalah ...",
+      "opsi": {
+        "a": "$U_n = 43 - 3n$",
+        "b": "$U_n = 40 - 3n$",
+        "c": "$U_n = 3n + 37$",
+        "d": "$U_n = 43 + 3n$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "QmVkYW55YSAkLTMkLCBzZWhpbmdnYSAkVV9uID0gNDAgKyAobi0xKSgtMykgPSA0MyAtIDNuJC4gUGVyaWtzYSBkZW5nYW4gJG4gPSAxJDogJDQzIC0gMyA9IDQwJC4=",
+      "kunci": "56973e9c3408f3732c31859c5ff3bca28968954b3aa555b012ac4be93382f88a"
+    },
+    {
+      "id": "pb-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suku ke-8 dari barisan bilangan persegi $1, 4, 9, 16, \\dots$ adalah ...",
+      "opsi": {
+        "a": "$49$",
+        "b": "$56$",
+        "c": "$64$",
+        "d": "$81$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U3VrdSBrZS0kbiQgYmFyaXNhbiBiaWxhbmdhbiBwZXJzZWdpIGFkYWxhaCAkbl4yJCwgc2VoaW5nZ2EgJFVfOCA9IDheMiA9IDY0JC4=",
+      "kunci": "19665381e8f282041e9de909b85dc09b71300c95dd0ff596969587bce3a9ec5a"
+    },
+    {
+      "id": "pb-08",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $1 + 3 + 5 + 7 + \\dots + 19$ adalah ...",
+      "pembahasan": "QWRhICQxMCQgYmlsYW5nYW4gZ2FuamlsIHBlcnRhbWEuIEp1bWxhaG55YSAkU197MTB9ID0gXGZyYWN7MTB9ezJ9KDEgKyAxOSkgPSA1IFx0aW1lcyAyMCA9IDEwMCQsIGRhbiBtZW1hbmcganVtbGFoICRuJCBiaWxhbmdhbiBnYW5qaWwgcGVydGFtYSBzZWxhbHUgJG5eMiQu",
+      "kunci": [
+        "6a3d21b6085df5fec8ffe21be181177e5a003f40d3c81ccf2c125225d0bbbb55"
+      ]
+    },
+    {
+      "id": "pb-09",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Suatu barisan aritmetika memiliki $U_5 = 23$ dan $U_9 = 43$. Beda barisan tersebut adalah ...",
+      "pembahasan": "RGFyaSAkVV81JCBrZSAkVV85JCBhZGEgJDQkIGxhbmdrYWggYmVkYTogJFVfOSAtIFVfNSA9IDRiJCwgc2VoaW5nZ2EgJDQzIC0gMjMgPSA0YiQgZGFuICRiID0gNSQu",
+      "kunci": [
+        "5e029d80c71261a6736e33060804581bb2d92816350f047a80db8d106d91212b"
+      ]
+    },
+    {
+      "id": "pb-10",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suatu barisan aritmetika memiliki $U_5 = 23$ dan $U_9 = 43$. Suku pertamanya adalah ...",
+      "opsi": {
+        "a": "$2$",
+        "b": "$3$",
+        "c": "$4$",
+        "d": "$5$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QmVkYW55YSAkYiA9IDUkLiBEYXJpIHN1a3Uga2UtNSBtdW5kdXIgZW1wYXQgbGFuZ2thaDogJGEgPSBVXzUgLSA0YiA9IDIzIC0gMjAgPSAzJC4=",
+      "kunci": "c4bec74e623b875605649cc1ba87d3d902f531b665601163d3e95b8825debaa3"
+    },
+    {
+      "id": "pb-11",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Jumlah sepuluh suku pertama barisan aritmetika dengan suku pertama $3$ dan beda $5$ adalah ...",
+      "pembahasan": "JFNfezEwfSA9IFxmcmFjezEwfXsyfVxiaWcoMiBcdGltZXMgMyArIDkgXHRpbWVzIDVcYmlnKSA9IDUoNiArIDQ1KSA9IDUgXHRpbWVzIDUxID0gMjU1JC4=",
+      "kunci": [
+        "80c09cd748963442fc080a6fc5fef735af50ea5fa3601559142d32d70c0b21ee"
+      ]
+    },
+    {
+      "id": "pb-12",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suku ke-6 dari barisan geometri $2, 6, 18, \\dots$ adalah ...",
+      "opsi": {
+        "a": "$162$",
+        "b": "$486$",
+        "c": "$729$",
+        "d": "$1.458$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UmFzaW9ueWEgJDMkLCBzZWhpbmdnYSAkVV82ID0gMiBcdGltZXMgM141ID0gMiBcdGltZXMgMjQzID0gNDg2JC4gUGFuZ2thdG55YSAkNSQsIGJ1a2FuICQ2JCwga2FyZW5hIHN1a3UgcGVydGFtYSBiZWx1bSBkaWthbGlrYW4gcmFzaW8u",
+      "kunci": "6139ae063e701b63e522a3cecf34ad73a7c27f53520ace568206f6092c94f29b"
+    },
+    {
+      "id": "pb-13",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suatu barisan aritmetika memiliki $U_3 = 10$ dan $U_7 = 26$. Suku ke-10 barisan tersebut adalah ...",
+      "opsi": {
+        "a": "$34$",
+        "b": "$38$",
+        "c": "$42$",
+        "d": "$46$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JFVfNyAtIFVfMyA9IDRiJCwgc2VoaW5nZ2EgJDE2ID0gNGIkIGRhbiAkYiA9IDQkLiBMYWx1ICRhID0gMTAgLSAyIFx0aW1lcyA0ID0gMiQsIHNlaGluZ2dhICRVX3sxMH0gPSAyICsgOSBcdGltZXMgNCA9IDM4JC4=",
+      "kunci": "dac1d50a37177a907118a6644c45771206af3091ff9b08f33522c03aff67e1ab"
+    },
+    {
+      "id": "pb-14",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Baris pertama sebuah gedung pertunjukan berisi 12 kursi, dan setiap baris berikutnya bertambah 4 kursi. Banyak kursi pada baris ke-10 adalah ... kursi.",
+      "pembahasan": "JFVfezEwfSA9IDEyICsgOSBcdGltZXMgNCA9IDEyICsgMzYgPSA0OCQuIFlhbmcgZGlrYWxpa2FuICQ0JCBhZGFsYWggJDkkLCBidWthbiAkMTAkLCBrYXJlbmEgYmFyaXMgcGVydGFtYSBiZWx1bSBiZXJ0YW1iYWgu",
+      "kunci": [
+        "acf4eb4b5f52064329efec783a02674fbe9a9bdcd483ca2697a7de09aea0932b"
+      ]
+    },
+    {
+      "id": "pb-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Jumlah semua bilangan kelipatan 3 yang lebih dari 1 dan kurang dari 50 adalah ...",
+      "opsi": {
+        "a": "$396$",
+        "b": "$400$",
+        "c": "$408$",
+        "d": "$425$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QmlsYW5nYW5ueWEgJDMsIDYsIDksIFxkb3RzLCA0OCQgc2ViYW55YWsgJDE2JCBidWFoLiBKdW1sYWhueWEgJFMgPSBcZnJhY3sxNn17Mn0oMyArIDQ4KSA9IDggXHRpbWVzIDUxID0gNDA4JC4=",
+      "kunci": "3884a4ab7c35b701d0bd6eae89fbd40673e0ade7ba7e3e8e41dda3da445275f0"
+    },
+    {
+      "id": "pb-16",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Baris pertama sebuah gedung berisi 12 kursi dan setiap baris berikutnya bertambah 4 kursi. Agar jumlah kursi seluruhnya tepat 600 buah, banyak baris yang harus dibuat adalah ... baris.",
+      "pembahasan": "JFNfbiA9IFxmcmFje259ezJ9XGJpZygyNCArIChuLTEpNFxiaWcpID0gXGZyYWN7bn17Mn0oNG4gKyAyMCkgPSAybl4yICsgMTBuJC4gRGFyaSAkMm5eMiArIDEwbiA9IDYwMCQgZGlwZXJvbGVoICRuXjIgKyA1biAtIDMwMCA9IDAkLCB5YWl0dSAkKG4gKyAyMCkobiAtIDE1KSA9IDAkLiBLYXJlbmEgYmFueWFrIGJhcmlzIHBvc2l0aWYsICRuID0gMTUkLg==",
+      "kunci": [
+        "6a69adae2a92933e1254b70084a8328177df6e5fa767c77534d12126484c923d"
+      ]
+    },
+    {
+      "id": "pb-17",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Baris pertama sebuah gedung berisi 12 kursi dan setiap baris berikutnya bertambah 4 kursi. Jika seluruhnya ada 15 baris, banyak kursi pada baris terakhir adalah ... kursi.",
+      "pembahasan": "JFVfezE1fSA9IDEyICsgMTQgXHRpbWVzIDQgPSAxMiArIDU2ID0gNjgkLg==",
+      "kunci": [
+        "6982a136b3c50727c7d11cbcfe42376f60714652d7f6a82637951c3fa9168320"
+      ]
+    },
+    {
+      "id": "pb-18",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pola ke-1 tersusun dari 4 batang korek yang membentuk satu persegi. Setiap pola berikutnya menambah satu persegi di sebelah kanannya dengan menambahkan 3 batang. Banyak batang korek pada pola ke-20 adalah ...",
+      "opsi": {
+        "a": "$60$",
+        "b": "$61$",
+        "c": "$63$",
+        "d": "$64$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QmFyaXNhbm55YSBhcml0bWV0aWthIGRlbmdhbiAkYSA9IDQkIGRhbiAkYiA9IDMkLCBzZWhpbmdnYSAkVV9uID0gM24gKyAxJCBkYW4gJFVfezIwfSA9IDYxJC4gUGVyc2VnaSBrZWR1YSBkYW4gc2V0ZXJ1c255YSBoYW55YSBidXR1aCAzIGJhdGFuZyBrYXJlbmEgc2F0dSBzaXNpbnlhIG1lbnVtcGFuZyBwZXJzZWdpIHNlYmVsdW1ueWEu",
+      "kunci": "f35cc82c6ce8927bace29e1fdb2da529d46e0244fdd2134fc29c67a5499215d7"
+    },
+    {
+      "id": "pb-19",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Jumlah $n$ suku pertama suatu barisan dirumuskan $S_n = n^2 + 2n$. Suku ke-5 barisan tersebut adalah ...",
+      "opsi": {
+        "a": "$9$",
+        "b": "$11$",
+        "c": "$13$",
+        "d": "$15$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U3VrdSBrZS01IGFkYWxhaCBzZWxpc2loIGR1YSBqdW1sYWg6ICRVXzUgPSBTXzUgLSBTXzQgPSAoMjUgKyAxMCkgLSAoMTYgKyA4KSA9IDM1IC0gMjQgPSAxMSQu",
+      "kunci": "4975e6c548d6b6b2627ecd172cfc05db3c61f1aebd4bea8e4d333ddd509123ff"
+    },
+    {
+      "id": "pb-20",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Seutas tali dipotong menjadi 5 bagian yang panjangnya membentuk barisan geometri. Potongan terpendek 3 cm dan terpanjang 48 cm. Panjang tali semula adalah ... cm.",
+      "pembahasan": "JFVfNSA9IGFyXjQgPSA0OCQgZGVuZ2FuICRhID0gMyQsIHNlaGluZ2dhICRyXjQgPSAxNiQgZGFuICRyID0gMiQuIFBhbmphbmdueWEgJDMgKyA2ICsgMTIgKyAyNCArIDQ4ID0gOTMkIGNtLg==",
+      "kunci": [
+        "cb5333b6350788c4b2ef3441b27138e182e3b99ee03a0b46a34390650ff82672"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "persamaan-garis-lurus",
+    "judul": "Persamaan Garis Lurus",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Persamaan Garis Lurus",
+    "versi": "2026-09-07"
+  },
+  "soal": [
+    {
+      "id": "gl-01", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Gradien garis $3x + 4y = 12$ adalah ...",
+      "opsi": { "a": "$-\\frac{3}{4}$", "b": "$\\frac{3}{4}$", "c": "$-\\frac{4}{3}$", "d": "$\\frac{4}{3}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Ubah ke bentuk $y = mx + c$: $4y = -3x + 12$, sehingga $y = -\\frac{3}{4}x + 3$ dan gradiennya $-\\frac{3}{4}$."
+    },
+    {
+      "id": "gl-02", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Garis $3x + 4y = 12$ memotong sumbu-$X$ di titik ...",
+      "opsi": { "a": "$(4, 0)$", "b": "$(0, 4)$", "c": "$(3, 0)$", "d": "$(0, 3)$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Di sumbu-$X$ berlaku $y = 0$, sehingga $3x = 12$ dan $x = 4$. Titiknya $(4, 0)$."
+    },
+    {
+      "id": "gl-03", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? Titik $(8, -3)$ terletak pada garis $3x + 4y = 12$.",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Substitusikan: $3 \\times 8 + 4 \\times (-3) = 24 - 12 = 12$. Hasilnya sama dengan ruas kanan, jadi titik itu memang dilalui garisnya."
+    },
+    {
+      "id": "gl-04", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Gradien garis yang melalui titik $(1, 2)$ dan $(5, 10)$ adalah ...",
+      "jawaban": ["2"],
+      "pembahasan": "$m = \\frac{10 - 2}{5 - 1} = \\frac{8}{4} = 2$. Selisih $y$ di atas, selisih $x$ di bawah, dan urutan kedua titik harus sama pada pembilang dan penyebut."
+    },
+    {
+      "id": "gl-05", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Gradien garis $y = -2x + 7$ adalah ...",
+      "opsi": { "a": "$-2$", "b": "$2$", "c": "$7$", "d": "$-7$" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Pada bentuk $y = mx + c$, gradiennya adalah angka pengali $x$, yaitu $-2$. Angka $7$ adalah titik potong sumbu-$Y$."
+    },
+    {
+      "id": "gl-06", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Garis $y = 3x - 5$ memotong sumbu-$Y$ di titik $(0, c)$. Nilai $c$ adalah ...",
+      "jawaban": ["-5"],
+      "pembahasan": "Substitusikan $x = 0$: $y = 3 \\times 0 - 5 = -5$. Pada bentuk $y = mx + c$, konstantanya memang langsung menyatakan titik potong sumbu-$Y$."
+    },
+    {
+      "id": "gl-07", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Garis yang sejajar dengan garis $y = 2x + 1$ adalah ...",
+      "opsi": { "a": "$y = 2x - 4$", "b": "$y = -2x + 1$", "c": "$y = \\frac{1}{2}x + 1$", "d": "$y = -\\frac{1}{2}x$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Dua garis sejajar bila gradiennya sama. Hanya $y = 2x - 4$ yang gradiennya juga $2$; konstantanya boleh berbeda, itu hanya menggeser garisnya."
+    },
+    {
+      "id": "gl-08", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Gradien garis yang tegak lurus terhadap garis $y = \\frac{1}{2}x + 3$ adalah ...",
+      "opsi": { "a": "$-2$", "b": "$2$", "c": "$-\\frac{1}{2}$", "d": "$\\frac{1}{2}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Syarat tegak lurus $m_1 \\times m_2 = -1$. Karena $m_1 = \\frac{1}{2}$, maka $m_2 = -2$."
+    },
+    {
+      "id": "gl-09", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Persamaan garis yang melalui titik $(-2, 5)$ dan tegak lurus terhadap garis $2x - 3y + 6 = 0$ adalah ...",
+      "opsi": { "a": "$3x + 2y - 4 = 0$", "b": "$2x + 3y - 11 = 0$", "c": "$3x - 2y + 16 = 0$", "d": "$2x - 3y + 19 = 0$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Dari $2x - 3y + 6 = 0$ diperoleh $y = \\frac{2}{3}x + 2$, jadi $m_1 = \\frac{2}{3}$ dan $m_2 = -\\frac{3}{2}$. Maka $y - 5 = -\\frac{3}{2}(x + 2)$, yaitu $y = -\\frac{3}{2}x + 2$, atau $3x + 2y - 4 = 0$. Periksa: $3(-2) + 2(5) - 4 = 0$."
+    },
+    {
+      "id": "gl-10", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Gradien garis $2x - 3y + 6 = 0$ adalah ... (tulis sebagai pecahan)",
+      "jawaban": ["2/3"],
+      "pembahasan": "$3y = 2x + 6$, sehingga $y = \\frac{2}{3}x + 2$ dan gradiennya $\\frac{2}{3}$. Tandanya positif karena $-3y$ dipindah ruas lebih dulu."
+    },
+    {
+      "id": "gl-11", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Persamaan garis yang melalui titik $(2, 3)$ dan $(4, 7)$ adalah ...",
+      "opsi": { "a": "$y = 2x - 1$", "b": "$y = 2x + 1$", "c": "$y = \\frac{1}{2}x + 2$", "d": "$y = x + 1$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "$m = \\frac{7 - 3}{4 - 2} = 2$. Lalu $y - 3 = 2(x - 2)$, sehingga $y = 2x - 1$. Periksa dengan titik kedua: $2 \\times 4 - 1 = 7$."
+    },
+    {
+      "id": "gl-12", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Garis $\\ell$ melalui titik $(0, -4)$ dan sejajar dengan garis yang melalui $(1, 2)$ dan $(5, 10)$. Garis $\\ell$ memotong sumbu-$X$ di titik $(p, 0)$. Nilai $p$ adalah ...",
+      "jawaban": ["2"],
+      "pembahasan": "Gradien garis pertama $2$, dan garis sejajar bergradien sama, sehingga $\\ell: y = 2x - 4$. Untuk $y = 0$ diperoleh $2x = 4$ dan $x = 2$."
+    },
+    {
+      "id": "gl-13", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Garis $4x - 2y = 8$ memotong sumbu-$Y$ di titik ...",
+      "opsi": { "a": "$(0, -4)$", "b": "$(0, 4)$", "c": "$(0, 2)$", "d": "$(0, -2)$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Di sumbu-$Y$ berlaku $x = 0$, sehingga $-2y = 8$ dan $y = -4$."
+    },
+    {
+      "id": "gl-14", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Persamaan garis yang melalui titik $(3, -1)$ dengan gradien $-2$ adalah ...",
+      "opsi": { "a": "$y = -2x + 5$", "b": "$y = -2x - 5$", "c": "$y = -2x + 7$", "d": "$y = 2x - 7$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "$y - (-1) = -2(x - 3)$, sehingga $y + 1 = -2x + 6$ dan $y = -2x + 5$. Tanda $y + 1$ muncul karena ordinatnya negatif."
+    },
+    {
+      "id": "gl-15", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Titik $(a, 7)$ terletak pada garis $y = 3x - 2$. Nilai $a$ adalah ...",
+      "jawaban": ["3"],
+      "pembahasan": "Substitusikan $y = 7$: $3a - 2 = 7$, sehingga $3a = 9$ dan $a = 3$."
+    },
+    {
+      "id": "gl-16", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Garis $y = 2x - 4$ memotong sumbu-$Y$ di titik $C$ dan sumbu-$X$ di titik $P$. Luas segitiga $OCP$, dengan $O$ titik asal, adalah ...",
+      "opsi": { "a": "$2$ satuan luas", "b": "$4$ satuan luas", "c": "$6$ satuan luas", "d": "$8$ satuan luas" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$C(0, -4)$ dan $P(2, 0)$, sehingga segitiganya siku-siku di $O$ dengan alas $OP = 2$ dan tinggi $OC = 4$. Luasnya $\\frac{1}{2} \\times 2 \\times 4 = 4$. Panjang selalu diambil positif walaupun titiknya di bawah sumbu."
+    },
+    {
+      "id": "gl-17", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Persamaan garis yang melalui titik $(-2, 1)$ dan tegak lurus terhadap garis yang melalui $(0, 0)$ dan $(3, -6)$ adalah ...",
+      "opsi": { "a": "$x - 2y + 4 = 0$", "b": "$x + 2y = 0$", "c": "$2x - y + 5 = 0$", "d": "$2x + y + 3 = 0$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Gradien garis pertama $\\frac{-6 - 0}{3 - 0} = -2$, sehingga gradien tegak lurusnya $\\frac{1}{2}$. Maka $y - 1 = \\frac{1}{2}(x + 2)$, yaitu $2y - 2 = x + 2$, atau $x - 2y + 4 = 0$."
+    },
+    {
+      "id": "gl-18", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Garis $2x + ky = 10$ sejajar dengan garis $y = -x + 3$. Nilai $k$ adalah ...",
+      "jawaban": ["2"],
+      "pembahasan": "Gradien $2x + ky = 10$ adalah $-\\frac{2}{k}$, dan gradien garis kedua $-1$. Dari $-\\frac{2}{k} = -1$ diperoleh $k = 2$."
+    },
+    {
+      "id": "gl-19", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah garis melalui titik $(0, 6)$ dan $(4, 0)$. Luas daerah segitiga yang dibatasi garis tersebut dan kedua sumbu koordinat adalah ...",
+      "opsi": { "a": "$10$ satuan luas", "b": "$12$ satuan luas", "c": "$24$ satuan luas", "d": "$48$ satuan luas" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Kedua titiknya sudah berada di sumbu, sehingga alasnya $4$ dan tingginya $6$. Luasnya $\\frac{1}{2} \\times 4 \\times 6 = 12$."
+    },
+    {
+      "id": "gl-20", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui titik $A(1, 3)$, $B(5, 3)$, dan $C(5, 9)$. Gradien garis $AC$ adalah ... (tulis sebagai pecahan atau desimal)",
+      "jawaban": ["3/2", "1 1/2", "1,5"],
+      "pembahasan": "$m_{AC} = \\frac{9 - 3}{5 - 1} = \\frac{6}{4} = \\frac{3}{2}$. Titik $B$ hanya penunjuk siku-sikunya dan tidak ikut dihitung."
+    }
+  ]
+}

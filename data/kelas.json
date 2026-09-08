@@ -2,38 +2,25 @@
   "_catatan": "Diperbarui sekali tiap tahun ajaran. Nama di sini dipakai untuk saran pengetikan dan untuk mengetahui siapa yang belum mengerjakan.",
   "tahunAjaran": "2026/2027",
   "kelas": [
-    
     {
       "kode": "7",
       "tingkat": 7,
       "siswa": [
-        "Adit Nugroho", "Anisa Fitriani", "Bima Saputra", "Cahya Ningrum",
-        "Dewi Lestari", "Eko Prabowo", "Farhan Maulana", "Gilang Ramadhan",
-        "Hana Safitri", "Irfan Hidayat", "Jasmine Aulia", "Kevin Pratama",
-        "Laila Nurjanah", "Mochamad Rizal", "Nadia Kusuma", "Panji Wicaksono",
-        "Ratna Dewi", "Sandi Kurniawan", "Tiara Andini", "Yoga Pratama"
+        "Keisha", "Alisha", "Ibnu", "Rizal", "Raia"
       ]
     },
     {
       "kode": "8",
       "tingkat": 8,
       "siswa": [
-        "Alif Rahman", "Bunga Citra", "Candra Wibowo", "Delima Sari",
-        "Erlangga Putra", "Fitri Handayani", "Galih Saputra", "Hesti Wulandari",
-        "Ilham Akbar", "Jihan Nabila", "Krisna Aditya", "Lintang Cahaya",
-        "Marsha Aulia", "Naufal Zaki", "Olivia Rahma", "Pandu Setiawan",
-        "Qori Amelia", "Reza Fahlevi", "Sinta Bella", "Taufik Hidayat"
+        "Radit", "Dhafin", "Nayshilla", "Fathan"
       ]
     },
     {
       "kode": "9",
       "tingkat": 9,
       "siswa": [
-        "Andra Firmansyah", "Bella Safira", "Cakra Buana", "Dinda Ayuningtyas",
-        "Evan Kurniawan", "Fauziah Rahmi", "Gading Prakoso", "Hilda Maharani",
-        "Ibrahim Yusuf", "Jelita Anggun", "Kurnia Ramadhan", "Lia Amelia",
-        "Marcel Antonio", "Nurul Hidayah", "Oscar Pratama", "Pramudya Ananta",
-        "Rania Salsabila", "Satrio Wibowo", "Tania Puspa", "Wahyu Nugraha"
+        "Ashilla", "Nathan", "Adhwa", "Asgwa", "Melody"
       ]
     }
   ]

@@ -57,7 +57,7 @@
   </p>
 
   <div class="kartu">
-    <div id="timbanganJelajah"></div>
+    <div id="jelajah"></div>
     <div class="deret" style="margin-top:.8rem">
       <button type="button" class="tombol mungil" data-aksi="buang-kiri">Buang 1 kelereng dari kiri saja</button>
       <button type="button" class="tombol mungil" data-aksi="buang-kanan">Buang 1 kelereng dari kanan saja</button>
@@ -65,7 +65,7 @@
       <button type="button" class="tombol mungil utama" data-aksi="bagi-dua">Bagi kedua ruas dengan 2</button>
       <button type="button" class="tombol mungil bahaya" data-aksi="ulang">Ulangi</button>
     </div>
-    <div id="pesanTimbangan"></div>
+    <div id="pesanJelajah"></div>
   </div>
 
   <!-- ---------- 4. Perumusan ---------- -->
@@ -88,6 +88,19 @@
       kebenarannya sudah pasti. Ini sering disalahpahami — $5 - 4 = 2$ tetap kalimat
       tertutup walaupun keliru.
     </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Pilah kalimatnya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Tentukan tiap kalimat: terbuka atau tertutup? Yang bernilai salah tetap
+        tertutup, jadi jangan tertipu.
+      </p>
+      <div id="pilahKalimat"></div>
+      <div class="deret" style="margin-top:.7rem">
+        <button type="button" class="tombol mungil bahaya" id="pilahUlang">Ulangi</button>
+      </div>
+      <div id="simpulanPilah"></div>
+    </div>
   </section>
 
   <section data-tab="PLSV" hidden>
@@ -141,6 +154,17 @@
     </p>
     <p class="tengah">$$6x + 5 = 3x - 16 \;\to\; 6x - 3x = -16 - 5 \;\to\; 3x = -21 \;\to\; x = -7$$</p>
 
+    <div class="kartu">
+      <h3 class="rapat">Kapan kedua ruas sama?</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Geser nilai $x$ dan bandingkan kedua ruas $6x + 5$ dan $3x - 16$.
+        Penyelesaian persamaan bukan hasil sulapan aturan: ia satu-satunya nilai
+        yang membuat kedua ruas bertemu.
+      </p>
+      <div id="geserRuas"></div>
+    </div>
+
+
     <h3>Kalau ada pecahan</h3>
     <p>
       Kalikan kedua ruas dengan KPK penyebutnya, dan pastikan <em>seluruh</em> suku di
@@ -165,6 +189,16 @@
       Menamai variabelnya di awal juga membantu: tulis dulu "misalkan banyak kotak
       $= x$", supaya di akhir kamu ingat $x$ itu apa.
     </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Tiga langkah pada satu soal</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Setiap hari Parman menyisihkan uang yang sama banyaknya. Setelah $13$ hari
+        terkumpul Rp208.000. Berapa yang ia sisihkan tiap hari? Tebak dulu, baru
+        buka langkahnya.
+      </p>
+      <div id="langkahCerita"></div>
+    </div>
   </section>
 
   <section data-tab="PtLSV" hidden>
@@ -254,6 +288,7 @@
 <script src="../js/kunci.js"></script>
 <script src="../js/nilai.js"></script>
 <script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
 <script src="../komponen/kartu-suku.js"></script>
 <script src="../komponen/timbangan.js"></script>
 <script src="../komponen/garis-bilangan.js"></script>
@@ -267,10 +302,10 @@
 
   /* ---------- 3. Eksplorasi: timbangan PLSV ---------- */
 
-  var elPesanTb = document.getElementById('pesanTimbangan');
+  var elPesanTb = document.getElementById('pesanJelajah');
   var pernahMiring = false, pernahSelesai = false;
 
-  var tb = Timbangan.buat(document.getElementById('timbanganJelajah'), {
+  var tb = Timbangan.buat(document.getElementById('jelajah'), {
     kiri: { x: 2, n: 1 }, kanan: { x: 0, n: 7 }, relasi: '=',
     onUbah: function (k) { tanggapi(k); }
   });
@@ -305,27 +340,120 @@
     b.addEventListener('click', function () { aksiTimbangan[b.dataset.aksi](); });
   });
 
-  /* ---------- 4. Tab materi ---------- */
+  /* ---------- 4. Tab "Aturannya" ---------- */
 
-  var bagian = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
-  var elTab = document.getElementById('tabMateri');
+  Materi.tab(document.getElementById('tabMateri'));
 
-  bagian.forEach(function (sec, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('role', 'tab');
-    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    b.textContent = sec.dataset.tab;
-    b.addEventListener('click', function () {
-      bagian.forEach(function (s, j) { s.hidden = (j !== i); });
-      Array.prototype.forEach.call(elTab.children, function (x, j) {
-        x.setAttribute('aria-selected', j === i ? 'true' : 'false');
+  /* ---------- 4a. Pilah kalimat terbuka dan tertutup ---------- */
+
+  /* Kalimat kedua sengaja bernilai salah tetapi tertutup: di situlah
+     kekeliruan yang paling sering terjadi, jadi ia harus benar-benar
+     dijawab, bukan cuma dibaca di paragraf atas. */
+  var KALIMAT = [
+    { teks: '$x + 4 = 9$', terbuka: true,
+      alasan: 'Masih ada variabel, jadi belum bisa ditentukan benar-salahnya.' },
+    { teks: '$5 - 4 = 2$', terbuka: false,
+      alasan: 'Memang bernilai salah, tetapi kesalahannya sudah pasti dan tidak ada ' +
+        'variabel di dalamnya.' },
+    { teks: '$3y - 2 = 10$', terbuka: true,
+      alasan: 'Nilainya bergantung pada $y$, jadi belum bisa ditentukan.' },
+    { teks: '$7 + 4 = 11$', terbuka: false,
+      alasan: 'Sudah pasti benar, dan tidak ada variabel.' },
+    { teks: 'Kota itu terletak di Pulau Jawa.', terbuka: true,
+      alasan: 'Kata "itu" belum menunjuk kota tertentu, jadi perannya sama dengan ' +
+        'variabel.' }
+  ];
+
+  var elPilah = document.getElementById('pilahKalimat');
+  var elSimpulanPilah = document.getElementById('simpulanPilah');
+  var jawabPilah = [];
+
+  function gambarPilah() {
+    elPilah.innerHTML = '';
+    KALIMAT.forEach(function (k, i) {
+      var baris = document.createElement('div');
+      baris.className = 'deret';
+      baris.style.alignItems = 'center';
+      baris.style.marginBottom = '.5rem';
+
+      var teks = document.createElement('span');
+      teks.style.flex = '1';
+      teks.style.minWidth = '9rem';
+      Rumus.isi(teks, k.teks);
+      baris.appendChild(teks);
+
+      [['Terbuka', true], ['Tertutup', false]].forEach(function (pilih) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'tombol mungil';
+        b.textContent = pilih[0];
+        b.setAttribute('aria-pressed', jawabPilah[i] === pilih[1] ? 'true' : 'false');
+        b.addEventListener('click', function () {
+          jawabPilah[i] = pilih[1];
+          gambarPilah();
+          nilaiPilah();
+        });
+        baris.appendChild(b);
       });
+
+      if (jawabPilah[i] !== undefined) {
+        var tanda = document.createElement('span');
+        tanda.className = 'kecil samar';
+        tanda.style.minWidth = '5rem';
+        tanda.textContent = jawabPilah[i] === k.terbuka ? 'tepat' : 'periksa lagi';
+        baris.appendChild(tanda);
+      }
+
+      elPilah.appendChild(baris);
     });
-    elTab.appendChild(b);
+  }
+
+  function nilaiPilah() {
+    var terjawab = KALIMAT.filter(function (k, i) { return jawabPilah[i] !== undefined; });
+    var meleset = KALIMAT.filter(function (k, i) {
+      return jawabPilah[i] !== undefined && jawabPilah[i] !== k.terbuka;
+    });
+
+    if (terjawab.length < KALIMAT.length) {
+      elSimpulanPilah.innerHTML = '<div class="pesan info">Masih ada ' +
+        (KALIMAT.length - terjawab.length) + ' kalimat yang belum dipilah.</div>';
+      return;
+    }
+    if (meleset.length) {
+      elSimpulanPilah.innerHTML = '<div class="pesan awas">' + Rumus.keHTML(
+        'Sepertinya ada yang tertukar pada ' + meleset[0].teks + '. ' +
+        meleset[0].alasan) + '</div>';
+      return;
+    }
+    elSimpulanPilah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Kelimanya tepat. Pembedanya bukan benar atau salahnya kalimat, melainkan ' +
+      'ada atau tidaknya sesuatu yang belum ditentukan — dan $5 - 4 = 2$ tetap ' +
+      'tertutup walaupun keliru.') + '</div>';
+  }
+
+  document.getElementById('pilahUlang').addEventListener('click', function () {
+    jawabPilah = [];
+    elSimpulanPilah.innerHTML = '';
+    gambarPilah();
+  });
+  gambarPilah();
+
+  /* ---------- 4b. Kedua ruas pada satu nilai x ---------- */
+
+  Materi.geser(document.getElementById('geserRuas'), {
+    label: 'Nilai $x$', min: -10, maks: 4, awal: -3,
+    hitung: function (x) {
+      var kiri = 6 * x + 5, kanan = 3 * x - 16;
+      var banding = kiri === kanan ? '=' : (kiri > kanan ? '>' : '<');
+      var catatan = kiri === kanan
+        ? ' Kedua ruas bertemu di sini, jadi $x = ' + x + '$ adalah penyelesaiannya.'
+        : ' Kedua ruas belum sama, jadi $x = ' + x + '$ belum menyelesaikannya.';
+      return '$6(' + x + ') + 5 = ' + kiri + '$ dan $3(' + x + ') - 16 = ' + kanan +
+        '$, jadi ruas kiri $' + banding + '$ ruas kanan.' + catatan;
+    }
   });
 
-  /* ---------- 4b. Timbangan PtLSV ---------- */
+  /* ---------- 4c. Timbangan PtLSV ---------- */
 
   /* Diuji pada x = -5, salah satu bilangan yang memenuhi -2x > 8. Di titik
      itu ruas kiri bernilai 10 dan ruas kanan 8, jadi timbangannya memang
@@ -354,7 +482,7 @@
     tbPt.ulang();
   });
 
-  /* ---------- 4c. Daerah penyelesaian ---------- */
+  /* ---------- 4d. Daerah penyelesaian ---------- */
 
   var ARAH = [
     { kunci: '<', label: '$x < a$' },
@@ -398,12 +526,28 @@
   });
   bacaDaerah(garis.nilai().daerah);
 
+  /* ---------- 4e. Tiga langkah soal cerita ---------- */
+
+  /* Langkah ketiga sengaja berdiri sendiri: mengembalikan jawaban ke
+     pertanyaan aslinya adalah bagian yang paling sering hilang, dan itu
+     baru terasa kalau ia harus dibuka sebagai langkah tersendiri. */
+  Materi.langkah(document.getElementById('langkahCerita'), [
+    { judul: 'Namai variabelnya',
+      teks: 'Misalkan uang yang disisihkan tiap hari $= x$ rupiah.' },
+    { judul: 'Susun modelnya',
+      teks: 'Selama $13$ hari terkumpul $13x$, jadi $13x = 208.000$.' },
+    { judul: 'Selesaikan',
+      teks: 'Kedua ruas dibagi $13$: $x = 208.000 \div 13 = 16.000$.' },
+    { judul: 'Kembalikan ke pertanyaannya',
+      teks: 'Jawabannya bukan $x = 16.000$, melainkan: Parman menyisihkan Rp16.000 setiap hari.' }
+  ]);
+
   /* ---------- 5. Contoh bertahap ---------- */
 
   var uangHarian = P(154000).bagi(11);
   var kotakMaks = P(440).bagi(20);
 
-  var contoh = [
+  Materi.contoh(document.getElementById('daftarContoh'), [
     {
       judul: 'Tabungan Parman',
       soal: 'Setiap hari Parman menyisihkan uang jajannya dengan jumlah yang sama. ' +
@@ -435,55 +579,14 @@
         'Paling banyak $22$ kotak. Perhatikan bahwa $22$ ikut, sebab tandanya $\\le$.'
       ]
     }
-  ];
-
-  var elContoh = document.getElementById('daftarContoh');
-
-  contoh.forEach(function (c, i) {
-    var kotak = document.createElement('article');
-    kotak.className = 'kartu';
-
-    var nomor = document.createElement('div');
-    nomor.className = 'nomor';
-    nomor.textContent = 'Contoh ' + (i + 1) + ' — ' + c.judul;
-    kotak.appendChild(nomor);
-
-    var tanya = document.createElement('div');
-    tanya.className = 'pertanyaan';
-    Rumus.isi(tanya, c.soal);
-    kotak.appendChild(tanya);
-
-    var daftar = document.createElement('ol');
-    daftar.style.margin = '0';
-    kotak.appendChild(daftar);
-
-    var tombol = document.createElement('button');
-    tombol.type = 'button';
-    tombol.className = 'tombol mungil';
-    tombol.style.marginTop = '.6rem';
-    tombol.textContent = 'Buka langkah pertama';
-    kotak.appendChild(tombol);
-
-    var ke = 0;
-    tombol.addEventListener('click', function () {
-      if (ke >= c.langkah.length) return;
-      var li = document.createElement('li');
-      Rumus.isi(li, c.langkah[ke]);
-      daftar.appendChild(li);
-      ke++;
-      if (ke >= c.langkah.length) tombol.hidden = true;
-      else tombol.textContent = 'Langkah berikutnya';
-    });
-
-    elContoh.appendChild(kotak);
-  });
+  ]);
 
   /* ---------- 6. Cek pemahaman ---------- */
 
   CekPaham.buat(document.getElementById('cekPaham'), {
     soal: [
       {
-        id: 'pv-cek-1', level: 1, tipe: 'pg',
+        id: 'plsv-ptlsv-cek-1', level: 1, tipe: 'pg',
         pertanyaan: 'Manakah yang merupakan kalimat terbuka?',
         opsi: {
           a: '$3 + 5 = 9$',
@@ -504,7 +607,7 @@
           'bisa ditentukan sebelum $x$ diketahui. Itulah kalimat terbuka.'
       },
       {
-        id: 'pv-cek-2', level: 1, tipe: 'isian',
+        id: 'plsv-ptlsv-cek-2', level: 1, tipe: 'isian',
         pertanyaan: 'Nilai $x$ dari $x + 5 = 9$ adalah ...',
         petunjuk: 'Tulis angkanya saja',
         jawaban: ['4'],
@@ -518,7 +621,7 @@
         bahas: 'Kurangi kedua ruas dengan $5$: $x + 5 - 5 = 9 - 5$, sehingga $x = 4$.'
       },
       {
-        id: 'pv-cek-3', level: 2, tipe: 'isian',
+        id: 'plsv-ptlsv-cek-3', level: 2, tipe: 'isian',
         pertanyaan: 'Nilai $p$ dari $-4p - 5 = -29$ adalah ...',
         petunjuk: 'Tulis angkanya saja',
         jawaban: ['6'],
@@ -538,7 +641,7 @@
           'Lalu bagi kedua ruas dengan $-4$: $p = \\frac{-24}{-4} = 6$.'
       },
       {
-        id: 'pv-cek-4', level: 2, tipe: 'pg',
+        id: 'plsv-ptlsv-cek-4', level: 2, tipe: 'pg',
         pertanyaan: 'Penyelesaian dari $-2x > 8$ adalah ...',
         opsi: {
           a: '$x > -4$',
@@ -558,7 +661,7 @@
           'dibalik: $x < \\frac{8}{-2}$, yaitu $x < -4$.'
       },
       {
-        id: 'pv-cek-5', level: 2, tipe: 'isian',
+        id: 'plsv-ptlsv-cek-5', level: 3, tipe: 'isian',
         pertanyaan: 'Sebuah lift memuat paling banyak $600$ kg. Berat petugasnya ' +
           '$70$ kg dan tiap kardus beratnya $25$ kg. Paling banyak berapa kardus ' +
           'yang bisa diangkut sekali jalan?',
@@ -586,21 +689,7 @@
 
   /* ---------- 7. Tautan latihan ---------- */
 
-  fetch('../data/daftar-bab.json', { cache: 'no-cache' })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (peta) {
-      if (!peta) return;
-      var ada = (peta.kelas || []).some(function (k) {
-        return String(k.tingkat) === '7' &&
-          (k.bab || []).some(function (b) { return b.kode === 'plsv-ptlsv'; });
-      });
-      if (ada) return;
-      document.getElementById('tautanLatihan').innerHTML =
-        '<div class="pesan info">Bank soal latihan untuk bab ini belum tersedia. ' +
-        'Materinya sudah bisa dipelajari, dan tombol latihannya akan muncul sendiri ' +
-        'begitu soalnya ditambahkan.</div>';
-    })
-    .catch(function () { /* biarkan tombolnya apa adanya */ });
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 7, 'plsv-ptlsv');
 })();
 </script>
 </body>

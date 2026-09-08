@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 1,
+    "bab": "peluang",
+    "judul": "Peluang",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Peluang",
+    "versi": "2026-09-07"
+  },
+  "soal": [
+    {
+      "id": "pe-01", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Dua keping uang logam dilempar bersamaan satu kali. Banyaknya anggota ruang sampel percobaan tersebut adalah ...",
+      "opsi": { "a": "$2$", "b": "$3$", "c": "$4$", "d": "$8$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Ruang sampelnya $\\{AA, AG, GA, GG\\}$, sebanyak $4$ titik sampel. $AG$ dan $GA$ dihitung terpisah karena kepingnya dapat dibedakan."
+    },
+    {
+      "id": "pe-02", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Dua keping uang logam dilempar bersamaan satu kali. Peluang muncul paling sedikit satu sisi Angka adalah ... (tulis sebagai pecahan)",
+      "jawaban": ["3/4", "0,75"],
+      "pembahasan": "Kejadiannya $\\{AA, AG, GA\\}$, sebanyak $3$ dari $4$ titik sampel, sehingga peluangnya $\\frac{3}{4}$. Cara cepatnya $1 - P(\\text{tidak ada Angka}) = 1 - \\frac{1}{4}$."
+    },
+    {
+      "id": "pe-03", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah dadu setimbang dilempar satu kali. Peluang muncul mata dadu genap adalah ...",
+      "opsi": { "a": "$\\frac{1}{6}$", "b": "$\\frac{1}{3}$", "c": "$\\frac{1}{2}$", "d": "$\\frac{2}{3}$" },
+      "kunci": "c",
+      "acakOpsi": true,
+      "pembahasan": "Mata genapnya $2$, $4$, dan $6$, sebanyak $3$ dari $6$, sehingga peluangnya $\\frac{3}{6} = \\frac{1}{2}$."
+    },
+    {
+      "id": "pe-04", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah dadu setimbang dilempar satu kali. Peluang muncul mata dadu lebih dari 4 adalah ... (tulis sebagai pecahan)",
+      "jawaban": ["1/3", "2/6"],
+      "pembahasan": "Mata yang lebih dari $4$ adalah $5$ dan $6$, sebanyak $2$ dari $6$: $\\frac{2}{6} = \\frac{1}{3}$. Mata $4$ tidak ikut karena \"lebih dari\" tidak memuat angkanya sendiri."
+    },
+    {
+      "id": "pe-05", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 5 bola merah, 3 bola biru, dan 4 bola kuning berukuran sama. Sebuah bola diambil acak. Peluang terambil bola merah adalah ...",
+      "opsi": { "a": "$\\frac{5}{12}$", "b": "$\\frac{5}{7}$", "c": "$\\frac{1}{5}$", "d": "$\\frac{1}{3}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Seluruh bolanya $5 + 3 + 4 = 12$, sehingga peluangnya $\\frac{5}{12}$. Penyebutnya seluruh bola, bukan bola selain merah."
+    },
+    {
+      "id": "pe-06", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 5 bola merah, 3 bola biru, dan 4 bola kuning. Sebuah bola diambil acak. Peluang terambil bola biru adalah ... (tulis sebagai pecahan)",
+      "jawaban": ["1/4", "3/12", "0,25"],
+      "pembahasan": "$P(\\text{biru}) = \\frac{3}{12} = \\frac{1}{4}$."
+    },
+    {
+      "id": "pe-07", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Peluang suatu kejadian yang pasti terjadi adalah ...",
+      "opsi": { "a": "$0$", "b": "$\\frac{1}{2}$", "c": "$1$", "d": "$100$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Peluang selalu bernilai antara $0$ dan $1$. Kejadian yang pasti terjadi bernilai $1$, dan yang mustahil bernilai $0$."
+    },
+    {
+      "id": "pe-08", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? Peluang suatu kejadian dapat bernilai $\\frac{3}{2}$.",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Banyaknya titik sampel suatu kejadian tidak mungkin melebihi banyaknya seluruh titik sampel, sehingga peluang tidak pernah lebih dari $1$."
+    },
+    {
+      "id": "pe-09", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 5 bola merah, 3 bola biru, dan 4 bola kuning. Beberapa bola kuning ditambahkan tanpa mengubah warna lain sehingga peluang terambil bola kuning menjadi $\\frac{1}{2}$. Banyak bola kuning yang ditambahkan adalah ... bola.",
+      "jawaban": ["4"],
+      "pembahasan": "Misalkan ditambahkan $k$ bola: $\\frac{4+k}{12+k} = \\frac{1}{2}$, sehingga $8 + 2k = 12 + k$ dan $k = 4$. Periksa: bola kuning menjadi $8$ dari $16$. Penyebutnya ikut bertambah, itu yang sering terlewat."
+    },
+    {
+      "id": "pe-10", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sekeping uang logam dilempar 200 kali. Frekuensi harapan muncul sisi Angka adalah ...",
+      "opsi": { "a": "$50$ kali", "b": "$100$ kali", "c": "$150$ kali", "d": "$200$ kali" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$F_h = n \\times P = 200 \\times \\frac{1}{2} = 100$ kali. Ini harapan, bukan janji: hasil sungguhan boleh saja meleset sedikit."
+    },
+    {
+      "id": "pe-11", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Dua buah dadu setimbang dilempar bersamaan. Banyaknya anggota ruang sampel percobaan tersebut adalah ...",
+      "jawaban": ["36"],
+      "pembahasan": "Setiap mata dadu pertama dapat berpasangan dengan $6$ mata dadu kedua: $6 \\times 6 = 36$."
+    },
+    {
+      "id": "pe-12", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Dua buah dadu setimbang dilempar bersamaan. Peluang muncul jumlah kedua mata dadu sama dengan 7 adalah ...",
+      "opsi": { "a": "$\\frac{1}{6}$", "b": "$\\frac{1}{12}$", "c": "$\\frac{5}{36}$", "d": "$\\frac{1}{9}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Pasangannya $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$, sebanyak $6$ dari $36$: $\\frac{6}{36} = \\frac{1}{6}$."
+    },
+    {
+      "id": "pe-13", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah dadu dilempar 120 kali. Frekuensi harapan muncul mata dadu 3 adalah ... kali.",
+      "jawaban": ["20"],
+      "pembahasan": "$F_h = 120 \\times \\frac{1}{6} = 20$ kali."
+    },
+    {
+      "id": "pe-14", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 5 bola merah, 3 bola biru, dan 4 bola kuning. Peluang terambil bola yang bukan merah adalah ...",
+      "opsi": { "a": "$\\frac{7}{12}$", "b": "$\\frac{5}{12}$", "c": "$\\frac{1}{2}$", "d": "$\\frac{7}{5}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "$P(\\text{bukan merah}) = 1 - \\frac{5}{12} = \\frac{7}{12}$, sama dengan menghitung $3 + 4 = 7$ bola langsung."
+    },
+    {
+      "id": "pe-15", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Dari 40 siswa, 25 di antaranya menyukai matematika. Jika seorang siswa dipilih acak, peluang terpilih siswa yang menyukai matematika adalah ...",
+      "opsi": { "a": "$\\frac{5}{8}$", "b": "$\\frac{3}{8}$", "c": "$\\frac{2}{5}$", "d": "$\\frac{1}{2}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "$\\frac{25}{40} = \\frac{5}{8}$ setelah pembilang dan penyebutnya sama-sama dibagi $5$."
+    },
+    {
+      "id": "pe-16", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Dua buah dadu setimbang dilempar bersamaan. Peluang muncul jumlah kedua mata dadu lebih dari 9 adalah ... (tulis sebagai pecahan)",
+      "jawaban": ["1/6", "6/36"],
+      "pembahasan": "Jumlah $10$: $(4,6), (5,5), (6,4)$; jumlah $11$: $(5,6), (6,5)$; jumlah $12$: $(6,6)$. Seluruhnya $6$ cara dari $36$, sehingga peluangnya $\\frac{6}{36} = \\frac{1}{6}$. Jumlah $9$ tidak ikut."
+    },
+    {
+      "id": "pe-17", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Dua dadu dilempar bersamaan sebanyak 180 kali. Frekuensi harapan muncul jumlah kedua mata dadu lebih dari 9 adalah ... kali.",
+      "jawaban": ["30"],
+      "pembahasan": "Peluangnya $\\frac{1}{6}$, sehingga $F_h = 180 \\times \\frac{1}{6} = 30$ kali."
+    },
+    {
+      "id": "pe-18", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Dua buah dadu setimbang dilempar bersamaan. Peluang hasil kali kedua mata dadu merupakan bilangan ganjil adalah ...",
+      "opsi": { "a": "$\\frac{1}{4}$", "b": "$\\frac{1}{2}$", "c": "$\\frac{3}{4}$", "d": "$\\frac{1}{3}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Hasil kali ganjil hanya bila kedua mata dadunya ganjil: $3 \\times 3 = 9$ pasangan dari $36$, yaitu $\\frac{1}{4}$. Satu saja genap, hasil kalinya sudah genap."
+    },
+    {
+      "id": "pe-19", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 12 bola bernomor 1 sampai 12. Sebuah bola diambil acak. Peluang terambil bola bernomor prima adalah ...",
+      "opsi": { "a": "$\\frac{5}{12}$", "b": "$\\frac{1}{3}$", "c": "$\\frac{1}{2}$", "d": "$\\frac{7}{12}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Bilangan primanya $2, 3, 5, 7, 11$, sebanyak $5$ buah. Angka $1$ bukan prima karena hanya punya satu faktor. Peluangnya $\\frac{5}{12}$."
+    },
+    {
+      "id": "pe-20", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Tiga keping uang logam dilempar bersamaan satu kali. Peluang muncul tepat dua sisi Gambar adalah ... (tulis sebagai pecahan)",
+      "jawaban": ["3/8", "0,375"],
+      "pembahasan": "Ruang sampelnya $8$ titik. Yang tepat dua Gambar adalah $GGA$, $GAG$, dan $AGG$, sebanyak $3$, sehingga peluangnya $\\frac{3}{8}$. \"Tepat dua\" tidak memuat $GGG$."
+    }
+  ]
+}

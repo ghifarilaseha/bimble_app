@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 1,
+    "bab": "peluang",
+    "judul": "Peluang",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Peluang",
+    "versi": "2026-09-07"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "pe-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dua keping uang logam dilempar bersamaan satu kali. Banyaknya anggota ruang sampel percobaan tersebut adalah ...",
+      "opsi": {
+        "a": "$2$",
+        "b": "$3$",
+        "c": "$4$",
+        "d": "$8$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UnVhbmcgc2FtcGVsbnlhICRce0FBLCBBRywgR0EsIEdHXH0kLCBzZWJhbnlhayAkNCQgdGl0aWsgc2FtcGVsLiAkQUckIGRhbiAkR0EkIGRpaGl0dW5nIHRlcnBpc2FoIGthcmVuYSBrZXBpbmdueWEgZGFwYXQgZGliZWRha2FuLg==",
+      "kunci": "f1e2d9340f00008c2180c9711670d4ac5ab4d2bee3de9aecd1afaa3ce080a53f"
+    },
+    {
+      "id": "pe-02",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Dua keping uang logam dilempar bersamaan satu kali. Peluang muncul paling sedikit satu sisi Angka adalah ... (tulis sebagai pecahan)",
+      "pembahasan": "S2VqYWRpYW5ueWEgJFx7QUEsIEFHLCBHQVx9JCwgc2ViYW55YWsgJDMkIGRhcmkgJDQkIHRpdGlrIHNhbXBlbCwgc2VoaW5nZ2EgcGVsdWFuZ255YSAkXGZyYWN7M317NH0kLiBDYXJhIGNlcGF0bnlhICQxIC0gUChcdGV4dHt0aWRhayBhZGEgQW5na2F9KSA9IDEgLSBcZnJhY3sxfXs0fSQu",
+      "kunci": [
+        "fe18076f39dc99379b8e17b51afcaa6664e8a8b17b3f827bb0e26f5291ade69a",
+        "59d5b65b4d3aa03ba90681ad2577a6194621731b09dc9b65b70582feb92e150b"
+      ]
+    },
+    {
+      "id": "pe-03",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah dadu setimbang dilempar satu kali. Peluang muncul mata dadu genap adalah ...",
+      "opsi": {
+        "a": "$\\frac{1}{6}$",
+        "b": "$\\frac{1}{3}$",
+        "c": "$\\frac{1}{2}$",
+        "d": "$\\frac{2}{3}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "TWF0YSBnZW5hcG55YSAkMiQsICQ0JCwgZGFuICQ2JCwgc2ViYW55YWsgJDMkIGRhcmkgJDYkLCBzZWhpbmdnYSBwZWx1YW5nbnlhICRcZnJhY3szfXs2fSA9IFxmcmFjezF9ezJ9JC4=",
+      "kunci": "99a9b01cf059f2ffa386dadafefc9d33fb5728a6ea8520c186565bd4bc06ab0d"
+    },
+    {
+      "id": "pe-04",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah dadu setimbang dilempar satu kali. Peluang muncul mata dadu lebih dari 4 adalah ... (tulis sebagai pecahan)",
+      "pembahasan": "TWF0YSB5YW5nIGxlYmloIGRhcmkgJDQkIGFkYWxhaCAkNSQgZGFuICQ2JCwgc2ViYW55YWsgJDIkIGRhcmkgJDYkOiAkXGZyYWN7Mn17Nn0gPSBcZnJhY3sxfXszfSQuIE1hdGEgJDQkIHRpZGFrIGlrdXQga2FyZW5hICJsZWJpaCBkYXJpIiB0aWRhayBtZW11YXQgYW5na2FueWEgc2VuZGlyaS4=",
+      "kunci": [
+        "e6a4f5437d9a2a104af251e4c8980fbd587d994d1bdb96742a71aade6b5db0e5",
+        "2a155925d5b8deb45c2bee6d055beecce508f67095d81855d9cac1d4084045a6"
+      ]
+    },
+    {
+      "id": "pe-05",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 5 bola merah, 3 bola biru, dan 4 bola kuning berukuran sama. Sebuah bola diambil acak. Peluang terambil bola merah adalah ...",
+      "opsi": {
+        "a": "$\\frac{5}{12}$",
+        "b": "$\\frac{5}{7}$",
+        "c": "$\\frac{1}{5}$",
+        "d": "$\\frac{1}{3}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U2VsdXJ1aCBib2xhbnlhICQ1ICsgMyArIDQgPSAxMiQsIHNlaGluZ2dhIHBlbHVhbmdueWEgJFxmcmFjezV9ezEyfSQuIFBlbnllYnV0bnlhIHNlbHVydWggYm9sYSwgYnVrYW4gYm9sYSBzZWxhaW4gbWVyYWgu",
+      "kunci": "f325f323d42acb45b96e3ed92705bff0473828640c647299afe50ea2b3696c62"
+    },
+    {
+      "id": "pe-06",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 5 bola merah, 3 bola biru, dan 4 bola kuning. Sebuah bola diambil acak. Peluang terambil bola biru adalah ... (tulis sebagai pecahan)",
+      "pembahasan": "JFAoXHRleHR7YmlydX0pID0gXGZyYWN7M317MTJ9ID0gXGZyYWN7MX17NH0kLg==",
+      "kunci": [
+        "46bbba7a33072ccb68bb4349adf99eba67549ab59b685f712d5aa10b9b18254e",
+        "e30cbc37aa6b2980b6608326b0e309a23584b1e5848c96d135758f4f8fca57d0",
+        "9c7bbffd036dcbdeaf56f7869b75551a63a2cf2e652dd084d816a87931a45ef8"
+      ]
+    },
+    {
+      "id": "pe-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Peluang suatu kejadian yang pasti terjadi adalah ...",
+      "opsi": {
+        "a": "$0$",
+        "b": "$\\frac{1}{2}$",
+        "c": "$1$",
+        "d": "$100$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UGVsdWFuZyBzZWxhbHUgYmVybmlsYWkgYW50YXJhICQwJCBkYW4gJDEkLiBLZWphZGlhbiB5YW5nIHBhc3RpIHRlcmphZGkgYmVybmlsYWkgJDEkLCBkYW4geWFuZyBtdXN0YWhpbCBiZXJuaWxhaSAkMCQu",
+      "kunci": "b28b663b5c7e243bf3752cac97aa8e2725a447460fc0ff1ff6feb5539d1cbad8"
+    },
+    {
+      "id": "pe-08",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Peluang suatu kejadian dapat bernilai $\\frac{3}{2}$.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QmFueWFrbnlhIHRpdGlrIHNhbXBlbCBzdWF0dSBrZWphZGlhbiB0aWRhayBtdW5na2luIG1lbGViaWhpIGJhbnlha255YSBzZWx1cnVoIHRpdGlrIHNhbXBlbCwgc2VoaW5nZ2EgcGVsdWFuZyB0aWRhayBwZXJuYWggbGViaWggZGFyaSAkMSQu",
+      "kunci": "c3b72d06b714139ac8d66375d402214029858988522c7e4938de4cd5aed894ba"
+    },
+    {
+      "id": "pe-09",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 5 bola merah, 3 bola biru, dan 4 bola kuning. Beberapa bola kuning ditambahkan tanpa mengubah warna lain sehingga peluang terambil bola kuning menjadi $\\frac{1}{2}$. Banyak bola kuning yang ditambahkan adalah ... bola.",
+      "pembahasan": "TWlzYWxrYW4gZGl0YW1iYWhrYW4gJGskIGJvbGE6ICRcZnJhY3s0K2t9ezEyK2t9ID0gXGZyYWN7MX17Mn0kLCBzZWhpbmdnYSAkOCArIDJrID0gMTIgKyBrJCBkYW4gJGsgPSA0JC4gUGVyaWtzYTogYm9sYSBrdW5pbmcgbWVuamFkaSAkOCQgZGFyaSAkMTYkLiBQZW55ZWJ1dG55YSBpa3V0IGJlcnRhbWJhaCwgaXR1IHlhbmcgc2VyaW5nIHRlcmxld2F0Lg==",
+      "kunci": [
+        "9ba5c2846c7359510ba474cc064683b1ebb03c2a831a9f74efc6bf08e3e58ed1"
+      ]
+    },
+    {
+      "id": "pe-10",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sekeping uang logam dilempar 200 kali. Frekuensi harapan muncul sisi Angka adalah ...",
+      "opsi": {
+        "a": "$50$ kali",
+        "b": "$100$ kali",
+        "c": "$150$ kali",
+        "d": "$200$ kali"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JEZfaCA9IG4gXHRpbWVzIFAgPSAyMDAgXHRpbWVzIFxmcmFjezF9ezJ9ID0gMTAwJCBrYWxpLiBJbmkgaGFyYXBhbiwgYnVrYW4gamFuamk6IGhhc2lsIHN1bmdndWhhbiBib2xlaCBzYWphIG1lbGVzZXQgc2VkaWtpdC4=",
+      "kunci": "149233581f0fa946aeb5f0c55247b0a65c0d5a8d6e6fcf3fd28344043ceb952a"
+    },
+    {
+      "id": "pe-11",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Dua buah dadu setimbang dilempar bersamaan. Banyaknya anggota ruang sampel percobaan tersebut adalah ...",
+      "pembahasan": "U2V0aWFwIG1hdGEgZGFkdSBwZXJ0YW1hIGRhcGF0IGJlcnBhc2FuZ2FuIGRlbmdhbiAkNiQgbWF0YSBkYWR1IGtlZHVhOiAkNiBcdGltZXMgNiA9IDM2JC4=",
+      "kunci": [
+        "9aab18da0844525e5be006e1f69acd3eaf1df76806c2e00f69030d9616fc176a"
+      ]
+    },
+    {
+      "id": "pe-12",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dua buah dadu setimbang dilempar bersamaan. Peluang muncul jumlah kedua mata dadu sama dengan 7 adalah ...",
+      "opsi": {
+        "a": "$\\frac{1}{6}$",
+        "b": "$\\frac{1}{12}$",
+        "c": "$\\frac{5}{36}$",
+        "d": "$\\frac{1}{9}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "UGFzYW5nYW5ueWEgJCgxLDYpLCAoMiw1KSwgKDMsNCksICg0LDMpLCAoNSwyKSwgKDYsMSkkLCBzZWJhbnlhayAkNiQgZGFyaSAkMzYkOiAkXGZyYWN7Nn17MzZ9ID0gXGZyYWN7MX17Nn0kLg==",
+      "kunci": "5d9041a4f0b021da8248f58781a0e384ebce224fb7a7c5c6a2b6acd22d41c5e9"
+    },
+    {
+      "id": "pe-13",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah dadu dilempar 120 kali. Frekuensi harapan muncul mata dadu 3 adalah ... kali.",
+      "pembahasan": "JEZfaCA9IDEyMCBcdGltZXMgXGZyYWN7MX17Nn0gPSAyMCQga2FsaS4=",
+      "kunci": [
+        "0a6707104fb99ed2b151ebde2c3cbbdc0c125c206675db9e79a909d4615a1a04"
+      ]
+    },
+    {
+      "id": "pe-14",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 5 bola merah, 3 bola biru, dan 4 bola kuning. Peluang terambil bola yang bukan merah adalah ...",
+      "opsi": {
+        "a": "$\\frac{7}{12}$",
+        "b": "$\\frac{5}{12}$",
+        "c": "$\\frac{1}{2}$",
+        "d": "$\\frac{7}{5}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JFAoXHRleHR7YnVrYW4gbWVyYWh9KSA9IDEgLSBcZnJhY3s1fXsxMn0gPSBcZnJhY3s3fXsxMn0kLCBzYW1hIGRlbmdhbiBtZW5naGl0dW5nICQzICsgNCA9IDckIGJvbGEgbGFuZ3N1bmcu",
+      "kunci": "b7d9e5fc64cf1a3f0da089b192aeaa4654a04f59b117cb636621ec3aefc4bc91"
+    },
+    {
+      "id": "pe-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dari 40 siswa, 25 di antaranya menyukai matematika. Jika seorang siswa dipilih acak, peluang terpilih siswa yang menyukai matematika adalah ...",
+      "opsi": {
+        "a": "$\\frac{5}{8}$",
+        "b": "$\\frac{3}{8}$",
+        "c": "$\\frac{2}{5}$",
+        "d": "$\\frac{1}{2}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JFxmcmFjezI1fXs0MH0gPSBcZnJhY3s1fXs4fSQgc2V0ZWxhaCBwZW1iaWxhbmcgZGFuIHBlbnllYnV0bnlhIHNhbWEtc2FtYSBkaWJhZ2kgJDUkLg==",
+      "kunci": "05c6c9e0ca91863eda7e601edda0ef3ce346e660ef86e2ae35a024123d8b24f6"
+    },
+    {
+      "id": "pe-16",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Dua buah dadu setimbang dilempar bersamaan. Peluang muncul jumlah kedua mata dadu lebih dari 9 adalah ... (tulis sebagai pecahan)",
+      "pembahasan": "SnVtbGFoICQxMCQ6ICQoNCw2KSwgKDUsNSksICg2LDQpJDsganVtbGFoICQxMSQ6ICQoNSw2KSwgKDYsNSkkOyBqdW1sYWggJDEyJDogJCg2LDYpJC4gU2VsdXJ1aG55YSAkNiQgY2FyYSBkYXJpICQzNiQsIHNlaGluZ2dhIHBlbHVhbmdueWEgJFxmcmFjezZ9ezM2fSA9IFxmcmFjezF9ezZ9JC4gSnVtbGFoICQ5JCB0aWRhayBpa3V0Lg==",
+      "kunci": [
+        "3f937e223a0f81b684e80e5643923b5ae5ad295867b7d63f828511acb346f41d",
+        "d8df6bfc69a888f6c658bb54572df21a32ba24c0ab630978d6b67c9cae60f002"
+      ]
+    },
+    {
+      "id": "pe-17",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Dua dadu dilempar bersamaan sebanyak 180 kali. Frekuensi harapan muncul jumlah kedua mata dadu lebih dari 9 adalah ... kali.",
+      "pembahasan": "UGVsdWFuZ255YSAkXGZyYWN7MX17Nn0kLCBzZWhpbmdnYSAkRl9oID0gMTgwIFx0aW1lcyBcZnJhY3sxfXs2fSA9IDMwJCBrYWxpLg==",
+      "kunci": [
+        "7ebc8d4a11f157191d1eb12818e63f17f50fd9ab7cbedb28de1f40f08a5c7a73"
+      ]
+    },
+    {
+      "id": "pe-18",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dua buah dadu setimbang dilempar bersamaan. Peluang hasil kali kedua mata dadu merupakan bilangan ganjil adalah ...",
+      "opsi": {
+        "a": "$\\frac{1}{4}$",
+        "b": "$\\frac{1}{2}$",
+        "c": "$\\frac{3}{4}$",
+        "d": "$\\frac{1}{3}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "SGFzaWwga2FsaSBnYW5qaWwgaGFueWEgYmlsYSBrZWR1YSBtYXRhIGRhZHVueWEgZ2FuamlsOiAkMyBcdGltZXMgMyA9IDkkIHBhc2FuZ2FuIGRhcmkgJDM2JCwgeWFpdHUgJFxmcmFjezF9ezR9JC4gU2F0dSBzYWphIGdlbmFwLCBoYXNpbCBrYWxpbnlhIHN1ZGFoIGdlbmFwLg==",
+      "kunci": "bd536a9184d540d93ab083fa52829a997e4abd67d849b52b4d8835ff49ba7db0"
+    },
+    {
+      "id": "pe-19",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Di dalam kotak terdapat 12 bola bernomor 1 sampai 12. Sebuah bola diambil acak. Peluang terambil bola bernomor prima adalah ...",
+      "opsi": {
+        "a": "$\\frac{5}{12}$",
+        "b": "$\\frac{1}{3}$",
+        "c": "$\\frac{1}{2}$",
+        "d": "$\\frac{7}{12}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "QmlsYW5nYW4gcHJpbWFueWEgJDIsIDMsIDUsIDcsIDExJCwgc2ViYW55YWsgJDUkIGJ1YWguIEFuZ2thICQxJCBidWthbiBwcmltYSBrYXJlbmEgaGFueWEgcHVueWEgc2F0dSBmYWt0b3IuIFBlbHVhbmdueWEgJFxmcmFjezV9ezEyfSQu",
+      "kunci": "4593e418f9f5df6977b36befc270a60ef8a0ee16253476615cc17826aff6439e"
+    },
+    {
+      "id": "pe-20",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Tiga keping uang logam dilempar bersamaan satu kali. Peluang muncul tepat dua sisi Gambar adalah ... (tulis sebagai pecahan)",
+      "pembahasan": "UnVhbmcgc2FtcGVsbnlhICQ4JCB0aXRpay4gWWFuZyB0ZXBhdCBkdWEgR2FtYmFyIGFkYWxhaCAkR0dBJCwgJEdBRyQsIGRhbiAkQUdHJCwgc2ViYW55YWsgJDMkLCBzZWhpbmdnYSBwZWx1YW5nbnlhICRcZnJhY3szfXs4fSQuICJUZXBhdCBkdWEiIHRpZGFrIG1lbXVhdCAkR0dHJC4=",
+      "kunci": [
+        "497b711b24fd3d8199955741016772a8bde7a05337833c2a100619b1c51245b3",
+        "b314aa637e79ddf3ee85852e1aa7d1ebb33a3e52f07112bf1364a8538561faa2"
+      ]
+    }
+  ]
+}

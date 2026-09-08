@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bangun Ruang Sisi Lengkung</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Bangun Ruang Sisi Lengkung</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Bangun Ruang Sisi Lengkung</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Menghitung luas permukaan dan volume tabung, kerucut, dan bola.</li>
+      <li>Menentukan garis pelukis kerucut dengan teorema Pythagoras.</li>
+      <li>Tahu kenapa luas kerucut memakai $s$ sedangkan volumenya memakai $t$.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Label kaleng susu</h2>
+  <p>
+    Bu Ninda melepas label yang melingkari kaleng susu, lalu membentangkannya di meja.
+    Yang tadi melengkung ternyata menjadi persegi panjang yang rapi.
+  </p>
+  <p>
+    Lebarnya jelas setinggi kalengnya. Tapi panjangnya diukur dari mana — apakah ada
+    ukuran pada kaleng itu yang nilainya persis sama dengan panjang label?
+  </p>
+  <p class="kecil samar">
+    Berhenti dulu di sini.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: selimut tabung yang dibentangkan</h2>
+  <p>
+    Di kiri alas tabung dilihat dari atas, di kanan selimutnya yang sudah dibentangkan.
+    Geser jari-jari dan tingginya.
+  </p>
+  <p>
+    Tugasnya: <strong>ubah jari-jarinya beberapa kali sambil memperhatikan panjang
+    persegi panjangnya.</strong> Ukuran mana pada lingkaran yang selalu menyamainya?
+  </p>
+
+  <div class="kartu">
+    <div id="jelajah"></div>
+    <div id="pesanJelajah" style="margin-top:.7rem"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Tabung">
+    <h3>Unsur-unsurnya</h3>
+    <p>
+      Tabung punya <strong>tiga sisi</strong>: alas, tutup, dan selimut. Alas dan
+      tutupnya lingkaran yang kongruen dan sejajar. Selimutnya, seperti yang tadi kamu
+      bentangkan sendiri, berupa persegi panjang dengan panjang $2\pi r$ dan lebar $t$.
+      Pada dasarnya tabung adalah prisma beralas lingkaran.
+    </p>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th>Yang dicari</th><th>Rumus</th></tr></thead>
+        <tbody>
+          <tr><td>Luas selimut</td><td>$2\pi r t$</td></tr>
+          <tr><td>Luas permukaan</td><td>$2\pi r^2 + 2\pi r t = 2\pi r (r + t)$</td></tr>
+          <tr><td>Luas permukaan tanpa tutup</td><td>$\pi r^2 + 2\pi r t$</td></tr>
+          <tr><td>Volume</td><td>$\pi r^2 t$</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="kartu">
+      <h3 class="rapat">Hitung tabungmu sendiri</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Isi jari-jari dan tingginya. Hasilnya sengaja dibiarkan dalam $\pi$.
+      </p>
+      <div class="deret">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$r$</label>
+        <input type="number" inputmode="numeric" id="tabR" value="7" min="1" max="50" style="flex:0 0 4.5rem" aria-label="jari-jari tabung">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$t$</label>
+        <input type="number" inputmode="numeric" id="tabT" value="10" min="1" max="50" style="flex:0 0 4.5rem" aria-label="tinggi tabung">
+      </div>
+      <div id="hasilTabung" style="margin-top:.7rem"></div>
+    </div>
+  </section>
+
+  <section data-tab="Kerucut" hidden>
+    <h3>Tiga ukuran yang saling terkait</h3>
+    <p>
+      Kerucut punya <strong>dua sisi</strong>: alas berupa lingkaran dan selimut berupa
+      juring lingkaran, ditambah satu titik puncak. Pada dasarnya ia limas beralas
+      lingkaran.
+    </p>
+    <p>
+      Jari-jari $r$, tinggi $t$, dan <strong>garis pelukis</strong> $s$ membentuk
+      segitiga siku-siku, sehingga berlaku teorema Pythagoras:
+    </p>
+    <p class="tengah">$$s^2 = r^2 + t^2$$</p>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th>Yang dicari</th><th>Rumus</th></tr></thead>
+        <tbody>
+          <tr><td>Luas selimut</td><td>$\pi r s$</td></tr>
+          <tr><td>Luas permukaan</td><td>$\pi r^2 + \pi r s = \pi r (r + s)$</td></tr>
+          <tr><td>Volume</td><td>$\frac{1}{3}\pi r^2 t$</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Perhatikan baik-baik: <strong>luas memakai $s$, volume memakai $t$</strong>.
+      Tertukarnya keduanya adalah kesalahan paling sering di bab ini, dan hasilnya selalu
+      terlihat masuk akal — itulah yang membuatnya berbahaya.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Cari garis pelukisnya dulu</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Isi jari-jari dan tingginya, lalu lihat $s$ yang terbentuk.
+      </p>
+      <div class="deret">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$r$</label>
+        <input type="number" inputmode="numeric" id="kerR" value="5" min="1" max="50" style="flex:0 0 4.5rem" aria-label="jari-jari kerucut">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$t$</label>
+        <input type="number" inputmode="numeric" id="kerT" value="12" min="1" max="50" style="flex:0 0 4.5rem" aria-label="tinggi kerucut">
+      </div>
+      <div id="hasilKerucut" style="margin-top:.7rem"></div>
+    </div>
+
+    <h3>Triple Pythagoras yang mempercepat</h3>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th>Dasar</th><th>Kelipatan 2</th><th>Kelipatan 3</th></tr></thead>
+        <tbody>
+          <tr><td>$3, 4, 5$</td><td>$6, 8, 10$</td><td>$9, 12, 15$</td></tr>
+          <tr><td>$5, 12, 13$</td><td>$10, 24, 26$</td><td>$15, 36, 39$</td></tr>
+          <tr><td>$7, 24, 25$</td><td>$14, 48, 50$</td><td>$21, 72, 75$</td></tr>
+          <tr><td>$8, 15, 17$</td><td>$16, 30, 34$</td><td>$24, 45, 51$</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section data-tab="Bola" hidden>
+    <h3>Satu bidang lengkung saja</h3>
+    <p>
+      Bola dibatasi oleh satu bidang lengkung, dan terbentuk dari setengah lingkaran yang
+      diputar $360^\circ$ pada garis tengahnya. Luas permukaannya persis
+      <strong>empat kali</strong> luas lingkaran dengan jari-jari yang sama.
+    </p>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th>Yang dicari</th><th>Rumus</th></tr></thead>
+        <tbody>
+          <tr><td>Luas permukaan bola</td><td>$4\pi r^2$</td></tr>
+          <tr><td>Volume bola</td><td>$\frac{4}{3}\pi r^3$</td></tr>
+          <tr><td>Luas setengah bola pejal</td><td>$2\pi r^2 + \pi r^2 = 3\pi r^2$</td></tr>
+          <tr><td>Volume setengah bola</td><td>$\frac{2}{3}\pi r^3$</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Setengah bola <strong>pejal</strong> punya tutup lingkaran di bagian irisannya.
+      Karena itu luasnya bukan setengah kulit bola saja, melainkan $2\pi r^2$ ditambah
+      $\pi r^2$. Lupa menambahkan tutupnya membuat jawaban kurang sepertiga.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Perbesar jari-jarinya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Perhatikan luas dan volumenya tidak tumbuh dengan kecepatan yang sama.
+      </p>
+      <div id="geserBola"></div>
+    </div>
+  </section>
+
+  <section data-tab="Mencari yang belum diketahui" hidden>
+    <h3>Rumus dibaca dari dua arah</h3>
+    <p>
+      Soal tidak selalu memberi $r$ dan $t$ lalu meminta luas. Sering yang diketahui
+      justru luas atau volumenya, dan yang ditanya salah satu ukurannya. Caranya sama
+      seperti PLSV di kelas $7$: susun persamaannya, lalu selesaikan.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Luas permukaan $120\pi$, $r = 5$. Berapa $t$?</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Tebak dulu, baru buka langkahnya.
+      </p>
+      <div id="langkahBalik"></div>
+    </div>
+
+    <h3>Memilih nilai $\pi$</h3>
+    <p>
+      Gunakan $\frac{22}{7}$ bila jari-jarinya kelipatan $7$, dan $3{,}14$ untuk yang
+      lain. Ini bukan aturan baku, hanya pilihan yang membuat hitungannya bisa
+      diselesaikan tanpa kalkulator: angka $7$ pada penyebut akan habis dibagi.
+    </p>
+    <p>
+      Satu lagi yang sering luput: kalau soal memberi <strong>diameter</strong>, bagi dua
+      dulu. Memasukkan diameter ke tempat $r$ membuat semua hasil berikutnya salah, dan
+      tidak ada satu pun langkah setelahnya yang bisa memperbaikinya.
+    </p>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya.
+  </p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.
+  </p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=9&amp;bab=bangun-ruang-sisi-lengkung&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  var NS = 'http://www.w3.org/2000/svg';
+
+  function svgEl(nama, sifat) {
+    var e = document.createElementNS(NS, nama);
+    for (var k in sifat) if (Object.prototype.hasOwnProperty.call(sifat, k)) {
+      e.setAttribute(k, sifat[k]);
+    }
+    return e;
+  }
+
+  /* ---------- 3. Eksplorasi: selimut yang dibentangkan ---------- */
+
+  var elJelajah = document.getElementById('jelajah');
+  var elPesanJelajah = document.getElementById('pesanJelajah');
+  var pernahR = {};
+
+  elJelajah.innerHTML =
+    '<div id="gambarSelimut"></div>' +
+    '<div class="deret" style="align-items:center;margin-top:.6rem">' +
+      '<label class="kecil" style="flex:none;margin:0;min-width:5rem">Jari-jari</label>' +
+      '<input type="range" id="geserR" min="1" max="5" value="2" style="flex:1;min-width:8rem" aria-label="jari-jari alas">' +
+      '<strong id="labelR" style="min-width:2rem;text-align:right"></strong>' +
+    '</div>' +
+    '<div class="deret" style="align-items:center;margin-top:.4rem">' +
+      '<label class="kecil" style="flex:none;margin:0;min-width:5rem">Tinggi</label>' +
+      '<input type="range" id="geserT" min="1" max="8" value="5" style="flex:1;min-width:8rem" aria-label="tinggi tabung">' +
+      '<strong id="labelT" style="min-width:2rem;text-align:right"></strong>' +
+    '</div>' +
+    '<div id="ukuranSelimut" style="margin-top:.6rem"></div>';
+
+  var geserR = document.getElementById('geserR');
+  var geserT = document.getElementById('geserT');
+  var elGambarSelimut = document.getElementById('gambarSelimut');
+  var elUkuran = document.getElementById('ukuranSelimut');
+
+  function gambarSelimut(r, t) {
+    var S = 13;
+    var jari = r * S;
+    var panjang = 2 * Math.PI * r * S;
+    var tinggi = t * S;
+    var celah = 26, M = 14;
+    var W = M * 2 + jari * 2 + celah + panjang;
+    var H = M * 2 + Math.max(jari * 2, tinggi);
+
+    var svg = svgEl('svg', {
+      viewBox: '0 0 ' + W + ' ' + H, width: '100%', height: H,
+      role: 'img',
+      'aria-label': 'Lingkaran berjari-jari ' + r + ' di samping persegi panjang ' +
+        'selimut setinggi ' + t
+    });
+    svg.style.maxWidth = W + 'px';
+    svg.style.display = 'block';
+
+    svg.appendChild(svgEl('circle', {
+      cx: M + jari, cy: H / 2, r: jari,
+      fill: 'var(--tinta-lembut)', 'fill-opacity': .18,
+      stroke: 'var(--tinta-lembut)', 'stroke-width': 2
+    }));
+    svg.appendChild(svgEl('rect', {
+      x: M + jari * 2 + celah, y: (H - tinggi) / 2, width: panjang, height: tinggi,
+      fill: 'var(--aksen)', 'fill-opacity': .14,
+      stroke: 'var(--aksen)', 'stroke-width': 2
+    }));
+
+    elGambarSelimut.innerHTML = '';
+    elGambarSelimut.appendChild(svg);
+  }
+
+  function gambarEksplorasi() {
+    var r = parseInt(geserR.value, 10);
+    var t = parseInt(geserT.value, 10);
+    document.getElementById('labelR').textContent = String(r);
+    document.getElementById('labelT').textContent = String(t);
+    gambarSelimut(r, t);
+    pernahR[r] = true;
+
+    Rumus.isi(elUkuran,
+      'Keliling alasnya $2\\pi r = ' + (2 * r) + '\\pi$. ' +
+      'Persegi panjangnya berukuran $' + (2 * r) + '\\pi$ kali $' + t + '$, ' +
+      'jadi luasnya $' + (2 * r * t) + '\\pi$.');
+
+    /* Kesimpulan ditahan sampai jari-jarinya benar-benar diubah beberapa
+       kali. Kalau muncul sejak awal, kalimat "panjangnya sama dengan
+       keliling alas" hanya akan dibaca sebagai keterangan gambar. */
+    if (Object.keys(pernahR).length < 3) {
+      elPesanJelajah.innerHTML = '';
+      return;
+    }
+    elPesanJelajah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Berapa pun jari-jarinya, panjang persegi panjangnya selalu sama dengan ' +
+      'keliling alasnya, yaitu $2\\pi r$ — sebab selimut itu memang melingkari alas ' +
+      'tepat sekali. Karena itu luas selimut tabung adalah $2\\pi r t$.') + '</div>';
+  }
+
+  geserR.addEventListener('input', gambarEksplorasi);
+  geserT.addEventListener('input', gambarEksplorasi);
+  gambarEksplorasi();
+
+  /* ---------- 4. Tab "Aturannya" ---------- */
+
+  Materi.tab(document.getElementById('tabMateri'));
+
+  /* ---------- 4a. Kalkulator tabung ---------- */
+
+  var elHasilTabung = document.getElementById('hasilTabung');
+  var isiTabung = ['tabR', 'tabT'].map(function (id) { return document.getElementById(id); });
+
+  function hitungTabung() {
+    var r = parseInt(isiTabung[0].value, 10);
+    var t = parseInt(isiTabung[1].value, 10);
+    if (isNaN(r) || isNaN(t) || r < 1 || t < 1) {
+      elHasilTabung.innerHTML =
+        '<p class="kecil samar" style="margin:0">Kedua kotak harus terisi bilangan positif.</p>';
+      return;
+    }
+    var selimut = 2 * r * t;
+    var permukaan = 2 * r * r + selimut;
+    var volume = r * r * t;
+    var tanpaTutup = r * r + selimut;
+
+    var pi22 = (r % 7 === 0)
+      ? ' Karena $r$ kelipatan $7$, memakai $\\pi = \\frac{22}{7}$ membuat luas ' +
+        'permukaannya menjadi $' + Pecahan.buat(permukaan * 22, 7).teks() + '$.'
+      : ' Karena $r$ bukan kelipatan $7$, pakai $\\pi = 3{,}14$ bila diminta angka pastinya.';
+
+    Rumus.isi(elHasilTabung,
+      'Luas selimut $2\\pi r t = ' + selimut + '\\pi$. ' +
+      'Luas permukaan $2\\pi r(r + t) = ' + permukaan + '\\pi$. ' +
+      'Tanpa tutup $' + tanpaTutup + '\\pi$. ' +
+      'Volume $\\pi r^2 t = ' + volume + '\\pi$.' + pi22);
+  }
+
+  isiTabung.forEach(function (el) { el.addEventListener('input', hitungTabung); });
+  hitungTabung();
+
+  /* ---------- 4b. Kalkulator kerucut ---------- */
+
+  var elHasilKerucut = document.getElementById('hasilKerucut');
+  var isiKerucut = ['kerR', 'kerT'].map(function (id) { return document.getElementById(id); });
+
+  function faktorKuadratTerbesar(n) {
+    var terbaik = 1;
+    for (var k = 2; k * k <= n; k++) if (n % (k * k) === 0) terbaik = k;
+    return terbaik;
+  }
+
+  /* Akar dipecah menjadi pengali di luar dan sisa di dalam, supaya hasil
+     seperti 2 akar 5 masih bisa dikalikan r dengan benar. Mengalikan
+     tulisannya begitu saja akan menghasilkan "52 akar 5". */
+  function pecahAkar(n) {
+    var k = faktorKuadratTerbesar(n);
+    return { luar: k, dalam: n / (k * k) };
+  }
+
+  function tulisAkar(a) {
+    if (a.dalam === 1) return String(a.luar);
+    return (a.luar === 1 ? '' : a.luar) + '\\sqrt{' + a.dalam + '}';
+  }
+
+  function hitungKerucut() {
+    var r = parseInt(isiKerucut[0].value, 10);
+    var t = parseInt(isiKerucut[1].value, 10);
+    if (isNaN(r) || isNaN(t) || r < 1 || t < 1) {
+      elHasilKerucut.innerHTML =
+        '<p class="kecil samar" style="margin:0">Kedua kotak harus terisi bilangan positif.</p>';
+      return;
+    }
+    var kuadrat = r * r + t * t;
+    var akar = pecahAkar(kuadrat);
+    var s = tulisAkar(akar);
+    var volume = Pecahan.buat(r * r * t, 3);
+
+    var selimut = akar.dalam === 1
+      ? 'Luas selimut $\\pi r s = ' + (r * akar.luar) + '\\pi$. ' +
+        'Luas permukaan $\\pi r(r + s) = ' + (r * (r + akar.luar)) + '\\pi$. '
+      : 'Luas selimut $\\pi r s = ' + tulisAkar({ luar: r * akar.luar, dalam: akar.dalam }) +
+        '\\pi$. ';
+
+    Rumus.isi(elHasilKerucut,
+      '$s^2 = ' + r + '^2 + ' + t + '^2 = ' + kuadrat + '$, jadi $s = ' + s + '$. ' +
+      selimut +
+      'Volume $\\frac{1}{3}\\pi r^2 t = ' + volume.rumus() + '\\pi$ — ' +
+      'perhatikan volumenya memakai $t$, bukan $s$.');
+  }
+
+  isiKerucut.forEach(function (el) { el.addEventListener('input', hitungKerucut); });
+  hitungKerucut();
+
+  /* ---------- 4c. Bola ---------- */
+
+  Materi.geser(document.getElementById('geserBola'), {
+    label: 'Jari-jari $r$', min: 1, maks: 12, awal: 6,
+    hitung: function (r) {
+      var luas = 4 * r * r;
+      var volume = Pecahan.buat(4 * r * r * r, 3);
+      var setengah = 3 * r * r;
+      return 'Luas permukaan $4\\pi r^2 = ' + luas + '\\pi$. ' +
+        'Volume $\\frac{4}{3}\\pi r^3 = ' + volume.rumus() + '\\pi$. ' +
+        'Setengah bola pejal luasnya $3\\pi r^2 = ' + setengah + '\\pi$. ' +
+        'Luas tumbuh mengikuti $r^2$, volume mengikuti $r^3$.';
+    }
+  });
+
+  /* ---------- 4d. Mencari unsur yang belum diketahui ---------- */
+
+  Materi.langkah(document.getElementById('langkahBalik'), [
+    { judul: 'Tulis rumusnya. ',
+      teks: 'Luas permukaan tabung $= 2\\pi r^2 + 2\\pi r t$.' },
+    { judul: 'Masukkan yang diketahui. ',
+      teks: '$120\\pi = 2\\pi(5)^2 + 2\\pi(5)t$, yaitu $120\\pi = 50\\pi + 10\\pi t$.' },
+    { judul: 'Pindahkan yang sudah diketahui. ',
+      teks: '$120\\pi - 50\\pi = 10\\pi t$, jadi $70\\pi = 10\\pi t$.' },
+    { judul: 'Bagi kedua ruas. ',
+      teks: 'Kedua ruas dibagi $10\\pi$, sehingga $t = 7$ cm. ' +
+        'Perhatikan $\\pi$ ikut habis dan tidak pernah perlu diganti angka.' }
+  ]);
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  Materi.contoh(document.getElementById('daftarContoh'), [
+    {
+      judul: 'Luas permukaan tabung',
+      soal: 'Tabung berjari-jari $7$ cm dan tinggi $10$ cm. Tentukan luas ' +
+        'permukaannya dengan $\\pi = \\frac{22}{7}$.',
+      langkah: [
+        'Pakai bentuk ringkasnya: luas permukaan $= 2\\pi r(r + t)$.',
+        'Masukkan angkanya: $2\\pi \\cdot 7 \\cdot (7 + 10) = 238\\pi$ cm$^2$.',
+        'Karena $r$ kelipatan $7$, pilih $\\pi = \\frac{22}{7}$: ' +
+          '$238 \\times \\frac{22}{7} = 748$ cm$^2$.'
+      ]
+    },
+    {
+      judul: 'Kerucut dari diameter',
+      soal: 'Kerucut berdiameter $10$ cm dan tinggi $12$ cm. Tentukan luas ' +
+        'permukaannya dalam $\\pi$.',
+      langkah: [
+        'Yang diberikan diameter, jadi bagi dua dulu: $r = 5$ cm.',
+        'Cari garis pelukisnya: $s^2 = 5^2 + 12^2 = 25 + 144 = 169$, jadi $s = 13$ cm. ' +
+          'Ini triple $5, 12, 13$.',
+        'Luas permukaan $= \\pi r(r + s) = \\pi \\cdot 5 \\cdot (5 + 13)$.',
+        'Hasilnya $90\\pi$ cm$^2$.'
+      ]
+    },
+    {
+      judul: 'Jari-jari dari volume',
+      soal: 'Volume sebuah bola $36\\pi$ cm$^3$. Berapa jari-jarinya?',
+      langkah: [
+        'Tulis rumusnya: $\\frac{4}{3}\\pi r^3 = 36\\pi$.',
+        'Kalikan kedua ruas dengan $3$: $4\\pi r^3 = 108\\pi$.',
+        'Bagi kedua ruas dengan $4\\pi$: $r^3 = 27$.',
+        'Yang dipangkatkan tiga, jadi $r = 3$ cm.'
+      ]
+    }
+  ]);
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'brsl-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Tabung berjari-jari $3$ cm dan tinggi $8$ cm. Berapa luas ' +
+          'selimutnya dalam $\\pi$? Tulis angka di depan $\\pi$ saja.',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['48'],
+        salahUmum: [
+          {
+            jawaban: ['24'],
+            umpan: 'Angka $2$ pada rumus sepertinya terlewat. Luas selimut ' +
+              '$= 2\\pi r t$, bukan $\\pi r t$.'
+          },
+          {
+            jawaban: ['66', '48pi'],
+            umpan: 'Yang ditanya angka di depan $\\pi$ saja, dan luas selimutnya ' +
+              'belum ditambah alas atau tutup: $2 \\cdot 3 \\cdot 8 = 48$.'
+          }
+        ],
+        bahas: 'Luas selimut $= 2\\pi r t = 2\\pi \\cdot 3 \\cdot 8 = 48\\pi$ cm$^2$.'
+      },
+      {
+        id: 'brsl-cek-2', level: 1, tipe: 'isian',
+        pertanyaan: 'Kerucut berjari-jari $6$ cm dan tinggi $8$ cm. Berapa cm ' +
+          'garis pelukisnya?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['10'],
+        salahUmum: [
+          {
+            jawaban: ['14'],
+            umpan: 'Sepertinya $r$ dan $t$ dijumlahkan begitu saja. Ketiganya ' +
+              'membentuk segitiga siku-siku, jadi pakai $s^2 = r^2 + t^2$.'
+          },
+          {
+            jawaban: ['100'],
+            umpan: 'Itu nilai $s^2$. Tinggal satu langkah: akarkan $100$.'
+          }
+        ],
+        bahas: '$s^2 = 6^2 + 8^2 = 36 + 64 = 100$, jadi $s = 10$ cm. Ini triple $3,4,5$ ' +
+          'yang dikali dua.'
+      },
+      {
+        id: 'brsl-cek-3', level: 2, tipe: 'pg',
+        pertanyaan: 'Rumus volume kerucut adalah ...',
+        opsi: {
+          a: '$\\frac{1}{3}\\pi r^2 t$',
+          b: '$\\frac{1}{3}\\pi r^2 s$',
+          c: '$\\pi r^2 t$',
+          d: '$\\pi r s$'
+        },
+        kunci: 'a',
+        umpan: {
+          b: 'Garis pelukis $s$ dipakai untuk luas, bukan untuk volume. ' +
+             'Volume selalu memakai tinggi tegaknya.',
+          c: 'Itu volume tabung. Kerucut hanya sepertiga tabung yang alas dan ' +
+             'tingginya sama.',
+          d: 'Itu luas selimut kerucut, bukan volumenya.'
+        },
+        bahas: 'Volume kerucut $= \\frac{1}{3}\\pi r^2 t$: sepertiga volume tabung ' +
+          'dengan alas dan tinggi yang sama.'
+      },
+      {
+        id: 'brsl-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Bola berjari-jari $6$ cm. Berapa volumenya dalam $\\pi$? ' +
+          'Tulis angka di depan $\\pi$ saja.',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['288'],
+        salahUmum: [
+          {
+            jawaban: ['144'],
+            umpan: 'Itu luas permukaannya, $4\\pi r^2$. Volume memakai $r^3$ ' +
+              'dan pecahan $\\frac{4}{3}$.'
+          },
+          {
+            jawaban: ['216'],
+            umpan: 'Itu baru $r^3$. Masih harus dikalikan $\\frac{4}{3}$.'
+          },
+          {
+            jawaban: ['864'],
+            umpan: 'Sepertinya belum dibagi $3$. Setelah dikali $4$, hasilnya ' +
+              'dibagi $3$.'
+          }
+        ],
+        bahas: '$V = \\frac{4}{3}\\pi \\cdot 6^3 = \\frac{4}{3} \\cdot 216\\pi = 288\\pi$ cm$^3$.'
+      },
+      {
+        id: 'brsl-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Luas permukaan tabung tanpa tutup adalah $75\\pi$ cm$^2$ ' +
+          'dan jari-jarinya $5$ cm. Berapa cm tingginya?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['5'],
+        salahUmum: [
+          {
+            jawaban: ['2,5'],
+            umpan: 'Sepertinya rumus dengan tutup yang dipakai, sehingga alasnya ' +
+              'terhitung dua kali. Tanpa tutup, luasnya $\\pi r^2 + 2\\pi r t$.'
+          },
+          {
+            jawaban: ['7'],
+            umpan: 'Coba periksa pengurangannya: $75\\pi - 25\\pi = 50\\pi$, ' +
+              'lalu dibagi $10\\pi$.'
+          },
+          {
+            jawaban: ['15'],
+            umpan: 'Sepertinya luas alasnya belum dikurangkan lebih dulu.'
+          }
+        ],
+        bahas: 'Tanpa tutup: $\\pi r^2 + 2\\pi r t = 75\\pi$, yaitu $25\\pi + 10\\pi t = 75\\pi$. ' +
+          'Maka $10\\pi t = 50\\pi$ dan $t = 5$ cm.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 9,
+    'bangun-ruang-sisi-lengkung');
+})();
+</script>
+</body>
+</html>

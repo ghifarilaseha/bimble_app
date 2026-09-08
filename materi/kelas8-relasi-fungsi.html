@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relasi dan Fungsi</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Relasi dan Fungsi</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Relasi dan Fungsi</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Menyatakan sebuah relasi dengan tiga cara yang berbeda.</li>
+      <li>Memeriksa apakah sebuah pemasangan termasuk fungsi atau bukan.</li>
+      <li>Menghitung nilai fungsi, dan menemukan rumusnya dari dua nilai.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Dua daftar di papan kelas</h2>
+  <p>
+    Bu Ninda menulis dua daftar. Daftar pertama: ukuran sepatu tiap anak. Daftar kedua:
+    warna kesukaan tiap anak. Keduanya sama-sama memasangkan nama dengan sesuatu.
+  </p>
+  <p>
+    Tapi ada satu perbedaan yang tidak kelihatan sampai daftarnya diisi: pada daftar
+    kedua, satu anak boleh menyebut dua warna. Apakah kedua daftar itu masih sejenis?
+  </p>
+  <p class="kecil samar">
+    Berhenti dulu di sini.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: papan pemasangan</h2>
+  <p>
+    Setiap baris satu anak, setiap kolom satu warna. Ketuk kotaknya untuk memasang atau
+    melepas satu panah.
+  </p>
+  <p>
+    Tugasnya: <strong>buat satu pemasangan yang tiap anaknya kebagian tepat satu warna,
+    lalu buat satu lagi yang salah satu anaknya kebagian dua warna.</strong> Yang mana
+    yang masih pantas disebut aturan?
+  </p>
+
+  <div class="kartu">
+    <div id="jelajah"></div>
+    <div id="pesanJelajah" style="margin-top:.7rem"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Relasi">
+    <h3>Apa itu relasi</h3>
+    <p>
+      <strong>Relasi</strong> dari himpunan $A$ ke himpunan $B$ adalah aturan yang
+      memasangkan anggota-anggota $A$ dengan anggota-anggota $B$. Tidak ada syarat
+      tambahan apa pun: satu anggota $A$ boleh punya banyak pasangan, boleh juga tidak
+      punya sama sekali.
+    </p>
+
+    <h3>Tiga cara menyatakannya</h3>
+    <ul>
+      <li><strong>Diagram panah</strong> — anggota $A$ di kiri, anggota $B$ di kanan,
+        hubungannya digambar sebagai panah dari $A$ ke $B$.</li>
+      <li><strong>Himpunan pasangan berurutan</strong> — ditulis $(x, y)$ dengan
+        $x \in A$ dan $y \in B$.</li>
+      <li><strong>Diagram Cartesius</strong> — anggota $A$ di sumbu mendatar, anggota $B$
+        di sumbu tegak, tiap pasangan ditandai satu noktah.</li>
+    </ul>
+    <p>
+      Ketiganya memuat keterangan yang sama persis. Yang berbeda hanya bentuk tulisannya,
+      dan itu urusan kenyamanan membaca — bukan urusan benar atau salah.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Pilih aturannya, lihat pasangannya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        $P = \{1, 2, 3, 4, 6\}$ dan $Q = \{1, 2, 3, 4, 5, 6\}$. Pilih satu aturan.
+      </p>
+      <div class="deret" id="pilihRelasi"></div>
+      <div id="hasilRelasi" style="margin-top:.7rem"></div>
+    </div>
+  </section>
+
+  <section data-tab="Fungsi atau bukan" hidden>
+    <h3>Dua syarat, dua-duanya wajib</h3>
+    <p>
+      <strong>Fungsi</strong> atau <strong>pemetaan</strong> adalah relasi khusus yang
+      memasangkan <strong>setiap</strong> anggota $A$ dengan <strong>tepat satu</strong>
+      anggota $B$. Inilah yang tadi kamu coba sendiri di papan pemasangan.
+    </p>
+    <div class="tabel-gulir">
+      <table>
+        <thead>
+          <tr><th>Syarat</th><th>Kalau dilanggar</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Setiap anggota $A$ harus punya pasangan</td>
+            <td>Bukan fungsi — ada anggota $A$ tanpa panah</td>
+          </tr>
+          <tr>
+            <td>Setiap anggota $A$ punya tepat satu pasangan</td>
+            <td>Bukan fungsi — ada anggota $A$ dengan dua panah</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Perhatikan bahwa kedua syarat itu hanya mengatur sisi $A$. Anggota $B$
+      <strong>boleh</strong> tidak kebagian pasangan, dan <strong>boleh</strong> dipasangkan
+      dengan lebih dari satu anggota $A$. Menganggap diagram bukan fungsi hanya karena ada
+      anggota $B$ yang menganggur adalah kekeliruan yang sering terjadi di bab ini.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Fungsi atau bukan?</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        $A = \{p, q, r\}$ dan $B = \{1, 2, 3\}$. Putuskan dulu, baru periksa.
+      </p>
+      <p id="kasusFungsi" style="font-size:1.05rem;margin:.4rem 0"></p>
+      <div class="deret">
+        <button type="button" class="tombol mungil" id="jawabFungsi">Fungsi</button>
+        <button type="button" class="tombol mungil" id="jawabBukan">Bukan fungsi</button>
+        <button type="button" class="tombol mungil" id="kasusLain">Contoh lain</button>
+      </div>
+      <div id="umpanFungsi" style="margin-top:.6rem"></div>
+    </div>
+  </section>
+
+  <section data-tab="Domain dan range" hidden>
+    <h3>Tiga daerah</h3>
+    <div class="tabel-gulir">
+      <table>
+        <thead>
+          <tr><th>Istilah</th><th>Nama Indonesia</th><th>Isinya</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Domain</td><td>daerah asal</td><td>himpunan $A$, semuanya</td></tr>
+          <tr><td>Kodomain</td><td>daerah kawan</td><td>himpunan $B$, semuanya</td></tr>
+          <tr><td>Range</td><td>daerah hasil</td><td>anggota $B$ yang benar-benar kebagian</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      <strong>Range selalu bagian dari kodomain</strong>, dan boleh lebih sedikit.
+      Tertukarnya kodomain dengan range adalah kekeliruan paling umum di sini, dan
+      bedanya cuma satu kata: kodomain adalah yang <strong>disediakan</strong>, range
+      adalah yang <strong>terpakai</strong>.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Perbesar domainnya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Fungsinya $f(x) = x + 1$ dengan kodomain $\{1, 2, \dots, 9\}$. Geser untuk
+        menambah anggota domainnya.
+      </p>
+      <div id="geserDomain"></div>
+    </div>
+
+    <h3>Grafik fungsi</h3>
+    <p>
+      Menggambar grafik fungsi selalu lewat empat langkah: tentukan domainnya, buat tabel
+      pasangan berurutan, gambar noktahnya di bidang Cartesius, lalu hubungkan.
+      Noktahnya baru boleh dihubungkan dengan garis kalau domainnya bilangan real. Kalau
+      domainnya bilangan cacah, grafiknya memang berupa noktah-noktah yang terpisah.
+    </p>
+  </section>
+
+  <section data-tab="Nilai fungsi" hidden>
+    <h3>Dua notasi yang sama artinya</h3>
+    <p class="tengah">$$f : x \to 2x + 1 \qquad \text{sama dengan} \qquad f(x) = 2x + 1$$</p>
+    <p>
+      Yang kiri dibaca "$f$ memetakan $x$ ke $2x + 1$", yang kanan disebut
+      <strong>rumus fungsi</strong>. Huruf $f$ bukan bilangan yang dikalikan $x$; ia hanya
+      nama fungsinya.
+    </p>
+
+    <h3>Empat tipe soal</h3>
+    <ol>
+      <li>Diketahui $x$, dicari $f(x)$ — substitusi langsung.</li>
+      <li>Diketahui $f(x)$, dicari $x$ — susun persamaan lalu selesaikan.</li>
+      <li>Dicari $a$ dan $b$ pada $f(x) = ax + b$ — susun dua persamaan dari dua nilai
+        yang diketahui, lalu eliminasi.</li>
+      <li>Diketahui $f$ dari sebuah bentuk aljabar — misalkan isi kurungnya sama dengan
+        nilai yang ditanya.</li>
+    </ol>
+    <p>
+      Tipe keempat yang paling sering membuat macet, jadi turunkan langkahnya pelan-pelan.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Tipe 4 selangkah demi selangkah</h3>
+      <p style="margin:.2rem 0 .6rem">
+        Diketahui $f(2x + 3) = 5x - 3$. Tentukan $f(-1)$.
+      </p>
+      <div id="langkahTipe4"></div>
+    </div>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya.
+  </p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.
+  </p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=8&amp;bab=relasi-fungsi&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  /* ---------- 3. Eksplorasi: papan pemasangan ---------- */
+
+  /* Diagram panah digambar sebagai papan ketuk: baris anggota A, kolom
+     anggota B. Bentuk tabel dipilih karena bisa dipakai dengan papan ketik
+     dan terbaca pembaca layar, sesuatu yang tidak dimiliki panah SVG. */
+  var ANAK = ['Eva', 'Roni', 'Tia', 'Dani'];
+  var WARNA = ['merah', 'hitam', 'biru'];
+  var papan = ANAK.map(function () { return WARNA.map(function () { return false; }); });
+
+  var elJelajah = document.getElementById('jelajah');
+  var elPesanJelajah = document.getElementById('pesanJelajah');
+  var pernah = {};
+
+  function gambarPapan() {
+    var bungkus = document.createElement('div');
+    bungkus.className = 'tabel-gulir';
+    var tabel = document.createElement('table');
+
+    var kepala = document.createElement('tr');
+    kepala.appendChild(document.createElement('th'));
+    WARNA.forEach(function (w) {
+      var th = document.createElement('th');
+      th.textContent = w;
+      kepala.appendChild(th);
+    });
+    tabel.appendChild(kepala);
+
+    ANAK.forEach(function (nama, i) {
+      var baris = document.createElement('tr');
+      var th = document.createElement('th');
+      th.textContent = nama;
+      baris.appendChild(th);
+      WARNA.forEach(function (w, j) {
+        var td = document.createElement('td');
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'tombol mungil';
+        b.textContent = papan[i][j] ? 'terpasang' : '—';
+        b.setAttribute('aria-pressed', papan[i][j] ? 'true' : 'false');
+        b.setAttribute('aria-label', nama + ' ke ' + w);
+        b.addEventListener('click', function () {
+          papan[i][j] = !papan[i][j];
+          gambarPapan();
+        });
+        td.appendChild(b);
+        baris.appendChild(td);
+      });
+      tabel.appendChild(baris);
+    });
+
+    bungkus.appendChild(tabel);
+    elJelajah.innerHTML = '';
+    elJelajah.appendChild(bungkus);
+
+    var ringkas = document.createElement('p');
+    ringkas.className = 'kecil';
+    ringkas.style.margin = '.6rem 0 0';
+    ringkas.textContent = 'Pasangan berurutan: ' + (daftarPasangan().join('  ') || 'belum ada');
+    elJelajah.appendChild(ringkas);
+
+    catat();
+  }
+
+  function banyakPanah(i) {
+    return papan[i].filter(Boolean).length;
+  }
+
+  function daftarPasangan() {
+    var hasil = [];
+    ANAK.forEach(function (nama, i) {
+      WARNA.forEach(function (w, j) {
+        if (papan[i][j]) hasil.push('(' + nama + ', ' + w + ')');
+      });
+    });
+    return hasil;
+  }
+
+  /* Kesimpulan ditahan sampai kedua keadaan kuncinya benar-benar pernah
+     dibuat sendiri: satu pemasangan yang tiap anaknya tepat satu, dan satu
+     yang tidak. Kalau kesimpulannya muncul lebih dulu, ia akan dibaca
+     sebagai aturan hafalan. */
+  function catat() {
+    var jumlah = ANAK.map(function (_, i) { return banyakPanah(i); });
+    if (jumlah.every(function (n) { return n === 1; })) pernah.rapi = true;
+    if (jumlah.some(function (n) { return n > 1; })) pernah.ganda = true;
+    if (jumlah.some(function (n) { return n === 0; }) &&
+        jumlah.some(function (n) { return n > 0; })) pernah.kosong = true;
+
+    if (!(pernah.rapi && (pernah.ganda || pernah.kosong))) {
+      elPesanJelajah.innerHTML = '';
+      return;
+    }
+    elPesanJelajah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Dua-duanya relasi, sebab dua-duanya memasangkan. Tapi hanya yang tiap ' +
+      'anaknya kebagian tepat satu warna yang disebut fungsi. Perhatikan bahwa ' +
+      'syaratnya cuma mengatur sisi kiri: warna yang tidak dipilih siapa pun ' +
+      'tidak melanggar apa-apa.') + '</div>';
+  }
+
+  gambarPapan();
+
+  /* ---------- 4. Tab "Aturannya" ---------- */
+
+  Materi.tab(document.getElementById('tabMateri'));
+
+  /* ---------- 4a. Pemilih aturan relasi ---------- */
+
+  var P = [1, 2, 3, 4, 6];
+  var Q = [1, 2, 3, 4, 5, 6];
+
+  var ATURAN = [
+    { nama: 'dua kali dari', uji: function (x, y) { return x === 2 * y; } },
+    { nama: 'faktor dari', uji: function (x, y) { return y % x === 0; } },
+    { nama: 'kurang dari', uji: function (x, y) { return x < y; } },
+    { nama: 'sama dengan', uji: function (x, y) { return x === y; } }
+  ];
+
+  var elPilihRelasi = document.getElementById('pilihRelasi');
+  var elHasilRelasi = document.getElementById('hasilRelasi');
+
+  function tampilkanRelasi(ke) {
+    var a = ATURAN[ke];
+    var pasangan = [];
+    P.forEach(function (x) {
+      Q.forEach(function (y) { if (a.uji(x, y)) pasangan.push('(' + x + ', ' + y + ')'); });
+    });
+
+    var punyaPasangan = P.filter(function (x) {
+      return Q.some(function (y) { return a.uji(x, y); });
+    });
+    var lebihSatu = P.filter(function (x) {
+      return Q.filter(function (y) { return a.uji(x, y); }).length > 1;
+    });
+
+    var catatan;
+    if (punyaPasangan.length < P.length) {
+      catatan = 'Ada anggota P yang tidak kebagian pasangan, jadi relasi ini bukan fungsi.';
+    } else if (lebihSatu.length) {
+      catatan = 'Ada anggota P dengan lebih dari satu pasangan, jadi relasi ini bukan fungsi.';
+    } else {
+      catatan = 'Setiap anggota P kebagian tepat satu pasangan, jadi relasi ini fungsi.';
+    }
+
+    elHasilRelasi.innerHTML =
+      '<h3 class="rapat">Relasi "' + a.nama + '"</h3>' +
+      '<p style="margin:.2rem 0">' + (pasangan.join('  ') || 'tidak ada pasangan') + '</p>' +
+      '<p class="kecil samar" style="margin:.3rem 0 0">' + catatan + '</p>';
+  }
+
+  ATURAN.forEach(function (a, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tombol mungil';
+    b.textContent = a.nama;
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(elPilihRelasi.children, function (x, j) {
+        x.setAttribute('aria-pressed', j === i ? 'true' : 'false');
+      });
+      tampilkanRelasi(i);
+    });
+    elPilihRelasi.appendChild(b);
+  });
+  elPilihRelasi.children[0].setAttribute('aria-pressed', 'true');
+  tampilkanRelasi(0);
+
+  /* ---------- 4b. Fungsi atau bukan ---------- */
+
+  /* Tiap kasus ditulis sebagai himpunan pasangan berurutan, bukan gambar,
+     supaya yang diperiksa memang syaratnya dan bukan tampilannya. */
+  var KASUS = [
+    {
+      teks: '$\\{(p, 1), (q, 3), (r, 3)\\}$', fungsi: true,
+      alasan: 'Fungsi. Ketiga anggota A kebagian tepat satu pasangan. ' +
+        'Bahwa $q$ dan $r$ sama-sama ke $3$ tidak melanggar apa pun.'
+    },
+    {
+      teks: '$\\{(p, 1), (p, 2), (q, 3), (r, 1)\\}$', fungsi: false,
+      alasan: 'Bukan fungsi. Anggota $p$ punya dua pasangan, padahal harus tepat satu.'
+    },
+    {
+      teks: '$\\{(p, 2), (q, 2)\\}$', fungsi: false,
+      alasan: 'Bukan fungsi. Anggota $r$ tidak kebagian pasangan sama sekali.'
+    },
+    {
+      teks: '$\\{(p, 3), (q, 3), (r, 3)\\}$', fungsi: true,
+      alasan: 'Fungsi. Semua ke $3$, dan itu boleh: anggota B memang boleh ' +
+        'dipasangkan lebih dari satu kali. Anggota $1$ dan $2$ yang menganggur ' +
+        'juga tidak melanggar syarat.'
+    }
+  ];
+
+  var kasusKe = 0;
+  var elKasus = document.getElementById('kasusFungsi');
+  var elUmpan = document.getElementById('umpanFungsi');
+
+  function gambarKasus() {
+    Rumus.isi(elKasus, KASUS[kasusKe].teks);
+    elUmpan.innerHTML = '';
+  }
+
+  function jawab(tebakan) {
+    var k = KASUS[kasusKe];
+    var benar = (tebakan === k.fungsi);
+    elUmpan.innerHTML = '<div class="pesan ' + (benar ? 'sip' : 'awas') + '">' +
+      Rumus.keHTML((benar ? '' : 'Sepertinya belum. ') + k.alasan) + '</div>';
+  }
+
+  document.getElementById('jawabFungsi').addEventListener('click', function () { jawab(true); });
+  document.getElementById('jawabBukan').addEventListener('click', function () { jawab(false); });
+  document.getElementById('kasusLain').addEventListener('click', function () {
+    kasusKe = (kasusKe + 1) % KASUS.length;
+    gambarKasus();
+  });
+  gambarKasus();
+
+  /* ---------- 4c. Domain yang diperbesar ---------- */
+
+  Materi.geser(document.getElementById('geserDomain'), {
+    label: 'Banyak anggota domain', min: 1, maks: 6, awal: 3,
+    hitung: function (n) {
+      var domain = [], range = [];
+      for (var i = 1; i <= n; i++) { domain.push(i); range.push(i + 1); }
+      return 'Domain $= \\{' + domain.join(', ') + '\\}$. ' +
+        'Kodomain $= \\{1, 2, \\dots, 9\\}$. ' +
+        'Range $= \\{' + range.join(', ') + '\\}$. ' +
+        'Kodomainnya tidak ikut berubah; yang berubah hanya yang terpakai.';
+    }
+  });
+
+  /* ---------- 4d. Tipe 4 selangkah demi selangkah ---------- */
+
+  Materi.langkah(document.getElementById('langkahTipe4'), [
+    { judul: 'Samakan isi kurungnya. ',
+      teks: 'Yang ditanya $f(-1)$, jadi isi kurung harus bernilai $-1$: $2x + 3 = -1$.' },
+    { judul: 'Selesaikan. ',
+      teks: '$2x = -4$, jadi $x = -2$.' },
+    { judul: 'Masukkan ke ruas kanan. ',
+      teks: 'Yang disubstitusi bukan $-1$, melainkan $x = -2$: $5(-2) - 3$.' },
+    { judul: 'Hitung. ',
+      teks: '$-10 - 3 = -13$, jadi $f(-1) = -13$.' }
+  ]);
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  Materi.contoh(document.getElementById('daftarContoh'), [
+    {
+      judul: 'Mencari x',
+      soal: 'Fungsi $f(x) = 2x - 2$. Tentukan nilai $x$ yang membuat $f(x) = 8$.',
+      langkah: [
+        'Yang diketahui kali ini hasilnya, bukan masukannya. Jadi tulis dulu ' +
+          'persamaannya: $8 = 2x - 2$.',
+        'Pindahkan $-2$ ke ruas kiri menjadi $+2$: $10 = 2x$.',
+        'Bagi kedua ruas dengan $2$: $x = 5$.',
+        'Periksa: $f(5) = 2 \\cdot 5 - 2 = 8$. Cocok.'
+      ]
+    },
+    {
+      judul: 'Mencari rumus fungsi',
+      soal: 'Fungsi $f(x) = ax + b$ memiliki $f(0) = -5$ dan $f(-2) = -9$. ' +
+        'Tentukan rumus fungsinya.',
+      langkah: [
+        'Masukkan $x = 0$: $f(0) = a \\cdot 0 + b = b$. Karena $f(0) = -5$, ' +
+          'langsung didapat $b = -5$.',
+        'Masukkan $x = -2$: $-2a + b = -9$.',
+        'Ganti $b$ dengan $-5$: $-2a - 5 = -9$, jadi $-2a = -4$ dan $a = 2$.',
+        'Rumusnya $f(x) = 2x - 5$.'
+      ]
+    },
+    {
+      judul: 'Fungsi dari bentuk aljabar',
+      soal: 'Diketahui $f(3x - 1) = 6x + 4$. Tentukan $f(5)$.',
+      langkah: [
+        'Samakan isi kurung dengan yang ditanya: $3x - 1 = 5$.',
+        'Selesaikan: $3x = 6$, jadi $x = 2$.',
+        'Substitusikan $x = 2$ ke ruas kanan, bukan $5$: $6 \\cdot 2 + 4$.',
+        'Hasilnya $f(5) = 16$.'
+      ]
+    }
+  ]);
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'relasi-fungsi-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Fungsi $f(x) = 3x - 4$. Berapa nilai $f(-2)$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['-10'],
+        salahUmum: [
+          {
+            jawaban: ['2', '-2'],
+            umpan: 'Sepertinya tandanya hilang saat mengalikan. $3 \\cdot (-2) = -6$, ' +
+              'lalu masih dikurangi $4$.'
+          },
+          {
+            jawaban: ['10'],
+            umpan: 'Angkanya sudah benar, tinggal tandanya. Keduanya negatif: ' +
+              '$-6 - 4 = -10$.'
+          }
+        ],
+        bahas: '$f(-2) = 3 \\cdot (-2) - 4 = -6 - 4 = -10$.'
+      },
+      {
+        id: 'relasi-fungsi-cek-2', level: 1, tipe: 'pg',
+        pertanyaan: 'Himpunan $A = \\{1, 2, 3\\}$ dipasangkan ke $B$ sebagai ' +
+          '$\\{(1, a), (2, a), (3, b)\\}$. Pemasangan ini ...',
+        opsi: {
+          a: 'fungsi, karena setiap anggota $A$ punya tepat satu pasangan',
+          b: 'bukan fungsi, karena $a$ dipasangkan dua kali',
+          c: 'bukan fungsi, karena ada anggota $B$ yang tidak terpakai',
+          d: 'bukan fungsi, karena anggota $A$ dan $B$ tidak sama banyak'
+        },
+        kunci: 'a',
+        umpan: {
+          b: 'Anggota $B$ memang boleh dipasangkan lebih dari sekali. ' +
+             'Yang diatur hanya sisi $A$.',
+          c: 'Anggota $B$ yang menganggur tidak melanggar syarat apa pun. ' +
+             'Ia hanya membuat range lebih sedikit daripada kodomain.',
+          d: 'Jumlah anggota kedua himpunan tidak pernah menjadi syarat fungsi.'
+        },
+        bahas: 'Kedua syarat fungsi hanya mengatur sisi $A$: setiap anggotanya ' +
+          'punya pasangan, dan pasangannya tepat satu. Keduanya terpenuhi di sini.'
+      },
+      {
+        id: 'relasi-fungsi-cek-3', level: 2, tipe: 'isian',
+        pertanyaan: 'Fungsi $f$ dari $\\{1, 2, 3\\}$ ke $\\{1, 2, 3, 4, 5\\}$ dengan ' +
+          'aturan $x \\to x + 2$. Tulis rangenya.',
+        petunjuk: 'Contoh penulisan: 3,4,5',
+        jawaban: ['3,4,5', '3, 4, 5', '{3,4,5}'],
+        salahUmum: [
+          {
+            jawaban: ['1,2,3,4,5', '1, 2, 3, 4, 5'],
+            umpan: 'Itu kodomainnya, yaitu yang disediakan. Range hanya berisi ' +
+              'anggota yang benar-benar kebagian pasangan.'
+          },
+          {
+            jawaban: ['1,2,3', '1, 2, 3'],
+            umpan: 'Itu domainnya. Range diambil dari himpunan kedua, ' +
+              'yaitu hasil dari $x + 2$.'
+          }
+        ],
+        bahas: '$1 \\to 3$, $2 \\to 4$, $3 \\to 5$. Yang terpakai hanya $3$, $4$, dan $5$, ' +
+          'jadi range $= \\{3, 4, 5\\}$.'
+      },
+      {
+        id: 'relasi-fungsi-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Fungsi $f(x) = ax + b$ dengan $f(1) = 5$ dan $f(3) = 11$. ' +
+          'Berapa nilai $a$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['3'],
+        salahUmum: [
+          {
+            jawaban: ['6'],
+            umpan: 'Selisih nilainya memang $6$, tetapi itu untuk selisih $x$ ' +
+              'sebesar $2$. Bagi dulu: $6 \\div 2 = 3$.'
+          },
+          {
+            jawaban: ['2'],
+            umpan: 'Sepertinya $b$ yang terhitung. Yang ditanya angka pengali $x$, ' +
+              'yaitu $a$.'
+          }
+        ],
+        bahas: 'Kurangkan kedua persamaan: $(3a + b) - (a + b) = 11 - 5$, ' +
+          'jadi $2a = 6$ dan $a = 3$.'
+      },
+      {
+        id: 'relasi-fungsi-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Diketahui $f(2x + 1) = 4x - 5$. Berapa nilai $f(7)$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['7'],
+        salahUmum: [
+          {
+            jawaban: ['23'],
+            umpan: 'Sepertinya $7$ langsung dimasukkan ke $4x - 5$. Yang bernilai $7$ ' +
+              'adalah isi kurungnya, jadi selesaikan dulu $2x + 1 = 7$.'
+          },
+          {
+            jawaban: ['3'],
+            umpan: 'Nilai $x = 3$ memang benar, tetapi itu belum jawabannya. ' +
+              'Masukkan $x = 3$ ke $4x - 5$.'
+          },
+          {
+            jawaban: ['-5', '9'],
+            umpan: 'Coba ulangi dari $2x + 1 = 7$. Dari situ $x = 3$, ' +
+              'lalu hitung $4 \\cdot 3 - 5$.'
+          }
+        ],
+        bahas: '$2x + 1 = 7$ memberi $x = 3$. Maka $f(7) = 4 \\cdot 3 - 5 = 7$.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 8, 'relasi-fungsi');
+})();
+</script>
+</body>
+</html>

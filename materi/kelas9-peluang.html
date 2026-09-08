@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peluang</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Peluang</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Peluang</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Menyusun ruang sampel dengan mendaftar, diagram pohon, atau tabel.</li>
+      <li>Menghitung peluang teoritik, peluang empiris, dan frekuensi harapan.</li>
+      <li>Tahu kenapa hasil percobaan tidak pernah persis sama dengan hitungan.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Undian di pos ronda</h2>
+  <p>
+    Pak Tohir mengocok dadu untuk menentukan siapa yang berjaga malam ini. Yang mendapat
+    mata $6$ boleh pulang lebih dulu.
+  </p>
+  <p>
+    Seseorang berkata, "Kalau dadunya dilempar $60$ kali, mata $6$ pasti muncul tepat
+    $10$ kali." Menurutmu kalimat itu benar, hampir benar, atau keliru?
+  </p>
+  <p class="kecil samar">
+    Berhenti dulu di sini.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: dadu yang dilempar berkali-kali</h2>
+  <p>
+    Tombol di bawah melempar dadu secara acak, lalu mencatat berapa kali mata $6$
+    muncul. Catatannya ditulis sebagai pecahan: banyak mata $6$ dibagi banyak lemparan.
+  </p>
+  <p>
+    Tugasnya: <strong>lempar $10$ kali, catat angka pecahannya, lalu teruskan sampai
+    lebih dari $200$ lemparan.</strong> Pecahannya bergerak ke mana?
+  </p>
+
+  <div class="kartu">
+    <div id="jelajah"></div>
+    <div id="pesanJelajah" style="margin-top:.7rem"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Ruang sampel">
+    <h3>Istilah yang dipakai seterusnya</h3>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th>Istilah</th><th>Artinya</th></tr></thead>
+        <tbody>
+          <tr><td>Kejadian acak</td><td>kejadian yang hasilnya tidak dapat dipastikan sebelumnya</td></tr>
+          <tr><td>Titik sampel</td><td>setiap hasil yang mungkin muncul</td></tr>
+          <tr><td>Ruang sampel $S$</td><td>himpunan semua hasil yang mungkin</td></tr>
+          <tr><td>$n(S)$</td><td>banyaknya anggota ruang sampel</td></tr>
+          <tr><td>Kejadian $K$</td><td>sebarang himpunan bagian dari ruang sampel</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Tiga cara menyusunnya</h3>
+    <ul>
+      <li><strong>Mendaftar</strong> — kalau anggotanya sedikit, misalnya dua koin.</li>
+      <li><strong>Diagram pohon</strong> — kalau anggotanya cukup banyak; tiap cabang
+        bercabang lagi untuk bagian berikutnya.</li>
+      <li><strong>Tabel</strong> — kalau anggotanya banyak dan objeknya dua; baris untuk
+        objek pertama, kolom untuk objek kedua.</li>
+    </ul>
+
+    <div class="kartu">
+      <h3 class="rapat">Susun ruang sampelnya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Pilih percobaannya, lalu hitung sendiri dulu $n(S)$ sebelum melihat daftarnya.
+      </p>
+      <div class="deret" id="pilihPercobaan"></div>
+      <div id="hasilPercobaan" style="margin-top:.7rem"></div>
+    </div>
+
+    <p>
+      Polanya: $n$ koin memberi $2^n$, $n$ dadu memberi $6^n$, dan percobaan gabungan
+      tinggal dikalikan. Salah menghitung $n(S)$ untuk dua dadu — menulis $12$ padahal
+      $36$ — adalah kekeliruan tersering di bab ini.
+    </p>
+  </section>
+
+  <section data-tab="Peluang teoritik" hidden>
+    <h3>Menghitung tanpa mencoba</h3>
+    <p class="tengah">$$P(K) = \frac{n(K)}{n(S)}$$</p>
+    <p>
+      <strong>Peluang teoritik</strong> dihitung dari penalaran ruang sampel saja, tanpa
+      perlu melakukan percobaan. Nilainya selalu berada di antara $0$ dan $1$:
+    </p>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th>Nilai</th><th>Artinya</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td>$P = 0$</td><td>mustahil</td><td>matahari terbit dari barat</td></tr>
+          <tr><td>$0 < P < 1$</td><td>mungkin terjadi</td><td>besok hujan</td></tr>
+          <tr><td>$P = 1$</td><td>pasti terjadi</td><td>satu minggu ada tujuh hari</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="kartu">
+      <h3 class="rapat">Dua dadu, jumlah tertentu</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Geser untuk memilih jumlah mata dadunya.
+      </p>
+      <div id="geserJumlah"></div>
+    </div>
+
+    <p>
+      Perhatikan bahwa $(1, 4)$ dan $(4, 1)$ adalah dua titik sampel yang berbeda.
+      Mendaftarnya sebagai satu kejadian membuat $n(K)$ kurang, dan peluangnya ikut
+      salah.
+    </p>
+  </section>
+
+  <section data-tab="Empiris dan komplemen" hidden>
+    <h3>Peluang empiris</h3>
+    <p class="tengah">$$\text{peluang empiris} = \frac{\text{banyak kejadian}}{\text{banyak percobaan}}$$</p>
+    <p>
+      <strong>Peluang empiris</strong> dihitung dari percobaan yang benar-benar
+      dilakukan. Inilah yang tadi kamu lihat sendiri saat melempar dadu: pecahannya
+      berubah-ubah, tetapi makin banyak lemparan makin mendekat ke peluang teoritiknya.
+      Keduanya tidak harus sama persis, dan memang jarang sama persis.
+    </p>
+
+    <h3>Peluang komplemen</h3>
+    <p class="tengah">$$P(\text{bukan } K) = 1 - P(K)$$</p>
+    <p>
+      Komplemen adalah kejadian "bukan" kejadian itu. Cara ini menghemat banyak waktu
+      untuk soal bertipe "paling sedikit satu ...", sebab mendaftar lawannya jauh lebih
+      pendek daripada mendaftar semua kemungkinannya.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Tiga koin: paling sedikit satu angka</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Lempar tiga koin sekaligus, berkali-kali, lalu bandingkan dengan hitungannya.
+      </p>
+      <div class="deret">
+        <button type="button" class="tombol mungil utama" id="lemparKoin">Lempar 20 kali</button>
+        <button type="button" class="tombol mungil bahaya" id="ulangKoin">Ulangi dari nol</button>
+      </div>
+      <div id="hasilKoin" style="margin-top:.7rem"></div>
+    </div>
+  </section>
+
+  <section data-tab="Frekuensi harapan" hidden>
+    <h3>Berapa kali diperkirakan muncul</h3>
+    <p class="tengah">$$F_h = P(K) \times n$$</p>
+    <p>
+      <strong>Frekuensi harapan</strong> adalah perkiraan berapa kali suatu kejadian
+      muncul dari sejumlah percobaan. Kata "harapan" penting: ini perkiraan, bukan
+      janji. Itulah jawaban untuk kalimat di pos ronda tadi — $10$ kali adalah frekuensi
+      harapannya, bukan kepastiannya.
+    </p>
+    <p>
+      Kesalahan yang paling sering: menjawab dengan nilai peluangnya saja dan lupa
+      mengalikannya dengan banyak percobaan.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Ubah banyak percobaannya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Kejadiannya: muncul mata dadu prima, yaitu $\{2, 3, 5\}$.
+      </p>
+      <div id="geserHarapan"></div>
+    </div>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya.
+  </p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.
+  </p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=9&amp;bab=peluang&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  /* ---------- 3. Eksplorasi: melempar dadu ---------- */
+
+  var elJelajah = document.getElementById('jelajah');
+  var elPesanJelajah = document.getElementById('pesanJelajah');
+  var lempar = 0, enam = 0;
+
+  elJelajah.innerHTML =
+    '<div class="deret">' +
+      '<button type="button" class="tombol mungil utama" id="lempar10">Lempar 10 kali</button>' +
+      '<button type="button" class="tombol mungil" id="lempar100">Lempar 100 kali</button>' +
+      '<button type="button" class="tombol mungil bahaya" id="ulangDadu">Ulangi dari nol</button>' +
+    '</div>' +
+    '<div id="catatanDadu" style="margin-top:.7rem"></div>';
+
+  var elCatatanDadu = document.getElementById('catatanDadu');
+
+  function lemparDadu(kali) {
+    for (var i = 0; i < kali; i++) {
+      lempar++;
+      if (Math.floor(Math.random() * 6) + 1 === 6) enam++;
+    }
+    gambarDadu();
+  }
+
+  function gambarDadu() {
+    if (!lempar) {
+      elCatatanDadu.innerHTML =
+        '<p class="kecil samar" style="margin:0">Belum ada lemparan.</p>';
+      elPesanJelajah.innerHTML = '';
+      return;
+    }
+    var p = Pecahan.buat(enam, lempar);
+    Rumus.isi(elCatatanDadu,
+      'Sudah $' + lempar + '$ lemparan, mata $6$ muncul $' + enam + '$ kali. ' +
+      'Pecahannya $' + p.rumus() + '$, atau kira-kira $' + p.teksDesimal(3) + '$.');
+
+    /* Kesimpulan ditahan sampai lemparannya benar-benar banyak. Kalau
+       muncul di lemparan kesepuluh, yang terbaca justru kebalikannya:
+       seolah-olah hitungan teoritik itu meleset. */
+    if (lempar < 200) {
+      elPesanJelajah.innerHTML = '';
+      return;
+    }
+    elPesanJelajah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Angkanya bergerak mendekati $\\frac{1}{6}$, yaitu kira-kira $0{,}167$ — tetapi ' +
+      'hampir tidak pernah tepat. Yang dari percobaan disebut peluang empiris, ' +
+      'yang dari hitungan disebut peluang teoritik. Makin banyak percobaannya, ' +
+      'makin dekat keduanya.') + '</div>';
+  }
+
+  document.getElementById('lempar10').addEventListener('click', function () { lemparDadu(10); });
+  document.getElementById('lempar100').addEventListener('click', function () { lemparDadu(100); });
+  document.getElementById('ulangDadu').addEventListener('click', function () {
+    lempar = 0; enam = 0; gambarDadu();
+  });
+  gambarDadu();
+
+  /* ---------- 4. Tab "Aturannya" ---------- */
+
+  Materi.tab(document.getElementById('tabMateri'));
+
+  /* ---------- 4a. Menyusun ruang sampel ---------- */
+
+  var PERCOBAAN = [
+    {
+      nama: '2 koin',
+      titik: (function () {
+        var hasil = [];
+        ['A', 'G'].forEach(function (a) {
+          ['A', 'G'].forEach(function (b) { hasil.push(a + b); });
+        });
+        return hasil;
+      })(),
+      cara: 'Anggotanya sedikit, jadi cukup didaftar.'
+    },
+    {
+      nama: '3 koin',
+      titik: (function () {
+        var hasil = [];
+        ['A', 'G'].forEach(function (a) {
+          ['A', 'G'].forEach(function (b) {
+            ['A', 'G'].forEach(function (c) { hasil.push(a + b + c); });
+          });
+        });
+        return hasil;
+      })(),
+      cara: 'Delapan anggota, bukan enam. Diagram pohon paling aman di sini.'
+    },
+    {
+      nama: '1 koin + 1 dadu',
+      titik: (function () {
+        var hasil = [];
+        ['A', 'G'].forEach(function (a) {
+          for (var d = 1; d <= 6; d++) hasil.push(a + d);
+        });
+        return hasil;
+      })(),
+      cara: 'Dua objek berbeda, jadi tabel paling rapi: $2 \\times 6 = 12$.'
+    },
+    {
+      nama: '2 dadu',
+      titik: (function () {
+        var hasil = [];
+        for (var a = 1; a <= 6; a++) {
+          for (var b = 1; b <= 6; b++) hasil.push('(' + a + ',' + b + ')');
+        }
+        return hasil;
+      })(),
+      cara: 'Tabel $6 \\times 6$, jadi $n(S) = 36$ — bukan $12$.'
+    }
+  ];
+
+  var elPilihPercobaan = document.getElementById('pilihPercobaan');
+  var elHasilPercobaan = document.getElementById('hasilPercobaan');
+
+  function tampilkanPercobaan(i) {
+    var p = PERCOBAAN[i];
+    elHasilPercobaan.innerHTML =
+      '<p style="margin:.2rem 0">' + Rumus.keHTML('$n(S) = ' + p.titik.length + '$') + '</p>' +
+      '<p class="kecil" style="margin:.2rem 0">' + p.titik.join('  ') + '</p>' +
+      '<p class="kecil samar" style="margin:.3rem 0 0">' + Rumus.keHTML(p.cara) + '</p>';
+  }
+
+  PERCOBAAN.forEach(function (p, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tombol mungil';
+    b.textContent = p.nama;
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(elPilihPercobaan.children, function (x, j) {
+        x.setAttribute('aria-pressed', j === i ? 'true' : 'false');
+      });
+      tampilkanPercobaan(i);
+    });
+    elPilihPercobaan.appendChild(b);
+  });
+  elPilihPercobaan.children[0].setAttribute('aria-pressed', 'true');
+  tampilkanPercobaan(0);
+
+  /* ---------- 4b. Peluang jumlah dua dadu ---------- */
+
+  Materi.geser(document.getElementById('geserJumlah'), {
+    label: 'Jumlah mata dadu', min: 2, maks: 12, awal: 5,
+    hitung: function (j) {
+      var pasangan = [];
+      for (var a = 1; a <= 6; a++) {
+        for (var b = 1; b <= 6; b++) {
+          if (a + b === j) pasangan.push('(' + a + ',' + b + ')');
+        }
+      }
+      var p = Pecahan.buat(pasangan.length, 36);
+      return 'Titik sampelnya: ' + pasangan.join(' ') + '. ' +
+        'Jadi $n(K) = ' + pasangan.length + '$ dan $P(K) = \\frac{' + pasangan.length +
+        '}{36} = ' + p.rumus() + '$.';
+    }
+  });
+
+  /* ---------- 4c. Tiga koin dan komplemennya ---------- */
+
+  var lemparKoin = 0, adaAngka = 0;
+  var elHasilKoin = document.getElementById('hasilKoin');
+
+  function gambarKoin() {
+    if (!lemparKoin) {
+      Rumus.isi(elHasilKoin,
+        'Belum ada lemparan. Hitungannya: $n(S) = 8$, dan satu-satunya susunan tanpa ' +
+        'angka adalah $GGG$. Jadi $P(\\text{paling sedikit satu angka}) = ' +
+        '1 - \\frac{1}{8} = \\frac{7}{8}$.');
+      return;
+    }
+    var p = Pecahan.buat(adaAngka, lemparKoin);
+    Rumus.isi(elHasilKoin,
+      'Dari $' + lemparKoin + '$ lemparan, paling sedikit satu angka muncul $' +
+      adaAngka + '$ kali, yaitu $' + p.rumus() + '$ atau kira-kira $' +
+      p.teksDesimal(3) + '$. Hitungan teoritiknya $\\frac{7}{8} = 0{,}875$.');
+  }
+
+  document.getElementById('lemparKoin').addEventListener('click', function () {
+    for (var i = 0; i < 20; i++) {
+      lemparKoin++;
+      var angka = 0;
+      for (var k = 0; k < 3; k++) if (Math.random() < 0.5) angka++;
+      if (angka >= 1) adaAngka++;
+    }
+    gambarKoin();
+  });
+  document.getElementById('ulangKoin').addEventListener('click', function () {
+    lemparKoin = 0; adaAngka = 0; gambarKoin();
+  });
+  gambarKoin();
+
+  /* ---------- 4d. Frekuensi harapan ---------- */
+
+  Materi.geser(document.getElementById('geserHarapan'), {
+    label: 'Banyak percobaan', min: 10, maks: 300, awal: 100, langkah: 10,
+    hitung: function (n) {
+      var p = Pecahan.buat(3, 6);
+      var fh = p.kali(Pecahan.buat(n, 1));
+      return '$P(K) = \\frac{3}{6} = ' + p.rumus() + '$, jadi $F_h = ' + p.rumus() +
+        ' \\times ' + n + ' = ' + fh.rumus() + '$ kali. ' +
+        'Perhatikan bahwa peluangnya tidak berubah; yang berubah hanya banyak percobaannya.';
+    }
+  });
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  Materi.contoh(document.getElementById('daftarContoh'), [
+    {
+      judul: 'Peluang dari kartu',
+      soal: 'Satu kartu diambil dari satu set kartu bridge. Berapa peluang terambil ' +
+        'kartu As?',
+      langkah: [
+        'Ruang sampelnya seluruh kartu: $n(S) = 52$.',
+        'Kartu As ada empat, satu untuk tiap jenis: $n(K) = 4$.',
+        '$P(K) = \\frac{4}{52} = \\frac{1}{13}$.'
+      ]
+    },
+    {
+      judul: 'Memakai komplemen',
+      soal: 'Dua dadu dilempar bersamaan. Berapa peluang jumlah matanya bukan $7$?',
+      langkah: [
+        'Hitung dulu yang jumlahnya $7$: $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$ — ' +
+          'ada $6$ titik sampel.',
+        '$P(\\text{jumlah } 7) = \\frac{6}{36} = \\frac{1}{6}$.',
+        'Komplemennya: $P(\\text{bukan } 7) = 1 - \\frac{1}{6} = \\frac{5}{6}$. ' +
+          'Mendaftar $30$ pasangan lainnya tidak perlu dilakukan.'
+      ]
+    },
+    {
+      judul: 'Frekuensi harapan',
+      soal: 'Peluang seorang anak terjangkit suatu penyakit adalah $0{,}05$. ' +
+        'Dari $3.000$ anak, berapa yang diperkirakan terjangkit?',
+      langkah: [
+        'Yang diketahui peluangnya dan banyak percobaannya, jadi pakai ' +
+          '$F_h = P(K) \\times n$.',
+        '$F_h = 0{,}05 \\times 3.000$.',
+        'Hasilnya $150$ anak. Ini perkiraan, bukan kepastian: bisa saja yang ' +
+          'sebenarnya $147$ atau $158$.'
+      ]
+    }
+  ]);
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'peluang-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Berapa banyak anggota ruang sampel pada pelemparan dua dadu?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['36'],
+        salahUmum: [
+          {
+            jawaban: ['12'],
+            umpan: 'Sepertinya keduanya dijumlahkan. Ruang sampel gabungan diperoleh ' +
+              'dengan mengalikan: $6 \\times 6$.'
+          },
+          {
+            jawaban: ['6'],
+            umpan: 'Itu untuk satu dadu. Dadu keduanya juga punya enam kemungkinan ' +
+              'untuk setiap hasil dadu pertama.'
+          }
+        ],
+        bahas: 'Setiap mata dadu pertama bisa berpasangan dengan enam mata dadu kedua, ' +
+          'jadi $n(S) = 6 \\times 6 = 36$.'
+      },
+      {
+        id: 'peluang-cek-2', level: 1, tipe: 'isian',
+        pertanyaan: 'Sebuah dadu dilempar. Berapa peluang muncul mata dadu genap?',
+        petunjuk: 'Contoh penulisan: 1/2',
+        jawaban: ['1/2', '0,5', '3/6'],
+        salahUmum: [
+          {
+            jawaban: ['3'],
+            umpan: 'Angka $3$ adalah $n(K)$, banyaknya mata genap. Peluang masih harus ' +
+              'dibagi $n(S) = 6$.'
+          },
+          {
+            jawaban: ['1/6'],
+            umpan: 'Itu peluang satu mata tertentu. Mata genap ada tiga: $2$, $4$, dan $6$.'
+          }
+        ],
+        bahas: '$K = \\{2, 4, 6\\}$ sehingga $n(K) = 3$, dan ' +
+          '$P(K) = \\frac{3}{6} = \\frac{1}{2}$.'
+      },
+      {
+        id: 'peluang-cek-3', level: 2, tipe: 'isian',
+        pertanyaan: 'Peluang Romi lulus ujian adalah $0{,}9$. Berapa peluang ia ' +
+          'tidak lulus?',
+        petunjuk: 'Contoh penulisan: 0,4',
+        jawaban: ['0,1', '1/10', '0.1'],
+        salahUmum: [
+          {
+            jawaban: ['0,9'],
+            umpan: 'Itu peluang lulusnya. Komplemennya dihitung dengan ' +
+              '$1 - P(K)$.'
+          },
+          {
+            jawaban: ['-0,9'],
+            umpan: 'Peluang tidak pernah negatif. Yang dikurangi adalah $1$, ' +
+              'bukan nol: $1 - 0{,}9$.'
+          }
+        ],
+        bahas: '$P(\\text{tidak lulus}) = 1 - 0{,}9 = 0{,}1$.'
+      },
+      {
+        id: 'peluang-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Sebuah koin dilempar $30$ kali. Berapa frekuensi harapan ' +
+          'muncul sisi angka?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['15'],
+        salahUmum: [
+          {
+            jawaban: ['1/2', '0,5'],
+            umpan: 'Itu peluangnya, dan langkahnya belum selesai. ' +
+              'Frekuensi harapan masih harus dikalikan banyak percobaan.'
+          },
+          {
+            jawaban: ['30'],
+            umpan: 'Itu banyak percobaannya. Kalikan dulu dengan peluangnya, $\\frac{1}{2}$.'
+          }
+        ],
+        bahas: '$F_h = \\frac{1}{2} \\times 30 = 15$ kali.'
+      },
+      {
+        id: 'peluang-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Dua dadu dilempar bersamaan. Berapa peluang jumlah kedua matanya $5$?',
+        petunjuk: 'Contoh penulisan: 1/9',
+        jawaban: ['1/9', '4/36'],
+        salahUmum: [
+          {
+            jawaban: ['2/36', '1/18'],
+            umpan: 'Sepertinya $(1,4)$ dan $(4,1)$ dihitung sebagai satu titik sampel. ' +
+              'Keduanya berbeda, sebab dadunya juga berbeda.'
+          },
+          {
+            jawaban: ['4/12', '1/3'],
+            umpan: '$n(K)$-nya sudah benar, yaitu $4$. Penyebutnya $n(S) = 36$, ' +
+              'bukan $12$.'
+          },
+          {
+            jawaban: ['5/36'],
+            umpan: 'Sepertinya jumlah $5$ dianggap punya lima pasangan. Daftar ulang: ' +
+              '$(1,4), (2,3), (3,2), (4,1)$ — hanya empat.'
+          }
+        ],
+        bahas: 'Pasangan yang berjumlah $5$ ada empat: $(1,4), (2,3), (3,2), (4,1)$. ' +
+          'Jadi $P(K) = \\frac{4}{36} = \\frac{1}{9}$.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 9, 'peluang');
+})();
+</script>
+</body>
+</html>

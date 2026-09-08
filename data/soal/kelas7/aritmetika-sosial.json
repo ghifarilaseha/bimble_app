@@ -1,0 +1,298 @@
+{
+  "meta": {
+    "kelas": 7,
+    "semester": 1,
+    "bab": "aritmetika-sosial",
+    "judul": "Aritmetika Sosial",
+    "sumber": "Modul MGMP Matematika SMPN 14 Bandung, Kelas VII Sem. 1, Episode 4",
+    "versi": "2026-09-06"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "as-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pedagang buah membeli jeruk dengan harga Rp18.000,00 per kg dan menjualnya Rp24.000,00 per kg. Pedagang tersebut ...",
+      "opsi": {
+        "a": "untung Rp6.000,00 per kg",
+        "b": "rugi Rp6.000,00 per kg",
+        "c": "untung Rp42.000,00 per kg",
+        "d": "impas"
+      },
+      "acakOpsi": true,
+      "pembahasan": "SGFyZ2EganVhbCBsZWJpaCBiZXNhciBkYXJpcGFkYSBoYXJnYSBiZWxpLCBqYWRpIHVudHVuZy4gQmVzYXJueWEgJD0gMjQuMDAwIC0gMTguMDAwID0gJCBScDYuMDAwLDAwIHBlciBrZy4=",
+      "kunci": "06992a174904373ae9d3f4254968919f6863d63ae80fa299a0324f44e342a049"
+    },
+    {
+      "id": "as-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah toko memberikan diskon 25%. Budi membeli setrika berharga Rp320.000,00. Uang yang harus dibayar Budi adalah ...",
+      "opsi": {
+        "a": "Rp80.000,00",
+        "b": "Rp240.000,00",
+        "c": "Rp295.000,00",
+        "d": "Rp400.000,00"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RGlza29uICQ9IDI1XCUgXHRpbWVzIDMyMC4wMDAgPSA4MC4wMDAkLiBZYW5nIGRpYmF5YXIgJD0gMzIwLjAwMCAtIDgwLjAwMCA9ICQgUnAyNDAuMDAwLDAwLiBQZXJoYXRpa2FuIGJhaHdhIFJwODAuMDAwLDAwIGFkYWxhaCBiZXNhciBwb3Rvbmdhbm55YSwgYnVrYW4gaGFyZ2EgYmF5YXJueWEu",
+      "kunci": "ac779a6ea2fb7ee7f2ee3b31fd5a338c1cbcfb951d4003b0b151943457088901"
+    },
+    {
+      "id": "as-03",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Besar diskon 20% untuk barang seharga Rp150.000,00 adalah Rp ...",
+      "pembahasan": "JDIwXCUgXHRpbWVzIDE1MC4wMDAgPSBcZnJhY3syMH17MTAwfSBcdGltZXMgMTUwLjAwMCA9IDMwLjAwMCQu",
+      "kunci": [
+        "130460c323e07e3e0b01462b75727b13958897027c39414d12357c2804b8af78"
+      ]
+    },
+    {
+      "id": "as-04",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Jika harga jual lebih kecil daripada harga beli, maka pedagang memperoleh keuntungan.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "SGFyZ2EganVhbCBsZWJpaCBrZWNpbCBkYXJpcGFkYSBoYXJnYSBiZWxpIGJlcmFydGkgcGVkYWdhbmcgbWVuZ2FsYW1pIGtlcnVnaWFuIHNlYmVzYXIgaGFyZ2EgYmVsaSBkaWt1cmFuZ2kgaGFyZ2EganVhbC4=",
+      "kunci": "e0ceffcd78de8bb4e964beab7d7686985dcba51f9d761a15b44d5e7354082978"
+    },
+    {
+      "id": "as-05",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Andi menabung Rp500.000,00 di bank dengan bunga tunggal 10% per tahun. Besar bunga yang ia terima setelah satu tahun adalah ...",
+      "opsi": {
+        "a": "Rp5.000,00",
+        "b": "Rp50.000,00",
+        "c": "Rp100.000,00",
+        "d": "Rp550.000,00"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QnVuZ2Egc2F0dSB0YWh1biAkPSAxMFwlIFx0aW1lcyA1MDAuMDAwID0gXGZyYWN7MTB9ezEwMH0gXHRpbWVzIDUwMC4wMDAgPSA1MC4wMDAkLiBScDU1MC4wMDAsMDAgYWRhbGFoIGp1bWxhaCB0YWJ1bmdhbiBha2hpcm55YSwgYnVrYW4gYnVuZ2FueWEu",
+      "kunci": "ecb996e98d2dce7607441a86c89d4bc990132888682d0ef82fc86d385ded146c"
+    },
+    {
+      "id": "as-06",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Seorang pedagang membeli sepeda seharga Rp800.000,00 dan menjualnya Rp900.000,00. Besar keuntungannya adalah Rp ...",
+      "pembahasan": "VW50dW5nICQ9ICQgaGFyZ2EganVhbCAkLSQgaGFyZ2EgYmVsaSAkPSA5MDAuMDAwIC0gODAwLjAwMCA9IDEwMC4wMDAkLg==",
+      "kunci": [
+        "de0b5717968b7e6f4201b4611d3d43ed84a85204ba8987ba690860a117a1f2c2"
+      ]
+    },
+    {
+      "id": "as-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pak Rudi membeli sepetak tanah seharga Rp50.000.000,00 dan terpaksa menjualnya seharga Rp46.000.000,00. Persentase kerugian Pak Rudi adalah ...",
+      "opsi": {
+        "a": "$4\\%$",
+        "b": "$8\\%$",
+        "c": "$8{,}7\\%$",
+        "d": "$16\\%$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UnVnaSAkPSA1MC4wMDAuMDAwIC0gNDYuMDAwLjAwMCA9IDQuMDAwLjAwMCQuIFBlcnNlbnRhc2UgcnVnaSBkaWhpdHVuZyB0ZXJoYWRhcCBoYXJnYSBiZWxpOiAkXGZyYWN7NC4wMDAuMDAwfXs1MC4wMDAuMDAwfSBcdGltZXMgMTAwXCUgPSA4XCUkLiBNZW1iYWdpbnlhIGRlbmdhbiBoYXJnYSBqdWFsIG1lbWJlcmkgJDh7LH03XCUkIGRhbiBpdHUga2VsaXJ1Lg==",
+      "kunci": "57b00c5d1154392949b6c0aca7eb165fea2d8afb53429398e9f7dcd19ed9bc2a"
+    },
+    {
+      "id": "as-08",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Persentase keuntungan dihitung dengan membandingkan besar keuntungan terhadap harga jual.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UGVyc2VudGFzZSB1bnR1bmcgbWF1cHVuIHJ1Z2kgc2VsYWx1IGRpYmFuZGluZ2thbiB0ZXJoYWRhcCBoYXJnYSBiZWxpIChtb2RhbCksIGJ1a2FuIGhhcmdhIGp1YWwu",
+      "kunci": "57ab5836e41ec3a196caee71daef636cfa7c2003e4daf0e8646174c525eb5ae2"
+    },
+    {
+      "id": "as-09",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah toko membeli 30 kipas angin seharga Rp7.200.000,00. Toko mengharapkan untung 25% dari harga beli. Harga jual setiap kipas angin adalah ...",
+      "opsi": {
+        "a": "Rp240.000,00",
+        "b": "Rp265.000,00",
+        "c": "Rp300.000,00",
+        "d": "Rp360.000,00"
+      },
+      "acakOpsi": false,
+      "pembahasan": "SGFyZ2EgYmVsaSBwZXIga2lwYXMgJD0gNy4yMDAuMDAwIFxkaXYgMzAgPSAyNDAuMDAwJC4gSGFyZ2EganVhbCAkPSBcZnJhY3sxMDBcJSArIDI1XCV9ezEwMFwlfSBcdGltZXMgMjQwLjAwMCA9IDF7LH0yNSBcdGltZXMgMjQwLjAwMCA9ICQgUnAzMDAuMDAwLDAwLiBScDI2NS4wMDAsMDAgbXVuY3VsIGJpbGEgMjUlIGRpYmFjYSBzZWJhZ2FpIFJwMjUuMDAwLDAwLg==",
+      "kunci": "c35f3453f80399fdcf36020d1234f35c7fa49afea87b34cef55b5f41a47c97f5"
+    },
+    {
+      "id": "as-10",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Tono menyimpan uang Rp2.400.000,00 di bank dengan bunga tunggal 10% per tahun. Besar bunga yang diterima Tono selama 9 bulan adalah Rp ...",
+      "pembahasan": "QnVuZ2Egc2F0dSB0YWh1biAkPSAxMFwlIFx0aW1lcyAyLjQwMC4wMDAgPSAyNDAuMDAwJC4gQnVuZ2EgOSBidWxhbiAkPSBcZnJhY3s5fXsxMn0gXHRpbWVzIDI0MC4wMDAgPSAxODAuMDAwJC4=",
+      "kunci": [
+        "9ea9cb4a25584717177ec9a2ddb0e8729600a53c83eaa003c13cf7c450af3bf9"
+      ]
+    },
+    {
+      "id": "as-11",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Joko membeli televisi seharga Rp5.000.000,00 tetapi hanya membayar Rp4.850.000,00. Persentase diskon yang ia peroleh adalah ...",
+      "opsi": {
+        "a": "$1{,}5\\%$",
+        "b": "$3\\%$",
+        "c": "$5\\%$",
+        "d": "$15\\%$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RGlza29uICQ9IDUuMDAwLjAwMCAtIDQuODUwLjAwMCA9IDE1MC4wMDAkLiBQZXJzZW50YXNlbnlhICRcZnJhY3sxNTAuMDAwfXs1LjAwMC4wMDB9IFx0aW1lcyAxMDBcJSA9IDNcJSQu",
+      "kunci": "a5b70af9d87c00056bfc24d555908889d73995cec02d4f3a17396074b90fae59"
+    },
+    {
+      "id": "as-12",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Upik menyimpan uang Rp1.500.000,00 di bank dengan bunga tunggal 8% per tahun. Jumlah uang Upik setelah 6 bulan adalah ...",
+      "opsi": {
+        "a": "Rp1.560.000,00",
+        "b": "Rp1.590.000,00",
+        "c": "Rp1.620.000,00",
+        "d": "Rp1.680.000,00"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QnVuZ2Egc2F0dSB0YWh1biAkPSA4XCUgXHRpbWVzIDEuNTAwLjAwMCA9IDEyMC4wMDAkLiBCdW5nYSA2IGJ1bGFuICQ9IFxmcmFjezZ9ezEyfSBcdGltZXMgMTIwLjAwMCA9IDYwLjAwMCQuIEp1bWxhaCBha2hpciAkPSAxLjUwMC4wMDAgKyA2MC4wMDAgPSAkIFJwMS41NjAuMDAwLDAwLiBScDEuNjIwLjAwMCwwMCBhZGFsYWgganVtbGFoIGJpbGEgbWVuYWJ1bmcgc2V0YWh1biBwZW51aC4=",
+      "kunci": "783841029305fe17f5ff85098fd69703ba3fd7d83c56185613a1fc21da70c7b9"
+    },
+    {
+      "id": "as-13",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Seorang pedagang membeli sekeranjang jeruk berisi 200 buah seharga Rp100.000,00. Jika setiap jeruk dijual Rp750,00, persentase keuntungannya adalah ... %",
+      "pembahasan": "SGFyZ2EganVhbCBzZWx1cnVobnlhICQ9IDIwMCBcdGltZXMgNzUwID0gMTUwLjAwMCQuIFVudHVuZyAkPSAxNTAuMDAwIC0gMTAwLjAwMCA9IDUwLjAwMCQuIFBlcnNlbnRhc2VueWEgJFxmcmFjezUwLjAwMH17MTAwLjAwMH0gXHRpbWVzIDEwMFwlID0gNTBcJSQu",
+      "kunci": [
+        "872a76272f5fb5fa09c410647a742462740add13acdf3640ed1d0d10b8270886"
+      ]
+    },
+    {
+      "id": "as-14",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pedagang membeli 80 ekor itik seharga Rp1.600.000,00. Dalam perjalanan 5 ekor mati. Sebanyak 25 ekor terjual Rp25.000,00 per ekor dan sisanya Rp20.000,00 per ekor. Pedagang tersebut ...",
+      "opsi": {
+        "a": "untung Rp25.000,00",
+        "b": "rugi Rp25.000,00",
+        "c": "untung Rp125.000,00",
+        "d": "rugi Rp175.000,00"
+      },
+      "acakOpsi": true,
+      "pembahasan": "SXRpayB5YW5nIHRlcmp1YWwgJD0gODAgLSA1ID0gNzUkIGVrb3IsIHlhaXR1IDI1IGVrb3IgZGFuIHNpc2FueWEgNTAgZWtvci4gSGFzaWwgcGVuanVhbGFuICQ9ICgyNSBcdGltZXMgMjUuMDAwKSArICg1MCBcdGltZXMgMjAuMDAwKSA9IDYyNS4wMDAgKyAxLjAwMC4wMDAgPSAxLjYyNS4wMDAkLiBLYXJlbmEgbGViaWggZGFyaSBtb2RhbCBScDEuNjAwLjAwMCwwMCwgcGVkYWdhbmcgdW50dW5nIFJwMjUuMDAwLDAwLiBJdGlrIHlhbmcgbWF0aSB0ZXRhcCBkaWhpdHVuZyBzZWJhZ2FpIG1vZGFsLg==",
+      "kunci": "1e2f5e112ccfb679095a39461eaea3c2c864582d7cfa2d10c8d7fd3f93c6a4e0"
+    },
+    {
+      "id": "as-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Gaji seorang karyawan Rp4.000.000,00 per bulan dan dikenai pajak penghasilan 5%. Gaji yang diterima karyawan tersebut adalah ...",
+      "opsi": {
+        "a": "Rp200.000,00",
+        "b": "Rp3.600.000,00",
+        "c": "Rp3.800.000,00",
+        "d": "Rp4.200.000,00"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UGFqYWsgJD0gNVwlIFx0aW1lcyA0LjAwMC4wMDAgPSAyMDAuMDAwJC4gR2FqaSBkaXRlcmltYSAkPSA0LjAwMC4wMDAgLSAyMDAuMDAwID0gJCBScDMuODAwLjAwMCwwMC4gUGFqYWsgbWVuZ3VyYW5naSwga2ViYWxpa2FuIGRhcmkgYnVuZ2EgeWFuZyBtZW5hbWJhaC4=",
+      "kunci": "05cff77fc893d749d08ac3f7dafbc0e3be446ffed875b96d2c3a8a019362a895"
+    },
+    {
+      "id": "as-16",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dengan harga jual Rp6.300.000,00 seorang pedagang mengalami kerugian 10%. Harga pembelian barang tersebut adalah ...",
+      "opsi": {
+        "a": "Rp5.670.000,00",
+        "b": "Rp6.930.000,00",
+        "c": "Rp7.000.000,00",
+        "d": "Rp7.300.000,00"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UnVnaSAxMCUgYmVyYXJ0aSBoYXJnYSBqdWFsIGFkYWxhaCA5MCUgZGFyaSBoYXJnYSBiZWxpOiAkNi4zMDAuMDAwID0gMHssfTkgXHRpbWVzIEhCJCwgc2VoaW5nZ2EgJEhCID0gNi4zMDAuMDAwIFxkaXYgMHssfTkgPSAkIFJwNy4wMDAuMDAwLDAwLiBNZW5hbWJhaGthbiAxMCUga2UgaGFyZ2EganVhbCBtZW1iZXJpIFJwNi45MzAuMDAwLDAwIGRhbiBpdHUga2VsaXJ1LCBrYXJlbmEgcGVyc2VudGFzZSBkaWhpdHVuZyBkYXJpIGhhcmdhIGJlbGku",
+      "kunci": "2913c8d4b79fa9df0da1387e03850e1d7b6f6e22ae0cd957a56247f137b8a98f"
+    },
+    {
+      "id": "as-17",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Tuti menyimpan uang Rp600.000,00 di bank dengan bunga tunggal 18% per tahun. Jika ia menerima bunga Rp54.000,00, lama ia menabung adalah ... bulan.",
+      "pembahasan": "QnVuZ2Egc2F0dSB0YWh1biAkPSAxOFwlIFx0aW1lcyA2MDAuMDAwID0gMTA4LjAwMCQuIEthcmVuYSAkNTQuMDAwJCBhZGFsYWggc2V0ZW5nYWggZGFyaSAkMTA4LjAwMCQsIGxhbWEgbWVuYWJ1bmdueWEgc2V0ZW5nYWggdGFodW4sIHlhaXR1IDYgYnVsYW4u",
+      "kunci": [
+        "9a43059654c9e7b59379e1e32d2d9d8aac4801a699595d6c9cea9188a9d1f223"
+      ]
+    },
+    {
+      "id": "as-18",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bu Lili mendepositokan uang Rp7.000.000,00 di bank. Setelah 6 bulan, tabungannya menjadi Rp7.420.000,00. Suku bunga tunggal per tahun yang diperoleh Bu Lili adalah ...",
+      "opsi": {
+        "a": "$6\\%$",
+        "b": "$8\\%$",
+        "c": "$10\\%$",
+        "d": "$12\\%$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QnVuZ2EgNiBidWxhbiAkPSA3LjQyMC4wMDAgLSA3LjAwMC4wMDAgPSA0MjAuMDAwJC4gS2FyZW5hIDYgYnVsYW4gYWRhbGFoIHNldGVuZ2FoIHRhaHVuLCBidW5nYSBzYXR1IHRhaHVuICQ9IDg0MC4wMDAkLiBTdWt1IGJ1bmdhbnlhICRcZnJhY3s4NDAuMDAwfXs3LjAwMC4wMDB9IFx0aW1lcyAxMDBcJSA9IDEyXCUkLg==",
+      "kunci": "603b88108cbb3472569fe869a1baaed1a8835c39fe91d91eaf052a780f2ef26d"
+    },
+    {
+      "id": "as-19",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Seorang pedagang membeli 5 lusin gelas seharga Rp300.000,00. Sebanyak 4 gelas pecah dan sisanya terjual habis dengan harga Rp6.000,00 per gelas. Persentase keuntungan pedagang tersebut adalah ... %",
+      "pembahasan": "QmFueWFrIGdlbGFzICQ9IDUgXHRpbWVzIDEyID0gNjAkLCB5YW5nIHRlcmp1YWwgJD0gNjAgLSA0ID0gNTYkLiBIYXNpbCBwZW5qdWFsYW4gJD0gNTYgXHRpbWVzIDYuMDAwID0gMzM2LjAwMCQuIFVudHVuZyAkPSAzMzYuMDAwIC0gMzAwLjAwMCA9IDM2LjAwMCQuIFBlcnNlbnRhc2VueWEgJFxmcmFjezM2LjAwMH17MzAwLjAwMH0gXHRpbWVzIDEwMFwlID0gMTJcJSQu",
+      "kunci": [
+        "9c23f880bc61b86632603210accec92f6e6abe5b5b3ff397ce15b85624d7420c"
+      ]
+    },
+    {
+      "id": "as-20",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Sebuah toko memberi diskon 50% lalu ditambah diskon 20% dari harga setelah potongan pertama. Total potongannya sama dengan diskon 70%.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "TWlzYWxrYW4gaGFyZ2EgYXdhbCBScDEwMC4wMDAsMDAuIFNldGVsYWggZGlza29uIDUwJSBtZW5qYWRpIFJwNTAuMDAwLDAwLCBsYWx1IGRpc2tvbiAyMCUgZGFyaSBScDUwLjAwMCwwMCBhZGFsYWggUnAxMC4wMDAsMDAsIHNlaGluZ2dhIGhhcmdhIGFraGlybnlhIFJwNDAuMDAwLDAwLiBQb3RvbmdhbiBzZWx1cnVobnlhIFJwNjAuMDAwLDAwIGF0YXUgNjAlLCBidWthbiA3MCUuIERpc2tvbiBrZWR1YSBkaWhpdHVuZyBkYXJpIGhhcmdhIHlhbmcgc3VkYWggZGlwb3Rvbmcu",
+      "kunci": "0da46a9cb12d0a074917cea0c08b88d57eb622399111d2da46c4a3768a22d7f2"
+    }
+  ]
+}

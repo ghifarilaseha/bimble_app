@@ -211,8 +211,40 @@
     if (el.sesiBobot.value) p.set('bobot', el.sesiBobot.value);
     if (denganBahas) p.set('bahas', '1');
 
-    var dasar = location.href.replace(/guru\.html.*$/, '');
-    return dasar + 'latihan.html?' + p.toString();
+    /* Netlify boleh menyajikan halaman ini sebagai /guru tanpa akhiran
+       .html. Menambal nama berkas lewat penggantian teks jadi meleset di
+       situ dan menghasilkan ".../gurulatihan.html". URL relatif menyelesaikan
+       keduanya. */
+    return new URL('latihan.html?' + p.toString(), location.href).href;
+  }
+
+  /* Kode sesi adalah kunci pengelompokan seluruh tampilan dashboard. Bila
+     dibiarkan kosong, latihan.js memakai "<mode>-<tingkat>-<bab>", sehingga
+     sesi minggu ini dan minggu depan untuk bab yang sama melebur jadi satu
+     rekap tanpa ada tanda apa pun. Karena itu kodenya diisikan otomatis
+     dengan tanggal, dan guru tinggal menimpanya bila mau. */
+  var kodeTerisiOtomatis = '';
+
+  function kodeOtomatis() {
+    var k = kelasTerpilih(el.sesiKelas);
+    if (!k || !el.sesiBab.value) return '';
+    var d = new Date();
+    var tanggal = d.getFullYear() +
+      ('0' + (d.getMonth() + 1)).slice(-2) +
+      ('0' + d.getDate()).slice(-2);
+    return el.sesiMode.value + '-' + k.tingkat + '-' + el.sesiBab.value + '-' + tanggal;
+  }
+
+  function segarkanKodeOtomatis() {
+    if (el.sesiMode.value === 'mandiri') return;
+    var sekarang = el.sesiKode.value.trim();
+    /* Hanya menimpa kolom yang kosong atau yang isinya memang buatan kita
+       sendiri, supaya kode yang diketik guru tidak pernah hilang. */
+    if (sekarang && sekarang !== kodeTerisiOtomatis) return;
+    var baru = kodeOtomatis();
+    if (!baru) return;
+    el.sesiKode.value = baru;
+    kodeTerisiOtomatis = baru;
   }
 
   function perbaruiTautan() {
@@ -221,17 +253,26 @@
     el.kolomDurasi.hidden = mode !== 'kelas';
     el.kolomTenggat.hidden = mode !== 'pr';
 
-    var u = tautan(false);
-    el.tautanSesi.textContent = u || 'Pilih kelas dan bab dulu.';
+    segarkanKodeOtomatis();
+
+    var dasarSiap = !!(kelasTerpilih(el.sesiKelas) && el.sesiBab.value);
+    var kodeKosong = dasarSiap && mode !== 'mandiri' && !el.sesiKode.value.trim();
+    var u = kodeKosong ? '' : tautan(false);
+
+    el.tautanSesi.textContent = u ||
+      (kodeKosong ? 'Isi kode sesi dulu.' : 'Pilih kelas dan bab dulu.');
     el.tombolBuka.href = u || '#';
 
     var catatan = [];
     if (mode === 'kelas') {
       catatan.push('Pembahasan ditahan. Bila sudah dibahas bersama, bagikan tautan pembahasan.');
-      if (!el.sesiKode.value.trim()) catatan.push('Isi kode sesi supaya rekap mudah dicari.');
     }
     if (mode === 'pr') catatan.push('Pembahasan muncul sendiri setelah tenggat lewat.');
     if (mode === 'mandiri') catatan.push('Tautan permanen, boleh dikerjakan berulang kali.');
+    if (kodeKosong) {
+      catatan.push('Kode sesi tidak boleh kosong: tanpa itu rekap sesi ini ' +
+        'tercampur dengan sesi lain pada bab yang sama.');
+    }
     el.catatanTautan.textContent = catatan.join(' ');
 
     gambarQr(u);

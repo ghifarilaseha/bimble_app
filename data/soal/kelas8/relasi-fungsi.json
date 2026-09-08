@@ -1,0 +1,294 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "relasi-fungsi",
+    "judul": "Relasi dan Fungsi",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Relasi dan Fungsi",
+    "versi": "2026-09-07"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "rf-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Diketahui $A = \\{2, 3, 4, 5\\}$ dan $B = \\{4, 6, 8, 9, 10\\}$ dengan relasi \"faktor dari\" dari $A$ ke $B$. Pasangan berurutan yang termasuk relasi tersebut adalah ...",
+      "opsi": {
+        "a": "$(3, 9)$",
+        "b": "$(4, 6)$",
+        "c": "$(5, 8)$",
+        "d": "$(2, 9)$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JDMkIGFkYWxhaCBmYWt0b3IgZGFyaSAkOSQga2FyZW5hICQ5IDogMyA9IDMkLiBTZWRhbmdrYW4gJDYkIHRpZGFrIGhhYmlzIGRpYmFnaSAkNCQsICQ4JCB0aWRhayBoYWJpcyBkaWJhZ2kgJDUkLCBkYW4gJDkkIHRpZGFrIGhhYmlzIGRpYmFnaSAkMiQu",
+      "kunci": "9950a02df3b98ad3d6676fda5e92512416797e213845a34b8c0be0c1130e3dc8"
+    },
+    {
+      "id": "rf-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Relasi \"faktor dari\" dari $A = \\{2, 3, 4, 5\\}$ ke $B = \\{4, 6, 8, 9, 10\\}$ merupakan sebuah fungsi.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U3lhcmF0IGZ1bmdzaSBhZGFsYWggc2V0aWFwIGFuZ2dvdGEgZGFlcmFoIGFzYWwgZGlwYXNhbmdrYW4gZGVuZ2FuIHRlcGF0IHNhdHUgYW5nZ290YSBkYWVyYWgga2F3YW4uIERpIHNpbmkgJDIkIGRpcGFzYW5na2FuIGRlbmdhbiAkNCQsICQ2JCwgJDgkLCBkYW4gJDEwJCBzZWthbGlndXMsIHNlaGluZ2dhIHN5YXJhdG55YSBkaWxhbmdnYXIu",
+      "kunci": "eff0a5d29321ad5c2d464fe118b20d891365ac35c6a4564fe85cf0cb22ee475e"
+    },
+    {
+      "id": "rf-03",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 2x + 3$. Nilai $f(4)$ adalah ...",
+      "pembahasan": "R2FudGkgc2V0aWFwICR4JCBkZW5nYW4gJDQkOiAkZig0KSA9IDIgXHRpbWVzIDQgKyAzID0gOCArIDMgPSAxMSQu",
+      "kunci": [
+        "08039bb93deab7bf93bcf291e2438479d94f7821b6cebb2726d0976053ad2429"
+      ]
+    },
+    {
+      "id": "rf-04",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Himpunan pasangan berurutan berikut yang merupakan fungsi adalah ...",
+      "opsi": {
+        "a": "$\\{(1,2), (2,3), (3,4)\\}$",
+        "b": "$\\{(1,2), (1,3), (2,4)\\}$",
+        "c": "$\\{(1,5), (2,6), (1,7)\\}$",
+        "d": "$\\{(2,1), (2,3), (3,5)\\}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "UGFkYSBwaWxpaGFuIHlhbmcgYmVuYXIsIHRpZGFrIGFkYSBhbmdnb3RhIGRhZXJhaCBhc2FsIHlhbmcgbXVuY3VsIGR1YSBrYWxpLiBQaWxpaGFuIGxhaW5ueWEgbWVtYXNhbmdrYW4gc2F0dSBhbmdnb3RhIGRhZXJhaCBhc2FsIGRlbmdhbiBsZWJpaCBkYXJpIHNhdHUgYW5nZ290YSBkYWVyYWgga2F3YW4u",
+      "kunci": "10cff98323141c6378aa3fc23d0cdf1a6d002f95f2cf4fde4f0c359dede0524e"
+    },
+    {
+      "id": "rf-05",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Daerah hasil fungsi $f(x) = 3x - 1$ dengan daerah asal $\\{1, 2, 3\\}$ adalah ...",
+      "opsi": {
+        "a": "$\\{2, 5, 8\\}$",
+        "b": "$\\{3, 6, 9\\}$",
+        "c": "$\\{2, 4, 6\\}$",
+        "d": "$\\{1, 2, 3\\}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JGYoMSkgPSAyJCwgJGYoMikgPSA1JCwgZGFuICRmKDMpID0gOCQsIHNlaGluZ2dhIGRhZXJhaCBoYXNpbG55YSAkXHsyLCA1LCA4XH0kLg==",
+      "kunci": "151145e5abf36b86f172de7830a5cdec681684d2976f76b796a2c162dfc17581"
+    },
+    {
+      "id": "rf-06",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 5 - 2x$. Nilai $f(-3)$ adalah ...",
+      "pembahasan": "JGYoLTMpID0gNSAtIDIgXHRpbWVzICgtMykgPSA1ICsgNiA9IDExJC4gRHVhIHRhbmRhIG5lZ2F0aWYgYmVydHVydXQtdHVydXQgbWVuamFkaSBwZW5qdW1sYWhhbi4=",
+      "kunci": [
+        "3b5ed0b187d9ba733cd9b60bd210163f8cc3d042b19e165ce3c993491353208b"
+      ]
+    },
+    {
+      "id": "rf-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Banyaknya pemetaan yang mungkin dari $A = \\{a, b\\}$ ke $B = \\{1, 2, 3\\}$ adalah ...",
+      "opsi": {
+        "a": "$6$",
+        "b": "$8$",
+        "c": "$9$",
+        "d": "$27$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U2V0aWFwIGFuZ2dvdGEgJEEkIHB1bnlhICQzJCBwaWxpaGFuIGJheWFuZ2FuLCBkYW4gcGlsaWhhbm55YSBiZWJhcyBzYXR1IHNhbWEgbGFpbjogJDMgXHRpbWVzIDMgPSAzXjIgPSA5JC4=",
+      "kunci": "9611eb958e4f7c2be8898a088ce700238f904be5c52bf8745f3fa3b2cd081f7e"
+    },
+    {
+      "id": "rf-08",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = x^2 + 1$. Nilai $f(-2)$ adalah ...",
+      "opsi": {
+        "a": "$-3$",
+        "b": "$3$",
+        "c": "$5$",
+        "d": "$-5$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JCgtMileMiA9IDQkLCBidWthbiAkLTQkLCBrYXJlbmEgbmVnYXRpZiBkaWthbGkgbmVnYXRpZiBoYXNpbG55YSBwb3NpdGlmLiBKYWRpICRmKC0yKSA9IDQgKyAxID0gNSQu",
+      "kunci": "a0e8667fb07c9b8dfa29cb395e9fa8f97795f4ef6b2f5559b5ad9cfaf2bfcd46"
+    },
+    {
+      "id": "rf-09",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Fungsi $f(x) = ax + b$ memenuhi $f(2) = 1$ dan $f(5) = 13$. Nilai $a$ adalah ...",
+      "pembahasan": "JDJhICsgYiA9IDEkIGRhbiAkNWEgKyBiID0gMTMkLiBLdXJhbmdrYW4ga2VkdWFueWEgc2VoaW5nZ2EgJGIkIGhpbGFuZzogJDNhID0gMTIkLCBqYWRpICRhID0gNCQu",
+      "kunci": [
+        "8f4344a5e68a0726a80fba356158f2aacfd35d9fe4a6a4a4de3ce10d5b31c6e8"
+      ]
+    },
+    {
+      "id": "rf-10",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Fungsi $f(x) = ax + b$ memenuhi $f(2) = 1$ dan $f(5) = 13$. Nilai $b$ adalah ...",
+      "pembahasan": "S2FyZW5hICRhID0gNCQsIGRhcmkgJDJhICsgYiA9IDEkIGRpcGVyb2xlaCAkOCArIGIgPSAxJCwgc2VoaW5nZ2EgJGIgPSAtNyQu",
+      "kunci": [
+        "6bb41b978d5f44785ec7a8923055010756dcfcf49177e9089d39d4f342136782"
+      ]
+    },
+    {
+      "id": "rf-11",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 4x - 7$. Nilai $f(-3)$ adalah ...",
+      "opsi": {
+        "a": "$-19$",
+        "b": "$-5$",
+        "c": "$5$",
+        "d": "$19$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JGYoLTMpID0gNCBcdGltZXMgKC0zKSAtIDcgPSAtMTIgLSA3ID0gLTE5JC4gS2VkdWFueWEgbmVnYXRpZiwgc2VoaW5nZ2EgaGFzaWxueWEgYmVydGFtYmFoIGphdWggZGFyaSBub2wu",
+      "kunci": "049abfec1d3b874d9b9a308d69fc6cccab1b6e83e14948ac420397c9db7d2b00"
+    },
+    {
+      "id": "rf-12",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 4x - 7$. Nilai $x$ yang membuat $f(x) = 0$ adalah ... (tulis sebagai pecahan atau desimal)",
+      "pembahasan": "JDR4IC0gNyA9IDAkLCBzZWhpbmdnYSAkNHggPSA3JCBkYW4gJHggPSBcZnJhY3s3fXs0fSA9IDF7LH03NSQu",
+      "kunci": [
+        "a361104f049f463f3cc7668c84630f3160f3397e78a99cdd0fb32d2796d7746c",
+        "70901a28ce623a9a27c871e1f18a6ddee5108cc7945c8ed32b36f46cd9c07405",
+        "a9bfa2e85fb6ae1ec5ee65d189de2648b7d224a714661c384f1aa7d958e53191"
+      ]
+    },
+    {
+      "id": "rf-13",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 2x + c$ dan $f(3) = 11$. Nilai $f(0)$ adalah ...",
+      "opsi": {
+        "a": "$2$",
+        "b": "$5$",
+        "c": "$8$",
+        "d": "$11$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RGFyaSAkMiBcdGltZXMgMyArIGMgPSAxMSQgZGlwZXJvbGVoICRjID0gNSQuIE1ha2EgJGYoMCkgPSAyIFx0aW1lcyAwICsgNSA9IDUkLg==",
+      "kunci": "7bee87b76a1cc73c1651e8104d374500c6561f4936ea3b5c820794f6b0836129"
+    },
+    {
+      "id": "rf-14",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Himpunan $A$ dan $B$ masing-masing beranggotakan 4 unsur. Banyaknya korespondensi satu-satu yang mungkin dari $A$ ke $B$ adalah ...",
+      "opsi": {
+        "a": "$4$",
+        "b": "$16$",
+        "c": "$24$",
+        "d": "$256$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QW5nZ290YSBwZXJ0YW1hIHB1bnlhICQ0JCBwaWxpaGFuLCBiZXJpa3V0bnlhICQzJCwgbGFsdSAkMiQsIGxhbHUgJDEkOiAkNCBcdGltZXMgMyBcdGltZXMgMiBcdGltZXMgMSA9IDI0JC4gUGlsaWhhbm55YSBtZW55dXN1dCBrYXJlbmEgc2F0dSBiYXlhbmdhbiB0aWRhayBib2xlaCBkaXBha2FpIGR1YSBrYWxpLg==",
+      "kunci": "dfcc165971361c9952bb789a7443ef9ca2da1ff0bbe8e95d2a415f5063921cd2"
+    },
+    {
+      "id": "rf-15",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 2x - 5$. Jika $f(k) = 9$, nilai $k$ adalah ...",
+      "pembahasan": "JDJrIC0gNSA9IDkkLCBzZWhpbmdnYSAkMmsgPSAxNCQgZGFuICRrID0gNyQu",
+      "kunci": [
+        "504238f3f4a6e030b342719ee0794e3cf3a79f05eeb87ed3f3f406046566b11d"
+      ]
+    },
+    {
+      "id": "rf-16",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Fungsi $f(x) = ax + b$ memenuhi $f(1) = 3$ dan $f(4) = 12$. Nilai $f(10)$ adalah ...",
+      "opsi": {
+        "a": "$24$",
+        "b": "$27$",
+        "c": "$30$",
+        "d": "$33$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JDNhID0gZig0KSAtIGYoMSkgPSA5JCwgc2VoaW5nZ2EgJGEgPSAzJCBkYW4gJGIgPSAzIC0gMyA9IDAkLiBKYWRpICRmKHgpID0gM3gkIGRhbiAkZigxMCkgPSAzMCQu",
+      "kunci": "82e03d0b070b3a41884aab6278f5154e26bafc83cdd739e6388cb5ec6153278a"
+    },
+    {
+      "id": "rf-17",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 3x + 1$. Jika $f(a) = f(2) + 6$, nilai $a$ adalah ...",
+      "pembahasan": "JGYoMikgPSA3JCwgc2VoaW5nZ2EgJGYoYSkgPSAxMyQuIERhcmkgJDNhICsgMSA9IDEzJCBkaXBlcm9sZWggJDNhID0gMTIkIGRhbiAkYSA9IDQkLg==",
+      "kunci": [
+        "5903b54f3567b76473307ac1bcec0773e461acddb866864385f6b66e46446ad2"
+      ]
+    },
+    {
+      "id": "rf-18",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suatu fungsi memasangkan setiap bilangan dengan \"tiga kurangnya dari dua kali bilangan itu\". Bayangan dari $-4$ adalah ...",
+      "opsi": {
+        "a": "$-11$",
+        "b": "$-5$",
+        "c": "$5$",
+        "d": "$11$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UnVtdXNueWEgJGYoeCkgPSAyeCAtIDMkLCBidWthbiAkMyAtIDJ4JDogInRpZ2Ega3VyYW5nbnlhIGRhcmkiIGJlcmFydGkgZGlrdXJhbmdpIHRpZ2EuIE1ha2EgJGYoLTQpID0gLTggLSAzID0gLTExJC4=",
+      "kunci": "9b6da9ca68a7d607b81ccafa884da1e67284046110e504176dba323a7de19edb"
+    },
+    {
+      "id": "rf-19",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Fungsi $f(x) = ax + b$ memenuhi $f(0) = 5$ dan $f(3) = -1$. Nilai $f(-2)$ adalah ...",
+      "pembahasan": "JGYoMCkgPSBiID0gNSQuIERhcmkgJDNhICsgNSA9IC0xJCBkaXBlcm9sZWggJGEgPSAtMiQsIHNlaGluZ2dhICRmKHgpID0gLTJ4ICsgNSQgZGFuICRmKC0yKSA9IDQgKyA1ID0gOSQu",
+      "kunci": [
+        "c3ea65b46d819339328b642534348d175bbeb7af04262c152446ad8f834ef487"
+      ]
+    },
+    {
+      "id": "rf-20",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Fungsi $f$ dengan daerah asal $\\{1, 2, 3, 4\\}$ dirumuskan $f(n) = 2n + 3$. Jumlah semua anggota daerah hasilnya adalah ...",
+      "opsi": {
+        "a": "$26$",
+        "b": "$30$",
+        "c": "$32$",
+        "d": "$36$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RGFlcmFoIGhhc2lsbnlhICRcezUsIDcsIDksIDExXH0kIGRhbiBqdW1sYWhueWEgJDUgKyA3ICsgOSArIDExID0gMzIkLg==",
+      "kunci": "cbe1929c7b59ebd6cc3c559e89663296b2dff8709857c7074f2749a7acdab5e1"
+    }
+  ]
+}

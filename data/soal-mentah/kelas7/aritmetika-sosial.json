@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "kelas": 7,
+    "semester": 1,
+    "bab": "aritmetika-sosial",
+    "judul": "Aritmetika Sosial",
+    "sumber": "Modul MGMP Matematika SMPN 14 Bandung, Kelas VII Sem. 1, Episode 4",
+    "versi": "2026-09-06"
+  },
+  "soal": [
+    {
+      "id": "as-01", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Pedagang buah membeli jeruk dengan harga Rp18.000,00 per kg dan menjualnya Rp24.000,00 per kg. Pedagang tersebut ...",
+      "opsi": {
+        "a": "untung Rp6.000,00 per kg",
+        "b": "rugi Rp6.000,00 per kg",
+        "c": "untung Rp42.000,00 per kg",
+        "d": "impas"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Harga jual lebih besar daripada harga beli, jadi untung. Besarnya $= 24.000 - 18.000 = $ Rp6.000,00 per kg."
+    },
+    {
+      "id": "as-02", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah toko memberikan diskon 25%. Budi membeli setrika berharga Rp320.000,00. Uang yang harus dibayar Budi adalah ...",
+      "opsi": { "a": "Rp80.000,00", "b": "Rp240.000,00", "c": "Rp295.000,00", "d": "Rp400.000,00" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Diskon $= 25\\% \\times 320.000 = 80.000$. Yang dibayar $= 320.000 - 80.000 = $ Rp240.000,00. Perhatikan bahwa Rp80.000,00 adalah besar potongannya, bukan harga bayarnya."
+    },
+    {
+      "id": "as-03", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Besar diskon 20% untuk barang seharga Rp150.000,00 adalah Rp ...",
+      "jawaban": ["30000"],
+      "pembahasan": "$20\\% \\times 150.000 = \\frac{20}{100} \\times 150.000 = 30.000$."
+    },
+    {
+      "id": "as-04", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? Jika harga jual lebih kecil daripada harga beli, maka pedagang memperoleh keuntungan.",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Harga jual lebih kecil daripada harga beli berarti pedagang mengalami kerugian sebesar harga beli dikurangi harga jual."
+    },
+    {
+      "id": "as-05", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Andi menabung Rp500.000,00 di bank dengan bunga tunggal 10% per tahun. Besar bunga yang ia terima setelah satu tahun adalah ...",
+      "opsi": { "a": "Rp5.000,00", "b": "Rp50.000,00", "c": "Rp100.000,00", "d": "Rp550.000,00" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Bunga satu tahun $= 10\\% \\times 500.000 = \\frac{10}{100} \\times 500.000 = 50.000$. Rp550.000,00 adalah jumlah tabungan akhirnya, bukan bunganya."
+    },
+    {
+      "id": "as-06", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Seorang pedagang membeli sepeda seharga Rp800.000,00 dan menjualnya Rp900.000,00. Besar keuntungannya adalah Rp ...",
+      "jawaban": ["100000"],
+      "pembahasan": "Untung $= $ harga jual $-$ harga beli $= 900.000 - 800.000 = 100.000$."
+    },
+    {
+      "id": "as-07", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Pak Rudi membeli sepetak tanah seharga Rp50.000.000,00 dan terpaksa menjualnya seharga Rp46.000.000,00. Persentase kerugian Pak Rudi adalah ...",
+      "opsi": { "a": "$4\\%$", "b": "$8\\%$", "c": "$8{,}7\\%$", "d": "$16\\%$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Rugi $= 50.000.000 - 46.000.000 = 4.000.000$. Persentase rugi dihitung terhadap harga beli: $\\frac{4.000.000}{50.000.000} \\times 100\\% = 8\\%$. Membaginya dengan harga jual memberi $8{,}7\\%$ dan itu keliru."
+    },
+    {
+      "id": "as-08", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? Persentase keuntungan dihitung dengan membandingkan besar keuntungan terhadap harga jual.",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Persentase untung maupun rugi selalu dibandingkan terhadap harga beli (modal), bukan harga jual."
+    },
+    {
+      "id": "as-09", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah toko membeli 30 kipas angin seharga Rp7.200.000,00. Toko mengharapkan untung 25% dari harga beli. Harga jual setiap kipas angin adalah ...",
+      "opsi": { "a": "Rp240.000,00", "b": "Rp265.000,00", "c": "Rp300.000,00", "d": "Rp360.000,00" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Harga beli per kipas $= 7.200.000 \\div 30 = 240.000$. Harga jual $= \\frac{100\\% + 25\\%}{100\\%} \\times 240.000 = 1{,}25 \\times 240.000 = $ Rp300.000,00. Rp265.000,00 muncul bila 25% dibaca sebagai Rp25.000,00."
+    },
+    {
+      "id": "as-10", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Tono menyimpan uang Rp2.400.000,00 di bank dengan bunga tunggal 10% per tahun. Besar bunga yang diterima Tono selama 9 bulan adalah Rp ...",
+      "jawaban": ["180000"],
+      "pembahasan": "Bunga satu tahun $= 10\\% \\times 2.400.000 = 240.000$. Bunga 9 bulan $= \\frac{9}{12} \\times 240.000 = 180.000$."
+    },
+    {
+      "id": "as-11", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Joko membeli televisi seharga Rp5.000.000,00 tetapi hanya membayar Rp4.850.000,00. Persentase diskon yang ia peroleh adalah ...",
+      "opsi": { "a": "$1{,}5\\%$", "b": "$3\\%$", "c": "$5\\%$", "d": "$15\\%$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Diskon $= 5.000.000 - 4.850.000 = 150.000$. Persentasenya $\\frac{150.000}{5.000.000} \\times 100\\% = 3\\%$."
+    },
+    {
+      "id": "as-12", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Upik menyimpan uang Rp1.500.000,00 di bank dengan bunga tunggal 8% per tahun. Jumlah uang Upik setelah 6 bulan adalah ...",
+      "opsi": { "a": "Rp1.560.000,00", "b": "Rp1.590.000,00", "c": "Rp1.620.000,00", "d": "Rp1.680.000,00" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Bunga satu tahun $= 8\\% \\times 1.500.000 = 120.000$. Bunga 6 bulan $= \\frac{6}{12} \\times 120.000 = 60.000$. Jumlah akhir $= 1.500.000 + 60.000 = $ Rp1.560.000,00. Rp1.620.000,00 adalah jumlah bila menabung setahun penuh."
+    },
+    {
+      "id": "as-13", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Seorang pedagang membeli sekeranjang jeruk berisi 200 buah seharga Rp100.000,00. Jika setiap jeruk dijual Rp750,00, persentase keuntungannya adalah ... %",
+      "jawaban": ["50"],
+      "pembahasan": "Harga jual seluruhnya $= 200 \\times 750 = 150.000$. Untung $= 150.000 - 100.000 = 50.000$. Persentasenya $\\frac{50.000}{100.000} \\times 100\\% = 50\\%$."
+    },
+    {
+      "id": "as-14", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Pedagang membeli 80 ekor itik seharga Rp1.600.000,00. Dalam perjalanan 5 ekor mati. Sebanyak 25 ekor terjual Rp25.000,00 per ekor dan sisanya Rp20.000,00 per ekor. Pedagang tersebut ...",
+      "opsi": {
+        "a": "untung Rp25.000,00",
+        "b": "rugi Rp25.000,00",
+        "c": "untung Rp125.000,00",
+        "d": "rugi Rp175.000,00"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Itik yang terjual $= 80 - 5 = 75$ ekor, yaitu 25 ekor dan sisanya 50 ekor. Hasil penjualan $= (25 \\times 25.000) + (50 \\times 20.000) = 625.000 + 1.000.000 = 1.625.000$. Karena lebih dari modal Rp1.600.000,00, pedagang untung Rp25.000,00. Itik yang mati tetap dihitung sebagai modal."
+    },
+    {
+      "id": "as-15", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Gaji seorang karyawan Rp4.000.000,00 per bulan dan dikenai pajak penghasilan 5%. Gaji yang diterima karyawan tersebut adalah ...",
+      "opsi": { "a": "Rp200.000,00", "b": "Rp3.600.000,00", "c": "Rp3.800.000,00", "d": "Rp4.200.000,00" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Pajak $= 5\\% \\times 4.000.000 = 200.000$. Gaji diterima $= 4.000.000 - 200.000 = $ Rp3.800.000,00. Pajak mengurangi, kebalikan dari bunga yang menambah."
+    },
+    {
+      "id": "as-16", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Dengan harga jual Rp6.300.000,00 seorang pedagang mengalami kerugian 10%. Harga pembelian barang tersebut adalah ...",
+      "opsi": { "a": "Rp5.670.000,00", "b": "Rp6.930.000,00", "c": "Rp7.000.000,00", "d": "Rp7.300.000,00" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Rugi 10% berarti harga jual adalah 90% dari harga beli: $6.300.000 = 0{,}9 \\times HB$, sehingga $HB = 6.300.000 \\div 0{,}9 = $ Rp7.000.000,00. Menambahkan 10% ke harga jual memberi Rp6.930.000,00 dan itu keliru, karena persentase dihitung dari harga beli."
+    },
+    {
+      "id": "as-17", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Tuti menyimpan uang Rp600.000,00 di bank dengan bunga tunggal 18% per tahun. Jika ia menerima bunga Rp54.000,00, lama ia menabung adalah ... bulan.",
+      "jawaban": ["6"],
+      "pembahasan": "Bunga satu tahun $= 18\\% \\times 600.000 = 108.000$. Karena $54.000$ adalah setengah dari $108.000$, lama menabungnya setengah tahun, yaitu 6 bulan."
+    },
+    {
+      "id": "as-18", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Bu Lili mendepositokan uang Rp7.000.000,00 di bank. Setelah 6 bulan, tabungannya menjadi Rp7.420.000,00. Suku bunga tunggal per tahun yang diperoleh Bu Lili adalah ...",
+      "opsi": { "a": "$6\\%$", "b": "$8\\%$", "c": "$10\\%$", "d": "$12\\%$" },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "Bunga 6 bulan $= 7.420.000 - 7.000.000 = 420.000$. Karena 6 bulan adalah setengah tahun, bunga satu tahun $= 840.000$. Suku bunganya $\\frac{840.000}{7.000.000} \\times 100\\% = 12\\%$."
+    },
+    {
+      "id": "as-19", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Seorang pedagang membeli 5 lusin gelas seharga Rp300.000,00. Sebanyak 4 gelas pecah dan sisanya terjual habis dengan harga Rp6.000,00 per gelas. Persentase keuntungan pedagang tersebut adalah ... %",
+      "jawaban": ["12"],
+      "pembahasan": "Banyak gelas $= 5 \\times 12 = 60$, yang terjual $= 60 - 4 = 56$. Hasil penjualan $= 56 \\times 6.000 = 336.000$. Untung $= 336.000 - 300.000 = 36.000$. Persentasenya $\\frac{36.000}{300.000} \\times 100\\% = 12\\%$."
+    },
+    {
+      "id": "as-20", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? Sebuah toko memberi diskon 50% lalu ditambah diskon 20% dari harga setelah potongan pertama. Total potongannya sama dengan diskon 70%.",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Misalkan harga awal Rp100.000,00. Setelah diskon 50% menjadi Rp50.000,00, lalu diskon 20% dari Rp50.000,00 adalah Rp10.000,00, sehingga harga akhirnya Rp40.000,00. Potongan seluruhnya Rp60.000,00 atau 60%, bukan 70%. Diskon kedua dihitung dari harga yang sudah dipotong."
+    }
+  ]
+}

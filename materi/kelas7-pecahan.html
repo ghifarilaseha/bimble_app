@@ -62,7 +62,7 @@
   </p>
 
   <div class="kartu">
-    <div id="batangJelajah"></div>
+    <div id="jelajah"></div>
 
     <div class="tabel-gulir" style="margin-top:.6rem">
       <table>
@@ -130,6 +130,20 @@
         </tbody>
       </table>
     </div>
+
+    <div class="kartu">
+      <h3 class="rapat">Bongkar satu bilangan</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Ketik satu bilangan dalam bentuk apa pun — $7/4$, $1\ 3/4$, $1{,}75$, atau
+        $175\%$ — lalu lihat keempat bentuk lainnya sekaligus.
+      </p>
+      <div class="deret">
+        <input type="text" id="isiBongkar" value="7/4" autocomplete="off"
+               style="flex:0 0 8rem" aria-label="Bilangan yang dibongkar">
+        <button type="button" class="tombol mungil utama" id="bongkarBentuk">Bongkar</button>
+      </div>
+      <div id="hasilBongkar" style="margin-top:.7rem"></div>
+    </div>
   </section>
 
   <section data-tab="Banding dan urutkan" hidden>
@@ -186,6 +200,24 @@
       Susun ke bawah dan <strong>luruskan komanya</strong>. Kalau banyak angkanya berbeda,
       tambahkan nol supaya sama panjang: $4{,}3$ ditulis $4{,}30$.
     </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Jumlahkan dua pecahan</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Isi dua pecahan, lalu perhatikan penyebut hasilnya. Coba juga
+        $\frac{1}{2}$ dan $\frac{1}{3}$, lalu bandingkan dengan dugaan
+        $\frac{2}{5}$.
+      </p>
+      <div class="deret" style="align-items:center">
+        <input type="text" id="jumlahA" value="1/2" style="flex:0 0 7rem" autocomplete="off"
+               aria-label="Pecahan pertama">
+        <span style="font-weight:650">+</span>
+        <input type="text" id="jumlahB" value="1/3" style="flex:0 0 7rem" autocomplete="off"
+               aria-label="Pecahan kedua">
+        <button type="button" class="tombol mungil utama" id="jumlahkan">Jumlahkan</button>
+      </div>
+      <div id="hasilJumlah" style="margin-top:.7rem"></div>
+    </div>
   </section>
 
   <section data-tab="Kali dan bagi" hidden>
@@ -194,9 +226,14 @@
       \frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c}$$</p>
     <p>
       Membagi berarti mengalikan dengan kebalikan pembaginya. Pecahan campuran harus
-      diubah ke pecahan biasa <em>sebelum</em> dikali atau dibagi — $2\frac{1}{2} \times 3$
-      bukan $6\frac{1}{2}$, melainkan $\frac{5}{2} \times 3 = \frac{15}{2} = 7\frac{1}{2}$.
+      diubah ke pecahan biasa <em>sebelum</em> dikali atau dibagi. Buka langkahnya satu
+      per satu di bawah, dan tebak dulu hasilnya sebelum langkah terakhir terbuka.
     </p>
+
+    <div class="kartu">
+      <h3 class="rapat">$2\frac{1}{2} \times 3$, selangkah demi selangkah</h3>
+      <div id="langkahCampuran"></div>
+    </div>
 
     <h3>Desimal</h3>
     <p>
@@ -233,11 +270,13 @@
     <strong>Aritmetika Sosial</strong>, tempat pecahan dan persen dipakai untuk untung,
     rugi, dan diskon. Sebelum ke sana, mantapkan dulu yang ini.
   </p>
-  <p>
-    <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=pecahan&amp;mode=mandiri">
-      Latihan mandiri
-    </a>
-  </p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=pecahan&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
 </main>
 
 <script src="../vendor/katex/katex.min.js"></script>
@@ -246,6 +285,7 @@
 <script src="../js/kunci.js"></script>
 <script src="../js/nilai.js"></script>
 <script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
 <script src="../komponen/batang-pecahan.js"></script>
 <script>
 (function () {
@@ -261,7 +301,7 @@
   var elPesanJelajah = document.getElementById('pesanJelajah');
   var penyebutTerlihat = {};
 
-  var batang = BatangPecahan.buat(document.getElementById('batangJelajah'), {
+  var batang = BatangPecahan.buat(document.getElementById('jelajah'), {
     pembilang: 1, penyebut: 2,
     penyebutMin: 2, penyebutMaks: 12,
     /* Nilainya dikunci: mengubah penyebut mengubah pembilang juga, sehingga
@@ -273,8 +313,21 @@
     onUbah: function (n) { tulisLabel(n.pembilang, n.penyebut); }
   });
 
+  /* Barisnya dibangun dari simpul DOM, bukan potongan HTML di dalam string:
+     markup di dalam string JS sudah beberapa kali tampil sebagai tulisan di
+     halaman-halaman lain. */
   function baris(nama, isi) {
-    return '<tr><td class="samar">' + nama + '</td><td><strong>' + isi + '</strong></td></tr>';
+    var tr = document.createElement('tr');
+    var tdNama = document.createElement('td');
+    tdNama.className = 'samar';
+    tdNama.textContent = nama;
+    var tdIsi = document.createElement('td');
+    var tebal = document.createElement('strong');
+    tebal.innerHTML = isi;
+    tdIsi.appendChild(tebal);
+    tr.appendChild(tdNama);
+    tr.appendChild(tdIsi);
+    return tr;
   }
 
   function tulisLabel(pb, py) {
@@ -284,11 +337,13 @@
     /* Bentuk desimal dan persennya ditulis sebagai teks biasa, bukan rumus.
        Keduanya memang ditulis begitu di buku, dan tanda "..." pada desimal
        berulang bukan lambang matematika yang dikenal KaTeX. */
-    elLabel.innerHTML =
-      baris('Pecahan', Rumus.keHTML('$\\frac{' + pb + '}{' + py + '}$')) +
-      baris('Bentuk paling sederhana', Rumus.keHTML('$' + n.rumus() + '$')) +
-      baris('Desimal', Rumus.lolos(n.teksDesimal())) +
-      baris('Persen', Rumus.lolos(n.teksPersen()));
+    elLabel.innerHTML = '';
+    [
+      baris('Pecahan', Rumus.keHTML('$\\frac{' + pb + '}{' + py + '}$')),
+      baris('Bentuk paling sederhana', Rumus.keHTML('$' + n.rumus() + '$')),
+      baris('Desimal', Rumus.lolos(n.teksDesimal())),
+      baris('Persen', Rumus.lolos(n.teksPersen()))
+    ].forEach(function (tr) { elLabel.appendChild(tr); });
 
     /* Catatan penutup baru muncul setelah siswa benar-benar menggeser
        penyebutnya melewati beberapa nilai yang tetap senilai dengan 1/2. */
@@ -371,25 +426,109 @@
     });
   });
 
-  /* ---------- 4. Tab materi ---------- */
+  /* ---------- 4. Tab "Aturannya" ---------- */
 
-  var bagian = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
-  var elTab = document.getElementById('tabMateri');
+  Materi.tab(document.getElementById('tabMateri'));
 
-  bagian.forEach(function (sec, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('role', 'tab');
-    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    b.textContent = sec.dataset.tab;
-    b.addEventListener('click', function () {
-      bagian.forEach(function (s, j) { s.hidden = (j !== i); });
-      Array.prototype.forEach.call(elTab.children, function (x, j) {
-        x.setAttribute('aria-selected', j === i ? 'true' : 'false');
-      });
-    });
-    elTab.appendChild(b);
+  /* ---------- 4a. Pembongkar empat bentuk ---------- */
+
+  /* Bedanya dengan batang di bagian 3: di sini kamu yang memilih bilangannya,
+     jadi dugaan sendiri bisa diuji. Halaman hanya menerjemahkan bentuknya
+     dan tidak menyimpulkan apa pun. */
+  var elHasilBongkar = document.getElementById('hasilBongkar');
+
+  function bongkar() {
+    var teks = document.getElementById('isiBongkar').value;
+    var n;
+    try {
+      n = P(teks);
+    } catch (e) {
+      elHasilBongkar.innerHTML = '<div class="pesan awas">' +
+        Rumus.lolos('Bentuknya belum bisa dibaca. Coba tulis seperti 7/4, ' +
+          '1 3/4, 1,75, atau 175%.') + '</div>';
+      return;
+    }
+
+    elHasilBongkar.innerHTML = '';
+    var tabel = document.createElement('table');
+    var tubuh = document.createElement('tbody');
+    [
+      baris('Pecahan biasa', Rumus.keHTML('$' + n.rumus() + '$')),
+      baris('Pecahan campuran', Rumus.lolos(n.teksCampuran())),
+      baris('Desimal', Rumus.lolos(n.teksDesimal())),
+      baris('Persen', Rumus.lolos(n.teksPersen()))
+    ].forEach(function (tr) { tubuh.appendChild(tr); });
+    tabel.appendChild(tubuh);
+
+    var gulir = document.createElement('div');
+    gulir.className = 'tabel-gulir';
+    gulir.appendChild(tabel);
+    elHasilBongkar.appendChild(gulir);
+  }
+
+  document.getElementById('bongkarBentuk').addEventListener('click', bongkar);
+  document.getElementById('isiBongkar').addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') { ev.preventDefault(); bongkar(); }
   });
+  bongkar();
+
+  /* ---------- 4c. Penjumlah dua pecahan ---------- */
+
+  /* Penyebut hasilnya sengaja ditulis besar-besar: kekeliruan paling sering
+     di bab ini adalah menjumlahkan penyebut, dan itu paling cepat runtuh
+     kalau hasilnya sendiri yang membantahnya. */
+  var elHasilJumlah = document.getElementById('hasilJumlah');
+
+  function jumlahkan() {
+    var a, b;
+    try {
+      a = P(document.getElementById('jumlahA').value);
+      b = P(document.getElementById('jumlahB').value);
+    } catch (e) {
+      elHasilJumlah.innerHTML = '<div class="pesan awas">' +
+        Rumus.lolos('Salah satu pecahannya belum bisa dibaca. ' +
+          'Coba tulis seperti 3/4, 0,75, atau 75%.') + '</div>';
+      return;
+    }
+
+    var kpk = Pecahan.kpk(a.q, b.q);
+    var hasil = a.tambah(b);
+    var dugaan = Pecahan.buat(a.p + b.p, a.q + b.q);
+
+    var uraian = 'KPK dari $' + a.q + '$ dan $' + b.q + '$ adalah $' + kpk + '$, jadi ' +
+      '$' + a.rumus() + ' = \\frac{' + (a.p * (kpk / a.q)) + '}{' + kpk + '}$ dan ' +
+      '$' + b.rumus() + ' = \\frac{' + (b.p * (kpk / b.q)) + '}{' + kpk + '}$. ' +
+      'Jumlahnya $' + hasil.rumus() + '$. ';
+
+    uraian += 'Kalau penyebutnya ikut dijumlahkan, hasilnya $' + dugaan.rumus() + '$ — ' +
+      (dugaan.banding(a) <= 0 || dugaan.banding(b) <= 0
+        ? 'dan itu tidak lebih besar daripada salah satu pecahan yang dijumlahkan, ' +
+          'padahal tadi ditambah.'
+        : 'dan itu bukan hasil yang sama.');
+
+    elHasilJumlah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(uraian) + '</div>';
+  }
+
+  document.getElementById('jumlahkan').addEventListener('click', jumlahkan);
+  ['jumlahA', 'jumlahB'].forEach(function (id) {
+    document.getElementById(id).addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') { ev.preventDefault(); jumlahkan(); }
+    });
+  });
+  jumlahkan();
+
+  /* ---------- 4d. Perkalian pecahan campuran ---------- */
+
+  Materi.langkah(document.getElementById('langkahCampuran'), [
+    { judul: 'Ubah ke pecahan biasa',
+      teks: '$2\\frac{1}{2} = \\frac{2 \\times 2 + 1}{2} = ' + P('2 1/2').rumus() + '$' },
+    { judul: 'Baru dikalikan',
+      teks: '$' + P('2 1/2').rumus() + ' \\times 3 = ' + P('2 1/2').kali(3).rumus() + '$' },
+    { judul: 'Kembalikan ke campuran',
+      teks: 'Hasilnya $' + P('2 1/2').kali(3).teksCampuran() + '$, bukan $6\\frac{1}{2}$. ' +
+        'Mengalikan bagian bulat dan bagian pecahannya sendiri-sendiri melewatkan ' +
+        'perkalian $3 \\times \\frac{1}{2}$.' }
+  ]);
 
   /* ---------- 5. Contoh bertahap ---------- */
 
@@ -399,7 +538,7 @@
   var sisaTanah = P(1).kurang('1/4').kurang('2/5');
   var seluruhTanah = P(140).bagi(sisaTanah);
 
-  var contoh = [
+  Materi.contoh(document.getElementById('daftarContoh'), [
     {
       judul: 'Persen dari sisa',
       soal: 'Pak Burhan membawa $5$ lusin mangga, lalu $33$ buah diberikan kepada ' +
@@ -435,55 +574,14 @@
           P('1/4').kali(seluruhTanah).teks() + '$ m²'
       ]
     }
-  ];
-
-  var elContoh = document.getElementById('daftarContoh');
-
-  contoh.forEach(function (c, i) {
-    var kartu = document.createElement('article');
-    kartu.className = 'kartu';
-
-    var nomor = document.createElement('div');
-    nomor.className = 'nomor';
-    nomor.textContent = 'Contoh ' + (i + 1) + ' — ' + c.judul;
-    kartu.appendChild(nomor);
-
-    var tanya = document.createElement('div');
-    tanya.className = 'pertanyaan';
-    Rumus.isi(tanya, c.soal);
-    kartu.appendChild(tanya);
-
-    var daftar = document.createElement('ol');
-    daftar.style.margin = '0';
-    kartu.appendChild(daftar);
-
-    var tombol = document.createElement('button');
-    tombol.type = 'button';
-    tombol.className = 'tombol mungil';
-    tombol.style.marginTop = '.6rem';
-    tombol.textContent = 'Buka langkah pertama';
-    kartu.appendChild(tombol);
-
-    var ke = 0;
-    tombol.addEventListener('click', function () {
-      if (ke >= c.langkah.length) return;
-      var li = document.createElement('li');
-      Rumus.isi(li, c.langkah[ke]);
-      daftar.appendChild(li);
-      ke++;
-      if (ke >= c.langkah.length) tombol.hidden = true;
-      else tombol.textContent = 'Langkah berikutnya';
-    });
-
-    elContoh.appendChild(kartu);
-  });
+  ]);
 
   /* ---------- 6. Cek pemahaman ---------- */
 
   CekPaham.buat(document.getElementById('cekPaham'), {
     soal: [
       {
-        id: 'pc-cek-1', level: 1, tipe: 'isian',
+        id: 'pecahan-cek-1', level: 1, tipe: 'isian',
         pertanyaan: 'Bentuk pecahan campuran dari $\\frac{37}{5}$ adalah ...',
         petunjuk: 'Contoh penulisan: 2 3/4',
         jawaban: ['7 2/5', '7_2/5'],
@@ -503,7 +601,7 @@
           'jadi pembilang baru, dan penyebutnya tetap. Jadi $\\frac{37}{5} = 7\\frac{2}{5}$.'
       },
       {
-        id: 'pc-cek-2', level: 1, tipe: 'pg',
+        id: 'pecahan-cek-2', level: 1, tipe: 'pg',
         pertanyaan: 'Pernyataan manakah yang TIDAK benar?',
         opsi: {
           a: '$\\frac{3}{4} > \\frac{2}{4}$',
@@ -525,7 +623,7 @@
           '$\\frac{1}{2} = \\frac{2}{4}$.'
       },
       {
-        id: 'pc-cek-3', level: 2, tipe: 'pg',
+        id: 'pecahan-cek-3', level: 2, tipe: 'pg',
         pertanyaan: 'Urutkan dari yang paling kecil lebih dulu: ' +
           '$0{,}45$ ; $0{,}85$ ; $\\frac{7}{8}$ ; $78\\%$.',
         opsi: {
@@ -548,7 +646,7 @@
           '$0{,}45$ ; $0{,}78$ ; $0{,}85$ ; $0{,}875$.'
       },
       {
-        id: 'pc-cek-4', level: 2, tipe: 'isian',
+        id: 'pecahan-cek-4', level: 2, tipe: 'isian',
         pertanyaan: 'Ani punya pita sepanjang $1{,}2$ m, lalu ia membeli lagi ' +
           '$0{,}75$ m. Berapa meter panjang pita Ani seluruhnya?',
         petunjuk: 'Contoh penulisan: 1,95',
@@ -567,9 +665,35 @@
         ],
         bahas: 'Samakan banyak angka di belakang koma: $1{,}20 + 0{,}75$. ' +
           'Dijumlahkan menjadi $1{,}95$ meter.'
+      },
+      {
+        id: 'pecahan-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Bu Ninda punya $2\\frac{1}{4}$ kg gula. Gula itu dibungkus ' +
+          'menjadi kantong-kantong berisi $\\frac{3}{8}$ kg. Berapa kantong yang ' +
+          'ia dapatkan?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['6'],
+        salahUmum: [
+          {
+            jawaban: ['27/32', '0,84375'],
+            umpan: 'Sepertinya kedua pecahannya dikalikan. Yang ditanya berapa kali ' +
+              '$\\frac{3}{8}$ muat di dalam $\\frac{9}{4}$, jadi operasinya pembagian.'
+          },
+          {
+            jawaban: ['3/4'],
+            umpan: 'Bagian bulatnya belum ikut diubah. $2\\frac{1}{4}$ harus menjadi ' +
+              '$\\frac{9}{4}$ dulu sebelum dibagi.'
+          }
+        ],
+        bahas: '$2\\frac{1}{4} = \\frac{9}{4}$. Membagi berarti mengalikan dengan ' +
+          'kebalikan pembaginya: $\\frac{9}{4} \\times \\frac{8}{3} = \\frac{72}{12} = 6$ kantong.'
       }
     ]
   });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 7, 'pecahan');
 })();
 </script>
 </body>

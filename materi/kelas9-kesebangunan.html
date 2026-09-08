@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kesebangunan dan Kekongruenan</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Kesebangunan dan Kekongruenan</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Kesebangunan dan Kekongruenan</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Membedakan bangun yang sebangun dan yang kongruen.</li>
+      <li>Menghitung panjang sisi yang belum diketahui lewat perbandingan.</li>
+      <li>Tahu kenapa sudut yang sama besar saja belum cukup.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Foto yang dicetak dua ukuran</h2>
+  <p>
+    Upik mencetak foto yang sama dalam dua ukuran: kartu pos dan dompet. Gambarnya tidak
+    berubah sedikit pun, hanya ukurannya yang mengecil.
+  </p>
+  <p>
+    Lain halnya kalau lebarnya saja yang dipotong — wajah di foto langsung terlihat
+    aneh. Apa sebenarnya yang harus dijaga supaya sebuah gambar tetap "gambar yang sama"?
+  </p>
+  <p class="kecil samar">
+    Pikirkan dulu sebentar, baru lanjut.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: dua persegi panjang</h2>
+  <p>
+    Persegi panjang abu-abu berukuran $9 \times 6$ dan tidak berubah. Yang bisa kamu
+    ubah hanya persegi panjang di sebelahnya.
+  </p>
+  <p>
+    Tugasnya: <strong>buat satu ukuran yang terasa "foto yang sama", lalu buat satu yang
+    terasa gepeng.</strong> Perhatikan kedua pecahan perbandingan yang dilaporkan.
+  </p>
+
+  <div class="kartu">
+    <div id="jelajah"></div>
+    <div id="pesanJelajah" style="margin-top:.7rem"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Dua istilah">
+    <h3>Sebangun dan kongruen</h3>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th></th><th>Sebangun</th><th>Kongruen</th></tr></thead>
+        <tbody>
+          <tr><td>Bentuk</td><td>sama</td><td>sama</td></tr>
+          <tr><td>Ukuran</td><td>boleh berbeda</td><td>harus sama</td></tr>
+          <tr><td>Sisi bersesuaian</td><td>sebanding</td><td>sama panjang</td></tr>
+          <tr><td>Sudut bersesuaian</td><td>sama besar</td><td>sama besar</td></tr>
+          <tr><td>Perumpamaan</td><td>foto yang diperbesar</td><td>ubin lantai yang identik</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Semua bangun yang kongruen pasti sebangun, tetapi tidak sebaliknya. Kongruen
+      adalah sebangun dengan perbandingan $1 : 1$.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Pasti sebangun atau belum tentu?</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Putuskan dulu sendiri, baru ketuk untuk memeriksa.
+      </p>
+      <div class="deret" id="pilihPasangan"></div>
+      <div id="hasilPasangan" style="margin-top:.7rem"></div>
+    </div>
+  </section>
+
+  <section data-tab="Bangun datar" hidden>
+    <h3>Dua syarat, keduanya wajib</h3>
+    <ol>
+      <li>Sisi-sisi yang bersesuaian punya <strong>perbandingan senilai</strong>.</li>
+      <li>Sudut-sudut yang bersesuaian <strong>sama besar</strong>.</li>
+    </ol>
+    <p>
+      Satu syarat saja tidak cukup, dan inilah yang tadi kamu lihat sendiri pada dua
+      persegi panjang: keempat sudutnya sama-sama $90^\circ$, tetapi begitu
+      perbandingan sisinya berbeda, bentuknya langsung terasa gepeng. Persegi panjang
+      dan persegi memenuhi syarat kedua, tetapi tidak sebangun.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Cari sisi yang belum diketahui</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Persegi panjang $ABCD$ sebangun dengan $PQRS$. Isi tiga panjang yang diketahui.
+      </p>
+      <div class="deret">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$AB$</label>
+        <input type="number" inputmode="numeric" id="sAB" value="9" min="1" style="flex:0 0 4rem" aria-label="panjang AB">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$PQ$</label>
+        <input type="number" inputmode="numeric" id="sPQ" value="6" min="1" style="flex:0 0 4rem" aria-label="panjang PQ">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$BC$</label>
+        <input type="number" inputmode="numeric" id="sBC" value="6" min="1" style="flex:0 0 4rem" aria-label="panjang BC">
+      </div>
+      <div id="hasilSisi" style="margin-top:.7rem"></div>
+    </div>
+  </section>
+
+  <section data-tab="Segitiga sebangun" hidden>
+    <h3>Tidak perlu memeriksa semuanya</h3>
+    <p>
+      Pada segitiga, cukup salah satu dari tiga syarat berikut: ketiga sisinya sebanding
+      (Si-Si-Si), ketiga sudutnya sama besar (Dut-Dut-Dut), atau dua sisi sebanding dan
+      sudut apitnya sama besar (Si-Dut-Si).
+    </p>
+
+    <h3>Segitiga bertumpuk</h3>
+    <p>
+      Bentuk yang paling sering muncul: segitiga $ABC$ dengan $DE$ sejajar $BC$. Karena
+      sejajar, $\triangle ADE$ sebangun dengan $\triangle ABC$, sehingga
+    </p>
+    <p class="tengah">$$\frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC}$$</p>
+    <p>
+      Yang dibandingkan adalah <strong>sisi utuh</strong> $AB$, bukan potongannya $BD$.
+      Ini kesalahan paling umum di bab ini, jadi selalu jumlahkan dulu:
+      $AB = AD + BD$.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Hitung $BC$ pada segitiga bertumpuk</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Isi ketiga panjang yang diketahui, lalu perhatikan penyebutnya.
+      </p>
+      <div class="deret">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$AD$</label>
+        <input type="number" inputmode="numeric" id="tAD" value="8" min="1" style="flex:0 0 4rem" aria-label="panjang AD">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$BD$</label>
+        <input type="number" inputmode="numeric" id="tBD" value="2" min="1" style="flex:0 0 4rem" aria-label="panjang BD">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$DE$</label>
+        <input type="number" inputmode="numeric" id="tDE" value="4" min="1" style="flex:0 0 4rem" aria-label="panjang DE">
+      </div>
+      <div id="hasilTumpuk" style="margin-top:.7rem"></div>
+    </div>
+
+    <h3>Soal bayangan</h3>
+    <p>
+      Pada waktu yang sama, benda dan bayangannya membentuk segitiga yang sebangun,
+      sebab sinar mataharinya datang dengan kemiringan yang sama.
+    </p>
+    <p class="tengah">$$\frac{\text{tinggi benda 1}}{\text{bayangan 1}} = \frac{\text{tinggi benda 2}}{\text{bayangan 2}}$$</p>
+  </section>
+
+  <section data-tab="Kekongruenan" hidden>
+    <h3>Kapan dua segitiga pasti kongruen</h3>
+    <p>
+      Tiga keterangan yang cukup: Si-Si-Si, Si-Dut-Si (sudutnya harus sudut apit), dan
+      Si-Dut-Dut. Begitu dua segitiga terbukti kongruen, <strong>semua</strong> unsur
+      yang bersesuaian ikut sama — dan dari situlah sisi atau sudut yang ditanya dicari.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Cukup atau belum?</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Ketuk keterangan yang diketahui tentang dua segitiga.
+      </p>
+      <div class="deret" id="pilihSyarat"></div>
+      <div id="hasilSyarat" style="margin-top:.7rem"></div>
+    </div>
+
+    <p>
+      Penamaannya juga harus diperhatikan. Pada $\triangle ABC \cong \triangle PQR$,
+      urutan hurufnya menyatakan pasangannya: $A$ dengan $P$, $B$ dengan $Q$, $C$ dengan
+      $R$. Menukar urutannya membuat sisi yang dibandingkan ikut salah.
+    </p>
+    <p>
+      Untuk segi empat yang kongruen, jumlah sudut dalamnya $360^\circ$; pakai itu untuk
+      mencari sudut yang tersisa.
+    </p>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya.
+  </p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.
+  </p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=9&amp;bab=kesebangunan&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  /* ---------- 3. Eksplorasi: dua persegi panjang ---------- */
+
+  var ASAL = { p: 9, l: 6 };
+  var elJelajah = document.getElementById('jelajah');
+  var elPesanJelajah = document.getElementById('pesanJelajah');
+  var pernah = {};
+
+  elJelajah.innerHTML =
+    '<div id="gambarPersegi"></div>' +
+    '<div class="deret" style="align-items:center;margin-top:.6rem">' +
+      '<label class="kecil" style="flex:none;margin:0;min-width:5.5rem">Panjang</label>' +
+      '<input type="range" id="geserP" min="2" max="12" value="6" style="flex:1;min-width:8rem" aria-label="panjang persegi panjang kedua">' +
+      '<strong id="labelP" style="min-width:2rem;text-align:right"></strong>' +
+    '</div>' +
+    '<div class="deret" style="align-items:center;margin-top:.4rem">' +
+      '<label class="kecil" style="flex:none;margin:0;min-width:5.5rem">Lebar</label>' +
+      '<input type="range" id="geserL" min="2" max="12" value="4" style="flex:1;min-width:8rem" aria-label="lebar persegi panjang kedua">' +
+      '<strong id="labelL" style="min-width:2rem;text-align:right"></strong>' +
+    '</div>' +
+    '<div id="bandingPersegi" style="margin-top:.6rem"></div>';
+
+  var geserP = document.getElementById('geserP');
+  var geserL = document.getElementById('geserL');
+  var elGambar = document.getElementById('gambarPersegi');
+  var elBanding = document.getElementById('bandingPersegi');
+
+  var NS = 'http://www.w3.org/2000/svg';
+
+  function svgEl(nama, sifat) {
+    var e = document.createElementNS(NS, nama);
+    for (var k in sifat) if (Object.prototype.hasOwnProperty.call(sifat, k)) {
+      e.setAttribute(k, sifat[k]);
+    }
+    return e;
+  }
+
+  function gambarDua(p, l) {
+    var S = 16, M = 12, celah = 24;
+    var W = M * 2 + celah + (ASAL.p + p) * S;
+    var H = M * 2 + Math.max(ASAL.l, l) * S;
+
+    var svg = svgEl('svg', {
+      viewBox: '0 0 ' + W + ' ' + H, width: '100%', height: H,
+      role: 'img',
+      'aria-label': 'Persegi panjang ' + ASAL.p + ' kali ' + ASAL.l +
+        ' di sebelah persegi panjang ' + p + ' kali ' + l
+    });
+    svg.style.maxWidth = W + 'px';
+    svg.style.display = 'block';
+
+    svg.appendChild(svgEl('rect', {
+      x: M, y: H - M - ASAL.l * S, width: ASAL.p * S, height: ASAL.l * S,
+      fill: 'var(--tinta-lembut)', 'fill-opacity': .18,
+      stroke: 'var(--tinta-lembut)', 'stroke-width': 2
+    }));
+    svg.appendChild(svgEl('rect', {
+      x: M + ASAL.p * S + celah, y: H - M - l * S, width: p * S, height: l * S,
+      fill: 'var(--aksen)', 'fill-opacity': .14,
+      stroke: 'var(--aksen)', 'stroke-width': 2
+    }));
+
+    elGambar.innerHTML = '';
+    elGambar.appendChild(svg);
+  }
+
+  function bandingkan() {
+    var p = parseInt(geserP.value, 10);
+    var l = parseInt(geserL.value, 10);
+    document.getElementById('labelP').textContent = String(p);
+    document.getElementById('labelL').textContent = String(l);
+    gambarDua(p, l);
+
+    var bandingP = Pecahan.buat(p, ASAL.p);
+    var bandingL = Pecahan.buat(l, ASAL.l);
+    var senilai = bandingP.samaDengan(bandingL);
+
+    if (senilai) pernah.senilai = true; else pernah.beda = true;
+
+    Rumus.isi(elBanding,
+      'Perbandingan panjang $\\frac{' + p + '}{9} = ' + bandingP.rumus() + '$, ' +
+      'perbandingan lebar $\\frac{' + l + '}{6} = ' + bandingL.rumus() + '$. ' +
+      (senilai ? 'Keduanya senilai.' : 'Keduanya tidak senilai.'));
+
+    /* Kesimpulan ditahan sampai kedua keadaan pernah dibuat sendiri.
+       Menyebut "sebangun" sebelum siswa melihat yang gepeng akan membuat
+       istilah itu terdengar seperti nama, bukan seperti syarat. */
+    if (!(pernah.senilai && pernah.beda)) {
+      elPesanJelajah.innerHTML = '';
+      return;
+    }
+    elPesanJelajah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Keempat sudutnya selalu $90^\\circ$, apa pun ukurannya — jadi sudut saja tidak ' +
+      'membedakan apa-apa di sini. Yang membedakan adalah kedua pecahan tadi: kalau ' +
+      'senilai, bangunnya sebangun; kalau tidak, ia hanya persegi panjang lain.') +
+      '</div>';
+  }
+
+  geserP.addEventListener('input', bandingkan);
+  geserL.addEventListener('input', bandingkan);
+  bandingkan();
+
+  /* ---------- 4. Tab "Aturannya" ---------- */
+
+  Materi.tab(document.getElementById('tabMateri'));
+
+  /* ---------- 4a. Pasti sebangun atau belum tentu ---------- */
+
+  var PASANGAN = [
+    { nama: 'Dua persegi', pasti: true,
+      alasan: 'Pasti sebangun. Keempat sisinya sama panjang, jadi perbandingannya ' +
+        'otomatis senilai, dan sudutnya sama-sama $90^\\circ$.' },
+    { nama: 'Dua lingkaran', pasti: true,
+      alasan: 'Pasti sebangun. Lingkaran hanya punya satu ukuran, yaitu jari-jarinya.' },
+    { nama: 'Dua segitiga sama sisi', pasti: true,
+      alasan: 'Pasti sebangun. Ketiga sudutnya selalu $60^\\circ$ dan ketiga sisinya ' +
+        'sama panjang.' },
+    { nama: 'Dua persegi panjang', pasti: false,
+      alasan: 'Belum tentu. Sudutnya memang sama-sama $90^\\circ$, tetapi perbandingan ' +
+        'panjang dan lebarnya bisa berbeda — persis yang tadi kamu geser sendiri.' },
+    { nama: 'Dua segitiga sembarang', pasti: false,
+      alasan: 'Belum tentu. Tidak ada yang menjamin sudut maupun perbandingan sisinya sama.' },
+    { nama: 'Dua trapesium', pasti: false,
+      alasan: 'Belum tentu. Nama bangunnya sama, tetapi ukuran sisi dan sudutnya bebas.' }
+  ];
+
+  var elPilihPasangan = document.getElementById('pilihPasangan');
+  var elHasilPasangan = document.getElementById('hasilPasangan');
+
+  PASANGAN.forEach(function (p, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tombol mungil';
+    b.textContent = p.nama;
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(elPilihPasangan.children, function (x, j) {
+        x.setAttribute('aria-pressed', j === i ? 'true' : 'false');
+      });
+      elHasilPasangan.innerHTML = '<div class="pesan ' + (p.pasti ? 'sip' : 'info') + '">' +
+        Rumus.keHTML(p.alasan) + '</div>';
+    });
+    elPilihPasangan.appendChild(b);
+  });
+
+  /* ---------- 4b. Sisi yang belum diketahui ---------- */
+
+  var elHasilSisi = document.getElementById('hasilSisi');
+  var isiSisi = ['sAB', 'sPQ', 'sBC'].map(function (id) { return document.getElementById(id); });
+
+  function hitungSisi() {
+    var n = isiSisi.map(function (el) { return parseInt(el.value, 10); });
+    if (n.some(function (x) { return isNaN(x) || x <= 0; })) {
+      elHasilSisi.innerHTML =
+        '<p class="kecil samar" style="margin:0">Ketiga kotak harus terisi bilangan positif.</p>';
+      return;
+    }
+    /* QR dihitung sebagai pecahan supaya hasil seperti 13/3 tetap tampil
+       utuh, bukan menjadi 4,333 yang menyembunyikan asalnya. */
+    var qr = Pecahan.buat(n[1] * n[2], n[0]);
+    Rumus.isi(elHasilSisi,
+      'Karena sebangun, $\\frac{AB}{PQ} = \\frac{BC}{QR}$, yaitu $\\frac{' + n[0] +
+      '}{' + n[1] + '} = \\frac{' + n[2] + '}{QR}$. ' +
+      'Kalikan silang: $' + n[0] + ' \\times QR = ' + (n[1] * n[2]) + '$, ' +
+      'jadi $QR = ' + qr.rumus() + '$.');
+  }
+
+  isiSisi.forEach(function (el) { el.addEventListener('input', hitungSisi); });
+  hitungSisi();
+
+  /* ---------- 4c. Segitiga bertumpuk ---------- */
+
+  var elHasilTumpuk = document.getElementById('hasilTumpuk');
+  var isiTumpuk = ['tAD', 'tBD', 'tDE'].map(function (id) { return document.getElementById(id); });
+
+  function hitungTumpuk() {
+    var n = isiTumpuk.map(function (el) { return parseInt(el.value, 10); });
+    if (n.some(function (x) { return isNaN(x) || x <= 0; })) {
+      elHasilTumpuk.innerHTML =
+        '<p class="kecil samar" style="margin:0">Ketiga kotak harus terisi bilangan positif.</p>';
+      return;
+    }
+    var ab = n[0] + n[1];
+    var bc = Pecahan.buat(ab * n[2], n[0]);
+    var keliru = Pecahan.buat(n[1] * n[2], n[0]);
+    Rumus.isi(elHasilTumpuk,
+      'Sisi utuhnya $AB = AD + BD = ' + n[0] + ' + ' + n[1] + ' = ' + ab + '$. ' +
+      'Dari $\\frac{AD}{AB} = \\frac{DE}{BC}$ didapat $\\frac{' + n[0] + '}{' + ab +
+      '} = \\frac{' + n[2] + '}{BC}$, jadi $BC = ' + bc.rumus() + '$. ' +
+      'Kalau yang dipakai potongannya, $BD = ' + n[1] + '$, hasilnya jadi $' +
+      keliru.rumus() + '$ — dan itu keliru.');
+  }
+
+  isiTumpuk.forEach(function (el) { el.addEventListener('input', hitungTumpuk); });
+  hitungTumpuk();
+
+  /* ---------- 4d. Syarat kekongruenan ---------- */
+
+  var SYARAT = [
+    { nama: 'Ketiga sisinya sama panjang', cukup: true,
+      alasan: 'Cukup. Ini Si-Si-Si: bentuk segitiga sudah terkunci oleh ketiga sisinya.' },
+    { nama: 'Dua sisi sama, sudut apitnya sama', cukup: true,
+      alasan: 'Cukup. Ini Si-Dut-Si. Perhatikan kata "apit": sudutnya harus terletak ' +
+        'di antara kedua sisi itu.' },
+    { nama: 'Dua sudut sama, satu sisi bersesuaian sama', cukup: true,
+      alasan: 'Cukup. Ini Si-Dut-Dut. Sudut ketiganya ikut sama dengan sendirinya, ' +
+        'sebab jumlah sudut segitiga selalu $180^\\circ$.' },
+    { nama: 'Ketiga sudutnya sama besar', cukup: false,
+      alasan: 'Belum cukup. Ini hanya menjamin sebangun. Segitiga kecil dan segitiga ' +
+        'besar bisa punya ketiga sudut yang sama persis.' },
+    { nama: 'Dua sisi sama, sudut yang bukan apit sama', cukup: false,
+      alasan: 'Belum cukup. Sudut yang bukan apit tidak mengunci bentuknya, ' +
+        'sehingga masih ada dua segitiga berbeda yang memenuhinya.' }
+  ];
+
+  var elPilihSyarat = document.getElementById('pilihSyarat');
+  var elHasilSyarat = document.getElementById('hasilSyarat');
+
+  SYARAT.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tombol mungil';
+    b.textContent = s.nama;
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(elPilihSyarat.children, function (x, j) {
+        x.setAttribute('aria-pressed', j === i ? 'true' : 'false');
+      });
+      elHasilSyarat.innerHTML = '<div class="pesan ' + (s.cukup ? 'sip' : 'info') + '">' +
+        Rumus.keHTML(s.alasan) + '</div>';
+    });
+    elPilihSyarat.appendChild(b);
+  });
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  Materi.contoh(document.getElementById('daftarContoh'), [
+    {
+      judul: 'Sisi persegi panjang',
+      soal: 'Persegi panjang $ABCD$ berukuran $9 \\times 6$ sebangun dengan $PQRS$. ' +
+        'Jika $PQ = 6$ cm, berapa $QR$?',
+      langkah: [
+        'Pasangkan sisi yang bersesuaian: $AB$ dengan $PQ$, dan $BC$ dengan $QR$.',
+        'Susun perbandingannya: $\\frac{9}{6} = \\frac{6}{QR}$.',
+        'Kalikan silang: $9 \\times QR = 36$.',
+        'Jadi $QR = 4$ cm. Periksa: $\\frac{9}{6}$ dan $\\frac{6}{4}$ sama-sama ' +
+          '$\\frac{3}{2}$.'
+      ]
+    },
+    {
+      judul: 'Segitiga bertumpuk',
+      soal: 'Pada $\\triangle ABC$, $DE$ sejajar $BC$ dengan $AD = 8$ cm, ' +
+        '$BD = 2$ cm, dan $DE = 4$ cm. Berapa panjang $BC$?',
+      langkah: [
+        'Jangan langsung memakai $BD$. Cari dulu sisi utuhnya: ' +
+          '$AB = AD + BD = 8 + 2 = 10$ cm.',
+        'Karena $DE$ sejajar $BC$, berlaku $\\frac{AD}{AB} = \\frac{DE}{BC}$.',
+        'Masukkan angkanya: $\\frac{8}{10} = \\frac{4}{BC}$, jadi $8 \\times BC = 40$.',
+        'Maka $BC = 5$ cm.'
+      ]
+    },
+    {
+      judul: 'Tinggi tiang bendera',
+      soal: 'Tongkat setinggi $1{,}5$ m berbayangan $1$ m. Pada saat yang sama ' +
+        'bayangan tiang bendera $2{,}5$ m. Berapa tinggi tiangnya?',
+      langkah: [
+        'Pada waktu yang sama, kemiringan sinar mataharinya sama, jadi kedua segitiga ' +
+          'sebangun.',
+        'Susun perbandingannya: $\\frac{1{,}5}{1} = \\frac{t}{2{,}5}$.',
+        'Kalikan silang: $t = 1{,}5 \\times 2{,}5$.',
+        'Tinggi tiangnya $3{,}75$ m.'
+      ]
+    }
+  ]);
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'kesebangunan-cek-1', level: 1, tipe: 'pg',
+        pertanyaan: 'Dua bangun disebut kongruen apabila ...',
+        opsi: {
+          a: 'bentuknya sama dan ukurannya sama',
+          b: 'bentuknya sama, ukurannya boleh berbeda',
+          c: 'sudutnya sama besar saja',
+          d: 'luasnya sama besar'
+        },
+        kunci: 'a',
+        umpan: {
+          b: 'Itu pengertian sebangun. Kongruen menuntut ukurannya sama juga.',
+          c: 'Sudut yang sama saja hanya salah satu syarat, dan itu pun belum cukup ' +
+             'untuk sebangun.',
+          d: 'Luas yang sama tidak menjamin bentuknya sama. Persegi $4 \\times 4$ dan ' +
+             'persegi panjang $8 \\times 2$ sama-sama berluas $16$.'
+        },
+        bahas: 'Kongruen berarti sisi bersesuaian sama panjang dan sudut bersesuaian ' +
+          'sama besar — sebangun dengan perbandingan $1 : 1$.'
+      },
+      {
+        id: 'kesebangunan-cek-2', level: 1, tipe: 'isian',
+        pertanyaan: 'Dua bangun sebangun dengan perbandingan $2 : 5$. Jika sisi yang ' +
+          'bersesuaian pada bangun kecil $6$ cm, berapa cm sisi pada bangun besar?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['15'],
+        salahUmum: [
+          {
+            jawaban: ['2,4'],
+            umpan: 'Perbandingannya sepertinya terbalik. Bangun besar sisinya lebih ' +
+              'panjang, jadi hasilnya harus lebih dari $6$.'
+          },
+          {
+            jawaban: ['30'],
+            umpan: 'Sepertinya $6$ langsung dikali $5$. Yang benar $6 \\times ' +
+              '\\frac{5}{2}$, sebab $6$ mewakili angka $2$ pada perbandingan.'
+          }
+        ],
+        bahas: '$\\frac{2}{5} = \\frac{6}{x}$ memberi $2x = 30$, jadi $x = 15$ cm.'
+      },
+      {
+        id: 'kesebangunan-cek-3', level: 2, tipe: 'isian',
+        pertanyaan: 'Pada $\\triangle ABC$, $DE$ sejajar $BC$ dengan $AD = 6$ cm, ' +
+          '$BD = 3$ cm, dan $DE = 8$ cm. Berapa cm panjang $BC$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['12'],
+        salahUmum: [
+          {
+            jawaban: ['4'],
+            umpan: 'Sepertinya yang dipakai potongan $BD = 3$, bukan sisi utuh ' +
+              '$AB = 9$. Jumlahkan dulu $AD$ dan $BD$.'
+          },
+          {
+            jawaban: ['16'],
+            umpan: 'Perbandingannya sepertinya terbalik. Karena $AD$ lebih pendek ' +
+              'daripada $AB$, maka $DE$ juga lebih pendek daripada $BC$: ' +
+              '$\\frac{6}{9} = \\frac{8}{BC}$.'
+          },
+          {
+            jawaban: ['11', '9'],
+            umpan: 'Panjang sisi dicari lewat perbandingan, bukan lewat penjumlahan. ' +
+              'Susun $\\frac{AD}{AB} = \\frac{DE}{BC}$.'
+          }
+        ],
+        bahas: '$AB = 6 + 3 = 9$. Dari $\\frac{6}{9} = \\frac{8}{BC}$ didapat ' +
+          '$6 \\times BC = 72$, jadi $BC = 12$ cm.'
+      },
+      {
+        id: 'kesebangunan-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Diketahui $\\triangle ABC \\cong \\triangle PQR$ dengan ' +
+          '$\\angle A = 35^\\circ$ dan $\\angle B = 65^\\circ$. Berapa besar ' +
+          '$\\angle R$ dalam derajat?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['80'],
+        salahUmum: [
+          {
+            jawaban: ['35'],
+            umpan: 'Itu besar $\\angle P$, yang bersesuaian dengan $\\angle A$. ' +
+              'Sudut $R$ bersesuaian dengan $\\angle C$.'
+          },
+          {
+            jawaban: ['65'],
+            umpan: 'Itu besar $\\angle Q$. Cari dulu $\\angle C$ lewat jumlah sudut ' +
+              'segitiga.'
+          },
+          {
+            jawaban: ['100'],
+            umpan: 'Sepertinya $180$ dikurangi salah satu sudut saja. ' +
+              'Kedua sudut yang diketahui harus dijumlahkan dulu.'
+          }
+        ],
+        bahas: '$\\angle C = 180^\\circ - (35^\\circ + 65^\\circ) = 80^\\circ$, ' +
+          'dan $\\angle R$ bersesuaian dengan $\\angle C$.'
+      },
+      {
+        id: 'kesebangunan-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Sebuah pohon berbayangan $6$ m. Pada saat yang sama, tongkat ' +
+          'setinggi $1{,}2$ m berbayangan $0{,}8$ m. Berapa meter tinggi pohon itu?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['9'],
+        salahUmum: [
+          {
+            jawaban: ['4'],
+            umpan: 'Perbandingannya terbalik. Bayangan tongkat lebih pendek daripada ' +
+              'tingginya, jadi pohonnya harus lebih tinggi daripada bayangannya.'
+          },
+          {
+            jawaban: ['7,2'],
+            umpan: 'Sepertinya $6$ langsung dikali $1{,}2$. Bagi dulu $1{,}2$ dengan ' +
+              '$0{,}8$ untuk mendapat perbandingannya.'
+          },
+          {
+            jawaban: ['8'],
+            umpan: 'Coba hitung ulang perbandingannya: $\\frac{1{,}2}{0{,}8} = ' +
+              '\\frac{3}{2}$, lalu kalikan dengan $6$.'
+          }
+        ],
+        bahas: '$\\frac{1{,}2}{0{,}8} = \\frac{t}{6}$. Karena ' +
+          '$\\frac{1{,}2}{0{,}8} = \\frac{3}{2}$, maka $t = \\frac{3}{2} \\times 6 = 9$ m.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 9, 'kesebangunan');
+})();
+</script>
+</body>
+</html>

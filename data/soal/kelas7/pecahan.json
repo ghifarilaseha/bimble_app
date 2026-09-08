@@ -4,10 +4,11 @@
     "semester": 1,
     "bab": "pecahan",
     "judul": "Pecahan",
-    "versi": "2026-09-05"
+    "versi": "2026-09-06",
+    "sumber": "Soal awal situs + Modul MGMP Matematika SMPN 14 Bandung, Kelas VII Sem. 1, Episode 1"
   },
   "terkunci": true,
-  "digembok": "2026-09-05",
+  "digembok": "2026-09-07",
   "soal": [
     {
       "id": "pc-01",
@@ -128,6 +129,293 @@
       "acakOpsi": true,
       "pembahasan": "U2VsaXNpaCB0aWFwIHBlY2FoYW4gdGVyaGFkYXAgJDEkIGJlcnR1cnV0LXR1cnV0ICRcZnJhY3sxfXs2fSQsICRcZnJhY3sxfXs4fSQsICRcZnJhY3sxfXsxMH0kLCBkYW4gJFxmcmFjezF9ezEyfSQuIFNlbGlzaWggdGVya2VjaWwgZGltaWxpa2kgJFxmcmFjezExfXsxMn0kLg==",
       "kunci": "da3e7445275358410b77a9cf442e610996172f8b61577e9e1e362ad9eef46341"
+    },
+    {
+      "id": "pc-09",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bentuk pecahan campuran dari $\\frac{47}{6}$ adalah ...",
+      "opsi": {
+        "a": "$4\\frac{7}{6}$",
+        "b": "$6\\frac{5}{7}$",
+        "c": "$7\\frac{5}{6}$",
+        "d": "$7\\frac{6}{5}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JDQ3IFxkaXYgNiA9IDckIHNpc2EgJDUkLiBIYXNpbCBiYWdpbnlhIG1lbmphZGkgYmlsYW5nYW4gYnVsYXQsIHNpc2FueWEgbWVuamFkaSBwZW1iaWxhbmcsIHBlbnllYnV0bnlhIHRldGFwOiAkN1xmcmFjezV9ezZ9JC4=",
+      "kunci": "7b24654fe3422a1163fba1d84dbbd4936a0b0c7f30db5835163b8539cf235cf0"
+    },
+    {
+      "id": "pc-10",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pernyataan berikut yang TIDAK benar adalah ...",
+      "opsi": {
+        "a": "$\\frac{5}{7} > \\frac{3}{7}$",
+        "b": "$\\frac{1}{3} > \\frac{2}{6}$",
+        "c": "$\\frac{2}{5} < \\frac{4}{5}$",
+        "d": "$\\frac{7}{9} > \\frac{5}{9}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JFxmcmFjezJ9ezZ9JCBzZW5pbGFpIGRlbmdhbiAkXGZyYWN7MX17M30kLCBqYWRpIGtlZHVhbnlhIHNhbWEgYmVzYXIuIFRhbmRhIHlhbmcgYmVuYXIgYWRhbGFoICQ9JCwgYnVrYW4gJD4kLg==",
+      "kunci": "d730192d701d4a27529c993cdb973c5561d89d84897f5b7fd64142343d212acd"
+    },
+    {
+      "id": "pc-11",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bentuk pecahan paling sederhana dari $0{,}45$ adalah ...",
+      "pembahasan": "JDB7LH00NSA9IFxmcmFjezQ1fXsxMDB9JC4gUGVtYmlsYW5nIGRhbiBwZW55ZWJ1dCBkaWJhZ2kgNSBtZW5qYWRpICRcZnJhY3s5fXsyMH0kLg==",
+      "kunci": [
+        "5cf2d4fe2d1ffa53bacb0f3a1cea4651c48917033b7d61d72e10477a2395b956"
+      ]
+    },
+    {
+      "id": "pc-12",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bentuk persen dari $\\frac{4}{5}$ adalah ...",
+      "opsi": {
+        "a": "$45\\%$",
+        "b": "$54\\%$",
+        "c": "$80\\%$",
+        "d": "$85\\%$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JFxmcmFjezR9ezV9IFx0aW1lcyAxMDBcJSA9IFxmcmFjezQwMFwlfXs1fSA9IDgwXCUkLiBCaXNhIGp1Z2EgZGVuZ2FuIG1lbnlhbWFrYW4gcGVueWVidXQgbWVuamFkaSAxMDA6ICRcZnJhY3s0IFx0aW1lcyAyMH17NSBcdGltZXMgMjB9ID0gXGZyYWN7ODB9ezEwMH0kLg==",
+      "kunci": "5dee8e639b219a149070b120dac738621cb62d17443f243fde03027bfff35b44"
+    },
+    {
+      "id": "pc-13",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Karena $8 > 3$, maka $\\frac{1}{8}$ lebih besar daripada $\\frac{1}{3}$.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "S3VlbnlhIGRpYmFnaSBtZW5qYWRpIDggcG90b25nLCBqYWRpIHRpYXAgcG90b25nbnlhIGp1c3RydSBsZWJpaCBrZWNpbCBkYXJpcGFkYSBrYWxhdSBkaWJhZ2kgMy4gWWFuZyBiZW5hciAkXGZyYWN7MX17OH0gPCBcZnJhY3sxfXszfSQu",
+      "kunci": "ed1c25a1a5f4ef9a1ce851caf1c3c23d4cf7b95b4f3b42d1dd507db291cea40e"
+    },
+    {
+      "id": "pc-14",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $\\frac{2}{5} + \\frac{1}{4}$ adalah ...",
+      "pembahasan": "S1BLIGRhcmkgNSBkYW4gNCBhZGFsYWggMjAuICRcZnJhY3syfXs1fSA9IFxmcmFjezh9ezIwfSQgZGFuICRcZnJhY3sxfXs0fSA9IFxmcmFjezV9ezIwfSQsIHNlaGluZ2dhIGp1bWxhaG55YSAkXGZyYWN7MTN9ezIwfSQu",
+      "kunci": [
+        "a809fe95a850c274ded199c7a2406bbd3d16aecf18259d6cdf3d1dfa1c728bc1"
+      ]
+    },
+    {
+      "id": "pc-15",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Urutan bilangan $0{,}35 \\,;\\, 0{,}72 \\,;\\, \\frac{3}{4} \\,;\\, 65\\%$ dari yang terkecil adalah ...",
+      "opsi": {
+        "a": "$0{,}35 \\,;\\, 65\\% \\,;\\, 0{,}72 \\,;\\, \\frac{3}{4}$",
+        "b": "$0{,}35 \\,;\\, \\frac{3}{4} \\,;\\, 65\\% \\,;\\, 0{,}72$",
+        "c": "$\\frac{3}{4} \\,;\\, 0{,}35 \\,;\\, 65\\% \\,;\\, 0{,}72$",
+        "d": "$0{,}35 \\,;\\, 0{,}72 \\,;\\, 65\\% \\,;\\, \\frac{3}{4}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "VWJhaCBzZW11YW55YSBrZSBkZXNpbWFsOiAkMHssfTM1JCA7ICQweyx9NzIkIDsgJFxmcmFjezN9ezR9ID0gMHssfTc1JCA7ICQ2NVwlID0gMHssfTY1JC4gVXJ1dGFuIHRlcmtlY2lsbnlhICQweyx9MzUgXCw7XCwgMHssfTY1IFwsO1wsIDB7LH03MiBcLDtcLCAweyx9NzUkLg==",
+      "kunci": "0d6c24072a6c62e28d566b548c15939de61237f05d03042b81a697c31506a97a"
+    },
+    {
+      "id": "pc-16",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bentuk pecahan biasa dari $2\\frac{2}{3}$ adalah ...",
+      "opsi": {
+        "a": "$\\frac{4}{3}$",
+        "b": "$\\frac{6}{3}$",
+        "c": "$\\frac{7}{3}$",
+        "d": "$\\frac{8}{3}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JDJcZnJhY3syfXszfSA9IFxmcmFjezMgXHRpbWVzIDIgKyAyfXszfSA9IFxmcmFjezh9ezN9JC4=",
+      "kunci": "48389438aef16ba73567b285d0b5c4d97d89c139971a60a4986553f9a5ddda9a"
+    },
+    {
+      "id": "pc-17",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Ani memiliki pita sepanjang $2{,}4$ m, kemudian ia membeli lagi sepanjang $0{,}85$ m. Panjang pita Ani seluruhnya adalah ...",
+      "opsi": {
+        "a": "$1{,}55$ m",
+        "b": "$2{,}49$ m",
+        "c": "$3{,}25$ m",
+        "d": "$10{,}9$ m"
+      },
+      "acakOpsi": false,
+      "pembahasan": "VHVsaXMgJDJ7LH00JCBzZWJhZ2FpICQyeyx9NDAkIGFnYXIga29tYW55YSBsdXJ1cywgbGFsdSBqdW1sYWhrYW46ICQyeyx9NDAgKyAweyx9ODUgPSAzeyx9MjUkIG0uIFBpbGloYW4gJDJ7LH00OSQgbSBtdW5jdWwgYmlsYSBrb21hbnlhIHRpZGFrIGRpbHVydXNrYW4u",
+      "kunci": "10483352de7aa4382b9fab69d12b15570f726d67edd9462905d0fa0dd881bc17"
+    },
+    {
+      "id": "pc-18",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Bu Ninda membeli $\\frac{5}{6}$ kuintal terigu, lalu memakai $\\frac{1}{4}$ kuintal. Sisa terigu Bu Ninda adalah ... kuintal.",
+      "pembahasan": "S1BLIGRhcmkgNiBkYW4gNCBhZGFsYWggMTIuICRcZnJhY3s1fXs2fSA9IFxmcmFjezEwfXsxMn0kIGRhbiAkXGZyYWN7MX17NH0gPSBcZnJhY3szfXsxMn0kLCBzZWhpbmdnYSBzaXNhbnlhICRcZnJhY3sxMCAtIDN9ezEyfSA9IFxmcmFjezd9ezEyfSQu",
+      "kunci": [
+        "ad451f25d42c4f05f0717021e75d52fc32899bc7dce5c4f70054a83601e6fe3b"
+      ]
+    },
+    {
+      "id": "pc-19",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Seorang tukang pos membagikan $\\frac{4}{5}$ dari 300 surat kepada warga. Banyak surat yang dibagikan adalah ...",
+      "opsi": {
+        "a": "$60$ surat",
+        "b": "$75$ surat",
+        "c": "$240$ surat",
+        "d": "$375$ surat"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JFxmcmFjezR9ezV9IFx0aW1lcyAzMDAgPSBcZnJhY3sxMjAwfXs1fSA9IDI0MCQgc3VyYXQu",
+      "kunci": "356791d5b00c36f56b38cd927a6b34913419a7737f37a9e2e6399b7ac26116f5"
+    },
+    {
+      "id": "pc-20",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $4\\frac{1}{2} \\div 2\\frac{1}{4}$ adalah ...",
+      "pembahasan": "VWJhaCBrZSBwZWNhaGFuIGJpYXNhIGR1bHU6ICRcZnJhY3s5fXsyfSBcZGl2IFxmcmFjezl9ezR9ID0gXGZyYWN7OX17Mn0gXHRpbWVzIFxmcmFjezR9ezl9ID0gXGZyYWN7MzZ9ezE4fSA9IDIkLg==",
+      "kunci": [
+        "83293100afeeba201eb5afe7dc1706fba89eba16577ea1073177de1bf605812e"
+      ]
+    },
+    {
+      "id": "pc-21",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pak Burhan membawa 3 lusin jambu. Sebanyak 9 jambu diberikan kepada tetangga. Persentase jambu yang tersisa adalah ...",
+      "opsi": {
+        "a": "$25\\%$",
+        "b": "$27\\%$",
+        "c": "$75\\%$",
+        "d": "$81\\%$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QmFueWFrIGphbWJ1ICQ9IDMgXHRpbWVzIDEyID0gMzYkLiBTaXNhbnlhICQzNiAtIDkgPSAyNyQuIFBlcnNlbnRhc2VueWEgJFxmcmFjezI3fXszNn0gXHRpbWVzIDEwMFwlID0gXGZyYWN7M317NH0gXHRpbWVzIDEwMFwlID0gNzVcJSQuIFBpbGloYW4gJDI1XCUkIGFkYWxhaCBwZXJzZW50YXNlIHlhbmcgZGliZXJpa2FuLCBidWthbiB5YW5nIHRlcnNpc2Eu",
+      "kunci": "d14127bcaf6613f62a3b115270f90edafd2ce2707473c48d86d7ee4a87a7b082"
+    },
+    {
+      "id": "pc-22",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Hasil dari $25\\% \\times \\frac{3}{5} \\div 1{,}2$ adalah $\\frac{1}{8}$.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JDI1XCUgPSBcZnJhY3sxfXs0fSQgZGFuICQxeyx9MiA9IFxmcmFjezZ9ezV9JC4gTWFrYSAkXGZyYWN7MX17NH0gXHRpbWVzIFxmcmFjezN9ezV9ID0gXGZyYWN7M317MjB9JCwgbGFsdSAkXGZyYWN7M317MjB9IFx0aW1lcyBcZnJhY3s1fXs2fSA9IFxmcmFjezE1fXsxMjB9ID0gXGZyYWN7MX17OH0kLg==",
+      "kunci": "170eb1baa46e155edf1a52ecd8da1a179ac7971009634429fa81dfefe4a87a02"
+    },
+    {
+      "id": "pc-23",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah pita sepanjang $1{,}95$ m akan dipotong menjadi 3 bagian sama panjang. Panjang setiap bagian adalah ...",
+      "opsi": {
+        "a": "$0{,}55$ m",
+        "b": "$0{,}65$ m",
+        "c": "$0{,}75$ m",
+        "d": "$5{,}85$ m"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JDF7LH05NSBcZGl2IDMgPSAweyx9NjUkIG0uIEJpc2EgZGljZWsgZGVuZ2FuIG1lbmdhbGlrYW4ga2VtYmFsaTogJDB7LH02NSBcdGltZXMgMyA9IDF7LH05NSQu",
+      "kunci": "0fd9bab4ff530c1cb416f493a33e77d4c2302fde2d76ffce9dfa23abee77b932"
+    },
+    {
+      "id": "pc-24",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pak Ujang memiliki sebidang tanah. Sebanyak $\\frac{1}{3}$ bagian dibuat kolam ikan, $\\frac{1}{4}$ bagian dipasang keramik, dan sisanya ditanami rumput. Jika luas bagian yang ditanami rumput $100\\,m^2$, luas kolam ikannya adalah ...",
+      "opsi": {
+        "a": "$60\\,m^2$",
+        "b": "$80\\,m^2$",
+        "c": "$100\\,m^2$",
+        "d": "$240\\,m^2$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "QmFnaWFuIHJ1bXB1dCAkPSAxIC0gXGZyYWN7MX17M30gLSBcZnJhY3sxfXs0fSA9IFxmcmFjezEyIC0gNCAtIDN9ezEyfSA9IFxmcmFjezV9ezEyfSQuIEthcmVuYSAkXGZyYWN7NX17MTJ9JCBiYWdpYW4gJD0gMTAwXCxtXjIkLCBtYWthICRcZnJhY3sxfXsxMn0kIGJhZ2lhbiAkPSAyMFwsbV4yJCBkYW4gbHVhcyBzZWx1cnVoIHRhbmFoICQ9IDI0MFwsbV4yJC4gTHVhcyBrb2xhbSAkPSBcZnJhY3sxfXszfSBcdGltZXMgMjQwID0gODBcLG1eMiQu",
+      "kunci": "b8d707db0457dcedb0148d024f628a0acbf6f3bc26392c2a69c77bf3a97404c4"
+    },
+    {
+      "id": "pc-25",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Ani membagikan 30 kg gula pasir secara merata. Setiap keluarga menerima $1\\frac{1}{2}$ kg. Banyak keluarga yang menerima gula adalah ...",
+      "pembahasan": "JDMwIFxkaXYgMVxmcmFjezF9ezJ9ID0gMzAgXGRpdiBcZnJhY3szfXsyfSA9IDMwIFx0aW1lcyBcZnJhY3syfXszfSA9IDIwJCBrZWx1YXJnYS4=",
+      "kunci": [
+        "e5b6e74c760bdfc89f48d75e2078abf77c42d9c323578a5a20edc4eff98b0044"
+      ]
+    },
+    {
+      "id": "pc-26",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah tangki terisi air $\\frac{3}{5}$ bagian. Setelah ditambah 24 liter air, tangki terisi $\\frac{9}{10}$ bagian. Kapasitas tangki tersebut adalah ...",
+      "opsi": {
+        "a": "$40$ liter",
+        "b": "$60$ liter",
+        "c": "$80$ liter",
+        "d": "$120$ liter"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UGVydGFtYmFoYW5ueWEgJFxmcmFjezl9ezEwfSAtIFxmcmFjezN9ezV9ID0gXGZyYWN7OX17MTB9IC0gXGZyYWN7Nn17MTB9ID0gXGZyYWN7M317MTB9JCBiYWdpYW4sIGRhbiBpdHUgc2V0YXJhIDI0IGxpdGVyLiBKYWRpICRcZnJhY3sxfXsxMH0kIGJhZ2lhbiAkPSA4JCBsaXRlciwgc2VoaW5nZ2Ega2FwYXNpdGFzIHBlbnVobnlhICQ9IDgwJCBsaXRlci4=",
+      "kunci": "3211b2978d116771ba70eeb89fdff79cde6f12db954966e78311c615139b2b5d"
+    },
+    {
+      "id": "pc-27",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $\\left(1 - \\frac{1}{2}\\right)\\left(1 - \\frac{1}{3}\\right)\\left(1 - \\frac{1}{4}\\right) \\cdots \\left(1 - \\frac{1}{10}\\right)$ adalah ...",
+      "pembahasan": "VGlhcCBrdXJ1bmcgbWVuamFkaSAkXGZyYWN7MX17Mn0gXHRpbWVzIFxmcmFjezJ9ezN9IFx0aW1lcyBcZnJhY3szfXs0fSBcdGltZXMgXGNkb3RzIFx0aW1lcyBcZnJhY3s5fXsxMH0kLiBQZW55ZWJ1dCBzdWF0dSBmYWt0b3Igc2VsYWx1IHNhbWEgZGVuZ2FuIHBlbWJpbGFuZyBmYWt0b3IgYmVyaWt1dG55YSBzZWhpbmdnYSBzYWxpbmcgbWVuY29yZXQsIHRlcnNpc2EgJFxmcmFjezF9ezEwfSQu",
+      "kunci": [
+        "db37c9354f756a348d90b97bfa5ae7cea27c9a40c4ffc1566eda172af6a21a51",
+        "d79fea1672059bcd6ece5f252b9edb5f1baa1a2ae3477d2776ad3eef5bfef958"
+      ]
+    },
+    {
+      "id": "pc-28",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Umur Rika 27 tahun dan umur Tasya $\\frac{1}{3}$ dari umur Rika. Selisih umur mereka adalah ...",
+      "opsi": {
+        "a": "$9$ tahun",
+        "b": "$16$ tahun",
+        "c": "$18$ tahun",
+        "d": "$36$ tahun"
+      },
+      "acakOpsi": false,
+      "pembahasan": "VW11ciBUYXN5YSAkPSBcZnJhY3sxfXszfSBcdGltZXMgMjcgPSA5JCB0YWh1bi4gU2VsaXNpaG55YSAkMjcgLSA5ID0gMTgkIHRhaHVuLg==",
+      "kunci": "331525c66baae17a402c4254aca828d45ea1f503318e5566165cec6effa0e2d5"
     }
   ]
 }

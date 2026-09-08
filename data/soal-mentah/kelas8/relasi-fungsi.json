@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "relasi-fungsi",
+    "judul": "Relasi dan Fungsi",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Relasi dan Fungsi",
+    "versi": "2026-09-07"
+  },
+  "soal": [
+    {
+      "id": "rf-01", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Diketahui $A = \\{2, 3, 4, 5\\}$ dan $B = \\{4, 6, 8, 9, 10\\}$ dengan relasi \"faktor dari\" dari $A$ ke $B$. Pasangan berurutan yang termasuk relasi tersebut adalah ...",
+      "opsi": { "a": "$(3, 9)$", "b": "$(4, 6)$", "c": "$(5, 8)$", "d": "$(2, 9)$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "$3$ adalah faktor dari $9$ karena $9 : 3 = 3$. Sedangkan $6$ tidak habis dibagi $4$, $8$ tidak habis dibagi $5$, dan $9$ tidak habis dibagi $2$."
+    },
+    {
+      "id": "rf-02", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? Relasi \"faktor dari\" dari $A = \\{2, 3, 4, 5\\}$ ke $B = \\{4, 6, 8, 9, 10\\}$ merupakan sebuah fungsi.",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Syarat fungsi adalah setiap anggota daerah asal dipasangkan dengan tepat satu anggota daerah kawan. Di sini $2$ dipasangkan dengan $4$, $6$, $8$, dan $10$ sekaligus, sehingga syaratnya dilanggar."
+    },
+    {
+      "id": "rf-03", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 2x + 3$. Nilai $f(4)$ adalah ...",
+      "jawaban": ["11"],
+      "pembahasan": "Ganti setiap $x$ dengan $4$: $f(4) = 2 \\times 4 + 3 = 8 + 3 = 11$."
+    },
+    {
+      "id": "rf-04", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Himpunan pasangan berurutan berikut yang merupakan fungsi adalah ...",
+      "opsi": {
+        "a": "$\\{(1,2), (2,3), (3,4)\\}$",
+        "b": "$\\{(1,2), (1,3), (2,4)\\}$",
+        "c": "$\\{(1,5), (2,6), (1,7)\\}$",
+        "d": "$\\{(2,1), (2,3), (3,5)\\}$"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Pada pilihan yang benar, tidak ada anggota daerah asal yang muncul dua kali. Pilihan lainnya memasangkan satu anggota daerah asal dengan lebih dari satu anggota daerah kawan."
+    },
+    {
+      "id": "rf-05", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Daerah hasil fungsi $f(x) = 3x - 1$ dengan daerah asal $\\{1, 2, 3\\}$ adalah ...",
+      "opsi": { "a": "$\\{2, 5, 8\\}$", "b": "$\\{3, 6, 9\\}$", "c": "$\\{2, 4, 6\\}$", "d": "$\\{1, 2, 3\\}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "$f(1) = 2$, $f(2) = 5$, dan $f(3) = 8$, sehingga daerah hasilnya $\\{2, 5, 8\\}$."
+    },
+    {
+      "id": "rf-06", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 5 - 2x$. Nilai $f(-3)$ adalah ...",
+      "jawaban": ["11"],
+      "pembahasan": "$f(-3) = 5 - 2 \\times (-3) = 5 + 6 = 11$. Dua tanda negatif berturut-turut menjadi penjumlahan."
+    },
+    {
+      "id": "rf-07", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Banyaknya pemetaan yang mungkin dari $A = \\{a, b\\}$ ke $B = \\{1, 2, 3\\}$ adalah ...",
+      "opsi": { "a": "$6$", "b": "$8$", "c": "$9$", "d": "$27$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Setiap anggota $A$ punya $3$ pilihan bayangan, dan pilihannya bebas satu sama lain: $3 \\times 3 = 3^2 = 9$."
+    },
+    {
+      "id": "rf-08", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = x^2 + 1$. Nilai $f(-2)$ adalah ...",
+      "opsi": { "a": "$-3$", "b": "$3$", "c": "$5$", "d": "$-5$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "$(-2)^2 = 4$, bukan $-4$, karena negatif dikali negatif hasilnya positif. Jadi $f(-2) = 4 + 1 = 5$."
+    },
+    {
+      "id": "rf-09", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Fungsi $f(x) = ax + b$ memenuhi $f(2) = 1$ dan $f(5) = 13$. Nilai $a$ adalah ...",
+      "jawaban": ["4"],
+      "pembahasan": "$2a + b = 1$ dan $5a + b = 13$. Kurangkan keduanya sehingga $b$ hilang: $3a = 12$, jadi $a = 4$."
+    },
+    {
+      "id": "rf-10", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Fungsi $f(x) = ax + b$ memenuhi $f(2) = 1$ dan $f(5) = 13$. Nilai $b$ adalah ...",
+      "jawaban": ["-7"],
+      "pembahasan": "Karena $a = 4$, dari $2a + b = 1$ diperoleh $8 + b = 1$, sehingga $b = -7$."
+    },
+    {
+      "id": "rf-11", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 4x - 7$. Nilai $f(-3)$ adalah ...",
+      "opsi": { "a": "$-19$", "b": "$-5$", "c": "$5$", "d": "$19$" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "$f(-3) = 4 \\times (-3) - 7 = -12 - 7 = -19$. Keduanya negatif, sehingga hasilnya bertambah jauh dari nol."
+    },
+    {
+      "id": "rf-12", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 4x - 7$. Nilai $x$ yang membuat $f(x) = 0$ adalah ... (tulis sebagai pecahan atau desimal)",
+      "jawaban": ["7/4", "1 3/4", "1,75"],
+      "pembahasan": "$4x - 7 = 0$, sehingga $4x = 7$ dan $x = \\frac{7}{4} = 1{,}75$."
+    },
+    {
+      "id": "rf-13", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 2x + c$ dan $f(3) = 11$. Nilai $f(0)$ adalah ...",
+      "opsi": { "a": "$2$", "b": "$5$", "c": "$8$", "d": "$11$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Dari $2 \\times 3 + c = 11$ diperoleh $c = 5$. Maka $f(0) = 2 \\times 0 + 5 = 5$."
+    },
+    {
+      "id": "rf-14", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Himpunan $A$ dan $B$ masing-masing beranggotakan 4 unsur. Banyaknya korespondensi satu-satu yang mungkin dari $A$ ke $B$ adalah ...",
+      "opsi": { "a": "$4$", "b": "$16$", "c": "$24$", "d": "$256$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Anggota pertama punya $4$ pilihan, berikutnya $3$, lalu $2$, lalu $1$: $4 \\times 3 \\times 2 \\times 1 = 24$. Pilihannya menyusut karena satu bayangan tidak boleh dipakai dua kali."
+    },
+    {
+      "id": "rf-15", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 2x - 5$. Jika $f(k) = 9$, nilai $k$ adalah ...",
+      "jawaban": ["7"],
+      "pembahasan": "$2k - 5 = 9$, sehingga $2k = 14$ dan $k = 7$."
+    },
+    {
+      "id": "rf-16", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Fungsi $f(x) = ax + b$ memenuhi $f(1) = 3$ dan $f(4) = 12$. Nilai $f(10)$ adalah ...",
+      "opsi": { "a": "$24$", "b": "$27$", "c": "$30$", "d": "$33$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "$3a = f(4) - f(1) = 9$, sehingga $a = 3$ dan $b = 3 - 3 = 0$. Jadi $f(x) = 3x$ dan $f(10) = 30$."
+    },
+    {
+      "id": "rf-17", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui $f(x) = 3x + 1$. Jika $f(a) = f(2) + 6$, nilai $a$ adalah ...",
+      "jawaban": ["4"],
+      "pembahasan": "$f(2) = 7$, sehingga $f(a) = 13$. Dari $3a + 1 = 13$ diperoleh $3a = 12$ dan $a = 4$."
+    },
+    {
+      "id": "rf-18", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Suatu fungsi memasangkan setiap bilangan dengan \"tiga kurangnya dari dua kali bilangan itu\". Bayangan dari $-4$ adalah ...",
+      "opsi": { "a": "$-11$", "b": "$-5$", "c": "$5$", "d": "$11$" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Rumusnya $f(x) = 2x - 3$, bukan $3 - 2x$: \"tiga kurangnya dari\" berarti dikurangi tiga. Maka $f(-4) = -8 - 3 = -11$."
+    },
+    {
+      "id": "rf-19", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Fungsi $f(x) = ax + b$ memenuhi $f(0) = 5$ dan $f(3) = -1$. Nilai $f(-2)$ adalah ...",
+      "jawaban": ["9"],
+      "pembahasan": "$f(0) = b = 5$. Dari $3a + 5 = -1$ diperoleh $a = -2$, sehingga $f(x) = -2x + 5$ dan $f(-2) = 4 + 5 = 9$."
+    },
+    {
+      "id": "rf-20", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Fungsi $f$ dengan daerah asal $\\{1, 2, 3, 4\\}$ dirumuskan $f(n) = 2n + 3$. Jumlah semua anggota daerah hasilnya adalah ...",
+      "opsi": { "a": "$26$", "b": "$30$", "c": "$32$", "d": "$36$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Daerah hasilnya $\\{5, 7, 9, 11\\}$ dan jumlahnya $5 + 7 + 9 + 11 = 32$."
+    }
+  ]
+}

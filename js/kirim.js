@@ -98,8 +98,14 @@
 
   /* Kode hasil untuk keadaan darurat: Apps Script mati atau kuota habis.
      Siswa memotret kode ini, guru memasukkannya manual. Enam digit
-     terakhir adalah cap dari isi hasil, supaya angka nilai tidak bisa
-     diubah diam-diam sebelum disetorkan. */
+     terakhir adalah cap dari isi hasil, sehingga salah salin saat kode
+     didikte lewat telepon akan ketahuan.
+
+     Cap ini bukan pengaman. sha256 di sini tidak bergaram dan seluruh
+     caranya ada di peramban, jadi kode yang bentuknya sah bisa disusun
+     untuk nilai berapa pun, dan belum ada pemeriksanya di guru.html.
+     Anggap sebagai penanda bahwa siswa memang mengerjakan, bukan bukti
+     nilai. */
   function kodeHasil(data) {
     var inti = [data.nama, data.kelas, data.bab, data.nilai, data.poinRaih, data.poinTotal].join('|');
     return akar.Kunci.sha256(inti).then(function (h) {

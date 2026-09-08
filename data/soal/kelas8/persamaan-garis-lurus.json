@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "persamaan-garis-lurus",
+    "judul": "Persamaan Garis Lurus",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Persamaan Garis Lurus",
+    "versi": "2026-09-07"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "gl-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Gradien garis $3x + 4y = 12$ adalah ...",
+      "opsi": {
+        "a": "$-\\frac{3}{4}$",
+        "b": "$\\frac{3}{4}$",
+        "c": "$-\\frac{4}{3}$",
+        "d": "$\\frac{4}{3}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "VWJhaCBrZSBiZW50dWsgJHkgPSBteCArIGMkOiAkNHkgPSAtM3ggKyAxMiQsIHNlaGluZ2dhICR5ID0gLVxmcmFjezN9ezR9eCArIDMkIGRhbiBncmFkaWVubnlhICQtXGZyYWN7M317NH0kLg==",
+      "kunci": "54d8e56acee3a8b2d41abc498d2de746fd201a061709eaae21a7d1b7d9747406"
+    },
+    {
+      "id": "gl-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Garis $3x + 4y = 12$ memotong sumbu-$X$ di titik ...",
+      "opsi": {
+        "a": "$(4, 0)$",
+        "b": "$(0, 4)$",
+        "c": "$(3, 0)$",
+        "d": "$(0, 3)$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "RGkgc3VtYnUtJFgkIGJlcmxha3UgJHkgPSAwJCwgc2VoaW5nZ2EgJDN4ID0gMTIkIGRhbiAkeCA9IDQkLiBUaXRpa255YSAkKDQsIDApJC4=",
+      "kunci": "c9566b45d791f8e55496cdb4305ab0e61ea55be823240e30eedd3024b4a38f3a"
+    },
+    {
+      "id": "gl-03",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Titik $(8, -3)$ terletak pada garis $3x + 4y = 12$.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U3Vic3RpdHVzaWthbjogJDMgXHRpbWVzIDggKyA0IFx0aW1lcyAoLTMpID0gMjQgLSAxMiA9IDEyJC4gSGFzaWxueWEgc2FtYSBkZW5nYW4gcnVhcyBrYW5hbiwgamFkaSB0aXRpayBpdHUgbWVtYW5nIGRpbGFsdWkgZ2FyaXNueWEu",
+      "kunci": "76cf0af2c9f50f2fa3c5025a691ffd9da07a6c00edd9507b241aba3083d7f90c"
+    },
+    {
+      "id": "gl-04",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Gradien garis yang melalui titik $(1, 2)$ dan $(5, 10)$ adalah ...",
+      "pembahasan": "JG0gPSBcZnJhY3sxMCAtIDJ9ezUgLSAxfSA9IFxmcmFjezh9ezR9ID0gMiQuIFNlbGlzaWggJHkkIGRpIGF0YXMsIHNlbGlzaWggJHgkIGRpIGJhd2FoLCBkYW4gdXJ1dGFuIGtlZHVhIHRpdGlrIGhhcnVzIHNhbWEgcGFkYSBwZW1iaWxhbmcgZGFuIHBlbnllYnV0Lg==",
+      "kunci": [
+        "a4f5ee6eac1545d9274e9533d594bf95578cf8740e85fef2b227b7348c274da5"
+      ]
+    },
+    {
+      "id": "gl-05",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Gradien garis $y = -2x + 7$ adalah ...",
+      "opsi": {
+        "a": "$-2$",
+        "b": "$2$",
+        "c": "$7$",
+        "d": "$-7$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UGFkYSBiZW50dWsgJHkgPSBteCArIGMkLCBncmFkaWVubnlhIGFkYWxhaCBhbmdrYSBwZW5nYWxpICR4JCwgeWFpdHUgJC0yJC4gQW5na2EgJDckIGFkYWxhaCB0aXRpayBwb3Rvbmcgc3VtYnUtJFkkLg==",
+      "kunci": "ff06a4931925005293b2985367e0a3d9e38986d0c4c11d5bb2f31a66625c1a5b"
+    },
+    {
+      "id": "gl-06",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Garis $y = 3x - 5$ memotong sumbu-$Y$ di titik $(0, c)$. Nilai $c$ adalah ...",
+      "pembahasan": "U3Vic3RpdHVzaWthbiAkeCA9IDAkOiAkeSA9IDMgXHRpbWVzIDAgLSA1ID0gLTUkLiBQYWRhIGJlbnR1ayAkeSA9IG14ICsgYyQsIGtvbnN0YW50YW55YSBtZW1hbmcgbGFuZ3N1bmcgbWVueWF0YWthbiB0aXRpayBwb3Rvbmcgc3VtYnUtJFkkLg==",
+      "kunci": [
+        "7614cc75640621fc3e2dda9f2985da586d55c2c2fcba60cb972db7ffde7aece6"
+      ]
+    },
+    {
+      "id": "gl-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Garis yang sejajar dengan garis $y = 2x + 1$ adalah ...",
+      "opsi": {
+        "a": "$y = 2x - 4$",
+        "b": "$y = -2x + 1$",
+        "c": "$y = \\frac{1}{2}x + 1$",
+        "d": "$y = -\\frac{1}{2}x$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "RHVhIGdhcmlzIHNlamFqYXIgYmlsYSBncmFkaWVubnlhIHNhbWEuIEhhbnlhICR5ID0gMnggLSA0JCB5YW5nIGdyYWRpZW5ueWEganVnYSAkMiQ7IGtvbnN0YW50YW55YSBib2xlaCBiZXJiZWRhLCBpdHUgaGFueWEgbWVuZ2dlc2VyIGdhcmlzbnlhLg==",
+      "kunci": "e1dc2c37155bfc021f78093a92c035d3a0f97e428fbf92fba03dc7b40239d964"
+    },
+    {
+      "id": "gl-08",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Gradien garis yang tegak lurus terhadap garis $y = \\frac{1}{2}x + 3$ adalah ...",
+      "opsi": {
+        "a": "$-2$",
+        "b": "$2$",
+        "c": "$-\\frac{1}{2}$",
+        "d": "$\\frac{1}{2}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U3lhcmF0IHRlZ2FrIGx1cnVzICRtXzEgXHRpbWVzIG1fMiA9IC0xJC4gS2FyZW5hICRtXzEgPSBcZnJhY3sxfXsyfSQsIG1ha2EgJG1fMiA9IC0yJC4=",
+      "kunci": "3d196c8638daaee2418574882468744d8e4ba2e111c727febe9184dea1735b93"
+    },
+    {
+      "id": "gl-09",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Persamaan garis yang melalui titik $(-2, 5)$ dan tegak lurus terhadap garis $2x - 3y + 6 = 0$ adalah ...",
+      "opsi": {
+        "a": "$3x + 2y - 4 = 0$",
+        "b": "$2x + 3y - 11 = 0$",
+        "c": "$3x - 2y + 16 = 0$",
+        "d": "$2x - 3y + 19 = 0$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "RGFyaSAkMnggLSAzeSArIDYgPSAwJCBkaXBlcm9sZWggJHkgPSBcZnJhY3syfXszfXggKyAyJCwgamFkaSAkbV8xID0gXGZyYWN7Mn17M30kIGRhbiAkbV8yID0gLVxmcmFjezN9ezJ9JC4gTWFrYSAkeSAtIDUgPSAtXGZyYWN7M317Mn0oeCArIDIpJCwgeWFpdHUgJHkgPSAtXGZyYWN7M317Mn14ICsgMiQsIGF0YXUgJDN4ICsgMnkgLSA0ID0gMCQuIFBlcmlrc2E6ICQzKC0yKSArIDIoNSkgLSA0ID0gMCQu",
+      "kunci": "1ea0ed38baad3177ca0615153ef0340d97bc9d786fcad4fc42f87ea02a6e8a0c"
+    },
+    {
+      "id": "gl-10",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Gradien garis $2x - 3y + 6 = 0$ adalah ... (tulis sebagai pecahan)",
+      "pembahasan": "JDN5ID0gMnggKyA2JCwgc2VoaW5nZ2EgJHkgPSBcZnJhY3syfXszfXggKyAyJCBkYW4gZ3JhZGllbm55YSAkXGZyYWN7Mn17M30kLiBUYW5kYW55YSBwb3NpdGlmIGthcmVuYSAkLTN5JCBkaXBpbmRhaCBydWFzIGxlYmloIGR1bHUu",
+      "kunci": [
+        "61a8b8210190819d4dff14d0c0626b2c40ae378017aa608294408e28f8e33c15"
+      ]
+    },
+    {
+      "id": "gl-11",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Persamaan garis yang melalui titik $(2, 3)$ dan $(4, 7)$ adalah ...",
+      "opsi": {
+        "a": "$y = 2x - 1$",
+        "b": "$y = 2x + 1$",
+        "c": "$y = \\frac{1}{2}x + 2$",
+        "d": "$y = x + 1$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JG0gPSBcZnJhY3s3IC0gM317NCAtIDJ9ID0gMiQuIExhbHUgJHkgLSAzID0gMih4IC0gMikkLCBzZWhpbmdnYSAkeSA9IDJ4IC0gMSQuIFBlcmlrc2EgZGVuZ2FuIHRpdGlrIGtlZHVhOiAkMiBcdGltZXMgNCAtIDEgPSA3JC4=",
+      "kunci": "4dfa3e34775bb76ad85fd6a58c679a46cdd8a39d3ddbc5310ca61e0e182a1847"
+    },
+    {
+      "id": "gl-12",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Garis $\\ell$ melalui titik $(0, -4)$ dan sejajar dengan garis yang melalui $(1, 2)$ dan $(5, 10)$. Garis $\\ell$ memotong sumbu-$X$ di titik $(p, 0)$. Nilai $p$ adalah ...",
+      "pembahasan": "R3JhZGllbiBnYXJpcyBwZXJ0YW1hICQyJCwgZGFuIGdhcmlzIHNlamFqYXIgYmVyZ3JhZGllbiBzYW1hLCBzZWhpbmdnYSAkXGVsbDogeSA9IDJ4IC0gNCQuIFVudHVrICR5ID0gMCQgZGlwZXJvbGVoICQyeCA9IDQkIGRhbiAkeCA9IDIkLg==",
+      "kunci": [
+        "1c83f6170cac9a6864b8d79e54bfd15fa7032d5e2205761b1d3b1d765190a033"
+      ]
+    },
+    {
+      "id": "gl-13",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Garis $4x - 2y = 8$ memotong sumbu-$Y$ di titik ...",
+      "opsi": {
+        "a": "$(0, -4)$",
+        "b": "$(0, 4)$",
+        "c": "$(0, 2)$",
+        "d": "$(0, -2)$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "RGkgc3VtYnUtJFkkIGJlcmxha3UgJHggPSAwJCwgc2VoaW5nZ2EgJC0yeSA9IDgkIGRhbiAkeSA9IC00JC4=",
+      "kunci": "d7415a02f7161cd17ff3e41959dd2e86eb55cfc515e74c4d4d81299fccc3ccf1"
+    },
+    {
+      "id": "gl-14",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Persamaan garis yang melalui titik $(3, -1)$ dengan gradien $-2$ adalah ...",
+      "opsi": {
+        "a": "$y = -2x + 5$",
+        "b": "$y = -2x - 5$",
+        "c": "$y = -2x + 7$",
+        "d": "$y = 2x - 7$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "JHkgLSAoLTEpID0gLTIoeCAtIDMpJCwgc2VoaW5nZ2EgJHkgKyAxID0gLTJ4ICsgNiQgZGFuICR5ID0gLTJ4ICsgNSQuIFRhbmRhICR5ICsgMSQgbXVuY3VsIGthcmVuYSBvcmRpbmF0bnlhIG5lZ2F0aWYu",
+      "kunci": "9dda950d04de554808df42b15166dba5d3a1b2b681cc1c279ec7cbe515fc39ef"
+    },
+    {
+      "id": "gl-15",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Titik $(a, 7)$ terletak pada garis $y = 3x - 2$. Nilai $a$ adalah ...",
+      "pembahasan": "U3Vic3RpdHVzaWthbiAkeSA9IDckOiAkM2EgLSAyID0gNyQsIHNlaGluZ2dhICQzYSA9IDkkIGRhbiAkYSA9IDMkLg==",
+      "kunci": [
+        "a4cd1856c0ed51ec9181ac1ca716f329da2ea61f3d24a4e812e0d1ad3b62dfdc"
+      ]
+    },
+    {
+      "id": "gl-16",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Garis $y = 2x - 4$ memotong sumbu-$Y$ di titik $C$ dan sumbu-$X$ di titik $P$. Luas segitiga $OCP$, dengan $O$ titik asal, adalah ...",
+      "opsi": {
+        "a": "$2$ satuan luas",
+        "b": "$4$ satuan luas",
+        "c": "$6$ satuan luas",
+        "d": "$8$ satuan luas"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JEMoMCwgLTQpJCBkYW4gJFAoMiwgMCkkLCBzZWhpbmdnYSBzZWdpdGlnYW55YSBzaWt1LXNpa3UgZGkgJE8kIGRlbmdhbiBhbGFzICRPUCA9IDIkIGRhbiB0aW5nZ2kgJE9DID0gNCQuIEx1YXNueWEgJFxmcmFjezF9ezJ9IFx0aW1lcyAyIFx0aW1lcyA0ID0gNCQuIFBhbmphbmcgc2VsYWx1IGRpYW1iaWwgcG9zaXRpZiB3YWxhdXB1biB0aXRpa255YSBkaSBiYXdhaCBzdW1idS4=",
+      "kunci": "7b81af8c2c95603979a0eb565fa825dbcaf3ba1bd3469fd52f8c35e2ff19548f"
+    },
+    {
+      "id": "gl-17",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Persamaan garis yang melalui titik $(-2, 1)$ dan tegak lurus terhadap garis yang melalui $(0, 0)$ dan $(3, -6)$ adalah ...",
+      "opsi": {
+        "a": "$x - 2y + 4 = 0$",
+        "b": "$x + 2y = 0$",
+        "c": "$2x - y + 5 = 0$",
+        "d": "$2x + y + 3 = 0$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "R3JhZGllbiBnYXJpcyBwZXJ0YW1hICRcZnJhY3stNiAtIDB9ezMgLSAwfSA9IC0yJCwgc2VoaW5nZ2EgZ3JhZGllbiB0ZWdhayBsdXJ1c255YSAkXGZyYWN7MX17Mn0kLiBNYWthICR5IC0gMSA9IFxmcmFjezF9ezJ9KHggKyAyKSQsIHlhaXR1ICQyeSAtIDIgPSB4ICsgMiQsIGF0YXUgJHggLSAyeSArIDQgPSAwJC4=",
+      "kunci": "7a859e6c457850e6cce7f0dadbc36a352d4d14eb5b2c182bbbba95259afcc99d"
+    },
+    {
+      "id": "gl-18",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Garis $2x + ky = 10$ sejajar dengan garis $y = -x + 3$. Nilai $k$ adalah ...",
+      "pembahasan": "R3JhZGllbiAkMnggKyBreSA9IDEwJCBhZGFsYWggJC1cZnJhY3syfXtrfSQsIGRhbiBncmFkaWVuIGdhcmlzIGtlZHVhICQtMSQuIERhcmkgJC1cZnJhY3syfXtrfSA9IC0xJCBkaXBlcm9sZWggJGsgPSAyJC4=",
+      "kunci": [
+        "1c196bdede81a8d683ea2411e7e6d834bac99efa5ea6711e0df9aa20a0149b97"
+      ]
+    },
+    {
+      "id": "gl-19",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah garis melalui titik $(0, 6)$ dan $(4, 0)$. Luas daerah segitiga yang dibatasi garis tersebut dan kedua sumbu koordinat adalah ...",
+      "opsi": {
+        "a": "$10$ satuan luas",
+        "b": "$12$ satuan luas",
+        "c": "$24$ satuan luas",
+        "d": "$48$ satuan luas"
+      },
+      "acakOpsi": false,
+      "pembahasan": "S2VkdWEgdGl0aWtueWEgc3VkYWggYmVyYWRhIGRpIHN1bWJ1LCBzZWhpbmdnYSBhbGFzbnlhICQ0JCBkYW4gdGluZ2dpbnlhICQ2JC4gTHVhc255YSAkXGZyYWN7MX17Mn0gXHRpbWVzIDQgXHRpbWVzIDYgPSAxMiQu",
+      "kunci": "7d2f73607f0d47f444e89ad259ad4bc9f64c11c4f67e2f4ea575a02f30595729"
+    },
+    {
+      "id": "gl-20",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui titik $A(1, 3)$, $B(5, 3)$, dan $C(5, 9)$. Gradien garis $AC$ adalah ... (tulis sebagai pecahan atau desimal)",
+      "pembahasan": "JG1fe0FDfSA9IFxmcmFjezkgLSAzfXs1IC0gMX0gPSBcZnJhY3s2fXs0fSA9IFxmcmFjezN9ezJ9JC4gVGl0aWsgJEIkIGhhbnlhIHBlbnVuanVrIHNpa3Utc2lrdW55YSBkYW4gdGlkYWsgaWt1dCBkaWhpdHVuZy4=",
+      "kunci": [
+        "4bbb5a521e16e37af84963ece272ecde886a0586d983648b61ad0e75d4b83604",
+        "342c84b2374a4956796692108b4cd4876083820d405f8c4df5eb56050b085abe",
+        "b64266312d6d85a65245f1036bc0a9539f78c9b17f9ff850a36a531db49febfa"
+      ]
+    }
+  ]
+}

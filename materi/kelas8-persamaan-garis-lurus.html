@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Persamaan Garis Lurus</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Persamaan Garis Lurus</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Persamaan Garis Lurus</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Menggambar garis dari persamaannya dengan dua titik saja.</li>
+      <li>Menghitung gradien dari gambar, dari persamaan, dan dari dua titik.</li>
+      <li>Menyusun persamaan garis yang sejajar atau tegak lurus garis lain.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Dua tanjakan di jalan yang sama</h2>
+  <p>
+    Ada dua jalan menuju rumah Upik. Jalan pertama naik $3$ meter setiap $12$ meter
+    mendatar. Jalan kedua naik $3$ meter setiap $4$ meter mendatar.
+  </p>
+  <p>
+    Tingginya sama-sama naik $3$ meter, jadi apa yang membuat jalan kedua terasa jauh
+    lebih berat dikayuh? Angka mana yang sebenarnya sedang kamu bandingkan?
+  </p>
+  <p class="kecil samar">
+    Pikirkan dulu sebentar, baru lanjut.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: dua titik yang menentukan garis</h2>
+  <p>
+    Ketuk dua titik pada bidang. Begitu titik keduanya ada, garisnya langsung ditarik
+    sampai ke tepi.
+  </p>
+  <p>
+    Tugasnya: <strong>buat satu garis yang naik dari kiri ke kanan, lalu buat satu yang
+    turun.</strong> Perhatikan angka yang dilaporkan di bawah bidang. Apa bedanya?
+  </p>
+
+  <div class="kartu">
+    <div id="jelajah"></div>
+    <div id="pesanJelajah" style="margin-top:.7rem"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Titik dan garis">
+    <h3>Membaca koordinat</h3>
+    <p>
+      Setiap titik ditulis sebagai pasangan berurutan $(x, y)$. Bilangan pertama disebut
+      <strong>absis</strong>, yaitu koordinat pada sumbu-$x$. Bilangan kedua disebut
+      <strong>ordinat</strong>, yaitu koordinat pada sumbu-$y$.
+    </p>
+    <p>
+      <strong>Garis lurus</strong> adalah kumpulan titik yang letaknya segaris, dan untuk
+      membuatnya cukup dibutuhkan <strong>dua titik</strong>. Inilah yang tadi kamu lihat
+      sendiri di bidang koordinat: titik ketiga tidak menambah keterangan apa pun.
+    </p>
+
+    <h3>Menggambar dari persamaannya</h3>
+    <p>
+      Cari dua titik yang paling mudah dihitung, lalu hubungkan. Yang paling mudah selalu
+      $x = 0$ dan $y = 0$, sebab satu sukunya langsung hilang.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Lengkapi tabelnya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Untuk garis $y = 2x - 1$, isi nilai $y$ pada setiap $x$, lalu periksa.
+      </p>
+      <div class="tabel-gulir">
+        <table>
+          <thead>
+            <tr><th>$x$</th><th>$-1$</th><th>$0$</th><th>$2$</th><th>$3$</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>$y$</th>
+              <td><input type="number" inputmode="numeric" class="isiY" data-x="-1" aria-label="y saat x sama dengan negatif satu" style="width:4rem"></td>
+              <td><input type="number" inputmode="numeric" class="isiY" data-x="0" aria-label="y saat x sama dengan nol" style="width:4rem"></td>
+              <td><input type="number" inputmode="numeric" class="isiY" data-x="2" aria-label="y saat x sama dengan dua" style="width:4rem"></td>
+              <td><input type="number" inputmode="numeric" class="isiY" data-x="3" aria-label="y saat x sama dengan tiga" style="width:4rem"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="deret" style="margin-top:.6rem">
+        <button type="button" class="tombol mungil utama" id="periksaTabel">Periksa</button>
+      </div>
+      <div id="pesanTabel" style="margin-top:.6rem"></div>
+    </div>
+
+    <p>
+      Setelah tabelnya benar, perhatikan satu hal: setiap kali $x$ bertambah $1$, nilai
+      $y$ bertambah $2$. Angka $2$ itulah yang sebentar lagi disebut gradien.
+    </p>
+  </section>
+
+  <section data-tab="Gradien" hidden>
+    <h3>Apa yang diukur gradien</h3>
+    <p>
+      <strong>Gradien</strong>, dilambangkan $m$, adalah tingkat kemiringan garis:
+      perbandingan jarak tegak terhadap jarak mendatar. Itulah jawaban dari pertanyaan
+      tanjakan tadi — yang dibandingkan bukan tingginya saja, melainkan tinggi terhadap
+      panjang mendatarnya.
+    </p>
+    <p>
+      Tandanya dibaca dari <strong>kiri ke kanan</strong>: garis yang naik bergradien
+      positif, garis yang turun bergradien negatif.
+    </p>
+
+    <h3>Empat cara menghitungnya</h3>
+    <ul>
+      <li><strong>Dari gambar</strong> — jarak tegak dibagi jarak mendatar, diberi tanda
+        negatif bila garisnya turun.</li>
+      <li><strong>Dari bentuk $y = mx + c$</strong> — gradiennya angka di depan $x$.</li>
+      <li><strong>Dari bentuk $ax + by + c = 0$</strong> — $m = -\dfrac{a}{b}$.</li>
+      <li><strong>Dari dua titik</strong> — $m = \dfrac{y_2 - y_1}{x_2 - x_1}$.</li>
+    </ul>
+    <p>
+      Membaca gradien $2y = 4x + 6$ sebagai $4$ adalah kekeliruan yang sering terjadi.
+      Bentuknya belum $y = mx + c$; bagi dulu kedua ruas dengan $2$ sehingga menjadi
+      $y = 2x + 3$, baru gradiennya terbaca $2$.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Hitung gradien dari dua titik</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Isi keempat koordinatnya, lalu periksa hasilnya.
+      </p>
+      <div class="deret">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$x_1$</label>
+        <input type="number" inputmode="numeric" id="gx1" value="2" style="flex:0 0 4rem" aria-label="x satu">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$y_1$</label>
+        <input type="number" inputmode="numeric" id="gy1" value="1" style="flex:0 0 4rem" aria-label="y satu">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$x_2$</label>
+        <input type="number" inputmode="numeric" id="gx2" value="4" style="flex:0 0 4rem" aria-label="x dua">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$y_2$</label>
+        <input type="number" inputmode="numeric" id="gy2" value="5" style="flex:0 0 4rem" aria-label="y dua">
+      </div>
+      <div id="hasilGradien" style="margin-top:.7rem"></div>
+    </div>
+
+    <h3>Sifat-sifatnya</h3>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th>Keadaan garis</th><th>Gradiennya</th></tr></thead>
+        <tbody>
+          <tr><td>Sejajar sumbu-$x$ (mendatar)</td><td>$m = 0$</td></tr>
+          <tr><td>Sejajar sumbu-$y$ (tegak)</td><td>tidak memiliki gradien</td></tr>
+          <tr><td>Dua garis sejajar</td><td>$m_1 = m_2$</td></tr>
+          <tr><td>Dua garis tegak lurus</td><td>$m_1 \times m_2 = -1$</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section data-tab="Menyusun persamaan" hidden>
+    <h3>Tiga bentuk penulisan</h3>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th>Bentuk</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>$y = mx$</td><td>garis melalui titik $O(0, 0)$</td></tr>
+          <tr><td>$y = mx + c$</td><td>$c$ adalah titik potong dengan sumbu-$y$</td></tr>
+          <tr><td>$ax + by + c = 0$</td><td>bentuk implisit</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Dari gradien dan satu titik</h3>
+    <p class="tengah">$$y - y_1 = m\,(x - x_1)$$</p>
+
+    <h3>Dari dua titik</h3>
+    <p class="tengah">$$\frac{y - y_1}{y_2 - y_1} = \frac{x - x_1}{x_2 - x_1}$$</p>
+    <p>
+      Urutan titiknya harus konsisten: kalau $(x_1, y_1)$ diambil dari titik $A$, maka
+      $(x_2, y_2)$ harus dari titik $B$ pada kedua ruas. Tertukar setengah jalan adalah
+      penyebab tanda yang salah.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Melalui $P(3, 5)$ dengan gradien $-2$</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Tebak dulu bentuk akhirnya, baru buka langkahnya.
+      </p>
+      <div id="langkahPGL"></div>
+    </div>
+  </section>
+
+  <section data-tab="Sejajar dan tegak lurus" hidden>
+    <h3>Langkah bakunya</h3>
+    <ol>
+      <li>Cari gradien garis yang sudah diketahui.</li>
+      <li>Tentukan gradien garis baru: sejajar berarti <strong>sama</strong>,
+        tegak lurus berarti <strong>lawan dan kebalikan</strong>.</li>
+      <li>Masukkan ke $y - y_1 = m(x - x_1)$.</li>
+    </ol>
+    <p>
+      "Lawan dan kebalikan" bukan mantra. Ia datang dari $m_1 \times m_2 = -1$: kalau
+      hasil kalinya harus $-1$, maka $m_2$ mesti kebalikan $m_1$ sekaligus berlawanan
+      tanda. Membalik pecahannya saja tanpa mengubah tanda adalah kekeliruan tersering
+      di bagian ini.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Masukkan satu gradien</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Boleh ditulis sebagai pecahan, misalnya $3/4$ atau $-2$.
+      </p>
+      <div class="deret">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$m_1$</label>
+        <input type="text" id="isiM1" value="1/3" style="flex:0 0 6rem" aria-label="gradien garis pertama">
+        <button type="button" class="tombol mungil utama" id="hitungPasangan">Hitung</button>
+      </div>
+      <div id="hasilPasangan" style="margin-top:.7rem"></div>
+    </div>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya.
+  </p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.
+  </p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=8&amp;bab=persamaan-garis-lurus&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
+<script src="../komponen/bidang-koordinat.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  /* ---------- 3. Eksplorasi: dua titik menentukan garis ---------- */
+
+  var elPesanJelajah = document.getElementById('pesanJelajah');
+  var pernah = {};
+
+  /* Gradien dihitung sebagai pecahan, bukan desimal, supaya garis dengan
+     kemiringan 1/3 tampil sebagai 1/3 dan bukan 0,3333. */
+  function gradien(a, b) {
+    if (a[0] === b[0]) return null;
+    return Pecahan.buat(b[1] - a[1], b[0] - a[0]);
+  }
+
+  BidangKoordinat.buat(document.getElementById('jelajah'), {
+    mode: 'garis',
+    grid: { xMin: -6, xMax: 6, yMin: -6, yMax: 6 },
+    onUbah: function (titik) {
+      if (titik.length < 2) {
+        elPesanJelajah.innerHTML =
+          '<p class="kecil samar" style="margin:0">Ketuk satu titik lagi supaya garisnya terbentuk.</p>';
+        return;
+      }
+      var m = gradien(titik[0], titik[1]);
+      var laporan;
+      if (m === null) {
+        pernah.tegak = true;
+        laporan = 'Garis ini tegak. Jarak mendatarnya nol, jadi pembaginya nol — ' +
+          'garis tegak tidak memiliki gradien.';
+      } else {
+        if (m.p > 0) pernah.naik = true;
+        if (m.p < 0) pernah.turun = true;
+        if (m.p === 0) pernah.datar = true;
+        laporan = 'Jarak tegak $' + (titik[1][1] - titik[0][1]) + '$ dibagi jarak ' +
+          'mendatar $' + (titik[1][0] - titik[0][0]) + '$, jadi angkanya $' +
+          m.rumus() + '$.';
+      }
+      elPesanJelajah.innerHTML = '<p style="margin:0">' + Rumus.keHTML(laporan) + '</p>' +
+        (pernah.naik && pernah.turun
+          ? '<div class="pesan sip" style="margin-top:.6rem">' + Rumus.keHTML(
+              'Kedua garis tadi berbeda tandanya. Angka itu namanya gradien: ' +
+              'positif untuk garis yang naik dari kiri ke kanan, negatif untuk yang ' +
+              'turun. Makin besar angkanya, makin curam garisnya.') + '</div>'
+          : '');
+    }
+  });
+
+  /* ---------- 4. Tab "Aturannya" ---------- */
+
+  Materi.tab(document.getElementById('tabMateri'));
+
+  /* ---------- 4a. Melengkapi tabel nilai ---------- */
+
+  var elPesanTabel = document.getElementById('pesanTabel');
+
+  document.getElementById('periksaTabel').addEventListener('click', function () {
+    var isian = Array.prototype.slice.call(document.querySelectorAll('.isiY'));
+    var kosong = 0, salah = [];
+
+    isian.forEach(function (el) {
+      var x = parseInt(el.dataset.x, 10);
+      var benar = 2 * x - 1;
+      if (el.value === '') { kosong++; return; }
+      if (parseInt(el.value, 10) !== benar) salah.push({ x: x, isi: el.value, benar: benar });
+    });
+
+    if (kosong === isian.length) {
+      elPesanTabel.innerHTML =
+        '<div class="pesan info">Isi dulu paling sedikit satu kotak.</div>';
+      return;
+    }
+    if (!salah.length) {
+      elPesanTabel.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+        'Semua yang terisi sudah benar. Dua titik saja sebenarnya sudah cukup untuk ' +
+        'menggambar garisnya, misalnya $(0, -1)$ dan $(2, 3)$.') + '</div>';
+      return;
+    }
+    var s = salah[0];
+    var petunjuk = (s.x < 0 && parseInt(s.isi, 10) === 2 * Math.abs(s.x) - 1)
+      ? 'Tanda $x$-nya sepertinya terlewat: $2 \\cdot (' + s.x + ') = ' + (2 * s.x) + '$.'
+      : 'Kalikan dulu $2$ dengan $x$, baru kurangi $1$.';
+    elPesanTabel.innerHTML = '<div class="pesan awas">' + Rumus.keHTML(
+      'Sepertinya kotak $x = ' + s.x + '$ belum tepat. ' + petunjuk) + '</div>';
+  });
+
+  /* ---------- 4b. Kalkulator gradien dua titik ---------- */
+
+  var elHasilGradien = document.getElementById('hasilGradien');
+  var isiGradien = ['gx1', 'gy1', 'gx2', 'gy2'].map(function (id) {
+    return document.getElementById(id);
+  });
+
+  function hitungGradien() {
+    var n = isiGradien.map(function (el) { return parseInt(el.value, 10); });
+    if (n.some(function (x) { return isNaN(x); })) {
+      elHasilGradien.innerHTML =
+        '<p class="kecil samar" style="margin:0">Keempat kotak harus terisi.</p>';
+      return;
+    }
+    var dx = n[2] - n[0], dy = n[3] - n[1];
+    if (dx === 0) {
+      elHasilGradien.innerHTML = '<div class="pesan info">' + Rumus.keHTML(
+        'Kedua absisnya sama, jadi jarak mendatarnya $0$. Garisnya tegak, ' +
+        'dan garis tegak tidak memiliki gradien.') + '</div>';
+      return;
+    }
+    var m = Pecahan.buat(dy, dx);
+    var sifat = m.p > 0 ? 'naik dari kiri ke kanan'
+      : (m.p < 0 ? 'turun dari kiri ke kanan' : 'mendatar, sejajar sumbu-$x$');
+    elHasilGradien.innerHTML = '<p style="margin:0">' + Rumus.keHTML(
+      '$m = \\dfrac{' + n[3] + ' - (' + n[1] + ')}{' + n[2] + ' - (' + n[0] + ')} = ' +
+      '\\dfrac{' + dy + '}{' + dx + '} = ' + m.rumus() + '$. Garisnya ' + sifat + '.') +
+      '</p>';
+  }
+
+  isiGradien.forEach(function (el) { el.addEventListener('input', hitungGradien); });
+  hitungGradien();
+
+  /* ---------- 4c. Menyusun persamaan selangkah demi selangkah ---------- */
+
+  Materi.langkah(document.getElementById('langkahPGL'), [
+    { judul: 'Tulis rumusnya. ',
+      teks: 'Yang diketahui satu titik dan gradien, jadi pakai $y - y_1 = m(x - x_1)$.' },
+    { judul: 'Masukkan angkanya. ',
+      teks: '$x_1 = 3$, $y_1 = 5$, dan $m = -2$, sehingga $y - 5 = -2(x - 3)$.' },
+    { judul: 'Buka kurungnya. ',
+      teks: 'Minus dikali minus menjadi plus: $y - 5 = -2x + 6$.' },
+    { judul: 'Pindahkan konstantanya. ',
+      teks: '$y = -2x + 6 + 5$, jadi $y = -2x + 11$.' },
+    { judul: 'Periksa. ',
+      teks: 'Untuk $x = 3$: $y = -6 + 11 = 5$. Titik $P(3, 5)$ memang dilalui.' }
+  ]);
+
+  /* ---------- 4d. Sejajar dan tegak lurus ---------- */
+
+  var elHasilPasangan = document.getElementById('hasilPasangan');
+
+  function hitungPasangan() {
+    var teks = document.getElementById('isiM1').value;
+    var m1;
+    /* Masukan diketik siswa, jadi bentuk yang tidak dikenal harus ditangkap
+       dan dijawab dengan kalimat, bukan dibiarkan menjadi galat. */
+    try {
+      m1 = Pecahan.dari(teks);
+    } catch (e) {
+      elHasilPasangan.innerHTML = '<div class="pesan awas">' + Rumus.keHTML(
+        'Bentuk itu belum dikenal. Coba tulis seperti $2$, $-3$, atau $3/4$.') + '</div>';
+      return;
+    }
+    if (m1.p === 0) {
+      elHasilPasangan.innerHTML = '<div class="pesan info">' + Rumus.keHTML(
+        'Gradien $0$ berarti garisnya mendatar. Garis yang tegak lurus dengannya ' +
+        'adalah garis tegak, dan garis tegak tidak memiliki gradien.') + '</div>';
+      return;
+    }
+    var tegak = m1.kebalikan().negatif();
+    elHasilPasangan.innerHTML = '<p style="margin:0">' + Rumus.keHTML(
+      'Garis yang sejajar bergradien sama: $m = ' + m1.rumus() + '$. ' +
+      'Garis yang tegak lurus bergradien $' + tegak.rumus() + '$, sebab $' +
+      m1.rumus() + ' \\times ' + tegak.rumus() + ' = -1$.') + '</p>' +
+      '<p class="kecil samar" style="margin:.4rem 0 0">' + Rumus.keHTML(
+      'Perhatikan dua hal yang berubah sekaligus: pecahannya dibalik, dan tandanya ' +
+      'berganti.') + '</p>';
+  }
+
+  document.getElementById('hitungPasangan').addEventListener('click', hitungPasangan);
+  document.getElementById('isiM1').addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') hitungPasangan();
+  });
+  hitungPasangan();
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  Materi.contoh(document.getElementById('daftarContoh'), [
+    {
+      judul: 'Gradien dari persamaan',
+      soal: 'Tentukan gradien garis $2x + 4y - 12 = 0$ dengan dua cara.',
+      langkah: [
+        'Cara pertama, ubah ke bentuk $y = mx + c$: $4y = -2x + 12$.',
+        'Bagi kedua ruas dengan $4$: $y = -\\frac{1}{2}x + 3$, jadi $m = -\\frac{1}{2}$.',
+        'Cara kedua, langsung dari $ax + by + c = 0$ dengan $a = 2$ dan $b = 4$: ' +
+          '$m = -\\frac{a}{b} = -\\frac{2}{4} = -\\frac{1}{2}$.',
+        'Keduanya sama. Yang penting jangan membaca $m = 2$ dari bentuk aslinya.'
+      ]
+    },
+    {
+      judul: 'Melalui dua titik',
+      soal: 'Tentukan persamaan garis yang melalui $A(3, 3)$ dan $B(2, 1)$.',
+      langkah: [
+        'Cari gradiennya dulu: $m = \\frac{1 - 3}{2 - 3} = \\frac{-2}{-1} = 2$.',
+        'Pakai salah satu titik pada $y - y_1 = m(x - x_1)$, misalnya $A$: ' +
+          '$y - 3 = 2(x - 3)$.',
+        'Buka kurungnya: $y - 3 = 2x - 6$, jadi $y = 2x - 3$.',
+        'Periksa dengan titik yang belum dipakai: untuk $x = 2$, $y = 4 - 3 = 1$. ' +
+          'Titik $B$ memang dilalui.'
+      ]
+    },
+    {
+      judul: 'Tegak lurus garis lain',
+      soal: 'Tentukan persamaan garis yang melalui $K(4, -1)$ dan tegak lurus ' +
+        'garis $y = \\frac{1}{2}x + 6$.',
+      langkah: [
+        'Gradien garis yang diketahui $m_1 = \\frac{1}{2}$.',
+        'Karena tegak lurus, $m_2$ adalah lawan dan kebalikannya: $m_2 = -2$. ' +
+          'Periksa: $\\frac{1}{2} \\times (-2) = -1$.',
+        'Masukkan ke rumus: $y - (-1) = -2(x - 4)$, jadi $y + 1 = -2x + 8$.',
+        'Rapikan: $y = -2x + 7$.'
+      ]
+    }
+  ]);
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'persamaan-garis-lurus-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Berapa gradien garis $y = -3x + 8$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['-3'],
+        salahUmum: [
+          {
+            jawaban: ['3'],
+            umpan: 'Angkanya sudah benar, tinggal tandanya. Tanda minus di depan $3x$ ' +
+              'ikut menjadi bagian gradiennya.'
+          },
+          {
+            jawaban: ['8'],
+            umpan: 'Sepertinya konstantanya yang terbaca. Angka $8$ adalah titik potong ' +
+              'dengan sumbu-$y$; gradien adalah angka di depan $x$.'
+          }
+        ],
+        bahas: 'Bentuknya sudah $y = mx + c$, jadi gradiennya langsung terbaca: $m = -3$.'
+      },
+      {
+        id: 'persamaan-garis-lurus-cek-2', level: 1, tipe: 'isian',
+        pertanyaan: 'Berapa gradien garis yang melalui $A(2, 1)$ dan $B(4, 5)$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['2'],
+        salahUmum: [
+          {
+            jawaban: ['1/2', '0,5'],
+            umpan: 'Sepertinya pembilang dan penyebutnya tertukar. Yang di atas selisih ' +
+              '$y$, yang di bawah selisih $x$.'
+          },
+          {
+            jawaban: ['-2'],
+            umpan: 'Angkanya benar. Periksa urutan pengurangannya: kalau $y_2 - y_1$, ' +
+              'maka penyebutnya juga harus $x_2 - x_1$.'
+          }
+        ],
+        bahas: '$m = \\frac{5 - 1}{4 - 2} = \\frac{4}{2} = 2$.'
+      },
+      {
+        id: 'persamaan-garis-lurus-cek-3', level: 2, tipe: 'isian',
+        pertanyaan: 'Berapa gradien garis $2y = 6x + 10$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['3'],
+        salahUmum: [
+          {
+            jawaban: ['6'],
+            umpan: 'Bentuknya belum $y = mx + c$, sebab $y$ masih berkoefisien $2$. ' +
+              'Bagi dulu seluruh ruas dengan $2$.'
+          },
+          {
+            jawaban: ['5', '10'],
+            umpan: 'Yang dibaca sepertinya konstantanya. Gradien adalah angka di depan ' +
+              '$x$ setelah bentuknya menjadi $y = mx + c$.'
+          }
+        ],
+        bahas: 'Bagi kedua ruas dengan $2$: $y = 3x + 5$. Jadi $m = 3$.'
+      },
+      {
+        id: 'persamaan-garis-lurus-cek-4', level: 2, tipe: 'pg',
+        pertanyaan: 'Garis yang tegak lurus dengan garis bergradien $\\frac{2}{3}$ ' +
+          'memiliki gradien ...',
+        opsi: {
+          a: '$\\frac{3}{2}$',
+          b: '$-\\frac{3}{2}$',
+          c: '$-\\frac{2}{3}$',
+          d: '$\\frac{2}{3}$'
+        },
+        kunci: 'b',
+        umpan: {
+          a: 'Pecahannya sudah dibalik, tetapi tandanya belum diubah. ' +
+             'Hasil kalinya harus $-1$, bukan $+1$.',
+          c: 'Tandanya sudah diubah, tetapi pecahannya belum dibalik. ' +
+             'Coba kalikan: hasilnya belum $-1$.',
+          d: 'Gradien yang sama berarti kedua garis sejajar, bukan tegak lurus.'
+        },
+        bahas: 'Syaratnya $m_1 \\times m_2 = -1$. Karena $\\frac{2}{3} \\times ' +
+          '(-\\frac{3}{2}) = -1$, gradiennya $-\\frac{3}{2}$.'
+      },
+      {
+        id: 'persamaan-garis-lurus-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Garis melalui $P(1, 4)$ dan sejajar garis $y = 2x - 7$. ' +
+          'Berapa nilai $c$ pada persamaan garis itu?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['2'],
+        salahUmum: [
+          {
+            jawaban: ['-7'],
+            umpan: 'Itu $c$ milik garis yang lama. Dua garis sejajar bergradien sama, ' +
+              'tetapi titik potong sumbu-$y$-nya berbeda.'
+          },
+          {
+            jawaban: ['6'],
+            umpan: 'Sepertinya $4 + 2$ yang terhitung. Dari $4 = 2 \\cdot 1 + c$, ' +
+              'angka $2$ harus dipindahkan sehingga menjadi $c = 4 - 2$.'
+          },
+          {
+            jawaban: ['4'],
+            umpan: 'Angka $4$ adalah ordinat titik $P$, belum nilai $c$. ' +
+              'Masukkan dulu $x = 1$ dan $y = 4$ ke $y = 2x + c$.'
+          }
+        ],
+        bahas: 'Sejajar berarti $m = 2$, jadi persamaannya $y = 2x + c$. ' +
+          'Masukkan $P(1, 4)$: $4 = 2 + c$, sehingga $c = 2$ dan garisnya $y = 2x + 2$.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 8, 'persamaan-garis-lurus');
+})();
+</script>
+</body>
+</html>

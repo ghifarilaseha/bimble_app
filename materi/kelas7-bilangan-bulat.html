@@ -67,11 +67,11 @@
     <p id="bacaEkspresi" style="margin:.2rem 0 .1rem; font-size:1.15rem"></p>
     <p class="kecil samar" id="bacaSetara" style="margin:0 0 .6rem"></p>
 
-    <div id="garisEksplorasi"></div>
+    <div id="jelajah"></div>
     <p class="kecil samar" style="margin:.5rem 0 0">
       Ketuk garis bilangannya untuk memindahkan titik awal. Panahnya tetap berperilaku sama.
     </p>
-    <div id="pesanEksplorasi"></div>
+    <div id="pesanJelajah"></div>
   </div>
 
   <!-- ---------- 4. Perumusan ---------- -->
@@ -107,6 +107,22 @@
       dari nol. Ini sekaligus menjelaskan kenapa selisih dua suhu tidak pernah negatif:
       selisih itu jarak, bukan arah.
     </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Bandingkan dua bilangan</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Ketik dua bilangan bulat, lalu lihat mana yang terletak lebih kiri. Coba juga
+        dua bilangan negatif yang angkanya berjauhan.
+      </p>
+      <div class="deret">
+        <input type="text" id="bandingKiri" value="-1223" inputmode="numeric"
+               style="width:6rem" aria-label="Bilangan pertama">
+        <input type="text" id="bandingKanan" value="-2327" inputmode="numeric"
+               style="width:6rem" aria-label="Bilangan kedua">
+        <button type="button" class="tombol mungil utama" id="bandingkan">Bandingkan</button>
+      </div>
+      <div id="hasilBanding" style="margin-top:.7rem"></div>
+    </div>
   </section>
 
   <section data-tab="Tambah dan kurang" hidden>
@@ -167,6 +183,14 @@
       $a \times b$ berarti menjumlahkan $b$ sebanyak $a$ kali. Karena itu
       $3 \times (-4) = (-4) + (-4) + (-4) = -12$: meloncat ke kiri sebanyak tiga kali.
     </p>
+    <p>
+      Geser $a$ pada $a \times (-4)$ di bawah, lewati nol, lalu teruskan ke kiri.
+      Perhatikan kapan hasilnya berpindah tanda dan kenapa.
+    </p>
+
+    <div class="kartu">
+      <div id="geserKali"></div>
+    </div>
 
     <h3>Aturan tanda</h3>
     <div class="tabel-gulir">
@@ -226,11 +250,13 @@
   <!-- ---------- 7. Tautan latihan ---------- -->
   <h2>Sudah paham?</h2>
   <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
-  <p>
-    <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=bilangan-bulat&amp;mode=mandiri">
-      Latihan mandiri
-    </a>
-  </p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=7&amp;bab=bilangan-bulat&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
 </main>
 
 <script src="../vendor/katex/katex.min.js"></script>
@@ -238,6 +264,7 @@
 <script src="../js/kunci.js"></script>
 <script src="../js/nilai.js"></script>
 <script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
 <script src="../komponen/garis-bilangan.js"></script>
 <script>
 (function () {
@@ -256,9 +283,9 @@
 
   var elEkspresi = document.getElementById('bacaEkspresi');
   var elSetara = document.getElementById('bacaSetara');
-  var elPesan = document.getElementById('pesanEksplorasi');
+  var elPesan = document.getElementById('pesanJelajah');
 
-  var garis = GarisBilangan.buat(document.getElementById('garisEksplorasi'), {
+  var garis = GarisBilangan.buat(document.getElementById('jelajah'), {
     min: -10, max: 10, awal: AWAL, langkah: [-3],
     /* Dipanggil juga ketika siswa mengetuk garis untuk memindahkan titik
        awal, sehingga bacaan di atasnya tidak pernah tertinggal. */
@@ -340,27 +367,59 @@
 
   perbarui();
 
-  /* ---------- 4. Tab materi ---------- */
+  /* ---------- 4. Tab "Aturannya" ---------- */
 
-  var bagian = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
-  var elTab = document.getElementById('tabMateri');
+  Materi.tab(document.getElementById('tabMateri'));
 
-  bagian.forEach(function (sec, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('role', 'tab');
-    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    b.textContent = sec.dataset.tab;
-    b.addEventListener('click', function () {
-      bagian.forEach(function (s, j) { s.hidden = (j !== i); });
-      Array.prototype.forEach.call(elTab.children, function (x, j) {
-        x.setAttribute('aria-selected', j === i ? 'true' : 'false');
-      });
+  /* ---------- 4a. Pembanding dua bilangan ---------- */
+
+  /* Miskonsepsi yang dikejar di sini cuma satu: angka yang kelihatan besar
+     dikira bernilai besar walaupun tandanya negatif. Karena itu nilai
+     mutlaknya ikut ditulis, supaya "jauh dari nol" dan "besar" terpisah. */
+  var elHasilBanding = document.getElementById('hasilBanding');
+
+  function bacaBulat(id) {
+    var teks = String(document.getElementById(id).value).replace(/[.\s]/g, '');
+    var n = Number(teks);
+    return (teks && isFinite(n) && n === Math.trunc(n)) ? n : null;
+  }
+
+  function bandingkan() {
+    var a = bacaBulat('bandingKiri');
+    var b = bacaBulat('bandingKanan');
+
+    if (a === null || b === null) {
+      elHasilBanding.innerHTML =
+        '<div class="pesan awas">Ketik dua bilangan bulat, tanpa koma.</div>';
+      return;
+    }
+    if (a === b) {
+      elHasilBanding.innerHTML = '<div class="pesan info">' +
+        Rumus.keHTML('Kedua bilangannya sama, jadi $' + a + ' = ' + b + '$.') + '</div>';
+      return;
+    }
+
+    var kecil = Math.min(a, b), besar = Math.max(a, b);
+    var catatan = (a < 0 && b < 0)
+      ? 'Keduanya negatif, jadi yang nilai mutlaknya lebih besar justru terletak ' +
+        'lebih kiri: $|' + kecil + '| = ' + Math.abs(kecil) + '$ melawan $|' + besar +
+        '| = ' + Math.abs(besar) + '$.'
+      : 'Bandingkan letaknya di garis bilangan, bukan angkanya.';
+
+    elHasilBanding.innerHTML = '<div class="pesan sip">' +
+      Rumus.keHTML('$' + kecil + ' < ' + besar + '$. Yang lebih kiri selalu lebih kecil. ' +
+        catatan) + '</div>';
+  }
+
+  document.getElementById('bandingkan').addEventListener('click', bandingkan);
+  ['bandingKiri', 'bandingKanan'].forEach(function (id) {
+    document.getElementById(id).addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter') bandingkan();
     });
-    elTab.appendChild(b);
   });
+  bandingkan();
 
-  /* ---------- 4b. Tabel sifat yang diisi siswa ---------- */
+  /* ---------- 4b. Tabel sifat yang diisi ---------- */
 
   /* Sengaja tidak diberitahu lebih dulu bahwa pengurangan tidak komutatif.
      Siswa mengisi keempat barisnya, baru polanya kelihatan sendiri. */
@@ -434,9 +493,32 @@
     elSimpulan.innerHTML = '';
   });
 
+  /* ---------- 4c. Penggeser pengali ---------- */
+
+  /* Melewati nol sambil terus meloncat ke kiri, lalu berbalik. Aturan tanda
+     tidak diberitahukan lebih dulu di sini; yang ditulis hanya loncatannya,
+     supaya tabel di atas terbaca sebagai catatan atas sesuatu yang sudah
+     terlihat, bukan mantra yang harus dihafal. */
+  Materi.geser(document.getElementById('geserKali'), {
+    label: 'Pengali $a$', min: -4, maks: 4, awal: 3,
+    hitung: function (a) {
+      var hasil = a * -4;
+      if (a > 0) {
+        return '$' + a + ' \\times (-4) = ' + hasil + '$: meloncat $4$ ke kiri sebanyak ' +
+          a + ' kali.';
+      }
+      if (a === 0) {
+        return '$0 \\times (-4) = 0$: tidak meloncat sama sekali.';
+      }
+      return '$' + a + ' \\times (-4) = ' + hasil + '$: pengali negatif membalik arahnya, ' +
+        'jadi loncatannya ke kanan sebanyak ' + Math.abs(a) + ' kali. Dua kali membalik ' +
+        'arah membuatmu kembali menghadap ke arah semula.';
+    }
+  });
+
   /* ---------- 5. Contoh bertahap ---------- */
 
-  var contoh = [
+  Materi.contoh(document.getElementById('daftarContoh'), [
     {
       judul: 'Beda suhu',
       soal: 'Suhu di kutub $-3^\\circ$C dan di Jakarta $30^\\circ$C. ' +
@@ -465,58 +547,14 @@
         '$45 \\div 9 = 5$'
       ]
     }
-  ];
-
-  var elContoh = document.getElementById('daftarContoh');
-
-  contoh.forEach(function (c, i) {
-    var kartu = document.createElement('article');
-    kartu.className = 'kartu';
-
-    var nomor = document.createElement('div');
-    nomor.className = 'nomor';
-    nomor.textContent = 'Contoh ' + (i + 1) + ' — ' + c.judul;
-    kartu.appendChild(nomor);
-
-    var tanya = document.createElement('div');
-    tanya.className = 'pertanyaan';
-    Rumus.isi(tanya, c.soal);
-    kartu.appendChild(tanya);
-
-    var daftar = document.createElement('ol');
-    daftar.style.margin = '0';
-    kartu.appendChild(daftar);
-
-    var tombol = document.createElement('button');
-    tombol.type = 'button';
-    tombol.className = 'tombol mungil';
-    tombol.style.marginTop = '.6rem';
-    tombol.textContent = 'Buka langkah pertama';
-    kartu.appendChild(tombol);
-
-    var ke = 0;
-    tombol.addEventListener('click', function () {
-      if (ke >= c.langkah.length) return;
-      var li = document.createElement('li');
-      Rumus.isi(li, c.langkah[ke]);
-      daftar.appendChild(li);
-      ke++;
-      if (ke >= c.langkah.length) {
-        tombol.hidden = true;
-      } else {
-        tombol.textContent = 'Langkah berikutnya';
-      }
-    });
-
-    elContoh.appendChild(kartu);
-  });
+  ]);
 
   /* ---------- 6. Cek pemahaman ---------- */
 
   CekPaham.buat(document.getElementById('cekPaham'), {
     soal: [
       {
-        id: 'bb-cek-1', level: 1, tipe: 'isian',
+        id: 'bilangan-bulat-cek-1', level: 1, tipe: 'isian',
         pertanyaan: 'Bilangan yang $6$ lebih besar dari $-4$ adalah ...',
         jawaban: ['2'],
         salahUmum: [
@@ -534,7 +572,7 @@
         bahas: 'Mulai dari $-4$, lalu melangkah $6$ satuan ke kanan: $-4 + 6 = 2$.'
       },
       {
-        id: 'bb-cek-2', level: 1, tipe: 'pg',
+        id: 'bilangan-bulat-cek-2', level: 1, tipe: 'pg',
         pertanyaan: 'Urutkan bilangan berikut dari yang paling besar lebih dulu: ' +
           '$6$, $-9$, $13$, $-5$, $-17$.',
         opsi: {
@@ -557,7 +595,7 @@
           'urutannya $13$, $6$, $-5$, $-9$, $-17$.'
       },
       {
-        id: 'bb-cek-3', level: 2, tipe: 'isian',
+        id: 'bilangan-bulat-cek-3', level: 2, tipe: 'isian',
         pertanyaan: 'Suhu di London $-9^\\circ$C dan di Doha $-6^\\circ$C. ' +
           'Berapa derajat selisih suhu keduanya?',
         petunjuk: 'Cukup angkanya',
@@ -578,7 +616,7 @@
           'Di garis bilangan, dari $-9$ ke $-6$ memang tiga langkah ke kanan.'
       },
       {
-        id: 'bb-cek-4', level: 2, tipe: 'isian',
+        id: 'bilangan-bulat-cek-4', level: 2, tipe: 'isian',
         pertanyaan: 'Tino berdiri tepat di tengah sebuah tangga. Ia naik $3$ anak tangga, ' +
           'turun $5$, lalu naik $10$, dan tepat sampai di puncak. ' +
           'Berapa banyak anak tangga itu seluruhnya?',
@@ -597,9 +635,40 @@
         ],
         bahas: 'Perpindahan bersihnya $3 - 5 + 10 = 8$ anak tangga. Itu jarak dari tengah ' +
           'ke puncak, yaitu setengah tangga. Jadi seluruhnya $2 \\times 8 = 16$ anak tangga.'
+      },
+      {
+        id: 'bilangan-bulat-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Dalam sebuah kuis, jawaban benar bernilai $4$, salah $-2$, dan ' +
+          'kosong $0$. Dari $25$ soal, Upik menjawab benar $18$ soal dan mengosongkan ' +
+          '$3$ soal. Berapa skor Upik?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['64'],
+        salahUmum: [
+          {
+            jawaban: ['72'],
+            umpan: 'Bagian jawaban benarmu sudah tepat. Yang salah belum ikut dihitung, ' +
+              'padahal nilainya $-2$ per soal.'
+          },
+          {
+            jawaban: ['80'],
+            umpan: 'Sepertinya soal yang salah dihitung $+2$. Tandanya negatif, jadi ' +
+              'skornya berkurang, bukan bertambah.'
+          },
+          {
+            jawaban: ['58'],
+            umpan: 'Sepertinya soal kosong ikut dianggap salah. Soal kosong bernilai $0$, ' +
+              'jadi tidak menambah maupun mengurangi.'
+          }
+        ],
+        bahas: 'Soal salahnya $25 - 18 - 3 = 4$. Skornya $18 \\times 4 = 72$ ditambah ' +
+          '$4 \\times (-2) = -8$, jadi $72 + (-8) = 64$.'
       }
     ]
   });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 7, 'bilangan-bulat');
 })();
 </script>
 </body>

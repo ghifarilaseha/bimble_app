@@ -49,6 +49,8 @@ js/
   rumus.js              menerjemahkan $...$ menjadi rumus tercetak
   pecahan.js            aritmetika pecahan yang tepat, dipakai halaman materi
   cek-paham.js          soal cek pemahaman di dalam halaman materi
+  materi.js             potongan yang berulang di halaman materi: tab,
+                        contoh bertahap, langkah, penggeser, penjaga tautan
   validasi.js           pemeriksaan bentuk bank soal
   gembok-inti.js        perubahan satu butir soal mentah menjadi tergembok
   latihan.js            alur halaman latihan
@@ -82,13 +84,18 @@ materi/                 satu berkas HTML per bab, disusun tujuh bagian:
                         tujuan, pemantik, eksplorasi, perumusan, contoh
                         bertahap, cek pemahaman, tautan latihan
 
+                        Aturan lengkap menulisnya ada di PAKEM-MATERI.md.
+                        _templat.html adalah kerangka siap salin.
+
                         Catatan saat menulisnya: teks yang lewat Rumus.isi
                         atau Rumus.keHTML selalu dilolos-kan, supaya isi bank
                         soal tidak bisa menyuntik markup. Karena itu <b> atau
                         <em> di dalam string justru tampil sebagai tulisan.
                         Pakai penekanan lewat kata, atau taruh markupnya di
                         HTML dan biarkan Rumus.sapu yang merender rumusnya.
-tools/                  gembok.js, uji.js, tautan.js, sajikan.js
+PAKEM-MATERI.md         pakem penulisan halaman materi, ditegakkan oleh
+                        tools/materi.js
+tools/                  gembok.js, uji.js, tautan.js, sajikan.js, materi.js
 uji/kasus.js            kasus uji, dipakai uji.html dan tools/uji.js
 apps-script/Kode.gs     salinan kode Apps Script untuk riwayat versi
 vendor/katex/           KaTeX yang disalin lokal, bukan diambil dari CDN
@@ -202,6 +209,25 @@ kata seperti `trapesium` tidak kehilangan huruf akhirnya.
 ```
 
 Bernilai sebagian: poin = level x (pernyataan tepat / seluruh pernyataan).
+
+Tipe ini mensyaratkan **paling sedikit dua pernyataan** dalam satu butir.
+Karena itu ada dua bentuk soal benar-salah di bank, dan keduanya memang
+disengaja:
+
+| Bentuk | Dipakai di | Alasan |
+|---|---|---|
+| `"tipe": "benar-salah"` | `bb-06`, `bb-11`, `pc-06` | Beberapa pernyataan sekaligus dalam satu butir, bernilai sebagian |
+| `"tipe": "pg"` dengan opsi `Benar`/`Salah` | 13 butir, mis. `as-04`, `pl-15`, `al-05` | Pernyataan yang berdiri sendiri, supaya tiap butir punya level dan pembahasannya masing-masing |
+
+Bentuk kedua dipakai ketika sebuah pernyataan tidak punya pasangan yang
+selevel. Menggabungkan pernyataan level 1, 2, dan 3 menjadi satu butir akan
+memaksa ketiganya bernilai satu level yang sama sekaligus merusak sebaran
+soal per level. Pada bentuk kedua, selalu pasang `"acakOpsi": false` supaya
+Benar tetap di atas Salah.
+
+`js/cek-paham.js` hanya mengenal `isian` dan `pg`, tidak ada cabang
+`benar-salah`. Jadi di halaman materi, soal benar-salah selalu ditulis
+sebagai `pg` dua opsi.
 
 **Koordinat**
 
@@ -384,6 +410,7 @@ node tools/uji.js       kasus uji penilaian, termasuk satu putaran menyeluruh
                         atas seluruh bank soal sungguhan
 node tools/tautan.js    rujukan antar berkas dan kesegaran hasil gembok
 node tools/gembok.js    ikut memeriksa bentuk berkas soal saat menggembok
+node tools/materi.js    halaman materi terhadap PAKEM-MATERI.md
 ```
 
 Di peramban: `cek.html` memeriksa berkas soal (termasuk berkas mentah dari
@@ -429,8 +456,21 @@ setiap kali `nilai.js`, `kirim.js`, atau `Kode.gs` disentuh.
 | Siswa mengaku sudah mengumpulkan tetapi tidak ada datanya | Minta kode hasil yang muncul di layarnya, lalu masukkan barisnya manual ke sheet |
 
 Kode hasil berbentuk `<sesi>-<bab>-<nilai>-<enam huruf>`. Enam huruf
-terakhir adalah cap dari isi hasilnya, sehingga angka nilainya tidak bisa
-diubah diam-diam sebelum disetorkan.
+terakhir adalah cap dari isi hasilnya, sehingga salah salin saat mendikte
+kode lewat telepon akan ketahuan.
+
+Cap itu **bukan** pengaman: `Kunci.sha256` tidak bergaram dan seluruh cara
+menghitungnya ada di peramban, jadi siswa yang mau repot bisa menyusun kode
+yang bentuknya sah untuk nilai berapa pun. Belum ada pula alat pemeriksanya
+di `guru.html`, sehingga kode hanya dicocokkan dengan mata. Perlakukan kode
+hasil sebagai penanda "saya memang mengerjakan", bukan sebagai bukti nilai.
+Bila suatu saat nilainya benar-benar masuk rapor, penilaian harus pindah ke
+Apps Script lebih dulu — lihat "Yang sengaja tidak dibangun".
+
+Kode hasil ada karena antrean luring bisa hilang: `bimble.antrean` hanya
+dikuras saat perangkat kembali daring **dan** situs dibuka lagi. Siswa yang
+mengumpulkan tanpa sinyal lalu tidak pernah membuka situsnya lagi tidak akan
+pernah terkirim, dan guru tidak punya cara mengetahuinya.
 
 ## Yang sengaja tidak dibangun
 

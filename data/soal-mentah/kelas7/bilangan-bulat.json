@@ -4,33 +4,58 @@
     "semester": 1,
     "bab": "bilangan-bulat",
     "judul": "Bilangan Bulat",
-    "versi": "2026-09-05"
+    "versi": "2026-09-06",
+    "sumber": "Soal awal situs + Modul MGMP Matematika SMPN 14 Bandung, Kelas VII Sem. 1, Episode 1"
   },
   "soal": [
     {
-      "id": "bb-01", "level": 1, "tipe": "pg", "aktif": true,
+      "id": "bb-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
       "pertanyaan": "Bilangan yang tiga lebih kecil dari dua adalah ...",
-      "opsi": { "a": "$-2$", "b": "$-1$", "c": "$3$", "d": "$6$" },
+      "opsi": {
+        "a": "$-2$",
+        "b": "$-1$",
+        "c": "$3$",
+        "d": "$6$"
+      },
       "kunci": "b",
       "acakOpsi": true,
       "pembahasan": "Tiga lebih kecil berarti dikurangi tiga: $2 - 3 = -1$."
     },
     {
-      "id": "bb-02", "level": 1, "tipe": "pg", "aktif": true,
+      "id": "bb-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
       "pertanyaan": "Suhu sebuah kota sore hari $-4$ °C. Malam harinya suhu turun $6$ derajat. Suhu kota itu pada malam hari adalah ...",
-      "opsi": { "a": "$-10$ °C", "b": "$-2$ °C", "c": "$2$ °C", "d": "$10$ °C" },
+      "opsi": {
+        "a": "$-10$ °C",
+        "b": "$-2$ °C",
+        "c": "$2$ °C",
+        "d": "$10$ °C"
+      },
       "kunci": "a",
       "acakOpsi": false,
       "pembahasan": "Turun berarti berkurang: $-4 - 6 = -10$."
     },
     {
-      "id": "bb-03", "level": 1, "tipe": "isian", "aktif": true,
+      "id": "bb-03",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
       "pertanyaan": "Lawan dari $-15$ adalah ...",
-      "jawaban": ["15"],
+      "jawaban": [
+        "15"
+      ],
       "pembahasan": "Lawan sebuah bilangan berjarak sama dari nol tetapi berlawanan arah, yaitu $15$."
     },
     {
-      "id": "bb-04", "level": 1, "tipe": "pg", "aktif": true,
+      "id": "bb-04",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
       "pertanyaan": "Urutan dari yang terkecil ke terbesar untuk bilangan $-2$, $-11$, $3$, $-7$ adalah ...",
       "opsi": {
         "a": "$-2$, $-7$, $-11$, $3$",
@@ -43,24 +68,47 @@
       "pembahasan": "Makin jauh ke kiri pada garis bilangan, makin kecil nilainya: $-11 < -7 < -2 < 3$."
     },
     {
-      "id": "bb-05", "level": 2, "tipe": "isian", "aktif": true,
+      "id": "bb-05",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
       "pertanyaan": "Hasil dari $-8 + 12 - 5$ adalah ...",
-      "jawaban": ["-1"],
+      "jawaban": [
+        "-1"
+      ],
       "pembahasan": "Kerjakan berurutan dari kiri: $-8 + 12 = 4$, lalu $4 - 5 = -1$."
     },
     {
-      "id": "bb-06", "level": 2, "tipe": "benar-salah", "aktif": true,
+      "id": "bb-06",
+      "level": 2,
+      "tipe": "benar-salah",
+      "aktif": true,
       "pertanyaan": "Tentukan benar atau salah pernyataan berikut.",
       "pernyataan": [
-        { "teks": "$7 > -90$", "kunci": true },
-        { "teks": "$-0{,}5 < 0{,}3$", "kunci": true },
-        { "teks": "$-9 < -19$", "kunci": false },
-        { "teks": "$-1 > 0$", "kunci": false }
+        {
+          "teks": "$7 > -90$",
+          "kunci": true
+        },
+        {
+          "teks": "$-0{,}5 < 0{,}3$",
+          "kunci": true
+        },
+        {
+          "teks": "$-9 < -19$",
+          "kunci": false
+        },
+        {
+          "teks": "$-1 > 0$",
+          "kunci": false
+        }
       ],
       "pembahasan": "Semua bilangan negatif lebih kecil daripada bilangan positif. Sesama negatif, yang angkanya lebih besar justru lebih kecil nilainya, jadi $-9 > -19$."
     },
     {
-      "id": "bb-07", "level": 2, "tipe": "pg", "aktif": true,
+      "id": "bb-07",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
       "pertanyaan": "Manakah yang hasilnya paling besar?",
       "opsi": {
         "a": "$-3 + 8$",
@@ -71,65 +119,406 @@
       "kunci": "a",
       "acakOpsi": true,
       "pembahasan": "Hasilnya berturut-turut $5$, $-4$, $4$, dan $0$. Yang terbesar adalah $-3 + 8 = 5$."
-    }
-    ,
+    },
     {
-      "id": "bb-08", "level": 2, "tipe": "isian", "aktif": true,
+      "id": "bb-08",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
       "pertanyaan": "Selisih suhu antara $12$ °C dan $-9$ °C adalah ... derajat.",
-      "jawaban": ["21"],
+      "jawaban": [
+        "21"
+      ],
       "pembahasan": "Selisih adalah jarak keduanya pada garis bilangan: $12 - (-9) = 12 + 9 = 21$."
     },
     {
-      "id": "bb-09", "level": 2, "tipe": "pg", "aktif": true,
+      "id": "bb-09",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
       "pertanyaan": "Diketahui $a = -6$ dan $b = 4$. Nilai dari $a - b$ adalah ...",
-      "opsi": { "a": "$-10$", "b": "$-2$", "c": "$2$", "d": "$10$" },
+      "opsi": {
+        "a": "$-10$",
+        "b": "$-2$",
+        "c": "$2$",
+        "d": "$10$"
+      },
       "kunci": "a",
       "acakOpsi": false,
       "pembahasan": "Ganti hurufnya dengan nilainya: $-6 - 4 = -10$."
     },
     {
-      "id": "bb-10", "level": 3, "tipe": "isian", "aktif": true,
+      "id": "bb-10",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
       "pertanyaan": "Sebuah lift berada di lantai $-3$. Lift naik $7$ lantai, lalu turun $2$ lantai, kemudian naik lagi $5$ lantai. Lift itu sekarang berada di lantai ...",
-      "jawaban": ["7"],
+      "jawaban": [
+        "7"
+      ],
       "pembahasan": "Ikuti satu per satu: $-3 + 7 = 4$, lalu $4 - 2 = 2$, lalu $2 + 5 = 7$."
     },
     {
-      "id": "bb-11", "level": 3, "tipe": "benar-salah", "aktif": true,
+      "id": "bb-11",
+      "level": 3,
+      "tipe": "benar-salah",
+      "aktif": true,
       "pertanyaan": "Misalkan $a$ dan $b$ bilangan bulat. Tentukan benar atau salah pernyataan berikut.",
       "pernyataan": [
-        { "teks": "Jika $a$ negatif dan $b$ positif, maka $a - b$ pasti negatif.", "kunci": true },
-        { "teks": "Hasil kali dua bilangan bulat negatif selalu negatif.", "kunci": false },
-        { "teks": "Jika $a < b$, maka $-a > -b$.", "kunci": true },
-        { "teks": "Selisih dua bilangan bulat negatif selalu negatif.", "kunci": false }
+        {
+          "teks": "Jika $a$ negatif dan $b$ positif, maka $a - b$ pasti negatif.",
+          "kunci": true
+        },
+        {
+          "teks": "Hasil kali dua bilangan bulat negatif selalu negatif.",
+          "kunci": false
+        },
+        {
+          "teks": "Jika $a < b$, maka $-a > -b$.",
+          "kunci": true
+        },
+        {
+          "teks": "Selisih dua bilangan bulat negatif selalu negatif.",
+          "kunci": false
+        }
       ],
       "pembahasan": "Bilangan negatif dikurangi bilangan positif bergerak makin ke kiri, jadi tetap negatif. Dua negatif dikalikan menghasilkan positif. Mengalikan dengan $-1$ membalik arah pertidaksamaan. Contoh penyangkal untuk yang terakhir: $-2 - (-9) = 7$, positif."
     },
     {
-      "id": "bb-12", "level": 3, "tipe": "pg", "aktif": true,
+      "id": "bb-12",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
       "pertanyaan": "Banyaknya bilangan bulat $x$ yang memenuhi $-7 < x < -3$ adalah ...",
-      "opsi": { "a": "$2$", "b": "$3$", "c": "$4$", "d": "$5$" },
+      "opsi": {
+        "a": "$2$",
+        "b": "$3$",
+        "c": "$4$",
+        "d": "$5$"
+      },
       "kunci": "b",
       "acakOpsi": false,
       "pembahasan": "Tandanya tegas, jadi $-7$ dan $-3$ tidak ikut. Yang memenuhi hanya $-6$, $-5$, dan $-4$, yaitu $3$ bilangan."
     },
     {
-      "id": "bb-13", "level": 3, "tipe": "isian", "aktif": true,
+      "id": "bb-13",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
       "pertanyaan": "Hasil dari $(-4) \\times 3 + 20 : (-5)$ adalah ...",
-      "jawaban": ["-16"],
+      "jawaban": [
+        "-16"
+      ],
       "pembahasan": "Kali dan bagi dikerjakan lebih dulu: $(-4) \\times 3 = -12$ dan $20 : (-5) = -4$. Lalu $-12 + (-4) = -16$."
     },
     {
-      "id": "bb-14", "level": 1, "tipe": "isian", "aktif": true,
+      "id": "bb-14",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
       "pertanyaan": "Bilangan bulat terbesar yang lebih kecil dari $-8$ adalah ...",
-      "jawaban": ["-9"],
+      "jawaban": [
+        "-9"
+      ],
       "pembahasan": "Tetangga $-8$ di sebelah kiri garis bilangan adalah $-9$."
     },
     {
-      "id": "bb-15", "level": 2, "tipe": "pg", "aktif": false,
+      "id": "bb-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": false,
       "pertanyaan": "Soal ini dinonaktifkan sebagai contoh: kalimatnya rancu, tetapi idnya tidak dihapus supaya rekap lama tetap bisa dibaca.",
-      "opsi": { "a": "$1$", "b": "$2$" },
+      "opsi": {
+        "a": "$1$",
+        "b": "$2$"
+      },
       "kunci": "a",
       "pembahasan": "Tidak dipakai."
+    },
+    {
+      "id": "bb-16",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Bilangan yang 8 lebih besar dari $-5$ adalah ...",
+      "opsi": {
+        "a": "$-13$",
+        "b": "$-3$",
+        "c": "$3$",
+        "d": "$13$"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "\"Lebih besar\" berarti bergeser ke kanan di garis bilangan: $-5 + 8 = 3$."
+    },
+    {
+      "id": "bb-17",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Urutan bilangan $8, -7, 15, -3, -12$ dari yang terbesar ke terkecil adalah ...",
+      "opsi": {
+        "a": "$15, 8, -3, -7, -12$",
+        "b": "$15, 8, -12, -7, -3$",
+        "c": "$-12, -7, -3, 8, 15$",
+        "d": "$8, 15, -3, -7, -12$"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Semakin ke kanan di garis bilangan, semakin besar nilainya. Di antara bilangan negatif, $-3$ paling dekat ke nol sehingga paling besar."
+    },
+    {
+      "id": "bb-18",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(-12) - (-15)$ adalah ...",
+      "jawaban": [
+        "3",
+        "+3"
+      ],
+      "pembahasan": "Mengurangi berarti menambah lawannya: $(-12) - (-15) = -12 + 15 = 3$."
+    },
+    {
+      "id": "bb-19",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suhu udara di Moskwa $-12$ °C dan di Helsinki $-7$ °C. Selisih suhu kedua kota tersebut adalah ...",
+      "opsi": {
+        "a": "$-19$ °C",
+        "b": "$-5$ °C",
+        "c": "$5$ °C",
+        "d": "$19$ °C"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Selisih adalah jarak antara dua bilangan, jadi tidak pernah negatif: $-7 - (-12) = -7 + 12 = 5$."
+    },
+    {
+      "id": "bb-20",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Sifat komutatif berlaku pada operasi pengurangan bilangan bulat.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$7 - 3 = 4$ sedangkan $3 - 7 = -4$. Hasilnya berbeda, jadi sifat komutatif tidak berlaku pada pengurangan."
+    },
+    {
+      "id": "bb-21",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(-5) \\times (-4) \\times (-2)$ adalah ...",
+      "jawaban": [
+        "-40"
+      ],
+      "pembahasan": "$(-5) \\times (-4) = 20$ (tanda sama, hasil positif), lalu $20 \\times (-2) = -40$."
+    },
+    {
+      "id": "bb-22",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $14 - 10 \\times (-3)$ adalah ...",
+      "opsi": {
+        "a": "$-44$",
+        "b": "$-12$",
+        "c": "$4$",
+        "d": "$44$"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "Perkalian dikerjakan lebih dulu: $10 \\times (-3) = -30$, lalu $14 - (-30) = 14 + 30 = 44$."
+    },
+    {
+      "id": "bb-23",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Banyak bilangan bulat yang terletak di antara $-3$ dan $2$ adalah ...",
+      "opsi": {
+        "a": "$3$",
+        "b": "$4$",
+        "c": "$5$",
+        "d": "$6$"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Bilangan yang dimaksud adalah $-2, -1, 0, 1$, sebanyak 4 bilangan. Angka $-3$ dan $2$ tidak ikut karena kata \"di antara\"."
+    },
+    {
+      "id": "bb-24",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pada lomba cerdas cermat, jawaban benar bernilai $3$ poin, jawaban salah $-1$ poin, dan soal yang tidak dijawab $0$ poin. Seorang siswa menjawab 28 soal dengan benar dan 12 soal dengan salah. Skor siswa tersebut adalah ...",
+      "opsi": {
+        "a": "$56$",
+        "b": "$72$",
+        "c": "$84$",
+        "d": "$96$"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Dari jawaban benar: $28 \\times 3 = 84$. Dari jawaban salah: $12 \\times (-1) = -12$. Skor total $= 84 + (-12) = 72$. Pilihan $84$ muncul bila jawaban salah tidak ikut dihitung."
+    },
+    {
+      "id": "bb-25",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Puncak Gunung Semeru berada $3.676$ meter di atas permukaan laut, sedangkan dasar Palung Jawa berada $7.140$ meter di bawah permukaan laut. Selisih ketinggian keduanya adalah ...",
+      "opsi": {
+        "a": "$3.464$ m",
+        "b": "$3.646$ m",
+        "c": "$10.816$ m",
+        "d": "$11.816$ m"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Dengan permukaan laut sebagai titik nol: $3.676 - (-7.140) = 3.676 + 7.140 = 10.816$ meter."
+    },
+    {
+      "id": "bb-26",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(-12 - 20) \\div 4$ adalah ...",
+      "jawaban": [
+        "-8"
+      ],
+      "pembahasan": "Kerjakan kurung dulu: $-12 - 20 = -32$. Lalu $-32 \\div 4 = -8$ (tanda berbeda, hasil negatif)."
+    },
+    {
+      "id": "bb-27",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Rani berdiri tepat di tengah sebuah tangga. Ia naik 5 anak tangga, lalu turun 8 anak tangga, kemudian naik lagi 12 anak tangga dan tepat sampai di puncak tangga. Banyak anak tangga seluruhnya adalah ...",
+      "opsi": {
+        "a": "$9$",
+        "b": "$18$",
+        "c": "$25$",
+        "d": "$30$"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Perpindahan bersihnya $5 - 8 + 12 = 9$ anak tangga. Karena Rani berangkat dari tengah dan sampai di puncak, 9 anak tangga itu adalah setengah tangga. Jadi seluruhnya $2 \\times 9 = 18$. Pilihan $25$ muncul bila ketiga langkahnya dijumlahkan tanpa memperhatikan arah."
+    },
+    {
+      "id": "bb-28",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Hasil dari $0 \\div (-5)$ adalah tidak terdefinisi.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Nol dibagi bilangan tidak nol hasilnya $0$. Yang tidak terdefinisi adalah bilangan dibagi nol, misalnya $-5 \\div 0$."
+    },
+    {
+      "id": "bb-29",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suhu di dalam freezer mula-mula $-18$ °C. Setelah pintunya dibiarkan terbuka, suhunya naik $5$ °C setiap jam. Suhu freezer setelah 4 jam adalah ...",
+      "opsi": {
+        "a": "$-38$ °C",
+        "b": "$-2$ °C",
+        "c": "$2$ °C",
+        "d": "$20$ °C"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Kenaikan seluruhnya $4 \\times 5 = 20$. Suhu akhir $= -18 + 20 = 2$ °C."
+    },
+    {
+      "id": "bb-30",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $72 \\div (-4 \\times -3)$ adalah ...",
+      "jawaban": [
+        "6"
+      ],
+      "pembahasan": "Kurung dulu: $-4 \\times -3 = 12$ (tanda sama, hasil positif). Lalu $72 \\div 12 = 6$."
+    },
+    {
+      "id": "bb-31",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Suhu sebuah kota turun $3$ °C setiap jam. Pada pukul 06.00 suhunya $5$ °C. Suhu kota tersebut menjadi $-13$ °C pada pukul ...",
+      "opsi": {
+        "a": "10.00",
+        "b": "11.00",
+        "c": "12.00",
+        "d": "13.00"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Penurunan yang dibutuhkan $= 5 - (-13) = 18$ °C. Karena turun $3$ °C tiap jam, diperlukan $18 \\div 3 = 6$ jam. Jadi pukul $06.00 + 6 = 12.00$."
+    },
+    {
+      "id": "bb-32",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $a = -3$ dan $b = 5$. Nilai dari $(a - b) \\times (a + b)$ adalah ...",
+      "jawaban": [
+        "-16"
+      ],
+      "pembahasan": "$a - b = -3 - 5 = -8$ dan $a + b = -3 + 5 = 2$. Hasil kalinya $-8 \\times 2 = -16$."
+    },
+    {
+      "id": "bb-33",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dalam sebuah permainan, pemain mendapat $5$ poin setiap menang dan kehilangan $3$ poin setiap kalah. Setelah 12 pertandingan tanpa seri, poin seorang pemain adalah $20$. Banyak pertandingan yang ia menangkan adalah ...",
+      "opsi": {
+        "a": "$5$",
+        "b": "$6$",
+        "c": "$7$",
+        "d": "$8$"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Coba 7 menang dan 5 kalah: $7 \\times 5 = 35$ dan $5 \\times (-3) = -15$, sehingga $35 - 15 = 20$. Cocok. Cara lain: jika semua 12 kalah poinnya $-36$; setiap satu kemenangan menambah $8$ poin, sehingga dibutuhkan $56 \\div 8 = 7$ kemenangan."
+    },
+    {
+      "id": "bb-34",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Jika $a > b$, maka pasti berlaku $-a > -b$.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Contoh penyangkal: $5 > 2$, tetapi $-5 < -2$. Mengalikan kedua ruas dengan bilangan negatif membalik urutannya."
+    },
+    {
+      "id": "bb-35",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Hasil dari $(-2) \\times (-2) \\times (-2) + 3 \\times (-2)$ adalah ...",
+      "jawaban": [
+        "-14"
+      ],
+      "pembahasan": "Perkalian dulu: $(-2) \\times (-2) \\times (-2) = -8$ dan $3 \\times (-2) = -6$. Lalu $-8 + (-6) = -14$."
     }
   ]
 }

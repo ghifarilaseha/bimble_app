@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "spldv",
+    "judul": "SPLDV",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Sistem Persamaan Linear Dua Variabel",
+    "versi": "2026-09-07"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "sp-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Himpunan penyelesaian dari $2x + y = 11$ dan $x - y = 1$ adalah ...",
+      "opsi": {
+        "a": "$\\{(4, 3)\\}$",
+        "b": "$\\{(3, 4)\\}$",
+        "c": "$\\{(5, 1)\\}$",
+        "d": "$\\{(2, 7)\\}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "SnVtbGFoa2FuIGtlZHVhIHBlcnNhbWFhbiBzZWhpbmdnYSAkeSQgaGlsYW5nOiAkM3ggPSAxMiQgZGFuICR4ID0gNCQuIFN1YnN0aXR1c2lrYW46ICQ0IC0geSA9IDEkLCBzZWhpbmdnYSAkeSA9IDMkLg==",
+      "kunci": "6c0ce4b24231181b637e2210d6e4297be9d065ee7f3ab0ec0ab0112dbbe53303"
+    },
+    {
+      "id": "sp-02",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $2x + y = 11$ dan $x - y = 1$. Nilai dari $3x - 2y$ adalah ...",
+      "pembahasan": "UGVueWVsZXNhaWFubnlhICR4ID0gNCQgZGFuICR5ID0gMyQsIHNlaGluZ2dhICQzIFx0aW1lcyA0IC0gMiBcdGltZXMgMyA9IDEyIC0gNiA9IDYkLg==",
+      "kunci": [
+        "f33bf65cef6d930852fb88776914d6ade9c16dbe304708446c665750f2c0a4fd"
+      ]
+    },
+    {
+      "id": "sp-03",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Penyelesaian dari $x + y = 7$ dan $x - y = 3$ adalah ...",
+      "opsi": {
+        "a": "$x = 5$ dan $y = 2$",
+        "b": "$x = 2$ dan $y = 5$",
+        "c": "$x = 4$ dan $y = 3$",
+        "d": "$x = 6$ dan $y = 1$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "SnVtbGFoa2FuIGtlZHVhbnlhOiAkMnggPSAxMCQsIHNlaGluZ2dhICR4ID0gNSQgZGFuICR5ID0gNyAtIDUgPSAyJC4=",
+      "kunci": "2c887247204fa3c48a6c18d7a61666516bc8f9392e877a279c9187ad1f1c2501"
+    },
+    {
+      "id": "sp-04",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $x = 2y$ dan $x + y = 12$. Nilai $y$ adalah ...",
+      "pembahasan": "U3Vic3RpdHVzaWthbiAkeCA9IDJ5JCBrZSBwZXJzYW1hYW4ga2VkdWE6ICQyeSArIHkgPSAxMiQsIHNlaGluZ2dhICQzeSA9IDEyJCBkYW4gJHkgPSA0JC4=",
+      "kunci": [
+        "73dd391b80f773c1fca5bdf744a83016451ff42013f3eddaaa564d06e71b18da"
+      ]
+    },
+    {
+      "id": "sp-05",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Di antara berikut ini, yang merupakan sistem persamaan linear dua variabel adalah ...",
+      "opsi": {
+        "a": "$2x + y = 5$ dan $x - y = 1$",
+        "b": "$x^2 + y = 4$ dan $x - y = 1$",
+        "c": "$2x + 3 = 7$ dan $x = 2$",
+        "d": "$x + y + z = 6$ dan $x - y = 1$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "U3lhcmF0bnlhIGR1YSBwZXJzYW1hYW4sIGR1YSB2YXJpYWJlbCwgZGFuIHBhbmdrYXQgdmFyaWFiZWxueWEgc2F0dS4gUGlsaWhhbiBsYWluIG1lbXVhdCBwYW5na2F0IGR1YSwgaGFueWEgc2F0dSB2YXJpYWJlbCwgYXRhdSB0aWdhIHZhcmlhYmVsLg==",
+      "kunci": "f59cf18d9f05826139e027294fe47c572afb1deecf22355d7df7f36fcfd28a8f"
+    },
+    {
+      "id": "sp-06",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Pasangan $(x, y) = (3, 1)$ memenuhi persamaan $ax + y = 7$. Nilai $a$ adalah ...",
+      "pembahasan": "U3Vic3RpdHVzaWthbjogJDNhICsgMSA9IDckLCBzZWhpbmdnYSAkM2EgPSA2JCBkYW4gJGEgPSAyJC4=",
+      "kunci": [
+        "2c0efc4d916473fd2691e7a56f220cbbfd3c124a256f7bdbfa6ab833c45651e2"
+      ]
+    },
+    {
+      "id": "sp-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Diketahui $3x + 2y = 12$ dan $x = 2$. Nilai $y$ adalah ...",
+      "opsi": {
+        "a": "$2$",
+        "b": "$3$",
+        "c": "$4$",
+        "d": "$6$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JDMgXHRpbWVzIDIgKyAyeSA9IDEyJCwgc2VoaW5nZ2EgJDJ5ID0gNiQgZGFuICR5ID0gMyQu",
+      "kunci": "257f4dbe526cc2b337293ef77106c6dfc32ca200ea672fe4c1f7fab6d7da380c"
+    },
+    {
+      "id": "sp-08",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Harga 2 buku dan 3 pensil adalah Rp13.000,00. Jika $b$ harga sebuah buku dan $p$ harga sebuah pensil, model matematikanya adalah ...",
+      "opsi": {
+        "a": "$2b + 3p = 13.000$",
+        "b": "$3b + 2p = 13.000$",
+        "c": "$b + p = 13.000$",
+        "d": "$2b \\times 3p = 13.000$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "QmFueWFrIGJhcmFuZyBtZW5qYWRpIGFuZ2thIHBlbmdhbGkgaGFyZ2FueWEsIGxhbHUga2VkdWFueWEgZGlqdW1sYWhrYW46ICQyYiArIDNwID0gMTMuMDAwJC4=",
+      "kunci": "cccb9b10eefd7b087c359a499d17b24b2903a7e74b92199c2e0a4c066863ea81"
+    },
+    {
+      "id": "sp-09",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Harga 3 buku tulis dan 2 pensil adalah Rp24.000,00, sedangkan harga 2 buku tulis dan 5 pensil adalah Rp27.000,00. Harga sebuah buku tulis adalah Rp...",
+      "pembahasan": "RGFsYW0gcmlidWFuIHJ1cGlhaDogJDNiICsgMnAgPSAyNCQgZGFuICQyYiArIDVwID0gMjckLiBLYWxpa2FuIHlhbmcgcGVydGFtYSBkZW5nYW4gJDUkIGRhbiB5YW5nIGtlZHVhIGRlbmdhbiAkMiQ6ICQxNWIgKyAxMHAgPSAxMjAkIGRhbiAkNGIgKyAxMHAgPSA1NCQuIEt1cmFuZ2thbjogJDExYiA9IDY2JCwgc2VoaW5nZ2EgJGIgPSA2JCwgeWFpdHUgUnA2LjAwMCwwMC4=",
+      "kunci": [
+        "15e7b427b293c77b43e4c3c3e22683eb589a8719efa6f73a3aef3c9d2bd26ab7"
+      ]
+    },
+    {
+      "id": "sp-10",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Harga 3 buku tulis dan 2 pensil adalah Rp24.000,00, sedangkan harga 2 buku tulis dan 5 pensil adalah Rp27.000,00. Harga sebuah pensil adalah Rp...",
+      "pembahasan": "SGFyZ2EgYnVrdSBScDYuMDAwLDAwLiBTdWJzdGl0dXNpa2FuIGtlICQzYiArIDJwID0gMjQkOiAkMTggKyAycCA9IDI0JCwgc2VoaW5nZ2EgJHAgPSAzJCwgeWFpdHUgUnAzLjAwMCwwMC4=",
+      "kunci": [
+        "bfa08218ccc12904799a55af20811fbffe4d97fd829205631ad04ae15c4349dd"
+      ]
+    },
+    {
+      "id": "sp-11",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Harga sebuah buku tulis Rp6.000,00 dan sebuah pensil Rp3.000,00. Rani membeli 1 buku tulis dan 4 pensil. Ia harus membayar ...",
+      "opsi": {
+        "a": "Rp15.000,00",
+        "b": "Rp18.000,00",
+        "c": "Rp21.000,00",
+        "d": "Rp24.000,00"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JDYuMDAwICsgNCBcdGltZXMgMy4wMDAgPSA2LjAwMCArIDEyLjAwMCA9IDE4LjAwMCQu",
+      "kunci": "fd79ea47b675fd1a0617ed53e230521a44734f227eb8260497d671584ba8516d"
+    },
+    {
+      "id": "sp-12",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Diketahui $2x + 3y = 16$ dan $x - y = 3$. Nilai $x \\times y$ adalah ...",
+      "opsi": {
+        "a": "$6$",
+        "b": "$10$",
+        "c": "$15$",
+        "d": "$25$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RGFyaSAkeCA9IHkgKyAzJCwgc3Vic3RpdHVzaWthbjogJDIoeSArIDMpICsgM3kgPSAxNiQsIHNlaGluZ2dhICQ1eSA9IDEwJCwgJHkgPSAyJCwgZGFuICR4ID0gNSQuIE1ha2EgJHggXHRpbWVzIHkgPSAxMCQu",
+      "kunci": "f8d8489f4647afd189c1ecf49ad3cca952bcb99f54823ff9c7574c89346eaf08"
+    },
+    {
+      "id": "sp-13",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Diketahui $4x + y = 14$ dan $2x + 3y = 12$. Nilai $x$ adalah ...",
+      "pembahasan": "RGFyaSBwZXJzYW1hYW4gcGVydGFtYSAkeSA9IDE0IC0gNHgkLiBTdWJzdGl0dXNpa2FuOiAkMnggKyA0MiAtIDEyeCA9IDEyJCwgc2VoaW5nZ2EgJC0xMHggPSAtMzAkIGRhbiAkeCA9IDMkLg==",
+      "kunci": [
+        "f739ba70c2eedd36097dd77ed704021936a51fa8066218d18736f937b6742dfe"
+      ]
+    },
+    {
+      "id": "sp-14",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Keliling sebuah persegi panjang 40 cm dan panjangnya 4 cm lebih dari lebarnya. Luas persegi panjang tersebut adalah ...",
+      "opsi": {
+        "a": "$84$ cm$^2$",
+        "b": "$96$ cm$^2$",
+        "c": "$102$ cm$^2$",
+        "d": "$120$ cm$^2$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JHAgKyBsID0gMjAkIGRhbiAkcCAtIGwgPSA0JCwgc2VoaW5nZ2EgJHAgPSAxMiQgZGFuICRsID0gOCQuIEx1YXNueWEgJDEyIFx0aW1lcyA4ID0gOTYkIGNtJF4yJC4gWWFuZyBiZXJuaWxhaSAkMjAkIGFkYWxhaCBzZXRlbmdhaCBrZWxpbGluZ255YSwgYnVrYW4ga2VsaWxpbmdueWEu",
+      "kunci": "f9e5577664f4a57887d88056c675dfb82dafccef07a92119162abb1e51a5cb48"
+    },
+    {
+      "id": "sp-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Jumlah dua bilangan adalah 25 dan selisihnya 7. Bilangan yang lebih besar adalah ...",
+      "opsi": {
+        "a": "$14$",
+        "b": "$15$",
+        "c": "$16$",
+        "d": "$18$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JGEgKyBiID0gMjUkIGRhbiAkYSAtIGIgPSA3JC4gSnVtbGFoa2FuOiAkMmEgPSAzMiQsIHNlaGluZ2dhICRhID0gMTYkIGRhbiAkYiA9IDkkLg==",
+      "kunci": "fd64453a47def01c58feb199f8a9b1c171e789bfa8f470b02a4e502125d5124d"
+    },
+    {
+      "id": "sp-16",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Jumlah umur ayah dan anaknya sekarang 54 tahun. Lima tahun lagi, umur ayah tiga kali umur anaknya. Umur anak sekarang adalah ... tahun.",
+      "pembahasan": "TWlzYWxrYW4gdW11ciBheWFoICRhJCBkYW4gYW5hayAkbiQ6ICRhICsgbiA9IDU0JCBkYW4gJGEgKyA1ID0gMyhuICsgNSkkLCBzZWhpbmdnYSAkYSA9IDNuICsgMTAkLiBNYWthICQ0biArIDEwID0gNTQkLCAkbiA9IDExJCwgZGFuICRhID0gNDMkLiBQZXJpa3NhOiBsaW1hIHRhaHVuIGxhZ2kgJDQ4ID0gMyBcdGltZXMgMTYkLg==",
+      "kunci": [
+        "eedf496c6ce0e660c1d848a9d4d1b94ec0cd649e87a9c502dece47b99037cf55"
+      ]
+    },
+    {
+      "id": "sp-17",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Harga 3 kg mangga dan 2 kg apel Rp90.000,00, sedangkan harga 1 kg mangga dan 1 kg apel Rp35.000,00. Harga 2 kg mangga dan 3 kg apel adalah ...",
+      "opsi": {
+        "a": "Rp80.000,00",
+        "b": "Rp85.000,00",
+        "c": "Rp90.000,00",
+        "d": "Rp95.000,00"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RGFsYW0gcmlidWFuOiAkbSArIGEgPSAzNSQgc2VoaW5nZ2EgJGEgPSAzNSAtIG0kLiBTdWJzdGl0dXNpa2FuIGtlICQzbSArIDJhID0gOTAkOiAkM20gKyA3MCAtIDJtID0gOTAkLCBqYWRpICRtID0gMjAkIGRhbiAkYSA9IDE1JC4gTWFrYSAkMm0gKyAzYSA9IDQwICsgNDUgPSA4NSQsIHlhaXR1IFJwODUuMDAwLDAwLg==",
+      "kunci": "ec36882a5a75dd2df78c0202b116cf4046b95819c2d4777dc2c7b0668a673533"
+    },
+    {
+      "id": "sp-18",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah pecahan bernilai $\\frac{1}{2}$ bila pembilangnya ditambah 2, dan bernilai $\\frac{1}{3}$ bila penyebutnya dikurangi 2. Pecahan tersebut adalah ...",
+      "pembahasan": "TWlzYWxrYW4gcGVjYWhhbm55YSAkXGZyYWN7cH17cX0kLiBEYXJpICRcZnJhY3twKzJ9e3F9ID0gXGZyYWN7MX17Mn0kIGRpcGVyb2xlaCAkcSA9IDJwICsgNCQsIGRhbiBkYXJpICRcZnJhY3twfXtxLTJ9ID0gXGZyYWN7MX17M30kIGRpcGVyb2xlaCAkcSA9IDNwICsgMiQuIE1ha2EgJDJwICsgNCA9IDNwICsgMiQsIHNlaGluZ2dhICRwID0gMiQgZGFuICRxID0gOCQuIFBlY2FoYW5ueWEgJFxmcmFjezJ9ezh9JCBhdGF1ICRcZnJhY3sxfXs0fSQu",
+      "kunci": [
+        "1ec596e5257440e353594e1eadbfde4e205dd249c7ef77fa4bc66fad372fd2a4",
+        "7639166db8372f429650a42408643ed34275d5a770120aae2c4b7d01a4a230de",
+        "b8460e15202456d670ede7fe3d7aebe921a26f3a4fbe6d49e0bedf0408aa4559"
+      ]
+    },
+    {
+      "id": "sp-19",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Di sebuah tempat parkir terdapat 30 kendaraan berupa mobil dan sepeda motor. Jumlah seluruh rodanya 80 buah. Banyak mobil di tempat parkir itu adalah ...",
+      "opsi": {
+        "a": "$8$",
+        "b": "$10$",
+        "c": "$12$",
+        "d": "$20$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JG0gKyBzID0gMzAkIGRhbiAkNG0gKyAycyA9IDgwJC4gU3Vic3RpdHVzaWthbiAkcyA9IDMwIC0gbSQ6ICQ0bSArIDYwIC0gMm0gPSA4MCQsIHNlaGluZ2dhICQybSA9IDIwJCBkYW4gJG0gPSAxMCQu",
+      "kunci": "2b979f9039765d36610086b4d9c4539852ba883fe1e4272851443dc0276874c3"
+    },
+    {
+      "id": "sp-20",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sistem persamaan $2x + y = a$ dan $x - y = 4$ memiliki penyelesaian dengan $x = 3$. Nilai $a$ adalah ...",
+      "pembahasan": "RGFyaSAkMyAtIHkgPSA0JCBkaXBlcm9sZWggJHkgPSAtMSQuIE1ha2EgJGEgPSAyIFx0aW1lcyAzICsgKC0xKSA9IDUkLg==",
+      "kunci": [
+        "6f62636b2194570d55e28e9a2511e3fb164f5ec52a81dae0a5593627d469401b"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 2,
+    "bab": "kesebangunan",
+    "judul": "Kesebangunan dan Kekongruenan",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Kesebangunan dan Kekongruenan",
+    "versi": "2026-09-07"
+  },
+  "soal": [
+    {
+      "id": "ks-01", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $AB = 6$ cm sebangun dengan segitiga $PQR$, dan $PQ = 9$ cm bersesuaian dengan $AB$. Faktor skala kesebangunannya adalah ... (tulis sebagai pecahan atau desimal)",
+      "jawaban": ["3/2", "1 1/2", "1,5"],
+      "pembahasan": "Faktor skala $= \\frac{PQ}{AB} = \\frac{9}{6} = \\frac{3}{2}$. Karena lebih dari $1$, segitiga $PQR$ merupakan perbesaran segitiga $ABC$."
+    },
+    {
+      "id": "ks-02", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $AB = 6$ cm, $BC = 8$ cm, dan $AC = 10$ cm sebangun dengan segitiga $PQR$ yang $PQ = 9$ cm. Panjang $QR$ adalah ...",
+      "opsi": { "a": "$10$ cm", "b": "$12$ cm", "c": "$13$ cm", "d": "$15$ cm" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Faktor skalanya $\\frac{3}{2}$, sehingga $QR = \\frac{3}{2} \\times 8 = 12$ cm. Sisi yang dikalikan adalah pasangan $BC$, bukan sisi sembarang."
+    },
+    {
+      "id": "ks-03", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $AC = 10$ cm sebangun dengan segitiga $PQR$ dengan faktor skala $\\frac{3}{2}$. Panjang $PR$ adalah ... cm.",
+      "jawaban": ["15"],
+      "pembahasan": "$PR = \\frac{3}{2} \\times 10 = 15$ cm."
+    },
+    {
+      "id": "ks-04", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Segitiga $PQR$ memiliki $PQ = 9$ cm, $QR = 12$ cm, dan $PR = 15$ cm. Kelilingnya adalah ... cm.",
+      "jawaban": ["36"],
+      "pembahasan": "$9 + 12 + 15 = 36$ cm. Periksa dengan cara lain: keliling segitiga asalnya $24$ cm, dan $\\frac{3}{2} \\times 24 = 36$ cm, karena keliling ikut faktor skalanya."
+    },
+    {
+      "id": "ks-05", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Dua bangun dikatakan kongruen apabila ...",
+      "opsi": {
+        "a": "bentuk dan ukurannya sama",
+        "b": "bentuknya sama, ukurannya boleh berbeda",
+        "c": "luasnya sama walaupun bentuknya berbeda",
+        "d": "kelilingnya sama walaupun bentuknya berbeda"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Kongruen berarti sama dan sebangun: sisi yang bersesuaian sama panjang dan sudut yang bersesuaian sama besar. Bentuk sama dengan ukuran berbeda hanya sebangun."
+    },
+    {
+      "id": "ks-06", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Dua segitiga pasti sebangun apabila ...",
+      "opsi": {
+        "a": "sudut-sudut yang bersesuaian sama besar",
+        "b": "kelilingnya sama",
+        "c": "luasnya sama",
+        "d": "salah satu sudutnya sama besar"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Pada segitiga, sudut yang bersesuaian sama besar sudah memaksa sisinya berbanding sama. Satu sudut sama saja belum cukup, dan keliling atau luas yang sama tidak menjamin bentuknya sama."
+    },
+    {
+      "id": "ks-07", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah foto berukuran 4 cm $\\times$ 6 cm diperbesar sehingga sisi terpendeknya menjadi 12 cm. Sisi terpanjangnya menjadi ...",
+      "opsi": { "a": "$14$ cm", "b": "$16$ cm", "c": "$18$ cm", "d": "$24$ cm" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Faktor skalanya $\\frac{12}{4} = 3$, sehingga sisi panjangnya $3 \\times 6 = 18$ cm. Ukurannya dikalikan, bukan ditambah $8$."
+    },
+    {
+      "id": "ks-08", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? Dua buah persegi selalu sebangun.",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Semua sudut persegi $90^\\circ$ dan keempat sisinya sama panjang, sehingga perbandingan sisi yang bersesuaian selalu sama. Dua persegi panjang belum tentu sebangun."
+    },
+    {
+      "id": "ks-09", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ siku-siku di $A$ dengan garis tinggi $AD$ tegak lurus $BC$. Jika $BD = 9$ cm dan $DC = 16$ cm, panjang $AD$ adalah ... cm.",
+      "jawaban": ["12"],
+      "pembahasan": "$AD^2 = BD \\times DC = 9 \\times 16 = 144$, sehingga $AD = 12$ cm. Garis tinggi ke sisi miring adalah rata-rata ukur kedua potongannya."
+    },
+    {
+      "id": "ks-10", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ siku-siku di $A$ dengan garis tinggi $AD$ tegak lurus $BC$, $BD = 9$ cm, dan $DC = 16$ cm. Panjang $AB$ adalah ... cm.",
+      "jawaban": ["15"],
+      "pembahasan": "Sisi miringnya $BC = 9 + 16 = 25$ cm, sehingga $AB^2 = BD \\times BC = 9 \\times 25 = 225$ dan $AB = 15$ cm. Yang dikalikan adalah potongan yang menempel pada $AB$."
+    },
+    {
+      "id": "ks-11", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ siku-siku di $A$ dengan garis tinggi $AD$ tegak lurus $BC$, $BD = 9$ cm, dan $DC = 16$ cm. Panjang $AC$ adalah ...",
+      "opsi": { "a": "$18$ cm", "b": "$20$ cm", "c": "$24$ cm", "d": "$25$ cm" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$AC^2 = DC \\times BC = 16 \\times 25 = 400$, sehingga $AC = 20$ cm. Periksa dengan Pythagoras: $15^2 + 20^2 = 625 = 25^2$."
+    },
+    {
+      "id": "ks-12", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah tiang setinggi 3 m memiliki bayangan sepanjang 4 m. Pada saat yang sama, bayangan sebuah gedung 20 m. Tinggi gedung tersebut adalah ...",
+      "opsi": { "a": "$12$ m", "b": "$15$ m", "c": "$18$ m", "d": "$26$ m" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Segitiga tiang dan bayangannya sebangun dengan segitiga gedung: $\\frac{3}{4} = \\frac{t}{20}$, sehingga $t = 15$ m."
+    },
+    {
+      "id": "ks-13", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Dua segitiga sebangun. Sisi 6 cm pada segitiga pertama bersesuaian dengan sisi 9 cm pada segitiga kedua. Sisi 8 cm pada segitiga pertama bersesuaian dengan sisi ... cm pada segitiga kedua.",
+      "jawaban": ["12"],
+      "pembahasan": "Faktor skalanya $\\frac{9}{6} = \\frac{3}{2}$, sehingga sisinya menjadi $\\frac{3}{2} \\times 8 = 12$ cm."
+    },
+    {
+      "id": "ks-14", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Dua bangun sebangun memiliki faktor skala $\\frac{3}{2}$. Perbandingan luas kedua bangun tersebut adalah ...",
+      "opsi": { "a": "$\\frac{3}{2}$", "b": "$\\frac{9}{4}$", "c": "$\\frac{6}{4}$", "d": "$\\frac{27}{8}$" },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "Luas dibangun dari dua ukuran panjang, sehingga perbandingannya kuadrat faktor skala: $\\left(\\frac{3}{2}\\right)^2 = \\frac{9}{4}$."
+    },
+    {
+      "id": "ks-15", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Pada segitiga $ABC$, titik $D$ pada $AB$ dan titik $E$ pada $AC$ dengan $DE$ sejajar $BC$. Jika $AD = 4$ cm, $DB = 6$ cm, dan $AE = 6$ cm, panjang $EC$ adalah ...",
+      "opsi": { "a": "$8$ cm", "b": "$9$ cm", "c": "$10$ cm", "d": "$12$ cm" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$DE$ sejajar $BC$ membuat kedua segitiga sebangun: $\\frac{AD}{DB} = \\frac{AE}{EC}$, sehingga $\\frac{4}{6} = \\frac{6}{EC}$ dan $EC = 9$ cm."
+    },
+    {
+      "id": "ks-16", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Trapesium $ABCD$ memiliki sisi sejajar $AB = 18$ cm dan $DC = 8$ cm. Titik $E$ pada $AD$ dan $F$ pada $BC$ sehingga $EF$ sejajar $AB$ dan $DE : EA = 2 : 3$. Panjang $EF$ adalah ... cm.",
+      "jawaban": ["12"],
+      "pembahasan": "$EF = \\frac{EA \\times DC + DE \\times AB}{DE + EA} = \\frac{3 \\times 8 + 2 \\times 18}{5} = \\frac{24 + 36}{5} = 12$ cm. Sisi yang dikalikan adalah bagian yang berseberangan dengannya."
+    },
+    {
+      "id": "ks-17", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah model pesawat dibuat dengan skala $1 : 200$. Panjang model 15 cm. Panjang pesawat sebenarnya adalah ...",
+      "opsi": { "a": "$3$ m", "b": "$30$ m", "c": "$300$ m", "d": "$13{,}3$ m" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$15 \\times 200 = 3.000$ cm $= 30$ m. Satuannya harus diubah lebih dulu supaya tidak salah seratus kali lipat."
+    },
+    {
+      "id": "ks-18", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ siku-siku di $A$ dengan garis tinggi $AD$ tegak lurus sisi miring $BC$. Jika $BD = 4$ cm dan $AD = 6$ cm, panjang $DC$ adalah ... cm.",
+      "jawaban": ["9"],
+      "pembahasan": "$AD^2 = BD \\times DC$, sehingga $36 = 4 \\times DC$ dan $DC = 9$ cm."
+    },
+    {
+      "id": "ks-19", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Dua segitiga sebangun memiliki luas 36 cm$^2$ dan 64 cm$^2$. Sebuah sisi pada segitiga kecil panjangnya 9 cm. Panjang sisi yang bersesuaian pada segitiga besar adalah ...",
+      "opsi": { "a": "$12$ cm", "b": "$13{,}5$ cm", "c": "$16$ cm", "d": "$24$ cm" },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Perbandingan luasnya $\\frac{64}{36}$, sehingga perbandingan sisinya akarnya, yaitu $\\frac{8}{6} = \\frac{4}{3}$. Maka sisinya $\\frac{4}{3} \\times 9 = 12$ cm. Perbandingan luas tidak boleh langsung dipakai sebagai perbandingan sisi."
+    },
+    {
+      "id": "ks-20", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah tongkat setinggi 1,5 m memiliki bayangan 2 m. Pada saat yang sama, bayangan sebuah pohon 10 m. Tinggi pohon tersebut adalah ... m.",
+      "jawaban": ["7,5"],
+      "pembahasan": "$\\frac{1{,}5}{2} = \\frac{t}{10}$, sehingga $t = \\frac{1{,}5 \\times 10}{2} = 7{,}5$ m."
+    }
+  ]
+}

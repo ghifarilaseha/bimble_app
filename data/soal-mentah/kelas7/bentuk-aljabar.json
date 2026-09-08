@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "kelas": 7,
+    "semester": 1,
+    "bab": "bentuk-aljabar",
+    "judul": "Bentuk Aljabar",
+    "sumber": "Modul MGMP Matematika SMPN 14 Bandung, Kelas VII Sem. 1, Episode 2",
+    "versi": "2026-09-06"
+  },
+  "soal": [
+    {
+      "id": "al-01", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Banyak suku pada bentuk aljabar $6m^2n - 3m + 2n$ adalah ...",
+      "opsi": { "a": "$2$", "b": "$3$", "c": "$4$", "d": "$6$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Suku dipisahkan oleh tanda $+$ atau $-$. Sukunya adalah $6m^2n$, $-3m$, dan $2n$, sebanyak 3 suku."
+    },
+    {
+      "id": "al-02", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Konstanta pada bentuk aljabar $-9p - 2q - 10$ adalah ...",
+      "opsi": { "a": "$-10$", "b": "$10$", "c": "$-2$", "d": "$-9$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Konstanta adalah suku yang tidak memuat variabel, yaitu $-10$. Tanda minus di depannya ikut menjadi bagian dari suku tersebut."
+    },
+    {
+      "id": "al-03", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Bentuk paling sederhana dari $19a + a$ adalah ...",
+      "jawaban": ["20a"],
+      "pembahasan": "$a$ berarti $1a$, sehingga $19a + 1a = 20a$."
+    },
+    {
+      "id": "al-04", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $-7y - 8 + 4y - 6$ adalah ...",
+      "opsi": { "a": "$-3y - 2$", "b": "$-3y - 14$", "c": "$3y - 14$", "d": "$-11y - 14$" },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "Kelompokkan suku sejenis: $(-7 + 4)y + (-8 - 6) = -3y - 14$. Perhatikan bahwa $-8$ dan $-6$ keduanya negatif sehingga dijumlahkan."
+    },
+    {
+      "id": "al-05", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? $3a$ dan $3a^2$ merupakan suku sejenis.",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Suku sejenis harus memiliki variabel DAN pangkat yang sama. Pangkat $a$ pada kedua suku berbeda, jadi keduanya tidak sejenis dan tidak bisa dijumlahkan."
+    },
+    {
+      "id": "al-06", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $10 - 4a - a + 5$ adalah ...",
+      "jawaban": ["-5a + 15", "15 - 5a"],
+      "pembahasan": "$-a$ berarti $-1a$, sehingga $-4a - 1a = -5a$. Konstantanya $10 + 5 = 15$. Hasilnya $-5a + 15$."
+    },
+    {
+      "id": "al-07", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Ibu Kelinci memanen 2 karung wortel dan 5 wortel tambahan. Jika banyak wortel dalam satu karung adalah $x$, bentuk aljabar hasil panennya adalah ...",
+      "opsi": { "a": "$2 + 5x$", "b": "$2x + 5$", "c": "$7x$", "d": "$10x$" },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "2 karung berisi $2x$ wortel, ditambah 5 wortel lepas, sehingga $2x + 5$. Suku $2x$ dan $5$ tidak bisa digabung karena tidak sejenis."
+    },
+    {
+      "id": "al-08", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $2x + 3y + 4x - 5y$ adalah ...",
+      "opsi": { "a": "$6x - 2y$", "b": "$6x + 2y$", "c": "$6x - 8y$", "d": "$4xy$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "$(2 + 4)x = 6x$ dan $(3 - 5)y = -2y$, sehingga hasilnya $6x - 2y$."
+    },
+    {
+      "id": "al-09", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Hasil dari $(6x + 7y) - (8x - 5y)$ adalah ...",
+      "opsi": { "a": "$-2x + 2y$", "b": "$-2x + 12y$", "c": "$14x + 2y$", "d": "$-2x - 12y$" },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "Tanda minus di depan kurung mengubah tanda semua suku di dalamnya: $6x + 7y - 8x + 5y = -2x + 12y$."
+    },
+    {
+      "id": "al-10", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Kurangkan $12p - 7q + 4$ dari $5p + 3q$. Hasilnya adalah ...",
+      "jawaban": ["-7p + 10q - 4"],
+      "pembahasan": "\"Dikurangkan dari\" berarti $(5p + 3q) - (12p - 7q + 4) = 5p + 3q - 12p + 7q - 4 = -7p + 10q - 4$."
+    },
+    {
+      "id": "al-11", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Hasil dari $(3x + 4)(x - 6)$ adalah ...",
+      "opsi": {
+        "a": "$3x^2 - 24$",
+        "b": "$3x^2 + 14x - 24$",
+        "c": "$3x^2 - 14x - 24$",
+        "d": "$3x^2 - 22x - 24$"
+      },
+      "kunci": "c",
+      "acakOpsi": true,
+      "pembahasan": "Setiap suku dikalikan ke setiap suku: $3x \\cdot x = 3x^2$, $3x \\cdot (-6) = -18x$, $4 \\cdot x = 4x$, $4 \\cdot (-6) = -24$. Jumlahkan suku tengahnya: $-18x + 4x = -14x$."
+    },
+    {
+      "id": "al-12", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Bentuk sederhana dari $7(x - 5) + 3(x + 2)$ adalah ...",
+      "jawaban": ["10x - 29"],
+      "pembahasan": "$7(x - 5) = 7x - 35$ dan $3(x + 2) = 3x + 6$. Jumlahnya $10x - 29$."
+    },
+    {
+      "id": "al-13", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Hasil dari $10xy \\div 2y$ adalah ...",
+      "opsi": { "a": "$5$", "b": "$5x$", "c": "$5xy$", "d": "$8xy$" },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "$\\frac{10xy}{2y} = \\frac{10}{2} \\times x \\times \\frac{y}{y} = 5x$, karena $\\frac{y}{y} = 1$."
+    },
+    {
+      "id": "al-14", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? $(x - 8)^2 = x^2 - 64$",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$(x - 8)^2 = (x - 8)(x - 8) = x^2 - 8x - 8x + 64 = x^2 - 16x + 64$. Suku tengahnya tidak boleh hilang."
+    },
+    {
+      "id": "al-15", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Persediaan beras di gudang Bu Tarmi 24 karung, sedangkan pesanan pedagang Pasar Legi 31 karung. Jika berat tiap karung $x$ kg, kekurangan beras Bu Tarmi dinyatakan dengan ...",
+      "opsi": { "a": "$7x$ kg", "b": "$55x$ kg", "c": "$-55x$ kg", "d": "$31x$ kg" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "$24x - 31x = -7x$, tanda negatif menunjukkan kekurangan. Jadi Bu Tarmi kekurangan $7x$ kg beras."
+    },
+    {
+      "id": "al-16", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Nilai dari $3x^2 - 2x$ untuk $x = -2$ adalah ...",
+      "opsi": { "a": "$-16$", "b": "$-8$", "c": "$8$", "d": "$16$" },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "$x^2 = (-2)^2 = 4$, sehingga $3x^2 = 12$. Lalu $-2x = -2 \\times (-2) = 4$. Jumlahnya $12 + 4 = 16$."
+    },
+    {
+      "id": "al-17", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Hasil dari $\\frac{28a^2b^3}{-7ab}$ adalah ...",
+      "jawaban": ["-4ab^2", "-4ab2", "-4ab²"],
+      "pembahasan": "$28 \\div (-7) = -4$. Untuk variabelnya, $a^2 \\div a = a$ dan $b^3 \\div b = b^2$. Hasilnya $-4ab^2$."
+    },
+    {
+      "id": "al-18", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Hasil bagi $x^2 + 7x + 10$ oleh $(x + 5)$ adalah ...",
+      "opsi": { "a": "$x + 2$", "b": "$x + 5$", "c": "$x + 7$", "d": "$x + 10$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Periksa dengan mengalikan kembali: $(x + 5)(x + 2) = x^2 + 2x + 5x + 10 = x^2 + 7x + 10$. Cocok, jadi hasil baginya $x + 2$."
+    },
+    {
+      "id": "al-19", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui $a = 4x + 2y$ dan $b = 4x + 8y$. Nilai dari $a - b$ adalah ...",
+      "jawaban": ["-6y"],
+      "pembahasan": "$a - b = (4x + 2y) - (4x + 8y) = 4x + 2y - 4x - 8y = -6y$. Suku $4x$ saling menghapus."
+    },
+    {
+      "id": "al-20", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Sebuah persegi panjang memiliki panjang $(2x + 3)$ cm dan lebar $(x - 1)$ cm. Keliling persegi panjang tersebut adalah ...",
+      "opsi": { "a": "$3x + 2$ cm", "b": "$6x + 4$ cm", "c": "$6x + 8$ cm", "d": "$2x^2 + x - 3$ cm" },
+      "kunci": "b",
+      "acakOpsi": true,
+      "pembahasan": "$K = 2 \\times (\\text{panjang} + \\text{lebar}) = 2\\big((2x + 3) + (x - 1)\\big) = 2(3x + 2) = 6x + 4$ cm. Pilihan yang memuat $2x^2$ adalah luasnya, bukan kelilingnya."
+    }
+  ]
+}

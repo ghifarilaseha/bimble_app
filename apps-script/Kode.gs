@@ -82,25 +82,48 @@ function doPost(e) {
       }
     }
 
-    /* Pengiriman ulang dari antrean luring memakai idKirim yang sama.
-       Tanpa penjagaan ini, satu pengerjaan bisa muncul dua kali. */
-    var sheet = sheetHasil();
-    if (data.idKirim && sudahAda(sheet, data.idKirim)) {
-      return sukses({ pesan: 'Sudah pernah diterima.', ganda: true });
+    /* Memeriksa idKirim lalu menambah baris adalah dua langkah terpisah.
+       Satu kelas menekan Kumpulkan dalam menit yang sama persis adalah
+       jendela balapannya: tanpa kunci, dua kiriman bisa sama-sama lolos
+       pemeriksaan, atau appendRow saling menimpa. */
+    var kunci = LockService.getScriptLock();
+    try {
+      kunci.waitLock(20000);
+    } catch (galatKunci) {
+      return gagal('Server sedang sibuk. Coba kirim lagi sebentar lagi.');
     }
 
-    var baris = KOLOM.map(function (kolom) {
-      var nilai = data[kolom];
-      if (nilai === undefined || nilai === null) return '';
-      if (Object.prototype.toString.call(nilai) === '[object Array]') return JSON.stringify(nilai);
-      return nilai;
-    });
-    sheet.appendRow(baris);
+    try {
+      var sheet = sheetHasil();
+      if (data.idKirim && sudahAda(sheet, data.idKirim)) {
+        return sukses({ pesan: 'Sudah pernah diterima.', ganda: true });
+      }
+
+      var baris = KOLOM.map(function (kolom) {
+        var nilai = data[kolom];
+        if (nilai === undefined || nilai === null) return '';
+        if (Object.prototype.toString.call(nilai) === '[object Array]') return JSON.stringify(nilai);
+        return amanTeks(nilai);
+      });
+      sheet.appendRow(baris);
+    } finally {
+      kunci.releaseLock();
+    }
 
     return sukses({ pesan: 'Diterima.' });
   } catch (galat) {
     return gagal('Kesalahan server: ' + galat.message);
   }
+}
+
+/* Nama siswa adalah teks bebas yang diketik sendiri, dan appendRow menulis
+   apa adanya. Sel yang diawali "=", "+", "-", atau "@" ditafsirkan
+   Spreadsheet sebagai rumus, sehingga nama seperti =HYPERLINK(...) menjadi
+   rumus hidup di lembar guru. Kutip tunggal di depan memaksanya jadi teks
+   dan tidak ikut terbaca saat dibaca kembali lewat getValues. */
+function amanTeks(nilai) {
+  if (typeof nilai !== 'string') return nilai;
+  return /^[=+\-@]/.test(nilai) ? "'" + nilai : nilai;
 }
 
 function sudahAda(sheet, idKirim) {

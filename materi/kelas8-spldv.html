@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPLDV</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">SPLDV</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Sistem Persamaan Linear Dua Variabel</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Membedakan persamaan satu variabel, dua variabel, dan sistemnya.</li>
+      <li>Menyelesaikan SPLDV dengan substitusi maupun eliminasi.</li>
+      <li>Mengubah soal cerita menjadi dua persamaan, lalu menjawab pertanyaannya.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Belanja di dua hari</h2>
+  <p>
+    Hari Senin Bu Ninda membeli $2$ kg mangga dan $1$ kg apel seharga Rp15.000,00.
+    Struknya tidak merinci harga per kilogramnya.
+  </p>
+  <p>
+    Dari satu struk itu saja, bisakah harga mangga dipastikan? Kalau belum,
+    keterangan seperti apa yang masih kurang?
+  </p>
+  <p class="kecil samar">
+    Berhenti dulu di sini.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: menebak dua harga</h2>
+  <p>
+    Geser kedua harga, lalu perhatikan struk mana yang cocok dengan tebakanmu.
+  </p>
+  <p>
+    Tugasnya: <strong>temukan dua tebakan berbeda yang sama-sama mencocokkan struk
+    pertama, lalu cari tebakan yang mencocokkan kedua struk sekaligus.</strong>
+    Ada berapa tebakan yang lolos keduanya?
+  </p>
+
+  <div class="kartu">
+    <div id="jelajah"></div>
+    <div id="pesanJelajah" style="margin-top:.7rem"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Satu variabel">
+    <h3>Persamaan linear satu variabel</h3>
+    <p>
+      <strong>PLSV</strong> adalah persamaan dengan satu variabel yang berpangkat satu.
+      Bagian di kiri dan di kanan tanda sama dengan masing-masing disebut
+      <strong>ruas</strong>. Menyelesaikannya berarti menjaga kedua ruas tetap sama
+      berat: apa pun yang dilakukan pada satu ruas, lakukan juga pada ruas lainnya.
+    </p>
+    <p>
+      Cara kedua yang lebih cepat adalah <strong>pindah ruas</strong>: suku yang pindah
+      berubah menjadi lawannya. Tambah menjadi kurang, kali menjadi bagi, dan sebaliknya.
+      Aturan itu bukan mantra — ia hanya ringkasan dari langkah menyeimbangkan tadi.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Timbangan $5y + 4 = 2y + 16$</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Kotak berisi $y$ kelereng, bola kecil bernilai satu. Coba dulu tombol yang
+        hanya mengenai satu ruas, dan perhatikan palangnya.
+      </p>
+      <div id="timbanganPLSV"></div>
+      <div class="deret" style="margin-top:.6rem">
+        <button type="button" class="tombol mungil" id="tbKiriSaja">Buang 4 bola dari ruas kiri saja</button>
+        <button type="button" class="tombol mungil" id="tbDuaBola">Buang 4 bola dari kedua ruas</button>
+        <button type="button" class="tombol mungil" id="tbDuaKotak">Buang 2 kotak dari kedua ruas</button>
+        <button type="button" class="tombol mungil" id="tbBagi">Bagi kedua ruas dengan 3</button>
+        <button type="button" class="tombol mungil bahaya" id="tbUlang">Ulangi</button>
+      </div>
+    </div>
+
+    <p>
+      Kalau ada pecahan, kalikan <strong>kedua ruas</strong> dengan KPK penyebutnya
+      sehingga pecahannya hilang lebih dulu. Misalnya $\frac{2}{3}y + 2 = \frac{1}{2}y + 1$
+      dikalikan $6$ menjadi $4y + 12 = 3y + 6$.
+    </p>
+  </section>
+
+  <section data-tab="Dua variabel" hidden>
+    <h3>Satu persamaan, banyak jawaban</h3>
+    <p>
+      <strong>PLDV</strong> adalah persamaan dengan dua variabel yang masing-masing
+      berpangkat satu, misalnya $x + y = 5$ atau $2p - q = 1$. Sebuah PLDV punya
+      <strong>banyak</strong> penyelesaian sekaligus — itulah yang tadi kamu lihat sendiri
+      saat menggeser dua harga: struk pertama saja bisa dicocokkan oleh beberapa tebakan.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Daftar penyelesaian $x + y = 5$</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Pada himpunan bilangan cacah. Geser nilai $x$-nya.
+      </p>
+      <div id="geserPLDV"></div>
+    </div>
+
+    <h3>Kalau dua persamaan berlaku bersama</h3>
+    <p>
+      <strong>SPLDV</strong> adalah dua PLDV yang harus berlaku bersama-sama:
+    </p>
+    <p class="tengah">$$ax + by = c \qquad px + qy = r$$</p>
+    <p>
+      Penyelesaiannya adalah pasangan $(x, y)$ yang memenuhi <strong>kedua</strong>
+      persamaan sekaligus, dan biasanya hanya ada satu pasangan seperti itu.
+    </p>
+  </section>
+
+  <section data-tab="Substitusi" hidden>
+    <h3>Substitusi berarti mengganti</h3>
+    <p>
+      Gagasannya sederhana: ubah dulu satu persamaan menjadi bentuk $y = \dots$ atau
+      $x = \dots$, lalu titipkan bentuk itu ke persamaan yang lain. Begitu satu variabel
+      terganti, yang tersisa tinggal persamaan satu variabel — dan itu sudah bisa kamu
+      selesaikan sejak tab pertama.
+    </p>
+    <ol>
+      <li>Pilih persamaan yang koefisiennya $1$, supaya tidak muncul pecahan.</li>
+      <li>Ubah menjadi $y = \dots$ atau $x = \dots$</li>
+      <li>Substitusikan ke persamaan satunya, lalu selesaikan.</li>
+      <li>Kembalikan nilainya untuk mendapat variabel kedua.</li>
+    </ol>
+
+    <div class="kartu">
+      <h3 class="rapat">$3x + y = 7$ dan $x + 4y = 6$</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Tebak dulu nilai $x$-nya sebelum membuka langkahnya.
+      </p>
+      <div id="langkahSubstitusi"></div>
+    </div>
+  </section>
+
+  <section data-tab="Eliminasi" hidden>
+    <h3>Eliminasi berarti menghilangkan</h3>
+    <p>
+      Satu variabel dibuat lenyap dengan menyamakan koefisiennya lebih dulu, lalu kedua
+      persamaan dijumlahkan atau dikurangkan.
+    </p>
+    <ul>
+      <li>Kalau tanda koefisiennya <strong>sama</strong>, kedua persamaan
+        <strong>dikurangkan</strong>.</li>
+      <li>Kalau tandanya <strong>berbeda</strong>, kedua persamaan
+        <strong>dijumlahkan</strong>.</li>
+    </ul>
+    <p>
+      Saat mengalikan, seluruh persamaan ikut dikalikan — bukan hanya suku yang mau
+      disamakan. Ini kekeliruan yang paling sering merusak jawaban di bab ini.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Pilih pengalinya sendiri</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Persamaan $3x + y = 7$ dan $x + 4y = 6$. Kalikan masing-masing, lalu pilih
+        operasinya.
+      </p>
+      <div class="deret">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">Kali persamaan 1 dengan</label>
+        <input type="number" inputmode="numeric" id="kali1" value="1" min="1" max="9" style="flex:0 0 4rem" aria-label="pengali persamaan pertama">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">persamaan 2 dengan</label>
+        <input type="number" inputmode="numeric" id="kali2" value="1" min="1" max="9" style="flex:0 0 4rem" aria-label="pengali persamaan kedua">
+      </div>
+      <div class="deret" style="margin-top:.5rem">
+        <button type="button" class="tombol mungil" id="opKurang">Kurangkan</button>
+        <button type="button" class="tombol mungil" id="opTambah">Jumlahkan</button>
+      </div>
+      <div id="hasilEliminasi" style="margin-top:.7rem"></div>
+    </div>
+
+    <h3>Soal cerita</h3>
+    <p>
+      Tiga langkah, selalu berurutan: buat pemisalan, susun model matematikanya, lalu
+      selesaikan. Langkah terakhir yang paling sering terlewat — soal sering menanyakan
+      hal lain, misalnya total harga, bukan sekadar nilai $x$ dan $y$.
+    </p>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya.
+  </p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.
+  </p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=8&amp;bab=spldv&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
+<script src="../komponen/kartu-suku.js"></script>
+<script src="../komponen/timbangan.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  /* ---------- 3. Eksplorasi: menebak dua harga ---------- */
+
+  /* Harga dalam ribuan rupiah supaya penggesernya tetap pendek dan angkanya
+     tetap bisa dihitung di kepala. Struknya: 2x + y = 15 dan x + 2y = 18,
+     dengan penyelesaian tunggal x = 4 dan y = 7. */
+  var elJelajah = document.getElementById('jelajah');
+  var elPesanJelajah = document.getElementById('pesanJelajah');
+  var pernah = { struk1: {}, dua: false };
+
+  elJelajah.innerHTML =
+    '<div class="deret" style="align-items:center">' +
+      '<label class="kecil" style="flex:none;margin:0;min-width:8rem">Harga 1 kg mangga</label>' +
+      '<input type="range" id="hargaM" min="1" max="9" value="3" style="flex:1;min-width:8rem" aria-label="harga mangga">' +
+      '<strong id="labelM" style="min-width:5rem;text-align:right"></strong>' +
+    '</div>' +
+    '<div class="deret" style="align-items:center;margin-top:.4rem">' +
+      '<label class="kecil" style="flex:none;margin:0;min-width:8rem">Harga 1 kg apel</label>' +
+      '<input type="range" id="hargaA" min="1" max="9" value="3" style="flex:1;min-width:8rem" aria-label="harga apel">' +
+      '<strong id="labelA" style="min-width:5rem;text-align:right"></strong>' +
+    '</div>' +
+    '<div id="strukJelajah" style="margin-top:.7rem"></div>';
+
+  var geserM = document.getElementById('hargaM');
+  var geserA = document.getElementById('hargaA');
+  var elStruk = document.getElementById('strukJelajah');
+
+  function rupiahRibu(n) {
+    return Pecahan.rupiah(n * 1000, 0);
+  }
+
+  function periksaTebakan() {
+    var x = parseInt(geserM.value, 10);
+    var y = parseInt(geserA.value, 10);
+    document.getElementById('labelM').textContent = rupiahRibu(x);
+    document.getElementById('labelA').textContent = rupiahRibu(y);
+
+    var satu = (2 * x + y === 15);
+    var dua = (x + 2 * y === 18);
+
+    if (satu && !dua) pernah.struk1[x + '|' + y] = true;
+    if (satu && dua) pernah.dua = true;
+
+    function baris(judul, isi, lolos) {
+      return '<p style="margin:.2rem 0">' + judul + ': ' + isi +
+        ' <span class="cap ' + (lolos ? 'benar' : 'salah') + '">' +
+        (lolos ? 'cocok' : 'belum cocok') + '</span></p>';
+    }
+
+    elStruk.innerHTML =
+      baris('Struk Senin', '2 mangga + 1 apel = ' + rupiahRibu(2 * x + y) +
+        ', seharusnya ' + rupiahRibu(15), satu) +
+      baris('Struk Selasa', '1 mangga + 2 apel = ' + rupiahRibu(x + 2 * y) +
+        ', seharusnya ' + rupiahRibu(18), dua);
+
+    /* Kesimpulan ditahan sampai dua hal benar-benar terlihat: bahwa satu
+       struk saja bisa dicocokkan lebih dari satu tebakan, dan bahwa kedua
+       struk hanya dicocokkan satu tebakan. */
+    var banyakSatu = Object.keys(pernah.struk1).length;
+    if (!(banyakSatu >= 2 && pernah.dua)) {
+      elPesanJelajah.innerHTML = '';
+      return;
+    }
+    elPesanJelajah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Struk pertama sendirian punya banyak jawaban — kamu sudah menemukan beberapa. ' +
+      'Begitu struk kedua ikut dipakai, yang lolos tinggal satu: mangga Rp4.000,00 ' +
+      'dan apel Rp7.000,00. Dua persamaan yang berlaku bersama-sama itulah yang ' +
+      'disebut SPLDV.') + '</div>';
+  }
+
+  geserM.addEventListener('input', periksaTebakan);
+  geserA.addEventListener('input', periksaTebakan);
+  periksaTebakan();
+
+  /* ---------- 4. Tab "Aturannya" ---------- */
+
+  Materi.tab(document.getElementById('tabMateri'));
+
+  /* ---------- 4a. Timbangan PLSV ---------- */
+
+  var timbangan = Timbangan.buat(document.getElementById('timbanganPLSV'), {
+    lambang: 'y',
+    kiri: { x: 5, n: 4 },
+    kanan: { x: 2, n: 16 }
+  });
+
+  document.getElementById('tbKiriSaja').addEventListener('click', function () {
+    timbangan.buang('kiri', 'n', 4);
+  });
+  document.getElementById('tbDuaBola').addEventListener('click', function () {
+    timbangan.buang('dua', 'n', 4);
+  });
+  document.getElementById('tbDuaKotak').addEventListener('click', function () {
+    timbangan.buang('dua', 'x', 2);
+  });
+  document.getElementById('tbBagi').addEventListener('click', function () {
+    timbangan.bagi('dua', 3);
+  });
+  document.getElementById('tbUlang').addEventListener('click', function () {
+    timbangan.ulang();
+  });
+
+  /* ---------- 4b. Daftar penyelesaian PLDV ---------- */
+
+  Materi.geser(document.getElementById('geserPLDV'), {
+    label: 'Nilai $x$', min: 0, maks: 5, awal: 2,
+    hitung: function (x) {
+      var pasangan = [];
+      for (var i = 0; i <= 5; i++) pasangan.push('(' + i + ', ' + (5 - i) + ')');
+      return 'Untuk $x = ' + x + '$ didapat $y = ' + (5 - x) + '$. ' +
+        'Seluruh penyelesaiannya: $' + pasangan.join(',\\ ') + '$. ' +
+        'Enam-enamnya benar, dan tidak ada alasan memilih salah satu.';
+    }
+  });
+
+  /* ---------- 4c. Substitusi selangkah demi selangkah ---------- */
+
+  Materi.langkah(document.getElementById('langkahSubstitusi'), [
+    { judul: 'Pilih yang berkoefisien satu. ',
+      teks: 'Pada $3x + y = 7$, variabel $y$ berkoefisien $1$, jadi ubah menjadi ' +
+        '$y = 7 - 3x$.' },
+    { judul: 'Titipkan ke persamaan kedua. ',
+      teks: 'Ganti $y$ pada $x + 4y = 6$: $x + 4(7 - 3x) = 6$.' },
+    { judul: 'Jabarkan. ',
+      teks: '$x + 28 - 12x = 6$, jadi $-11x = -22$.' },
+    { judul: 'Selesaikan. ',
+      teks: '$x = 2$.' },
+    { judul: 'Kembalikan. ',
+      teks: 'Masukkan ke $3x + y = 7$: $6 + y = 7$, jadi $y = 1$. ' +
+        'Himpunan penyelesaiannya $\\{(2, 1)\\}$.' }
+  ]);
+
+  /* ---------- 4d. Eliminasi dengan pengali pilihan sendiri ---------- */
+
+  var PERS1 = { x: 3, y: 1, hasil: 7 };
+  var PERS2 = { x: 1, y: 4, hasil: 6 };
+  var elHasilEliminasi = document.getElementById('hasilEliminasi');
+
+  function tulisPersamaan(p) {
+    return p.x + 'x + ' + p.y + 'y = ' + p.hasil;
+  }
+
+  function eliminasi(tanda) {
+    var k1 = parseInt(document.getElementById('kali1').value, 10);
+    var k2 = parseInt(document.getElementById('kali2').value, 10);
+    if (isNaN(k1) || isNaN(k2) || k1 < 1 || k2 < 1) {
+      elHasilEliminasi.innerHTML =
+        '<div class="pesan awas">Kedua pengali harus bilangan bulat positif.</div>';
+      return;
+    }
+
+    var a = { x: PERS1.x * k1, y: PERS1.y * k1, hasil: PERS1.hasil * k1 };
+    var b = { x: PERS2.x * k2, y: PERS2.y * k2, hasil: PERS2.hasil * k2 };
+    var arah = tanda === 'kurang' ? -1 : 1;
+    var sisaX = a.x + arah * b.x;
+    var sisaY = a.y + arah * b.y;
+    var sisaHasil = a.hasil + arah * b.hasil;
+
+    var kalimat;
+    if (sisaX === 0 && sisaY === 0) {
+      kalimat = 'Dua-duanya lenyap sekaligus. Yang tersisa bukan persamaan lagi, ' +
+        'jadi pilih pengali yang hanya menyamakan satu variabel saja.';
+    } else if (sisaX === 0) {
+      kalimat = 'Variabel $x$ lenyap. Tersisa $' + sisaY + 'y = ' + sisaHasil +
+        '$, sehingga $y = ' + Pecahan.buat(sisaHasil, sisaY).rumus() + '$.';
+    } else if (sisaY === 0) {
+      kalimat = 'Variabel $y$ lenyap. Tersisa $' + sisaX + 'x = ' + sisaHasil +
+        '$, sehingga $x = ' + Pecahan.buat(sisaHasil, sisaX).rumus() + '$.';
+    } else {
+      kalimat = 'Belum ada yang lenyap: tersisa $' + sisaX + 'x + ' + sisaY + 'y = ' +
+        sisaHasil + '$. Samakan dulu koefisien salah satu variabelnya, ' +
+        'lalu pilih operasi yang tepat.';
+    }
+
+    elHasilEliminasi.innerHTML = '<p style="margin:0">' + Rumus.keHTML(
+      '$' + tulisPersamaan(PERS1) + '$ dikali $' + k1 + '$ menjadi $' +
+      tulisPersamaan(a) + '$.') + '</p>' +
+      '<p style="margin:.2rem 0">' + Rumus.keHTML(
+      '$' + tulisPersamaan(PERS2) + '$ dikali $' + k2 + '$ menjadi $' +
+      tulisPersamaan(b) + '$.') + '</p>' +
+      '<p style="margin:.4rem 0 0">' + Rumus.keHTML(
+      (tanda === 'kurang' ? 'Dikurangkan. ' : 'Dijumlahkan. ') + kalimat) + '</p>';
+  }
+
+  document.getElementById('opKurang').addEventListener('click', function () {
+    eliminasi('kurang');
+  });
+  document.getElementById('opTambah').addEventListener('click', function () {
+    eliminasi('tambah');
+  });
+  eliminasi('kurang');
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  Materi.contoh(document.getElementById('daftarContoh'), [
+    {
+      judul: 'Eliminasi dua langkah',
+      soal: 'Tentukan penyelesaian dari $2x + 3y = 13$ dan $x - y = -1$.',
+      langkah: [
+        'Samakan koefisien $x$: persamaan kedua dikali $2$ menjadi $2x - 2y = -2$. ' +
+          'Seluruh persamaan ikut dikali, termasuk ruas kanannya.',
+        'Tandanya sama-sama positif pada $2x$, jadi kedua persamaan dikurangkan: ' +
+          '$(3y) - (-2y) = 13 - (-2)$, yaitu $5y = 15$.',
+        'Maka $y = 3$.',
+        'Substitusikan ke $x - y = -1$: $x - 3 = -1$, jadi $x = 2$. ' +
+          'Himpunan penyelesaiannya $\\{(2, 3)\\}$.'
+      ]
+    },
+    {
+      judul: 'Harga mangga dan apel',
+      soal: 'Membeli $2$ kg mangga dan $1$ kg apel seharga Rp15.000,00. ' +
+        'Membeli $1$ kg mangga dan $2$ kg apel seharga Rp18.000,00. ' +
+        'Berapa harga $5$ kg mangga dan $3$ kg apel?',
+      langkah: [
+        'Buat pemisalan: $x$ harga $1$ kg mangga, $y$ harga $1$ kg apel. ' +
+          'Modelnya $2x + y = 15.000$ dan $x + 2y = 18.000$.',
+        'Kalikan persamaan pertama dengan $2$: $4x + 2y = 30.000$. ' +
+          'Kurangkan dengan persamaan kedua: $3x = 12.000$, jadi $x = 4.000$.',
+        'Substitusikan: $2(4.000) + y = 15.000$, jadi $y = 7.000$.',
+        'Yang ditanya bukan $x$ dan $y$, melainkan $5x + 3y$: ' +
+          '$20.000 + 21.000 = $ Rp41.000,00.'
+      ]
+    },
+    {
+      judul: 'Umur ayah dan anak',
+      soal: 'Umur ayah dan anak berjumlah $60$ tahun. Umur ayah $4$ kali umur anak. ' +
+        'Berapa umur anak?',
+      langkah: [
+        'Misalkan $a$ umur ayah dan $n$ umur anak. Modelnya $a + n = 60$ dan $a = 4n$.',
+        'Persamaan kedua sudah berbentuk $a = \\dots$, jadi langsung disubstitusikan: ' +
+          '$4n + n = 60$.',
+        '$5n = 60$, jadi $n = 12$.',
+        'Umur anak $12$ tahun, dan umur ayah $48$ tahun. Periksa: ' +
+          '$12 + 48 = 60$ dan $48 = 4 \\times 12$. Keduanya cocok.'
+      ]
+    }
+  ]);
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'spldv-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Tentukan nilai $y$ dari $5y + 4 = 2y + 16$.',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['4'],
+        salahUmum: [
+          {
+            jawaban: ['20/7', '2,857'],
+            umpan: 'Sepertinya $2y$ ikut dipindahkan tanpa berubah tanda. ' +
+              'Suku yang pindah ruas berubah menjadi lawannya: $5y - 2y = 3y$.'
+          },
+          {
+            jawaban: ['6', '20'],
+            umpan: 'Bagian variabelnya sudah benar, $3y$. Ruas kanannya ' +
+              '$16 - 4 = 12$, jadi $3y = 12$.'
+          }
+        ],
+        bahas: '$5y - 2y = 16 - 4$, jadi $3y = 12$ dan $y = 4$.'
+      },
+      {
+        id: 'spldv-cek-2', level: 1, tipe: 'pg',
+        pertanyaan: 'Manakah yang merupakan SPLDV?',
+        opsi: {
+          a: '$x + y = 5$',
+          b: '$x + y = 5$ dan $x - y = 1$',
+          c: '$2x + 6 = 10$',
+          d: '$x^2 + y = 4$ dan $x - y = 1$'
+        },
+        kunci: 'b',
+        umpan: {
+          a: 'Itu satu PLDV. Penyelesaiannya masih banyak, sebab belum ada ' +
+             'persamaan kedua yang membatasi.',
+          c: 'Itu PLSV: hanya ada satu variabel.',
+          d: 'Persamaan pertamanya berpangkat dua, jadi bukan persamaan linear.'
+        },
+        bahas: 'SPLDV adalah dua persamaan linear dua variabel yang berlaku ' +
+          'bersama-sama, dan tiap variabelnya berpangkat satu.'
+      },
+      {
+        id: 'spldv-cek-3', level: 2, tipe: 'isian',
+        pertanyaan: 'Diketahui $x + y = 10$ dan $x - y = 2$. Berapa nilai $x$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['6'],
+        salahUmum: [
+          {
+            jawaban: ['4'],
+            umpan: 'Itu nilai $y$. Setelah dijumlahkan didapat $2x = 12$, ' +
+              'jadi yang $6$ adalah $x$.'
+          },
+          {
+            jawaban: ['12'],
+            umpan: 'Hasil penjumlahannya memang $2x = 12$, tinggal satu langkah: ' +
+              'bagi kedua ruas dengan $2$.'
+          },
+          {
+            jawaban: ['8'],
+            umpan: 'Tanda $y$ pada kedua persamaan berbeda, jadi keduanya ' +
+              'dijumlahkan, bukan dikurangkan.'
+          }
+        ],
+        bahas: 'Tanda $y$ berbeda, jadi kedua persamaan dijumlahkan: $2x = 12$, ' +
+          'sehingga $x = 6$ dan $y = 4$.'
+      },
+      {
+        id: 'spldv-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Diketahui $y = 2x$ dan $3x + y = 20$. Berapa nilai $x$?',
+        petunjuk: 'Tulis angkanya saja',
+        jawaban: ['4'],
+        salahUmum: [
+          {
+            jawaban: ['8'],
+            umpan: 'Itu nilai $y$. Yang ditanya $x$, yaitu setengahnya.'
+          },
+          {
+            jawaban: ['5'],
+            umpan: 'Sepertinya $y$ ikut terhitung sebagai $x$ saja. ' +
+              'Substitusikan $y = 2x$ sehingga menjadi $3x + 2x = 5x$.'
+          },
+          {
+            jawaban: ['20/3'],
+            umpan: 'Sepertinya $y$ tidak ikut disubstitusikan. ' +
+              'Ganti $y$ dengan $2x$ lebih dulu.'
+          }
+        ],
+        bahas: 'Substitusikan $y = 2x$: $3x + 2x = 20$, jadi $5x = 20$ dan $x = 4$.'
+      },
+      {
+        id: 'spldv-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Harga $3$ buku dan $2$ pena Rp19.000,00. Harga $1$ buku dan ' +
+          '$4$ pena Rp13.000,00. Berapa harga $1$ buku dan $1$ pena seluruhnya, ' +
+          'dalam rupiah?',
+        petunjuk: 'Tulis angkanya saja, contoh: 7000',
+        jawaban: ['7000', '7.000'],
+        salahUmum: [
+          {
+            jawaban: ['5000', '5.000'],
+            umpan: 'Itu harga satu buku saja. Yang ditanya harga satu buku ' +
+              'ditambah satu pena.'
+          },
+          {
+            jawaban: ['2000', '2.000'],
+            umpan: 'Itu harga satu pena saja. Tinggal ditambah harga satu bukunya.'
+          },
+          {
+            jawaban: ['32000', '32.000'],
+            umpan: 'Sepertinya kedua struk dijumlahkan begitu saja. ' +
+              'Cari dulu harga satuannya lewat eliminasi.'
+          }
+        ],
+        bahas: 'Misalkan $b$ harga buku dan $p$ harga pena. Dari $3b + 2p = 19.000$ ' +
+          'dan $b + 4p = 13.000$: kalikan persamaan kedua dengan $3$, lalu kurangkan, ' +
+          'sehingga $10p = 20.000$ dan $p = 2.000$. Maka $b = 5.000$, ' +
+          'dan $b + p = $ Rp7.000,00.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 8, 'spldv');
+})();
+</script>
+</body>
+</html>

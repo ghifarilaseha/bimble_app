@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "spldv",
+    "judul": "SPLDV",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Sistem Persamaan Linear Dua Variabel",
+    "versi": "2026-09-07"
+  },
+  "soal": [
+    {
+      "id": "sp-01", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Himpunan penyelesaian dari $2x + y = 11$ dan $x - y = 1$ adalah ...",
+      "opsi": { "a": "$\\{(4, 3)\\}$", "b": "$\\{(3, 4)\\}$", "c": "$\\{(5, 1)\\}$", "d": "$\\{(2, 7)\\}$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Jumlahkan kedua persamaan sehingga $y$ hilang: $3x = 12$ dan $x = 4$. Substitusikan: $4 - y = 1$, sehingga $y = 3$."
+    },
+    {
+      "id": "sp-02", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui $2x + y = 11$ dan $x - y = 1$. Nilai dari $3x - 2y$ adalah ...",
+      "jawaban": ["6"],
+      "pembahasan": "Penyelesaiannya $x = 4$ dan $y = 3$, sehingga $3 \\times 4 - 2 \\times 3 = 12 - 6 = 6$."
+    },
+    {
+      "id": "sp-03", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Penyelesaian dari $x + y = 7$ dan $x - y = 3$ adalah ...",
+      "opsi": { "a": "$x = 5$ dan $y = 2$", "b": "$x = 2$ dan $y = 5$", "c": "$x = 4$ dan $y = 3$", "d": "$x = 6$ dan $y = 1$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Jumlahkan keduanya: $2x = 10$, sehingga $x = 5$ dan $y = 7 - 5 = 2$."
+    },
+    {
+      "id": "sp-04", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui $x = 2y$ dan $x + y = 12$. Nilai $y$ adalah ...",
+      "jawaban": ["4"],
+      "pembahasan": "Substitusikan $x = 2y$ ke persamaan kedua: $2y + y = 12$, sehingga $3y = 12$ dan $y = 4$."
+    },
+    {
+      "id": "sp-05", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Di antara berikut ini, yang merupakan sistem persamaan linear dua variabel adalah ...",
+      "opsi": {
+        "a": "$2x + y = 5$ dan $x - y = 1$",
+        "b": "$x^2 + y = 4$ dan $x - y = 1$",
+        "c": "$2x + 3 = 7$ dan $x = 2$",
+        "d": "$x + y + z = 6$ dan $x - y = 1$"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Syaratnya dua persamaan, dua variabel, dan pangkat variabelnya satu. Pilihan lain memuat pangkat dua, hanya satu variabel, atau tiga variabel."
+    },
+    {
+      "id": "sp-06", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Pasangan $(x, y) = (3, 1)$ memenuhi persamaan $ax + y = 7$. Nilai $a$ adalah ...",
+      "jawaban": ["2"],
+      "pembahasan": "Substitusikan: $3a + 1 = 7$, sehingga $3a = 6$ dan $a = 2$."
+    },
+    {
+      "id": "sp-07", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Diketahui $3x + 2y = 12$ dan $x = 2$. Nilai $y$ adalah ...",
+      "opsi": { "a": "$2$", "b": "$3$", "c": "$4$", "d": "$6$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$3 \\times 2 + 2y = 12$, sehingga $2y = 6$ dan $y = 3$."
+    },
+    {
+      "id": "sp-08", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Harga 2 buku dan 3 pensil adalah Rp13.000,00. Jika $b$ harga sebuah buku dan $p$ harga sebuah pensil, model matematikanya adalah ...",
+      "opsi": {
+        "a": "$2b + 3p = 13.000$",
+        "b": "$3b + 2p = 13.000$",
+        "c": "$b + p = 13.000$",
+        "d": "$2b \\times 3p = 13.000$"
+      },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Banyak barang menjadi angka pengali harganya, lalu keduanya dijumlahkan: $2b + 3p = 13.000$."
+    },
+    {
+      "id": "sp-09", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Harga 3 buku tulis dan 2 pensil adalah Rp24.000,00, sedangkan harga 2 buku tulis dan 5 pensil adalah Rp27.000,00. Harga sebuah buku tulis adalah Rp...",
+      "jawaban": ["6000"],
+      "pembahasan": "Dalam ribuan rupiah: $3b + 2p = 24$ dan $2b + 5p = 27$. Kalikan yang pertama dengan $5$ dan yang kedua dengan $2$: $15b + 10p = 120$ dan $4b + 10p = 54$. Kurangkan: $11b = 66$, sehingga $b = 6$, yaitu Rp6.000,00."
+    },
+    {
+      "id": "sp-10", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Harga 3 buku tulis dan 2 pensil adalah Rp24.000,00, sedangkan harga 2 buku tulis dan 5 pensil adalah Rp27.000,00. Harga sebuah pensil adalah Rp...",
+      "jawaban": ["3000"],
+      "pembahasan": "Harga buku Rp6.000,00. Substitusikan ke $3b + 2p = 24$: $18 + 2p = 24$, sehingga $p = 3$, yaitu Rp3.000,00."
+    },
+    {
+      "id": "sp-11", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Harga sebuah buku tulis Rp6.000,00 dan sebuah pensil Rp3.000,00. Rani membeli 1 buku tulis dan 4 pensil. Ia harus membayar ...",
+      "opsi": { "a": "Rp15.000,00", "b": "Rp18.000,00", "c": "Rp21.000,00", "d": "Rp24.000,00" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$6.000 + 4 \\times 3.000 = 6.000 + 12.000 = 18.000$."
+    },
+    {
+      "id": "sp-12", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Diketahui $2x + 3y = 16$ dan $x - y = 3$. Nilai $x \\times y$ adalah ...",
+      "opsi": { "a": "$6$", "b": "$10$", "c": "$15$", "d": "$25$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Dari $x = y + 3$, substitusikan: $2(y + 3) + 3y = 16$, sehingga $5y = 10$, $y = 2$, dan $x = 5$. Maka $x \\times y = 10$."
+    },
+    {
+      "id": "sp-13", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Diketahui $4x + y = 14$ dan $2x + 3y = 12$. Nilai $x$ adalah ...",
+      "jawaban": ["3"],
+      "pembahasan": "Dari persamaan pertama $y = 14 - 4x$. Substitusikan: $2x + 42 - 12x = 12$, sehingga $-10x = -30$ dan $x = 3$."
+    },
+    {
+      "id": "sp-14", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Keliling sebuah persegi panjang 40 cm dan panjangnya 4 cm lebih dari lebarnya. Luas persegi panjang tersebut adalah ...",
+      "opsi": { "a": "$84$ cm$^2$", "b": "$96$ cm$^2$", "c": "$102$ cm$^2$", "d": "$120$ cm$^2$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$p + l = 20$ dan $p - l = 4$, sehingga $p = 12$ dan $l = 8$. Luasnya $12 \\times 8 = 96$ cm$^2$. Yang bernilai $20$ adalah setengah kelilingnya, bukan kelilingnya."
+    },
+    {
+      "id": "sp-15", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Jumlah dua bilangan adalah 25 dan selisihnya 7. Bilangan yang lebih besar adalah ...",
+      "opsi": { "a": "$14$", "b": "$15$", "c": "$16$", "d": "$18$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "$a + b = 25$ dan $a - b = 7$. Jumlahkan: $2a = 32$, sehingga $a = 16$ dan $b = 9$."
+    },
+    {
+      "id": "sp-16", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Jumlah umur ayah dan anaknya sekarang 54 tahun. Lima tahun lagi, umur ayah tiga kali umur anaknya. Umur anak sekarang adalah ... tahun.",
+      "jawaban": ["11"],
+      "pembahasan": "Misalkan umur ayah $a$ dan anak $n$: $a + n = 54$ dan $a + 5 = 3(n + 5)$, sehingga $a = 3n + 10$. Maka $4n + 10 = 54$, $n = 11$, dan $a = 43$. Periksa: lima tahun lagi $48 = 3 \\times 16$."
+    },
+    {
+      "id": "sp-17", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Harga 3 kg mangga dan 2 kg apel Rp90.000,00, sedangkan harga 1 kg mangga dan 1 kg apel Rp35.000,00. Harga 2 kg mangga dan 3 kg apel adalah ...",
+      "opsi": { "a": "Rp80.000,00", "b": "Rp85.000,00", "c": "Rp90.000,00", "d": "Rp95.000,00" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Dalam ribuan: $m + a = 35$ sehingga $a = 35 - m$. Substitusikan ke $3m + 2a = 90$: $3m + 70 - 2m = 90$, jadi $m = 20$ dan $a = 15$. Maka $2m + 3a = 40 + 45 = 85$, yaitu Rp85.000,00."
+    },
+    {
+      "id": "sp-18", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sebuah pecahan bernilai $\\frac{1}{2}$ bila pembilangnya ditambah 2, dan bernilai $\\frac{1}{3}$ bila penyebutnya dikurangi 2. Pecahan tersebut adalah ...",
+      "jawaban": ["2/8", "1/4", "0,25"],
+      "pembahasan": "Misalkan pecahannya $\\frac{p}{q}$. Dari $\\frac{p+2}{q} = \\frac{1}{2}$ diperoleh $q = 2p + 4$, dan dari $\\frac{p}{q-2} = \\frac{1}{3}$ diperoleh $q = 3p + 2$. Maka $2p + 4 = 3p + 2$, sehingga $p = 2$ dan $q = 8$. Pecahannya $\\frac{2}{8}$ atau $\\frac{1}{4}$."
+    },
+    {
+      "id": "sp-19", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Di sebuah tempat parkir terdapat 30 kendaraan berupa mobil dan sepeda motor. Jumlah seluruh rodanya 80 buah. Banyak mobil di tempat parkir itu adalah ...",
+      "opsi": { "a": "$8$", "b": "$10$", "c": "$12$", "d": "$20$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$m + s = 30$ dan $4m + 2s = 80$. Substitusikan $s = 30 - m$: $4m + 60 - 2m = 80$, sehingga $2m = 20$ dan $m = 10$."
+    },
+    {
+      "id": "sp-20", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Sistem persamaan $2x + y = a$ dan $x - y = 4$ memiliki penyelesaian dengan $x = 3$. Nilai $a$ adalah ...",
+      "jawaban": ["5"],
+      "pembahasan": "Dari $3 - y = 4$ diperoleh $y = -1$. Maka $a = 2 \\times 3 + (-1) = 5$."
+    }
+  ]
+}

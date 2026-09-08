@@ -61,7 +61,7 @@
   </p>
 
   <div class="kartu">
-    <div id="kartuJelajah"></div>
+    <div id="jelajah"></div>
 
     <p style="margin:.75rem 0 .25rem">
       Bentuk aljabarnya: <strong id="bentukJelajah" style="font-size:1.15rem"></strong>
@@ -91,6 +91,8 @@
       <strong id="nilaiY" style="min-width:2rem;text-align:right">3</strong>
     </div>
     <p style="margin-top:.7rem" id="hasilEvaluasi"></p>
+
+    <div id="pesanJelajah"></div>
   </div>
 
   <!-- ---------- 4. Perumusan ---------- -->
@@ -127,6 +129,20 @@
         </tbody>
       </table>
     </div>
+
+    <div class="kartu">
+      <h3 class="rapat">Bongkar bentukmu sendiri</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Ketik bentuk aljabar apa pun, misalnya $4x - 7$ atau $5a^2 + 2ab - b$.
+        Halaman ini hanya memisahkan sukunya — namanya kamu yang cocokkan.
+      </p>
+      <div class="deret">
+        <input type="text" id="isiBongkar" value="4x - 7" autocomplete="off"
+               style="flex:1;min-width:9rem" aria-label="Bentuk aljabar">
+        <button type="button" class="tombol mungil utama" id="bongkarBentuk">Bongkar</button>
+      </div>
+      <div id="hasilBongkar" style="margin-top:.7rem"></div>
+    </div>
   </section>
 
   <section data-tab="Sederhanakan" hidden>
@@ -153,6 +169,20 @@
       Catatan penulisan: $-1x$ cukup ditulis $-x$, dan $1y^2$ cukup ditulis $y^2$.
       Sebaliknya, $x$ tanpa angka di depannya berarti koefisiennya $1$, bukan $0$.
     </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Kelompokkan suku sejenis</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Ketik bentuk yang panjang, lalu lihat suku mana saja yang masuk tumpukan
+        yang sama. Coba juga $2x + 3y$ dan perhatikan bahwa keduanya tidak menyatu.
+      </p>
+      <div class="deret">
+        <input type="text" id="isiKelompok" value="4x + 9 - 5x - 2" autocomplete="off"
+               style="flex:1;min-width:9rem" aria-label="Bentuk aljabar yang disederhanakan">
+        <button type="button" class="tombol mungil utama" id="kelompokkan">Kelompokkan</button>
+      </div>
+      <div id="hasilKelompok" style="margin-top:.7rem"></div>
+    </div>
   </section>
 
   <section data-tab="Tambah dan kurang" hidden>
@@ -196,6 +226,43 @@
       luas persegi panjang: $a(b + c) = ab + ac$.
     </p>
     <p class="tengah">$$(x + 10)(x + 5) = x^2 + 5x + 10x + 50 = x^2 + 15x + 50$$</p>
+
+    <div class="kartu">
+      <h3 class="rapat">Isi keempat kotaknya</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Persegi panjangnya berukuran $(x + 10)$ kali $(x + 5)$. Isi luas tiap
+        kotak kecilnya, lalu periksa. Tulis $x^2$ sebagai <code>x^2</code>.
+      </p>
+      <div class="tabel-gulir">
+        <table id="tabelLuas">
+          <thead>
+            <tr><th></th><th>$x$</th><th>$+5$</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>$x$</th>
+              <td><input type="text" id="luas11" autocomplete="off" style="width:5rem"
+                         aria-label="Luas kotak x kali x"></td>
+              <td><input type="text" id="luas12" autocomplete="off" style="width:5rem"
+                         aria-label="Luas kotak x kali 5"></td>
+            </tr>
+            <tr>
+              <th>$+10$</th>
+              <td><input type="text" id="luas21" autocomplete="off" style="width:5rem"
+                         aria-label="Luas kotak 10 kali x"></td>
+              <td><input type="text" id="luas22" autocomplete="off" style="width:5rem"
+                         aria-label="Luas kotak 10 kali 5"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="deret" style="margin-top:.7rem">
+        <button type="button" class="tombol mungil utama" id="periksaLuas">Periksa</button>
+        <button type="button" class="tombol mungil bahaya" id="ulangLuas">Kosongkan</button>
+      </div>
+      <div id="simpulanLuas"></div>
+    </div>
+
     <p class="tengah">$$(2x + 5)(x - 5) = 2x^2 - 10x + 5x - 25 = 2x^2 - 5x - 25$$</p>
     <p class="tengah">$$(x - 8)^2 = x^2 - 16x + 64$$</p>
 
@@ -241,6 +308,7 @@
 <script src="../js/kunci.js"></script>
 <script src="../js/nilai.js"></script>
 <script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
 <script src="../komponen/kartu-suku.js"></script>
 <script>
 (function () {
@@ -257,9 +325,19 @@
   var nilaiX = document.getElementById('nilaiX');
   var nilaiY = document.getElementById('nilaiY');
 
-  var kartu = KartuSuku.buat(document.getElementById('kartuJelajah'), {
+  var elPesanJelajah = document.getElementById('pesanJelajah');
+  var pernahDitolak = false;
+  var pernahPenuh = false;
+
+  var kartu = KartuSuku.buat(document.getElementById('jelajah'), {
     awal: { x: 2, y: 1, n: 4 },
-    onUbah: function () { tulisBentuk(); }
+    onUbah: function () { tulisBentuk(); },
+    /* Kesimpulannya ditahan: kalimat penutup baru muncul setelah kamu
+       benar-benar melihat gabungan yang ditolak, bukan sebelumnya. */
+    onGabung: function (berhasil) {
+      if (!berhasil) pernahDitolak = true;
+      tulisSimpulan();
+    }
   });
 
   /* onUbah sudah dipanggil sekali dari dalam KartuSuku.buat, yaitu sebelum
@@ -269,6 +347,20 @@
     if (!kartu) return;
     Rumus.isi(elBentuk, '$' + kartu.rumus() + '$');
     hitungNilai();
+    tulisSimpulan();
+  }
+
+  function tulisSimpulan() {
+    if (!kartu) return;
+    var k = kartu.koefisien();
+    if (k.x && k.y && k.n) pernahPenuh = true;
+    if (!pernahPenuh || !pernahDitolak) return;
+
+    elPesanJelajah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Kotak menolak ditumpuk dengan tabung, dan itu bukan aturan sembarangan: ' +
+      'isi keduanya memang belum tentu sama. Karena itu $2x + y$ berhenti di situ ' +
+      'dan tidak bisa menjadi $3xy$. Suku hanya bisa digabung dengan suku sejenis.') +
+      '</div>';
   }
 
   function hitungNilai() {
@@ -313,27 +405,151 @@
 
   tulisBentuk();
 
-  /* ---------- 4. Tab materi ---------- */
+  /* ---------- 4. Tab "Aturannya" ---------- */
 
-  var bagian = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
-  var elTab = document.getElementById('tabMateri');
+  Materi.tab(document.getElementById('tabMateri'));
 
-  bagian.forEach(function (sec, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('role', 'tab');
-    b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    b.textContent = sec.dataset.tab;
-    b.addEventListener('click', function () {
-      bagian.forEach(function (s, j) { s.hidden = (j !== i); });
-      Array.prototype.forEach.call(elTab.children, function (x, j) {
-        x.setAttribute('aria-selected', j === i ? 'true' : 'false');
-      });
+  /* ---------- pengurai suku, dipakai tab pertama dan kedua ---------- */
+
+  /* Sengaja sederhana: satu suku berupa tanda, angka, lalu huruf-huruf
+     berpangkat. Bentuk berkurung ditolak, sebab tab ini belum membahasnya
+     dan pesan penolakan lebih baik daripada hasil yang diam-diam salah. */
+  function urai(teks) {
+    var bersih = String(teks).replace(/\s+/g, '');
+    if (!bersih) throw new Error('kosong');
+    if (/[()\/*]/.test(bersih)) throw new Error('berkurung');
+
+    var potong = bersih.replace(/-/g, '+-').split('+').filter(function (s) { return s; });
+    return potong.map(function (s) {
+      var m = s.match(/^(-?)(\d*)((?:[a-z](?:\^\d+)?)*)$/);
+      if (!m) throw new Error('bentuk');
+      var tanda = m[1] === '-' ? -1 : 1;
+      var angka = m[2] === '' ? 1 : parseInt(m[2], 10);
+      if (m[2] === '' && m[3] === '') throw new Error('bentuk');
+      return { koefisien: tanda * angka, bagian: m[3], teks: s };
     });
-    elTab.appendChild(b);
-  });
+  }
 
-  /* ---------- 4b. Buka kurung satu per satu ---------- */
+  function rumusSuku(k, bagian) {
+    if (!bagian) return String(k);
+    var huruf = bagian.replace(/\^(\d+)/g, '^{$1}');
+    if (k === 1) return huruf;
+    if (k === -1) return '-' + huruf;
+    return k + huruf;
+  }
+
+  function gagal(el, e) {
+    var pesan = e.message === 'berkurung'
+      ? 'Bentuk berkurung, berpecahan, atau bertanda kali belum bisa dibaca di sini. ' +
+        'Coba tulis sukunya satu per satu, misalnya 4x - 7.'
+      : 'Bentuknya belum bisa dibaca. Tulis sukunya dipisah tanda tambah atau kurang, ' +
+        'misalnya 5a^2 + 2ab - b.';
+    el.innerHTML = '<div class="pesan awas">' + Rumus.lolos(pesan) + '</div>';
+  }
+
+  /* ---------- 4a. Pembongkar bentuk ---------- */
+
+  var elHasilBongkar = document.getElementById('hasilBongkar');
+
+  function bongkar() {
+    var suku;
+    try {
+      suku = urai(document.getElementById('isiBongkar').value);
+    } catch (e) {
+      return gagal(elHasilBongkar, e);
+    }
+
+    var tabel = document.createElement('table');
+    var kepala = document.createElement('thead');
+    kepala.innerHTML = '<tr><th>Suku</th><th>Koefisien</th><th>Variabel</th><th>Jenis</th></tr>';
+    tabel.appendChild(kepala);
+
+    var tubuh = document.createElement('tbody');
+    suku.forEach(function (s) {
+      var tr = document.createElement('tr');
+      [
+        Rumus.keHTML('$' + rumusSuku(s.koefisien, s.bagian) + '$'),
+        s.bagian ? String(s.koefisien) : '—',
+        s.bagian ? Rumus.keHTML('$' + s.bagian.replace(/\^(\d+)/g, '^{$1}') + '$') : '—',
+        s.bagian ? 'suku bervariabel' : 'konstanta'
+      ].forEach(function (isi) {
+        var td = document.createElement('td');
+        td.innerHTML = isi;
+        tr.appendChild(td);
+      });
+      tubuh.appendChild(tr);
+    });
+    tabel.appendChild(tubuh);
+
+    var nama = ['', 'monomial (suku satu)', 'binomial (suku dua)', 'trinomial (suku tiga)'];
+    var catatan = document.createElement('p');
+    catatan.className = 'kecil samar';
+    catatan.style.margin = '.5rem 0 0';
+    catatan.textContent = 'Ada ' + suku.length + ' suku, jadi bentuk ini ' +
+      (nama[suku.length] || 'polinomial') + '. Tanda di depan suku ikut menjadi miliknya.';
+
+    var gulir = document.createElement('div');
+    gulir.className = 'tabel-gulir';
+    gulir.appendChild(tabel);
+
+    elHasilBongkar.innerHTML = '';
+    elHasilBongkar.appendChild(gulir);
+    elHasilBongkar.appendChild(catatan);
+  }
+
+  document.getElementById('bongkarBentuk').addEventListener('click', bongkar);
+  document.getElementById('isiBongkar').addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') { ev.preventDefault(); bongkar(); }
+  });
+  bongkar();
+
+  /* ---------- 4b. Pengelompok suku sejenis ---------- */
+
+  var elHasilKelompok = document.getElementById('hasilKelompok');
+
+  function kelompokkan() {
+    var suku;
+    try {
+      suku = urai(document.getElementById('isiKelompok').value);
+    } catch (e) {
+      return gagal(elHasilKelompok, e);
+    }
+
+    /* Urutan kemunculan dipertahankan supaya hasilnya masih bisa dilacak
+       balik ke bentuk yang tadi diketik. */
+    var urutan = [], jumlah = {}, anggota = {};
+    suku.forEach(function (s) {
+      if (!(s.bagian in jumlah)) { urutan.push(s.bagian); jumlah[s.bagian] = 0; anggota[s.bagian] = []; }
+      jumlah[s.bagian] += s.koefisien;
+      anggota[s.bagian].push(rumusSuku(s.koefisien, s.bagian));
+    });
+
+    var uraian = urutan.map(function (b) {
+      var isi = anggota[b].join('$ dan $');
+      return (b ? 'Tumpukan $' + b.replace(/\^(\d+)/g, '^{$1}') + '$' : 'Konstanta') +
+        ': $' + isi + '$ menjadi $' + rumusSuku(jumlah[b], b) + '$.';
+    }).join(' ');
+
+    var hasil = urutan
+      .filter(function (b) { return jumlah[b] !== 0; })
+      .map(function (b) { return rumusSuku(jumlah[b], b); })
+      .join(' + ').replace(/\+ -/g, '- ');
+
+    var catatan = urutan.length === suku.length
+      ? ' Tidak ada dua suku yang sejenis di sini, jadi bentuknya memang sudah sesederhana itu.'
+      : '';
+
+    elHasilKelompok.innerHTML = '<div class="pesan sip">' +
+      Rumus.keHTML(uraian + ' Hasilnya $' + (hasil || '0') + '$.' + catatan) + '</div>';
+  }
+
+  document.getElementById('kelompokkan').addEventListener('click', kelompokkan);
+  document.getElementById('isiKelompok').addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') { ev.preventDefault(); kelompokkan(); }
+  });
+  kelompokkan();
+
+  /* ---------- 4c. Buka kurung satu per satu ---------- */
 
   /* Suku di dalam kurung kedua, beserta tandanya. Yang diperlihatkan adalah
      satu hal saja: tanda tiap suku berbalik ketika keluar dari kurung yang
@@ -402,9 +618,56 @@
   });
   gambarBuka();
 
+  /* ---------- 4d. Empat kotak luas ---------- */
+
+  /* Empat perkalian, bukan dua. Yang mengajari di sini bukan jawabannya,
+     melainkan kotak keempat yang mudah terlewat kalau hanya dihafal
+     "kalikan yang depan dan yang belakang". */
+  var KOTAK = [
+    { id: 'luas11', kunci: ['x^2', 'x2', 'xx'], sebut: 'x kali x' },
+    { id: 'luas12', kunci: ['5x', 'x5'], sebut: 'x kali 5' },
+    { id: 'luas21', kunci: ['10x', 'x10'], sebut: '10 kali x' },
+    { id: 'luas22', kunci: ['50'], sebut: '10 kali 5' }
+  ];
+
+  var elSimpulanLuas = document.getElementById('simpulanLuas');
+
+  function rapikan(teks) {
+    return String(teks).toLowerCase().replace(/[\s+*·]/g, '');
+  }
+
+  document.getElementById('periksaLuas').addEventListener('click', function () {
+    var belum = 0, salah = [];
+    KOTAK.forEach(function (k) {
+      var isi = rapikan(document.getElementById(k.id).value);
+      if (!isi) { belum++; return; }
+      if (k.kunci.indexOf(isi) < 0) salah.push(k.sebut);
+    });
+
+    if (belum) {
+      elSimpulanLuas.innerHTML = '<div class="pesan info">Masih ada ' + belum +
+        ' kotak yang belum terisi.</div>';
+    } else if (salah.length) {
+      elSimpulanLuas.innerHTML = '<div class="pesan awas">' + Rumus.keHTML(
+        'Kotak ' + salah.join(' dan ') + ' belum tepat. Luas tiap kotak adalah ' +
+        'sisi kali sisi, jadi $x$ kali $x$ menjadi $x^2$ dan $10$ kali $x$ menjadi $10x$.') +
+        '</div>';
+    } else {
+      elSimpulanLuas.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+        'Keempatnya tepat. Jumlahkan: $x^2 + 5x + 10x + 50 = x^2 + 15x + 50$. ' +
+        'Kotaknya ada empat, jadi perkaliannya juga empat — $5x$ dan $10x$ yang ' +
+        'di tengah itulah yang paling sering terlewat.') + '</div>';
+    }
+  });
+
+  document.getElementById('ulangLuas').addEventListener('click', function () {
+    KOTAK.forEach(function (k) { document.getElementById(k.id).value = ''; });
+    elSimpulanLuas.innerHTML = '';
+  });
+
   /* ---------- 5. Contoh bertahap ---------- */
 
-  var contoh = [
+  Materi.contoh(document.getElementById('daftarContoh'), [
     {
       judul: 'Menulis bentuk aljabar',
       soal: 'Pak Veri membeli $2$ karung beras, lalu membeli lagi $5$ kg. ' +
@@ -438,55 +701,14 @@
         'Kumpulkan suku sejenis: $(8-16)a + (5+10)b - 7 = -8a + 15b - 7$'
       ]
     }
-  ];
-
-  var elContoh = document.getElementById('daftarContoh');
-
-  contoh.forEach(function (c, i) {
-    var kotak = document.createElement('article');
-    kotak.className = 'kartu';
-
-    var nomor = document.createElement('div');
-    nomor.className = 'nomor';
-    nomor.textContent = 'Contoh ' + (i + 1) + ' — ' + c.judul;
-    kotak.appendChild(nomor);
-
-    var tanya = document.createElement('div');
-    tanya.className = 'pertanyaan';
-    Rumus.isi(tanya, c.soal);
-    kotak.appendChild(tanya);
-
-    var daftar = document.createElement('ol');
-    daftar.style.margin = '0';
-    kotak.appendChild(daftar);
-
-    var tombol = document.createElement('button');
-    tombol.type = 'button';
-    tombol.className = 'tombol mungil';
-    tombol.style.marginTop = '.6rem';
-    tombol.textContent = 'Buka langkah pertama';
-    kotak.appendChild(tombol);
-
-    var ke = 0;
-    tombol.addEventListener('click', function () {
-      if (ke >= c.langkah.length) return;
-      var li = document.createElement('li');
-      Rumus.isi(li, c.langkah[ke]);
-      daftar.appendChild(li);
-      ke++;
-      if (ke >= c.langkah.length) tombol.hidden = true;
-      else tombol.textContent = 'Langkah berikutnya';
-    });
-
-    elContoh.appendChild(kotak);
-  });
+  ]);
 
   /* ---------- 6. Cek pemahaman ---------- */
 
   CekPaham.buat(document.getElementById('cekPaham'), {
     soal: [
       {
-        id: 'ba-cek-1', level: 1, tipe: 'isian',
+        id: 'bentuk-aljabar-cek-1', level: 1, tipe: 'isian',
         pertanyaan: 'Ada berapa suku pada bentuk $2x^2y + 3x + y + 6$?',
         petunjuk: 'Tulis angkanya saja',
         jawaban: ['4'],
@@ -506,7 +728,7 @@
           '$2x^2y$, $3x$, $y$, dan $6$. Seluruhnya ada $4$ suku.'
       },
       {
-        id: 'ba-cek-2', level: 1, tipe: 'isian',
+        id: 'bentuk-aljabar-cek-2', level: 1, tipe: 'isian',
         pertanyaan: 'Sederhanakan $-5x - 10 + 3x - 9$.',
         petunjuk: 'Contoh penulisan: -2x - 19',
         jawaban: ['-2x-19', '-19-2x'],
@@ -531,7 +753,7 @@
         bahas: 'Kelompokkan suku sejenis: $(-5 + 3)x + (-10 - 9) = -2x - 19$.'
       },
       {
-        id: 'ba-cek-3', level: 2, tipe: 'isian',
+        id: 'bentuk-aljabar-cek-3', level: 2, tipe: 'isian',
         pertanyaan: 'Sederhanakan $7 - 2x - x + 5$.',
         petunjuk: 'Contoh penulisan: -3x + 12',
         jawaban: ['-3x+12', '12-3x'],
@@ -555,7 +777,7 @@
         bahas: 'Ingat $-x$ sama dengan $-1x$. Jadi $(-2 - 1)x + (7 + 5) = -3x + 12$.'
       },
       {
-        id: 'ba-cek-4', level: 2, tipe: 'pg',
+        id: 'bentuk-aljabar-cek-4', level: 2, tipe: 'pg',
         pertanyaan: 'Hasil dari $(2x + 5)(x - 5)$ adalah ...',
         opsi: {
           a: '$2x^2 - 25$',
@@ -575,6 +797,32 @@
         bahas: 'Empat perkalian: $2x \\cdot x = 2x^2$, $2x \\cdot (-5) = -10x$, ' +
           '$5 \\cdot x = 5x$, dan $5 \\cdot (-5) = -25$. ' +
           'Digabungkan: $2x^2 - 10x + 5x - 25 = 2x^2 - 5x - 25$.'
+      },
+      {
+        id: 'bentuk-aljabar-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Panjang sebuah persegi panjang $(2x + 3)$ cm dan lebarnya ' +
+          '$(x - 1)$ cm. Kelilingnya dinyatakan dalam bentuk paling sederhana adalah ' +
+          '... cm.',
+        petunjuk: 'Contoh penulisan: 6x + 4',
+        jawaban: ['6x + 4', '6x+4', '4 + 6x'],
+        salahUmum: [
+          {
+            jawaban: ['3x + 2', '3x+2'],
+            umpan: 'Panjang dan lebarnya sudah dijumlahkan dengan benar. Keliling ' +
+              'menghitung setiap sisi dua kali, jadi hasilnya masih harus dikali $2$.'
+          },
+          {
+            jawaban: ['2x^2 + x - 3', '2x2 + x - 3'],
+            umpan: 'Sepertinya panjang dan lebarnya dikalikan. Itu luasnya, ' +
+              'sedangkan yang ditanya kelilingnya.'
+          },
+          {
+            jawaban: ['6x + 2', '6x+2'],
+            umpan: 'Bagian $x$-nya sudah benar. Perhatikan konstantanya: ' +
+              '$2 \\times (3 - 1) = 4$, bukan $2$.'
+          }
+        ],
+        bahas: '$K = 2\\big((2x + 3) + (x - 1)\\big) = 2(3x + 2) = 6x + 4$ cm.'
       }
     ]
   });
@@ -585,21 +833,7 @@
      menyodorkan tombol yang membawa siswa ke halaman galat, tombolnya
      diganti catatan bila babnya belum terdaftar. Begitu bank soalnya
      didaftarkan di data/daftar-bab.json, tombolnya muncul sendiri. */
-  fetch('../data/daftar-bab.json', { cache: 'no-cache' })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (peta) {
-      if (!peta) return;
-      var ada = (peta.kelas || []).some(function (k) {
-        return String(k.tingkat) === '7' &&
-          (k.bab || []).some(function (b) { return b.kode === 'bentuk-aljabar'; });
-      });
-      if (ada) return;
-      document.getElementById('tautanLatihan').innerHTML =
-        '<div class="pesan info">Bank soal latihan untuk bab ini belum tersedia. ' +
-        'Materinya sudah bisa dipelajari, dan tombol latihannya akan muncul sendiri ' +
-        'begitu soalnya ditambahkan.</div>';
-    })
-    .catch(function () { /* biarkan tombolnya apa adanya */ });
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 7, 'bentuk-aljabar');
 })();
 </script>
 </body>

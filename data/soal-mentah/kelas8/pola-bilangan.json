@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "kelas": 8,
+    "semester": 1,
+    "bab": "pola-bilangan",
+    "judul": "Pola Bilangan",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Pola Bilangan",
+    "versi": "2026-09-07"
+  },
+  "soal": [
+    {
+      "id": "pb-01", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Rumus suku ke-$n$ dari barisan $5, 9, 13, 17, 21, \\dots$ adalah ...",
+      "opsi": { "a": "$U_n = 4n + 1$", "b": "$U_n = 4n - 1$", "c": "$U_n = 5n - 4$", "d": "$U_n = n + 4$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Suku pertama $a = 5$ dan bedanya $b = 4$, sehingga $U_n = a + (n-1)b = 5 + 4n - 4 = 4n + 1$."
+    },
+    {
+      "id": "pb-02", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Suku ke-20 dari barisan $5, 9, 13, 17, 21, \\dots$ adalah ...",
+      "jawaban": ["81"],
+      "pembahasan": "$U_n = 4n + 1$, sehingga $U_{20} = 4 \\times 20 + 1 = 81$."
+    },
+    {
+      "id": "pb-03", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Benar atau salah? Bilangan $100$ termasuk salah satu suku barisan $5, 9, 13, 17, 21, \\dots$",
+      "opsi": { "a": "Benar", "b": "Salah" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Misalkan $4n + 1 = 100$, maka $4n = 99$ dan $n = 24{,}75$. Karena $n$ bukan bilangan asli, $100$ bukan suku barisan ini. Semua sukunya bersisa $1$ bila dibagi $4$, sedangkan $100$ habis dibagi $4$."
+    },
+    {
+      "id": "pb-04", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Suku berikutnya dari barisan $3, 6, 12, 24, \\dots$ adalah ...",
+      "opsi": { "a": "$30$", "b": "$36$", "c": "$48$", "d": "$42$" },
+      "kunci": "c",
+      "acakOpsi": true,
+      "pembahasan": "Setiap suku dikalikan $2$, jadi barisannya geometri dengan rasio $2$: $24 \\times 2 = 48$."
+    },
+    {
+      "id": "pb-05", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Suku ke-10 dari barisan $2, 5, 8, 11, \\dots$ adalah ...",
+      "jawaban": ["29"],
+      "pembahasan": "Bedanya $3$ dan suku pertamanya $2$, sehingga $U_n = 3n - 1$ dan $U_{10} = 30 - 1 = 29$."
+    },
+    {
+      "id": "pb-06", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Rumus suku ke-$n$ dari barisan $40, 37, 34, 31, \\dots$ adalah ...",
+      "opsi": { "a": "$U_n = 43 - 3n$", "b": "$U_n = 40 - 3n$", "c": "$U_n = 3n + 37$", "d": "$U_n = 43 + 3n$" },
+      "kunci": "a",
+      "acakOpsi": true,
+      "pembahasan": "Bedanya $-3$, sehingga $U_n = 40 + (n-1)(-3) = 43 - 3n$. Periksa dengan $n = 1$: $43 - 3 = 40$."
+    },
+    {
+      "id": "pb-07", "level": 1, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Suku ke-8 dari barisan bilangan persegi $1, 4, 9, 16, \\dots$ adalah ...",
+      "opsi": { "a": "$49$", "b": "$56$", "c": "$64$", "d": "$81$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Suku ke-$n$ barisan bilangan persegi adalah $n^2$, sehingga $U_8 = 8^2 = 64$."
+    },
+    {
+      "id": "pb-08", "level": 1, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Hasil dari $1 + 3 + 5 + 7 + \\dots + 19$ adalah ...",
+      "jawaban": ["100"],
+      "pembahasan": "Ada $10$ bilangan ganjil pertama. Jumlahnya $S_{10} = \\frac{10}{2}(1 + 19) = 5 \\times 20 = 100$, dan memang jumlah $n$ bilangan ganjil pertama selalu $n^2$."
+    },
+    {
+      "id": "pb-09", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Suatu barisan aritmetika memiliki $U_5 = 23$ dan $U_9 = 43$. Beda barisan tersebut adalah ...",
+      "jawaban": ["5"],
+      "pembahasan": "Dari $U_5$ ke $U_9$ ada $4$ langkah beda: $U_9 - U_5 = 4b$, sehingga $43 - 23 = 4b$ dan $b = 5$."
+    },
+    {
+      "id": "pb-10", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Suatu barisan aritmetika memiliki $U_5 = 23$ dan $U_9 = 43$. Suku pertamanya adalah ...",
+      "opsi": { "a": "$2$", "b": "$3$", "c": "$4$", "d": "$5$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Bedanya $b = 5$. Dari suku ke-5 mundur empat langkah: $a = U_5 - 4b = 23 - 20 = 3$."
+    },
+    {
+      "id": "pb-11", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Jumlah sepuluh suku pertama barisan aritmetika dengan suku pertama $3$ dan beda $5$ adalah ...",
+      "jawaban": ["255"],
+      "pembahasan": "$S_{10} = \\frac{10}{2}\\big(2 \\times 3 + 9 \\times 5\\big) = 5(6 + 45) = 5 \\times 51 = 255$."
+    },
+    {
+      "id": "pb-12", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Suku ke-6 dari barisan geometri $2, 6, 18, \\dots$ adalah ...",
+      "opsi": { "a": "$162$", "b": "$486$", "c": "$729$", "d": "$1.458$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Rasionya $3$, sehingga $U_6 = 2 \\times 3^5 = 2 \\times 243 = 486$. Pangkatnya $5$, bukan $6$, karena suku pertama belum dikalikan rasio."
+    },
+    {
+      "id": "pb-13", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Suatu barisan aritmetika memiliki $U_3 = 10$ dan $U_7 = 26$. Suku ke-10 barisan tersebut adalah ...",
+      "opsi": { "a": "$34$", "b": "$38$", "c": "$42$", "d": "$46$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$U_7 - U_3 = 4b$, sehingga $16 = 4b$ dan $b = 4$. Lalu $a = 10 - 2 \\times 4 = 2$, sehingga $U_{10} = 2 + 9 \\times 4 = 38$."
+    },
+    {
+      "id": "pb-14", "level": 2, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Baris pertama sebuah gedung pertunjukan berisi 12 kursi, dan setiap baris berikutnya bertambah 4 kursi. Banyak kursi pada baris ke-10 adalah ... kursi.",
+      "jawaban": ["48"],
+      "pembahasan": "$U_{10} = 12 + 9 \\times 4 = 12 + 36 = 48$. Yang dikalikan $4$ adalah $9$, bukan $10$, karena baris pertama belum bertambah."
+    },
+    {
+      "id": "pb-15", "level": 2, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Jumlah semua bilangan kelipatan 3 yang lebih dari 1 dan kurang dari 50 adalah ...",
+      "opsi": { "a": "$396$", "b": "$400$", "c": "$408$", "d": "$425$" },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Bilangannya $3, 6, 9, \\dots, 48$ sebanyak $16$ buah. Jumlahnya $S = \\frac{16}{2}(3 + 48) = 8 \\times 51 = 408$."
+    },
+    {
+      "id": "pb-16", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Baris pertama sebuah gedung berisi 12 kursi dan setiap baris berikutnya bertambah 4 kursi. Agar jumlah kursi seluruhnya tepat 600 buah, banyak baris yang harus dibuat adalah ... baris.",
+      "jawaban": ["15"],
+      "pembahasan": "$S_n = \\frac{n}{2}\\big(24 + (n-1)4\\big) = \\frac{n}{2}(4n + 20) = 2n^2 + 10n$. Dari $2n^2 + 10n = 600$ diperoleh $n^2 + 5n - 300 = 0$, yaitu $(n + 20)(n - 15) = 0$. Karena banyak baris positif, $n = 15$."
+    },
+    {
+      "id": "pb-17", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Baris pertama sebuah gedung berisi 12 kursi dan setiap baris berikutnya bertambah 4 kursi. Jika seluruhnya ada 15 baris, banyak kursi pada baris terakhir adalah ... kursi.",
+      "jawaban": ["68"],
+      "pembahasan": "$U_{15} = 12 + 14 \\times 4 = 12 + 56 = 68$."
+    },
+    {
+      "id": "pb-18", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Pola ke-1 tersusun dari 4 batang korek yang membentuk satu persegi. Setiap pola berikutnya menambah satu persegi di sebelah kanannya dengan menambahkan 3 batang. Banyak batang korek pada pola ke-20 adalah ...",
+      "opsi": { "a": "$60$", "b": "$61$", "c": "$63$", "d": "$64$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Barisannya aritmetika dengan $a = 4$ dan $b = 3$, sehingga $U_n = 3n + 1$ dan $U_{20} = 61$. Persegi kedua dan seterusnya hanya butuh 3 batang karena satu sisinya menumpang persegi sebelumnya."
+    },
+    {
+      "id": "pb-19", "level": 3, "tipe": "pg", "aktif": true,
+      "pertanyaan": "Jumlah $n$ suku pertama suatu barisan dirumuskan $S_n = n^2 + 2n$. Suku ke-5 barisan tersebut adalah ...",
+      "opsi": { "a": "$9$", "b": "$11$", "c": "$13$", "d": "$15$" },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Suku ke-5 adalah selisih dua jumlah: $U_5 = S_5 - S_4 = (25 + 10) - (16 + 8) = 35 - 24 = 11$."
+    },
+    {
+      "id": "pb-20", "level": 3, "tipe": "isian", "aktif": true,
+      "pertanyaan": "Seutas tali dipotong menjadi 5 bagian yang panjangnya membentuk barisan geometri. Potongan terpendek 3 cm dan terpanjang 48 cm. Panjang tali semula adalah ... cm.",
+      "jawaban": ["93"],
+      "pembahasan": "$U_5 = ar^4 = 48$ dengan $a = 3$, sehingga $r^4 = 16$ dan $r = 2$. Panjangnya $3 + 6 + 12 + 24 + 48 = 93$ cm."
+    }
+  ]
+}

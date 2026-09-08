@@ -109,12 +109,18 @@
       var tombolMateri = b.materi
         ? '<a class="tombol mungil" href="' + lolos(b.materi) + '">Materi</a>'
         : '';
+      /* Bab yang materinya sudah ada tetapi bank soalnya belum dibuat tetap
+         ditampilkan. Yang disembunyikan cuma tombol latihannya, sebab tombol
+         itu hanya akan membawa ke halaman yang gagal memuat soal. */
+      var tombolLatihan = b.soal
+        ? '<a class="tombol mungil utama" href="' + tautanLatihan + '">Latihan mandiri</a>'
+        : '<span class="kecil samar">Latihan belum tersedia</span>';
       return '<div class="kartu padat">' +
         '<div class="nama">' + lolos(b.judul) + '</div>' +
         '<div class="ket samar kecil">' + lolos(b.ringkas || '') + '</div>' +
-        '<div class="deret" style="margin-top:.6rem">' +
+        '<div class="deret" style="margin-top:.6rem;align-items:center">' +
           tombolMateri +
-          '<a class="tombol mungil utama" href="' + tautanLatihan + '">Latihan mandiri</a>' +
+          tombolLatihan +
         '</div>' +
       '</div>';
     }).join('');

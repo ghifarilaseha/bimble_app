@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 2,
+    "bab": "bangun-ruang-sisi-lengkung",
+    "judul": "Bangun Ruang Sisi Lengkung",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Bangun Ruang Sisi Lengkung",
+    "versi": "2026-09-07"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "br-01",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah tabung berjari-jari alas 7 cm dan tinggi 20 cm. Dengan $\\pi = \\frac{22}{7}$, volume tabung tersebut adalah ... cm$^3$.",
+      "pembahasan": "JFYgPSBccGkgcl4yIHQgPSBcZnJhY3syMn17N30gXHRpbWVzIDQ5IFx0aW1lcyAyMCA9IDIyIFx0aW1lcyA3IFx0aW1lcyAyMCA9IDMuMDgwJCBjbSReMyQu",
+      "kunci": [
+        "a52bbcbee22198366f71f5eec9522326b46a25511b6e58db6ae935ab8b3f9110"
+      ]
+    },
+    {
+      "id": "br-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah tabung tertutup berjari-jari 7 cm dan tinggi 20 cm. Dengan $\\pi = \\frac{22}{7}$, luas permukaannya adalah ...",
+      "opsi": {
+        "a": "$924$ cm$^2$",
+        "b": "$1.078$ cm$^2$",
+        "c": "$1.188$ cm$^2$",
+        "d": "$1.408$ cm$^2$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JEwgPSAyXHBpIHIociArIHQpID0gMiBcdGltZXMgXGZyYWN7MjJ9ezd9IFx0aW1lcyA3IFx0aW1lcyAyNyA9IDQ0IFx0aW1lcyAyNyA9IDEuMTg4JCBjbSReMiQuIEthcmVuYSB0ZXJ0dXR1cCwga2VkdWEgdHV0dXBueWEgaWt1dCBkaWhpdHVuZy4=",
+      "kunci": "4c202ff31c2d5db2e4e67087b07723ecba638fca96ecfb06f9c1fc6806c8b9aa"
+    },
+    {
+      "id": "br-03",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah kerucut berjari-jari 7 cm dan tinggi 12 cm. Dengan $\\pi = \\frac{22}{7}$, volumenya adalah ... cm$^3$.",
+      "pembahasan": "JFYgPSBcZnJhY3sxfXszfVxwaSByXjIgdCA9IFxmcmFjezF9ezN9IFx0aW1lcyBcZnJhY3syMn17N30gXHRpbWVzIDQ5IFx0aW1lcyAxMiA9IFxmcmFjezIyIFx0aW1lcyA3IFx0aW1lcyAxMn17M30gPSA2MTYkIGNtJF4zJC4=",
+      "kunci": [
+        "940bfc8ad26e05f08d2c032b8d92ed8c0ab8846d46801093b1515693fa4d5a83"
+      ]
+    },
+    {
+      "id": "br-04",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Luas selimut tabung berjari-jari 7 cm dan tinggi 10 cm, dengan $\\pi = \\frac{22}{7}$, adalah ...",
+      "opsi": {
+        "a": "$220$ cm$^2$",
+        "b": "$308$ cm$^2$",
+        "c": "$440$ cm$^2$",
+        "d": "$880$ cm$^2$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U2VsaW11dCB0YWJ1bmcgYWRhbGFoIHBlcnNlZ2kgcGFuamFuZyBkZW5nYW4gcGFuamFuZyBrZWxpbGluZyBhbGFzOiAkTCA9IDJccGkgciB0ID0gMiBcdGltZXMgXGZyYWN7MjJ9ezd9IFx0aW1lcyA3IFx0aW1lcyAxMCA9IDQ0MCQgY20kXjIkLg==",
+      "kunci": "9bc9759ed8b3b3a8df0f4c3d47a764cd59d1982351e574b7645f30ff1a65cfce"
+    },
+    {
+      "id": "br-05",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah kerucut berjari-jari 6 cm dan tinggi 8 cm. Panjang garis pelukisnya adalah ... cm.",
+      "pembahasan": "JHMgPSBcc3FydHtyXjIgKyB0XjJ9ID0gXHNxcnR7MzYgKyA2NH0gPSBcc3FydHsxMDB9ID0gMTAkIGNtLiBHYXJpcyBwZWx1a2lzIGFkYWxhaCBzaXNpIG1pcmluZyBzZWdpdGlnYSBzaWt1LXNpa3UgZGFyaSBqYXJpLWphcmkgZGFuIHRpbmdnaS4=",
+      "kunci": [
+        "ff5fa2656990bb7ede2b49440eb91450eefe762718985b671cbb67782d385f58"
+      ]
+    },
+    {
+      "id": "br-06",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Luas permukaan bola berjari-jari 7 cm, dengan $\\pi = \\frac{22}{7}$, adalah ...",
+      "opsi": {
+        "a": "$154$ cm$^2$",
+        "b": "$308$ cm$^2$",
+        "c": "$616$ cm$^2$",
+        "d": "$1.232$ cm$^2$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JEwgPSA0XHBpIHJeMiA9IDQgXHRpbWVzIFxmcmFjezIyfXs3fSBcdGltZXMgNDkgPSA0IFx0aW1lcyAxNTQgPSA2MTYkIGNtJF4yJC4=",
+      "kunci": "02ac50ca137fdd5c0d06405fc743f72996ebd54dfa37804933d61b3de6ada0cc"
+    },
+    {
+      "id": "br-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Rumus volume kerucut adalah ...",
+      "opsi": {
+        "a": "$\\frac{1}{3}\\pi r^2 t$",
+        "b": "$\\pi r^2 t$",
+        "c": "$\\frac{4}{3}\\pi r^3$",
+        "d": "$\\pi r (r + s)$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "Vm9sdW1lIGtlcnVjdXQgc2VwZXJ0aWdhIHZvbHVtZSB0YWJ1bmcgeWFuZyBhbGFzIGRhbiB0aW5nZ2lueWEgc2FtYSwgeWFpdHUgJFxmcmFjezF9ezN9XHBpIHJeMiB0JC4=",
+      "kunci": "e9a1b8ab3b3079376405f061caebd65d0eec1cac5f7c5425a430f5d297a8166f"
+    },
+    {
+      "id": "br-08",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Luas selimut kerucut berjari-jari 7 cm dengan garis pelukis 10 cm, dengan $\\pi = \\frac{22}{7}$, adalah ... cm$^2$.",
+      "pembahasan": "JEwgPSBccGkgciBzID0gXGZyYWN7MjJ9ezd9IFx0aW1lcyA3IFx0aW1lcyAxMCA9IDIyMCQgY20kXjIkLiBZYW5nIGRpcGFrYWkgZ2FyaXMgcGVsdWtpcywgYnVrYW4gdGluZ2dpbnlhLg==",
+      "kunci": [
+        "61bf09185a38c69a6d99e8825e512694d87d9827bb722c2314bc58271ac25864"
+      ]
+    },
+    {
+      "id": "br-09",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah tabung berdiameter 14 cm dan tinggi 10 cm. Dengan $\\pi = \\frac{22}{7}$, volumenya adalah ...",
+      "opsi": {
+        "a": "$770$ cm$^3$",
+        "b": "$1.540$ cm$^3$",
+        "c": "$3.080$ cm$^3$",
+        "d": "$6.160$ cm$^3$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "SmFyaS1qYXJpbnlhIHNldGVuZ2FoIGRpYW1ldGVyLCB5YWl0dSAkNyQgY20uIE1ha2EgJFYgPSBcZnJhY3syMn17N30gXHRpbWVzIDQ5IFx0aW1lcyAxMCA9IDEuNTQwJCBjbSReMyQuIE1lbWFrYWkgJDE0JCBzZWJhZ2FpIGphcmktamFyaSBha2FuIG1lbWJlcmkgaGFzaWwgZW1wYXQga2FsaSBsaXBhdC4=",
+      "kunci": "854c3b94c6d3a094b5f13b68e18335f291ead30e5fbc5fd73b2bbb271606c69b"
+    },
+    {
+      "id": "br-10",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Volume sebuah tabung 1.540 cm$^3$ dan jari-jari alasnya 7 cm. Dengan $\\pi = \\frac{22}{7}$, tinggi tabung tersebut adalah ... cm.",
+      "pembahasan": "THVhcyBhbGFzbnlhICRcZnJhY3syMn17N30gXHRpbWVzIDQ5ID0gMTU0JCBjbSReMiQsIHNlaGluZ2dhICQxNTR0ID0gMS41NDAkIGRhbiAkdCA9IDEwJCBjbS4=",
+      "kunci": [
+        "25af009a94dd39509e509c061b6c1ada518002c232c28cfda323f52e4a91fade"
+      ]
+    },
+    {
+      "id": "br-11",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Luas permukaan bola berdiameter 21 cm, dengan $\\pi = \\frac{22}{7}$, adalah ...",
+      "opsi": {
+        "a": "$346{,}5$ cm$^2$",
+        "b": "$693$ cm$^2$",
+        "c": "$1.386$ cm$^2$",
+        "d": "$2.772$ cm$^2$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "SmFyaS1qYXJpbnlhICQxMHssfTUkIGNtLCBzZWhpbmdnYSAkTCA9IDQgXHRpbWVzIFxmcmFjezIyfXs3fSBcdGltZXMgMTEweyx9MjUgPSA0IFx0aW1lcyAzNDZ7LH01ID0gMS4zODYkIGNtJF4yJC4=",
+      "kunci": "05e0268b4cb3280ce9a30cf8796c9064f28d36883685cd85fddb494612894b07"
+    },
+    {
+      "id": "br-12",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah kerucut berjari-jari 3 cm dan tinggi 7 cm. Dengan $\\pi = \\frac{22}{7}$, volumenya adalah ... cm$^3$.",
+      "pembahasan": "JFYgPSBcZnJhY3sxfXszfSBcdGltZXMgXGZyYWN7MjJ9ezd9IFx0aW1lcyA5IFx0aW1lcyA3ID0gXGZyYWN7MjIgXHRpbWVzIDl9ezN9ID0gNjYkIGNtJF4zJC4=",
+      "kunci": [
+        "894f830cd9983059182c0f280b46a0eeddb60c02f436903832d997df60311dd8"
+      ]
+    },
+    {
+      "id": "br-13",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah bola dimasukkan ke dalam tabung sehingga menyinggung alas, tutup, dan sisi lengkungnya. Perbandingan volume bola terhadap volume tabung adalah ...",
+      "opsi": {
+        "a": "$1 : 2$",
+        "b": "$2 : 3$",
+        "c": "$1 : 3$",
+        "d": "$3 : 4$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "VGluZ2dpIHRhYnVuZ255YSAkMnIkLCBzZWhpbmdnYSAkVl97XHRleHR7dGFidW5nfX0gPSBccGkgcl4yIFx0aW1lcyAyciA9IDJccGkgcl4zJCwgc2VkYW5na2FuICRWX3tcdGV4dHtib2xhfX0gPSBcZnJhY3s0fXszfVxwaSByXjMkLiBQZXJiYW5kaW5nYW5ueWEgJFxmcmFjezR9ezN9IDogMiA9IDIgOiAzJC4=",
+      "kunci": "9d46977119f442da424d280e340e9ee9a10be3aae4d9669be25484a5056bc432"
+    },
+    {
+      "id": "br-14",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah tabung tanpa tutup berjari-jari 7 cm dan tinggi 13 cm. Dengan $\\pi = \\frac{22}{7}$, luas permukaannya adalah ... cm$^2$.",
+      "pembahasan": "QWxhc255YSBzYXR1IHNhamE6ICRMID0gXHBpIHJeMiArIDJccGkgciB0ID0gMTU0ICsgNTcyID0gNzI2JCBjbSReMiQu",
+      "kunci": [
+        "cb8c0e7df5c6854dd4d31f010306a50a496f2ca5a207e4a5610e53d17523eb80"
+      ]
+    },
+    {
+      "id": "br-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah kerucut berjari-jari 7 cm dan tinggi 24 cm. Dengan $\\pi = \\frac{22}{7}$, luas permukaannya adalah ...",
+      "opsi": {
+        "a": "$550$ cm$^2$",
+        "b": "$704$ cm$^2$",
+        "c": "$792$ cm$^2$",
+        "d": "$154$ cm$^2$"
+      },
+      "acakOpsi": false,
+      "pembahasan": "R2FyaXMgcGVsdWtpc255YSAkcyA9IFxzcXJ0ezQ5ICsgNTc2fSA9IFxzcXJ0ezYyNX0gPSAyNSQgY20uIE1ha2EgJEwgPSBccGkgcihyICsgcykgPSBcZnJhY3syMn17N30gXHRpbWVzIDcgXHRpbWVzIDMyID0gNzA0JCBjbSReMiQu",
+      "kunci": "f782e45df7cb14b37bc4e8c479ae63e7c01ff79dc97488c1b7955d4be1e565d4"
+    },
+    {
+      "id": "br-16",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Wadah berbentuk kerucut berjari-jari 7 cm dan tinggi 12 cm terisi penuh air. Seluruh airnya dituang ke tabung kosong berjari-jari 7 cm tanpa tumpah. Tinggi permukaan air dalam tabung adalah ... cm.",
+      "pembahasan": "Vm9sdW1lIGFpcm55YSAkNjE2JCBjbSReMyQuIEx1YXMgYWxhcyB0YWJ1bmdueWEgJDE1NCQgY20kXjIkLCBzZWhpbmdnYSAkMTU0aCA9IDYxNiQgZGFuICRoID0gNCQgY20uIFVudHVrIGphcmktamFyaSB5YW5nIHNhbWEsIHRpbmdnaSBhaXIgc2VsYWx1IHNlcGVydGlnYSB0aW5nZ2kga2VydWN1dG55YS4=",
+      "kunci": [
+        "58e4b6ded31af6c0c1e229e328f1eddbe6ba74494c511a5bcef237f3e393f36f"
+      ]
+    },
+    {
+      "id": "br-17",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Air sebanyak 616 cm$^3$ dituang ke dalam tabung berjari-jari 14 cm. Dengan $\\pi = \\frac{22}{7}$, tinggi permukaan airnya adalah ... cm.",
+      "pembahasan": "THVhcyBhbGFzbnlhICRcZnJhY3syMn17N30gXHRpbWVzIDE5NiA9IDYxNiQgY20kXjIkLCBzZWhpbmdnYSAkNjE2aCA9IDYxNiQgZGFuICRoID0gMSQgY20u",
+      "kunci": [
+        "9501323a6ef62d68a37ee5946a04290b60ff3d665fbdbbddb0ba93517f1eb073"
+      ]
+    },
+    {
+      "id": "br-18",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sejumlah air dituang ke sebuah tabung. Jika air yang sama dituang ke tabung lain yang jari-jarinya dua kali lipat, tinggi permukaan airnya menjadi ...",
+      "opsi": {
+        "a": "seperempat kali semula",
+        "b": "setengah kali semula",
+        "c": "dua kali semula",
+        "d": "tetap"
+      },
+      "acakOpsi": true,
+      "pembahasan": "SmFyaS1qYXJpIGR1YSBrYWxpIG1lbWJ1YXQgbHVhcyBhbGFzbnlhICQyXjIgPSA0JCBrYWxpLiBLYXJlbmEgdm9sdW1lIGFpcm55YSB0ZXRhcCwgdGluZ2dpbnlhIG1lbmphZGkgJFxmcmFjezF9ezR9JCBrYWxpIHNlbXVsYS4=",
+      "kunci": "d9e0d88059bf2771836e6156126c476d1ad0fa99068c534b15068a4de90eaa5e"
+    },
+    {
+      "id": "br-19",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah tangki berbentuk tabung berjari-jari 7 dm dan tinggi 10 dm terisi air setengahnya. Dengan $\\pi = \\frac{22}{7}$ dan 1 dm$^3$ = 1 liter, volume air di dalamnya adalah ...",
+      "opsi": {
+        "a": "$770$ liter",
+        "b": "$1.540$ liter",
+        "c": "$385$ liter",
+        "d": "$154$ liter"
+      },
+      "acakOpsi": false,
+      "pembahasan": "Vm9sdW1lIHBlbnVobnlhICRcZnJhY3syMn17N30gXHRpbWVzIDQ5IFx0aW1lcyAxMCA9IDEuNTQwJCBkbSReMyQsIHNlaGluZ2dhIHNldGVuZ2FobnlhICQ3NzAkIGxpdGVyLg==",
+      "kunci": "8c578d2b5a067c6f520747a5ae5b8610e9c4dd9dc626c190223ff63fd3a3b612"
+    },
+    {
+      "id": "br-20",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah bola berjari-jari 3 cm dimasukkan ke dalam gelas berbentuk tabung berjari-jari 3 cm yang berisi air, dan bola itu tenggelam seluruhnya. Permukaan air naik setinggi ... cm.",
+      "pembahasan": "Vm9sdW1lIGJvbGFueWEgJFxmcmFjezR9ezN9XHBpIFx0aW1lcyAyNyA9IDM2XHBpJCBjbSReMyQsIGRhbiBsdWFzIGFsYXMgZ2VsYXNueWEgJDlccGkkIGNtJF4yJC4gS2VuYWlrYW4gYWlybnlhICRcZnJhY3szNlxwaX17OVxwaX0gPSA0JCBjbSwgc2VoaW5nZ2EgbmlsYWkgJFxwaSQgdGlkYWsgcGVybHUgZGlwYWthaSBzYW1hIHNla2FsaS4=",
+      "kunci": [
+        "4ad0f1434ddd3d2a37f8ef24e752725522f061782f390728f5474e70c9669fff"
+      ]
+    }
+  ]
+}

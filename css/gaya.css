@@ -15,6 +15,20 @@
   --salah-lembut: #fef2f2;
   --sorot: #b45309;
   --sorot-lembut: #fffbeb;
+
+  /* Warna peran: dipakai untuk menandai bagian bentuk aljabar, bukan untuk
+     menandai benar-salah. Sengaja berawalan --peran- supaya tidak tertukar
+     dengan warna status di atas. Siswa belajar kode warna ini sekali, lalu
+     artinya sama di semua bab dan semua kelas. Warna tidak pernah menjadi
+     satu-satunya pembawa makna: istilahnya tetap ditulis, dan legendanya
+     wajib muncul saat pertama dipakai di sebuah halaman. */
+  --peran-variabel: #0f766e;
+  --peran-variabel-lembut: #e6f5f2;
+  --peran-koefisien: #9a3412;
+  --peran-koefisien-lembut: #fdf0e8;
+  --peran-konstanta: #5b21b6;
+  --peran-konstanta-lembut: #f2ecfd;
+
   --lengkung: 10px;
   --bayang: 0 1px 2px rgba(27, 26, 23, .06), 0 4px 12px rgba(27, 26, 23, .04);
 }
@@ -442,6 +456,65 @@ td.bebas { white-space: normal; }
 
 .qr { image-rendering: pixelated; border: 8px solid #fff; background: #fff; display: block; }
 
+/* ---------- warna peran dan legendanya ---------- */
+
+.peran-v { color: var(--peran-variabel); font-style: italic; }
+.peran-k { color: var(--peran-koefisien); }
+.peran-c { color: var(--peran-konstanta); }
+.peran-v, .peran-k, .peran-c { font-weight: 600; }
+
+/* Latar lembut dipakai saat menyorot sekelompok suku sejenis, bukan satu
+   bagian suku. Keduanya jangan dipakai bersamaan pada elemen yang sama. */
+.sorot-v { background: var(--peran-variabel-lembut); }
+.sorot-k { background: var(--peran-koefisien-lembut); }
+.sorot-c { background: var(--peran-konstanta-lembut); }
+.sorot-v, .sorot-k, .sorot-c { padding: .05em .25em; border-radius: 4px; }
+
+.legenda { display: flex; flex-wrap: wrap; gap: .9rem; margin: .8rem 0 0; font-size: .875rem; }
+.legenda span { display: inline-flex; align-items: center; gap: .45rem; }
+.legenda i { width: .7rem; height: .7rem; border-radius: 3px; display: inline-block; flex: none; }
+
+/* ---------- langkah bertahap ---------- */
+
+/* Garis waktu tegak. Langkah terakhir diberi titik lebih besar berwarna
+   aksen supaya mata tahu di mana jawabannya berhenti. */
+.langkah { list-style: none; padding: 0; margin: 1rem 0 0; }
+.langkah li { border-left: 2px solid var(--garis); padding: .1rem 0 1.1rem 1rem; position: relative; }
+.langkah li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.langkah li::before {
+  content: ""; position: absolute; left: -5px; top: .5rem;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--garis);
+}
+.langkah li:last-child::before { background: var(--aksen); width: 10px; height: 10px; left: -6px; }
+.langkah .judul-langkah { display: block; font-size: .8rem; color: var(--tinta-lembut); margin-bottom: .15rem; }
+
+/* ---------- penggeser ---------- */
+
+/* Bawaan peramban tidak konsisten dan tidak mengikuti mode gelap, jadi
+   digambar sendiri. Tinggi 2.75rem menyamakan sasaran sentuhnya dengan
+   tombol; batangnya sendiri tetap tipis. */
+input[type=range] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 2.75rem; background: none; cursor: pointer;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 6px; border-radius: 3px; background: var(--garis);
+}
+input[type=range]::-moz-range-track {
+  height: 6px; border-radius: 3px; background: var(--garis);
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; margin-top: -8px;
+  border-radius: 50%; background: var(--aksen); border: 2px solid var(--kartu);
+}
+input[type=range]::-moz-range-thumb {
+  width: 22px; height: 22px;
+  border-radius: 50%; background: var(--aksen); border: 2px solid var(--kartu);
+}
+input[type=range]:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--aksen); outline-offset: 2px; }
+input[type=range]:focus-visible::-moz-range-thumb { outline: 2px solid var(--aksen); outline-offset: 2px; }
+
 /* ---------- rumus ---------- */
 
 .katex { font-size: 1.05em; }
@@ -472,6 +545,16 @@ td.bebas { white-space: normal; }
     --salah-lembut: #2c1717;
     --sorot: #f0c069;
     --sorot-lembut: #2a2113;
+
+    /* Warna peran ikut dicerahkan seperti warna status di atas, supaya
+       kontrasnya terhadap latar gelap tetap terbaca. */
+    --peran-variabel: #5fd6c4;
+    --peran-variabel-lembut: #12292a;
+    --peran-koefisien: #f0a878;
+    --peran-koefisien-lembut: #2b1d14;
+    --peran-konstanta: #c4a8f5;
+    --peran-konstanta-lembut: #221a33;
+
     --bayang: 0 1px 2px rgba(0, 0, 0, .4);
   }
   .tombol.utama { color: #10131f; }

@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 2,
+    "bab": "kesebangunan",
+    "judul": "Kesebangunan dan Kekongruenan",
+    "sumber": "Soal latihan kelas 8 dan 9, bagian Kesebangunan dan Kekongruenan",
+    "versi": "2026-09-07"
+  },
+  "terkunci": true,
+  "digembok": "2026-09-07",
+  "soal": [
+    {
+      "id": "ks-01",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $AB = 6$ cm sebangun dengan segitiga $PQR$, dan $PQ = 9$ cm bersesuaian dengan $AB$. Faktor skala kesebangunannya adalah ... (tulis sebagai pecahan atau desimal)",
+      "pembahasan": "RmFrdG9yIHNrYWxhICQ9IFxmcmFje1BRfXtBQn0gPSBcZnJhY3s5fXs2fSA9IFxmcmFjezN9ezJ9JC4gS2FyZW5hIGxlYmloIGRhcmkgJDEkLCBzZWdpdGlnYSAkUFFSJCBtZXJ1cGFrYW4gcGVyYmVzYXJhbiBzZWdpdGlnYSAkQUJDJC4=",
+      "kunci": [
+        "edf7389e27d20777c77f48ad56717c77d740d98553e6b64b4c31c568abdeb665",
+        "7181b4d0d821307d07e95a5428a89de9b5a18b1803ce38047f36de2dba0ba43f",
+        "8ee3e2396770badbc7d982fc71d523ff56b47b17d43b3571d5c286b4d87b34c1"
+      ]
+    },
+    {
+      "id": "ks-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $AB = 6$ cm, $BC = 8$ cm, dan $AC = 10$ cm sebangun dengan segitiga $PQR$ yang $PQ = 9$ cm. Panjang $QR$ adalah ...",
+      "opsi": {
+        "a": "$10$ cm",
+        "b": "$12$ cm",
+        "c": "$13$ cm",
+        "d": "$15$ cm"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RmFrdG9yIHNrYWxhbnlhICRcZnJhY3szfXsyfSQsIHNlaGluZ2dhICRRUiA9IFxmcmFjezN9ezJ9IFx0aW1lcyA4ID0gMTIkIGNtLiBTaXNpIHlhbmcgZGlrYWxpa2FuIGFkYWxhaCBwYXNhbmdhbiAkQkMkLCBidWthbiBzaXNpIHNlbWJhcmFuZy4=",
+      "kunci": "0b0e0ce31b7d519fa61b714a717464588e753056240f4e76a9a4fa2d1e9223c6"
+    },
+    {
+      "id": "ks-03",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ dengan $AC = 10$ cm sebangun dengan segitiga $PQR$ dengan faktor skala $\\frac{3}{2}$. Panjang $PR$ adalah ... cm.",
+      "pembahasan": "JFBSID0gXGZyYWN7M317Mn0gXHRpbWVzIDEwID0gMTUkIGNtLg==",
+      "kunci": [
+        "68f43481882ab176e43919a275da66ac5018613fc9beb4a6e70a57c0d19483a8"
+      ]
+    },
+    {
+      "id": "ks-04",
+      "level": 1,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Segitiga $PQR$ memiliki $PQ = 9$ cm, $QR = 12$ cm, dan $PR = 15$ cm. Kelilingnya adalah ... cm.",
+      "pembahasan": "JDkgKyAxMiArIDE1ID0gMzYkIGNtLiBQZXJpa3NhIGRlbmdhbiBjYXJhIGxhaW46IGtlbGlsaW5nIHNlZ2l0aWdhIGFzYWxueWEgJDI0JCBjbSwgZGFuICRcZnJhY3szfXsyfSBcdGltZXMgMjQgPSAzNiQgY20sIGthcmVuYSBrZWxpbGluZyBpa3V0IGZha3RvciBza2FsYW55YS4=",
+      "kunci": [
+        "fb995cfc5f1f4143f4fdcea262171e5ebeea246b631b5d2a7c04d4fb9fa5a349"
+      ]
+    },
+    {
+      "id": "ks-05",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dua bangun dikatakan kongruen apabila ...",
+      "opsi": {
+        "a": "bentuk dan ukurannya sama",
+        "b": "bentuknya sama, ukurannya boleh berbeda",
+        "c": "luasnya sama walaupun bentuknya berbeda",
+        "d": "kelilingnya sama walaupun bentuknya berbeda"
+      },
+      "acakOpsi": true,
+      "pembahasan": "S29uZ3J1ZW4gYmVyYXJ0aSBzYW1hIGRhbiBzZWJhbmd1bjogc2lzaSB5YW5nIGJlcnNlc3VhaWFuIHNhbWEgcGFuamFuZyBkYW4gc3VkdXQgeWFuZyBiZXJzZXN1YWlhbiBzYW1hIGJlc2FyLiBCZW50dWsgc2FtYSBkZW5nYW4gdWt1cmFuIGJlcmJlZGEgaGFueWEgc2ViYW5ndW4u",
+      "kunci": "e70749c5e50eaec0ac6526aaf86769f095905262d8bfa61676997d710bbd3b68"
+    },
+    {
+      "id": "ks-06",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dua segitiga pasti sebangun apabila ...",
+      "opsi": {
+        "a": "sudut-sudut yang bersesuaian sama besar",
+        "b": "kelilingnya sama",
+        "c": "luasnya sama",
+        "d": "salah satu sudutnya sama besar"
+      },
+      "acakOpsi": true,
+      "pembahasan": "UGFkYSBzZWdpdGlnYSwgc3VkdXQgeWFuZyBiZXJzZXN1YWlhbiBzYW1hIGJlc2FyIHN1ZGFoIG1lbWFrc2Egc2lzaW55YSBiZXJiYW5kaW5nIHNhbWEuIFNhdHUgc3VkdXQgc2FtYSBzYWphIGJlbHVtIGN1a3VwLCBkYW4ga2VsaWxpbmcgYXRhdSBsdWFzIHlhbmcgc2FtYSB0aWRhayBtZW5qYW1pbiBiZW50dWtueWEgc2FtYS4=",
+      "kunci": "1b28c7cee93ed5e9f9b0de65d02152bd355b375fb8ea31fd03510bb7702a224d"
+    },
+    {
+      "id": "ks-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah foto berukuran 4 cm $\\times$ 6 cm diperbesar sehingga sisi terpendeknya menjadi 12 cm. Sisi terpanjangnya menjadi ...",
+      "opsi": {
+        "a": "$14$ cm",
+        "b": "$16$ cm",
+        "c": "$18$ cm",
+        "d": "$24$ cm"
+      },
+      "acakOpsi": false,
+      "pembahasan": "RmFrdG9yIHNrYWxhbnlhICRcZnJhY3sxMn17NH0gPSAzJCwgc2VoaW5nZ2Egc2lzaSBwYW5qYW5nbnlhICQzIFx0aW1lcyA2ID0gMTgkIGNtLiBVa3VyYW5ueWEgZGlrYWxpa2FuLCBidWthbiBkaXRhbWJhaCAkOCQu",
+      "kunci": "196b233516f648fb080292cc9b7b26a724e8238c6e72143a3527284bca341d66"
+    },
+    {
+      "id": "ks-08",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Benar atau salah? Dua buah persegi selalu sebangun.",
+      "opsi": {
+        "a": "Benar",
+        "b": "Salah"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U2VtdWEgc3VkdXQgcGVyc2VnaSAkOTBeXGNpcmMkIGRhbiBrZWVtcGF0IHNpc2lueWEgc2FtYSBwYW5qYW5nLCBzZWhpbmdnYSBwZXJiYW5kaW5nYW4gc2lzaSB5YW5nIGJlcnNlc3VhaWFuIHNlbGFsdSBzYW1hLiBEdWEgcGVyc2VnaSBwYW5qYW5nIGJlbHVtIHRlbnR1IHNlYmFuZ3VuLg==",
+      "kunci": "09a0345717fa7dc36ce9e78b6c479728b5c914e52cc94ced2332a354b13518a1"
+    },
+    {
+      "id": "ks-09",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ siku-siku di $A$ dengan garis tinggi $AD$ tegak lurus $BC$. Jika $BD = 9$ cm dan $DC = 16$ cm, panjang $AD$ adalah ... cm.",
+      "pembahasan": "JEFEXjIgPSBCRCBcdGltZXMgREMgPSA5IFx0aW1lcyAxNiA9IDE0NCQsIHNlaGluZ2dhICRBRCA9IDEyJCBjbS4gR2FyaXMgdGluZ2dpIGtlIHNpc2kgbWlyaW5nIGFkYWxhaCByYXRhLXJhdGEgdWt1ciBrZWR1YSBwb3Rvbmdhbm55YS4=",
+      "kunci": [
+        "6a0687b580357744fbfd8f91b898e6b2a8da3d3d30e7dc019db5d4936081d5b4"
+      ]
+    },
+    {
+      "id": "ks-10",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ siku-siku di $A$ dengan garis tinggi $AD$ tegak lurus $BC$, $BD = 9$ cm, dan $DC = 16$ cm. Panjang $AB$ adalah ... cm.",
+      "pembahasan": "U2lzaSBtaXJpbmdueWEgJEJDID0gOSArIDE2ID0gMjUkIGNtLCBzZWhpbmdnYSAkQUJeMiA9IEJEIFx0aW1lcyBCQyA9IDkgXHRpbWVzIDI1ID0gMjI1JCBkYW4gJEFCID0gMTUkIGNtLiBZYW5nIGRpa2FsaWthbiBhZGFsYWggcG90b25nYW4geWFuZyBtZW5lbXBlbCBwYWRhICRBQiQu",
+      "kunci": [
+        "4d0e3bdf151733730645f33e049d4161902aff678823e885c4e91ab296103c00"
+      ]
+    },
+    {
+      "id": "ks-11",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ siku-siku di $A$ dengan garis tinggi $AD$ tegak lurus $BC$, $BD = 9$ cm, dan $DC = 16$ cm. Panjang $AC$ adalah ...",
+      "opsi": {
+        "a": "$18$ cm",
+        "b": "$20$ cm",
+        "c": "$24$ cm",
+        "d": "$25$ cm"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JEFDXjIgPSBEQyBcdGltZXMgQkMgPSAxNiBcdGltZXMgMjUgPSA0MDAkLCBzZWhpbmdnYSAkQUMgPSAyMCQgY20uIFBlcmlrc2EgZGVuZ2FuIFB5dGhhZ29yYXM6ICQxNV4yICsgMjBeMiA9IDYyNSA9IDI1XjIkLg==",
+      "kunci": "6cad9bced067bec996ab4851f8a04c8d585f3c9dae10046102fb8462a58f7880"
+    },
+    {
+      "id": "ks-12",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah tiang setinggi 3 m memiliki bayangan sepanjang 4 m. Pada saat yang sama, bayangan sebuah gedung 20 m. Tinggi gedung tersebut adalah ...",
+      "opsi": {
+        "a": "$12$ m",
+        "b": "$15$ m",
+        "c": "$18$ m",
+        "d": "$26$ m"
+      },
+      "acakOpsi": false,
+      "pembahasan": "U2VnaXRpZ2EgdGlhbmcgZGFuIGJheWFuZ2FubnlhIHNlYmFuZ3VuIGRlbmdhbiBzZWdpdGlnYSBnZWR1bmc6ICRcZnJhY3szfXs0fSA9IFxmcmFje3R9ezIwfSQsIHNlaGluZ2dhICR0ID0gMTUkIG0u",
+      "kunci": "ea4af3a8ce9bd20534383f7fd69b0432fd8c50f17eca69933bc6e21af5ad84db"
+    },
+    {
+      "id": "ks-13",
+      "level": 2,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Dua segitiga sebangun. Sisi 6 cm pada segitiga pertama bersesuaian dengan sisi 9 cm pada segitiga kedua. Sisi 8 cm pada segitiga pertama bersesuaian dengan sisi ... cm pada segitiga kedua.",
+      "pembahasan": "RmFrdG9yIHNrYWxhbnlhICRcZnJhY3s5fXs2fSA9IFxmcmFjezN9ezJ9JCwgc2VoaW5nZ2Egc2lzaW55YSBtZW5qYWRpICRcZnJhY3szfXsyfSBcdGltZXMgOCA9IDEyJCBjbS4=",
+      "kunci": [
+        "4b58f87cbf046446a68a0a098d5bc1066dc9b7ab5318d1a1e8eb991f8b6e2d72"
+      ]
+    },
+    {
+      "id": "ks-14",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dua bangun sebangun memiliki faktor skala $\\frac{3}{2}$. Perbandingan luas kedua bangun tersebut adalah ...",
+      "opsi": {
+        "a": "$\\frac{3}{2}$",
+        "b": "$\\frac{9}{4}$",
+        "c": "$\\frac{6}{4}$",
+        "d": "$\\frac{27}{8}$"
+      },
+      "acakOpsi": true,
+      "pembahasan": "THVhcyBkaWJhbmd1biBkYXJpIGR1YSB1a3VyYW4gcGFuamFuZywgc2VoaW5nZ2EgcGVyYmFuZGluZ2FubnlhIGt1YWRyYXQgZmFrdG9yIHNrYWxhOiAkXGxlZnQoXGZyYWN7M317Mn1ccmlnaHQpXjIgPSBcZnJhY3s5fXs0fSQu",
+      "kunci": "a8c6d0543058cf56eb33138b9fd06bd7f729e689ccf1bda235fd13442ef5c1ba"
+    },
+    {
+      "id": "ks-15",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Pada segitiga $ABC$, titik $D$ pada $AB$ dan titik $E$ pada $AC$ dengan $DE$ sejajar $BC$. Jika $AD = 4$ cm, $DB = 6$ cm, dan $AE = 6$ cm, panjang $EC$ adalah ...",
+      "opsi": {
+        "a": "$8$ cm",
+        "b": "$9$ cm",
+        "c": "$10$ cm",
+        "d": "$12$ cm"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JERFJCBzZWphamFyICRCQyQgbWVtYnVhdCBrZWR1YSBzZWdpdGlnYSBzZWJhbmd1bjogJFxmcmFje0FEfXtEQn0gPSBcZnJhY3tBRX17RUN9JCwgc2VoaW5nZ2EgJFxmcmFjezR9ezZ9ID0gXGZyYWN7Nn17RUN9JCBkYW4gJEVDID0gOSQgY20u",
+      "kunci": "663cebac3249df3a867291dbcc48a9373750f36074b6234a0b58d02fffaf47fd"
+    },
+    {
+      "id": "ks-16",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Trapesium $ABCD$ memiliki sisi sejajar $AB = 18$ cm dan $DC = 8$ cm. Titik $E$ pada $AD$ dan $F$ pada $BC$ sehingga $EF$ sejajar $AB$ dan $DE : EA = 2 : 3$. Panjang $EF$ adalah ... cm.",
+      "pembahasan": "JEVGID0gXGZyYWN7RUEgXHRpbWVzIERDICsgREUgXHRpbWVzIEFCfXtERSArIEVBfSA9IFxmcmFjezMgXHRpbWVzIDggKyAyIFx0aW1lcyAxOH17NX0gPSBcZnJhY3syNCArIDM2fXs1fSA9IDEyJCBjbS4gU2lzaSB5YW5nIGRpa2FsaWthbiBhZGFsYWggYmFnaWFuIHlhbmcgYmVyc2ViZXJhbmdhbiBkZW5nYW5ueWEu",
+      "kunci": [
+        "afedc43a99db9cf0149e09fdc80f3d66d1a7697cd1753e7bcd2eabce288eddee"
+      ]
+    },
+    {
+      "id": "ks-17",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Sebuah model pesawat dibuat dengan skala $1 : 200$. Panjang model 15 cm. Panjang pesawat sebenarnya adalah ...",
+      "opsi": {
+        "a": "$3$ m",
+        "b": "$30$ m",
+        "c": "$300$ m",
+        "d": "$13{,}3$ m"
+      },
+      "acakOpsi": false,
+      "pembahasan": "JDE1IFx0aW1lcyAyMDAgPSAzLjAwMCQgY20gJD0gMzAkIG0uIFNhdHVhbm55YSBoYXJ1cyBkaXViYWggbGViaWggZHVsdSBzdXBheWEgdGlkYWsgc2FsYWggc2VyYXR1cyBrYWxpIGxpcGF0Lg==",
+      "kunci": "58778ba54c6277cf7dfc3ad52feef5fe81cc535ac87e90da26159e0fce2baa5c"
+    },
+    {
+      "id": "ks-18",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Segitiga $ABC$ siku-siku di $A$ dengan garis tinggi $AD$ tegak lurus sisi miring $BC$. Jika $BD = 4$ cm dan $AD = 6$ cm, panjang $DC$ adalah ... cm.",
+      "pembahasan": "JEFEXjIgPSBCRCBcdGltZXMgREMkLCBzZWhpbmdnYSAkMzYgPSA0IFx0aW1lcyBEQyQgZGFuICREQyA9IDkkIGNtLg==",
+      "kunci": [
+        "70aa062f9870273bb05b118016d8b5cca24f1ec64a5d67491b90a9bde2e9ab6e"
+      ]
+    },
+    {
+      "id": "ks-19",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "pertanyaan": "Dua segitiga sebangun memiliki luas 36 cm$^2$ dan 64 cm$^2$. Sebuah sisi pada segitiga kecil panjangnya 9 cm. Panjang sisi yang bersesuaian pada segitiga besar adalah ...",
+      "opsi": {
+        "a": "$12$ cm",
+        "b": "$13{,}5$ cm",
+        "c": "$16$ cm",
+        "d": "$24$ cm"
+      },
+      "acakOpsi": false,
+      "pembahasan": "UGVyYmFuZGluZ2FuIGx1YXNueWEgJFxmcmFjezY0fXszNn0kLCBzZWhpbmdnYSBwZXJiYW5kaW5nYW4gc2lzaW55YSBha2FybnlhLCB5YWl0dSAkXGZyYWN7OH17Nn0gPSBcZnJhY3s0fXszfSQuIE1ha2Egc2lzaW55YSAkXGZyYWN7NH17M30gXHRpbWVzIDkgPSAxMiQgY20uIFBlcmJhbmRpbmdhbiBsdWFzIHRpZGFrIGJvbGVoIGxhbmdzdW5nIGRpcGFrYWkgc2ViYWdhaSBwZXJiYW5kaW5nYW4gc2lzaS4=",
+      "kunci": "080f6edd566b0c32ee63a7de70bd5ab865c87d973129f083a7c7e824c0e05fd3"
+    },
+    {
+      "id": "ks-20",
+      "level": 3,
+      "tipe": "isian",
+      "aktif": true,
+      "pertanyaan": "Sebuah tongkat setinggi 1,5 m memiliki bayangan 2 m. Pada saat yang sama, bayangan sebuah pohon 10 m. Tinggi pohon tersebut adalah ... m.",
+      "pembahasan": "JFxmcmFjezF7LH01fXsyfSA9IFxmcmFje3R9ezEwfSQsIHNlaGluZ2dhICR0ID0gXGZyYWN7MXssfTUgXHRpbWVzIDEwfXsyfSA9IDd7LH01JCBtLg==",
+      "kunci": [
+        "496e9fd675215db9ebb26ff3432bc703fc086b08cd1878fcf14862ce5f5bbc6b"
+      ]
+    }
+  ]
+}

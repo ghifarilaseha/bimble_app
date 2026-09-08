@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pangkat dan Akar</title>
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../css/gaya.css">
+</head>
+<body>
+
+<header class="kepala">
+  <div class="isi">
+    <a href="../index.html" class="tombol mungil">Beranda</a>
+    <span class="judul">Pangkat dan Akar</span>
+  </div>
+</header>
+
+<main class="bungkus">
+
+  <h1>Pangkat dan Akar</h1>
+
+  <!-- ---------- 1. Tujuan ---------- -->
+  <div class="kartu">
+    <h3 class="rapat">Yang akan kamu bisa</h3>
+    <ul style="margin:.4rem 0 0">
+      <li>Menghitung bilangan berpangkat nol dan berpangkat negatif.</li>
+      <li>Menyederhanakan bentuk akar dan merasionalkan penyebutnya.</li>
+      <li>Menuliskan bilangan yang sangat besar atau kecil dalam bentuk baku.</li>
+    </ul>
+  </div>
+
+  <!-- ---------- 2. Pemantik ---------- -->
+  <h2>Selembar kertas yang dilipat</h2>
+  <p>
+    Selembar kertas tebalnya sekitar $0{,}1$ mm. Sekali dilipat, tebalnya menjadi dua
+    kali. Dilipat lagi, dua kali lipatnya lagi.
+  </p>
+  <p>
+    Kalau dilipat $30$ kali, kira-kira setebal apa tumpukannya — setebal buku, setinggi
+    rumah, atau lebih? Dan bagaimana menuliskan angka sebesar itu tanpa memenuhi satu
+    baris penuh?
+  </p>
+  <p class="kecil samar">
+    Pikirkan dulu sebentar, baru lanjut.
+  </p>
+
+  <!-- ---------- 3. Eksplorasi ---------- -->
+  <h2>Coba sendiri: tangga pangkat yang diturunkan</h2>
+  <p>
+    Daftar di bawah dimulai dari $2^5$. Setiap kali kamu menurunkan satu anak tangga,
+    pangkatnya berkurang satu dan nilainya dibagi $2$.
+  </p>
+  <p>
+    Tugasnya: <strong>turunkan terus sampai melewati $2^0$, lalu terus lagi sampai
+    pangkatnya negatif.</strong> Menurutmu, nilainya berhenti di mana?
+  </p>
+
+  <div class="kartu">
+    <div id="jelajah"></div>
+    <div id="pesanJelajah" style="margin-top:.7rem"></div>
+  </div>
+
+  <!-- ---------- 4. Perumusan ---------- -->
+  <h2>Aturannya</h2>
+
+  <div class="tab" id="tabMateri" role="tablist"></div>
+
+  <section data-tab="Sifat pangkat">
+    <h3>Perpangkatan adalah perkalian berulang</h3>
+    <p>
+      Kalau perkalian adalah penjumlahan berulang, maka <strong>perpangkatan</strong>
+      adalah perkalian berulang: $a^n$ berarti $a$ dikalikan sebanyak $n$ faktor.
+      Bilangan $a$ disebut <strong>basis</strong>, dan $n$ disebut
+      <strong>pangkat</strong> atau eksponen.
+    </p>
+    <p>
+      Dari tangga yang tadi kamu turunkan sendiri, dua aturan langsung terbaca:
+    </p>
+    <p class="tengah">$$a^0 = 1 \qquad a^{-n} = \frac{1}{a^n}$$</p>
+    <p>
+      Pecahan berpangkat negatif cukup dibalik, lalu pangkatnya menjadi positif:
+      $\left(\frac{4}{5}\right)^{-3} = \left(\frac{5}{4}\right)^{3} = \frac{125}{64}$.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Dua pangkat, satu basis</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Basisnya $2$. Geser kedua pangkatnya dan perhatikan pangkat hasilnya.
+      </p>
+      <div id="alatSifat"></div>
+    </div>
+
+    <p>
+      Syarat mutlaknya satu, dan ini sering luput: penjumlahan atau pengurangan pangkat
+      hanya berlaku bila <strong>basisnya sama</strong>. Untuk $3^2 \times 4^2$ basisnya
+      berbeda, jadi hitung masing-masing dulu: $9 \times 16 = 144$, bukan $12^4$.
+    </p>
+  </section>
+
+  <section data-tab="Tanda kurung" hidden>
+    <h3>Pangkat hanya mengikat yang tepat di depannya</h3>
+    <p>
+      Ini jebakan yang paling banyak memakan korban di bab ini, dan seluruh bedanya
+      hanya sepasang kurung. Tanpa kurung, tanda minus <strong>tidak</strong> ikut
+      dipangkatkan.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Bandingkan sendiri</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Pilih satu bentuk, lalu lihat uraiannya.
+      </p>
+      <div class="deret" id="pilihKurung"></div>
+      <div id="hasilKurung" style="margin-top:.7rem"></div>
+    </div>
+
+    <p>
+      Cara membacanya: kalau tanda minus berada di dalam kurung, ia ikut dikalikan
+      berkali-kali. Kalau di luar, ia hanya menunggu di depan dan mengubah tanda hasil
+      akhirnya sekali saja.
+    </p>
+  </section>
+
+  <section data-tab="Bentuk akar" hidden>
+    <h3>Kapan sebuah akar disebut bentuk akar</h3>
+    <p>
+      $\sqrt{a}$ menghasilkan bilangan rasional hanya bila $a$ bilangan kuadrat sempurna.
+      <strong>Bentuk akar</strong> adalah akar yang hasilnya bukan bilangan rasional:
+      $\sqrt{3}$, $\sqrt{5}$, $\sqrt{6}$ termasuk bentuk akar, sedangkan $\sqrt{36}$
+      dan $\sqrt{49}$ bukan.
+    </p>
+
+    <h3>Menyederhanakan</h3>
+    <p class="tengah">$$\sqrt{a \times b} = \sqrt{a} \times \sqrt{b}$$</p>
+    <p>
+      Pecah bilangan di dalam akar menjadi perkalian yang salah satu faktornya kuadrat
+      sempurna, lalu ambil faktor kuadrat <strong>terbesar</strong> supaya cukup sekali
+      langkah.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">Sederhanakan akarmu sendiri</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Ketik bilangan bulat di dalam akarnya, lalu sederhanakan.
+      </p>
+      <div class="deret">
+        <label class="kecil" style="flex:none;align-self:center;margin:0">$\sqrt{\ \ }$</label>
+        <input type="number" inputmode="numeric" id="isiAkar" value="108" min="1" max="100000" style="flex:0 0 6rem" aria-label="bilangan di dalam akar">
+        <button type="button" class="tombol mungil utama" id="sederhanakanAkar">Sederhanakan</button>
+      </div>
+      <div id="hasilAkar" style="margin-top:.7rem"></div>
+    </div>
+
+    <h3>Menjumlah, mengurang, mengali</h3>
+    <p>
+      Penjumlahan hanya bisa dilakukan bila bentuk akarnya <strong>sama</strong> —
+      perlakukan seperti suku sejenis: $2\sqrt{3} + 3\sqrt{3} = 5\sqrt{3}$, sedangkan
+      $4\sqrt{2} + 3\sqrt{5}$ tidak bisa disederhanakan. Kalau akarnya berbeda,
+      sederhanakan dulu: $\sqrt{12} + \sqrt{27} = 2\sqrt{3} + 3\sqrt{3} = 5\sqrt{3}$.
+    </p>
+    <p>
+      Perkalian justru selalu bisa, walau akarnya berbeda: angka luar dikali angka luar,
+      akar dikali akar. Jadi $3\sqrt{2} \times 5\sqrt{7} = 15\sqrt{14}$.
+    </p>
+
+    <h3>Merasionalkan penyebut</h3>
+    <p>
+      Tujuannya menghilangkan bentuk akar dari penyebut, dengan mengalikan pembilang dan
+      penyebut dengan bilangan <strong>sekawan</strong>, yaitu bentuk yang sama tetapi
+      tanda tengahnya dibalik.
+    </p>
+    <div class="tabel-gulir">
+      <table>
+        <thead><tr><th>Bentuk</th><th>Dikalikan</th><th>Hasil</th></tr></thead>
+        <tbody>
+          <tr><td>$\dfrac{1}{\sqrt{a}}$</td><td>$\dfrac{\sqrt{a}}{\sqrt{a}}$</td><td>$\dfrac{\sqrt{a}}{a}$</td></tr>
+          <tr><td>$\dfrac{1}{\sqrt{a} + \sqrt{b}}$</td><td>$\dfrac{\sqrt{a} - \sqrt{b}}{\sqrt{a} - \sqrt{b}}$</td><td>$\dfrac{\sqrt{a} - \sqrt{b}}{a - b}$</td></tr>
+          <tr><td>$\dfrac{1}{\sqrt{a} - \sqrt{b}}$</td><td>$\dfrac{\sqrt{a} + \sqrt{b}}{\sqrt{a} + \sqrt{b}}$</td><td>$\dfrac{\sqrt{a} + \sqrt{b}}{a - b}$</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Sekawan berhasil karena $(a + b)(a - b) = a^2 - b^2$: kedua akarnya terkuadratkan,
+      jadi lenyap dengan sendirinya.
+    </p>
+  </section>
+
+  <section data-tab="Notasi ilmiah" hidden>
+    <h3>Bentuk baku</h3>
+    <p>
+      Massa bumi kira-kira $5.970.000.000.000.000.000.000.000$ kg. Menuliskannya utuh
+      memakan satu baris penuh dan mudah salah hitung nol. Inilah jawaban dari
+      pertanyaan kertas yang dilipat tadi.
+    </p>
+    <p class="tengah">$$a \times 10^n \qquad \text{dengan } 1 \le a < 10$$</p>
+    <ul>
+      <li>Bilangan besar (paling sedikit $10$) berpangkat <strong>positif</strong>,
+        sebanyak pergeseran koma <strong>ke kiri</strong>.</li>
+      <li>Bilangan kecil (kurang dari $1$) berpangkat <strong>negatif</strong>,
+        sebanyak pergeseran koma <strong>ke kanan</strong>.</li>
+    </ul>
+
+    <div class="kartu">
+      <h3 class="rapat">Ubah ke bentuk baku</h3>
+      <p class="kecil samar" style="margin:.2rem 0 .6rem">
+        Ketik bilangannya apa adanya, misalnya $2300000$ atau $0{,}0000695$.
+      </p>
+      <div class="deret">
+        <input type="text" id="isiBaku" value="0,0000695" style="flex:1;min-width:8rem" aria-label="bilangan biasa">
+        <button type="button" class="tombol mungil utama" id="ubahBaku">Ubah</button>
+      </div>
+      <div id="hasilBaku" style="margin-top:.7rem"></div>
+    </div>
+
+    <p>
+      Untuk mengalikan atau membagi bentuk baku: kerjakan angka depannya, lalu jumlahkan
+      atau kurangkan pangkat sepuluhnya. Terakhir periksa lagi syarat $1 \le a < 10$.
+      Misalnya $(8 \times 10^7) \times (7 \times 10^8) = 56 \times 10^{15}$, yang masih
+      harus dirapikan menjadi $5{,}6 \times 10^{16}$.
+    </p>
+  </section>
+
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">
+    Tebak dulu jawabannya sebelum membuka langkahnya.
+  </p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">
+    Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.
+  </p>
+  <div id="cekPaham"></div>
+
+  <!-- ---------- 7. Tautan latihan ---------- -->
+  <h2>Sudah paham?</h2>
+  <p>Cobalah latihannya. Boleh diulang sebanyak yang kamu mau.</p>
+  <div id="tautanLatihan">
+    <p>
+      <a class="tombol utama" href="../latihan.html?kelas=9&amp;bab=pangkat-akar&amp;mode=mandiri">
+        Latihan mandiri
+      </a>
+    </p>
+  </div>
+
+</main>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../js/rumus.js"></script>
+<script src="../js/pecahan.js"></script>
+<script src="../js/kunci.js"></script>
+<script src="../js/nilai.js"></script>
+<script src="../js/cek-paham.js"></script>
+<script src="../js/materi.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  Rumus.sapu(document.querySelector('main'));
+
+  /* ---------- 3. Eksplorasi: tangga pangkat ---------- */
+
+  var elJelajah = document.getElementById('jelajah');
+  var elPesanJelajah = document.getElementById('pesanJelajah');
+  var pangkatBawah = 5;
+  var pernah = {};
+
+  elJelajah.innerHTML =
+    '<div id="tanggaPangkat" class="tabel-gulir"></div>' +
+    '<div class="deret" style="margin-top:.6rem">' +
+      '<button type="button" class="tombol mungil utama" id="turunPangkat">Turunkan satu anak tangga</button>' +
+      '<button type="button" class="tombol mungil" id="ulangTangga">Ulangi</button>' +
+    '</div>';
+
+  var elTangga = document.getElementById('tanggaPangkat');
+
+  /* Nilainya dihitung sebagai pecahan, bukan desimal, supaya 2 pangkat -3
+     tampil sebagai 1/8 dan bukan 0,125 -- yang justru mengaburkan asalnya. */
+  function nilaiPangkat(n) {
+    return n >= 0 ? Pecahan.buat(Math.pow(2, n), 1) : Pecahan.buat(1, Math.pow(2, -n));
+  }
+
+  function gambarTangga() {
+    var baris = '';
+    for (var n = 5; n >= pangkatBawah; n--) {
+      var p = nilaiPangkat(n);
+      baris += '<tr><th>' + Rumus.keHTML('$2^{' + n + '}$') + '</th>' +
+        '<td class="angka">' + Rumus.keHTML('$' + p.rumus() + '$') + '</td></tr>';
+    }
+    elTangga.innerHTML = '<table><tbody>' + baris + '</tbody></table>';
+
+    if (pangkatBawah <= 0) pernah.nol = true;
+    if (pangkatBawah <= -1) pernah.negatif = true;
+
+    if (!(pernah.nol && pernah.negatif)) {
+      elPesanJelajah.innerHTML = '';
+      return;
+    }
+    elPesanJelajah.innerHTML = '<div class="pesan sip">' + Rumus.keHTML(
+      'Nilainya tidak berhenti dan tidak pernah menjadi negatif — ia hanya terus ' +
+      'dibagi $2$. Di anak tangga $2^0$ nilainya $1$, dan di bawahnya pangkat negatif ' +
+      'berarti pecahan: $2^{-n} = \\frac{1}{2^n}$.') + '</div>';
+  }
+
+  document.getElementById('turunPangkat').addEventListener('click', function () {
+    if (pangkatBawah > -4) pangkatBawah--;
+    gambarTangga();
+  });
+  document.getElementById('ulangTangga').addEventListener('click', function () {
+    pangkatBawah = 5;
+    gambarTangga();
+  });
+  gambarTangga();
+
+  /* ---------- 4. Tab "Aturannya" ---------- */
+
+  Materi.tab(document.getElementById('tabMateri'));
+
+  /* ---------- 4a. Dua pangkat, satu basis ---------- */
+
+  var elSifat = document.getElementById('alatSifat');
+  elSifat.innerHTML =
+    '<div class="deret" style="align-items:center">' +
+      '<label class="kecil" style="flex:none;margin:0;min-width:3.5rem">$m$</label>' +
+      '<input type="range" id="sifatM" min="1" max="6" value="2" style="flex:1;min-width:8rem" aria-label="pangkat m">' +
+      '<strong id="labelM" style="min-width:2rem;text-align:right"></strong>' +
+    '</div>' +
+    '<div class="deret" style="align-items:center;margin-top:.4rem">' +
+      '<label class="kecil" style="flex:none;margin:0;min-width:3.5rem">$n$</label>' +
+      '<input type="range" id="sifatN" min="1" max="6" value="3" style="flex:1;min-width:8rem" aria-label="pangkat n">' +
+      '<strong id="labelN" style="min-width:2rem;text-align:right"></strong>' +
+    '</div>' +
+    '<div id="hasilSifat" style="margin-top:.6rem"></div>';
+
+  var sifatM = document.getElementById('sifatM');
+  var sifatN = document.getElementById('sifatN');
+  var elHasilSifat = document.getElementById('hasilSifat');
+
+  function gambarSifat() {
+    var m = parseInt(sifatM.value, 10);
+    var n = parseInt(sifatN.value, 10);
+    document.getElementById('labelM').textContent = String(m);
+    document.getElementById('labelN').textContent = String(n);
+
+    var bagi = Pecahan.buat(Math.pow(2, m), Math.pow(2, n));
+    Rumus.isi(elHasilSifat,
+      'Perkalian: $2^{' + m + '} \\times 2^{' + n + '} = 2^{' + (m + n) + '} = ' +
+        Math.pow(2, m + n) + '$. ' +
+      'Pembagian: $2^{' + m + '} \\div 2^{' + n + '} = 2^{' + (m - n) + '} = ' +
+        bagi.rumus() + '$. ' +
+      'Pangkat dari pangkat: $(2^{' + m + '})^{' + n + '} = 2^{' + (m * n) + '}$.');
+  }
+
+  sifatM.addEventListener('input', gambarSifat);
+  sifatN.addEventListener('input', gambarSifat);
+  gambarSifat();
+
+  /* ---------- 4b. Peran tanda kurung ---------- */
+
+  var KURUNG = [
+    {
+      nama: '(-2)^4',
+      uraian: '$(-2)^4 = (-2) \\times (-2) \\times (-2) \\times (-2) = 16$. ' +
+        'Tanda minus ada di dalam kurung, jadi ia ikut dikalikan empat kali. ' +
+        'Empat tanda minus habis berpasangan, hasilnya positif.'
+    },
+    {
+      nama: '-2^4',
+      uraian: '$-2^4 = -(2 \\times 2 \\times 2 \\times 2) = -16$. ' +
+        'Yang dipangkatkan hanya $2$; tanda minus menunggu di luar dan ' +
+        'baru dikenakan sekali pada hasilnya.'
+    },
+    {
+      nama: '(-3)^{-2}',
+      uraian: '$(-3)^{-2} = \\frac{1}{(-3)^2} = \\frac{1}{9}$. ' +
+        'Karena $(-3)$ dikuadratkan, hasilnya positif.'
+    },
+    {
+      nama: '-3^{-2}',
+      uraian: '$-3^{-2} = -\\left(\\frac{1}{3^2}\\right) = -\\frac{1}{9}$. ' +
+        'Tanda minusnya tidak ikut dipangkatkan, jadi ia tetap ada di hasil akhir.'
+    }
+  ];
+
+  var elPilihKurung = document.getElementById('pilihKurung');
+  var elHasilKurung = document.getElementById('hasilKurung');
+
+  KURUNG.forEach(function (k, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tombol mungil';
+    Rumus.isi(b, '$' + k.nama + '$');
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(elPilihKurung.children, function (x, j) {
+        x.setAttribute('aria-pressed', j === i ? 'true' : 'false');
+      });
+      Rumus.isi(elHasilKurung, k.uraian);
+    });
+    elPilihKurung.appendChild(b);
+  });
+  elPilihKurung.children[0].setAttribute('aria-pressed', 'true');
+  Rumus.isi(elHasilKurung, KURUNG[0].uraian);
+
+  /* ---------- 4c. Menyederhanakan bentuk akar ---------- */
+
+  var elHasilAkar = document.getElementById('hasilAkar');
+
+  /* Faktor kuadrat terbesar dicari dengan menaikkan k selama k*k masih
+     membagi habis. Cara ini cukup untuk bilangan seukuran soal SMP dan
+     memperlihatkan alasan hasilnya, bukan sekadar angkanya. */
+  function faktorKuadratTerbesar(n) {
+    var terbaik = 1;
+    for (var k = 2; k * k <= n; k++) {
+      if (n % (k * k) === 0) terbaik = k;
+    }
+    return terbaik;
+  }
+
+  function sederhanakanAkar() {
+    var n = parseInt(document.getElementById('isiAkar').value, 10);
+    if (isNaN(n) || n < 1) {
+      elHasilAkar.innerHTML =
+        '<div class="pesan awas">Ketik satu bilangan bulat positif.</div>';
+      return;
+    }
+    var k = faktorKuadratTerbesar(n);
+    var sisa = n / (k * k);
+
+    var teks;
+    if (k === 1) {
+      teks = '$\\sqrt{' + n + '}$ sudah paling sederhana: tidak ada faktor kuadrat ' +
+        'sempurna selain $1$ yang membaginya habis.';
+    } else if (sisa === 1) {
+      teks = '$\\sqrt{' + n + '} = ' + k + '$, sebab $' + n + ' = ' + k + '^2$. ' +
+        'Jadi ini bukan bentuk akar.';
+    } else {
+      teks = '$\\sqrt{' + n + '} = \\sqrt{' + (k * k) + ' \\times ' + sisa + '} = ' +
+        '\\sqrt{' + (k * k) + '} \\times \\sqrt{' + sisa + '} = ' + k + '\\sqrt{' + sisa + '}$. ' +
+        'Faktor kuadrat terbesarnya $' + (k * k) + '$.';
+    }
+    Rumus.isi(elHasilAkar, teks);
+  }
+
+  document.getElementById('sederhanakanAkar').addEventListener('click', sederhanakanAkar);
+  document.getElementById('isiAkar').addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') sederhanakanAkar();
+  });
+  sederhanakanAkar();
+
+  /* ---------- 4d. Bentuk baku ---------- */
+
+  var elHasilBaku = document.getElementById('hasilBaku');
+
+  /* Pergeseran koma dihitung dari tulisan angkanya, bukan dari nilai
+     desimalnya. Kalau memakai desimal peramban, 0,0000695 sudah berubah
+     bentuk sebelum sempat dijelaskan. */
+  function keBentukBaku(teks) {
+    var s = String(teks).trim().replace(/\./g, '').replace(/,/g, '.');
+    var negatif = s.charAt(0) === '-';
+    if (negatif) s = s.slice(1);
+    if (!/^\d*(\.\d+)?$/.test(s) || s === '' || s === '.') return null;
+
+    var bagian = s.split('.');
+    var bulat = (bagian[0] || '').replace(/^0+/, '');
+    var pecahan = bagian[1] || '';
+
+    var angka, pangkat;
+    if (bulat) {
+      angka = bulat + pecahan;
+      pangkat = bulat.length - 1;
+    } else {
+      var nolDepan = pecahan.match(/^0*/)[0].length;
+      angka = pecahan.slice(nolDepan);
+      if (!angka) return null;
+      pangkat = -(nolDepan + 1);
+    }
+
+    angka = angka.replace(/0+$/, '');
+    if (!angka) return null;
+    var depan = angka.charAt(0) + (angka.length > 1 ? '{,}' + angka.slice(1) : '');
+    return { depan: (negatif ? '-' : '') + depan, pangkat: pangkat };
+  }
+
+  function ubahBaku() {
+    var isi = document.getElementById('isiBaku').value;
+    var b = keBentukBaku(isi);
+    if (!b) {
+      elHasilBaku.innerHTML = '<div class="pesan awas">' + Rumus.keHTML(
+        'Bentuk itu belum dikenal. Ketik angkanya saja, misalnya $2300000$ ' +
+        'atau $0{,}0000695$.') + '</div>';
+      return;
+    }
+    var arah = b.pangkat >= 0
+      ? 'Komanya digeser ' + b.pangkat + ' angka ke kiri, jadi pangkatnya positif.'
+      : 'Komanya digeser ' + (-b.pangkat) + ' angka ke kanan, jadi pangkatnya negatif.';
+    Rumus.isi(elHasilBaku,
+      'Bentuk bakunya $' + b.depan + ' \\times 10^{' + b.pangkat + '}$. ' + arah +
+      ' Angka depannya $' + b.depan + '$, dan itu memang antara $1$ dan $10$.');
+  }
+
+  document.getElementById('ubahBaku').addEventListener('click', ubahBaku);
+  document.getElementById('isiBaku').addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') ubahBaku();
+  });
+  ubahBaku();
+
+  /* ---------- 5. Contoh bertahap ---------- */
+
+  Materi.contoh(document.getElementById('daftarContoh'), [
+    {
+      judul: 'Pangkat negatif',
+      soal: 'Hitunglah $\\dfrac{5^8}{5^{10}}$.',
+      langkah: [
+        'Basisnya sama, jadi pangkatnya dikurangkan: $5^{8-10} = 5^{-2}$.',
+        'Pangkat negatif berarti pecahan: $5^{-2} = \\frac{1}{5^2}$.',
+        'Karena $5^2 = 25$, hasilnya $\\frac{1}{25}$.'
+      ]
+    },
+    {
+      judul: 'Menjumlahkan bentuk akar',
+      soal: 'Sederhanakan $\\sqrt{18} - \\sqrt{8} + \\sqrt{50}$.',
+      langkah: [
+        'Ketiganya belum sejenis, jadi sederhanakan dulu satu per satu.',
+        '$\\sqrt{18} = \\sqrt{9 \\times 2} = 3\\sqrt{2}$ dan ' +
+          '$\\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2}$.',
+        '$\\sqrt{50} = \\sqrt{25 \\times 2} = 5\\sqrt{2}$.',
+        'Sekarang semuanya sejenis: $(3 - 2 + 5)\\sqrt{2} = 6\\sqrt{2}$.'
+      ]
+    },
+    {
+      judul: 'Merasionalkan penyebut',
+      soal: 'Rasionalkan penyebut dari $\\dfrac{6}{\\sqrt{3}}$.',
+      langkah: [
+        'Penyebutnya $\\sqrt{3}$, jadi kalikan pembilang dan penyebut dengan ' +
+          '$\\frac{\\sqrt{3}}{\\sqrt{3}}$ — nilainya tidak berubah, sebab itu sama dengan $1$.',
+        'Pembilangnya menjadi $6\\sqrt{3}$, penyebutnya $\\sqrt{9} = 3$.',
+        'Jadi $\\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}$.'
+      ]
+    }
+  ]);
+
+  /* ---------- 6. Cek pemahaman ---------- */
+
+  CekPaham.buat(document.getElementById('cekPaham'), {
+    soal: [
+      {
+        id: 'pangkat-akar-cek-1', level: 1, tipe: 'isian',
+        pertanyaan: 'Berapa nilai $4^{-2}$?',
+        petunjuk: 'Contoh penulisan: 1/16',
+        jawaban: ['1/16', '0,0625'],
+        salahUmum: [
+          {
+            jawaban: ['-16'],
+            umpan: 'Pangkat negatif tidak membuat hasilnya negatif. Ia berarti ' +
+              'pecahan: $4^{-2} = \\frac{1}{4^2}$.'
+          },
+          {
+            jawaban: ['-8', '1/8'],
+            umpan: 'Sepertinya $4$ dikali $2$. Pangkat berarti perkalian berulang, ' +
+              'jadi $4^2 = 4 \\times 4 = 16$.'
+          }
+        ],
+        bahas: '$4^{-2} = \\frac{1}{4^2} = \\frac{1}{16}$.'
+      },
+      {
+        id: 'pangkat-akar-cek-2', level: 1, tipe: 'pg',
+        pertanyaan: 'Nilai dari $-2^4$ adalah ...',
+        opsi: { a: '$16$', b: '$-16$', c: '$-8$', d: '$8$' },
+        kunci: 'b',
+        umpan: {
+          a: 'Itu nilai $(-2)^4$. Tanpa kurung, tanda minus tidak ikut dipangkatkan.',
+          c: 'Sepertinya $2$ dikali $4$. Pangkat empat berarti $2 \\times 2 \\times 2 \\times 2$.',
+          d: 'Pangkat empat berarti empat faktor, jadi $2^4 = 16$, bukan $8$.'
+        },
+        bahas: 'Yang dipangkatkan hanya $2$: $-2^4 = -(2 \\times 2 \\times 2 \\times 2) = -16$.'
+      },
+      {
+        id: 'pangkat-akar-cek-3', level: 2, tipe: 'isian',
+        pertanyaan: 'Sederhanakan $\\sqrt{48}$.',
+        petunjuk: 'Contoh penulisan: 4 akar 3',
+        jawaban: ['4 akar 3', '4akar3', '4√3'],
+        salahUmum: [
+          {
+            jawaban: ['2 akar 12', '2akar12'],
+            umpan: 'Langkahnya benar, hanya belum selesai. Faktor kuadratnya masih ' +
+              'bisa diambil lagi dari $\\sqrt{12}$. Pakai faktor kuadrat terbesar, ' +
+              'yaitu $16$.'
+          },
+          {
+            jawaban: ['16 akar 3', '16akar3'],
+            umpan: 'Yang keluar dari akar adalah $\\sqrt{16} = 4$, bukan $16$ itu sendiri.'
+          }
+        ],
+        bahas: '$\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$.'
+      },
+      {
+        id: 'pangkat-akar-cek-4', level: 2, tipe: 'isian',
+        pertanyaan: 'Tulis $0{,}00000213$ dalam bentuk baku. Berapa pangkat sepuluhnya?',
+        petunjuk: 'Tulis angkanya saja, contoh: -4',
+        jawaban: ['-6'],
+        salahUmum: [
+          {
+            jawaban: ['6'],
+            umpan: 'Bilangannya kurang dari $1$, jadi pangkatnya negatif. ' +
+              'Angkanya sudah benar.'
+          },
+          {
+            jawaban: ['-5', '-7'],
+            umpan: 'Hitung ulang pergeseran komanya sampai tepat di belakang angka $2$. ' +
+              'Ada $5$ angka nol setelah koma, jadi geserannya $6$ langkah.'
+          }
+        ],
+        bahas: '$0{,}00000213 = 2{,}13 \\times 10^{-6}$. Komanya digeser $6$ angka ke kanan.'
+      },
+      {
+        id: 'pangkat-akar-cek-5', level: 3, tipe: 'isian',
+        pertanyaan: 'Hasil dari $\\dfrac{4}{\\sqrt{2}}$ setelah penyebutnya ' +
+          'dirasionalkan adalah ...',
+        petunjuk: 'Contoh penulisan: 2 akar 2',
+        jawaban: ['2 akar 2', '2akar2', '2√2'],
+        salahUmum: [
+          {
+            jawaban: ['4 akar 2', '4akar2'],
+            umpan: 'Pembilangnya sudah benar $4\\sqrt{2}$, tetapi penyebutnya kini $2$. ' +
+              'Sederhanakan dulu $\\frac{4}{2}$.'
+          },
+          {
+            jawaban: ['akar 2', 'akar2'],
+            umpan: 'Sepertinya $4$ ikut habis dibagi. Padahal $\\frac{4}{2} = 2$, ' +
+              'bukan $1$.'
+          },
+          {
+            jawaban: ['2'],
+            umpan: 'Bentuk akarnya tidak hilang, ia hanya pindah ke pembilang. ' +
+              'Hasilnya masih memuat $\\sqrt{2}$.'
+          }
+        ],
+        bahas: 'Kalikan dengan $\\frac{\\sqrt{2}}{\\sqrt{2}}$: ' +
+          '$\\frac{4\\sqrt{2}}{2} = 2\\sqrt{2}$.'
+      }
+    ]
+  });
+
+  /* ---------- 7. Tautan latihan ---------- */
+
+  Materi.tautanLatihan(document.getElementById('tautanLatihan'), 9, 'pangkat-akar');
+})();
+</script>
+</body>
+</html>

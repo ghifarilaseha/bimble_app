@@ -11,9 +11,11 @@ di folder `tools/`. Situs yang tayang tidak memerlukannya sama sekali.
 
 ## Isi singkat
 
-- Siswa membuka tautan, mengetik namanya, mengerjakan, lalu hasilnya masuk
-  ke Google Spreadsheet milik guru.
-- Tidak ada akun, tidak ada login. Identitas hanya sebatas nama yang diketik.
+- Siswa membuka tautan, memilih namanya dari daftar kelas, mengerjakan, lalu
+  hasilnya masuk ke Google Spreadsheet milik guru.
+- Tidak ada akun, tidak ada login. Identitas hanya sebatas nama yang dipilih.
+  Siswa bisa membuka riwayat pengerjaannya sendiri di `riwayat.html` dengan
+  memilih nama yang sama.
 - Kunci jawaban tidak pernah dikirim ke peramban dalam bentuk terbaca.
 
 ## Mencoba di komputer sendiri
@@ -35,6 +37,7 @@ yang dipakai untuk mencocokkan kunci hanya tersedia pada konteks aman.
 index.html              beranda: pilih kelas, lalu bab
 latihan.html            mesin soal, seluruh pengaturannya dari parameter URL
 guru.html               pembuat sesi dan dashboard
+riwayat.html            siswa melihat riwayat dan jawabannya sendiri
 cek.html                pemeriksa bentuk berkas soal
 uji.html                penjalan kasus uji penilaian di peramban
 404.html                halaman untuk tautan yang salah
@@ -55,6 +58,7 @@ js/
   gembok-inti.js        perubahan satu butir soal mentah menjadi tergembok
   latihan.js            alur halaman latihan
   guru.js               alur halaman guru
+  riwayat.js            alur halaman riwayat siswa
 
 komponen/
   bidang-koordinat.js   bidang kartesius yang bisa diketuk, lengkap dengan
@@ -348,6 +352,37 @@ Soal yang didapat setiap siswa ditentukan oleh kode sesi dan namanya. Siswa
 yang tabnya tertutup lalu membuka tautan yang sama akan mendapat soal yang
 persis sama, beserta jawaban yang sudah terlanjur diisi.
 
+### Nama siswa
+
+Nama tidak diketik, melainkan dipilih dari dropdown yang diisi dari
+`data/kelas.json`. Ini disengaja: ketika nama diketik bebas, siswa yang sama
+mengejanya berbeda tiap kali sehingga riwayatnya terpecah menjadi beberapa
+orang di dashboard. Yang namanya tidak ada di daftar memilih **Lainnya** lalu
+mengetik; nama itu tetap diterima, hanya ditandai `adaDiDaftar: false`.
+Bila nama yang diketik di "Lainnya" ternyata ada di daftar, ejaan resmi dari
+daftarlah yang dipakai.
+
+## Melihat jawaban siswa
+
+Tab **Jawaban siswa** di `guru.html` menampilkan seluruh jawaban yang masuk
+untuk satu sesi, termasuk sesi latihan mandiri. Dua tampilan:
+
+- **Per soal**: satu kartu per butir berisi bunyi soal, jawaban tiap siswa,
+  dan pembahasannya. Ini yang ditayangkan di layar saat membahas bersama.
+- **Per siswa**: satu kartu per pengerjaan berisi seluruh jawabannya.
+
+Siswa membuka `riwayat.html` (tombol **Lihat riwayat latihanku** di beranda,
+atau **Riwayatku** di layar hasil), memilih kelas dan namanya, lalu melihat
+daftar pengerjaannya beserta jawaban per soal. Pembahasan hanya ditampilkan
+untuk latihan mandiri: untuk latihan kelas dan PR, kapan pembahasan dibuka
+adalah keputusan guru lewat tautan, dan halaman riwayat tidak tahu itu.
+
+Halaman riwayat memakai aksi `riwayat` pada Apps Script, satu-satunya aksi
+`doGet` yang **tidak** memerlukan token. Karena tidak ada login, siapa pun
+yang tahu nama temannya bisa melihat nilai temannya. Ini diterima sebagai
+konsekuensi tanpa akun; yang dikembalikan hanya nilai dan jawaban, sama
+seperti yang tampak di layar saat mengumpulkan.
+
 ## Memasang penerima data
 
 1. Buat Google Spreadsheet baru di akun guru. Namanya bebas.
@@ -375,6 +410,11 @@ apa-apa selain "diterima".
 Bila kode di `apps-script/Kode.gs` disunting, tempelkan lagi ke Apps Script
 lalu deploy ulang. Kalau tidak, salinan di repo dan yang benar-benar berjalan
 akan berbeda diam-diam.
+
+Aksi `doGet` yang dilayani: `cek`, `sesi`, `butir`, `siswa`, `sesiNama`,
+`jawaban` (semua bertoken), dan `riwayat` (tanpa token, wajib `kelas` dan
+`nama`). Tab **Jawaban siswa** dan halaman `riwayat.html` memerlukan
+deployment yang sudah memuat dua aksi terakhir.
 
 ## Menaruh di Netlify
 
@@ -440,8 +480,12 @@ setiap kali `nilai.js`, `kirim.js`, atau `Kode.gs` disentuh.
 - [ ] Satu berkas soal sengaja dirusak (hapus satu tanda kurung): halaman
       memberi pesan yang jelas dan bab lain tetap berfungsi.
 - [ ] Buka `guru.html` di ponsel dan pindai QR-nya dengan ponsel lain.
-- [ ] Kerjakan satu sesi dari dua HP berbeda, lalu periksa keempat tampilan
+- [ ] Kerjakan satu sesi dari dua HP berbeda, lalu periksa kelima tampilan
       dashboard.
+- [ ] Pilih nama lewat "Lainnya" dengan ejaan yang ada di daftar: rekapnya
+      harus menyatu dengan nama resmi, bukan menjadi orang baru.
+- [ ] Buka `riwayat.html`, pilih nama yang tadi mengerjakan: pengerjaannya
+      muncul beserta jawaban per soal.
 
 ## Kalau ada yang rusak
 
@@ -451,6 +495,7 @@ setiap kali `nilai.js`, `kirim.js`, atau `Kode.gs` disentuh.
 | Hasil siswa tidak muncul di Spreadsheet | `ENDPOINT` di `js/konfig.js` kosong atau salah, atau deployment Apps Script belum diperbarui setelah kode disunting |
 | Dashboard bilang token tidak cocok | Script Property `TOKEN` berbeda dengan kode guru yang dimasukkan |
 | Dashboard kosong padahal siswa sudah mengumpulkan | Deployment lama masih dipakai; buat deployment baru lalu perbarui `ENDPOINT` |
+| Tab Jawaban siswa atau `riwayat.html` bilang aksi tidak dikenal | Apps Script belum di-deploy ulang setelah `Kode.gs` diperbarui |
 | Rumus tampil sebagai teks mentah berlatar abu-abu | `vendor/katex/katex.min.js` gagal dimuat; halaman sengaja tetap terbaca |
 | Nilai siswa nol padahal jawabannya benar | Jalankan `node tools/uji.js`. Bila putaran menyeluruh gagal, `nilai.js` dan hasil gembok tidak lagi sejalan; gembok ulang |
 | Siswa mengaku sudah mengumpulkan tetapi tidak ada datanya | Minta kode hasil yang muncul di layarnya, lalu masukkan barisnya manual ke sheet |

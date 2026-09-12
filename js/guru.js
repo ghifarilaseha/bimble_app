@@ -18,6 +18,7 @@
    'sesiTenggat', 'sesiJumlah', 'sesiLevel', 'sesiBobot', 'sesiAcak',
    'kolomKode', 'kolomDurasi', 'kolomTenggat', 'tautanSesi', 'tombolSalin',
    'tombolBuka', 'tombolBahas', 'tombolCetak', 'catatanTautan', 'wadahQr',
+   'jawabanSesi', 'jawabanTampilan', 'tombolMuatJawaban', 'hasilJawaban',
    'butirSesi', 'tombolMuatButir', 'hasilButir',
    'perhatianKelas', 'perhatianAmbang', 'tombolMuatPerhatian', 'hasilPerhatian',
    'kembangKelas', 'kembangSiswa', 'hasilPerkembangan',
@@ -333,11 +334,13 @@
         return '<option value="' + lolos(s.kodeSesi) + '">' + lolos(s.kodeSesi) +
           ' - ' + lolos(s.kelas) + ' ' + lolos(s.bab) + ' (' + s.jumlah + ' pengerjaan)</option>';
       }).join('');
-      el.butirSesi.innerHTML = pilihan || '<option value="">(belum ada data)</option>';
-      el.belumSesi.innerHTML = pilihan || '<option value="">(belum ada data)</option>';
+      [el.butirSesi, el.belumSesi, el.jawabanSesi].forEach(function (sel) {
+        sel.innerHTML = pilihan || '<option value="">(belum ada data)</option>';
+      });
     }).catch(function (e) {
-      el.butirSesi.innerHTML = '<option value="">(gagal memuat)</option>';
-      el.belumSesi.innerHTML = '<option value="">(gagal memuat)</option>';
+      [el.butirSesi, el.belumSesi, el.jawabanSesi].forEach(function (sel) {
+        sel.innerHTML = '<option value="">(gagal memuat)</option>';
+      });
       console.warn(e.message);
     });
   }
@@ -357,6 +360,149 @@
       .catch(function () { return null; });
   }
 
+  /* Soal lanjutan (id "<induk>-l") ikut diratakan supaya idnya bisa
+     dicocokkan dengan yang tercatat di sheet. */
+  function petaSoal(bank) {
+    var perId = {};
+    if (bank) {
+      bank.soal.forEach(function (s) {
+        perId[s.id] = s;
+        if (s.lanjutan) perId[s.lanjutan.id] = s.lanjutan;
+      });
+    }
+    return perId;
+  }
+
+  /* Jawaban di sheet tersimpan dalam bentuk ringkas: huruf opsi untuk PG,
+     "BS-" untuk benar-salah, "(x,y)" untuk koordinat. Untuk PG, teks
+     opsinya ditampilkan supaya tidak perlu membuka berkas soal. */
+  function jawabanKeHTML(soal, j) {
+    var teks = String(j === undefined || j === null ? '' : j);
+    if (!teks) return '<span class="samar">(kosong)</span>';
+    if (soal && soal.tipe === 'pg' && soal.opsi && soal.opsi[teks] !== undefined) {
+      return '<strong>' + lolos(teks) + '.</strong> ' + Rumus.keHTML(soal.opsi[teks]);
+    }
+    return lolos(teks);
+  }
+
+  function capBenar(benar) {
+    return benar
+      ? '<span class="cap benar">Benar</span>'
+      : '<span class="cap salah">Salah</span>';
+  }
+
+  function bacaPembahasan(soal) {
+    if (!soal || !soal.pembahasan) return '';
+    try { return Rumus.keHTML(Kunci.dariBase64(soal.pembahasan)); }
+    catch (e) { return ''; }
+  }
+
+  /* ---------- jawaban siswa ---------- */
+
+  var jawabanTerakhir = null;
+
+  el.tombolMuatJawaban.addEventListener('click', function () {
+    var kode = el.jawabanSesi.value;
+    if (!kode) return;
+    memuat(el.hasilJawaban);
+    var info = sesiDenganKode(kode);
+    Promise.all([
+      panggil('jawaban', { kodeSesi: kode }),
+      info ? muatBankBab(info.tingkat, info.bab) : Promise.resolve(null)
+    ]).then(function (h) {
+      jawabanTerakhir = { data: h[0], perId: petaSoal(h[1]) };
+      gambarJawaban();
+    }).catch(function (e) { tulisGalat(el.hasilJawaban, e); });
+  });
+
+  el.jawabanTampilan.addEventListener('change', function () {
+    if (jawabanTerakhir) gambarJawaban();
+  });
+
+  function gambarJawaban() {
+    var data = jawabanTerakhir.data, perId = jawabanTerakhir.perId;
+    var isi = '<div class="kartu"><h2 class="rapat">' + lolos(data.kodeSesi) + '</h2>' +
+      '<p class="kecil samar">' + lolos(data.kelas) + ' &middot; ' + lolos(data.bab) +
+      ' &middot; ' + lolos(data.mode) + ' &middot; ' + data.jumlahPengerjaan +
+      ' pengerjaan &middot; rata-rata nilai ' + data.rerata + '</p>';
+
+    if (!data.pengerjaan.length) {
+      el.hasilJawaban.innerHTML = isi + '</div><div class="pesan info">Belum ada jawaban masuk.</div>';
+      return;
+    }
+
+    /* Ringkasan nilai selalu di atas, apa pun tampilannya. */
+    isi += '<div class="tabel-gulir"><table><thead><tr><th>Nama</th><th>Waktu</th>' +
+      '<th class="angka">Benar</th><th class="angka">Nilai</th></tr></thead><tbody>' +
+      data.pengerjaan.map(function (p) {
+        var benar = p.benar.filter(Boolean).length;
+        return '<tr><td>' + lolos(p.nama) +
+          (p.adaDiDaftar === false ? ' <span class="cap sebagian">di luar daftar</span>' : '') +
+          '</td><td>' + lolos(new Date(p.waktu).toLocaleString('id-ID')) + '</td>' +
+          '<td class="angka">' + benar + '/' + p.idSoal.length + '</td>' +
+          '<td class="angka">' + p.nilai + '</td></tr>';
+      }).join('') + '</tbody></table></div></div>';
+
+    isi += el.jawabanTampilan.value === 'siswa'
+      ? jawabanPerSiswa(data.pengerjaan, perId)
+      : jawabanPerSoal(data.pengerjaan, perId);
+    el.hasilJawaban.innerHTML = isi;
+  }
+
+  /* Satu kartu per soal, berisi jawaban semua siswa. Cocok ditayangkan di
+     layar kelas saat membahas bersama. Pada sesi mandiri tiap siswa bisa
+     mendapat soal berbeda, jadi jumlah barisnya tidak selalu sama. */
+  function jawabanPerSoal(pengerjaan, perId) {
+    var urutan = [], perSoal = {};
+    pengerjaan.forEach(function (p) {
+      p.idSoal.forEach(function (id, i) {
+        if (!perSoal[id]) { perSoal[id] = []; urutan.push(id); }
+        perSoal[id].push({ nama: p.nama, jawaban: p.jawaban[i], benar: p.benar[i] === true });
+      });
+    });
+
+    return urutan.map(function (id, n) {
+      var soal = perId[id];
+      var baris = perSoal[id];
+      var benar = baris.filter(function (b) { return b.benar; }).length;
+      return '<div class="kartu soal">' +
+        '<div class="nomor">Soal ' + (n + 1) + ' &middot; ' + lolos(id) +
+        (soal ? '<span class="level">Level ' + soal.level + '</span>' : '') +
+        '<span class="cap ' + (benar === baris.length ? 'benar' : (benar ? 'sebagian' : 'salah')) +
+        '" style="margin-left:.5rem">' + benar + ' dari ' + baris.length + ' benar</span></div>' +
+        '<div class="pertanyaan">' + (soal ? Rumus.keHTML(soal.pertanyaan)
+          : '<em>(soal tidak ditemukan di berkas)</em>') + '</div>' +
+        '<div class="tabel-gulir"><table><thead><tr><th>Nama</th><th>Jawaban</th><th></th></tr></thead><tbody>' +
+        baris.map(function (b) {
+          return '<tr><td>' + lolos(b.nama) + '</td><td class="bebas">' +
+            jawabanKeHTML(soal, b.jawaban) + '</td><td>' + capBenar(b.benar) + '</td></tr>';
+        }).join('') + '</tbody></table></div>' +
+        (soal ? '<div class="pembahasan"><div class="kepala-bahas">Pembahasan</div>' +
+          bacaPembahasan(soal) + '</div>' : '') +
+        '</div>';
+    }).join('');
+  }
+
+  function jawabanPerSiswa(pengerjaan, perId) {
+    return pengerjaan.map(function (p) {
+      return '<div class="kartu soal">' +
+        '<div class="nomor">' + lolos(p.nama) +
+        '<span class="cap ' + (p.nilai >= 75 ? 'benar' : (p.nilai >= 50 ? 'sebagian' : 'salah')) +
+        '" style="margin-left:.5rem">Nilai ' + p.nilai + '</span></div>' +
+        '<p class="kecil samar" style="margin:0 0 .5rem">' +
+        lolos(new Date(p.waktu).toLocaleString('id-ID')) + ' &middot; poin ' + p.poinRaih +
+        ' dari ' + p.poinTotal + ' &middot; ' + Math.round(p.durasiDetik / 60) + ' menit</p>' +
+        '<div class="tabel-gulir"><table><thead><tr><th>No</th><th>Soal</th><th>Jawaban</th><th></th></tr></thead><tbody>' +
+        p.idSoal.map(function (id, i) {
+          var soal = perId[id];
+          return '<tr><td>' + (i + 1) + '</td><td class="bebas">' +
+            (soal ? Rumus.keHTML(soal.pertanyaan) : '<em>' + lolos(id) + '</em>') +
+            '</td><td class="bebas">' + jawabanKeHTML(soal, p.jawaban[i]) + '</td>' +
+            '<td>' + capBenar(p.benar[i] === true) + '</td></tr>';
+        }).join('') + '</tbody></table></div></div>';
+    }).join('');
+  }
+
   /* ---------- analisis butir ---------- */
 
   el.tombolMuatButir.addEventListener('click', function () {
@@ -373,14 +519,7 @@
   });
 
   function gambarButir(data, bank) {
-    var perId = {};
-    if (bank) {
-      /* Soal lanjutan ikut diratakan supaya idnya bisa dicocokkan. */
-      bank.soal.forEach(function (s) {
-        perId[s.id] = s;
-        if (s.lanjutan) perId[s.lanjutan.id] = s.lanjutan;
-      });
-    }
+    var perId = petaSoal(bank);
 
     var butir = data.butir.slice().sort(function (a, b) {
       return (b.jumlah - b.benar) / (b.jumlah || 1) - (a.jumlah - a.benar) / (a.jumlah || 1);

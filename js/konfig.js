@@ -8,7 +8,7 @@
  * Properties yang hanya diketahui guru.
  */
 window.KONFIG = {
-  ENDPOINT: 'https://script.google.com/macros/s/AKfycbxrebMsRIe38di7SQfAZVihNDcDdE-U2ZHidJ1KjluJBqPXubi2W9ysu2Fy5s-rnsh5rg/exec',
+  ENDPOINT: 'https://script.google.com/macros/s/AKfycbzN8Q0awEpkUyPR6bBDix4fTXC21S9U67MOvHjRt-rg-teT3IbaWSh73aZubJ_og7ZTqw/exec',
 
   /* Nama sekolah/kelas yang tampil di beranda. */
   JUDUL: 'Bimbel Matematika SMP',

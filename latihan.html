@@ -43,10 +43,13 @@
         <select id="pilihKelas"></select>
       </div>
       <div class="kolom">
-        <label for="isiNama">Nama lengkap</label>
+        <label for="pilihNama">Nama</label>
+        <select id="pilihNama"></select>
+      </div>
+      <div class="kolom" id="kolomNamaLain" hidden>
+        <label for="isiNama">Tulis namamu</label>
         <input type="text" id="isiNama" autocomplete="off" autocapitalize="words"
-               spellcheck="false" placeholder="Ketik beberapa huruf, lalu pilih namamu">
-        <div class="saran-nama" id="saranNama" hidden></div>
+               spellcheck="false" placeholder="Nama lengkap">
         <p class="kecil samar" id="catatanNama" style="margin:.4rem 0 0"></p>
       </div>
       <button type="button" class="tombol utama lebar" id="tombolMulai">Mulai mengerjakan</button>
@@ -79,6 +82,7 @@
       <button type="button" class="tombol" id="tombolTinjau">Lihat jawabanku</button>
       <button type="button" class="tombol" id="tombolUlangi" hidden>Kerjakan lagi</button>
       <a class="tombol" href="index.html">Selesai</a>
+      <a class="tombol" id="tautanRiwayat" href="riwayat.html">Riwayatku</a>
     </div>
   </section>
 

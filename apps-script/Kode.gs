@@ -141,8 +141,18 @@ function sudahAda(sheet, idKirim) {
 
 function doGet(e) {
   try {
+    var aksi = ((e && e.parameter && e.parameter.aksi) || 'cek');
+
+    /* Satu-satunya aksi tanpa token: siswa melihat riwayatnya sendiri.
+       Tidak ada login, jadi yang menjaga hanya pasangan kelas+nama, dan
+       siapa pun yang tahu nama temannya bisa melihat nilai temannya. Itu
+       diterima: yang dikembalikan hanya nilai dan jawaban, sama seperti
+       yang tampak di layar saat mengumpulkan. */
+    if (aksi === 'riwayat') {
+      return sukses(riwayatSiswa(semuaBaris(), e.parameter.kelas, e.parameter.nama));
+    }
+
     if (!tokenSah(e)) return gagal('Token tidak cocok. Periksa kode guru.');
-    var aksi = (e.parameter.aksi || 'cek');
 
     if (aksi === 'cek') return sukses({ pesan: 'Token cocok.' });
 
@@ -152,6 +162,7 @@ function doGet(e) {
     if (aksi === 'butir') return sukses(analisisButir(baris, e.parameter.kodeSesi));
     if (aksi === 'siswa') return sukses(perSiswa(baris, e.parameter.kelas, e.parameter.nama));
     if (aksi === 'sesiNama') return sukses(namaDalamSesi(baris, e.parameter.kodeSesi));
+    if (aksi === 'jawaban') return sukses(jawabanSesi(baris, e.parameter.kodeSesi));
 
     return gagal('Aksi "' + aksi + '" tidak dikenal.');
   } catch (galat) {
@@ -293,4 +304,73 @@ function namaDalamSesi(baris, kodeSesi) {
     if (!lihat[k]) { lihat[k] = true; nama.push(k); }
   });
   return { kodeSesi: kodeSesi, nama: nama, jumlahPengerjaan: dipakai.length };
+}
+
+/* ---------- jawaban lengkap ---------- */
+
+/* Satu baris sheet dalam bentuk yang siap ditampilkan: senarai yang
+   tersimpan sebagai teks JSON diurai kembali, angka dipastikan angka. */
+function bakuBaris(r) {
+  return {
+    waktu: r.waktu,
+    kodeSesi: String(r.kodeSesi),
+    mode: String(r.mode || ''),
+    kelas: String(r.kelas),
+    nama: String(r.nama),
+    adaDiDaftar: r.adaDiDaftar !== false && String(r.adaDiDaftar).toUpperCase() !== 'FALSE',
+    tingkat: r.tingkat,
+    bab: String(r.bab),
+    jumlahSoal: Number(r.jumlahSoal) || 0,
+    poinTotal: Number(r.poinTotal) || 0,
+    poinRaih: Number(r.poinRaih) || 0,
+    nilai: r.nilai,
+    durasiDetik: Number(r.durasiDetik) || 0,
+    idSoal: uraiSenarai(r.idSoal),
+    jawaban: uraiSenarai(r.jawaban),
+    benar: uraiSenarai(r.benar).map(function (b) {
+      return b === true || b === 'TRUE' || b === 'true';
+    }),
+    idKirim: String(r.idKirim || '')
+  };
+}
+
+/* Seluruh pengerjaan dalam satu sesi beserta jawaban tiap butirnya, untuk
+   dibahas bersama di kelas. Berlaku juga untuk sesi mandiri. */
+function jawabanSesi(baris, kodeSesi) {
+  var dipakai = baris.filter(function (r) { return String(r.kodeSesi) === String(kodeSesi); });
+  var hasil = dipakai.map(bakuBaris);
+  hasil.sort(function (a, b) {
+    if (a.nama !== b.nama) return a.nama < b.nama ? -1 : 1;
+    return a.waktu < b.waktu ? -1 : 1;
+  });
+  var contoh = hasil[0] || {};
+  var jumlahNilai = hasil.reduce(function (t, r) { return t + r.nilai; }, 0);
+  return {
+    kodeSesi: kodeSesi,
+    kelas: contoh.kelas || '',
+    bab: contoh.bab || '',
+    tingkat: contoh.tingkat || '',
+    mode: contoh.mode || '',
+    jumlahPengerjaan: hasil.length,
+    rerata: hasil.length ? Math.round(jumlahNilai / hasil.length) : 0,
+    pengerjaan: hasil
+  };
+}
+
+/* Bentuk pembanding nama: huruf kecil, spasi dirapikan. Sama dengan
+   Identitas.kunciNama di peramban. */
+function kunciNama(n) {
+  return String(n || '').replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+/* Riwayat satu siswa, dicari dengan kelas dan nama. Kedua-duanya wajib
+   supaya permintaan kosong tidak mengembalikan seluruh isi sheet. */
+function riwayatSiswa(baris, kelas, nama) {
+  var k = kunciNama(nama);
+  if (!kelas || k.length < 2) return { kelas: kelas || '', nama: nama || '', pengerjaan: [] };
+  var hasil = baris.filter(function (r) {
+    return String(r.kelas) === String(kelas) && kunciNama(r.nama) === k;
+  }).map(bakuBaris);
+  hasil.sort(function (a, b) { return a.waktu < b.waktu ? 1 : -1; });
+  return { kelas: String(kelas), nama: hasil.length ? hasil[0].nama : String(nama), pengerjaan: hasil };
 }

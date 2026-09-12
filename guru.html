@@ -41,6 +41,7 @@
   <section id="ruang" hidden>
     <div class="tab" id="tabUtama" role="tablist">
       <button type="button" role="tab" data-panel="panelSesi" aria-selected="true">Buat sesi</button>
+      <button type="button" role="tab" data-panel="panelJawaban" aria-selected="false">Jawaban siswa</button>
       <button type="button" role="tab" data-panel="panelButir" aria-selected="false">Analisis butir</button>
       <button type="button" role="tab" data-panel="panelPerhatian" aria-selected="false">Perlu perhatian</button>
       <button type="button" role="tab" data-panel="panelPerkembangan" aria-selected="false">Perkembangan siswa</button>
@@ -126,6 +127,32 @@
         <p class="kecil samar" id="catatanTautan" style="margin-top:.6rem"></p>
         <div id="wadahQr" style="margin-top:1rem"></div>
       </div>
+    </div>
+
+    <div id="panelJawaban" hidden>
+      <div class="kartu">
+        <div class="baris">
+          <div class="kolom">
+            <label for="jawabanSesi">Sesi</label>
+            <select id="jawabanSesi"></select>
+          </div>
+          <div class="kolom">
+            <label for="jawabanTampilan">Tampilan</label>
+            <select id="jawabanTampilan">
+              <option value="soal">Per soal (untuk dibahas bersama)</option>
+              <option value="siswa">Per siswa</option>
+            </select>
+          </div>
+          <div class="kolom" style="flex:0 0 8rem;align-self:end">
+            <button type="button" class="tombol utama lebar" id="tombolMuatJawaban">Muat</button>
+          </div>
+        </div>
+        <p class="kecil samar" style="margin:0">
+          Seluruh jawaban yang dikirim siswa dalam sesi ini, termasuk latihan mandiri.
+          Pembahasan ikut ditampilkan karena halaman ini hanya dibuka guru.
+        </p>
+      </div>
+      <div id="hasilJawaban"></div>
     </div>
 
     <div id="panelButir" hidden>

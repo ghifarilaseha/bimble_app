@@ -29,10 +29,11 @@
   var el = {};
   ['layarPesan', 'layarIdentitas', 'layarSoal', 'layarHasil', 'kartuKonfirmasi',
    'kartuIsiNama', 'namaTersimpan', 'kelasTersimpan', 'tombolYaSaya', 'tombolBukanSaya',
-   'pilihKelas', 'isiNama', 'saranNama', 'catatanNama', 'tombolMulai', 'judulBab',
+   'pilihKelas', 'pilihNama', 'kolomNamaLain', 'isiNama', 'catatanNama', 'tombolMulai', 'judulBab',
    'labelSiswa', 'jam', 'daftarSoal', 'pemberitahuanSesi', 'bilah', 'palangKemajuan',
    'labelKemajuan', 'tombolKumpulkan', 'hasilNilai', 'hasilRincian', 'hasilJudul',
-   'hasilStatusKirim', 'hasilDarurat', 'kodeHasil', 'tombolTinjau', 'tombolUlangi', 'salamJudul']
+   'hasilStatusKirim', 'hasilDarurat', 'kodeHasil', 'tombolTinjau', 'tombolUlangi', 'salamJudul',
+   'tautanRiwayat']
     .forEach(function (id) { el[id] = document.getElementById(id); });
 
   var daftarKelas = null, petaBab = null, babIni = null;
@@ -171,8 +172,8 @@
       el.namaTersimpan.textContent = tersimpan.nama;
       el.kelasTersimpan.textContent = tersimpan.kelas;
       el.pilihKelas.value = tersimpan.kelas;
-      el.isiNama.value = tersimpan.nama;
     }
+    isiPilihanNama(tersimpan && kodeKelasSah ? tersimpan.nama : '');
 
     el.tombolYaSaya.addEventListener('click', function () {
       terimaIdentitas(tersimpan.nama, tersimpan.kelas);
@@ -181,51 +182,94 @@
       Identitas.lupakan();
       el.kartuKonfirmasi.hidden = true;
       el.kartuIsiNama.hidden = false;
-      el.isiNama.value = '';
-      el.isiNama.focus();
+      isiPilihanNama('');
+      el.pilihNama.focus();
     });
     el.tombolMulai.addEventListener('click', function () {
-      var nama = Identitas.rapikanNama(el.isiNama.value);
+      var nama = namaTerpilih();
+      if (nama === null) {
+        el.catatanNama.textContent = '';
+        el.pilihNama.focus();
+        return alert('Pilih namamu dulu ya.');
+      }
       if (nama.length < 2) {
         el.catatanNama.textContent = 'Tulis namamu dulu ya.';
         return el.isiNama.focus();
       }
       terimaIdentitas(nama, el.pilihKelas.value);
     });
-    el.isiNama.addEventListener('input', perbaruiSaran);
+    el.pilihNama.addEventListener('change', tanggapiPilihanNama);
+    el.isiNama.addEventListener('input', periksaNamaLain);
     el.isiNama.addEventListener('keydown', function (ev) {
       if (ev.key === 'Enter') { ev.preventDefault(); el.tombolMulai.click(); }
     });
-    el.pilihKelas.addEventListener('change', perbaruiSaran);
+    el.pilihKelas.addEventListener('change', function () { isiPilihanNama(''); });
   }
 
-  function perbaruiSaran() {
+  /* Nilai opsi "Lainnya" di dropdown. Nama sungguhan tidak akan pernah
+     berbentuk seperti ini. */
+  var LAINNYA = '__lainnya';
+
+  /* Nama dipilih dari daftar kelas, bukan diketik. Siswa yang mengetik
+     sendiri sering mengeja namanya berbeda tiap kali, sehingga riwayatnya
+     terpecah menjadi beberapa orang di rekap. Yang tidak ada di daftar
+     tetap bisa masuk lewat "Lainnya". */
+  function isiPilihanNama(namaAwal) {
     var daftarSiswa = siswaKelas(el.pilihKelas.value);
-    var cocok = Identitas.saran(daftarSiswa, el.isiNama.value);
-    var nama = Identitas.rapikanNama(el.isiNama.value);
-
-    el.saranNama.innerHTML = '';
-    el.saranNama.hidden = !cocok.length;
-    cocok.forEach(function (n) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = n;
-      b.addEventListener('click', function () {
-        el.isiNama.value = n;
-        el.saranNama.hidden = true;
-        perbaruiSaran();
+    el.pilihNama.innerHTML = '';
+    [['', '- pilih namamu -']].concat(daftarSiswa.map(function (n) { return [n, n]; }))
+      .concat([[LAINNYA, 'Lainnya (namaku tidak ada di daftar)']])
+      .forEach(function (p) {
+        var o = document.createElement('option');
+        o.value = p[0];
+        o.textContent = p[1];
+        el.pilihNama.appendChild(o);
       });
-      el.saranNama.appendChild(b);
-    });
 
-    /* Nama di luar daftar tetap diterima. Yang terjadi hanya penandaan,
-       supaya guru bisa memeriksanya belakangan. */
-    if (nama.length >= 2 && !Identitas.adaDiDaftar(daftarSiswa, nama)) {
+    el.isiNama.value = '';
+    el.catatanNama.textContent = '';
+    if (namaAwal && Identitas.adaDiDaftar(daftarSiswa, namaAwal)) {
+      el.pilihNama.value = Identitas.samakanDenganDaftar(daftarSiswa, namaAwal);
+    } else if (namaAwal) {
+      el.pilihNama.value = LAINNYA;
+      el.isiNama.value = namaAwal;
+    } else {
+      el.pilihNama.value = '';
+    }
+    tanggapiPilihanNama();
+  }
+
+  function tanggapiPilihanNama() {
+    var lain = el.pilihNama.value === LAINNYA;
+    el.kolomNamaLain.hidden = !lain;
+    if (lain) {
+      periksaNamaLain();
+      if (document.activeElement === el.pilihNama) el.isiNama.focus();
+    }
+  }
+
+  /* Nama yang diketik di "Lainnya" tetapi ternyata ada di daftar diarahkan
+     kembali ke dropdown, supaya ejaannya seragam dengan rekap. */
+  function periksaNamaLain() {
+    var daftarSiswa = siswaKelas(el.pilihKelas.value);
+    var nama = Identitas.rapikanNama(el.isiNama.value);
+    if (nama.length >= 2 && Identitas.adaDiDaftar(daftarSiswa, nama)) {
+      el.catatanNama.textContent = 'Nama ini ada di daftar. Pilih saja dari daftar di atas.';
+    } else if (nama.length >= 2) {
       el.catatanNama.textContent = 'Namamu belum ada di daftar kelas ini. Kamu tetap boleh lanjut, ' +
         'nanti gurumu yang memeriksa.';
     } else {
       el.catatanNama.textContent = '';
     }
+  }
+
+  /* null bila belum memilih apa pun; string (mungkin kosong) bila memilih
+     "Lainnya" lalu mengetik. */
+  function namaTerpilih() {
+    var v = el.pilihNama.value;
+    if (!v) return null;
+    if (v === LAINNYA) return Identitas.rapikanNama(el.isiNama.value);
+    return v;
   }
 
   function terimaIdentitas(nama, kodeKelas) {
@@ -237,6 +281,8 @@
     };
     Identitas.simpan({ nama: identitas.nama, kelas: identitas.kelas });
     el.labelSiswa.textContent = identitas.nama + ' - ' + identitas.kelas;
+    el.tautanRiwayat.href = 'riwayat.html?kelas=' + encodeURIComponent(identitas.kelas) +
+      '&nama=' + encodeURIComponent(identitas.nama);
     bersihkanPesan();
     muatSoal();
   }

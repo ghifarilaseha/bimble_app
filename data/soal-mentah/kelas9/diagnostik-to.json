@@ -1,0 +1,887 @@
+{
+  "meta": {
+    "kelas": 9,
+    "semester": 2,
+    "bab": "diagnostik-to",
+    "judul": "Asesmen Diagnostik TO",
+    "versi": "2026-11-13",
+    "sumber": "Kisi-kisi Asesmen Diagnostik Persiapan TO (15 materi x 3 level), materi kelas 7-9 Modul MGMP SMPN 14 Bandung",
+    "diagnostik": {
+      "opsiBelumTahu": "e",
+      "materi": [
+        "Bilangan Bulat & Pecahan",
+        "Perpangkatan & Bentuk Akar",
+        "Himpunan",
+        "Bentuk Aljabar & PLSV",
+        "Perbandingan & Aritmetika Sosial",
+        "Pola Bilangan",
+        "Relasi, Fungsi & Persamaan Garis Lurus",
+        "SPLDV",
+        "Persamaan & Fungsi Kuadrat",
+        "Garis, Sudut, Segitiga & Segiempat",
+        "Teorema Pythagoras",
+        "Lingkaran",
+        "Bangun Ruang",
+        "Transformasi & Kesebangunan",
+        "Statistika & Peluang"
+      ]
+    }
+  },
+  "soal": [
+    {
+      "id": "dg-01",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 1,
+      "topik": "Bilangan Bulat & Pecahan",
+      "pertanyaan": "Hasil dari $-12 + 4 \\times (-3) - (-5)$ adalah ...",
+      "opsi": {
+        "a": "$-29$",
+        "b": "$-19$",
+        "c": "$19$",
+        "d": "$29$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Kalikan dulu: $4 \\times (-3) = -12$. Lalu $-12 + (-12) - (-5) = -24 + 5 = -19$."
+    },
+    {
+      "id": "dg-02",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 2,
+      "topik": "Perpangkatan & Bentuk Akar",
+      "pertanyaan": "Hasil dari $2^5 \\times 2^3 : 2^4$ adalah ...",
+      "opsi": {
+        "a": "$8$",
+        "b": "$16$",
+        "c": "$32$",
+        "d": "$64$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Basis sama: pangkat dijumlah lalu dikurang, $2^{5+3-4} = 2^4 = 16$."
+    },
+    {
+      "id": "dg-03",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 3,
+      "topik": "Himpunan",
+      "pertanyaan": "Diketahui $A = \\{x \\mid x$ bilangan prima, $x < 15\\}$. Banyak anggota himpunan $A$ adalah ...",
+      "opsi": {
+        "a": "$6$",
+        "b": "$5$",
+        "c": "$4$",
+        "d": "$7$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Bilangan prima kurang dari 15: $2, 3, 5, 7, 11, 13$. Ada $6$ anggota. Ingat, $1$ bukan bilangan prima."
+    },
+    {
+      "id": "dg-04",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 4,
+      "topik": "Bentuk Aljabar & PLSV",
+      "pertanyaan": "Bentuk sederhana dari $5x - 3y - 2x + 7y$ adalah ...",
+      "opsi": {
+        "a": "$3x + 4y$",
+        "b": "$3x - 10y$",
+        "c": "$7x + 4y$",
+        "d": "$3x + 10y$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Kelompokkan suku sejenis: $(5x - 2x) + (-3y + 7y) = 3x + 4y$."
+    },
+    {
+      "id": "dg-05",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 5,
+      "topik": "Perbandingan & Aritmetika Sosial",
+      "pertanyaan": "Jarak dua kota pada peta berskala $1 : 500.000$ adalah $6$ cm. Jarak sebenarnya kedua kota itu adalah ...",
+      "opsi": {
+        "a": "$3$ km",
+        "b": "$30$ km",
+        "c": "$300$ km",
+        "d": "$3.000$ km",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$6 \\times 500.000 = 3.000.000$ cm $= 30.000$ m $= 30$ km."
+    },
+    {
+      "id": "dg-06",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 6,
+      "topik": "Pola Bilangan",
+      "pertanyaan": "Suku berikutnya dari barisan $2, 6, 12, 20, 30, \\ldots$ adalah ...",
+      "opsi": {
+        "a": "$36$",
+        "b": "$40$",
+        "c": "$48$",
+        "d": "$42$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "Selisihnya $4, 6, 8, 10$, jadi selisih berikutnya $12$: $30 + 12 = 42$."
+    },
+    {
+      "id": "dg-07",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 7,
+      "topik": "Relasi, Fungsi & Persamaan Garis Lurus",
+      "pertanyaan": "Diketahui $A = \\{1, 2, 3\\}$ dan $B = \\{a, b\\}$. Himpunan pasangan berurutan berikut yang merupakan fungsi dari $A$ ke $B$ adalah ...",
+      "opsi": {
+        "a": "$\\{(1,a), (1,b), (2,a), (3,b)\\}$",
+        "b": "$\\{(1,a), (2,b)\\}$",
+        "c": "$\\{(1,b), (2,a), (2,b), (3,a)\\}$",
+        "d": "$\\{(1,a), (2,a), (3,b)\\}$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "Fungsi: setiap anggota $A$ dipasangkan dengan tepat satu anggota $B$. Opsi a dan c memasangkan satu anggota ke dua anggota $B$, opsi b tidak memasangkan $3$."
+    },
+    {
+      "id": "dg-08",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 8,
+      "topik": "SPLDV",
+      "pertanyaan": "Pasangan $(x, y)$ yang merupakan penyelesaian dari $x + y = 7$ dan $x - y = 1$ adalah ...",
+      "opsi": {
+        "a": "$(3, 4)$",
+        "b": "$(4, 3)$",
+        "c": "$(5, 2)$",
+        "d": "$(6, 1)$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Coba $(4, 3)$: $4 + 3 = 7$ dan $4 - 3 = 1$. Keduanya terpenuhi. $(3, 4)$ memberi $x - y = -1$."
+    },
+    {
+      "id": "dg-09",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 9,
+      "topik": "Persamaan & Fungsi Kuadrat",
+      "pertanyaan": "Akar-akar persamaan $x^2 - 5x + 6 = 0$ adalah ...",
+      "opsi": {
+        "a": "$1$ dan $6$",
+        "b": "$-2$ dan $-3$",
+        "c": "$-1$ dan $6$",
+        "d": "$2$ dan $3$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "$x^2 - 5x + 6 = (x - 2)(x - 3) = 0$, jadi $x = 2$ atau $x = 3$."
+    },
+    {
+      "id": "dg-10",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 10,
+      "topik": "Garis, Sudut, Segitiga & Segiempat",
+      "pertanyaan": "Sudut $(2x + 10)°$ dan $(x + 20)°$ saling berpelurus. Nilai $x$ adalah ...",
+      "opsi": {
+        "a": "$40$",
+        "b": "$50$",
+        "c": "$60$",
+        "d": "$70$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Berpelurus berarti jumlahnya $180°$: $3x + 30 = 180$, sehingga $x = 50$."
+    },
+    {
+      "id": "dg-11",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 11,
+      "topik": "Teorema Pythagoras",
+      "pertanyaan": "Sebuah segitiga siku-siku memiliki sisi siku-siku $6$ cm dan $8$ cm. Panjang sisi miringnya adalah ...",
+      "opsi": {
+        "a": "$7$ cm",
+        "b": "$10$ cm",
+        "c": "$12$ cm",
+        "d": "$14$ cm",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$\\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$ cm."
+    },
+    {
+      "id": "dg-12",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 12,
+      "topik": "Lingkaran",
+      "pertanyaan": "Keliling lingkaran yang berdiameter $14$ cm adalah ... $\\left(\\pi = \\frac{22}{7}\\right)$",
+      "opsi": {
+        "a": "$44$ cm",
+        "b": "$28$ cm",
+        "c": "$22$ cm",
+        "d": "$154$ cm",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "$K = \\pi d = \\frac{22}{7} \\times 14 = 44$ cm. ($154$ cm² adalah luasnya.)"
+    },
+    {
+      "id": "dg-13",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 13,
+      "topik": "Bangun Ruang",
+      "pertanyaan": "Volume balok berukuran $8$ cm $\\times$ $5$ cm $\\times$ $3$ cm adalah ...",
+      "opsi": {
+        "a": "$16$ cm³",
+        "b": "$64$ cm³",
+        "c": "$120$ cm³",
+        "d": "$158$ cm³",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "$V = p \\times l \\times t = 8 \\times 5 \\times 3 = 120$ cm³. ($158$ cm² adalah luas permukaannya.)"
+    },
+    {
+      "id": "dg-14",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 14,
+      "topik": "Transformasi & Kesebangunan",
+      "pertanyaan": "Titik $P(3, -5)$ dicerminkan terhadap sumbu-$X$. Bayangan titik $P$ adalah ...",
+      "opsi": {
+        "a": "$(-3, -5)$",
+        "b": "$(-3, 5)$",
+        "c": "$(5, 3)$",
+        "d": "$(3, 5)$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "Pencerminan terhadap sumbu-$X$: $(x, y) \\to (x, -y)$, jadi $(3, -5) \\to (3, 5)$."
+    },
+    {
+      "id": "dg-15",
+      "level": 1,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 15,
+      "topik": "Statistika & Peluang",
+      "pertanyaan": "Median dari data $7, 8, 6, 9, 8, 7, 8, 5$ adalah ...",
+      "opsi": {
+        "a": "$7$",
+        "b": "$7{,}25$",
+        "c": "$7{,}5$",
+        "d": "$8$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Urutkan: $5, 6, 7, 7, 8, 8, 8, 9$. Dua data tengah $7$ dan $8$, median $= \\frac{7 + 8}{2} = 7{,}5$."
+    },
+    {
+      "id": "dg-16",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 1,
+      "topik": "Bilangan Bulat & Pecahan",
+      "pertanyaan": "Hasil dari $2\\frac{1}{2} \\times \\frac{4}{5} - 0{,}75$ adalah ...",
+      "opsi": {
+        "a": "$\\frac{3}{4}$",
+        "b": "$1$",
+        "c": "$1\\frac{3}{4}$",
+        "d": "$1\\frac{1}{4}$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "$2\\frac{1}{2} \\times \\frac{4}{5} = \\frac{5}{2} \\times \\frac{4}{5} = 2$. Lalu $2 - 0{,}75 = 1{,}25 = 1\\frac{1}{4}$."
+    },
+    {
+      "id": "dg-17",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 2,
+      "topik": "Perpangkatan & Bentuk Akar",
+      "pertanyaan": "Bentuk sederhana dari $\\sqrt{75} - \\sqrt{12}$ adalah ...",
+      "opsi": {
+        "a": "$3\\sqrt{3}$",
+        "b": "$\\sqrt{63}$",
+        "c": "$7\\sqrt{3}$",
+        "d": "$3\\sqrt{7}$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "$\\sqrt{75} = 5\\sqrt{3}$ dan $\\sqrt{12} = 2\\sqrt{3}$, jadi $5\\sqrt{3} - 2\\sqrt{3} = 3\\sqrt{3}$. Bentuk akar tidak boleh dikurangkan langsung: $\\sqrt{75} - \\sqrt{12} \\neq \\sqrt{63}$."
+    },
+    {
+      "id": "dg-18",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 3,
+      "topik": "Himpunan",
+      "pertanyaan": "Diketahui $S = \\{1, 2, 3, \\ldots, 10\\}$, $A = \\{2, 4, 6, 8, 10\\}$, dan $B = \\{1, 2, 3, 4, 5\\}$. Himpunan $A^c \\cap B$ adalah ...",
+      "opsi": {
+        "a": "$\\{2, 4\\}$",
+        "b": "$\\{6, 8, 10\\}$",
+        "c": "$\\{7, 9\\}$",
+        "d": "$\\{1, 3, 5\\}$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "$A^c = \\{1, 3, 5, 7, 9\\}$. Irisannya dengan $B$: $\\{1, 3, 5\\}$."
+    },
+    {
+      "id": "dg-19",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 4,
+      "topik": "Bentuk Aljabar & PLSV",
+      "pertanyaan": "Penyelesaian dari $\\frac{x + 3}{2} = \\frac{2x - 1}{3}$ adalah ...",
+      "opsi": {
+        "a": "$x = 11$",
+        "b": "$x = 7$",
+        "c": "$x = 5$",
+        "d": "$x = 13$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Kali silang: $3(x + 3) = 2(2x - 1)$, jadi $3x + 9 = 4x - 2$, sehingga $x = 11$."
+    },
+    {
+      "id": "dg-20",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 5,
+      "topik": "Perbandingan & Aritmetika Sosial",
+      "pertanyaan": "Pedagang membeli $10$ kg jeruk seharga Rp$120.000$, lalu menjual semuanya Rp$15.000$ per kg. Persentase keuntungannya adalah ...",
+      "opsi": {
+        "a": "$15\\%$",
+        "b": "$20\\%$",
+        "c": "$25\\%$",
+        "d": "$30\\%$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Penjualan $10 \\times 15.000 = 150.000$. Untung $30.000$. Persentase $= \\frac{30.000}{120.000} \\times 100\\% = 25\\%$ (dihitung dari harga beli)."
+    },
+    {
+      "id": "dg-21",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 6,
+      "topik": "Pola Bilangan",
+      "pertanyaan": "Suku ke-$20$ dari barisan $4, 7, 10, 13, \\ldots$ adalah ...",
+      "opsi": {
+        "a": "$58$",
+        "b": "$64$",
+        "c": "$63$",
+        "d": "$61$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "$U_n = a + (n - 1)b = 4 + 19 \\times 3 = 61$."
+    },
+    {
+      "id": "dg-22",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 7,
+      "topik": "Relasi, Fungsi & Persamaan Garis Lurus",
+      "pertanyaan": "Gradien garis yang melalui titik $(-2, 5)$ dan $(4, -7)$ adalah ...",
+      "opsi": {
+        "a": "$-2$",
+        "b": "$-\\frac{1}{2}$",
+        "c": "$\\frac{1}{2}$",
+        "d": "$2$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "$m = \\frac{-7 - 5}{4 - (-2)} = \\frac{-12}{6} = -2$."
+    },
+    {
+      "id": "dg-23",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 8,
+      "topik": "SPLDV",
+      "pertanyaan": "Penyelesaian sistem persamaan $3x + 2y = 16$ dan $x - 2y = 0$ adalah $x$ dan $y$. Nilai $5x - y$ adalah ...",
+      "opsi": {
+        "a": "$14$",
+        "b": "$16$",
+        "c": "$18$",
+        "d": "$22$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Jumlahkan kedua persamaan: $4x = 16$, $x = 4$. Lalu $4 - 2y = 0$, $y = 2$. Jadi $5x - y = 20 - 2 = 18$."
+    },
+    {
+      "id": "dg-24",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 9,
+      "topik": "Persamaan & Fungsi Kuadrat",
+      "pertanyaan": "Koordinat titik puncak grafik $f(x) = x^2 - 6x + 5$ adalah ...",
+      "opsi": {
+        "a": "$(3, 4)$",
+        "b": "$(-3, -4)$",
+        "c": "$(3, -4)$",
+        "d": "$(6, 5)$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "$x_p = -\\frac{b}{2a} = \\frac{6}{2} = 3$. $f(3) = 9 - 18 + 5 = -4$. Titik puncak $(3, -4)$."
+    },
+    {
+      "id": "dg-25",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 10,
+      "topik": "Garis, Sudut, Segitiga & Segiempat",
+      "pertanyaan": "Pada segitiga $ABC$, besar $\\angle A = 2 \\times \\angle B$ dan $\\angle C$ lebih besar $20°$ dari $\\angle B$. Besar $\\angle A$ adalah ...",
+      "opsi": {
+        "a": "$40°$",
+        "b": "$60°$",
+        "c": "$100°$",
+        "d": "$80°$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "Misal $\\angle B = x$. $2x + x + (x + 20) = 180$, jadi $4x = 160$, $x = 40°$. $\\angle A = 80°$."
+    },
+    {
+      "id": "dg-26",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 11,
+      "topik": "Teorema Pythagoras",
+      "pertanyaan": "Tiga bilangan berikut adalah panjang sisi segitiga. Yang membentuk segitiga tumpul adalah ...",
+      "opsi": {
+        "a": "$6$, $8$, $10$",
+        "b": "$5$, $6$, $7$",
+        "c": "$4$, $5$, $7$",
+        "d": "$7$, $24$, $25$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Bandingkan kuadrat sisi terpanjang dengan jumlah kuadrat dua sisi lain. $4, 5, 7$: $7^2 = 49 > 4^2 + 5^2 = 41$, tumpul. $5, 6, 7$: $49 < 61$, lancip. Dua lainnya siku-siku."
+    },
+    {
+      "id": "dg-27",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 12,
+      "topik": "Lingkaran",
+      "pertanyaan": "Luas juring lingkaran dengan jari-jari $21$ cm dan sudut pusat $60°$ adalah ... $\\left(\\pi = \\frac{22}{7}\\right)$",
+      "opsi": {
+        "a": "$77$ cm²",
+        "b": "$154$ cm²",
+        "c": "$231$ cm²",
+        "d": "$462$ cm²",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "$\\frac{60}{360} \\times \\frac{22}{7} \\times 21 \\times 21 = \\frac{1}{6} \\times 1.386 = 231$ cm²."
+    },
+    {
+      "id": "dg-28",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 13,
+      "topik": "Bangun Ruang",
+      "pertanyaan": "Alas sebuah prisma berbentuk segitiga siku-siku dengan sisi $3$ cm, $4$ cm, dan $5$ cm. Tinggi prisma $10$ cm. Luas permukaan prisma adalah ...",
+      "opsi": {
+        "a": "$132$ cm²",
+        "b": "$120$ cm²",
+        "c": "$60$ cm²",
+        "d": "$144$ cm²",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Dua alas: $2 \\times \\frac{1}{2} \\times 3 \\times 4 = 12$. Selimut: keliling alas $\\times$ tinggi $= 12 \\times 10 = 120$. Total $132$ cm²."
+    },
+    {
+      "id": "dg-29",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 14,
+      "topik": "Transformasi & Kesebangunan",
+      "pertanyaan": "Titik $A(4, 1)$ dirotasi $90°$ berlawanan arah jarum jam dengan pusat $O(0, 0)$. Bayangan titik $A$ adalah ...",
+      "opsi": {
+        "a": "$(1, -4)$",
+        "b": "$(-1, 4)$",
+        "c": "$(-4, -1)$",
+        "d": "$(4, -1)$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Rotasi $90°$ berlawanan arah jarum jam: $(x, y) \\to (-y, x)$, jadi $(4, 1) \\to (-1, 4)$."
+    },
+    {
+      "id": "dg-30",
+      "level": 2,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 15,
+      "topik": "Statistika & Peluang",
+      "pertanyaan": "Dalam sebuah kantong terdapat $5$ bola merah, $3$ bola biru, dan $4$ bola hijau. Satu bola diambil acak. Peluang terambil bola yang bukan merah adalah ...",
+      "opsi": {
+        "a": "$\\frac{5}{12}$",
+        "b": "$\\frac{7}{12}$",
+        "c": "$\\frac{1}{3}$",
+        "d": "$\\frac{1}{4}$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Bukan merah $= 3 + 4 = 7$ bola dari $12$ bola. Peluangnya $\\frac{7}{12}$."
+    },
+    {
+      "id": "dg-31",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 1,
+      "topik": "Bilangan Bulat & Pecahan",
+      "pertanyaan": "Uang saku Rina Rp$120.000$. Sepertiganya dipakai membeli buku, seperempat dari sisanya untuk ongkos, dan sisanya ditabung. Uang yang ditabung Rina adalah ...",
+      "opsi": {
+        "a": "Rp$50.000$",
+        "b": "Rp$80.000$",
+        "c": "Rp$70.000$",
+        "d": "Rp$60.000$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "Buku: $\\frac{1}{3} \\times 120.000 = 40.000$, sisa $80.000$. Ongkos: $\\frac{1}{4} \\times 80.000 = 20.000$. Ditabung $60.000$. Hati-hati: seperempat dari sisa, bukan dari seluruh uang."
+    },
+    {
+      "id": "dg-32",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 2,
+      "topik": "Perpangkatan & Bentuk Akar",
+      "pertanyaan": "Bentuk rasional dari $\\frac{6}{3 - \\sqrt{3}}$ adalah ...",
+      "opsi": {
+        "a": "$3 - \\sqrt{3}$",
+        "b": "$2 + \\sqrt{3}$",
+        "c": "$3 + \\sqrt{3}$",
+        "d": "$6 + 2\\sqrt{3}$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Kalikan dengan sekawan: $\\frac{6(3 + \\sqrt{3})}{9 - 3} = \\frac{6(3 + \\sqrt{3})}{6} = 3 + \\sqrt{3}$."
+    },
+    {
+      "id": "dg-33",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 3,
+      "topik": "Himpunan",
+      "pertanyaan": "Dari $40$ siswa, $24$ gemar matematika, $20$ gemar IPA, dan $7$ tidak gemar keduanya. Banyak siswa yang hanya gemar matematika adalah ...",
+      "opsi": {
+        "a": "$13$",
+        "b": "$11$",
+        "c": "$17$",
+        "d": "$24$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Yang gemar paling sedikit satu: $40 - 7 = 33$. Gemar keduanya: $24 + 20 - 33 = 11$. Hanya matematika: $24 - 11 = 13$."
+    },
+    {
+      "id": "dg-34",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 4,
+      "topik": "Bentuk Aljabar & PLSV",
+      "pertanyaan": "Panjang sebuah persegi panjang $5$ cm lebih dari lebarnya, dan kelilingnya $46$ cm. Luas persegi panjang itu adalah ...",
+      "opsi": {
+        "a": "$99$ cm²",
+        "b": "$104$ cm²",
+        "c": "$126$ cm²",
+        "d": "$140$ cm²",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Lebar $x$, panjang $x + 5$. $2(x + x + 5) = 46$, jadi $2x + 5 = 23$, $x = 9$. Panjang $14$, luas $14 \\times 9 = 126$ cm²."
+    },
+    {
+      "id": "dg-35",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 5,
+      "topik": "Perbandingan & Aritmetika Sosial",
+      "pertanyaan": "Suatu pekerjaan dapat diselesaikan $12$ orang dalam $20$ hari. Setelah dikerjakan $8$ hari, pekerjaan terhenti $4$ hari. Agar selesai tepat waktu, banyak pekerja tambahan yang diperlukan adalah ...",
+      "opsi": {
+        "a": "$4$ orang",
+        "b": "$6$ orang",
+        "c": "$8$ orang",
+        "d": "$18$ orang",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Sisa pekerjaan: $12$ orang $\\times$ $12$ hari $= 144$ orang-hari. Waktu tersisa $20 - 8 - 4 = 8$ hari, perlu $144 : 8 = 18$ orang. Tambahan $18 - 12 = 6$ orang."
+    },
+    {
+      "id": "dg-36",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 6,
+      "topik": "Pola Bilangan",
+      "pertanyaan": "Persegi-persegi disusun berjajar dari batang korek api: $1$ persegi butuh $4$ batang, $2$ persegi $7$ batang, $3$ persegi $10$ batang. Banyak batang untuk $30$ persegi adalah ...",
+      "opsi": {
+        "a": "$91$",
+        "b": "$93$",
+        "c": "$100$",
+        "d": "$120$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Setiap persegi baru menambah $3$ batang, jadi $U_n = 3n + 1$. $U_{30} = 91$. ($120$ muncul bila tiap persegi dihitung $4$ batang terpisah.)"
+    },
+    {
+      "id": "dg-37",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 7,
+      "topik": "Relasi, Fungsi & Persamaan Garis Lurus",
+      "pertanyaan": "Persamaan garis yang melalui titik $(2, -3)$ dan tegak lurus garis $2x - y + 5 = 0$ adalah ...",
+      "opsi": {
+        "a": "$2x - y - 7 = 0$",
+        "b": "$x - 2y - 8 = 0$",
+        "c": "$x + 2y - 4 = 0$",
+        "d": "$x + 2y + 4 = 0$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "Gradien garis $2x - y + 5 = 0$ adalah $2$, jadi gradien garis tegak lurusnya $-\\frac{1}{2}$. $y + 3 = -\\frac{1}{2}(x - 2)$, dikali $2$: $2y + 6 = -x + 2$, sehingga $x + 2y + 4 = 0$."
+    },
+    {
+      "id": "dg-38",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 8,
+      "topik": "SPLDV",
+      "pertanyaan": "Harga $2$ buku dan $3$ pensil Rp$21.000$. Harga $3$ buku dan $1$ pensil Rp$21.000$. Harga $4$ buku dan $5$ pensil adalah ...",
+      "opsi": {
+        "a": "Rp$39.000$",
+        "b": "Rp$36.000$",
+        "c": "Rp$42.000$",
+        "d": "Rp$45.000$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Dari persamaan kedua, $p = 21.000 - 3b$. Substitusi: $2b + 63.000 - 9b = 21.000$, jadi $b = 6.000$ dan $p = 3.000$. $4b + 5p = 24.000 + 15.000 = 39.000$."
+    },
+    {
+      "id": "dg-39",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 9,
+      "topik": "Persamaan & Fungsi Kuadrat",
+      "pertanyaan": "Pak Budi memiliki pagar $40$ m untuk kebun persegi panjang. Satu sisi kebun berbatasan dengan tembok sehingga tidak perlu dipagari. Luas kebun terbesar yang dapat dibuat adalah ...",
+      "opsi": {
+        "a": "$100$ m²",
+        "b": "$150$ m²",
+        "c": "$200$ m²",
+        "d": "$400$ m²",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Lebar $x$ (dua sisi), panjang $40 - 2x$. $L = x(40 - 2x) = 40x - 2x^2$. Puncak di $x = \\frac{40}{4} = 10$, $L = 10 \\times 20 = 200$ m²."
+    },
+    {
+      "id": "dg-40",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 10,
+      "topik": "Garis, Sudut, Segitiga & Segiempat",
+      "pertanyaan": "Sebidang tanah persegi panjang berukuran $20$ m $\\times$ $15$ m. Di dalamnya dibuat kolam berbentuk trapesium dengan sisi sejajar $8$ m dan $12$ m serta tinggi $6$ m. Sisa tanah ditanami rumput. Luas tanah yang ditanami rumput adalah ...",
+      "opsi": {
+        "a": "$180$ m²",
+        "b": "$240$ m²",
+        "c": "$252$ m²",
+        "d": "$270$ m²",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Luas tanah $300$ m². Luas kolam $\\frac{(8 + 12) \\times 6}{2} = 60$ m². Rumput $300 - 60 = 240$ m²."
+    },
+    {
+      "id": "dg-41",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 11,
+      "topik": "Teorema Pythagoras",
+      "pertanyaan": "Tangga sepanjang $5$ m bersandar pada dinding tegak, kakinya berjarak $3$ m dari dinding. Kaki tangga lalu digeser $1$ m menjauhi dinding. Ujung atas tangga turun sejauh ...",
+      "opsi": {
+        "a": "$0{,}5$ m",
+        "b": "$2$ m",
+        "c": "$1{,}5$ m",
+        "d": "$1$ m",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "d",
+      "acakOpsi": false,
+      "pembahasan": "Mula-mula tinggi $\\sqrt{5^2 - 3^2} = 4$ m. Setelah digeser, jarak kaki $4$ m, tinggi $\\sqrt{5^2 - 4^2} = 3$ m. Turun $1$ m."
+    },
+    {
+      "id": "dg-42",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 12,
+      "topik": "Lingkaran",
+      "pertanyaan": "Dua lingkaran berjari-jari $9$ cm dan $4$ cm, jarak kedua pusatnya $13$ cm. Panjang garis singgung persekutuan luar kedua lingkaran adalah ...",
+      "opsi": {
+        "a": "$10$ cm",
+        "b": "$12$ cm",
+        "c": "$13$ cm",
+        "d": "$15$ cm",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "$\\sqrt{d^2 - (R - r)^2} = \\sqrt{13^2 - 5^2} = \\sqrt{144} = 12$ cm."
+    },
+    {
+      "id": "dg-43",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 13,
+      "topik": "Bangun Ruang",
+      "pertanyaan": "Tabung berjari-jari $7$ cm dan tinggi $20$ cm berisi penuh air. Sebuah kerucut pejal berjari-jari $7$ cm dan tinggi $6$ cm dimasukkan seluruhnya ke dalam tabung. Volume air yang tersisa di tabung adalah ... $\\left(\\pi = \\frac{22}{7}\\right)$",
+      "opsi": {
+        "a": "$2.464$ cm³",
+        "b": "$2.772$ cm³",
+        "c": "$2.926$ cm³",
+        "d": "$3.080$ cm³",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "b",
+      "acakOpsi": false,
+      "pembahasan": "Volume tabung $\\frac{22}{7} \\times 49 \\times 20 = 3.080$ cm³. Volume kerucut $\\frac{1}{3} \\times \\frac{22}{7} \\times 49 \\times 6 = 308$ cm³ (air sebanyak ini tumpah). Sisa $3.080 - 308 = 2.772$ cm³."
+    },
+    {
+      "id": "dg-44",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 14,
+      "topik": "Transformasi & Kesebangunan",
+      "pertanyaan": "Seorang anak setinggi $1{,}5$ m berdiri $8$ m dari tiang lampu setinggi $4{,}5$ m. Panjang bayangan anak akibat cahaya lampu itu adalah ...",
+      "opsi": {
+        "a": "$2$ m",
+        "b": "$3$ m",
+        "c": "$4$ m",
+        "d": "$6$ m",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "c",
+      "acakOpsi": false,
+      "pembahasan": "Misal bayangan $s$. Segitiga anak sebangun dengan segitiga tiang: $\\frac{1{,}5}{4{,}5} = \\frac{s}{s + 8}$. Jadi $3s = s + 8$, $s = 4$ m."
+    },
+    {
+      "id": "dg-45",
+      "level": 3,
+      "tipe": "pg",
+      "aktif": true,
+      "materi": 15,
+      "topik": "Statistika & Peluang",
+      "pertanyaan": "Rata-rata nilai $30$ siswa adalah $72$. Setelah $2$ siswa baru ikut ujian, rata-ratanya menjadi $73$. Rata-rata nilai kedua siswa baru itu adalah ...",
+      "opsi": {
+        "a": "$88$",
+        "b": "$85$",
+        "c": "$80$",
+        "d": "$90$",
+        "e": "Belum tahu / belum belajar"
+      },
+      "kunci": "a",
+      "acakOpsi": false,
+      "pembahasan": "Jumlah awal $30 \\times 72 = 2.160$. Jumlah baru $32 \\times 73 = 2.336$. Dua siswa baru berjumlah $176$, rata-ratanya $88$."
+    }
+  ]
+}

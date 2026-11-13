@@ -9,10 +9,11 @@
   var diNode = (typeof module === 'object' && module.exports);
   var Nilai = diNode ? require('../js/nilai.js') : akar.Nilai;
   var Gembok = diNode ? require('../js/gembok-inti.js') : akar.GembokInti;
-  var api = pabrik(Nilai, Gembok);
+  var Diagnostik = diNode ? require('../js/diagnostik.js') : akar.Diagnostik;
+  var api = pabrik(Nilai, Gembok, Diagnostik);
   if (diNode) module.exports = api;
   else akar.KasusUji = api;
-})(typeof self !== 'undefined' ? self : this, function (Nilai, Gembok) {
+})(typeof self !== 'undefined' ? self : this, function (Nilai, Gembok, Diagnostik) {
   'use strict';
 
   var kasus = [];
@@ -632,6 +633,46 @@
       lulus: rusak.length === 0,
       catatan: dipakai.length + ' soal diperiksa, urutan tampilan tetap memuat semua opsi'
     });
+  });
+
+  /* ---------- asesmen diagnostik ---------- */
+
+  uji('Kategori diagnostik mengikuti aturan kisi-kisi', function () {
+    var harap = [
+      [['benar', 'benar', 'benar'], 'kuat'],
+      [['benar', 'salah', 'benar'], 'kuat'],
+      [['benar', 'benar', 'salah'], 'cukup'],
+      [['benar', 'benar', 'kosong'], 'cukup'],
+      [['benar', 'salah', 'salah'], 'lemah'],
+      [['salah', 'salah', 'salah'], 'lemah'],
+      [['salah', 'belum', 'kosong'], 'lemah'],
+      [['belum', 'belum', 'kosong'], 'belum'],
+      [['kosong', 'kosong', 'kosong'], 'belum'],
+      [['salah', 'benar', 'salah'], 'cek'],
+      [['belum', 'salah', 'benar'], 'cek']
+    ];
+    var gagal = harap.filter(function (h) { return Diagnostik.kategori(h[0]) !== h[1]; });
+    return Promise.resolve({
+      lulus: gagal.length === 0,
+      catatan: gagal.length ? gagal.map(function (h) {
+        return h[0].join('/') + ' menjadi ' + Diagnostik.kategori(h[0]) + ', diharapkan ' + h[1];
+      }).join('; ') : harap.length + ' pola diperiksa'
+    });
+  });
+
+  uji('Opsi "Belum tahu" tercatat terpisah dari jawaban salah', function () {
+    var meta = { diagnostik: { opsiBelumTahu: 'e', materi: ['A', 'B'] } };
+    var perId = {
+      m1: { materi: 1, level: 1 }, m2: { materi: 1, level: 2 }, m3: { materi: 1, level: 3 },
+      n1: { materi: 2, level: 1 }, n2: { materi: 2, level: 2 }, n3: { materi: 2, level: 3 }
+    };
+    var peta = Diagnostik.petakan(meta, perId,
+      ['m1', 'm2', 'm3', 'n1', 'n2', 'n3'],
+      ['a', 'b', 'e', 'e', '', 'c'],
+      [true, true, false, false, false, false]);
+    var ok = peta[0].sel.join() === 'benar,benar,belum' && peta[0].kategori === 'cukup' &&
+      peta[1].sel.join() === 'belum,kosong,salah' && peta[1].kategori === 'lemah';
+    return Promise.resolve({ lulus: ok, catatan: JSON.stringify(peta.map(function (m) { return m.sel; })) });
   });
 
   /* ---------- pelari ---------- */

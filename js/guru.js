@@ -410,7 +410,7 @@
       panggil('jawaban', { kodeSesi: kode }),
       info ? muatBankBab(info.tingkat, info.bab) : Promise.resolve(null)
     ]).then(function (h) {
-      jawabanTerakhir = { data: h[0], perId: petaSoal(h[1]) };
+      jawabanTerakhir = { data: h[0], perId: petaSoal(h[1]), bank: h[1] };
       gambarJawaban();
     }).catch(function (e) { tulisGalat(el.hasilJawaban, e); });
   });
@@ -443,8 +443,9 @@
           '<td class="angka">' + p.nilai + '</td></tr>';
       }).join('') + '</tbody></table></div></div>';
 
-    isi += el.jawabanTampilan.value === 'siswa'
-      ? jawabanPerSiswa(data.pengerjaan, perId)
+    var tampilan = el.jawabanTampilan.value;
+    isi += tampilan === 'diagnostik' ? jawabanDiagnostik(data.pengerjaan, perId, jawabanTerakhir.bank)
+      : tampilan === 'siswa' ? jawabanPerSiswa(data.pengerjaan, perId)
       : jawabanPerSoal(data.pengerjaan, perId);
     el.hasilJawaban.innerHTML = isi;
   }
@@ -481,6 +482,35 @@
           bacaPembahasan(soal) + '</div>' : '') +
         '</div>';
     }).join('');
+  }
+
+  /* Peta kuat-lemah per materi untuk sesi asesmen diagnostik. Bila seorang
+     siswa mengerjakan lebih dari sekali (sesi mandiri), yang dipakai adalah
+     pengerjaan terakhirnya. Data sudah terurut per nama lalu waktu. */
+  function jawabanDiagnostik(pengerjaan, perId, bank) {
+    if (!bank || !Diagnostik.adalah(bank.meta)) {
+      return '<div class="pesan info">Tampilan ini hanya untuk sesi Asesmen Diagnostik TO. ' +
+        'Pilih tampilan lain untuk sesi ini.</div>';
+    }
+    var terakhir = {}, urutan = [];
+    pengerjaan.forEach(function (p) {
+      if (!terakhir[p.nama]) urutan.push(p.nama);
+      terakhir[p.nama] = p;
+    });
+    var daftar = urutan.map(function (nama) {
+      var p = terakhir[nama];
+      return { nama: nama, nilai: p.nilai,
+        peta: Diagnostik.petakan(bank.meta, perId, p.idSoal, p.jawaban, p.benar) };
+    });
+
+    var isi = '<div class="kartu">' + Diagnostik.rekapKelasHTML(bank.meta.diagnostik.materi, daftar) + '</div>';
+    isi += daftar.map(function (d) {
+      return '<details class="kartu dg-siswa"><summary><strong>' + lolos(d.nama) +
+        '</strong> <span class="kecil samar">nilai ' + d.nilai + '</span></summary>' +
+        '<h3>Prioritas</h3>' + Diagnostik.prioritasHTML(d.peta) +
+        '<h3>Peta penguasaan</h3>' + Diagnostik.petaHTML(d.peta) + '</details>';
+    }).join('');
+    return isi;
   }
 
   function jawabanPerSiswa(pengerjaan, perId) {

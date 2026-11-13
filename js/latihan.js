@@ -33,7 +33,7 @@
    'labelSiswa', 'jam', 'daftarSoal', 'pemberitahuanSesi', 'bilah', 'palangKemajuan',
    'labelKemajuan', 'tombolKumpulkan', 'hasilNilai', 'hasilRincian', 'hasilJudul',
    'hasilStatusKirim', 'hasilDarurat', 'kodeHasil', 'tombolTinjau', 'tombolUlangi', 'salamJudul',
-   'tautanRiwayat']
+   'tautanRiwayat', 'hasilDiagnostik']
     .forEach(function (id) { el[id] = document.getElementById(id); });
 
   var daftarKelas = null, petaBab = null, babIni = null;
@@ -296,7 +296,10 @@
       daftar = Soal.siapkan(bank, {
         level: sesi.level,
         jumlah: sesi.jumlah,
-        acak: sesi.acak || sesi.mode === 'mandiri',
+        /* Asesmen diagnostik tidak pernah diacak: urutannya sengaja
+           berputar dari semua materi level mudah, lalu sedang, lalu sulit. */
+        acak: !(window.Diagnostik && Diagnostik.adalah(bank.meta)) &&
+              (sesi.acak || sesi.mode === 'mandiri'),
         acakOpsi: true,
         /* Benih terikat pada sesi dan nama, sehingga membuka ulang tautan
            yang sama memberi soal yang sama persis. Untuk mode mandiri
@@ -651,6 +654,8 @@
       h.butir.filter(function (b) { return b.benar; }).length +
       ' soal benar dari ' + h.butir.length;
 
+    gambarDiagnostik(muatan);
+
     if (status.status === 'terkirim') {
       el.hasilStatusKirim.textContent = 'Hasilmu sudah sampai ke guru.';
     } else {
@@ -661,6 +666,21 @@
 
     el.tombolUlangi.hidden = sesi.mode !== 'mandiri';
     window.scrollTo(0, 0);
+  }
+
+  /* Asesmen diagnostik: peta kuat-lemah per materi langsung di layar hasil,
+     supaya siswa tahu materi mana yang perlu dikejar sebelum Try Out. */
+  function gambarDiagnostik(muatan) {
+    if (!window.Diagnostik || !Diagnostik.adalah(bank && bank.meta)) return;
+    var perId = {};
+    daftar.forEach(function (s) { perId[s.id] = s; });
+    var peta = Diagnostik.petakan(bank.meta, perId, muatan.idSoal, muatan.jawaban, muatan.benar);
+    el.hasilDiagnostik.innerHTML =
+      '<div class="kartu"><h2 class="rapat">Materi yang perlu dikejar</h2>' +
+      Diagnostik.prioritasHTML(peta) + '</div>' +
+      '<div class="kartu"><h2 class="rapat">Peta penguasaan materi</h2>' +
+      Diagnostik.petaHTML(peta) + '</div>';
+    el.hasilDiagnostik.hidden = false;
   }
 
   /* ---------- meninjau jawaban ---------- */

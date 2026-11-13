@@ -323,6 +323,32 @@ karena jawabannya berjumlah terbatas. Bila suatu saat kuis benar-benar
 bernilai rapor, penilaian harus dipindahkan ke Apps Script dan soal
 disajikan tanpa kunci sama sekali. Itu belum dibangun.
 
+## Asesmen Diagnostik TO
+
+Bab `diagnostik-to` di Kelas 9 berisi 45 soal pilihan ganda dari seluruh
+materi kelas 7 sampai 9: 15 kelompok materi, masing-masing tiga soal
+(mudah, sedang, sulit). Urutannya berputar: soal 1-15 semua materi level
+mudah, 16-30 level sedang, 31-45 level sulit. Urutan ini tidak pernah
+diacak, apa pun parameter tautannya.
+
+Setiap soal punya opsi e "Belum tahu / belum belajar" dan field `materi`
+(nomor kelompok materi). Banknya ditandai `meta.diagnostik`, dan tanda
+inilah yang menyalakan dua tampilan tambahan:
+
+- Layar hasil siswa menampilkan peta materi x level beserta tiga materi
+  yang paling perlu dikejar.
+- Tab **Jawaban siswa** di `guru.html`, tampilan **Peta diagnostik**,
+  menampilkan rekap materi terlemah se-kelas dan peta per siswa.
+
+Kategori per materi (aturannya di `js/diagnostik.js`, diuji di
+`uji/kasus.js`): Kuat bila soal sulit benar; Cukup bila soal sedang benar;
+Lemah bila hanya soal mudah atau tidak ada yang benar; Belum dipelajari
+bila ketiganya dijawab "Belum tahu" atau dilewati; Cek ulang bila soal
+mudah tidak benar tetapi soal sedang atau sulit benar.
+
+Sesi yang disarankan: mode `kelas`, durasi 90 menit, tanpa `jumlah` dan
+tanpa `level`, supaya ke-45 soal keluar semua.
+
 ## Membuat sesi latihan
 
 Buka `guru.html`, isi pilihannya, lalu salin tautannya atau tampilkan QR-nya

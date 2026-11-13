@@ -270,6 +270,7 @@ input:focus, select:focus, textarea:focus {
   gap: .75rem;
   z-index: 20;
 }
+.bilah-bawah[hidden] { display: none; }
 .bilah-bawah .isi { max-width: 44rem; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: .75rem; }
 .jam { font-variant-numeric: tabular-nums; font-weight: 650; }
 .jam.mepet { color: var(--salah); }
@@ -306,6 +307,32 @@ th { font-size: .78rem; text-transform: uppercase; letter-spacing: .03em; color:
 tbody tr:hover { background: #fdfcfa; }
 td.angka, th.angka { text-align: right; font-variant-numeric: tabular-nums; }
 td.bebas { white-space: normal; }
+
+/* ---------- asesmen diagnostik ---------- */
+
+.dg-peta td, .dg-peta th { padding: .4rem .45rem; }
+.dg-peta td:first-child { white-space: normal; line-height: 1.5; }
+.dg-peta th.dg-sel { font-size: .68rem; letter-spacing: 0; }
+.dg-sel { text-align: center; width: 3.4rem; font-weight: 700; }
+.dg-rapat .dg-sel { width: 1.9rem; padding: .35rem .2rem; }
+.dg-rapat td:first-child { min-width: 7rem; }
+.dg-benar  { background: var(--benar-lembut); color: var(--benar); }
+.dg-salah  { background: var(--salah-lembut); color: var(--salah); }
+.dg-belum, .dg-kosong { background: var(--kertas); color: var(--tinta-lembut); }
+.dg-mini { display: inline-block; width: 1.3rem; text-align: center; border-radius: 4px; font-weight: 700; }
+.dg-ket { margin-top: .5rem; white-space: normal; }
+
+.dg-cap { font-size: .78rem; font-weight: 650; padding: .12rem .5rem; border-radius: 999px; text-transform: none; letter-spacing: 0; white-space: nowrap; }
+.dg-k-kuat  { background: var(--benar-lembut); color: var(--benar); }
+.dg-k-cukup { background: var(--aksen-lembut); color: var(--aksen); }
+.dg-k-lemah { background: var(--salah-lembut); color: var(--salah); }
+.dg-k-belum { background: var(--garis); color: var(--tinta-lembut); }
+.dg-k-cek   { background: var(--sorot-lembut); color: var(--sorot); }
+
+.dg-prioritas { margin: .25rem 0 0; padding-left: 1.3rem; }
+.dg-prioritas li { margin-bottom: .55rem; }
+.dg-siswa > summary { cursor: pointer; }
+.dg-siswa h3, .dg-judul { font-size: .95rem; margin: 1.25rem 0 .4rem; }
 
 .palang { height: 8px; background: var(--garis); border-radius: 999px; overflow: hidden; min-width: 4rem; }
 .palang > i { display: block; height: 100%; background: var(--salah); }

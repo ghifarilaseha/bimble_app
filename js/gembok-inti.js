@@ -16,9 +16,11 @@
 
   /* "bantu" ikut disalin apa adanya: isinya bangun asal, garis cermin, dan
      pusat transformasi, yang memang harus terlihat sebelum siswa menjawab.
-     Tidak ada kunci di dalamnya, jadi tidak ada yang perlu disembunyikan. */
+     Tidak ada kunci di dalamnya, jadi tidak ada yang perlu disembunyikan.
+     "materi" adalah nomor kelompok materi pada asesmen diagnostik, dipakai
+     untuk menyusun peta kuat-lemah per materi. */
   var DISALIN = ['id', 'level', 'tipe', 'varian', 'aktif', 'pertanyaan',
-                 'opsi', 'grid', 'bantu', 'acakOpsi', 'induk'];
+                 'opsi', 'grid', 'bantu', 'acakOpsi', 'induk', 'materi'];
 
   function butir(s, id) {
     var keluar = {};

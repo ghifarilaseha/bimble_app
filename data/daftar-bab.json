@@ -151,6 +151,14 @@
           "soal": "data/soal/kelas9/bangun-ruang-sisi-lengkung.json",
           "materi": "materi/kelas9-bangun-ruang-sisi-lengkung.html",
           "aktif": true
+        },
+        {
+          "kode": "diagnostik-to",
+          "judul": "Asesmen Diagnostik TO",
+          "semester": 2,
+          "ringkas": "45 soal dari seluruh materi kelas 7-9 untuk memetakan materi yang kuat dan yang masih lemah sebelum Try Out.",
+          "soal": "data/soal/kelas9/diagnostik-to.json",
+          "aktif": true
         }
       ]
     }

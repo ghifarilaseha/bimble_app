@@ -33,6 +33,12 @@
     </p>
   </div>
 
+  <div class="pesan info">
+    Tidak masuk kelas hari Sabtu, 14 November 2026? Catatan papan tulis dan soalnya ada di
+    tab <a href="#catatan" id="keCatatan"><strong>Catatan kelas 14 Nov</strong></a>
+    pada bagian <em>Aturannya</em>.
+  </div>
+
   <!-- ---------- 2. Pemantik ---------- -->
   <h2>Dua toko, sepatu yang sama</h2>
   <p>
@@ -224,6 +230,52 @@
       </div>
       <div id="bgHasil" style="margin-top:.7rem"></div>
     </div>
+  </section>
+
+  <section data-tab="Catatan kelas 14 Nov" id="catatan" hidden>
+    <h3>Catatan kelas Sabtu, 14 November 2026</h3>
+    <p class="kecil samar">
+      Ringkasan papan tulis hari ini. Untuk yang tidak masuk: baca ringkasannya, kerjakan
+      5 soal pemanasan, lalu coba 3 soal dari papan tulis di buku tulismu.
+    </p>
+
+    <div class="kartu">
+      <h3 class="rapat">1. Perdagangan: untung dan rugi</h3>
+      <ul style="margin:.4rem 0 0">
+        <li><strong>Untung</strong> bila uang yang didapat (harga jual) lebih besar dari modal (harga beli).</li>
+        <li><strong>Rugi</strong> bila modal lebih besar dari harga jual.</li>
+      </ul>
+      <p class="tengah">$$\text{Untung} = \text{harga jual} - \text{modal}$$</p>
+      <p class="tengah">$$\text{Rugi} = \text{modal} - \text{harga jual}$$</p>
+      <p class="tengah">$$\%\text{untung} = \frac{\text{untung}}{\text{modal}} \times 100\%$$</p>
+      <p class="tengah">$$\%\text{rugi} = \frac{\text{rugi}}{\text{modal}} \times 100\%$$</p>
+      <p><strong>Contoh.</strong> Rizal membeli sepeda Rp1.000.000, lalu menjualnya Rp1.500.000.</p>
+      <ul style="margin:0">
+        <li>Untung $= 1.500.000 - 1.000.000 = $ Rp500.000</li>
+        <li>$\%$ untung $= \frac{500.000}{1.000.000} \times 100\% = \frac{5}{10} \times 100\% = 50\%$</li>
+      </ul>
+      <p class="kecil samar" style="margin:.6rem 0 0">
+        Persentase untung atau rugi selalu ditulis positif, tanpa tanda minus.
+        Kata "untung" atau "rugi" sudah menunjukkan arahnya.
+      </p>
+    </div>
+
+    <div class="kartu">
+      <h3 class="rapat">2. Diskon (potongan harga)</h3>
+      <p>Barang seharga Rp80.000 mendapat diskon $20\%$.</p>
+      <ul style="margin:0">
+        <li>Besar diskon $= 20\% \times 80.000 = \frac{20}{100} \times 80.000 = $ Rp16.000</li>
+        <li>Harga yang dibayar $=$ harga awal $-$ diskon $= 80.000 - 16.000 = $ Rp64.000</li>
+      </ul>
+    </div>
+
+    <h3>Pemanasan: 5 soal mudah</h3>
+    <p class="kecil samar">Langsung dicek di sini. Hasilnya tidak dikirim dan tidak masuk nilai.</p>
+    <div id="catatanPemanasan"></div>
+
+    <h3>Soal dari papan tulis</h3>
+    <p class="kecil samar">Kerjakan dulu di buku tulis, baru buka langkahnya satu per satu.</p>
+    <div id="catatanPapan"></div>
   </section>
 
   <!-- ---------- 5. Contoh bertahap ---------- -->
@@ -451,6 +503,119 @@
     });
   });
   hitungBunga();
+
+  /* ---------- 4e. Catatan kelas 14 November ---------- */
+
+  /* Tab untuk siswa yang tidak masuk. Tautan ...html#catatan langsung
+     membuka tab ini, jadi tautan itulah yang dibagikan ke siswa. */
+  CekPaham.buat(document.getElementById('catatanPemanasan'), {
+    soal: [
+      {
+        id: 'aritsos-catatan-1', level: 1, tipe: 'pg',
+        pertanyaan: 'Pak Ali membeli sebuah buku Rp10.000, lalu menjualnya Rp12.000. Pak Ali ...',
+        opsi: { a: 'untung Rp2.000', b: 'rugi Rp2.000', c: 'impas (tidak untung, tidak rugi)', d: 'untung Rp22.000' },
+        kunci: 'a',
+        umpan: {
+          b: 'Harga jualnya lebih besar dari modal, jadi Pak Ali untung, bukan rugi.',
+          c: 'Impas hanya terjadi bila harga jual sama dengan modal.',
+          d: 'Kedua harga dijumlahkan. Untung adalah selisihnya: harga jual dikurangi modal.'
+        },
+        bahas: 'Harga jual Rp12.000 lebih besar dari modal Rp10.000, jadi untung $12.000 - 10.000 = $ Rp2.000.'
+      },
+      {
+        id: 'aritsos-catatan-2', level: 1, tipe: 'isian',
+        pertanyaan: 'Bu Sari membeli tas Rp50.000 dan terpaksa menjualnya Rp45.000. Berapa ruginya?',
+        petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
+        jawaban: ['5000'],
+        salahUmum: [{ jawaban: ['95000'], umpan: 'Kedua harga dijumlahkan. Rugi adalah selisihnya: modal dikurangi harga jual.' }],
+        bahas: 'Modal lebih besar dari harga jual, jadi rugi $= 50.000 - 45.000 = $ Rp5.000.'
+      },
+      {
+        id: 'aritsos-catatan-3', level: 1, tipe: 'isian',
+        pertanyaan: 'Sebuah baju seharga Rp50.000 mendapat diskon $10\\%$. Berapa rupiah besar diskonnya?',
+        petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
+        jawaban: ['5000'],
+        salahUmum: [
+          { jawaban: ['45000'], umpan: 'Itu harga yang dibayar. Yang ditanya besar potongannya saja.' },
+          { jawaban: ['10'], umpan: '$10\\%$ itu persennya. Yang ditanya rupiahnya: $10\\%$ dari Rp50.000.' }
+        ],
+        bahas: 'Diskon $= \\frac{10}{100} \\times 50.000 = $ Rp5.000.'
+      },
+      {
+        id: 'aritsos-catatan-4', level: 1, tipe: 'isian',
+        pertanyaan: 'Sebuah mainan seharga Rp30.000 didiskon $50\\%$. Berapa harga yang harus dibayar?',
+        petunjuk: 'Tulis angkanya saja, boleh tanpa Rp',
+        jawaban: ['15000'],
+        salahUmum: [{ jawaban: ['30000'], umpan: 'Harganya belum dipotong. Diskon $50\\%$ berarti harganya tinggal separuh.' }],
+        bahas: 'Diskon $50\\%$ dari Rp30.000 adalah Rp15.000, jadi yang dibayar $30.000 - 15.000 = $ Rp15.000.'
+      },
+      {
+        id: 'aritsos-catatan-5', level: 1, tipe: 'pg',
+        pertanyaan: 'Seorang pedagang bermodal Rp20.000 dan mendapat untung Rp2.000. Persentase untungnya adalah ...',
+        opsi: { a: '$2\\%$', b: '$10\\%$', c: '$20\\%$', d: '$22\\%$' },
+        kunci: 'b',
+        umpan: {
+          a: 'Angka 2.000 tidak bisa langsung dibaca sebagai persen. Bandingkan dulu dengan modalnya.',
+          c: 'Angka 20 diambil dari modalnya. Hitung $\\frac{\\text{untung}}{\\text{modal}} \\times 100\\%$.',
+          d: 'Persentase untung dihitung dari untung dibagi modal, bukan dijumlahkan.'
+        },
+        bahas: '$\\%\\text{untung} = \\frac{2.000}{20.000} \\times 100\\% = \\frac{1}{10} \\times 100\\% = 10\\%$.'
+      }
+    ]
+  });
+
+  Materi.contoh(document.getElementById('catatanPapan'), [
+    {
+      judul: 'Pulpen satu lusin',
+      soal: 'Satu lusin pulpen dibeli seharga Rp18.000. Setiap pulpen dijual Rp1.800. ' +
+        'Berapa keuntungannya jika satu lusin pulpen itu terjual habis?',
+      langkah: [
+        'Satu lusin $= 12$ buah.',
+        'Hasil penjualan: $12 \\times 1.800 = $ Rp21.600',
+        'Untung $= 21.600 - 18.000 = $ Rp3.600'
+      ]
+    },
+    {
+      judul: 'Sepeda Paman',
+      soal: 'Tahun 2024 Paman membeli sepeda seharga Rp3.000.000. Tahun 2025 sepeda itu ' +
+        'dijual Rp2.400.000. Apakah Paman untung atau rugi? Berapa persen?',
+      langkah: [
+        'Harga jual Rp2.400.000 lebih kecil dari modal Rp3.000.000, jadi Paman rugi.',
+        'Rugi $= 3.000.000 - 2.400.000 = $ Rp600.000',
+        '$\\%\\text{rugi} = \\frac{600.000}{3.000.000} \\times 100\\% = \\frac{1}{5} \\times 100\\% = 20\\%$'
+      ]
+    },
+    {
+      judul: 'Buku satu lusin didiskon',
+      soal: 'Satu lusin buku seharga Rp240.000 mendapat diskon $30\\%$. ' +
+        'Berapa harga tiap bukunya?',
+      langkah: [
+        'Besar diskon: $\\frac{30}{100} \\times 240.000 = $ Rp72.000',
+        'Harga satu lusin setelah diskon: $240.000 - 72.000 = $ Rp168.000',
+        'Satu lusin $= 12$ buku, jadi harga tiap buku $= 168.000 \\div 12 = $ Rp14.000'
+      ]
+    }
+  ]);
+  /* Di tab ini kartunya soal untuk dicoba, bukan contoh. */
+  Array.prototype.forEach.call(document.querySelectorAll('#catatanPapan .nomor'), function (n) {
+    n.textContent = n.textContent.replace(/^Contoh/, 'Soal');
+  });
+
+  /* Tautan ...#catatan (dan pemberitahuan di atas) langsung membuka tab ini. */
+  function bukaCatatan() {
+    var semua = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
+    var i = semua.indexOf(document.getElementById('catatan'));
+    var tombol = document.getElementById('tabMateri').children[i];
+    if (tombol) tombol.click();
+    /* Sisakan ruang untuk kepala halaman yang menempel di atas. */
+    var atas = document.getElementById('tabMateri').getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo(0, atas - 70);
+  }
+  document.getElementById('keCatatan').addEventListener('click', function (ev) {
+    ev.preventDefault();
+    bukaCatatan();
+  });
+  if (location.hash === '#catatan') bukaCatatan();
 
   /* ---------- 5. Contoh bertahap ---------- */
 

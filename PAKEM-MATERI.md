@@ -6,6 +6,10 @@ halaman bab mana pun, kelas berapa pun, terasa seperti ditulis orang yang sama.
 Mulailah dengan menyalin `materi/_templat.html`. Periksa hasilnya dengan
 `node tools/materi.js`.
 
+Alasan di balik urutan tujuh bagian ada di **bagian I** (hierarki belajar dari
+keseharian ke rumus). Aturan tampilan ada di **bagian J**, dan aturan kepadatan
+teks di **bagian K**.
+
 **Tiga aturan yang paling sering dilanggar**, taruh di kepala lebih dulu:
 
 1. Tiap tab di bagian "Aturannya" wajib punya interaksinya sendiri.
@@ -336,7 +340,119 @@ periksa ulang kedua hal itu — bukan hanya "kelihatan enak".
 
 ---
 
-## I. Daftar periksa sebelum halaman dianggap selesai
+## I. Hierarki belajar: dari keseharian ke rumus
+
+Dasarnya **PMRI** (Pendidikan Matematika Realistik Indonesia), versi Indonesia
+dari Realistic Mathematics Education (Freudenthal). Matematika dipelajari
+sebagai kegiatan, bukan rumus jadi yang diberikan di depan. Belajar dimulai dari
+situasi nyata, lalu siswa dibimbing menemukan kembali konsepnya lewat dua arah:
+
+- **Matematisasi horizontal:** dari situasi ke bahasa matematika. "Untung
+  Rp20.000 dari modal Rp100.000" menjadi $\frac{20.000}{100.000}$.
+- **Matematisasi vertikal:** mengolah di dalam matematika sampai jadi aturan
+  umum. $\frac{\text{untung}}{\text{modal}} \times 100\%$.
+
+Keduanya wajib ada. Tanpa horizontal, rumus lepas dari kegunaannya. Tanpa
+vertikal, siswa tidak pernah sampai ke aturan yang bisa dipakai di soal lain.
+
+### Tangga di setiap halaman
+
+| Tahap | Bagian halaman | Yang terjadi |
+|---|---|---|
+| Konteks nyata | 2. Pemantik | Adegan sehari-hari, ditutup pertanyaan yang belum bisa dijawab |
+| Model | 3. Eksplorasi | Widget yang dicoba sendiri: batang harga, timbangan, garis bilangan |
+| Formal | 4. Aturannya | Rumus muncul **setelah** dicoba, menoleh ke bagian 3 |
+| Bertahap | 5. Contoh bertahap | Langkah dibuka satu per satu |
+| Kembali ke konteks | 6. Cek pemahaman, 7. Latihan | Soal cerita dengan konteks baru |
+
+Urutan ini tidak boleh dibalik. Rumus yang mendahului percobaan mengubah halaman
+jadi hafalan.
+
+### Konteks yang dipakai
+
+Konteks harus **dekat dengan keseharian anak SMP**, bukan dunia orang dewasa:
+warung dan kantin, diskon minimarket, kuota internet, ongkos angkot atau ojek,
+tabungan, uang saku, lomba tujuh belasan, pertandingan futsal. Hindari konteks
+yang asing bagi mereka (saham, kredit rumah, laba perusahaan) kecuali babnya
+memang menuntut.
+
+Satu konteks utama dibawa dari pemantik sampai perumusan, jangan berganti
+cerita di tiap tab. Angkanya realistis: harga jajan tidak Rp1.000.000, uang
+saku tidak Rp5.
+
+### Level soal mengikuti tangga yang sama
+
+| Level | Bentuk |
+|---|---|
+| 1 | Hitungan langsung dalam konteks sederhana, satu langkah |
+| 2 | Perlu menerjemahkan konteks ke matematika dulu, dua langkah |
+| 3 | Konteks bertingkat atau multi-langkah, ada informasi yang harus dipilih |
+
+### Catatan kelas (bagian tambahan)
+
+Catatan pertemuan tertentu untuk siswa yang tidak masuk ditempatkan sebagai
+**bagian tambahan di antara bagian 6 dan 7**, bukan sebagai tab di bagian 4.
+Tab bagian 4 khusus perumusan. Isinya: ringkasan papan tulis yang diketik
+ulang (tanpa foto), soal pemanasan mudah, lalu soal dari papan tulis dengan
+langkah yang dibuka bertahap. Tautannya memakai jangkar `#catatan`.
+
+---
+
+## J. Tampilan: tema, warna, bentuk
+
+**Tema terang adalah bawaan.** Teks gelap di atas latar terang lebih teliti
+dibaca, terutama untuk huruf kecil, pecahan, dan pangkat. Mode gelap tetap
+tersedia sebagai pilihan untuk belajar malam, bukan mengikuti HP secara
+otomatis.
+
+**Warna.**
+- Latar krem hangat; warna hangat dipakai sebagai aksen, bukan latar penuh.
+- Kontras teks paling rendah 4,5:1, termasuk teks abu-abu (`samar`) dan
+  placeholder kotak isian. Teks besar (24 px, atau 19 px tebal) cukup 3:1.
+- Status benar/salah selalu disertai tanda ✓ ✗ atau kata, tidak pernah warna
+  saja. Kira-kira 1 dari 12 anak laki-laki buta warna merah-hijau.
+- Aturan warna peran tetap di bagian H.
+
+**Bentuk.** Sudut membulat, radiusnya seragam di kartu, tombol, dan label.
+Jangan campur bentuk lancip dan bulat di satu halaman. Bentuk melengkung terasa
+lebih ramah dan aman.
+
+**Tanpa hiasan.** Gambar, animasi, ikon, dan latar yang tidak menjelaskan
+materi tidak dipasang. Hiasan semacam itu terbukti sedikit menurunkan hasil
+belajar, dan anak lebih rentan daripada orang dewasa. Gambar dipakai hanya bila
+ia sendiri yang menjelaskan: batang harga, grafik, diagram.
+
+**Ukuran sentuh.** Tombol dan pilihan jawaban paling kecil 44 × 44 px di HP,
+dengan jarak antartombol.
+
+---
+
+## K. Kepadatan teks
+
+Melengkapi bagian F. Prinsipnya: **setiap kata ikut berebut tempat di ingatan
+kerja.** Kalimat yang tidak perlu bukan netral, ia mengurangi hasil belajar.
+
+1. **Angka, rumus, dan model dulu; kata seperlunya.** Kata dipakai untuk
+   "kenapa" dan "kapan dipakai", bukan untuk mengulang yang sudah terlihat di
+   rumus atau tabel.
+2. **Satu kartu atau satu langkah, satu ide.**
+3. **Keterangan menempel pada yang diterangkan.** Catatan untuk sebuah rumus
+   ditulis tepat di bawah rumus itu, bukan di akhir tab.
+4. **Paling banyak satu catatan kecil (`kecil samar`) per bagian.** Kalimat baku
+   yang diwajibkan pakem (ajakan berhenti di pemantik, pengantar cek
+   pemahaman) sudah dihitung sebagai catatan bagian itu.
+5. **Peringatan salah konsep dipindah ke umpan balik.** Tempatnya di
+   `salahUmum` dan `umpan`, muncul saat siswa memang keliru, bukan dipasang di
+   depan untuk semua orang. Di teks perumusan cukup satu kalimat tegas untuk
+   miskonsepsi terbesar bab itu (lihat bagian F).
+6. **Tandai, jangan tambah.** Yang penting ditebalkan, tidak diberi kalimat
+   tambahan "ini penting".
+7. **Mulai dari yang mudah.** Soal pertama di cek pemahaman dan di catatan kelas
+   harus bisa dijawab hampir semua siswa, supaya mereka merasa berhasil dulu.
+
+---
+
+## L. Daftar periksa sebelum halaman dianggap selesai
 
 Jalankan `node tools/materi.js materi/berkasmu.html` lebih dulu; sisanya dilihat
 sendiri di peramban lewat `node tools/sajikan.js`.
@@ -354,10 +470,31 @@ sendiri di peramban lewat `node tools/sajikan.js`.
 10. Semua hitungan lewat `Pecahan`.
 11. Dilihat di lebar HP, dan **dilihat dalam mode gelap**.
 12. `node tools/tautan.js` hijau.
+13. Pemantik memakai konteks keseharian anak SMP, dan konteks itu dibawa sampai
+    perumusan (bagian I).
+14. Rumus tidak muncul sebelum bagian 3 dicoba.
+15. Tidak ada hiasan; kontras teks `samar` dan placeholder lolos 4,5:1;
+    tombol paling kecil 44 px (bagian J).
+16. Paling banyak satu catatan kecil per bagian, dan peringatan salah konsep
+    ada di umpan balik, bukan di teks (bagian K).
 
 ---
 
 ## Lampiran: keadaan halaman yang sudah ada
+
+**Belum sesuai bagian I–K (dicatat 14 November 2026, menunggu audit):**
+
+- Mode gelap masih mengikuti pengaturan HP secara otomatis; belum ada bawaan
+  terang dan tombol pilihan tema (bagian J).
+- Kontras teks `samar`, placeholder, dan ukuran tombol kecil ("Lihat
+  pembahasan", tombol tab) belum diukur (bagian J).
+- Jumlah catatan kecil per bagian belum diperiksa di keempat belas halaman
+  (bagian K).
+- `kelas7-aritmetika-sosial.html` masih memuat "Catatan kelas 14 Nov" sebagai
+  tab kelima di bagian 4. Pindahkan ke bagian tambahan di antara bagian 6 dan
+  7 (bagian I).
+- Konteks pemantik semua bab belum diperiksa kedekatannya dengan keseharian
+  anak SMP (bagian I).
 
 Keempat belas halaman materi hijau di `node tools/materi.js`: lima bab kelas 7,
 empat bab kelas 8 (pola bilangan, relasi dan fungsi, persamaan garis lurus,

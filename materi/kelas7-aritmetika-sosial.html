@@ -6,6 +6,7 @@
 <title>Aritmetika Sosial</title>
 <link rel="stylesheet" href="../vendor/katex/katex.min.css">
 <link rel="stylesheet" href="../css/gaya.css">
+<script src="../js/tema.js"></script>
 </head>
 <body>
 
@@ -35,8 +36,7 @@
 
   <div class="pesan info">
     Tidak masuk kelas hari Sabtu, 14 November 2026? Catatan papan tulis dan soalnya ada di
-    tab <a href="#catatan" id="keCatatan"><strong>Catatan kelas 14 Nov</strong></a>
-    pada bagian <em>Aturannya</em>.
+    <a href="#catatan"><strong>Catatan kelas</strong></a> di bagian bawah halaman.
   </div>
 
   <!-- ---------- 2. Pemantik ---------- -->
@@ -180,6 +180,10 @@
       </div>
       <div id="dbHasil" style="margin-top:.7rem"></div>
     </div>
+
+    <h3>Kembali ke dua toko</h3>
+    <p>Sekarang pertanyaan sepatu di awal bisa dijawab. Tebak dulu tokonya.</p>
+    <div id="kembaliToko"></div>
   </section>
 
   <section data-tab="Bunga dan pajak" hidden>
@@ -232,11 +236,23 @@
     </div>
   </section>
 
-  <section data-tab="Catatan kelas 14 Nov" id="catatan" hidden>
-    <h3>Catatan kelas Sabtu, 14 November 2026</h3>
+  <!-- ---------- 5. Contoh bertahap ---------- -->
+  <h2>Contoh bertahap</h2>
+  <p class="kecil samar">Tebak dulu jawabannya sebelum membuka langkahnya.</p>
+  <div id="daftarContoh"></div>
+
+  <!-- ---------- 6. Cek pemahaman ---------- -->
+  <h2>Cek pemahaman</h2>
+  <p class="kecil samar">Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.</p>
+  <div id="cekPaham"></div>
+
+  <!-- Bagian tambahan: catatan kelas (PAKEM-MATERI.md bagian I).
+       Bukan salah satu dari tujuh bagian baku, jadi tanpa penanda bernomor. -->
+  <section id="catatan" class="catatan-kelas">
+  <h2>Catatan kelas Sabtu, 14 November</h2>
     <p class="kecil samar">
-      Ringkasan papan tulis hari ini. Untuk yang tidak masuk: baca ringkasannya, kerjakan
-      5 soal pemanasan, lalu coba 3 soal dari papan tulis di buku tulismu.
+      Untuk yang tidak masuk: baca ringkasannya, kerjakan 5 soal pemanasan, lalu coba
+      3 soal dari papan tulis di buku tulismu.
     </p>
 
     <div class="kartu">
@@ -270,23 +286,11 @@
     </div>
 
     <h3>Pemanasan: 5 soal mudah</h3>
-    <p class="kecil samar">Langsung dicek di sini. Hasilnya tidak dikirim dan tidak masuk nilai.</p>
     <div id="catatanPemanasan"></div>
 
     <h3>Soal dari papan tulis</h3>
-    <p class="kecil samar">Kerjakan dulu di buku tulis, baru buka langkahnya satu per satu.</p>
     <div id="catatanPapan"></div>
-  </section>
-
-  <!-- ---------- 5. Contoh bertahap ---------- -->
-  <h2>Contoh bertahap</h2>
-  <p class="kecil samar">Tebak dulu jawabannya sebelum membuka langkahnya.</p>
-  <div id="daftarContoh"></div>
-
-  <!-- ---------- 6. Cek pemahaman ---------- -->
-  <h2>Cek pemahaman</h2>
-  <p class="kecil samar">Hasilnya tidak dikirim ke mana-mana dan tidak masuk nilai.</p>
-  <div id="cekPaham"></div>
+    </section>
 
   <!-- ---------- 7. Tautan latihan ---------- -->
   <h2>Sudah paham?</h2>
@@ -504,10 +508,30 @@
   });
   hitungBunga();
 
+  /* Menjawab pertanyaan pemantik: konteks dibawa sampai perumusan
+     (PAKEM-MATERI.md bagian I). */
+  var tokoA = P(400000).kurang(P(400000).kali(25).bagi(100));
+  var tokoB = P(360000).kurang(P(360000).kali(15).bagi(100));
+  Materi.contoh(document.getElementById('kembaliToko'), [
+    {
+      judul: 'Sepatu di dua toko',
+      soal: 'Toko A: Rp400.000, diskon $25\\%$. Toko B: Rp360.000, diskon $15\\%$. Mana yang lebih murah?',
+      langkah: [
+        'Toko A: diskon $25\\%$ dari $400.000$ adalah Rp100.000, jadi bayar ' + Rp(tokoA) + '.',
+        'Toko B: diskon $15\\%$ dari $360.000$ adalah Rp54.000, jadi bayar ' + Rp(tokoB) + '.',
+        'Toko A lebih murah ' + Rp(tokoB.kurang(tokoA)) + '. Persen diskon yang lebih besar menang di sini, ' +
+          'tapi hanya karena selisih harga aslinya kecil. Yang dibandingkan selalu harga bayarnya.'
+      ]
+    }
+  ]);
+  Array.prototype.forEach.call(document.querySelectorAll('#kembaliToko .nomor'), function (n) {
+    n.textContent = 'Dua toko tadi';
+  });
+
   /* ---------- 4e. Catatan kelas 14 November ---------- */
 
-  /* Tab untuk siswa yang tidak masuk. Tautan ...html#catatan langsung
-     membuka tab ini, jadi tautan itulah yang dibagikan ke siswa. */
+  /* Bagian untuk siswa yang tidak masuk. Tautan ...html#catatan langsung
+     menuju ke sini, jadi tautan itulah yang dibagikan ke siswa. */
   CekPaham.buat(document.getElementById('catatanPemanasan'), {
     soal: [
       {
@@ -596,26 +620,16 @@
       ]
     }
   ]);
-  /* Di tab ini kartunya soal untuk dicoba, bukan contoh. */
+  /* Di catatan kelas, kartunya soal untuk dicoba, bukan contoh. */
   Array.prototype.forEach.call(document.querySelectorAll('#catatanPapan .nomor'), function (n) {
     n.textContent = n.textContent.replace(/^Contoh/, 'Soal');
   });
 
-  /* Tautan ...#catatan (dan pemberitahuan di atas) langsung membuka tab ini. */
-  function bukaCatatan() {
-    var semua = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
-    var i = semua.indexOf(document.getElementById('catatan'));
-    var tombol = document.getElementById('tabMateri').children[i];
-    if (tombol) tombol.click();
-    /* Sisakan ruang untuk kepala halaman yang menempel di atas. */
-    var atas = document.getElementById('tabMateri').getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo(0, atas - 70);
+  /* Isi catatan digambar skrip setelah halaman dimuat, jadi lompatan ke
+     #catatan diulang sesudahnya supaya tidak meleset. */
+  if (location.hash === '#catatan') {
+    document.getElementById('catatan').scrollIntoView({ block: 'start' });
   }
-  document.getElementById('keCatatan').addEventListener('click', function (ev) {
-    ev.preventDefault();
-    bukaCatatan();
-  });
-  if (location.hash === '#catatan') bukaCatatan();
 
   /* ---------- 5. Contoh bertahap ---------- */
 

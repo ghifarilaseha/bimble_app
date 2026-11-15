@@ -482,19 +482,35 @@ sendiri di peramban lewat `node tools/sajikan.js`.
 
 ## Lampiran: keadaan halaman yang sudah ada
 
-**Belum sesuai bagian I–K (dicatat 14 November 2026, menunggu audit):**
+**Hasil audit bagian I–K (15 November 2026).** Diukur di lebar HP 390 px,
+mode terang dan gelap, untuk keempat belas halaman.
 
-- Mode gelap masih mengikuti pengaturan HP secara otomatis; belum ada bawaan
-  terang dan tombol pilihan tema (bagian J).
-- Kontras teks `samar`, placeholder, dan ukuran tombol kecil ("Lihat
-  pembahasan", tombol tab) belum diukur (bagian J).
-- Jumlah catatan kecil per bagian belum diperiksa di keempat belas halaman
-  (bagian K).
-- `kelas7-aritmetika-sosial.html` masih memuat "Catatan kelas 14 Nov" sebagai
-  tab kelima di bagian 4. Pindahkan ke bagian tambahan di antara bagian 6 dan
-  7 (bagian I).
-- Konteks pemantik semua bab belum diperiksa kedekatannya dengan keseharian
-  anak SMP (bagian I).
+Sudah dibenahi untuk semua halaman:
+
+- Tema bawaan kini terang; mode gelap dipilih lewat tombol ☾ di kepala
+  halaman (`js/tema.js`), tidak lagi mengikuti HP. Sebelumnya, di HP yang
+  memakai mode gelap, tab yang tidak dipilih bertulisan hitam di latar gelap
+  (kontras 1,26:1) di keempat belas halaman.
+- Tombol kecil (`.tombol.mungil`) dan tombol tab kini 44 px di layar sentuh.
+  Sebelumnya 34–38 px, lebih dari 400 tombol.
+- Placeholder di mode gelap kini 6,2:1 (sebelumnya 3,6:1). Kontras mode terang
+  sudah lolos semua sejak awal.
+- `kelas7-aritmetika-sosial.html`: catatan kelas pindah dari tab ke bagian
+  tambahan, dan pertanyaan pemantik (dua toko) dijawab di tab Diskon.
+
+Belum dibenahi:
+
+| Halaman | Temuan | Bagian |
+|---|---|---|
+| bentuk-aljabar, bilangan-bulat, pecahan, pola-bilangan, transformasi | Pertanyaan pemantik tidak pernah dijawab; konteksnya hilang setelah bagian 2 | I |
+| peluang, spldv | Konteks pemantik dunia orang dewasa (pos ronda, belanja buah); bisa diganti konteks anak SMP | I |
+| aritmetika-sosial | Petak widget batang harga hanya 13 px lebarnya | J |
+| relasi-fungsi | Kotak papan pemasangan 35 px lebarnya | J |
+| plsv-ptlsv | Satu tab memuat 3 catatan kecil | K |
+| bilangan-bulat | Bagian eksplorasi memuat 4 catatan kecil | K |
+| pola-bilangan, pecahan, kesebangunan, pangkat-akar | 3–5 kalimat lebih dari 20 kata | K, F |
+
+Tidak ada hiasan (gambar, video, animasi dekoratif) di halaman mana pun.
 
 Keempat belas halaman materi hijau di `node tools/materi.js`: lima bab kelas 7,
 empat bab kelas 8 (pola bilangan, relasi dan fungsi, persamaan garis lurus,

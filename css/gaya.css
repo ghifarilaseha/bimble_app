@@ -80,6 +80,8 @@ a { color: var(--aksen); }
 .kepala .isi.lebar { max-width: 72rem; }
 .kepala .judul { font-weight: 650; font-size: .98rem; }
 .kepala .kanan { margin-left: auto; display: flex; align-items: center; gap: .6rem; }
+.kepala .tombol-tema { margin-left: auto; min-width: 2.75rem; font-size: 1.1rem; flex: none; }
+.kepala .kanan + .tombol-tema { margin-left: 0; }
 
 /* ---------- kartu ---------- */
 
@@ -169,11 +171,17 @@ input:focus, select:focus, textarea:focus {
   background: var(--kartu);
   border-radius: 999px;
   padding: .4rem .9rem;
+  color: var(--tinta);
   font: inherit;
   font-size: .9rem;
   cursor: pointer;
 }
 .tab button[aria-selected=true] { background: var(--aksen); border-color: var(--aksen); color: #fff; }
+
+/* Ukuran sentuh paling kecil 44 px di HP (PAKEM-MATERI.md bagian J). */
+@media (pointer: coarse) {
+  .tombol.mungil, .tab button { min-height: 44px; }
+}
 
 /* ---------- soal ---------- */
 
@@ -557,8 +565,11 @@ input[type=range]:focus-visible::-moz-range-thumb { outline: 2px solid var(--aks
 
 /* ---------- mode gelap ---------- */
 
-@media (prefers-color-scheme: dark) {
-  :root {
+
+/* Bawaan selalu terang: teks gelap di atas latar terang lebih teliti dibaca,
+   terutama pecahan dan pangkat (PAKEM-MATERI.md bagian J). Mode gelap hanya
+   aktif bila dipilih lewat tombol di kepala halaman (js/tema.js). */
+:root[data-tema="gelap"] {
     --kertas: #16151b;
     --kartu: #1e1d24;
     --tinta: #ece9e3;
@@ -584,10 +595,15 @@ input[type=range]:focus-visible::-moz-range-thumb { outline: 2px solid var(--aks
 
     --bayang: 0 1px 2px rgba(0, 0, 0, .4);
   }
-  .tombol.utama { color: #10131f; }
-  .opsi label:hover, tbody tr:hover { background: #24232c; }
-  .pesan.info { color: #c9d8ff; }
-  .pesan.awas { color: var(--sorot); border-color: #4a3a1c; }
-  .rumus-mentah { background: #2a2932; }
-  .qr { border-color: #fff; }
-}
+[data-tema="gelap"] .tombol.utama,
+[data-tema="gelap"] .tab button[aria-selected=true] { color: #10131f; }
+[data-tema="gelap"] ::placeholder { color: var(--tinta-lembut); opacity: 1; }
+[data-tema="gelap"] .opsi label:hover, [data-tema="gelap"] tbody tr:hover { background: #24232c; }
+[data-tema="gelap"] .pesan.info { color: #c9d8ff; }
+[data-tema="gelap"] .pesan.awas { color: var(--sorot); border-color: #4a3a1c; }
+[data-tema="gelap"] .rumus-mentah { background: #2a2932; }
+[data-tema="gelap"] .qr { border-color: #fff; }
+
+
+/* Lompatan ke jangkar (mis. #catatan) tidak tertutup kepala halaman yang menempel. */
+section[id] { scroll-margin-top: 4.5rem; }
